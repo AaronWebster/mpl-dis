@@ -1,0 +1,140 @@
+\usepackage{amsmath}
+\usepackage{graphicx} % required for pdf transparency
+\usepackage{xcolor} % required for pdf transparency
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{subfigure}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{fullpage}
+\usepackage[multiple]{footmisc}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{empheq}
+\usepackage{calc}
+\usepackage[version=3]{mhchem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage[section]{placeins}
+\pgfplotsset{compat=newest}
+
+
+%\hypersetup{
+% colorlinks=false,
+% linkbordercolor={1 1 1},
+% citebordercolor={1 1 1},
+% urlbordercolor={1 1 1} 
+%}
+
+\sisetup{ 
+% load-configurations=abbreviations
+% round-mode = places,
+}%
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+% This definition puts a little vertical guy at the end so it's more
+% obvious where the square root actually ends.
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+
+% integrals with infinity bounds
+\newcommand{\intinfty}{\int_{-\infty}^{\infty}}
+
+% consistent formatting of object labels
+\newcommand{\Figure}[1]{Figure \ref{#1}}
+\newcommand{\Equation}[1]{Equation \ref{#1}}
+\newcommand{\Table}[1]{Table \ref{#1}}
+\newcommand{\Section}[1]{Section \ref{#1}}
+\newcommand{\Chapter}[1]{Chapter \ref{#1}}
+\newcommand{\Appendix}[1]{Appendix \ref{#1}}
+
+% missing mathematical operators
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\inverf}{inverf}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+%\DeclareMathOperator{\Re}{Re}
+%\DeclareMathOperator{\Im}{Im}
+
+% use roman type for natural base e and sqrt(-1)
+\newcommand{\me}{{\mathrm{e}}}
+\newcommand{\mi}{{\mathrm{i}}}
+
+% roman type for the derivative, plus a space
+\newcommand{\md}{\,\mathrm{d}}
+
+% fourier transform and the reverse
+\newcommand{\ff}[1]{{\mathscr{F}^{+}\bigl(#1\bigr)}}
+\newcommand{\fr}[1]{{\mathscr{F}^{-}\bigl(#1\bigr)}}
+
+% hilbert transform and the reverse
+\newcommand{\hf}[1]{{\mathscr{H}^{+}\bigl(#1\bigr)}}
+\newcommand{\hr}[1]{{\mathscr{H}^{-}\bigl(#1\bigr)}}
+
+% custom lengths for figures
+
+% width for side by side figures
+\newlength{\twoupwidth}
+\setlength{\twoupwidth}{7.5cm}
+
+% width and height for default single figure
+\newlength{\oneupwidth}
+\setlength{\oneupwidth}{0.90\textwidth}
+\newlength{\oneupheight}
+\setlength{\oneupheight}{0.55623059\textwidth}
+
+% custom colors for 2D plots - these are the same ones mathematica uses by
+% default
+\definecolor{colora}{RGB}{63,61,153}
+\definecolor{colorb}{RGB}{153,61,113}
+\definecolor{colorc}{RGB}{153,139,61}
+\definecolor{colord}{RGB}{61,153,86}
+\definecolor{colore}{RGB}{61,90,153}
+\definecolor{colorf}{RGB}{153,61,144}
+\definecolor{colorg}{RGB}{153,109,61}
+\definecolor{colorh}{RGB}{67,153,61}
+\definecolor{colori}{RGB}{61,121,153}
+\definecolor{colorj}{RGB}{132,61,153}
+
+% hilight text... a "work in progress" type thing
+\tikzstyle{todobox} = [draw=red, fill=blue!10, very thick,
+rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{todotitle} =[fill=red, text=white]
+
+\newcommand{\todo}[1]{%
+\begin{center}
+\begin{tikzpicture}
+\node [todobox] (box){%
+ \begin{minipage}{0.9\textwidth}
+ #1
+ \end{minipage}
+};
+\node[todotitle, right=10pt] at (box.north west) {To Do:};
+\end{tikzpicture}
+\end{center}
+
+}
+
+\pgfplotsset{
+ /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255)
+ rgb255(3cm)=(0,255,255) rgb255(5cm)=(255,255,0) rgb255(7cm)=(255,0,0)
+ rgb255(8cm)=(128,0,0)}
+}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units} 
+
