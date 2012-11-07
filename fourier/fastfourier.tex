@@ -7,7 +7,22 @@ efficient way of doing so is by using a fast Fourier transform (FFT),
 however this requires specific scaling of the domain and range of the
 output field.
 
+\begin{align}
+Y_k = \sum_{j=1}^{N} X_j\, e^{2\pi j k\sqrt{-1}/N}
+\label{eqn:dft}
+\end{align}
+Where the variables $j$ and $k$ are indices (not variables of a function)
+and we have written $\sqrt{-1}=\mi$ explicitly to avoid confusion.
+The DFT maps a set of discrete complex input data
+$X = \left\{X_1\dots X_j : X_j\in\mathbb{Z}\right\}$ onto a set of
+discrete complex output data $Y =
+\left\{Y_1\dots Y_k : Y_k\in\mathbb{Z}\right\}$.  
 % definition of fourier transform
+Direct computation of a DFT is of $O(N^2)$ complexity for $N$ sampling
+points.  However, because the DFT data must be equidistantly and linearly
+sampled with respect to its variables, a fast Fourier transform (FFT) can
+be used. The FFT is able to compute sums of the form of \Equation{eqn:dft}
+as a $O(N \log N)$ complexity problem. 
 \begin{align}
 
 \end{align}
@@ -19,3 +34,165 @@ deltax N
 \begin{align}
 1..N / 2 pi range(k)
 \end{align}
+
+\subsection{Units in the Fast Fourier Transform}
+\label{sec:fftunits2}
+%in doing so, it requires that the input data $X_j$ consist of $N$
+%equidistantly sampled points on its domain $D_x$.  This requirement means
+%that FFT is essentially dimensionless - the sampling of the input data
+%determines the sampling of the output data.
+As discussed, the fast Fourier transform makes a map on the set of numbers
+$X_j \mapsto Y_k$ and vice versa.  There are a symmetric set of
+equations that define the relationship more succinctly.  Let's say you take $N$ samples of the spatial coordinate $Y$ with bounds $Y_a$ and $Y_b$: 
+$\left\{ Y \in \mathbb{R}: Y_a \leq Y \leq
+Y_b\right\}$.  The spacing $Y_\Delta$ between $Y_k$ and $Y_{k+1}$ is just the
+range $Y_\text{range} = Y_b-Y_a$ divided by the number of samples $N$. 
+\begin{align}
+Y_\Delta = \frac{Y_\text{range}}{N}
+\end{align}
+The resultant transform in terms of $X$ has units inverse to that of
+$Y$
+\begin{align}
+X_\Delta = \frac{1}{Y_\text{range}}
+\end{align}
+and
+\begin{align}
+X_\text{range}=\frac{1}{Y_\Delta}=\frac{N}{Y_\text{range}}
+\end{align}
+\begin{figure}
+\label{fig:fftdrawing}
+\begin{center}
+\psset{unit=0.60cm}
+\begin{pspicture}(-8,-2)(8,3)
+
+\rput(-4,0){
+ \pcline(-2,-2)(-2,2)%
+ \pcline[linewidth=0.5pt](-1,-2)(-1,2)
+ \pcline[linewidth=0.5pt](0,-2)(0,2)
+ \pcline[linewidth=0.5pt](1,-2)(1,2)
+ \pcline(2,-2)(2,2)%
+
+ \pcline(-2,-2)(2,-2)%
+ \pcline[linewidth=0.5pt](-2,-1)(2,-1)
+ \pcline[linewidth=0.5pt](-2,0)(2,0)
+ \pcline[linewidth=0.5pt](-2,1)(2,1)
+ \pcline(-2,2)(2,2)%
+ \naput*[]{$\mathscr{F}[x]$}
+
+ \rput[c](-1.5,1.5){$\delta x$}
+
+ \pcline{|<->|}(2.5,-2)(2.5,2)%
+ \nbput*[]{$R_x$}
+}
+
+\rput(4,0){
+ \pcline(-2,-2)(-2,2)%
+ \pcline[linewidth=0.5pt](-1,-2)(-1,2)
+ \pcline[linewidth=0.5pt](0,-2)(0,2)
+ \pcline[linewidth=0.5pt](1,-2)(1,2)
+ \pcline(2,-2)(2,2)%
+
+ \pcline(-2,-2)(2,-2)%
+ \pcline[linewidth=0.5pt](-2,-1)(2,-1)
+ \pcline[linewidth=0.5pt](-2,0)(2,0)
+ \pcline[linewidth=0.5pt](-2,1)(2,1)
+ \pcline(-2,2)(2,2)%
+ \naput*[]{$\mathscr{F}[X]$}
+
+ \rput[c](-1.5,1.5){$\delta X$}
+
+ \pcline{|<->|}(2.5,-2)(2.5,2)%
+ \nbput*[]{$R_X$}
+}
+\end{pspicture}
+\end{center}
+\caption{Relationships in the fast Fourier transform.}
+\end{figure}
+
+Restated, these relationships are
+\begin{align}
+Y_\Delta &= \frac{Y_\text{range}}{N}\qquad Y_\text{range}
+=\frac{1}{X_\Delta} \\
+X_\Delta &= \frac{1}{Y_\text{range}}\qquad X_\text{range} = \frac{1}{Y_\Delta}
+\label{eqn:fftrelationships}
+\end{align}
+And in terms of the ranges of the data
+\begin{align}
+Y_\Delta &= \frac{Y_b-Y_a}{N} \qquad Y_\text{range}=Y_b-Y_a \\
+X_\Delta &= \frac{1}{Y_b-Y_a} \qquad X_b-X_a = \frac{N}{Y_b-Y_a}
+\label{eqn:units1}
+\end{align}
+There is also a kind of uncertainty relationship between them which can be
+obtained by rewriting Equation \ref{eqn:fftrelationships}
+\begin{align} 
+Y_\text{range} \,X_\text{range} &= N \qquad Y_\Delta\, X_\Delta= \frac{1}{N}
+\end{align} 
+In the context of the DFT, the variables $\nu$ and $t$ and the function
+values $f$ and $\tilde{f}$ are indexed by $k$ and $j$ to discrete samples
+$\nu_j$, $t_k$, $F_k$, and $\tilde{f}_j$.   Since
+\begin{align}
+t_k=k\,\Delta t \quad\text{and}\quad \nu_j=j\,\Delta \nu
+\end{align}
+\begin{align}
+t_k \nu_j &= k\,\Delta t \; j\,\Delta \nu\\
+&=jk \frac{\tilde{f}_\text{range}}{N}\,\frac{1}{\tilde{f}_\text{range}}\\
+&=\frac{jk}{N}\quad,\quad\Delta t \Delta \nu = \frac{1}{N}
+\end{align}
+Which is exactly the condition imposed by the DFT.
+
+Note that only such sampling allows the DFT of \Equation{eqn:dft} to be
+evaluated numerically.  Take for example, the Fourier transform of unitary
+and ordinary frequency
+\begin{align}
+f(t)=\intinfty\!\tilde{f}(\nu)\,\me^{-\mi 2 \pi \nu t} \md \nu
+\label{eqn:maybenu}
+\end{align}
+As a sum, this integral would be, according to
+\Equation{eqn:definiteintegral},
+\begin{align}
+f(t)= \lim_{N\to\infty} \sum_{j=1}^{N} \tilde{f}(\nu_j) \, \me^{-\mi 2\pi \nu_j t} \Delta \nu
+\end{align}
+
+\subsection{Sampling Condition for the DFT}
+Because the DFT composes functions using a finite summation of complex
+exponentials, there is an unavoidable periodicity in its approximation.
+This is known as {\it aliasing}.  In order to avoid such effects, proper
+consideration must be taken when sampling the variables $\mathbf{k}$ and
+$\omega$ on the focal sphere.
+\subsubsection{Spatial Domain}
+The Fourier transform of the one dimensional spatial coordinate $r$ is
+given by 
+\begin{align}
+f(r)=\frac{1}{2 \pi} \intinfty\!\tilde{f}(k)\,\me^{\mi kr}\md k
+\end{align}
+Or, written as a discrete sum over $N$ components, 
+\begin{align}
+f(r)&=\frac{\Delta k}{2 \pi}\sum_{j=1}^{N}\tilde{f}(k_j)\,\me^{\mi k_j r}\\
+&=\frac{\Delta k}{2 \pi}\sum_{j=1}^{N}\tilde{f}(j\Delta k)\,\me^{\mi (j\Delta k) r}
+\end{align}
+where $\mi=\sqrt{-1}$.  Note that the complex exponential will repeat itself when
+\begin{align}
+\Delta k\, r=2\pi
+\label{eqn:samplingperiod}
+\end{align}
+The value of $\Delta k$ is just the range of $k$ divided by the number of
+samples taken.  Or, if the focal sphere is rotationally symmetric about
+the optical axis
+\begin{align}
+\Delta k = \frac{2\bar{k}}{N}
+\label{eqn:deltak}
+\end{align}
+where $\bar{k}$ has been used to indicate the maximal value of $k$: 
+$\bar{k}=\mathrm{max}(k)$.  There is a useful relationship between
+$\bar{k}$ and the numerical aperture of a system.  Let $k$ and $r$ now be
+the three dimensional vectors  $\mathbf{k}=(k_x,k_y,k_z)$ and
+$\mathbf{r}=(r_x,r_y,r_z)$ on the focal sphere.  Assume the focal sphere is
+centered about the origin of the coordinate system, and furthermore that it
+is symmetric with regards to the azimuthal coordinate $\phi$.  
+The maximal values of $k_x$ and $k_y$ are
+\begin{align}
+\bar{k}_x&=\frac{2\pi}{\lambda}\sin\theta&
+\bar{k}_y&=\frac{2\pi}{\lambda}\sin\theta
+%&\bar{k}_z&=\frac{2\pi}{\lambda}(1-\cos\theta)
+\end{align}
+
