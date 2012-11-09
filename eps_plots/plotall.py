@@ -7,7 +7,7 @@ import sys,os
 metals = [ 'Ag','Al','Au','Cu','Cr','Ni','W','Ti','Be','Pd','Pt' ]
 models = ['LD', 'D', 'BB']
 params = [ 'er', 'ei', 'nr', 'ni' ]
-ylabels = ['\\epsilon\'', '\\epsilon\'\'', 'n\'', 'n\'\'' ]
+ylabels = ['permittivity $\\epsilon\'$', 'permittivity $\\epsilon\'\'$', 'refractive index $n\'$', 'refractive index $n\'\'$' ] 
 xlabels = [ '', '', '', 'wavelength (\\si{\\micro\\meter})' ]
 locations = [ 'rt', 'rb', 'rt', 'rb' ]
 
@@ -41,7 +41,7 @@ for metal in metals:
 	for i in range(0,4):
 		#print "\\subfigure{"
 		print "\\begin{tikzpicture}[baseline,trim axis left]"
-		print "\\begin{axis}[xlabel=%s,ylabel=$%s$]" % (xlabels[3], ylabels[i])
+		print "\\begin{axis}[xlabel=%s,ylabel=%s]" % (xlabels[3], ylabels[i])
 		print "\\addplot[color=colora] coordinates {"
 		prettyprint(lambda0, data_D, params[i])
 		print "};" 
@@ -59,6 +59,6 @@ for metal in metals:
 		print "\\\\"
 		#print "}"
 	print "\\end{tabular}"
-	print "\\caption{Material parameters for %s based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}" % metal
+	print "\\caption{Complex permittivity $\\epsilon = \\epsilon' + \\mi \\epsilon''$ and refractive index $n = n' + \\mi n''$ for %s based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}" % metal
 	print "\\end{figure}"
 	print "\\clearpage"

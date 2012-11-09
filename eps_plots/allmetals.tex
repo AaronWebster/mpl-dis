@@ -6,7 +6,7 @@ titanium, beryllium, palladium, and platinum using either the Drude
 Lorentz-Drude (\Equation{eqn:lorentzdrude}), or Brendel-Bormann
 (\Equation{eqn:brendelbormann}  models in the range
 \SIrange{200}{2000}{\nano\meter}.  The material parameters and mathematical
-formalism detailed in \cite{rakik1998}.  These tables are generated
+formalism detailed in \cite{rakic1998optical}.  These tables are generated
 programmatically.
 Three different models for the complex permittivity are tabulated.  The
 first two are the Drude and Lorentz-Drude (LD) models.
@@ -39,7 +39,6 @@ infinite superposition of oscillators
 \newpage
 \pgfplotsset{
  minor tick num=3,
- xlabel=wavelength,
  small,
  every axis/.style={thick,width=\textwidth,height=0.35\textwidth,legend columns=3},
 }
@@ -49,7 +48,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, -0.78487418047)
 (2.18181818182e-07, -1.12412357997)
@@ -363,7 +362,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0138201424947)
 (2.18181818182e-07, 0.0179420992488)
@@ -677,7 +676,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00779948046325)
 (2.18181818182e-07, 0.0084610137681)
@@ -991,7 +990,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 1.25294454176)
 (2.18181818182e-07, 1.49946334982)
@@ -1305,7 +1304,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Ag based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Ag based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -1314,7 +1313,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, -2.05370939621)
 (2.18181818182e-07, -2.63412684958)
@@ -1628,7 +1627,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0231520386981)
 (2.18181818182e-07, 0.0300573146374)
@@ -1942,7 +1941,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00807760942817)
 (2.18181818182e-07, 0.0092596542616)
@@ -2256,7 +2255,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 2.02670897959)
 (2.18181818182e-07, 2.29530503018)
@@ -2570,7 +2569,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Al based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Al based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -2579,7 +2578,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, -0.612444230451)
 (2.18181818182e-07, -0.918915234983)
@@ -2893,7 +2892,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0137855547875)
 (2.18181818182e-07, 0.017897150812)
@@ -3207,7 +3206,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0088071111912)
 (2.18181818182e-07, 0.00933459728886)
@@ -3521,7 +3520,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 1.10681687343)
 (2.18181818182e-07, 1.35573033431)
@@ -3835,7 +3834,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Au based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Au based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -3844,7 +3843,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, -0.754857838768)
 (2.18181818182e-07, -1.08841656121)
@@ -4158,7 +4157,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00849233017905)
 (2.18181818182e-07, 0.0110253052034)
@@ -4472,7 +4471,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00488716970616)
 (2.18181818182e-07, 0.00528393521233)
@@ -4786,7 +4785,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 1.22872431668)
 (2.18181818182e-07, 1.47542839961)
@@ -5100,7 +5099,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Cu based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Cu based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -5109,7 +5108,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.494840412391)
 (2.18181818182e-07, 0.398824910147)
@@ -5423,7 +5422,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00382992380858)
 (2.18181818182e-07, 0.00497222842675)
@@ -5737,7 +5736,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.703454208112)
 (2.18181818182e-07, 0.631538127892)
@@ -6051,7 +6050,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00384981007327)
 (2.18181818182e-07, 0.00556719583962)
@@ -6365,7 +6364,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Cr based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Cr based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -6374,7 +6373,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.366919879819)
 (2.18181818182e-07, 0.246590921646)
@@ -6688,7 +6687,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00490189032214)
 (2.18181818182e-07, 0.00636391431566)
@@ -7002,7 +7001,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.605752631749)
 (2.18181818182e-07, 0.496620553455)
@@ -7316,7 +7315,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00572207152846)
 (2.18181818182e-07, 0.00906117746474)
@@ -7630,7 +7629,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Ni based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Ni based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -7639,7 +7638,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0632769706569)
 (2.18181818182e-07, -0.114755238014)
@@ -7953,7 +7952,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0096706317904)
 (2.18181818182e-07, 0.0125548559147)
@@ -8267,7 +8266,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.25227827705)
 (2.18181818182e-07, 0.0185032742565)
@@ -8581,7 +8580,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0271056604529)
 (2.18181818182e-07, 0.479786638355)
@@ -8895,7 +8894,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for W based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for W based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -8904,7 +8903,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.795370546512)
 (2.18181818182e-07, 0.75648213635)
@@ -9218,7 +9217,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00270673459106)
 (2.18181818182e-07, 0.00351396081869)
@@ -9532,7 +9531,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.891836784022)
 (2.18181818182e-07, 0.869762161187)
@@ -9846,7 +9845,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00214607697114)
 (2.18181818182e-07, 0.00285681032654)
@@ -10160,7 +10159,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Ti based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Ti based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -10169,7 +10168,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.251131379491)
 (2.18181818182e-07, 0.108789851357)
@@ -10483,7 +10482,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00422802312142)
 (2.18181818182e-07, 0.00548909067452)
@@ -10797,7 +10796,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.501147856301)
 (2.18181818182e-07, 0.329937943572)
@@ -11111,7 +11110,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00596563226317)
 (2.18181818182e-07, 0.0117639492945)
@@ -11425,7 +11424,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Be based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Be based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -11434,7 +11433,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.188715648446)
 (2.18181818182e-07, 0.0345048789898)
@@ -11748,7 +11747,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00104695197986)
 (2.18181818182e-07, 0.00135922798535)
@@ -12062,7 +12061,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.434415815203)
 (2.18181818182e-07, 0.185790902883)
@@ -12376,7 +12375,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.00170414340045)
 (2.18181818182e-07, 0.00517312371437)
@@ -12690,7 +12689,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Pd based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Pd based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
 \newpage
@@ -12699,7 +12698,7 @@ infinite superposition of oscillators
 \centering
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.20322356523)
 (2.18181818182e-07, 0.0518002041146)
@@ -13013,7 +13012,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$\epsilon''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0102822970058)
 (2.18181818182e-07, 0.0133487955581)
@@ -13327,7 +13326,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n'$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.450947383673)
 (2.18181818182e-07, 0.229447968912)
@@ -13641,7 +13640,7 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \begin{tikzpicture}[baseline,trim axis left]
-\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=$n''$]
+\begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
 \addplot[color=colora] coordinates {
 (2e-07, 0.0161231270038)
 (2.18181818182e-07, 0.0411379708636)
@@ -13955,6 +13954,6 @@ infinite superposition of oscillators
 \end{tikzpicture}%
 \\
 \end{tabular}
-\caption{Material parameters for Pt based on the Drude, Lorentz-Drude, and Brendel-Bormann models.}
+\caption{Complex permittivity $\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi n''$ for Pt based on the Drude (D), Lorentz-Drude (LD), and Brendel-Bormann (BB) models.}
 \end{figure}
 \clearpage
