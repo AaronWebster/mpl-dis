@@ -1,0 +1,16 @@
+Tue Nov 13 15:35:23 CET 2012
+
+How these plots are made:
+
+Each directory has its own complete set of scripts.  It's redundant, but I
+don't care.  To use, first decend into a single directory.  Run
+./findparams.py, which finds the minimum reflectivity for angle and metal
+thickness for the fresnel three layer system.  Put the output of this to
+the head of fftwiggles.m.  Make sure it converges on an ideal result, as
+sometimes it gets caught up and converges on a minimum thickenss of 0
+(WRONG!).  
+
+Once this is done, make sure that the file fresnelpropagate.tex has the
+correct directory definition.
+
+Last, run ./mkdats.m, which will make all the data files.
