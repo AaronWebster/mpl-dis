@@ -1,0 +1,24 @@
+\begin{align}
+ f(x)=\sqrt{x^2+z^2}-\sqrt{\left(x+\delta\right)^2+z^2}
+\end{align}
+\begin{align}
+ \lim_{x \to 0} f(x)
+ &= \lim_{x \to 0} \sqrt{x^2+z^2}-\sqrt{\left(x+\delta\right)^2+z^2} \\
+ &= z-\sqrt{\delta^2+z^2}
+\end{align}
+
+For $\delta \ll z$, the limit is $0$.
+
+\begin{align}
+ \lim_{x \to \infty}f(x)
+ &=\lim_{x \to \infty}\sqrt{x^2+z^2}-\sqrt{(x+\delta)^2+z^2} \\
+ &= \lim_{x \to \infty}\frac{\left(\sqrt{x^2+z^2}-\sqrt{\left(x+\delta\right)^2+z^2}\right)\left(\sqrt{x^2+z^2}+\sqrt{\left(x+\delta\right)^2+z^2}\right)}
+ {\sqrt{x^2+z^2}+\sqrt{\left(x+\delta\right)^2+z^2}}\\
+ &= \lim_{x \to \infty}\frac{-2\delta}
+ {\sqrt{x^2+z^2}+\sqrt{\left(x+\delta\right)^2+z^2}}\\
+ &=\lim_{x \to \infty}\frac{x}{|x|}\frac{-\frac{\delta^2}{x}-2\delta}
+ {\sqrt{1+\frac{z^2}{x^2}}+\sqrt{1+\frac{z^2}{x^2}+\frac{2\delta}{x}+\frac{\delta^2}{x^2}}}\\
+ &=\frac{-2\delta}{\sqrt{1}+\sqrt{1}}\\
+ &=-\delta
+\end{align}
+
