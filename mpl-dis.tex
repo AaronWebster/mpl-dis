@@ -28,7 +28,7 @@ in partial fulfillment of the requirements\\
 for the degree of\\
 Doctor of Philosophy\\
 \vspace{0.5cm}
-0x3F Xanus, 13012
+\today
 \end{center}
 \end{titlepage}
 
@@ -66,17 +66,13 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 \begin{abstract}
 Biosensors based on surface plasmon resonance continue to attract
 attention as a simple and remarkably responsive label-free method for
-interrogating biomolecular interactions.  Perhaps the most popular
-platforms guided by this principle are those which excite localized surface
-plasmons using thin metal films in prism coupled configurations.  These
-platforms, despite their ubiquity and commercial success, are host to an
-amazing depth of phenomena which has to this date received little to no
-attention. ETC.
+interrogating biomolecular interactions. 
 \end{abstract}
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
-%\input{wigglessens/writeup}
+% acknowlegements
+
 \input{speckle/speckle}
 \newcommand{\fresnelpropzA}{}
 \newcommand{\fresnelpropzB}{}
@@ -88,96 +84,43 @@ attention. ETC.
 \newcommand{\fresnelpropzH}{}
 \newcommand{\fresnelpropbasedir}{}
 
-%\input{wigglespropagate/lah79-ag-air-633/fresnelpropagate}
-%\input{wigglespropagate/lah79-ag-air-1050/fresnelpropagate}
+\section{}
+% whatever you've been doing with gregory
 
-%\input{wigglespropagate/lah79-au-air-633/fresnelpropagate}
-%\input{wigglespropagate/lah79-au-air-1050/fresnelpropagate}
+\section{}
+% long range surface plasmons
 
-%\input{wigglespropagate/lah79-ag-h2o-633/fresnelpropagate}
-%\input{wigglespropagate/lah79-ag-h2o-1050/fresnelpropagate}
+\section{}
+% wiggles, fourier optics
 
-%\input{wigglespropagate/lah79-au-h2o-633/fresnelpropagate}
-%\input{wigglespropagate/lah79-au-h2o-1050/fresnelpropagate}
-
-%% 
-
-%\input{wigglespropagate/bk7-ag-air-633/fresnelpropagate}
-%\input{wigglespropagate/bk7-ag-air-1050/fresnelpropagate}
-
-%\input{wigglespropagate/bk7-au-air-633/fresnelpropagate}
-%\input{wigglespropagate/bk7-au-air-1050/fresnelpropagate}
-
-%\input{wigglespropagate/bk7-ag-h2o-633/fresnelpropagate}
-%\input{wigglespropagate/bk7-ag-h2o-1050/fresnelpropagate}
-
-%\input{wigglespropagate/bk7-au-h2o-633/fresnelpropagate}
-%\input{wigglespropagate/bk7-au-h2o-1050/fresnelpropagate}
-
-%\input{eps_plots/allmetals}
-%%%%% Part I - Overview
-%\chapter{Overview}
-%\label{ch:overview}
-%\input{introduction}
-%\section{Historical Perspective}
-%\label{sec:review}
-%\input{history/history}
-%\section{Plane Wave Solutions to Maxwell's Equations}
-%\input{maxwell/maxwell}
-%\section{Dispersion Relation}
-%\input{dispersion/dispersion}
-%\subsection{Spatial Extension of the SPP Field}
-%\input{dispersion/spatial}
-%\subsection{Resonance Condition}
-%\input{dispersion/resonance}
-%\section{Fresnel Relations}
-%\input{fresnel/fresnel}
-%\section{The Fourier Optics Perspective of SPR}
-%\input{perspective}
-%\input{fresnel/fresnelpropagate}
-%%%\section{Interrogation Methods}
-%%%\input{sensitivity}
-%%%Intensity, angular, wavelength
-
-%% Part III - My Progress
-%\chapter{Summary of Progress}
-%\label{ch:summary}
-%\input{summary}
-%\section{Datasets}
-%\input{theoretical}
-%\section{Experiment}
-%\input{experiment/experiment}
-%\section{One Sided Oscillations in Reflected and Scattered Light}
-%\input{experiment/spdiscussion}
 %\section{Bulk Index Sensitivity}
-%\input{experiment/sens}
-%\section{Miscellaneous}
-%\subsection{High Dynamic Range Imaging}
-%\input{hdr/hdr}
-%\subsection{Microfluidics}
-%\input{microfluidics/microfluidics}
-%\subsection{Probe Tips}
-%\input{tip/tip}
-%
-%%%% Part IV - Future Research
-%\chapter{Future Research}
-%\label{ch:future}
-%\input{future/future}
+% We show experimentally and theoretically that the wiggles don't have
+% really that much to offer in terms of bulk sensitivity
 
-%\bibliographystyle{plain}
-%\bibliography{imprs_minithesis}
+\section{}
+% Motion of a single scatterer
 
-% publication list
-% acknowlegements
-%%\appendix
-%%\section{Physical Properties of SPP Propagation at a Metal-Air Interface at $\lambda_0=\SI{632.8}{\nano\meter}$}
-%%\label{sec:spptable}
-%%\input{dispersion/sptable_632.tex}
-%%\section{Material Parameters for Metal Films}
-%%\label{sec:drudemetals}
-%%\input{drude/allmetals}
-%%\section{Three Layer Fresnel Data}
-%%\label{sec:threelayerfresnel}
-%%\input{fresnel/allthreelayerfresnel}
-%\input{abbreviations}
+\subsection{Microfluidics}
+% fabrication methods
+
+\chapter{Outlook}
+\label{ch:outlook}
+
+\bibliographystyle{plain}
+\bibliography{mpl-dis}
+
+\appendix
+\section{Physical Properties of SPP Propagation at a Metal-Air Interface at $\lambda_0=\SI{632.8}{\nano\meter}$}
+
+\input{dispersion/sptable_632.tex}
+\section{Material Parameters for Metal Films}
+\label{sec:drudemetals}
+\input{drude/allmetals}
+
+\section{Three Layer Fresnel Data}
+\label{sec:threelayerfresnel}
+\input{fresnel/allthreelayerfresnel}
+
+\section{Abbreviations}
+\input{abbreviations}
 \end{document}
