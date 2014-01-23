@@ -60,8 +60,8 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 
 \newpage
 \chapter*{Acknowledgements}
-Special thanks to X, Y, and Z for supporting me.  And thank god for
-nothing, because I paid for this myself.
+% thank gregory
+% 
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -74,7 +74,23 @@ nothing, because I paid for this myself.
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
-% first thing I want to do is talk about preliminaries
+\chapter{Foundations}
+\section{Historical Perspective}
+\import{/}{history}
+
+\chapter{Interference}
+\section{The Fourier Optics Perspective}
+\section{Bulk Sensitivity}
+\subsection{Angular Interogation}
+\subsection{Intensity Interrogation}
+\subsection{Minimum Resolvable Shift}
+
+
+\chapter{Multiple Scattering of SPPs}
+\section{Speckle}
+
+\chapter{The Moving Scatterer Problem}
+\section{Reverse Mapping}
 
 %\begin{figure}
 %\import{tmp/}{drawing.pdf_tex}
@@ -84,16 +100,23 @@ nothing, because I paid for this myself.
 \bibliography{bibliography}
 
 \appendix
-\section{Physical Properties of SPP Propagation at a Metal-Air Interface at $\lambda_0=\SI{632.8}{\nano\meter}$}
+\chapter{Protocols}
+\section{Sputtering}
+\section{Functionalizing Nanoparticles}
+\section{Microfluidics}
 
-%\input{dispersion/sptable_632.tex}
-%\section{Material Parameters for Metal Films}
-%\label{sec:drudemetals}
-%\input{drude/allmetals}
+\chapter{Reference Data}
 
-%\section{Three Layer Fresnel Data}
-%\label{sec:threelayerfresnel}
-%\input{fresnel/allthreelayerfresnel}
+\section{Physical Properties of SPP Propagation}
+%\import{dispersion/}{sptable_632.tex}
+
+\section{The Three Layer Fresnel System}
+%% you will have to fix the path in the following file
+%\import{fresnel_plots/}{allthreelayerfresnel}
+
+\section{Complex Permittivities and Permiabilities of Metals}
+%\import{eps_plots/}{allmetals}
+
 
 \section{Abbreviations}
 %\input{abbreviations}
