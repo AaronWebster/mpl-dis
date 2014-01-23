@@ -1,0 +1,46 @@
+foundations
+ historical perspective
+ kretschmann configuration
+ specular and conically scattered light
+ fresnel equations
+ tmm method
+
+surface plasmon polartion interference
+ fourier optics picture
+ bulk sensitivity
+	bulk sensitivity of the cone
+	bulk sensitivity of the wiggles
+
+multiple scattering
+ speckle
+  statisics of speckle
+  single scattering speckle
+  multiple scattering speckle
+ coherent backscattering cone
+ the moving scatterer problem
+ the add one scatterer problem
+
+long range surface plasmons
+
+weirdospace simulations
+
+protocols
+ sputtering
+ functionalizing nanoparticles
+ microfluidics
+
+-- appendix --
+
+reference data
+ physical properties of SPP propagation
+ three layer fresnel equations
+ complex permittivities and permiabilities of metals
+
+abbreviations
+
+misc results
+============
+3 layer kretch calculations, the 3d plots
+
+calculate contrast with gregory stuff
+reverse mapping gregory
