@@ -58,31 +58,74 @@ University Erlangen-N\"urnberg\\
 G\"unther-Scharowsky-Str.1 / Bau 24\\
 91058 Erlangen
 
+\newpage
+\chapter*{Acknowledgements}
+Special thanks to X, Y, and Z for supporting me.  And thank god for
+nothing, because I paid for this myself.
+
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
 \tableofcontents
 
 %%%%% ABSTRACT %%%%%
 \begin{abstract}
-Biosensors based on surface plasmon resonance continue to attract
-attention as a simple and remarkably responsive label-free method for
-interrogating biomolecular interactions. 
+(abstract is written last)
 \end{abstract}
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
-% acknowlegements
+% first thing I want to do is talk about preliminaries
 
-\input{speckle/speckle}
-\newcommand{\fresnelpropzA}{}
-\newcommand{\fresnelpropzB}{}
-\newcommand{\fresnelpropzC}{}
-\newcommand{\fresnelpropzD}{}
-\newcommand{\fresnelpropzE}{}
-\newcommand{\fresnelpropzF}{}
-\newcommand{\fresnelpropzG}{}
-\newcommand{\fresnelpropzH}{}
-\newcommand{\fresnelpropbasedir}{}
+foundations
+ historical perspective
+ kretschmann configuration
+ fresnel equations
+ tmm method
+ specular and conically scattered light
+
+multiple scattering
+ speckle
+  statisics of speckle
+  single scattering speckle
+  multiple scattering speckle
+ coherent backscattering cone
+ the moving scatterer problem
+ the add one scatterer problem
+
+bulk sensitivity of the cone
+bulk sensitivity of the wiggles
+
+long range surface plasmons
+
+weirdospace
+
+protocols
+ sputtering
+ functionalizing nanoparticles
+ microfluidics
+
+reference data
+ physical properties of SPP propagation
+ three layer fresnel equations
+ complex permittivities and permiabilities of metals
+
+
+\import{}
+
+%\begin{figure}
+%\import{tmp/}{drawing.pdf_tex}
+%\end{figure}
+
+%\input{speckle/speckle}
+%\newcommand{\fresnelpropzA}{}
+%\newcommand{\fresnelpropzB}{}
+%\newcommand{\fresnelpropzC}{}
+%\newcommand{\fresnelpropzD}{}
+%\newcommand{\fresnelpropzE}{}
+%\newcommand{\fresnelpropzF}{}
+%\newcommand{\fresnelpropzG}{}
+%\newcommand{\fresnelpropzH}{}
+%\newcommand{\fresnelpropbasedir}{}
 
 \section{}
 % whatever you've been doing with gregory
@@ -107,20 +150,20 @@ interrogating biomolecular interactions.
 \label{ch:outlook}
 
 \bibliographystyle{plain}
-\bibliography{mpl-dis}
+\bibliography{bibliography}
 
 \appendix
 \section{Physical Properties of SPP Propagation at a Metal-Air Interface at $\lambda_0=\SI{632.8}{\nano\meter}$}
 
-\input{dispersion/sptable_632.tex}
-\section{Material Parameters for Metal Films}
-\label{sec:drudemetals}
-\input{drude/allmetals}
+%\input{dispersion/sptable_632.tex}
+%\section{Material Parameters for Metal Films}
+%\label{sec:drudemetals}
+%\input{drude/allmetals}
 
-\section{Three Layer Fresnel Data}
-\label{sec:threelayerfresnel}
-\input{fresnel/allthreelayerfresnel}
+%\section{Three Layer Fresnel Data}
+%\label{sec:threelayerfresnel}
+%\input{fresnel/allthreelayerfresnel}
 
 \section{Abbreviations}
-\input{abbreviations}
+%\input{abbreviations}
 \end{document}

@@ -1,27 +1,20 @@
+\usepackage{t1enc}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{import}
 \usepackage{amsmath}
-\usepackage{graphicx} % required for pdf transparency
-\usepackage{xcolor} % required for pdf transparency
-\usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{paralist}
 \usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{subfigure}
-\usepackage{mathrsfs}
-\usepackage{textcomp}
-\usepackage{siunitx}
-\usepackage{fullpage}
-\usepackage[multiple]{footmisc}
-\usepackage{hyperref}
-\usepackage{multirow}
-\usepackage{empheq}
-\usepackage{calc}
 \usepackage[version=3]{mhchem}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{mathrsfs}
 \usepackage{tikz}
-\usepackage{pgfplots}
 \usepackage{xcolor}
-\usepackage[section]{placeins}
-\pgfplotsset{compat=newest}
-
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{datetime}
 
 %\hypersetup{
 % colorlinks=false,
@@ -29,11 +22,6 @@
 % citebordercolor={1 1 1},
 % urlbordercolor={1 1 1} 
 %}
-
-\sisetup{ 
-% load-configurations=abbreviations
-% round-mode = places,
-}%
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -98,6 +86,12 @@
 \newlength{\oneupheight}
 \setlength{\oneupheight}{0.55623059\textwidth}
 
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units}
+\usetikzlibrary{calc}
+
 % custom colors for 2D plots - these are the same ones mathematica uses by
 % default
 \definecolor{colora}{RGB}{63,61,153}
@@ -111,25 +105,6 @@
 \definecolor{colori}{RGB}{61,121,153}
 \definecolor{colorj}{RGB}{132,61,153}
 
-% hilight text... a "work in progress" type thing
-\tikzstyle{todobox} = [draw=red, fill=blue!10, very thick,
-rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-\tikzstyle{todotitle} =[fill=red, text=white]
-
-\newcommand{\todo}[1]{%
-\begin{center}
-\begin{tikzpicture}
-\node [todobox] (box){%
- \begin{minipage}{0.9\textwidth}
- #1
- \end{minipage}
-};
-\node[todotitle, right=10pt] at (box.north west) {To Do:};
-\end{tikzpicture}
-\end{center}
-
-}
-
 \pgfplotsset{
  /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255)
  rgb255(3cm)=(0,255,255) rgb255(5cm)=(255,255,0) rgb255(7cm)=(255,0,0)
@@ -137,4 +112,13 @@ rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
 }
 \usepgfplotslibrary{units}
 \usetikzlibrary{pgfplots.units} 
+
+\usepackage{siunitx}
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{M}}
+
+\sisetup{ 
+% load-configurations=abbreviations
+% round-mode = places,
+}%
 
