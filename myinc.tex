@@ -15,14 +15,15 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{datetime}
-\usepackage{fullpage}
+%\usepackage{fullpage}
+\usepackage{hyperref}
 
-%\hypersetup{
-% colorlinks=false,
-% linkbordercolor={1 1 1},
-% citebordercolor={1 1 1},
-% urlbordercolor={1 1 1} 
-%}
+\hypersetup{
+ colorlinks=true,
+ citecolor=black,
+ linkcolor=black,
+ pdftitle={Interference and Scattering in Surface Plasmon Resonance}
+}
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -95,16 +96,6 @@
 
 % custom colors for 2D plots - these are the same ones mathematica uses by
 % default
-\definecolor{colora}{RGB}{63,61,153}
-\definecolor{colorb}{RGB}{153,61,113}
-\definecolor{colorc}{RGB}{153,139,61}
-\definecolor{colord}{RGB}{61,153,86}
-\definecolor{colore}{RGB}{61,90,153}
-\definecolor{colorf}{RGB}{153,61,144}
-\definecolor{colorg}{RGB}{153,109,61}
-\definecolor{colorh}{RGB}{67,153,61}
-\definecolor{colori}{RGB}{61,121,153}
-\definecolor{colorj}{RGB}{132,61,153}
 
 \pgfplotsset{
  /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255)
@@ -123,3 +114,4 @@
 % round-mode = places,
 }%
 
+\import{colors/}{colors}
