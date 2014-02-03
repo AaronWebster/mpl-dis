@@ -60,8 +60,16 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 
 \newpage
 \chapter*{Acknowledgements}
-% thank gregory
-% 
+The author would like to extend the following thanks
+
+\begin{itemize}
+\item to Jiapeng Huang for his enthusiasm and hard work in carrying out
+many tedious but necessary experiments.
+\item to Yuqiang Wu for determining out the proper protocols regarding the use
+of DNA origami.
+\item and to Stephen Gregory and R.P. Schumann whose pioneering work
+inspired this dissertation.
+\end{itemize}
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -76,20 +84,92 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 
 \chapter{Foundations}
 \section{Historical Perspective}
-\import{/}{history}
+The theoretical groundwork for the existence of surface plasmon polaritons
+(SPPs) was first introduced by Richie in his seminal 1957 paper
+\textit{Plasma Losses by Fast Electrons in Thin Films}
+\cite{ritchie1957plasma}.  Like any scientific work, Richie's was
+incremental and has its roots in earlier theoretical proposals by Pines and
+Bohm~\cite{bohm1951collective}~\cite{pines1952collective}.  Ultimately this
+research functioned to explain the phenomena of sharp and spectrally narrow
+energy losses observed in diffraction gratings by Wood in 1902, known as
+``Wood's anomaly''.
+
+Optical excitation of surface plasmons was made accessible through
+pioneering work in the late 1960's by Kretschmann~\cite{kretschmann1968},
+Raether~\cite{raether1965springer} and Otto~\cite{otto1968excitation}.
+These experiments used the principle of attenuated total reflection (ATR)
+to excite surface plasmons evanescently, using a prism to match their
+resonance condition.  A great deal of understanding on the topic of surface
+plasmons took place in the subsequent decade, such as an improved
+theoretical understanding based on Fresnel relations
+\cite{chen1976excitation} and descriptions of of conically scattered light
+in the presence of surface roughness~\cite{simon1976directional}.  A
+concise overview of this research can be found in~\cite{raether1997surface}.
+
+The introduction of SPR as a biosensing platform began in the early 1980's
+with work by Liedberg, Nylander and Lundstrom~\cite{liedberg1983surface}
+who described the extraordinary sensitivity of the surface plasmon
+resonance condition to perturbations in the refractive index of the medium
+on one side of the film.  The subsequent commercialization of SPR
+biosensors has largely been influenced by these authors and Pharmacia
+Biosensor AB (now Biacore)~\cite{liedberg1995biosensing}.
+
+The commercial success of biosensors based on surface plasmon resonance
+seems to have brought about a knowledge gap between the biosensing
+community and their more theoretical predecessors from whom the field owes
+its genesis.  This is to say that the scope of SPR biosensing experiments
+is disproportionately narrower than the breadth of phenomena discovered
+since Richie.  As an example particular to this dissertation, in 2005 and
+2007, two papers~\cite{andaloro2005optical}~\cite{simon2007observation}
+based on theoretical work by Chuang~\cite{chuang1986lateral} and Chen
+\cite{chen1976excitation} reported a curious interference pattern occurring
+in the specularly reflected light for certain (among them,
+Kretschmann-Raether type) systems illuminated with focused Gaussian beams.
+This was also independently reported a year later in
+\cite{schumann2008near}.  Interestingly, observation of this interference
+required nothing more than the addition of a lens pair to a fairly
+ubiquitous optical setup, but it somehow escaped attention during earlier
+research.  
+
+Many of the topics here are inspired by work done at the University of
+Oregon in the labratory of Stephen Gregory, summarized in a 2009 thesis
+{\it Surface Plasmon Random Scattering and Related Phenomena}
+\cite{schumann2009surface} by R.P. Schumann.  Here is described experiments
+performed on thin metal films in a Kretschmann-Raether configuration with
+the addition of a scanning apertureless near-field probe.  This probe (a
+sharp tungsten tip) is able to elastically scatter SPPs in a way analogous
+to surface roughness, but in this case its location and interaction can be
+precisely controlled.  
+
+\section{Surface Plasmon Polaritons}
+The physics of surface plasmon polaritions has been the the topic of many
+excellent publications. I will therefore present a minimalist theoretical
+description of SPPs and relevant mathematics for predicting their behavior
+in multilayer systems.
+\section{The Kretschmann Configuration}
+\section{Conically Scattered Light}
 
 \chapter{Interference}
+Surface plasmon resonance is in of itself an interference phenomena: the
+dark band in the specular direction is due to interference between
+specularly reflected light and the re-radiated SPPs which are likewise
+antiphase at the SPR resonance angle.  There is, however, a more rich 
+interference structure which can observed when using a focussed beam whose
+spot size is smaller than the SPP propagation distance. 
+
 \section{The Fourier Optics Perspective}
 \section{Bulk Sensitivity}
 \subsection{Angular Interogation}
 \subsection{Intensity Interrogation}
 \subsection{Minimum Resolvable Shift}
 
-
 \chapter{Multiple Scattering of SPPs}
 \section{Speckle}
+\section{Optical Vorticies}
+% pseudophase algorithm
 
 \chapter{The Moving Scatterer Problem}
+\section{Weirdospace}
 \section{Reverse Mapping}
 
 %\import{wiggles/}{fig2}
@@ -125,7 +205,19 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 \section{Abbreviations}
 %\input{abbreviations}
 
+\chapter{Miscellaneous}
 \section{Colophon}
-% what programs you used in various simulations
-% say that you used latex or whatever, done in linux, vim or whatever
+This document was typeset using \pdfTeX {\verb 3.1415926-2.5-1.40.14}. All
+plots were rendered using pgfplots~\cite{feuersangerpgfplots} with styles influenced by
+Eduard Tufte~\cite{tufte1983visual}~\cite{tufte1983visual}. Colors were chosen
+from datasets researched by Jan Brewer~\cite{harrower2003colorbrewer}.
+Schematics and other line drawings were prepared using Inkscape. Generation
+of text was done under Arch Linux using \texttt{vim}.  Some tables were
+pre-processed using LyX.
+
+The Monte Carlo simulations were written in \texttt{c} with pararallelism
+accomplished using \texttt{mpi}. The vortex tracking and image processing
+algorithms were written in \texttt{octave}. Parallel execution was done at 
+at the FAU RRZE, Erlangen, Germany.
+
 \end{document}
