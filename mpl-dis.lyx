@@ -160,536 +160,57 @@ ts using biomolecular targets.
 Overview
 \end_layout
 
-\begin_layout Standard
-A photon is a quantized oscillation of an electromagnetic field.
- When this field is in proximity to an interface such as the surface of
- a metal, oscillations of free charge can be induced.
- If the field is evanescent in both directions orthogonal to the surface,
- the oscillations become localized and are known as surface plasmons (SPs).
- Furthermore, if conditions exist such that the in-plane momentum and phase
- of the incident photon and the surface plasmon match, the coupling produces
- a hybrid excitation known as surface plasmon polariton (SPP).
- An SPP is trapped on this interface and propagates until it decays; either
- re-radiating as a photon or being absorbed into the metal as heat.
-\end_layout
-
-\begin_layout Standard
-SPPs, like photons, are quantum mechanical objects.
- Because this system is largely momentum-conserving, elastically scattered
- plasmons will preserve all the information of their parent field.
- This will be an important point when investigating the conically scattered
- light from this system.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-paragraph here about how the thesis is structured
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Historical Perspective
-\end_layout
-
-\begin_layout Standard
-The theoretical groundwork for the existence of surface plasmon polaritons
- (SPPs) was first introduced by Richie in his seminal 1957 paper 
-\shape italic
-Plasma Losses by Fast Electrons in Thin Films
-\shape default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ritchie1957plasma"
-
-\end_inset
-
-.
- Like any scientific work, Richie's was incremental and has its roots in
- earlier theoretical proposals by Pines and Bohm 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bohm1951collective"
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "pines1952collective"
-
-\end_inset
-
-.
- Ultimately this research functioned to explain the phenomena of sharp and
- spectrally narrow energy losses observed in diffraction gratings by Wood
- in 1902, known as 
-\begin_inset Quotes eld
-\end_inset
-
-Wood's anomaly
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Optical excitation of surface plasmons was made accessible through pioneering
- work in the late 1960's by Kretschmann 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kretschmann1968"
-
-\end_inset
-
-, Raether 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "raether1965springer"
-
-\end_inset
-
- and Otto 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "otto1968excitation"
-
-\end_inset
-
-.
- These experiments used the principle of attenuated total reflection (ATR)
- to excite surface plasmons evanescently, using a prism to match their resonance
- condition.
- A great deal of understanding on the topic of surface plasmons took place
- in the subsequent decade, such as an improved theoretical understanding
- based on Fresnel relations 
-\backslash
-cite{chen1976excitation} and descriptions of of conically scattered light
- in the presence of surface roughness 
-\backslash
-cite{simon1976directional}.
- A concise overview of this research can be found in 
-\backslash
-cite{raether1997surface}.
-\end_layout
-
-\begin_layout Standard
-The introduction of SPR as a biosensing platform began in the early 1980's
- with work by Liedberg, Nylander and Lundstrom 
-\backslash
-cite{liedberg1983surface} who described the extraordinary sensitivity of
- the surface plasmon resonance condition to perturbations in the refractive
- index of the medium on one side of the film.
- The subsequent commercialization of SPR biosensors has largely been influenced
- by these authors and Pharmacia Biosensor AB (now Biacore) 
-\backslash
-cite{liedberg1995biosensing}.
-\end_layout
-
-\begin_layout Standard
-The commercial success of biosensors based on surface plasmon resonance
- seems to have brought about a knowledge gap between the biosensing community
- and their more theoretical predecessors from whom the field owes its genesis.
- This is to say that the scope of SPR biosensing experiments is disproportionate
-ly narrower than the breadth of phenomena discovered since Richie.
- As an example particular to this minithesis, in 2005 and 2007, two papers
- 
-\backslash
-cite{andaloro2005optical} 
-\backslash
-cite{simon2007observation} based on theoretical work by Chuang 
-\backslash
-cite{chuang1986lateral} and Chen 
-\backslash
-cite{chen1976excitation} reported a curious interference pattern occurring
- in the specularly reflected light for certain (among them, Kretschmann-Raether
- type) systems illuminated with focused Gaussian beams.
- This was also independently reported a year later in 
-\backslash
-cite{schumann2008near}.
- Interestingly, observation of this interference required nothing more than
- the addition of a lens pair to a fairly ubiquitous optical setup, but it
- somehow escaped attention during earlier research.
- In this thesis, we have observed the same phenomena, but by considering
- conically scattered light have arrived on a different description as to
- its origin.
-\end_layout
-
-\begin_layout Standard
-Many of the topics here are influenced by a 2009 thesis 
-\emph on
-Surface Plasmon Random Scattering and Related Phenomena
-\emph default
- 
-\backslash
-cite{schumann2009surface} by 
-\noun on
-R.P.
- Schumann
-\noun default
-.
- Here, the author describes experiments performed on thin metal films in
- a Kretschmann-Raether configuration with the addition of a scanning of
- an apertureless near-field probe.
- This probe (a sharp tungsten tip) is able to elastically scatter SPPs in
- a way analogous to surface roughness, but in this case its location and
- interaction can be precisely controlled.
- By observing the way light is scattered relative to the position of the
- probe it is possible to, among other things, modify the resonance condition
- in-situ.
-\end_layout
-
-\begin_layout Section
-Significance
-\end_layout
-
-\begin_layout Section
-Fresnel Relations
-\end_layout
-
-\begin_layout Subsection
-Transfer Matrix Method
-\end_layout
-
-\begin_layout Subsection
-Conically Scattered Light
-\end_layout
-
-\begin_layout Section
-The Kretchmann Configuration
-\end_layout
-
-\begin_layout Section
-The Fourier Optics Perspective of SPR
-\end_layout
-
 \begin_layout Chapter
-Wiggles
+Appendix
 \end_layout
 
 \begin_layout Section
-Bulk Sensitivity
-\end_layout
-
-\begin_layout Chapter
-Weirdospace
+Colophon
 \end_layout
 
 \begin_layout Standard
-speckle
-\end_layout
-
-\begin_layout Chapter
-Long Range Surface Plasmons
-\end_layout
+This dissertation was typeset using 
+\begin_inset Preview
 
 \begin_layout Standard
-It's possible to make LRSPR using bragg stacks
-\end_layout
-
-\begin_layout Chapter
-Protocols
-\end_layout
-
-\begin_layout Section
-Functionalization of Thiolated DNA to Gold Nanoparticles
-\end_layout
-
-\begin_layout Standard
-Gold nanoparticles (AuNPs)
-\end_layout
-
-\begin_layout Section
-Sputtering
-\end_layout
-
-\begin_layout Section
-Microfluidics
-\end_layout
-
-\begin_layout Standard
-In preparation for future biosensing experiments, investigations regarding
- the fabrication and interfacing of microfluidic devices were carried out.
- These devices allow a very small volume of a fluid or gas introduced into
- the SPR sensor.
- In addition to its convenience, the small volumes employed work to reduce
- noise due to thermal fluctuations and diffusion.
- The microfluidics are fabricated by pouring a curable polymer over a planar
- mold containing raised features.
- When the cured polymer is removed and adhered to another surface, the raised
- features become small channels in which a target can flow.
-\end_layout
-
-\begin_layout Subsection
-Mold Fabrication
-\end_layout
-
-\begin_layout Standard
-In contrast to the more typically used SU-8 on silicon soft lithography
- technique, two much simpler methods were explored to fabricate the channel
- molds.
- The first method is the simplest: a small piece of 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
+pdf
 \backslash
-SI{100}{
-\backslash
-micro
-\backslash
-meter}
+LaTeX
 \end_layout
 
 \end_inset
 
- thick Kapton
-\begin_inset Foot
-status open
 
-\begin_layout Plain Layout
-DuPont Kapton FN polyimide film
-\end_layout
-
-\end_inset
-
- tape is adhered smoothly on a glass slide.
- The tape is then cut away using a scalpel to form the desired channel length.
- This method is quick and reliable as long as the desired feature sizes
- are greater than the mean free path of ones hand when holding a scalpel.
-\end_layout
-
-\begin_layout Standard
-The second method used features designed on a computer and printed onto
- a clean transparency film using a laser printer.
- The raised features of the fused toner on the transparency formed the channels.
- This method produced excellent results for the feature sizes of interest
- (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-sim 
-\backslash
-SI{1}{
-\backslash
-milli
-\backslash
-meter}$
-\end_layout
-
-\end_inset
-
-).
- When using this method, due to the temperature sensitivity of the transparency
- films, the curing temperature was reduced to 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{80}{
-\backslash
-celsius}
-\end_layout
-
-\end_inset
-
- and the time increased to 
-\backslash
-SI{3}{
-\backslash
-hour}.
-\end_layout
-
-\begin_layout Subsection
-PDMS
-\end_layout
-
-\begin_layout Standard
-Polydimethylsiloxane (PDMS), was chosen to fabricate the microfluidic channels.
- PDMS is a bio-compatible organosilicon compound obtained as a two part
- elastomer kit
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Dow Corning Sylgard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textregistered
-\end_layout
-
-\end_inset
-
- 184
 \end_layout
 
 \end_inset
 
 .
- The two part liquid is combined in a 10:1 ratio by mass in a small Pyrex
- beaker.
- The correct proportions are determined by an analytical balance to a precision
- of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{0.01}{
-\backslash
-gram}
-\end_layout
-
-\end_inset
-
-.
- They are then mixed together by hand with a stainless steel stir paddle
- for 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{5}{
-\backslash
-minute}
-\end_layout
-
-\end_inset
-
-.
- In another shallow beaker, the prepared mold is placed flat along the bottom.
- The liquid PDMS mixture is then poured on top of the mold in a second beaker.
- This beaker is transferred to a vacuum bell jar where it remains until
- all dissolved gasses have been removed.
- The beaker is then transferred to an oven and baked for 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{20}{
-\backslash
-minute}
-\end_layout
-
-\end_inset
-
- at 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{120}{
-\backslash
-celsius}
-\end_layout
-
-\end_inset
-
-.
- Once removed, the cured PDMS is cut free from the mold using a sharp scalpel
- and transferred to a clean glass slide where it is stored in a dust free
- environment until use.
-\end_layout
-
-\begin_layout Subsection
-Interfacing
+ All two dimensional plots were rendered using pgfplots with styles influenced
+ by prettyplotlib and the works of Eduard Tufte.
+ Colors were chosen from datasets researched by Jan Brewer.
+ Schematics and other line drawings were prepared using Inkscape.
+ Writing done in Linux using Vim.
 \end_layout
 
 \begin_layout Standard
-Small diameter 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{1}{
-\backslash
-milli
-\backslash
-meter}
-\end_layout
-
-\end_inset
-
- silicone tubing is used to interface the microfluidic device to the outside
- world.
- Once the PDMS is cured, small holes are made at specific locations using
- a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{1}{
-\backslash
-milli
-\backslash
-meter}
-\end_layout
-
-\end_inset
-
- OD biopsy punch.
- The tubing is inserted into the hole using tweezers, and a small amount
- of uncured PDMS is added to the external portion of the device as a sealant.
+The Monte Carlo simulations were written in 
+\family typewriter
+c
+\family default
+ with pararallelism accomplished using 
+\family typewriter
+mpi
+\family default
+.
+ The vortex tracking and image processing algorithms were written in octave.
+ Parallell execution was done on the woody cluster at the RRZE, Erlangen.
  
-\end_layout
-
-\begin_layout Standard
-Adhering the finished device to the prism can be done in several ways.
- PDMS readily bonds to glass through plasma activated bonding, but this
- has the potential to oxidize a metal (silver) surface.
- If only a small amount of metal has been deposited on the prism, it may
- be protected from oxidization using a small piece of cured PDMS.
- It was also found that if the flow rate through the microfluidics is small
- enough, surface attraction alone between the PDMS and glass is enough to
- prevent leakage.
-\end_layout
-
-\begin_layout Standard
-As a cursory note, when handling PDMS or anything PDMS touches, a clean
- pair of nitrile gloves should be used.
- We observed that surfaces which had been touched with powder-free latex
- gloves could no longer be directly bonded.
- This anecdote seems to be prevalent in the literature, but no description
- of this mechanism is known to the authors.
 \end_layout
 
 \begin_layout Standard
