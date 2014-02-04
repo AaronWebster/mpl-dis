@@ -59,18 +59,9 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 91058 Erlangen
 
 \newpage
+%%%% ACKNOWLEDGEMENTS %%%%
 \chapter*{Acknowledgements}
-The author would like to extend the following thanks:
-
-\begin{itemize}
-\renewcommand\labelitemi{--}
-\item to Jiapeng Huang for his enthusiasm and hard work in carrying out
-many tedious but necessary experiments.
-\item to Yuqiang Wu for determining out the proper protocols regarding the use
-of DNA origami.
-\item and to Stephen Gregory and R.P. Schumann whose pioneering work
-inspired this dissertation.
-\end{itemize}
+I would like to extend my gratitude to the following individuals who helped me throughout this work: to Jiapeng Huang, for his enthusiasm and hard work in carrying out many tedious but necessary experiments, to Dr. Yuqiang Wu for determining out the proper protocols regarding the use of DNA origami, to Dr. Matthew Foreman for many insightful theoretical endevours, and to Professor Stephen Gregory and Dr. R.P. Schumann whose pioneering work inspired this dissertation.
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -133,9 +124,9 @@ ubiquitous optical setup, but it somehow escaped attention during earlier
 research.  
 
 Many of the topics here are inspired by work done at the University of
-Oregon in the labratory of Stephen Gregory, summarized in a 2009 thesis
+Oregon in the labratory of Prof. Stephen Gregory, summarized in a 2009 thesis
 {\it Surface Plasmon Random Scattering and Related Phenomena}
-\cite{schumann2009surface} by R.P. Schumann.  Here is described experiments
+\cite{schumann2009surface} by Dr. R.P. Schumann.  Here is described experiments
 performed on thin metal films in a Kretschmann-Raether configuration with
 the addition of a scanning apertureless near-field probe.  This probe (a
 sharp tungsten tip) is able to elastically scatter SPPs in a way analogous
@@ -143,30 +134,306 @@ to surface roughness, but in this case its location and interaction can be
 precisely controlled.  
 
 \section{Surface Plasmon Polaritons}
-The physics of surface plasmon polaritions has been the the topic of many
-excellent publications. I will therefore present a minimalist theoretical
-description of SPPs and relevant mathematics for predicting their behavior
-in multilayer systems.
+A photon is a quantized oscillation of an electromagnetic field.  When this
+field is in proximity to an interface such as the surface
+of a metal, oscillations of free charge can be induced.  If the field is
+evanescent in both directions orthogonal to the surface, the oscillations
+become localized and are known as surface plasmons (SPs).  Furthermore, if
+conditions exist such that the in-plane momentum and phase of the incident
+photon and the surface plasmon match, the coupling produces a hybrid
+excitation known as surface plasmon polariton (SPP).  An SPP is trapped on
+this interface and propagates until it decays; either re-radiating as a
+photon or being absorbed into the metal as heat.
+
+SPPs, like photons, are quantum mechanical objects.  Because this system is
+largely momentum-conserving, elastically scattered plasmons will preserve
+all the information of their parent field.
+
+There exist many excellent whatever on SPPs yada yada but we won't go into too much depth here.
+\subsection{Maxwell's Equations}
+Most of the relevant behavior of SPP propagation can be derived from the plane wave solutions to Maxwell's equations.
+\begin{align}
+\nabla\left(\nabla\cdot\mathbf{E}\right)-\nabla^2\mathbf{E}
+&=-\mu\frac{\partial}{\partial t}\left(\nabla \times \mathbf{H}\right)\\
+-\nabla^2\mathbf{E}&=-\mu\frac{\partial^2 \mathbf{D}}{\partial t^2}\\
+-\nabla^2\mathbf{E}&=-\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2}\\
+\left(\nabla^2-\mu\epsilon\frac{\partial^2}{\partial t^2}\right)\mathbf{E}&=0
+\label{eqn:ewe}
+\end{align}
+
+This is the electromagnetic wave equation in terms of the electric field.
+Choosing to solve this equation by separation of variables the following
+plane wave solutions can be obtained
+\begin{align}
+ \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k} \cdot \mathbf{r} - \omega t )}
+\label{eqn:planewaves}
+\end{align}
+where $k=\omega/c=\omega\sqrt{\epsilon\mu}$.  In this notation,
+$\mathbf{k}$ is the material specific vectorial wavenumber, $\mathbf{r}$ is the
+spatial position, $\omega$ is angular frequency, and $t$ is
+the dimension of time.
+The initial value is chosen with the vectorial constant $\mathbf{E}_0$.
+The magnetic field follows the same form
+\begin{align}
+ \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
+ \cdot \mathbf{r} - \omega t )}
+\end{align} 
+but it is orthogonal $\mathbf{E}$ by
+\begin{align}
+\mathbf{E} \times \mathbf{H} = 0
+\end{align}
+and the two are mutually orthogonal with the direction of propagation
+$\mathbf{k}$.
+
+\subsection{Resonance Condition}
+The resonance condition requires the dispersion relation for an
+incident photon intersect the dispersion relation for SPPs, matching both
+their in-plane momentum and phase.  This can be achieved by if the photon
+is indecent through a dielectric at an $\theta_\text{sp}$, causing its phase
+velocity $\omega/k_x$ to be reduced to  $\omega/k_x = c/(\sqrt{\epsilon_1}
+\sin \theta)$.  One simple and popular prism coupled configuration (the one
+which will be employed throughout this work) which is able to match these
+conditions is known as the Kretschmann attenuated total reflection (ATR)
+configuration, and is shown schematically in \Figure{fig:kretschmanngeo}.
+Here a thin ($\sim \SI{50}{\nano\meter}$) metal film is deposited on to the
+hypotenuse of a dielectric prism, and the totally internally reflected
+light evanescently excites SPPs.  The SPP resonance condition for this
+system is
+\begin{align}
+k_\text{sp}=k_0 \sqrt{\epsilon_1} \sin \theta_\text{sp} 
+\end{align}
+Note that practically this can only occur when both the width of the metal
+layer $d$ is less than the evanescent decay in that direction
+$\Im(1/k_{z,2})$ (causing the metal to be nearly transparent) and the
+incident light satisfies the condition for total internal reflection.  This 
+is approximately when
+\begin{align}
+\theta>\arcsin\left(\sqrt{\frac{\epsilon_1}{\epsilon_3}}\right)
+\end{align} 
+In practice the resonance angle $\theta_\text{sp}$ is most easily found by
+numerically evaluating the Fresnel relations discussed in the following
+section.
+
+\subsection{Fresnel Equations}
+With no loss of generality, analysis of the field in the specular direction
+is again restricted to the $x$-$z$ plane as shown in \Figure{fig:kretschmanngeo}.  The
+Fresnel reflection coefficient $\tilde{r}$ is defined as the ratio of the
+reflected beam $\tilde{E}_r$ to the incident beam
+$\tilde{E}_i$
+\begin{align}
+\tilde{r} &= \frac{\tilde{E}_r}{\tilde{E}_i}
+\end{align}
+Here the presence of a tilde $\sim$ indicates a function in the (spatial) frequency domain.
+For multilayer systems, this can be found through transfer matrix methods where the $i$th matrix $M_i$ is
+\begin{align}
+M_i = \left(\begin{array}{cc}
+\cos \sigma_i & \mi \sin \sigma_i / \gamma_i\\
+\mi \gamma_i \sin \sigma_i & \cos \sigma_i
+\end{array}\right)
+\label{eqn:tmm}
+\end{align}
+and the system matrix $M_s = M_1 M_2 \ldots M_{n-1} M_n$.  In the above
+representation
+\begin{align}
+\left.\begin{aligned}
+\gamma_i &= \sqrt{\epsilon_i} k_{z,i}\\
+\sigma_i &= k_{z,i} \sqrt{\epsilon_i} d_i
+\end{aligned}
+\right\}& \quad \text{for TE Polarization}\\
+\left.\begin{aligned}
+\gamma_i &= \sqrt{\epsilon_i}/k_{z,i}\\
+\sigma_i &= k_{z,i} \sqrt{\epsilon_i} d_i
+\end{aligned}
+\right\}& \quad \text{for TM Polarization}
+\end{align}
+The elements of the resulting elements of $M_s$, $M_{i,j}$ are then
+substituted into the formula
+\begin{align}
+\tilde{r}=
+\frac{\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} - M_{21} - \gamma_3 M_{22}}
+{\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} + M_{21} + \gamma_3 M_{22}}
+\end{align}
+Through a bit of algebra, the Fresnel reflection for an arbitrary number of
+layers in the case of TM polarization can be found to be
+\begin{align}
+\tilde{r}_{j,l,m \ldots n} = 
+\frac{\tilde{r}_{j,l} + \tilde{r}_{l,m \ldots n} \me^{2 \mi k_{z,l} d_l}}
+{1+\tilde{r}_{j,l} \tilde{r}_{l,m \ldots n} \me^{2 \mi k_{z,l} d_l}}
+\label{eqn:bertnlayer}
+\end{align}
+where $d_l$ is the thickness of the $l$th metal layer and 
+\begin{align}
+\tilde{r}_{i,j}&=
+\left.\left(\frac{k_{z,i}}{\epsilon_i}-\frac{k_{z,j}}{\epsilon_j}\right)
+\middle/
+\left(\frac{k_{z,i}}{\epsilon_i}+\frac{k_{z,j}}{\epsilon_j}\right)\right.\\
+&=\frac{\epsilon_j k_{z,i}-\epsilon_i k_{z,j}}
+{\epsilon_j k_{z,i}+\epsilon_i k_{z,j}}
+\end{align}
+is the two layer Fresnel relation.  \Equation{eqn:bertnlayer} may be
+recursively applied for any number of layers.  There are computational limits to this approach which make it unsuitable for large multilayer stacks; in such a case methods based on \Equation{eqn:tmm} are more appropriate.  Much more applicable is the three layer Fresnel reflectivity $\tilde{r}_{123}$, based on
+the geometry of \Figure{fig:kretschmanngeo}
+\begin{align}
+\tilde{r}_{123}(k_x) &=
+\frac{
+  (\epsilon_2 k_{z,1}+\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}-\epsilon_2 k_{z,3})
++ (\epsilon_2 k_{z,1}-\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}+\epsilon_2 k_{z,3})\,
+\me^{\mi 2 k_{z,2} d_2}
+}
+{
+  (\epsilon_2 k_{z,1}+\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}+\epsilon_2 k_{z,3})
++ (\epsilon_2 k_{z,1}-\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}-\epsilon_2 k_{z,3})\,
+\me^{\mi 2 k_{z,2} d_2}
+}\\
+&=
+\frac{\tilde{r}_{12}+\tilde{r}_{23}\, \me^{\mi 2 k_{z,2} d_2}} {1+\tilde{r}_{12} \tilde{r}_{23} \me^{\mi 2 k_{z,2} d_2}}
+\label{eqn:fresnel123}
+\end{align}
+Note that factor of two in the exponential: the SPP accumulates phase
+through the metal film twice (once upon excitation, another upon decay).
+In this equation, $k_{z,i}$ can be equivalently expressed either as a
+function of incident angle $\theta$ or $k_x$
+\begin{align}
+k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
+&= \sqrt{k_0^2\epsilon_i - k_x^2}
+\end{align}\begin{flushleft}\begin{center}\end{center}\end{flushleft}
 \section{The Kretschmann Configuration}
 \section{Conically Scattered Light}
+Light can be scattered into the cone, see the original paper by Kretschmann and the one that's paired with it... Matthew gave you both of them.
 \section{Long Range Surface Plasmon Polaritons}
-
+The typical propagation distances for SPPs in the three layer Kretschmann configuration are on the order of $\SI{30}{\micro\meter}$ for Ag films and $\SI{6}{\micro\meter}$ for Au films.  The reason for this is the electric field extends into the metal and the real part of the metal's dielectric function damps the SPP oscillation, causing it to decay as heat.  However, if we are able to expel the SPP evanescent field from the metal region, the propagation distances can be extended orders of magnitude.  These are called \textit{long range surface plasmon polaritons} (LRSPPs), and in terms of our geometry can be excited in one of two ways.
+\subsection{Symmetric Things}
+Cytop coating crap
+\subsection{Photonic Crystal Things}
 
 \chapter{Interference}
-Surface plasmon resonance is in of itself an interference phenomena: the
-dark band in the specular direction is due to interference between
+Don't say this, but maybe say something like it
+Surface plasmon resonance is in of itself an interference phenomena: the dark band in the specular direction is due to interference between
 specularly reflected light and the re-radiated SPP which is likewise
 antiphase at the SPR resonance angle.  There is, however, a more rich 
-interference structure which can observed when using a focussed beam whose
-spot size is smaller than the SPP propagation distance.  
+interference structure which can observed when using a focused beam whose spot size is smaller than the SPP propagation distance.  
+
+\section{Interference in Surface Plasmon Resonance}
+Perhaps the most 
 
 \section{The Fourier Optics Perspective}
+There are several perspectives of SPR phenomena which can be insightful in
+explaining why exactly the spatial oscillations are one-sided.  The first
+is an argument from causality.  Assume a complex function $\chi(\omega) =
+\chi'(\omega) + \mi \chi''(\omega)$ whose real and imaginary parts are
+related by Kramers-Kronig relations
+\begin{align}
+\chi(\omega)=\mi \hf{\chi(\omega)}
+\end{align}
+with 
+\begin{align}
+\chi'(\omega) &= \hf{\chi''(\omega)}\\
+\chi''(\omega) &= -\hf{\chi'(\omega)}
+\end{align}
+where $\hf{\chi(\omega)}$ is the Hilbert transform of $\chi(\omega)$.
+The Fourier transform of $\chi(\omega)$ is
+\begin{align}
+\chi(\omega) &= \chi'(\omega) + \mi \chi''(\omega)\\
+\ff{\chi(\omega)} &= \ff{\chi'(\omega) + \mi \chi''(\omega)}\\
+&= \ff{\chi'(\omega)} + \ff{\mi \chi''(\omega)}\\
+&= \ff{\chi'(\omega)} + \ff{\mi \hf{\chi'(\omega)}} \\
+&= \ff{\chi'(\omega)} + \sgn(\omega) \ff{\chi'(\omega)} \\
+\end{align}
+Or succinctly,
+\begin{align}
+\ff{\hf{\chi(\omega)}} = (-\mi \sgn(\omega)) \ff{\chi(\omega)}
+\end{align}
+In other words, the Fourier transform of any function which satisfies
+Kramers-Kronig relations is ``one-sided'' as a necessary
+condition of causality.  This seems to be true for the Fresnel
+reflectivity as well as the complex permittivity.
+
+The second perspective is couched in Fourier optics.  Here, because
+SPR occurs at the focus of a Gaussian beam, it can be seen as a sort of
+spatial filter which modifies the local $k$-vectors to produce
+the resulting far field optical pattern.  If the SPR resonance condition is
+sharp, the Fourier integral (\Equation{eqn:fourier123}) is truncated and
+the discontinuity acts as a low pass filter for light.  The one-sided
+oscillations are then essentially a manifestation of Gibb's phenomena.
+This seems to be well supported, because if the SPR resonance is broadened,
+say in the case of a BK7-Au-\ce{H2O} system, the interference is greatly
+attenuated.
+%
+%Another possible interpretation is that the near and
+%far field patterns in conically scattered light are qualatatively identical
+%to the simple impulse-response of a forced, damped harmonic oscillator.
+%This is of course equivalent to what the Lorentz-Drude model says about the
+%material properties.  The far field conically scattered light likewise
+%appears to be equivalent to the energy absorbed in the metal film which can
+%be detected as heat.
+
+\subsection{Specularly Directed Light}
+
+
+\subsection{Spatial Evolution}
+The Fresnel reflectivity predicts the far field angular distribution when
+illuminated by light at a specific angle, consisting of a single
+$k$-vector.  Now we will look at the evolution of light from this system
+as it propagates to the far field when excited by an incident Gaussian beam
+$g(x)$ containing a continuum of $k$-vectors.  We begin with treatment of
+light in the specular direction.  In the context of Fourier
+optics, the field on the surface in $k$-space is described by the Fourier
+decomposed incident Gaussian beam $\tilde{g}(k_x)$ multiplied by the
+Fresnel reflectivity
+\begin{align}
+\tilde{E}_\text{spec}(k_x)=\tilde{g}(k_x)\,\tilde{r}_\text{123}(k_x)
+\end{align}
+where
+\begin{align}
+\tilde{g}(k_x) = \intinfty g(x)\, \me^{\mi k_x x} \md x
+\end{align}
+and $g(x)$ represents a Gaussian beam in spatial dimensions.  We omit any 
+specific definition for $g(x)$ because its exact form
+is not important to our analysis.
+
+The complete optical field in both $x$ and $z$ can be obtained by computing
+the Fourier transform of $\tilde{E}_\text{spec}(k_x)$ multiplied 
+by the free space transfer function $\me^{\mi k_{z,1} z}$
+\begin{align}
+E_\text{spec}(x,z) &= \intinfty \tilde{E}_\text{spec}\, \me^{\mi k_{z,1} z}\, \me^{\mi k_x x} \md k_x\\
+ &= \intinfty \tilde{g}(k_x)\, \tilde{r}_{123}(k_x)\, \me^{\mi \sqrt{k_0^2 \epsilon_1 - k_x^2}z}\, \me^{\mi k_x x} \md k_x
+\label{eqn:fourier123}
+\end{align}
+Likewise, conically scattered light may be found using the same treatment
+\begin{align}
+E_\text{cone}(x,z) = \intinfty \tilde{g}(k_x)\, \tilde{r}_{321}(k_x)\,\me^{\mi k_{z,1} z}\, \me^{\mi k_x x} \md k_x
+\label{eqn:fourier321}
+\end{align}
+Though this integral seems to have no analytic solution, its evaluation is
+nonetheless straightforward on a computer.
+The evolution of scattered and specularly directed light based on
+\Equation{eqn:fourier123} and \Equation{eqn:fourier321} is shown in
+\Figure{fig:fresnelpropagate} as a function of distance from the 2-3
+interface.  As can be seen, as the field propagates it diffracts,
+displaying a one-sided oscillatory structure. 
+
+\subsubsection{Evanescent Solutions}
+In the context of diffraction integrals, the free space transfer function
+$\exp(\mi k_{z,1} z)$ is often concerned with evanescent and propagating
+terms, giving rise to the diffraction limit.  Here,
+$k_{z,1}=\sqrt{k_0^2 \epsilon_1 - k_x^2}$ is imaginary for $k_0^2
+\epsilon_1 < k_x^2$.  It is interesting to note that this never occurs.
+Ignoring the condition for total internal reflection, 
+$k_x = k_0 \sqrt{\epsilon_1} \sin \theta$ and we can set up an inequality
+\begin{align}
+k_0^2 \epsilon_1 &< k_x^2\\
+k_0^2 \epsilon_1 &< \left(k_0 \sqrt{\epsilon_1} \sin \theta\right)^2\\
+k_0^2 \epsilon_1 &< k_0^2 \epsilon_1 \sin^2 \theta\\
+1 &< \sin^2 \theta
+\end{align}
+which is false, suggesting that if all light is collected, no information is
+lost during propagation from the near to far field.
 \section{Bulk Sensitivity}
 \subsection{Angular Interrogation}
 \subsection{Intensity Interrogation}
 \subsection{Minimum Resolvable Shift}
 
-\chapter{Monte Carlo Simulaions}
+\chapter{Simulations}
 A parallel Monte Carlo simulation was written to model surface plasmon
 random scattering in our experiment. This simulation is capable of modeling
 a comprehensive set of phenomena expected to exist in this work: single
@@ -224,6 +491,7 @@ and $\mathrm{r}$ is the spatial variable.
 \section{Sputtering}
 \section{Functionalizing Nanoparticles}
 \section{Microfluidics}
+\section{Sping Coating of Cytop}
 
 \chapter{Reference Data}
 Several datasets were produced during the course of this dissertation which

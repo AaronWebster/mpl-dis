@@ -1,0 +1,52 @@
+#!/bin/bash
+file="$1"
+logfile="${file%.tex}.log"
+auxfile="${file%.tex}.aux"
+# check to see when file was last saved and
+# check see what version of file was last compiled
+currmodified=$(stat -c %Y "$file")
+oldmodified=$(cat $HOME/.config/kkltx/lastprocessedfile)
+# if they're the same exit with no change
+if [ "$currmodified" == "$oldmodified" ] ; then
+    echo "nochange"
+    exit 0
+else
+    # if compilation is necessary, check what program to use
+    # 'xelatex' should appear in first 5 lines for xelatex docs
+    if head -n 5 "$file" | grep -i -q 'xelatex' > /dev/null 2>&1 ; then
+        execprog="xelatex"
+    else
+        execprog="pdflatex" 
+    fi 
+    # try to compile
+    if ${execprog} -interaction=batchmode -file-line-error -synctex=1 "$file" > /dev/null 2>&1 ; then
+       # if compiling worked check if bibtex needs to run
+       if cat "$logfile" | grep -i -q 'undefined citations' > /dev/null 2>&1 ; then
+          if bibtex "$auxfile" > /dev/null 2>&1 ; then
+               if ! ${execprog} -interaction=batchmode -file-line-error -synctex=1 "$file" > /dev/null 2>&1 ; then
+                    echo "failure"
+                    exit 1
+               fi
+          else 
+                echo "bibfail"
+                exit 2
+          fi
+       fi
+       # check if a rerun is necessary to update cross-references
+       if cat "$logfile" | grep -i -q 'rerun to get' > /dev/null 2>&1 ; then
+               if ! ${execprog} -interaction=batchmode -file-line-error -synctex=1 "$file" > /dev/null 2>&1 ; then
+                  echo "failure"
+                  exit 1
+               fi
+       fi
+       # update mupdf by sending the r key to it
+       xdotool search --class mupdf key --window %@ r > /dev/null 2>&1
+       echo "success"
+       # save time of compilation
+       echo -n "$currmodified" > "$HOME/.config/kkltx/lastprocessedfile" 2>/dev/null
+    else
+       echo "failure"
+       exit 1
+    fi
+fi
+exit 0
