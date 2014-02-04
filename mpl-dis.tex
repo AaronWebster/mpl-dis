@@ -1,4 +1,4 @@
-\documentclass[a4paper,titlepage,onecolumn,openright,twoside]{report}
+\documentclass[a4paper,titlepage,onecolumn]{report}
 \input{myinc}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
@@ -60,9 +60,10 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 
 \newpage
 \chapter*{Acknowledgements}
-The author would like to extend the following thanks
+The author would like to extend the following thanks:
 
 \begin{itemize}
+\renewcommand\labelitemi{--}
 \item to Jiapeng Huang for his enthusiasm and hard work in carrying out
 many tedious but necessary experiments.
 \item to Yuqiang Wu for determining out the proper protocols regarding the use
@@ -148,20 +149,55 @@ description of SPPs and relevant mathematics for predicting their behavior
 in multilayer systems.
 \section{The Kretschmann Configuration}
 \section{Conically Scattered Light}
+\section{Long Range Surface Plasmon Polaritons}
+
 
 \chapter{Interference}
 Surface plasmon resonance is in of itself an interference phenomena: the
 dark band in the specular direction is due to interference between
-specularly reflected light and the re-radiated SPPs which are likewise
+specularly reflected light and the re-radiated SPP which is likewise
 antiphase at the SPR resonance angle.  There is, however, a more rich 
 interference structure which can observed when using a focussed beam whose
-spot size is smaller than the SPP propagation distance. 
+spot size is smaller than the SPP propagation distance.  
 
 \section{The Fourier Optics Perspective}
 \section{Bulk Sensitivity}
-\subsection{Angular Interogation}
+\subsection{Angular Interrogation}
 \subsection{Intensity Interrogation}
 \subsection{Minimum Resolvable Shift}
+
+\chapter{Monte Carlo Simulaions}
+A parallel Monte Carlo simulation was written to model surface plasmon
+random scattering in our experiment. This simulation is capable of modeling
+a comprehensive set of phenomena expected to exist in this work: single
+scattering, multiple scattering, the effects of moving scatterers, and the
+effects of adding scatterers. The simulation assumes a geometery shown in
+Figure X, consisting of:
+
+\begin{itemize}
+
+\item A \textit{scatterer}, a fixed point where an SPP can scatter to
+another scatterer or exit the system to the far field.
+
+\item An elliptical \textit{illuminated region}, representing the incident
+evanescent field which excites SPPs.
+
+\item A \textit{trajectory} or \textit{path}, meaning the ordered sequence
+of scatterers a plasmon visits before exiting the system. This path is
+characterized by its path length and mean free path. A path always begins
+in the illuminated region.
+
+\end{itemize}
+
+The plasmon is assumed to propagate according to the time independent
+monochromatic wave equation, $\mathbf{E}(\mathbf{r})=\me^{\mi
+\mathrm{k}\cdot \mathrm{r}}$, where $\mathrm{k}$ is the plasmon wavevector
+and $\mathrm{r}$ is the spatial variable.
+
+\subsection{Single Scattering}
+
+\subsection{Multiple Scattering}
+ 
 
 \chapter{Multiple Scattering of SPPs}
 \section{Speckle}
@@ -204,16 +240,16 @@ might be useful to the reader.  They are presented here.
 
 
 \section{Abbreviations}
-\begin{table}
- \begin{tabular}
-  SPP & surface plasmon polariton
-  LRSPP & long range surface plasmon polariton
- \end{tabular}
-\end{table}
+%\begin{table}
+% \begin{tabular}
+%  SPP & surface plasmon polariton
+%  LRSPP & long range surface plasmon polariton
+% \end{tabular}
+%\end{table}
 
 \chapter{Miscellaneous}
 \section{Colophon}
-This document was typeset using \pdfTeX {\verb 3.1415926-2.5-1.40.14}. All
+This document was typeset using pdf\TeX {\verb 3.1415926-2.5-1.40.14}. All
 plots were rendered using pgfplots~\cite{feuersangerpgfplots} with styles influenced by
 Eduard Tufte~\cite{tufte1983visual}~\cite{tufte1983visual}. Colors were chosen
 from datasets researched by Jan Brewer~\cite{harrower2003colorbrewer}.
