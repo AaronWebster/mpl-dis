@@ -61,7 +61,13 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 \newpage
 %%%% ACKNOWLEDGEMENTS %%%%
 \chapter*{Acknowledgements}
-I would like to extend my gratitude to the following individuals who helped me throughout this work: to Jiapeng Huang, for his enthusiasm and hard work in carrying out many tedious but necessary experiments, to Dr. Yuqiang Wu for determining out the proper protocols regarding the use of DNA origami, to Dr. Matthew Foreman for many insightful theoretical endevours, and to Professor Stephen Gregory and Dr. R.P. Schumann whose pioneering work inspired this dissertation.
+I would like to extend my gratitude to the following individuals who helped
+me throughout this work: to Jiapeng Huang, for his enthusiasm and hard work
+in carrying out many tedious but necessary experiments, to Dr. Yuqiang Wu
+for determining out the proper protocols regarding the use of DNA origami,
+to Dr. Matthew Foreman for many insightful theoretical endevours, and to
+Professor Stephen Gregory and Dr. R.P. Schumann whose pioneering work
+inspired this dissertation.
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -75,6 +81,73 @@ I would like to extend my gratitude to the following individuals who helped me t
 \pagenumbering{arabic}
 
 \chapter{Foundations}
+\section{Synopsis}
+This dissertation is all about what happens when surface plasmons are
+scattered in a prism coupled setup.  The easiest way of understanding this
+is though the experimental setup, shown in \Figure{fig:kretschmanngeo}.  
+\input{kretschmanngeo.tex}
+The experimental setup consists of a dielectric hemisphere, upon whose
+hypotenuse is deposited a thin layer (\SI{50}{\nano\meter}) of metal.
+Light is incident from an angle $\theta$ greater than the critical angle,
+and the totally internally reflected light is directed to the specular
+direction.  The evanescent wave present on the $\epsilon_1$-$\epsilon_2$
+boundary with a wavenumber $k_x = k_0\sqrt{\epsilon_1}\sin \theta$ has an
+angle such that it excites surface plasmon polaritions (SPPs).  SPPs are
+essentially oscillations of free charge in the $\epsilon_2$ layer which are
+coupled to the photons of the incident beam (polaritions are
+quasiparticles, but are still quantum-mechanical in nature).  
+
+In the specular direction, the re-radiation of SPPs as photons at their
+excitation angle will be antiphase with the excitation beam.  The result is
+an interference, a dark band in the reflection about a certain range of
+angles.
+
+SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until they
+either decay as heat or scatter into the far field.  During this
+propagation it is possible that surface roughness will elastically modify
+it's $k$-vector in the $k_x$-$k_y$ plane.  When this happens, light will
+appear on an thin annular cone at (nearly) the same angle as the dark band
+in the specular direction.
+
+The conically scattered light is what we're interested in.  Its light is
+much less intense than
+
+Surface plasmon resonance has been the topic of an amazing number of
+theoretical and experimental endevors since their discovery in the late
+1950's
+
+\section{What is New Here}
+In many large works it is sometimes difficult to discern what is actually
+new from rehashings of things others have done.  This section is intended
+to make this explicit.  To this accord, the following is a list of new
+results presented here
+\begin{description}
+\item[Interference of Directionally Scattered SPPs]
+For SPPs excited in the Kretschmann configuration with a focussed beam
+whose propagation distance is larger than focal spot, a one-sided
+interference pattern is observed in the specular direction.  This was
+thought to be an interference effect between the specularly reflected beam
+and a re-radiated plasmon component.  We have discovered that that this is
+simply a consequence of causality and the interference pattern may be
+observed in conically scattered light from the same system.
+\item[Sensitivity of Wiggles] 
+Using Fourier analysis, we have studied the sensitivity of SPR in an intensity
+interrogation configuration as a function of propagation distance.  This
+provides a useful measure of the sensitivity of the one-sided interference
+pattern found in the specular and conically directed beams.
+\item[Refractive Index Sensing With Conical Speckle]
+If the surface is rough, the conically directed light contains speckle.  We
+have analyzed the speckle patterns as a function of changes in bulk
+refractive index.
+\item[SPP Nanoparticle Scattering]
+Using the speckle in the cone, we observe the changes in intensity and
+correlation functions associated with the addition or motion of a single
+nanoparticle.
+\end{description}
+
+
+Directionally scattered light from SPPs excited in the Kretschmann
+configuration.
 \section{Historical Perspective}
 The theoretical groundwork for the existence of surface plasmon polaritons
 (SPPs) was first introduced by Richie in his seminal 1957 paper
