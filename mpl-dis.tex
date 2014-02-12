@@ -84,11 +84,23 @@ inspired this dissertation.
 \section{Synopsis}
 This dissertation is all about what happens when surface plasmons are
 scattered in a prism coupled setup.  The easiest way of understanding this
-is though the experimental setup, shown in \Figure{fig:kretschmanngeo}.  
+is though the experimental setup, shown below in \Figure{fig:kretschmanngeo}.  
+\begin{figure}[hb]
+\centering
 \input{kretschmanngeo.tex}
+\vspace{-1cm}
+\caption{
+Experimental setup.  Light is incident from the left and focussed by a lens
+$f_1$ on to the hypotenuse of a hemispherical prism coated with a thin
+layer of silver.  The majority of light is directed into the specular
+direction, while surface roughness causes re-radiation of the plasmon field
+into a hollow cone.  $f_2$ acts to image light exiting the system.
+} 
+\label{fig:kretschmanngeo} 
+\end{figure}
 The experimental setup consists of a dielectric hemisphere, upon whose
 hypotenuse is deposited a thin layer (\SI{50}{\nano\meter}) of metal.
-Light is incident from an angle $\theta$ greater than the critical angle,
+Light is incident from an angle $\theta_\text{sp}$ greater than the critical angle,
 and the totally internally reflected light is directed to the specular
 direction.  The evanescent wave present on the $\epsilon_1$-$\epsilon_2$
 boundary with a wavenumber $k_x = k_0\sqrt{\epsilon_1}\sin \theta$ has an
@@ -105,9 +117,9 @@ angles.
 SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until they
 either decay as heat or scatter into the far field.  During this
 propagation it is possible that surface roughness will elastically modify
-it's $k$-vector in the $k_x$-$k_y$ plane.  When this happens, light will
-appear on an thin annular cone at (nearly) the same angle as the dark band
-in the specular direction.
+its $k$-vector in the $k_x$-$k_y$ plane.  When this happens, scattered SPPs
+will re-radiate into a thin annular cone at (nearly) the same angle as the
+dark band in the specular direction.
 
 The conically scattered light is what we're interested in.  This light
 contains a wealth of information related to SPP scattering.  (blah) In
@@ -116,10 +128,10 @@ addition, or should I say primarily, the cone contains speckle.
 \section{What is New Here}
 In many large works it is sometimes difficult to discern what is actually
 new from rehashings of things others have done.  This section is intended
-to make this explicit.  To this accord, the following is a list of new
+to clarify this situation.  To this accord, the following is a list of new
 results presented here
 \begin{description}
-\item[Interference of Directionally Scattered SPPs]
+\item[Interference of Scattered SPPs]
 For SPPs excited in the Kretschmann configuration with a focussed beam
 whose propagation distance is larger than focal spot, a one-sided
 interference pattern is observed in the specular direction.  This was
@@ -363,11 +375,19 @@ function of incident angle $\theta$ or $k_x$
 k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 &= \sqrt{k_0^2\epsilon_i - k_x^2}
 \end{align}\begin{flushleft}\begin{center}\end{center}\end{flushleft}
-\section{What Has Been Done}
-\section{What is New}
 \section{The Kretschmann Configuration}
-\section{Conically Scattered Light}
-Light can be scattered into the cone, see the original paper by Kretschmann and the one that's paired with it... Matthew gave you both of them.
+% what is the kretschmann configuration
+
+\chapter{Cone Speckle}
+
+Light can be scattered into the cone, see the original paper by Kretschmann
+and the one that's paired with it... Matthew gave you both of them.
+
+\section{Statistical Properties of the Cone Speckle}
+% Ideas for this section: take some pictures of the cone speckle and run it
+% through the treatment provided by goodman.  Make some inferences on
+% whether it's gaussian or not or whatever.
+
 \section{Long Range Surface Plasmon Polaritons}
 The typical propagation distances for SPPs in the three layer Kretschmann configuration are on the order of $\SI{30}{\micro\meter}$ for Ag films and $\SI{6}{\micro\meter}$ for Au films.  The reason for this is the electric field extends into the metal and the real part of the metal's dielectric function damps the SPP oscillation, causing it to decay as heat.  However, if we are able to expel the SPP evanescent field from the metal region, the propagation distances can be extended orders of magnitude.  These are called \textit{long range surface plasmon polaritons} (LRSPPs), and in terms of our geometry can be excited in one of two ways.
 \subsection{Symmetric Things}
@@ -506,6 +526,8 @@ The response of the specular minimum to bulk refractive index changes has been t
 \subsection{Intensity Interrogation}
 \subsection{Minimum Resolvable Shift}
 
+
+
 \chapter{Simulations}
 A parallel Monte Carlo simulation was written to model surface plasmon
 random scattering in our experiment. This simulation is capable of modeling
@@ -560,6 +582,7 @@ and $\mathrm{r}$ is the spatial variable.
 \bibliography{bibliography}
 
 \appendix
+
 \chapter{Protocols}
 \section{Sputtering}
 \section{Functionalizing Nanoparticles}
@@ -605,3 +628,6 @@ processed using python and scipy/numpy.  Parallel execution was done at at
 the FAU RRZE, Erlangen, Germany.
 
 \end{document}
+
+% MISSING A HOME
+% surface roughness parameters

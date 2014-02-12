@@ -1,3 +1,20 @@
+Wed Feb 12 21:03:55 CET 2014
+Tango colors look pretty good
+
+Wed Feb 12 20:37:45 CET 2014
+
+I set things up differently now:
+
+This will refresh the mupdf window:
+
+watch xdotool search --class mupdf key --window %@ r > /dev/null 2>&1
+
+I used this plugin to get the live preview working
+
+https://github.com/xuhdev/vim-latex-live-preview
+
+To load it you have to type :LLPStartPreview or something like that
+
 History and Significance
 
 Some things to add to the thinger:
