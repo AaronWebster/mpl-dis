@@ -8,6 +8,24 @@ over the years:
 	patterrn from the pattern alone?
 - what is the origin of the increased sensitivity in the multiple
 	scattering regime?
+- importance (and definitios) of contrast and __
+- different localization regimes
+- crusie missile problem, manhattan problem
+- universal conductance fluctuations
+
+there are many aspects of SPR that have yet to be explored in the context
+of biosensing
+
+sensitivity as everything to do with your detector, and almost nothing to
+do with what you're measureing.  If you have a small change, a very
+sensitive detector will be able to resolve it.  Therefore the purpose of
+increasing sensitivity is all about accomodating your detector
+
+SPR based biosensors typically operate in one of four interrogation
+principles: angular, intensity, wavelength, and phase.  It has been
+suggested that the ultimate sensitivitiy is agnostic with regards to the
+method and coupling principle.  SPR devices are already diffraction
+limited, so there's really nothing that can be done further.
 
 
 
