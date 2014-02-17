@@ -381,17 +381,6 @@ k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 % use what you know from that one document to come up with what should see
 % as a focussed field (maybe just use Mathew's code, but this isn't so
 % important so don't spend so much time here.
-
-\chapter{Cone Speckle}
-
-Light can be scattered into the cone, see the original paper by Kretschmann
-and the one that's paired with it... Matthew gave you both of them.
-
-\section{Statistical Properties of the Cone Speckle}
-% Ideas for this section: take some pictures of the cone speckle and run it
-% through the treatment provided by goodman.  Make some inferences on
-% whether it's gaussian or not or whatever.
-
 \section{Long Range Surface Plasmon Polaritons}
 The typical propagation distances for SPPs in the three layer Kretschmann configuration are on the order of $\SI{30}{\micro\meter}$ for Ag films and $\SI{6}{\micro\meter}$ for Au films.  The reason for this is the electric field extends into the metal and the real part of the metal's dielectric function damps the SPP oscillation, causing it to decay as heat.  However, if we are able to expel the SPP evanescent field from the metal region, the propagation distances can be extended orders of magnitude.  These are called \textit{long range surface plasmon polaritons} (LRSPPs), and in terms of our geometry can be excited in one of two ways.
 \subsection{Symmetric Things}
@@ -520,22 +509,123 @@ k_0^2 \epsilon_1 &< k_0^2 \epsilon_1 \sin^2 \theta\\
 \end{align}
 which is false, suggesting that if all light is collected, no information is
 lost during propagation from the near to far field.
-\section{Bulk Sensitivity}
-The response of the specular minimum to bulk refractive index changes has
-been the primary interest in studies regarding SPR based biosesing.  The
-specular notch as several modes of interrogation, all are equivalent:
-angular, wavelength, and intensity modulation being most common.  All of
-them are equivalent, as I just said and shott noise limited to boot.  In
-this work I will focus on intensity interrogation, because you can't really
-think about angular interrogation
 
 
-\subsection{Sensitivity in the Specular Direction}
+\chapter{Bulk Sensitivity}
+The sensitivity of surface plasmon based biosensors to bulk refractive
+index changes is of primary importance in extracting bio-relevant
+properties. In a prism coupled setup, there are three main modulation
+methods used to monitor changes in the SPR resonance.
 
-\subsection{Angular Interrogation}
-\subsection{Intensity Interrogation}
-\subsection{Minimum Resolvable Shift}
+\begin{description}
+ \item [{Angular}] The prism is rotated and the signal reflectivity
+  monitored
+  as a function of angle. The prism may be scanned through a range of
+  angles or the angular spectrum may be obtained simultaneously using
+  a focussed beam and sensor array.
+ \item [{Wavelength}] The prism is fixed in place and its reflectivity at
+  a single angle is monitored as a function of wavelength.
+ \item [{Intensity}] The intensity of the signal at a certain angular or
+  spatial point is monitored as the experiment progresses.
+\end{description}
+All three of these interrogation methods are equivalent in terms of
+their real-world resolution and detection limit. In this section we
+will look at the sensitivity of intensity interrogation to different
+(something about parameters)
 
+
+\section{Three Layer Kretschmann, Far Field}
+We will now derive the sensitivity of the three layer Kretschmann
+configuration to bulk index changes. This case will be used as a test
+case for further analysis of the propagation dependent sensitivity.
+
+The bulk sensitivity in an intensity modulation setup is defined as
+the ratio of the change of normalized signal intensity $\delta I=I_{n_{0}}-I_{n_{1}}$
+to the change in bulk refractive index $\delta n=n_{0}-n_{1}$ for
+two refractive indicies $n_{0}$ and $n_{1}$. We restrict ourselves
+to small changes in the refractive index $n$, $\delta n/n_{0}\ll1$.
+The intensity sensitivity is defined as
+\begin{equation}
+S_{\mathrm{I}}=\frac{\delta I}{\delta n}
+\end{equation}
+Without loss of generality, the sensor intensity $I$ may be a function
+of any appropriate coordinate system (e.g. $I(x,y)$). In such a coordinate
+system we always take $S_{\mathrm{I}}$ at the location of maximum
+shift in that coordinate system.
+
+In the Lorentzian approximation{[}{]} using Drude model coefficents
+$\epsilon=\epsilon'+\mi\epsilon''$, the maximum sensitivity for bulk
+index sensing is approximated as
+\begin{equation}
+(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{\mathrm{m}}'}{\epsilon_{\mathrm{m}}''n^{3}}
+\end{equation}
+Where $\epsilon_{\mathrm{m}}$ is the complex Drude-model permittivity
+in the metal layer. At a operating wavelength of \SI{660}{\nano\meter},
+for Au on N-BK7, $(S_{\mathrm{I}})_{\text{max}}=151.66$. This is
+only an approximation, though it is close to the value obtained through
+Lorentz-Drude coefficents used in combination with the transfer matrix
+method, $(S_{\mathrm{I}})_{\text{max}}=153.04$.
+
+
+\subsection{Optimizing Sensitivity}
+
+The quoted values of $(S_{\mathrm{I}})_{\text{max}}$ depend on the
+refractive indicies of the system layers as well as the thickness
+of the metal layer. It is interesting to note that the maximum sensitivity
+does not coincide with maximum coupling of light into SPPs. The plot
+in Figure X shows the relationship between sensitivity and metal thickness.
+
+It can also be shown that the width of the signal is related to the
+sensitivity. 
+
+
+\section{Propagation Dependent Sensitivity}
+
+Having analyzed the classical case of SPR sensitivity in the three
+layer Kretschmann configuration, we are now ready to look at the propagation
+dependent sensitivity. 
+
+
+\subsection{Theoretical Maximum Sensitivity for an Arbitrary Signal}
+
+Consider an arbitrary complex signal of some coordinate $f(x)$ such
+that the indefinite integral
+\begin{equation}
+\int_{-\infty}^{\infty}|f(x)|^{2}\md x=\text{(some finite value)}
+\end{equation}
+ and
+\begin{equation}
+\lim_{x\to\pm\infty}|f(x)|^{2}=0
+\end{equation}
+Specifically $f(x)$ must be \emph{band-limited}. Following, it is
+completely determined by its Fourier series.
+
+
+\section{Conically Scattered Light}
+
+As described in X, light can also be directionally scattered into
+the cone. This propagation contains the same interference structure
+as the specularly reflected light, and is likewise subject to the
+same analysis.
+
+
+\section{Multiple Scattering Effects}
+
+It is known that a speckle field with multiple scattering effects
+is more sensitive to some kind of fixed phase stuff 
+\end{document}
+
+\chapter{Speckle}
+
+Light can be scattered into the cone, see the original paper by Kretschmann
+and the one that's paired with it... Matthew gave you both of them.
+
+\section{Statistical Properties of the Cone Speckle}
+% Ideas for this section: take some pictures of the cone speckle and run it
+% through the treatment provided by goodman.  Make some inferences on
+% whether it's gaussian or not or whatever.
+
+\section{Non-Paraxial Speckle}
 
 
 \chapter{Simulations}
