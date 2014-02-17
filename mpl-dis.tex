@@ -61,11 +61,11 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 \newpage
 %%%% ACKNOWLEDGEMENTS %%%%
 \chapter*{Acknowledgements}
-I would like to extend my gratitude to the following individuals who helped
-me throughout this work: to Jiapeng Huang, for his enthusiasm and hard work
-in carrying out many tedious but necessary experiments, to Dr. Yuqiang Wu
+I would like to extend my sincerest gratitude to the following individuals who helped
+me throughout this work: Jiapeng Huang, for his enthusiasm and hard work
+in carrying out many tedious but necessary experiments, Dr. Yuqiang Wu
 for determining out the proper protocols regarding the use of DNA origami,
-to Dr. Matthew Foreman for many insightful theoretical endevours, and to
+Dr. Matthew Foreman for many insightful theoretical endevours, and 
 Professor Stephen Gregory and Dr. R.P. Schumann whose pioneering work
 inspired this dissertation.
 
@@ -293,6 +293,10 @@ numerically evaluating the Fresnel relations discussed in the following
 section.
 
 \subsection{Fresnel Equations}
+% Change things up here say that we only use the transfer matrix method,
+% then give its definition and say a word or two about our implmentation.
+% Next, give a quick formulat for the Fresnel 2-layer reflectivity and say
+% how it can be iterated.
 With no loss of generality, analysis of the field in the specular direction
 is again restricted to the $x$-$z$ plane as shown in \Figure{fig:kretschmanngeo}.  The
 Fresnel reflection coefficient $\tilde{r}$ is defined as the ratio of the
@@ -383,9 +387,9 @@ k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 % important so don't spend so much time here.
 \section{Long Range Surface Plasmon Polaritons}
 The typical propagation distances for SPPs in the three layer Kretschmann configuration are on the order of $\SI{30}{\micro\meter}$ for Ag films and $\SI{6}{\micro\meter}$ for Au films.  The reason for this is the electric field extends into the metal and the real part of the metal's dielectric function damps the SPP oscillation, causing it to decay as heat.  However, if we are able to expel the SPP evanescent field from the metal region, the propagation distances can be extended orders of magnitude.  These are called \textit{long range surface plasmon polaritons} (LRSPPs), and in terms of our geometry can be excited in one of two ways.
-\subsection{Symmetric Things}
+\subsection{Symmetric Configuration}
 Cytop coating crap
-\subsection{Photonic Crystal Things}
+\subsection{Photonic Crystal Configuration}
 
 \chapter{Interference}
 Don't say this, but maybe say something like it
@@ -597,8 +601,17 @@ that the indefinite integral
 \begin{equation}
 \lim_{x\to\pm\infty}|f(x)|^{2}=0
 \end{equation}
-Specifically $f(x)$ must be \emph{band-limited}. Following, it is
+Specifically $f(x)$ must be \textit{band-limited}. Following, it is
 completely determined by its Fourier series.
+
+% We have to choose a resolution for sampling so that we introduce no error
+% in the signal.  So the band in which we cut off is determined by the
+% error we're willing to deal with.
+
+% Just define error as the least squares error
+% choose bounds such that the least squares error is at most x
+% 
+
 
 
 \section{Conically Scattered Light}
@@ -613,7 +626,6 @@ same analysis.
 
 It is known that a speckle field with multiple scattering effects
 is more sensitive to some kind of fixed phase stuff 
-\end{document}
 
 \chapter{Speckle}
 
@@ -626,6 +638,10 @@ and the one that's paired with it... Matthew gave you both of them.
 % whether it's gaussian or not or whatever.
 
 \section{Non-Paraxial Speckle}
+
+
+\section{Optical Vorticies}
+% vortex tracking stuff
 
 
 \chapter{Simulations}
