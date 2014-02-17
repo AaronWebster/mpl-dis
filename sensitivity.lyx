@@ -5,6 +5,11 @@
 \textclass article
 \begin_preamble
 \usepackage{siunitx}
+% use roman type for natural base e and sqrt(-1)
+\newcommand{\me}{{\mathrm{e}}}
+\newcommand{\mi}{{\mathrm{i}}}
+% roman type for the derivative, plus a space
+\newcommand{\md}{\,\mathrm{d}}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -69,60 +74,75 @@ Bulk Sensitivity
 
 \begin_layout Standard
 The sensitivity of surface plasmon based biosensors to bulk refractive index
- changes is of primary importance to extracting biomechanical properties
- from such a sensor.
+ changes is of primary importance in extracting bio-relevant properties.
  In a prism coupled setup, there are three main modulation methods used
- to extract changes in the SPR resonance
+ to monitor changes in the SPR resonance
 \end_layout
 
 \begin_layout Description
-Angular The prism is rotated and the reflectivity recorded as a function
- of angle.
- Optionally, the prism may be excited using a Gaussian beam with a spectrum
- of angular vectors and recorded simultaneously in the far field with sensor
- array.
+Angular The prism is rotated and the signal reflectivity monitored as a
+ function of angle.
+ The prism may be scanned through a range of angles or the angular spectrum
+ may be obtained simultaneously using a focussed beam and sensor array.
 \end_layout
 
 \begin_layout Description
-Wavelength The prism is fixed in place and the reflectivity is monitored
- as a function of wavelentgh.
+Wavelength The prism is fixed in place and its reflectivity at a single
+ angle is monitored as a function of wavelength.
 \end_layout
 
 \begin_layout Description
-Intensity The intensity of the signal at a single point is monitored as
- the experiment progresses.
+Intensity The intensity of the signal at a certain angular or spatial point
+ is monitored as the experiment progresses.
 \end_layout
 
 \begin_layout Standard
-All three of these interrogation methods are equivalent in terms of both
- resolution and detection limit.
- In this section we will focus on intensity interrogation, as it fits our
- experiment better than the other two.
+All three of these interrogation methods are equivalent in terms of their
+ real-world resolution and detection limit.
+ In this section we will look at the sensitivity of intensity interrogation
+ to different (something about parameters)
 \end_layout
 
 \begin_layout Section
-Classical Case
+Three Layer Kretschmann, Far Field
 \end_layout
 
 \begin_layout Standard
 We will now derive the sensitivity of the three layer Kretschmann configuration
  to bulk index changes.
- These values will be used as a starting point for analyzing the propagation
- dependent sensitivity which includes interference effects.
- 
+ This case will be used as a test case for further analysis of the propagation
+ dependent sensitivity.
 \end_layout
 
 \begin_layout Standard
-Bulk sensitivity in intensity modulation is defined as the ratio of the
- change of normalized signal intensity 
-\begin_inset Formula $\delta I=\delta|E|^{2}$
+The bulk sensitivity in an intensity modulation setup is defined as the
+ ratio of the change of normalized signal intensity 
+\begin_inset Formula $\delta I=I_{n_{0}}-I_{n_{1}}$
 \end_inset
 
  to the change in bulk refractive index 
-\begin_inset Formula $\delta n$
+\begin_inset Formula $\delta n=n_{0}-n_{1}$
 \end_inset
 
+ for two refractive indicies 
+\begin_inset Formula $n_{0}$
+\end_inset
 
+ and 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+.
+ We restrict ourselves to small changes in the refractive index 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $\delta n/n_{0}\ll1$
+\end_inset
+
+.
+ The intensity sensitivity is defined as
 \begin_inset Formula 
 \[
 S_{\mathrm{I}}=\frac{\delta I}{\delta n}
@@ -134,8 +154,13 @@ Without loss of generality, the sensor intensity
 \begin_inset Formula $I$
 \end_inset
 
- may be a function of any coordinate system approprate.
- In this coordinate system we always take 
+ may be a function of any appropriate coordinate system (e.g.
+ 
+\begin_inset Formula $I(x,y)$
+\end_inset
+
+).
+ In such a coordinate system we always take 
 \begin_inset Formula $S_{\mathrm{I}}$
 \end_inset
 
@@ -143,19 +168,30 @@ Without loss of generality, the sensor intensity
 \end_layout
 
 \begin_layout Standard
-In the Lorentzian approximation using Drude model coefficents, the maximum
- sensitivity for bulk index sensing is approximated as
+In the Lorentzian approximation[] using Drude model coefficents 
+\begin_inset Formula $\epsilon=\epsilon'+\mi\epsilon''$
+\end_inset
+
+, the maximum sensitivity for bulk index sensing is approximated as
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{m}'}{\epsilon_{m}''n^{3}}
+(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{\mathrm{m}}'}{\epsilon_{\mathrm{m}}''n^{3}}
 \]
 
 \end_inset
 
-At our operating wavelength of 
+Where 
+\begin_inset Formula $\epsilon_{\mathrm{m}}$
+\end_inset
+
+ is the complex Drude-model permittivity in the metal layer.
+ At a operating wavelength of 
+\begin_inset Preview
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -172,35 +208,40 @@ meter}
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
 , for Au on N-BK7, 
 \begin_inset Formula $(S_{\mathrm{I}})_{\text{max}}=151.66$
 \end_inset
 
 .
- This is however only an approximation; we have the opportunity to optimize
- it further.
- For a fixed wavelength and refractive index, we see that the sensitivity
- as a fuction of layer thickness reaches a maximum at about 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-SI{55}{
-\backslash
-nano
-\backslash
-meter}
-\end_layout
-
+ This is only an approximation, though it is close to the value obtained
+ through Lorentz-Drude coefficents used in combination with the transfer
+ matrix method, 
+\begin_inset Formula $(S_{\mathrm{I}})_{\text{max}}=153.04$
 \end_inset
 
 .
- This turns out to NOT be the place where we have a minimum in the reflectivity
- signal.
- So keep that in mind, no?
+\end_layout
+
+\begin_layout Subsection
+Optimizing Sensitivity
+\end_layout
+
+\begin_layout Standard
+The quoted values of 
+\begin_inset Formula $(S_{\mathrm{I}})_{\text{max}}$
+\end_inset
+
+ depend on the refractive indicies of the system layers as well as the thickness
+ of the metal layer.
+ It is interesting to note that the maximum sensitivity does not coincide
+ with maximum coupling of light into SPPs.
+ The plot in Figure X shows the relationship between sensitivity and metal
+ thickness.
 \end_layout
 
 \begin_layout Standard
@@ -216,14 +257,66 @@ Propagation Dependent Sensitivity
 Having analyzed the classical case of SPR sensitivity in the three layer
  Kretschmann configuration, we are now ready to look at the propagation
  dependent sensitivity.
+ 
+\end_layout
+
+\begin_layout Subsection
+Theoretical Maximum Sensitivity for an Arbitrary Signal
+\end_layout
+
+\begin_layout Standard
+Consider an arbitrary complex signal of some coordinate 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ such that the indefinite integral
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}|f(x)|^{2}\md x=\text{(some finite value)}
+\]
+
+\end_inset
+
+ and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{x\to\pm\infty}|f(x)|^{2}=0
+\]
+
+\end_inset
+
+Specifically 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ must be 
+\emph on
+band-limited
+\emph default
+.
+ Following, it is completely determined by its Fourier series.
 \end_layout
 
 \begin_layout Section
 Conically Scattered Light
 \end_layout
 
+\begin_layout Standard
+As described in X, light can also be directionally scattered into the cone.
+ This propagation contains the same interference structure as the specularly
+ reflected light, and is likewise subject to the same analysis.
+\end_layout
+
 \begin_layout Section
 Multiple Scattering Effects
+\end_layout
+
+\begin_layout Standard
+It is known that a speckle field with multiple scattering effects is more
+ sensitive to some kind of fixed phase stuff 
 \end_layout
 
 \end_body
