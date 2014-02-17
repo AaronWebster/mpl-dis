@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage{siunitx}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,6 +28,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -64,7 +68,36 @@ Bulk Sensitivity
 \end_layout
 
 \begin_layout Standard
-The sensitivity of surface plasmon based biosensors
+The sensitivity of surface plasmon based biosensors to bulk refractive index
+ changes is of primary importance to extracting biomechanical properties
+ from such a sensor.
+ In a prism coupled setup, there are three main modulation methods used
+ to extract changes in the SPR resonance
+\end_layout
+
+\begin_layout Description
+Angular The prism is rotated and the reflectivity recorded as a function
+ of angle.
+ Optionally, the prism may be excited using a Gaussian beam with a spectrum
+ of angular vectors and recorded simultaneously in the far field with sensor
+ array.
+\end_layout
+
+\begin_layout Description
+Wavelength The prism is fixed in place and the reflectivity is monitored
+ as a function of wavelentgh.
+\end_layout
+
+\begin_layout Description
+Intensity The intensity of the signal at a single point is monitored as
+ the experiment progresses.
+\end_layout
+
+\begin_layout Standard
+All three of these interrogation methods are equivalent in terms of both
+ resolution and detection limit.
+ In this section we will focus on intensity interrogation, as it fits our
+ experiment better than the other two.
 \end_layout
 
 \begin_layout Section
@@ -77,6 +110,120 @@ We will now derive the sensitivity of the three layer Kretschmann configuration
  These values will be used as a starting point for analyzing the propagation
  dependent sensitivity which includes interference effects.
  
+\end_layout
+
+\begin_layout Standard
+Bulk sensitivity in intensity modulation is defined as the ratio of the
+ change of normalized signal intensity 
+\begin_inset Formula $\delta I=\delta|E|^{2}$
+\end_inset
+
+ to the change in bulk refractive index 
+\begin_inset Formula $\delta n$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+S_{\mathrm{I}}=\frac{\delta I}{\delta n}
+\]
+
+\end_inset
+
+Without loss of generality, the sensor intensity 
+\begin_inset Formula $I$
+\end_inset
+
+ may be a function of any coordinate system approprate.
+ In this coordinate system we always take 
+\begin_inset Formula $S_{\mathrm{I}}$
+\end_inset
+
+ at the location of maximum shift in that coordinate system.
+\end_layout
+
+\begin_layout Standard
+In the Lorentzian approximation using Drude model coefficents, the maximum
+ sensitivity for bulk index sensing is approximated as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{m}'}{\epsilon_{m}''n^{3}}
+\]
+
+\end_inset
+
+At our operating wavelength of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+SI{660}{
+\backslash
+nano
+\backslash
+meter}
+\end_layout
+
+\end_inset
+
+, for Au on N-BK7, 
+\begin_inset Formula $(S_{\mathrm{I}})_{\text{max}}=151.66$
+\end_inset
+
+.
+ This is however only an approximation; we have the opportunity to optimize
+ it further.
+ For a fixed wavelength and refractive index, we see that the sensitivity
+ as a fuction of layer thickness reaches a maximum at about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+SI{55}{
+\backslash
+nano
+\backslash
+meter}
+\end_layout
+
+\end_inset
+
+.
+ This turns out to NOT be the place where we have a minimum in the reflectivity
+ signal.
+ So keep that in mind, no?
+\end_layout
+
+\begin_layout Standard
+It can also be shown that the width of the signal is related to the sensitivity.
+ 
+\end_layout
+
+\begin_layout Section
+Propagation Dependent Sensitivity
+\end_layout
+
+\begin_layout Standard
+Having analyzed the classical case of SPR sensitivity in the three layer
+ Kretschmann configuration, we are now ready to look at the propagation
+ dependent sensitivity.
+\end_layout
+
+\begin_layout Section
+Conically Scattered Light
+\end_layout
+
+\begin_layout Section
+Multiple Scattering Effects
 \end_layout
 
 \end_body
