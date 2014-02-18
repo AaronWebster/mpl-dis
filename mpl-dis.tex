@@ -61,13 +61,14 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 \newpage
 %%%% ACKNOWLEDGEMENTS %%%%
 \chapter*{Acknowledgements}
-I would like to extend my sincerest gratitude to the following individuals who helped
-me throughout this work: Jiapeng Huang, for his enthusiasm and hard work
-in carrying out many tedious but necessary experiments, Dr. Yuqiang Wu
-for determining out the proper protocols regarding the use of DNA origami,
-Dr. Matthew Foreman for many insightful theoretical endevours, and 
-Professor Stephen Gregory and Dr. R.P. Schumann whose pioneering work
-inspired this dissertation.
+I would like to extend my sincerest gratitude to the following individuals
+who helped me throughout this work: \textsc{Jiapeng~Huang}, for his
+enthusiasm and hard work in carrying out many tedious but necessary
+experiments, \textsc{Dr\@.~Yuqiang~Wu} for determining out the proper
+protocols regarding the use of DNA origami, \textsc{Dr\@.~Matthew~Foreman}
+for many insightful theoretical endevours, and
+\textsc{Prof.\@.~Stephen~Gregory} and \textsc{Dr\@.~R\@.P.\@~Schumann} whose
+pioneering work inspired this dissertation.
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -75,12 +76,12 @@ inspired this dissertation.
 
 %%%%% ABSTRACT %%%%%
 \begin{abstract}
-(abstract is written last)
+ \todo{Abstract is written last.}
 \end{abstract}
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
-\chapter{Foundations}
+\chapter{Preface}
 \section{Synopsis}
 This dissertation is all about what happens when surface plasmons are
 scattered in a prism coupled setup.  The easiest way of understanding this
@@ -94,123 +95,131 @@ Experimental setup.
 } 
 \label{fig:kretschmanngeo} 
 \end{figure}
-The setup consists of a dielectric hemisphere, upon whose
-hypotenuse is deposited a thin layer (\SI{50}{\nano\meter}) of metal.
-Light is incident from the left and focussed by a lens
-$f_1$ on to the hypotenuse of a hemispherical prism coated with a thin
-layer of silver.  
+Light is incident from the left and focussed by lens $f_1$ on to the
+hypotenuse of a hemispherical prism coated with a thin layer of silver.
+$f_2$ acts to image light exiting the system, if desired.
 
 The evanescent wave present on the $\epsilon_1$-$\epsilon_2$ boundary with
 a wavenumber $k_x = k_0\sqrt{\epsilon_1}\sin \theta$ has an angle such that
-it excites surface plasmon polaritions (SPPs).  SPPs are essentially
-oscillations of free charge in the $\epsilon_2$ layer which are coupled to
-the photons of the incident beam (polaritions are quasiparticles, but are
-still quantum-mechanical in nature).  The majority of light is directed
-into the specular direction, while surface roughness causes re-radiation of
-the plasmon field into a hollow cone.  $f_2$ acts to image light exiting
-the system.
-
-In the specular direction, the re-radiation of SPPs as photons at their
-excitation angle will be antiphase with the excitation beam.  The result is
-an interference, a dark band in the reflection about a certain range of
-angles.  SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until
+it excites surface plasmon polaritions (SPPs).  SPPs are oscillations of
+free charge strongly coupled to the photons of the incident beam.  The
+majority of light is directed into the specular direction.  Here,
+re-radiated SPPs at $\theta_\mathrm{sp}$ are antiphase with the excitation
+beam.  The result is interference: a dark band or notch in the reflected
+field.  SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until
 they either decay as heat or scatter into the far field.  During this
 propagation it is possible that surface roughness will elastically modify
 its $k$-vector in the $k_x$-$k_y$ plane.  When this happens, scattered SPPs
 will re-radiate into a thin annular cone at (nearly) the same angle as the
 dark band in the specular direction.
 
-The conically scattered light is what we're interested in.  This light
-contains a wealth of information related to SPP scattering.  Most
-importantly, this light contains speckle, a seemingly random interference
-pattern resulting from many components with different phase relationships.
+The conically scattered light is of prime importance in this work, because
+within this light is found a wealth of information directly related to the
+SPP scattering.  In particular, the cone contains speckle: a seemingly
+random interference pattern resulting from many components with different
+phase relationships.
 
 \section{What is New Here}
-In many large works it is sometimes difficult to discern what is actually
-new from rehashings of things others have done.  This section is intended
-to clarify this situation.  To this accord, the following is a list of new
-results presented here
+In many large dissertations it is sometimes difficult to discern what is
+actually new from rehashings of work others have done.  Here I intended to
+clarify this situation.  To this accord, the following is a list of
+explicitly new results which I present:
+
 \begin{description}
-\item[Interference of Scattered SPPs]
+\item[{Interference of Scattered SPPs}]
 For SPPs excited in the Kretschmann configuration with a focussed beam
 whose propagation distance is larger than focal spot, a one-sided
-interference pattern is observed in the specular direction.  This was
+interference pattern, or ``wiggles'', is observed in the specular direction.  This was
 thought to be an interference effect between the specularly reflected beam
-and a re-radiated plasmon component.  We have discovered that that this is
-simply a consequence of causality and the interference pattern may be
-observed in conically scattered light from the same system.
-\item[Sensitivity of Wiggles] 
+and a re-radiated plasmon component, but we have discovered that that this is
+simply a consequence of causality.
+\item[{Bulk Refractive Index Sensitivity}] 
 Using Fourier analysis, we have studied the sensitivity of SPR in an intensity
 interrogation configuration as a function of propagation distance.  This
 provides a useful measure of the sensitivity of the one-sided interference
 pattern found in the specular and conically directed beams.
-\item[Refractive Index Sensing With Conical Speckle]
+\item[{Refractive Index Sensing With Conical Speckle}]
 If the surface is rough, the conically directed light contains speckle.  We
 have analyzed the speckle patterns as a function of changes in bulk
 refractive index.
-\item[SPP Nanoparticle Scattering]
+\item[{SPP Nanoparticle Scattering}]
 Using the speckle in the cone, we observe the changes in intensity and
 correlation functions associated with the addition or motion of a single
 nanoparticle.
+\todo{After writing, update the list with all the new stuff.}
 \end{description}
 
+\section{Organization}
+\todo{%
+How the thesis is organized, what goes where and in what chapter
+-- probably should do this part last.
+}
+
+\chapter{Foundations}
 \section{Historical Perspective}
 The theoretical groundwork for the existence of surface plasmon polaritons
-(SPPs) was first introduced by Richie in his seminal 1957 paper
+(SPPs) was first introduced by \textsc{Richie} in his seminal 1957 paper
 \textit{Plasma Losses by Fast Electrons in Thin Films}
 \cite{ritchie1957plasma}.  Like any scientific work, Richie's was
-incremental and has its roots in earlier theoretical proposals by Pines and
-Bohm~\cite{bohm1951collective}~\cite{pines1952collective}.  Ultimately this
-research functioned to explain the phenomena of sharp and spectrally narrow
-energy losses observed in diffraction gratings by Wood in 1902, known as
-``Wood's anomaly''.
+incremental and has its roots in earlier theoretical proposals by
+\textsc{Pines} and
+\textsc{Bohm}~\cite{bohm1951collective}~\cite{pines1952collective}.
+Ultimately this research functioned to explain the phenomena of sharp and
+spectrally narrow energy losses observed in diffraction gratings by
+\textsc{Wood} in 1902, known as ``Wood's anomaly''.
 
 Optical excitation of surface plasmons was made accessible through
-pioneering work in the late 1960's by Kretschmann~\cite{kretschmann1968},
-Raether~\cite{raether1965springer} and Otto~\cite{otto1968excitation}.
-These experiments used the principle of attenuated total reflection (ATR)
-to excite surface plasmons evanescently, using a prism to match their
-resonance condition.  A great deal of understanding on the topic of surface
-plasmons took place in the subsequent decade, such as an improved
-theoretical understanding based on Fresnel relations
-\cite{chen1976excitation} and descriptions of of conically scattered light
-in the presence of surface roughness~\cite{simon1976directional}.  A
-concise overview of this research can be found in~\cite{raether1997surface}.
+pioneering work in the late 1960's by
+\textsc{Kretschmann}~\cite{kretschmann1968},
+\textsc{Raether}~\cite{raether1965springer} and
+\textsc{Otto}~\cite{otto1968excitation}.  These experiments used the
+principle of attenuated total reflection (ATR) to excite surface plasmons
+evanescently, using a prism to match their resonance condition.  A great
+deal of understanding on the topic of surface plasmons took place in the
+subsequent decade, including an improved theoretical understanding based on
+Fresnel relations \cite{chen1976excitation} and descriptions of of
+conically scattered light in the presence of surface
+roughness~\cite{simon1976directional}.  A concise overview of this research
+can be found in~\cite{raether1997surface}.
 
 The introduction of SPR as a biosensing platform began in the early 1980's
-with work by Liedberg, Nylander and Lundstrom~\cite{liedberg1983surface}
-who described the extraordinary sensitivity of the surface plasmon
-resonance condition to perturbations in the refractive index of the medium
-on one side of the film.  The subsequent commercialization of SPR
-biosensors has largely been influenced by these authors and Pharmacia
-Biosensor AB (now Biacore)~\cite{liedberg1995biosensing}.
+with work by \textsc{Liedberg}, \textsc{Nylander} and
+\textsc{Lundstrom}~\cite{liedberg1983surface} who described the
+extraordinary sensitivity of the surface plasmon resonance condition to
+perturbations in the refractive index of the medium on one side of the
+metal film.  The subsequent commercialization of SPR biosensors has largely
+been influenced by these authors and Pharmacia Biosensor AB (now
+Biacore)~\cite{liedberg1995biosensing}.
 
 The commercial success of biosensors based on surface plasmon resonance
-seems to have brought about a knowledge gap between the biosensing
-community and their more theoretical predecessors from whom the field owes
-its genesis.  This is to say that the scope of SPR biosensing experiments
-is disproportionately narrower than the breadth of phenomena discovered
-since Richie.  As an example particular to this dissertation, in 2005 and
-2007, two papers~\cite{andaloro2005optical}~\cite{simon2007observation}
-based on theoretical work by Chuang~\cite{chuang1986lateral} and Chen
-\cite{chen1976excitation} reported a curious interference pattern occurring
-in the specularly reflected light for certain (among them,
-Kretschmann-Raether type) systems illuminated with focused Gaussian beams.
-This was also independently reported a year later in
+brought about a knowledge gap between the biosensing community and their
+more theoretical predecessors from whom the field owes its genesis; the
+scope of SPR biosensing experiments is disproportionately narrower than the
+breadth of phenomena discovered since Richie.  As an example particular to
+this dissertation, in 2005 and 2007, two
+papers~\cite{andaloro2005optical}~\cite{simon2007observation} based on
+theoretical work by \textsc{Chuang}~\cite{chuang1986lateral} and
+\textsc{Chen} \cite{chen1976excitation} reported a curious interference
+pattern occurring in the specularly reflected light for certain (among
+them, Kretschmann-Raether type) systems illuminated with focused Gaussian
+beams.  This was also independently reported a year later in
 \cite{schumann2008near}.  Interestingly, observation of this interference
 required nothing more than the addition of a lens pair to a fairly
 ubiquitous optical setup, but it somehow escaped attention during earlier
 research.  
 
 Many of the topics here are inspired by work done at the University of
-Oregon in the labratory of Prof\@.~Stephen Gregory, summarized in a 2009
-thesis \textit{Surface Plasmon Random Scattering and Related Phenomena}
-\cite{schumann2009surface} by Dr\@.R\@.P\@.~Schumann.  Here is described
-experiments performed on thin metal films in a Kretschmann-Raether
-configuration with the addition of a scanning apertureless near-field
-probe.  This probe (a sharp tungsten tip) is able to elastically scatter
-SPPs in a way analogous to surface roughness, but in this case its location
-and interaction can be precisely controlled.  
+Oregon in the labratory of \textsc{Prof\@.~Stephen Gregory}, summarized in
+a 2009 thesis \textit{Surface Plasmon Random Scattering and Related
+Phenomena} \cite{schumann2009surface} by \textsc{Dr\@.~R\@.P.\@~Schumann}.
+Here is described experiments performed on thin metal films in a
+Kretschmann-Raether configuration with the addition of a scanning
+apertureless near-field probe.  This probe (a sharp tungsten tip) is able
+to elastically scatter SPPs in a way analogous to surface roughness, but in
+this case its location and interaction can be precisely controlled.
+Lacking this apparatus, we can do similiar experiments using biological
+affinities and gold nanoparticles.
+\todo{Improve this last sentence.}
 
 \section{Surface Plasmon Polaritons}
 A photon is a quantized oscillation of an electromagnetic field.  When this
@@ -226,11 +235,10 @@ photon or being absorbed into the metal as heat.
 
 SPPs, like photons, are quantum mechanical objects.  Because this system is
 largely momentum-conserving, elastically scattered plasmons will preserve
-all the information of their parent field.
-
-There are many well written treatments which derive SPPs from 
-many different types of first principles.  Since this has already been
-done, I will simply sumarize the relevant mathematics.
+all the information of their parent field.  There are many well written
+treatments which derive SPPs from many different types of first principles.
+Since this has already been done, I will simply sumarize the relevant
+mathematics.
 
 \subsection{Wave Equation}
 Most of the relevant behavior of SPP propagation can be derived from the
@@ -263,6 +271,237 @@ but it is orthogonal $\mathbf{E}$ by
 and the two are mutually orthogonal with the direction of propagation
 $\mathbf{k}$.
 
+\subsection{Dispersion Relation}
+With plane wave solutions in hand, boundary conditions consistent with a
+dielectric-metal interface can be imposed.
+At a planar interface, it is convenient to restrict the problem to two
+dimensions; in this case the $x$-$z$ plane as shown schematically in
+\Figure{fig:kretschmanngeosimplified}.  Since $\mathbf{k}=(k_x,0,k_z)$,
+$\mathbf{r}\cdot\mathbf{k}=k_x x + k_z z$ and $\mathbf{E}_0 = (E_x, 0,
+E_z)$, the electric field can be written 
+\begin{align}
+\mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
+\cdot \mathbf{r} - \omega t )}\\
+\mathbf{E}(x,z,t)&=\begin{pmatrix}
+E_x\\ 0\\ E_z
+\end{pmatrix}
+\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
+\label{eqn:planewavexz}
+\end{align}
+The magnetic field propagates in the same direction with the
+same $\mathbf{k}$-vector components, but the direction
+$\mathbf{H}$ must be orthogonal to $\mathbf{E}$ by
+\Equation{eqn:faradayslaw}
+\begin{align}
+\mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
+\cdot \mathbf{r} - \omega t )}\\
+\mathbf{H}(x,z,t)&=\begin{pmatrix}
+0\\ H_y\\ 0
+\end{pmatrix}
+\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
+\end{align}
+At the interface there are two values for the (complex) permittivity,
+$\epsilon_1$ in the dielectric and $\epsilon_2$ in the metal.  Consequently
+there are two sets of plane wave solutions
+\begin{align}
+\left.\begin{aligned}
+\mathbf{H}_1(x,z,t) &=
+\begin{pmatrix}
+0\\
+H_{y,1}\\
+0
+\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}\\
+\mathbf{E}_1(x,z,t) &=
+\begin{pmatrix}
+E_{x,1}\\
+0\\
+E_{z,1}\\
+\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
+\end{aligned}
+\right\}& \quad \text{dielectric}, \epsilon_1\label{eqn:planewavedielectric}\\
+\left.\begin{aligned}
+\mathbf{H}_2(x,z,t) &=
+\begin{pmatrix}
+0\\
+H_{y,2}\\
+0
+\end{pmatrix}
+\me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}\\
+\mathbf{E}_2(x,z,t) &=
+\begin{pmatrix}
+E_{x,2}\\
+0\\
+E_{z,2}\\
+\end{pmatrix}
+\me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+\end{aligned} 
+\right\}&\quad \text{metal}, \epsilon_2
+\label{eqn:planewavemetal}
+\end{align}
+where the subscript designates which material the wave equation refers to.
+(e.g. $\mathbf{E}_1$ is the electric field in the dielectric, $\mathbf{H}_2$
+the magnetic field in the metal, etc.)
+Continuity of \Equation{eqn:planewavedielectric} and
+\ref{eqn:planewavemetal} at this interface requires that
+\begin{align}
+E_{x,2}&=E_{x,1}\\
+H_{y,2}&=H_{y,1}\\
+\epsilon_2 E_{z,2}&=\epsilon_1 E_{z,1}
+\end{align}
+Applying Ampere's law (\Equation{eqn:ampereslaw}) to the field on the
+each boundary gives
+\begin{align}
+\nabla \times \mathbf{H}_i &= \epsilon_i \frac{\partial \mathbf{E}_i}{\partial t}\\
+\begin{pmatrix}
+\frac{\partial H_{z,i}}{\partial y} - \frac{\partial H_{y,i}}{\partial z}\\
+\frac{\partial H_{x,i}}{\partial y} - \frac{\partial H_{z,i}}{\partial z}\\
+\frac{\partial H_{y,i}}{\partial y} - \frac{\partial H_{x,i}}{\partial z}
+\end{pmatrix}
+&= \begin{pmatrix}
+-\mi k_{z,i} H_{y,i}\\
+0\\
+\mi k_{x,i} H_{y,i}
+\end{pmatrix}
+\\
+&= \begin{pmatrix}
+-\mi \omega \epsilon_i E_{x,i}\\
+0\\
+-\mi \omega \epsilon_i E_{z,i}
+\end{pmatrix}
+\label{eqn:vectordisp}
+\end{align}
+where $\mathbf{E}_i$, $\mathbf{H}_i$, $i=1,2$ represent the field in either the
+dielectric or the metal.  The vector components of
+\Equation{eqn:vectordisp} are therefore related 
+\begin{align}
+-\mi k_{z,i} H_{y,i} &= -\mi \omega \epsilon_i E_{x,i}\\
+k_{z,1} H_{y,1} &= \omega \epsilon_1 E_{x,1}\\
+k_{z,2} H_{y,2} &= \omega \epsilon_2 E_{x,2}
+\label{eqn:spderivsteptwo}
+\end{align}
+Since the components of both $\mathbf{E}_i$ and $\mathbf{H}_i$ are
+parallel to the interface, $E_{x,i}$ and $H_{y,i}$ are also
+continuous. By substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
+\begin{align}
+\frac{k_{z,1}}{\epsilon_1}H_{y,1}&=\frac{k_{z,2}}{\epsilon_2}H_{y,2}\\ 
+\Aboxed{
+\frac{k_{z,1}}{\epsilon_1}&=\frac{k_{z,2}}{\epsilon_2} 
+}
+\label{eqn:sprcondition}
+\end{align}
+This is the surface plasmon resonance condition.  In terms of
+its vector components, the following holds in general for all electromagnetic
+waves
+\begin{align}
+\mathbf{k}^2=\epsilon_i \left(\frac{\omega}{c}\right)^2=k_x^2 + k_{z,i}^2\\
+\epsilon_i k_0^2=k_x^2 + k_{z,i}^2
+\label{eqn:dispersion1}
+\end{align}
+Substitution of \Equation{eqn:sprcondition} with the relation 
+$k_{x,1}=k_{x,2}$ into \Equation{eqn:dispersion1} allows 
+$k_x$ and $k_{z,i}$ to be rewritten in the form of a dispersion relation
+\begin{align}
+k_x &= k_0\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}} 
+= \frac{\omega}{c}\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}}\\
+k_{z,i} &= k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
+= \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
+\end{align}
+
+This relation, shown in \Figure{fig:dispersionrelation}, is useful because
+it shows graphically the condition under which SPPs may exist: at the
+intersection between the photon light line and corresponding SPP light line
+for the medium in question.  Note that for a photon and a plasmon in both a
+vacuum and a dielectric, this never happens; the photon assumes $\omega = c
+k /\sqrt{\epsilon_i}$ for $i=1,2$, diverging to infinity while the SPP
+asymptotically approaches $\omega_p/\sqrt{1+\epsilon_i}$ as $k_x\to\infty$.
+However, if light is incident from a dielectric $\epsilon_1$ at an angle
+$\theta$, the slope of $\omega(k_x)$ is modified to $c k \sin
+\theta/\sqrt{\epsilon_1}$ and the dispersion relations can be matched.
+This is the principle exploited by Kretschmann \cite{kretschmann1968} to
+excite SPPs with prisms.
+
+There are several regions of interest in \Figure{fig:dispersionrelation},
+depending on the relative value of $\epsilon_1$ and $\epsilon_2$.  We first
+assume that $\epsilon_1$ is a dielectric with $\epsilon_1\in\mathbb{R}$ and
+$\epsilon_1 > 0$ (true for most if not all glass).  In this case, for
+$\Re(\epsilon_2)>0$, both $k_x$ and $k_z$ are real.  These are known as
+``radiative modes'' -- an SPP mode is supported normal to the interface but
+it is not bound there.  For $-\epsilon_1<\Re(\epsilon_2)<0$, $k_z$ is real
+and $k_x$ imaginary.  The SPP is not confined to the interface and decays
+evanescently there; this is known as a ``quasi-bound mode''  However, for
+$\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
+indicates the SPP is localized at the interface in $z$ while having a
+propagating solution in $x$, and is exactly the condition we wish to match.
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$k_x$,
+ylabel=$\omega$,
+xmin=0,
+xmax=0.6e8,
+ymin=0.75e15,
+ymax=6.5e15,
+thick,
+width=0.75\textwidth,
+height=0.75\textwidth,
+minor tick num=2,
+legend pos = south east,
+legend style = { cells = {anchor=west} },
+clip=false,
+]
+\addplot[color=Dark27qual1] file {dispersion/kx_photon_glass.dat}
+node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
+\addlegendentry{photon/dielectric}
+
+\addplot[color=Dark27qual2] file {dispersion/kx_photon_glass_tilted.dat}
+node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
+\addlegendentry{photon/dielectric angle}
+
+\addplot[color=Dark27qual3] file {dispersion/kx_photon_vacuum.dat}
+node [anchor=south west,yshift=-10pt]{$ck$}; 
+\addlegendentry{photon/vacuum}
+
+\addplot[color=Dark27qual4] file {dispersion/kx_sp_metal_glass_lower.dat};
+\addlegendentry{SPP/dielectric}
+
+\addplot[color=Dark27qual5] file {dispersion/kx_sp_metal_vacuum_lower.dat};
+\addlegendentry{SPP/vacuum}
+
+\addplot[color=Dark27qual1] file {dispersion/kx_sp_metal_glass_upper.dat};
+\addplot[color=Dark27qual2] file {dispersion/kx_sp_metal_vacuum_upper.dat};
+
+\addplot[color=Dark27qual1,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
+node [anchor=east,xshift=-15pt]{$\omega_p$}; 
+
+\addplot[color=Dark27qual2,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
+node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
+
+\addplot[color=Dark27qual3,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
+node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
+
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
+node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Dispersion relation for photons and plasmons.  Conditions under
+which SPPs may occur at the intersection between the photon light line and
+corresponding SPP light line for the medium in question.  Based on a
+similar plot found in \cite{shsongspp}.}
+\label{fig:dispersionrelation}
+\end{figure}
+\todo{Fix the colors here.}
+%The dispersion diagram relates the time-variation of the wave (given by its
+%frequency &omega) to the spatial variation of the wave (given by its
+%wave-vector kx)
 \subsection{Resonance Condition}
 The resonance condition requires the dispersion relation for an
 incident photon intersect the dispersion relation for SPPs, matching both
@@ -292,21 +531,19 @@ In practice the resonance angle $\theta_\text{sp}$ is most easily found by
 numerically evaluating the Fresnel relations discussed in the following
 section.
 
-\subsection{Fresnel Equations}
-% Change things up here say that we only use the transfer matrix method,
-% then give its definition and say a word or two about our implmentation.
-% Next, give a quick formulat for the Fresnel 2-layer reflectivity and say
-% how it can be iterated.
-With no loss of generality, analysis of the field in the specular direction
-is again restricted to the $x$-$z$ plane as shown in \Figure{fig:kretschmanngeo}.  The
-Fresnel reflection coefficient $\tilde{r}$ is defined as the ratio of the
+\subsection{Fresnel Relations}
+Many features of surface plasmon resonance can be predicted using the
+Fresnel relations and the transfer matrix method (TMM) for multilayer
+stacks.
+The Fresnel reflection coefficient $\tilde{r}$ is defined as the ratio of the
 reflected beam $\tilde{E}_r$ to the incident beam
 $\tilde{E}_i$
 \begin{align}
 \tilde{r} &= \frac{\tilde{E}_r}{\tilde{E}_i}
 \end{align}
-Here the presence of a tilde $\sim$ indicates a function in the (spatial) frequency domain.
-For multilayer systems, this can be found through transfer matrix methods where the $i$th matrix $M_i$ is
+Here the presence of a tilde $\sim$ indicates a function in the (spatial)
+frequency domain.  For multilayer systems, this is found through
+the transfer matrix method where the $i$th matrix $M_i$ is
 \begin{align}
 M_i = \left(\begin{array}{cc}
 \cos \sigma_i & \mi \sin \sigma_i / \gamma_i\\
@@ -335,7 +572,7 @@ substituted into the formula
 \frac{\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} - M_{21} - \gamma_3 M_{22}}
 {\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} + M_{21} + \gamma_3 M_{22}}
 \end{align}
-Through a bit of algebra, the Fresnel reflection for an arbitrary number of
+With a bit of algebra, the Fresnel reflection for an arbitrary number of
 layers in the case of TM polarization can be found to be
 \begin{align}
 \tilde{r}_{j,l,m \ldots n} = 
@@ -353,8 +590,11 @@ where $d_l$ is the thickness of the $l$th metal layer and
 {\epsilon_j k_{z,i}+\epsilon_i k_{z,j}}
 \end{align}
 is the two layer Fresnel relation.  \Equation{eqn:bertnlayer} may be
-recursively applied for any number of layers.  There are computational limits to this approach which make it unsuitable for large multilayer stacks; in such a case methods based on \Equation{eqn:tmm} are more appropriate.  Much more applicable is the three layer Fresnel reflectivity $\tilde{r}_{123}$, based on
-the geometry of \Figure{fig:kretschmanngeo}
+recursively applied for any number of layers.  There are computational
+limits to this approach which make it unsuitable for large multilayer
+stacks; in such a case methods based on \Equation{eqn:tmm} are more
+appropriate.  For convience we state the three layer Fresnel reflectivity
+$\tilde{r}_{123}$, based on the geometry of \Figure{fig:kretschmanngeo}
 \begin{align}
 \tilde{r}_{123}(k_x) &=
 \frac{
@@ -379,12 +619,30 @@ function of incident angle $\theta$ or $k_x$
 k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 &= \sqrt{k_0^2\epsilon_i - k_x^2}
 \end{align}\begin{flushleft}\begin{center}\end{center}\end{flushleft}
-% experimental setup maybe?
-\section{The Kretschmann Configuration}
-\subsection{Focussed Field}
-% use what you know from that one document to come up with what should see
-% as a focussed field (maybe just use Mathew's code, but this isn't so
-% important so don't spend so much time here.
+\subsection{Physical Properties}
+The physical properties of SPP propagation are derived from $k_x$ and $k_z$.
+Since the SPP is confined to the plane of the metal, the surface plasmon
+wavelength $\lambda_\text{sp}$ is defined in terms of the real part of
+$k_x$
+\begin{align}
+\lambda_\text{sp} &= \frac{\lambda_0}{2 \pi} k_x\\
+& = \Re\left(\sqrt{
+  \frac {\epsilon_1+\epsilon_2}
+   {\epsilon_1 \epsilon_2 \lambda_0^2}
+}\right)
+\end{align}
+when $k_x$ is imaginary, \Equation{eqn:planewavexz} is evanescent in
+$x$ and the SPP decays with a characteristic $1/\me$ lifetime
+$\Im(1/(2k_x)$.  Similarly, when $k_{z,i}$ is imaginary, the
+$1/\me$ evanescent decay into either the metal or vacuum is given by
+$\Im(1/k_{z,i})$.  A table of these properties for many different SPP
+excitation configurations is found in \Appendix{ref:physicalproperties}.
+
+
+\section{Experimental Setup}
+\todo{Write here about how the experiment is done so there will be no
+confusion later.}
+
 \section{Long Range Surface Plasmon Polaritons}
 The typical propagation distances for SPPs in the three layer Kretschmann configuration are on the order of $\SI{30}{\micro\meter}$ for Ag films and $\SI{6}{\micro\meter}$ for Au films.  The reason for this is the electric field extends into the metal and the real part of the metal's dielectric function damps the SPP oscillation, causing it to decay as heat.  However, if we are able to expel the SPP evanescent field from the metal region, the propagation distances can be extended orders of magnitude.  These are called \textit{long range surface plasmon polaritons} (LRSPPs), and in terms of our geometry can be excited in one of two ways.
 \subsection{Symmetric Configuration}
@@ -709,8 +967,8 @@ and $\mathrm{r}$ is the spatial variable.
 Several datasets were produced during the course of this dissertation which
 might be useful to the reader.  They are presented here.
 \section{Physical Properties of SPP Propagation}
+\label{ref:physicalproperties}
 %\import{dispersion/}{sptable_632.tex}
-
 \section{The Three Layer Fresnel System}
 %% you will have to fix the path in the following file
 %\import{fresnel_plots/}{allthreelayerfresnel}
@@ -743,6 +1001,7 @@ algorithms were written in \texttt{octave}.  Weirdospace images were
 processed using python and scipy/numpy.  Parallel execution was done at at
 the FAU RRZE, Erlangen, Germany.
 
+\listoftodos
 \end{document}
 
 % MISSING A HOME

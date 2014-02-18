@@ -1,0 +1,17 @@
+# latex turd files
+*.aux
+*.aux.make
+*.make
+*.log
+*.auxbbl.make
+*.auxtarget.make
+*.bbl
+*.blg
+*.d
+*.fls
+*.out
+*.out.make
+mpl-dis.pdf
+*.tdo
+*.toc
+*.toc.make
