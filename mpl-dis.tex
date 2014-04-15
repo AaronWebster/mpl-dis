@@ -1,5 +1,130 @@
 \documentclass[a4paper,titlepage,onecolumn]{report}
-\input{myinc}
+% title of the dissertation
+\def\distitle{Dingus}
+\usepackage{todonotes}
+\usepackage{mathtools}
+\usepackage{t1enc}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{datetime}
+\usepackage{fullpage}
+\usepackage{hyperref}
+
+\hypersetup{
+ colorlinks=true,
+ citecolor=black,
+ linkcolor=black,
+ pdftitle={\distitle}
+}
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+% This definition puts a little vertical guy at the end so it's more
+% obvious where the square root actually ends.
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+
+% integrals with infinity bounds
+\newcommand{\intinfty}{\int_{-\infty}^{\infty}}
+
+% consistent formatting of object labels
+\newcommand{\Figure}[1]{Figure \ref{#1}}
+\newcommand{\Equation}[1]{Equation \ref{#1}}
+\newcommand{\Table}[1]{Table \ref{#1}}
+\newcommand{\Section}[1]{Section \ref{#1}}
+\newcommand{\Chapter}[1]{Chapter \ref{#1}}
+\newcommand{\Part}[1]{Part \ref{#1}}
+\newcommand{\Appendix}[1]{Appendix \ref{#1}}
+
+% missing mathematical operators
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\inverf}{inverf}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+%\DeclareMathOperator{\Re}{Re}
+%\DeclareMathOperator{\Im}{Im}
+
+% use roman type for natural base e and sqrt(-1)
+\newcommand{\me}{{\mathrm{e}}}
+\newcommand{\mi}{{\mathrm{i}}}
+
+% roman type for the derivative, plus a space
+\newcommand{\md}{\,\mathrm{d}}
+
+% fourier transform and the reverse
+\newcommand{\ff}[1]{{\mathscr{F}^{+}\bigl(#1\bigr)}}
+\newcommand{\fr}[1]{{\mathscr{F}^{-}\bigl(#1\bigr)}}
+
+% hilbert transform and the reverse
+\newcommand{\hf}[1]{{\mathscr{H}^{+}\bigl(#1\bigr)}}
+\newcommand{\hr}[1]{{\mathscr{H}^{-}\bigl(#1\bigr)}}
+
+% QCM related frequency and bandwidth shifts
+\newcommand{\df}{\Delta\!f}
+\newcommand{\dg}{\Delta\Gamma}
+
+% custom lengths for figures
+
+% width for side by side figures
+\newlength{\twoupwidth}
+\setlength{\twoupwidth}{7.5cm}
+
+% width and height for default single figure
+\newlength{\oneupwidth}
+\setlength{\oneupwidth}{0.90\textwidth}
+\newlength{\oneupheight}
+\setlength{\oneupheight}{0.55623059\textwidth}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units}
+\usetikzlibrary{calc}
+
+% custom colors for 2D plots - these are the same ones mathematica uses by
+% default
+
+\pgfplotsset{
+ /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255)
+ rgb255(3cm)=(0,255,255) rgb255(5cm)=(255,255,0) rgb255(7cm)=(255,0,0)
+ rgb255(8cm)=(128,0,0)}
+}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units} 
+
+\usepackage{siunitx}
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{M}}
+
+\sisetup{ 
+% load-configurations=abbreviations
+% round-mode = places,
+}%
+
+\import{colors/}{colors}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
 \begin{document}
@@ -8,7 +133,7 @@
 \begin{titlepage}
 \begin{center}
 \hfill\\[4cm]
-{ \Huge {\bfseries {Plasmon/QCM Biosensing}} \par}
+{ \Huge {\bfseries {\distitle}} \par}
 \vspace{3.0cm}
 \begin{tabular}{lr}
 \includegraphics[height=2cm,keepaspectratio]{logo/Logo_MPL_englisch_kompakt_cmyk_110915}
@@ -46,7 +171,7 @@ Date\hspace{0.51cm}\makebox[5cm]{\hrulefill}\hspace{0.25cm}
 %%%%% ADVISOR, CO-ADVISOR %%%%%
 \section*{Evaluation Committee}
 \subsection*{First Advisor}
-Dr. Frank Vollmer\\
+Dr. Rer. Nat. Frank Vollmer\\
 Laboratory of Biophotonics and Biosensing\\
 Max Planck Institute for the Science of Light\\
 G\"unther-Scharowsky-Str.1 / Bau 24\\
@@ -64,12 +189,13 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 I would like to extend my sincerest gratitude to the following individuals
 who helped me throughout this work: \textsc{Jiapeng~Huang}, for his
 enthusiasm and hard work in carrying out many tedious but necessary
-experiments, \textsc{Dr\@.~Yuqiang~Wu} for determining out the proper
-protocols regarding the use of DNA origami, \textsc{Dr\@.~Matthew~Foreman}
-for many insightful theoretical endevours, and
-\textsc{Prof.\@.~Stephen~Gregory} and \textsc{Dr\@.~R\@.P.\@~Schumann} whose
+experiments, \textsc{Yuqiang~Wu} for determining out the proper
+protocols regarding the use of DNA origami, \textsc{Matthew~Foreman}
+for many insightful theoretical endevours,
+\textsc{Stephen~Gregory} and \textsc{R\@.P.\@~Schumann} whose
 pioneering work inspired the work in \Part{part:plasmon}, and
-\textsc{Dr\@.~Yuki~Sato}, for the work in \Part{part:qcm}.
+\textsc{Yuki~Sato} for his patience through many dicussions involving 
+the QCM work in \Part{part:qcm}.
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -83,6 +209,9 @@ pioneering work inspired the work in \Part{part:plasmon}, and
 \pagenumbering{arabic}
 
 \chapter*{Foreword}
+The field of biosensing has this theme: very simple setups were though not
+possible, but then were made relevant 
+
 \todo{Summarize and give a quick overview of the different parts and what
 they are good for.}
 
@@ -216,9 +345,9 @@ ubiquitous optical setup, but it somehow escaped attention during earlier
 research.  
 
 Many of the topics here are inspired by work done at the University of
-Oregon in the labratory of \textsc{Prof\@.~Stephen Gregory}, summarized in
+Oregon in the labratory of \textsc{Stephen Gregory}, summarized in
 a 2009 thesis \textit{Surface Plasmon Random Scattering and Related
-Phenomena} \cite{schumann2009surface} by \textsc{Dr\@.~R\@.P.\@~Schumann}.
+Phenomena} \cite{schumann2009surface} by \textsc{R\@.P.\@~Schumann}.
 Here is described experiments performed on thin metal films in a
 Kretschmann-Raether configuration with the addition of a scanning
 apertureless near-field probe.  This probe (a sharp tungsten tip) is able
