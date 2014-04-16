@@ -53,6 +53,48 @@ for($i=0;$i<scalar(@array);++$i){
 	if($line[1]){ print OUT2 "$line[0]$line[1]$line[2]\\\\"; }
 }
 
+$here = 0;
+for($i=0;$i<scalar(@array);++$i){
+	# get first line
+	@line = split(',',@array[$i]);
+	if($line[1]){ 
+		print OUT1 "\\pgfplotsset{\/pgfplots\/colormap={$line[0]$line[1]$line[2]}{\n";
+		print OUT2 <<EOF
+\\section*{$line[0]$line[1]$line[2]}
+\\begin{tikzpicture}
+\\begin{axis}[
+    hide axis,
+    scale only axis,
+    height=0pt,
+    width=0pt,
+    colormap name = $line[0]$line[1]$line[2],
+    colorbar horizontal,
+    point meta min=0,
+    point meta max=1,
+    colorbar style={
+        width=10cm,
+    }]
+    \\addplot [draw=none] coordinates {(0,0)};
+\\end{axis}
+\\end{tikzpicture}
+EOF
+
+	}
+
+	for($j=0;$j<$line[1];++$j){
+		@line2 = split(',',@array[$i++]);
+
+		print OUT1 "\trgb255=(";
+		print OUT1 $line2[6];
+		print OUT1 ",";
+		print OUT1 $line2[7];
+		print OUT1 ",";
+		print OUT1 $line2[8];
+		print OUT1 ") \n";
+	}
+	if($line[1]){ print OUT1 "}}\n"; }
+}
+
 close(IN);
 close(OUT1);
 close(OUT2);

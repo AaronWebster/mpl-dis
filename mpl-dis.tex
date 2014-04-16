@@ -1,6 +1,6 @@
 \documentclass[a4paper,titlepage,onecolumn]{report}
 % title of the dissertation
-\def\distitle{Dingus}
+\def\distitle{Coupled Systems in Single Molecule Biosensing}
 \usepackage{todonotes}
 \usepackage{mathtools}
 \usepackage{t1enc}
@@ -22,6 +22,8 @@
 \usepackage{datetime}
 \usepackage{fullpage}
 \usepackage{hyperref}
+\usepackage[parfill]{parskip}
+
 
 \hypersetup{
  colorlinks=true,
@@ -55,6 +57,19 @@
 \newcommand{\Part}[1]{Part \ref{#1}}
 \newcommand{\Appendix}[1]{Appendix \ref{#1}}
 
+% I want all of the document numbering to always show the full path, fuck
+% with this later
+%\renewcommand\thesection{\Roman{part}.\Alph{chapter}.\arabic{section}}
+%\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+%\renewcommand\thesubsubsection{\arabic{subsection}.\arabic{subsubsection}}
+
+%\renewcommand\thefigure{S\arabic{figure}}
+%\renewcommand\thesection{\Roman{part}.\arabic{chapter}.\arabic{section}}
+%\renewcommand\thetable{S\arabic{table}}
+
+% names have a particular formatting
+\newcommand{\name}[1]{\textsc{#1}}
+
 % missing mathematical operators
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\sech}{sech}
@@ -85,6 +100,12 @@
 % QCM related frequency and bandwidth shifts
 \newcommand{\df}{\Delta\!f}
 \newcommand{\dg}{\Delta\Gamma}
+\newcommand{\xil}{\xi_\mathrm{L}}
+\newcommand{\kl}{k_\mathrm{L}}
+\newcommand{\ml}{m_\mathrm{L}}
+\newcommand{\kq}{k_\mathrm{q}}
+\newcommand{\mq}{m_\mathrm{q}}
+\newcommand{\omegaq}{\omega_\mathrm{q}}
 
 % custom lengths for figures
 
@@ -104,27 +125,21 @@
 \usetikzlibrary{pgfplots.units}
 \usetikzlibrary{calc}
 
-% custom colors for 2D plots - these are the same ones mathematica uses by
-% default
-
-\pgfplotsset{
- /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255)
- rgb255(3cm)=(0,255,255) rgb255(5cm)=(255,255,0) rgb255(7cm)=(255,0,0)
- rgb255(8cm)=(128,0,0)}
-}
 \usepgfplotslibrary{units}
 \usetikzlibrary{pgfplots.units} 
 
+\import{colors/}{colors}
+
+% siunitx
 \usepackage{siunitx}
 \DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
-\DeclareSIUnit\Molar{\textsc{M}}
+\DeclareSIUnit\Molar{\name{M}}
 
 \sisetup{ 
 % load-configurations=abbreviations
 % round-mode = places,
 }%
 
-\import{colors/}{colors}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
 \begin{document}
@@ -187,15 +202,17 @@ G\"unther-Scharowsky-Str.1 / Bau 24\\
 %%%% ACKNOWLEDGEMENTS %%%%
 \chapter*{Acknowledgements}
 I would like to extend my sincerest gratitude to the following individuals
-who helped me throughout this work: \textsc{Jiapeng~Huang}, for his
-enthusiasm and hard work in carrying out many tedious but necessary
-experiments, \textsc{Yuqiang~Wu} for determining out the proper
-protocols regarding the use of DNA origami, \textsc{Matthew~Foreman}
-for many insightful theoretical endevours,
-\textsc{Stephen~Gregory} and \textsc{R\@.P.\@~Schumann} whose
-pioneering work inspired the work in \Part{part:plasmon}, and
-\textsc{Yuki~Sato} for his patience through many dicussions involving 
-the QCM work in \Part{part:qcm}.
+who contributed to this work: \name{Jiapeng~Huang}, for his enthusiasm
+and hard work in carrying out many tedious but necessary experiments,
+\name{Yuqiang~Wu} for establishing the DNA origami and related protocols,
+\name{Matthew~Foreman} for carrying out insightful theoretical modeling
+regarding SPP multiple scattering, \name{Frank~Vollmer} for his optimism
+in seeing this work to a successful completion, \name{Stephen~Gregory}
+and \name{R\@.P.\@~Schumann} whose pioneering experiments are the basis
+for my own, and \name{Yuki~Sato} for his patience and progressive
+scientific ideas regarding his centrifugal force quartz crystal
+microbalance.  Most significantly, I would like to recognize
+\name{Norbert~Lindlein}, without whom this dissertation would not exist.
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
@@ -219,7 +236,7 @@ they are good for.}
 \label{part:plasmon}
 \chapter{Preface}
 \section{Synopsis}
-This dissertation is all about what happens when surface plasmons are
+This part is all about what happens when surface plasmons are
 scattered in a prism coupled setup.  The easiest way of understanding this
 is though the experimental setup, shown below in \Figure{fig:kretschmanngeo}.  
 \begin{figure}[hb]
@@ -294,21 +311,21 @@ How the thesis is organized, what goes where and in what chapter
 \chapter{Foundations}
 \section{Historical Perspective}
 The theoretical groundwork for the existence of surface plasmon polaritons
-(SPPs) was first introduced by \textsc{Richie} in his seminal 1957 paper
+(SPPs) was first introduced by \name{Richie} in his seminal 1957 paper
 \textit{Plasma Losses by Fast Electrons in Thin Films}
 \cite{ritchie1957plasma}.  Like any scientific work, Richie's was
 incremental and has its roots in earlier theoretical proposals by
-\textsc{Pines} and
-\textsc{Bohm}~\cite{bohm1951collective}~\cite{pines1952collective}.
+\name{Pines} and
+\name{Bohm}~\cite{bohm1951collective}~\cite{pines1952collective}.
 Ultimately this research functioned to explain the phenomena of sharp and
 spectrally narrow energy losses observed in diffraction gratings by
-\textsc{Wood} in 1902, known as ``Wood's anomaly''.
+\name{Wood} in 1902, known as ``Wood's anomaly''.
 
 Optical excitation of surface plasmons was made accessible through
 pioneering work in the late 1960's by
-\textsc{Kretschmann}~\cite{kretschmann1968},
-\textsc{Raether}~\cite{raether1965springer} and
-\textsc{Otto}~\cite{otto1968excitation}.  These experiments used the
+\name{Kretschmann}~\cite{kretschmann1968},
+\name{Raether}~\cite{raether1965springer} and
+\name{Otto}~\cite{otto1968excitation}.  These experiments used the
 principle of attenuated total reflection (ATR) to excite surface plasmons
 evanescently, using a prism to match their resonance condition.  A great
 deal of understanding on the topic of surface plasmons took place in the
@@ -319,8 +336,8 @@ roughness~\cite{simon1976directional}.  A concise overview of this research
 can be found in~\cite{raether1997surface}.
 
 The introduction of SPR as a biosensing platform began in the early 1980's
-with work by \textsc{Liedberg}, \textsc{Nylander} and
-\textsc{Lundstrom}~\cite{liedberg1983surface} who described the
+with work by \name{Liedberg}, \name{Nylander} and
+\name{Lundstrom}~\cite{liedberg1983surface} who described the
 extraordinary sensitivity of the surface plasmon resonance condition to
 perturbations in the refractive index of the medium on one side of the
 metal film.  The subsequent commercialization of SPR biosensors has largely
@@ -334,8 +351,8 @@ scope of SPR biosensing experiments is disproportionately narrower than the
 breadth of phenomena discovered since Richie.  As an example particular to
 this dissertation, in 2005 and 2007, two
 papers~\cite{andaloro2005optical}~\cite{simon2007observation} based on
-theoretical work by \textsc{Chuang}~\cite{chuang1986lateral} and
-\textsc{Chen} \cite{chen1976excitation} reported a curious interference
+theoretical work by \name{Chuang}~\cite{chuang1986lateral} and
+\name{Chen} \cite{chen1976excitation} reported a curious interference
 pattern occurring in the specularly reflected light for certain (among
 them, Kretschmann-Raether type) systems illuminated with focused Gaussian
 beams.  This was also independently reported a year later in
@@ -345,9 +362,9 @@ ubiquitous optical setup, but it somehow escaped attention during earlier
 research.  
 
 Many of the topics here are inspired by work done at the University of
-Oregon in the labratory of \textsc{Stephen Gregory}, summarized in
+Oregon in the labratory of \name{Stephen Gregory}, summarized in
 a 2009 thesis \textit{Surface Plasmon Random Scattering and Related
-Phenomena} \cite{schumann2009surface} by \textsc{R\@.P.\@~Schumann}.
+Phenomena} \cite{schumann2009surface} by \name{R\@.P.\@~Schumann}.
 Here is described experiments performed on thin metal films in a
 Kretschmann-Raether configuration with the addition of a scanning
 apertureless near-field probe.  This probe (a sharp tungsten tip) is able
@@ -1073,10 +1090,9 @@ monochromatic wave equation, $\mathbf{E}(\mathbf{r})=\me^{\mi
 \mathrm{k}\cdot \mathrm{r}}$, where $\mathrm{k}$ is the plasmon wavevector
 and $\mathrm{r}$ is the spatial variable.
 
-\subsection{Single Scattering}
+\section{Single Scattering}
 
-\subsection{Multiple Scattering}
- 
+\section{Multiple Scattering}
 
 \chapter{Multiple Scattering of SPPs}
 \section{Speckle}
@@ -1095,10 +1111,272 @@ and $\mathrm{r}$ is the spatial variable.
 %\caption{How do the font sizes look?}
 %\end{figure}
 
-\bibliographystyle{plain}
-\bibliography{bibliography}
 
+\part{The Centrifugal Force Quartz Crystal Microbalance}
+\label{part:qcm}
+\chapter{Foundations}
+\section{Overview}
+Mechanical properties such as viscoelasticity, contact stiffness and
+adhesion, and force-dependent conforma- tional changes have been shown to
+be instrumental in understanding biofunctional behavior from single
+molecules to complex collections of cells. These properties are often
+descriptive for specific molecules and cell types. For example, force
+extension curves of DNA vary with assembly of histone proteins into
+chromatin. In cells, viscoelasticity alone can discriminate between
+healthy and cancerous tissue. Biosensors that can probe mechanical
+properties are therefore ideal for both fundamental studies in life
+sciences as well as diagnostic assays improving public health.
+
+Perhaps the simplest way to probe a biomechanical property is by monitoring
+its response to direct application of force. Current force based
+approaches, for example those based on atomic force microscopy or optical
+or magnetic tweezers, are powerful but limited in their applicability as
+biosensors. In particular, their operation requires significant expertise
+on the part of the investigator, and is often constrained to well prepared
+samples not amenable to multiplexing.
+
+Among tools suitable for direct mechanical transduction, the quartz crystal
+microbalance (QCM) has seen increasing real-world utility as simple, cost
+effective, and highly versatile mechanical biosensing platforms.  A QCM
+typically manifests itself as a thin disk of piezoelectric quartz with
+electrodes on either side.  The quartz is cut such that, when driven by a
+potential, the crystal produces acoustic shear waves on either of its two
+faces.  When a material is in contact with the crystal, its resonance
+condition will change.  These changes can be used to interrogate both the
+viscoelastic properties of the material and the way in which it is coupled
+to the QCM.  This mechanical turns out to be extrorinary sensitive, even in
+liquid environments, with sensitivities to mass on the order of X.  The
+function of a QCM is depicted schematically in \Figure{fig:qcmschema}.
+
+\begin{figure}
+ \caption{Schematic representation of the operation of a QCM.  The
+  quartz crystal is driven by a pair of electrodes on either sides to
+  excite \si{\mega\hertz} acoustic shear waves.  A sample in contact with
+  the crystal will typically change its resonant frequency $\df$ and
+  bandwidth $\dg$, which are connected to the viscoelastic properites of
+ the sample and the way in which it is coupled to the device.}
+\end{figure}
+
+Since its introduction by Sauerbrey [10] in 1959 as sub-monolayer thin-film
+mass sensors in the gas phase, the understanding of these piezoelectric
+devices has been repeatedly enhanced to study phenomena such as
+viscoelastic films in the liquid phase [11], non-destructive contact
+mechanics [12], and complex topolo- gies of biopolymers and
+biomacromolecules [13]. However, despite their popularity QCMs suffer from
+low-Q resonances which negatively impact their sensitivity. In addition,
+extracting quantitative mechanical information from biomolecules is often
+confounded by non-trivial interpretation of the discrete shifts in the
+system's frequency and bandwidth.
+
+The centrifugal force quartz crystal microbalance (CF-QCM), shown in
+\Figure{fig:cfqcm} is our tool to do something.  The CF-QCM is a new type
+of instrument which places a quartz crystal microbalance in a standard
+commercial centrifuge.  When spinning, controllable centrifugal force is
+applied to a biomaterial under assay, and the QCM signal as a function of
+applied force is monitored in situ and in real time.
+
+Where typical mechanical biosensing produces a single, stepwise sensor
+response that can be linked to, in the case of a QCM, the static adsorbed
+mass, contact stiffness, or viscoelastic compliance, our proposal allows
+for the direct manipulation of elective dynamic versions of these
+parameters through centrifugal force gradients.
+Examples of loads which could be probed and the possible action of
+centrifugal force are shown in \Figure{fig:cfqcm}
+\begin{figure}
+ \caption{Schematic of the CF-QCM.}
+\end{figure}
+\begin{table}
+ \centering
+\begin{tabular}{lll}
+\toprule
+& load & action\\
+\midrule
+(a)& monolayer of DNA molecules& change the conformal shape of DNA\\
+(b)& protein coated microparticles& affect the contact stiffness\\
+(c)& microparticles tethered with lambda DNA& extend and stretch DNA\\
+(d)& heterogeneous collections of cells& modify cell adhesion and contact area\\
+\bottomrule
+\end{tabular}
+\caption{Load situations depicted in \Figure{fig:cfqcm}}
+\end{table}
+
+\section{What is New Here}
+QCMs have been studied in the context of almost every load situation
+imaginable, but up to now the introduction and study of the behavior of
+different load situations under uniform force gradients has not been
+carried out.
+The novel aspects of this work is the direct introduction of force
+into\dots
+
+\begin{description}
+\item[{Acceleration Boundary Effects}] While the $kT$ energy of a
+small biomolecule are orders of magnitude greater than gravity\todo{energy,
+gravity, huh?}, acceleration effects are readily observable for hybridized
+oligos and bufers stuff.  We confirm the 2g effect for oligos and provide
+data into the 100g range, as well as confirm the effect for random buffer
+solutions.
+\item[{Contact Mechanics}] Pressing beads and looking at the response,
+ maybe the equivalent model for contact stiffness in the liquid phase,
+ which is just about shear stuffs.
+\item[{one more thing so this list isn't empty}] That would be nice.
+\end{description}
+
+QCMs have been the subject of extensive study, especially in the context of
+biosensing, and have for some time been implemented in commercial sensing
+devices.  I will only cover areas related to new results here.  For a
+comprehensive overview to the principles and applications of these
+mechanical resonators, the reader is directed to \cite{steinemreview}.
+
+\section{Historical Perspective}
+As sensors, QCMs found their initial applications monitoring thin film
+deposition in vacuums.  Here it was found that a QCM would exhibit a
+frequency shift $\df$ proportional to the adsorbed mass $m$
+\begin{equation}
+ \df=-\frac{2f_{F}^{2}}{A\sqrt{\rho_{q}\mu_{q}}}\Delta m
+ \label{eqn:sauerbrey}
+\end{equation}
+where $A$ is the active area of the crystal, $\Delta m$ is the adsorbed
+mass, $\rho_{q}$ is the density of quartz and $\mu_{q}$ is the shear
+modulus of quartz. Usually \Equation{eqn:sauerbrey} is condenced such that
+$\Delta m$ is a linear function of a single ``sensitivity factor''
+$C_\mathrm{f}$
+\begin{equation}
+ \Delta f=-C_{\text{f}}\Delta m
+\end{equation}
+where $C_{\text{f}}=\SI{56.6}{\hertz\per\micro\gram\centi\meter\squared}$.
+\Equation{eqn:sauerbrey} is known as the
+\textit{Sauerbrey relation}.  A typical QCM might have a
+$f_F=\SI{5}{\mega\hertz}$ and a frequency resolution of \SI{0.1}{\hertz};
+\Equation{eqn:sauerbrey} predicts sub-monolayer (and is only valid in this
+range) resolution of the thickness
+metal and dielectric layers.  This is the reason the name QCM includes the
+word ``microbalance''.
+
+Initially it was thought that the low $Q$ mechanical resonance of the QCM
+precluded its use in the liquid phase.  This was incorrect, as subsequent
+work published in 1985 by \name{Gordon} and \name{Kanazawa}~\cite{guys} extended the
+treatment of \name{Sauerbrey} to the liquid phase.  These relations,
+derived from a Butterworth van Dyke equivalent circuit, predicted the
+resonant frequency of the QCM
+to be sensitive to the density-viscosity product of the liquid in contact
+with the crystal, 
+\begin{align}
+\df=&-f_{\text{F}}^{3/2}\left(\frac{\rho_{\text{L}}\eta_{\text{L}}}{\pi\rho_{q}\mu_{q}}\right)^{1/2}\\
+\Delta R=&2f_{\text{F}}L\left(\frac{4\pi
+ f_{\text{F}}\rho_{\text{L}}\eta_{\text{L}}}{\rho_{q}\mu_{q}}\right)^{1/2}
+\end{align}
+where $\rho_{\text{L}}$ and $\eta_{\text{L}}$ are the unknown density and
+viscosity of the liquid.  Note that in the treatment by both Sauerbrey and
+Gordon and Kanazawa, the frequency shifts are always \textit{negative} as a
+function of increasing mass or density-viscosity.
+
+The same year, \name{G. Dybwad} published a rather elegant
+experiment~\cite{dybwad} in which he looked at the frequency shift of a QCM
+in air when a single micron sized gold particle rests on the sensor
+surface.  Remarkably, \name{Dybwad} reported a \textit{positive}
+frequency shift.  The shift was explained with a coupled oscillator model
+shown in \Figure{fig:dybwad}.
+\begin{figure}
+ \caption{Coupled oscillator model used by \name{Dybwad}.}
+ \label{fig:dybwadschema}
+\end{figure}
+Here, the quartz crystal with mass $\mq$ and stiffness
+$\kq$ resonates at
+$\omega_\mathrm{q}^2=\kq/\mq$ and is coupled by a spring
+$\kl$ to a load mass $\ml$.  The load mass is the actual mass of
+the particle, $4/3 \pi r^3 \rho$.  The spring $\kl$ represents the
+``stiffness'' of the contact -- how strongly the particle is coupled to the
+QCM surface.  The coupled system in \Figure{fig:dybwadschema} is described
+by the differential equations
+\begin{align}
+ \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q}\\
+ \ml \ddot{x}_\mathrm{L} &= -\kl (x_\mathrm{q}-x_\mathrm{L})
+\end{align}
+which, using an ansatz of
+$x_{\mathrm{q},\mathrm{L}}=A_{\mathrm{q},\mathrm{L}}\me^{\mi \omega t}$ has
+eigenvalues $\omega$ of
+\begin{equation}
+ 2\omega^{2}=\left(\frac{\kq}{\mq}+\frac{\kl}{\mq}+\frac{\kl}{m}\right)\pm\left(\left(\frac{\kq}{\mq}+\frac{\kl}{\mq}+\frac{\kl}{\ml}\right)^{2}-4\frac{\kq}{\mq}\frac{\kl}{\ml}\right)^{1/2}
+ \label{eqn:dybwadresult}
+\end{equation}
+
+\begin{figure}
+ \caption{Resonant frequency of the Dybwad model as a function of coupling
+  strength, $\kl$.}
+ \label{fig:dybwadplot}
+\end{figure}
+\Equation{eqn:dybwadresult}, shown in \Figure{fig:dybwadplot} has two
+important limits about $\omegaq^2 \ml$
+\begin{align}
+ \lim_{\kl\to\infty} \omega^2 &= \frac{\kq}{\mq+\ml}\\
+ \lim_{\kl\to0} \omega^2 &= \frac{\kq}{\mq}
+\end{align}
+In the weak coupling regime, $\kl\ll\omegaq^2\ml$, the particle causes a
+positive frequency shift proportional to $\kl$ and independent of $\ml$.
+Indeeed, in \name{Dybwad}'s model, in the weak coupling regime the
+particle is seen to be at rest in the labratory frame. In the limit of strong
+coupling, $\kl\gg\omegaq^2\ml$, the mass adsorption predicted by
+\name{Sauerbrey} takes over.  Dybwad's work is important because it
+establishes a continuum model for QCM behavior, encompassing both positive
+and negative frequency shifts.
+
+Some dingus guys use a nanoindenter probe combined with a QCM, this is
+where we jump off.
+
+Last, Yuki got the idea from other applicaions of force on stuff done by
+Ken and Wesley.  So plan to jump into the main text.
+
+\chapter{Experimental Setup}
+The experimental setup consists of a 
+\section{Mechanical}
+\subsection{Centrifuge}
+\subsection{Microfluidic Cell}
+\subsection{Mounting and Stress}
+
+\section{Driving Circuit}
+The QCM driving circuit employed in our experiments was an SRS 
+
+\section{Chemistry and Surface Functionalization}
+\subsection{Cleaning the Crystals}
+
+\chapter{Load Situations}
+\section{Environmental Effects and Sources of Noise}
+\subsection{Temperature Drift}
+\section{Air}
+\section{Deionized Water}
+\section{Salt Buffers}
+\section{Microparticles}
+magnetic lift off
+different radii
+\section{Lambda DNA}
+\section{Oligo Attached Particles}
+\section{Particles Tethered to the Surface with Lambda DNA}
+
+\chapter{Strange Effects}
+\section{Bubble Resonance}
+
+\chapter{Future Work}
+
+\part{Appendix}
 \appendix
+
+\chapter{Miscellaneous}
+\section{Colophon}
+This document was typeset using pdf\TeX. All
+plots were rendered using pgfplots~\cite{feuersangerpgfplots} with styles influenced by
+\name{Eduard~Tufte}~\cite{tufte1983visual}~\cite{tufte1991envisioning}. Colors were chosen
+from datasets researched by \name{Jan~Brewer}~\cite{harrower2003colorbrewer}.
+Schematics and other line drawings were prepared using Inkscape. Generation
+of text was done under Arch Linux using \texttt{vim}.  Some tables were
+pre-processed using LyX.
+
+The Monte Carlo simulations were written in \texttt{c} with parallelism
+accomplished using \texttt{mpi}. The vortex tracking and image processing
+algorithms were written in \texttt{octave}.  Weirdospace images were
+processed using python and scipy/numpy.  Parallel execution when required
+was done at at the FAU RRZE, Erlangen, Germany.  Multiple scattering code
+written by \name{Matthew~Foreman} was written in \texttt{MATLAB}.  All sources
+available through the author.
 
 \chapter{Protocols}
 \section{Sputtering}
@@ -1128,61 +1406,8 @@ might be useful to the reader.  They are presented here.
 % \end{tabular}
 %\end{table}
 
-\part{The Centrifugal Force Quartz Crystal Microbalance}
-\chapter{Foundations}
-A quartz crystal microbalance (QCM) is a thin piece of piezoelectric
-quartz which, when driven by a potential at its resonant frequency,
-produces acoustic shear waves (which propagate from some kind of thing).
-When an object is adsorbed on to the surface of the crystal, the resonant
-frequency of the system changes, and the shifts in frequency ($\df$ and
-bandwidth ($\dg$) can be interpreted in the context of the material that
-was adsorbed.
-
-\section{Historical Perspective}
-gordon/kanazawa
-dybwad
-
-\section{What is New Here}
-The novel aspect of these experiments is the direct introduction of force 
-
-
-- experimental setup
- - centrifuge
- - PDMS o-ring, experiments with different o-rings
- - chemistry, oligos and so forth
-
-- simulations
-
-(6 load situations plus weird buffer effects)
-- air
- - acceleration effects, that big table you made for yuki
-
-- water
-- buffer
- - 2g turnover, japanese guys
-- single microparicles
- - different radii
- - magnetic lift off
-- oligo attached particles
-- lambda dna only
-- lambda DNA attached particles
-
-
-\chapter{Miscellaneous}
-\section{Colophon}
-This document was typeset using pdf\TeX. All
-plots were rendered using pgfplots~\cite{feuersangerpgfplots} with styles influenced by
-Eduard Tufte~\cite{tufte1983visual}~\cite{tufte1991envisioning}. Colors were chosen
-from datasets researched by Jan Brewer~\cite{harrower2003colorbrewer}.
-Schematics and other line drawings were prepared using Inkscape. Generation
-of text was done under Arch Linux using \texttt{vim}.  Some tables were
-pre-processed using LyX.
-
-The Monte Carlo simulations were written in \texttt{c} with pararallelism
-accomplished using \texttt{mpi}. The vortex tracking and image processing
-algorithms were written in \texttt{octave}.  Weirdospace images were
-processed using python and scipy/numpy.  Parallel execution was done at at
-the FAU RRZE, Erlangen, Germany.
+\bibliographystyle{plain}
+\bibliography{bibliography}
 
 \listoftodos
 \end{document}
