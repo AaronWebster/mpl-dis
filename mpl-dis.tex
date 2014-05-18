@@ -1,7 +1,6 @@
 \documentclass[a4paper,titlepage,onecolumn]{report}
 % title of the dissertation
-\def\distitle{Coupled Systems in Single Molecule Biosensing}
-\usepackage{todonotes}
+\def\distitle{Working Title}
 \usepackage{mathtools}
 \usepackage{t1enc}
 \usepackage[T1]{fontenc}
@@ -15,13 +14,13 @@
 \usepackage{wrapfig}
 \usepackage{pifont}
 \usepackage{mathrsfs}
-\usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{datetime}
 \usepackage{fullpage}
 \usepackage{hyperref}
+\usepackage{attachfile}
 \usepackage[parfill]{parskip}
 
 
@@ -122,11 +121,20 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
-\usetikzlibrary{pgfplots.units}
-\usetikzlibrary{calc}
+\usepgfplotslibrary{external}
+\pgfplotsset{filter discard warning=false}
 
-\usepgfplotslibrary{units}
+\usepackage{tikz}
+\usetikzlibrary{calc}
 \usetikzlibrary{pgfplots.units} 
+\usetikzlibrary{pgfplots.external} 
+\tikzexternalize[prefix=external/]% externalize
+
+\usepackage{todonotes}
+\makeatletter
+\renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+\makeatother
+
 
 \import{colors/}{colors}
 
@@ -141,6 +149,7 @@
 }%
 
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
+
 
 \begin{document}
 
@@ -605,6 +614,7 @@ clip=false,
 ]
 \addplot[color=Dark27qual1] file {dispersion/kx_photon_glass.dat}
 node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
+%\textattachfile{dispersion/kx_photon_glass.dat}{}
 \addlegendentry{photon/dielectric}
 
 \addplot[color=Dark27qual2] file {dispersion/kx_photon_glass_tilted.dat}
@@ -652,9 +662,9 @@ similar plot found in \cite{shsongspp}.}
 \label{fig:dispersionrelation}
 \end{figure}
 \todo{Fix the colors here.}
-%The dispersion diagram relates the time-variation of the wave (given by its
-%frequency &omega) to the spatial variation of the wave (given by its
-%wave-vector kx)
+The dispersion diagram relates the time-variation of the wave (given by its
+frequency omega) to the spatial variation of the wave (given by its
+wave-vector kx)
 \subsection{Resonance Condition}
 The resonance condition requires the dispersion relation for an
 incident photon intersect the dispersion relation for SPPs, matching both
@@ -1148,14 +1158,14 @@ to the QCM.  This mechanical turns out to be extrorinary sensitive, even in
 liquid environments, with sensitivities to mass on the order of X.  The
 function of a QCM is depicted schematically in \Figure{fig:qcmschema}.
 
-\begin{figure}
- \caption{Schematic representation of the operation of a QCM.  The
-  quartz crystal is driven by a pair of electrodes on either sides to
-  excite \si{\mega\hertz} acoustic shear waves.  A sample in contact with
-  the crystal will typically change its resonant frequency $\df$ and
-  bandwidth $\dg$, which are connected to the viscoelastic properites of
- the sample and the way in which it is coupled to the device.}
-\end{figure}
+%\begin{figure}
+% \caption{Schematic representation of the operation of a QCM.  The
+%  quartz crystal is driven by a pair of electrodes on either sides to
+%  excite \si{\mega\hertz} acoustic shear waves.  A sample in contact with
+%  the crystal will typically change its resonant frequency $\df$ and
+%  bandwidth $\dg$, which are connected to the viscoelastic properites of
+% the sample and the way in which it is coupled to the device.}
+%\end{figure}
 
 Since its introduction by Sauerbrey [10] in 1959 as sub-monolayer thin-film
 mass sensors in the gas phase, the understanding of these piezoelectric
@@ -1182,9 +1192,9 @@ for the direct manipulation of elective dynamic versions of these
 parameters through centrifugal force gradients.
 Examples of loads which could be probed and the possible action of
 centrifugal force are shown in \Figure{fig:cfqcm}
-\begin{figure}
- \caption{Schematic of the CF-QCM.}
-\end{figure}
+%\begin{figure}
+% \caption{Schematic of the CF-QCM.}
+%\end{figure}
 \begin{table}
  \centering
 \begin{tabular}{lll}
@@ -1210,8 +1220,8 @@ into\dots
 
 \begin{description}
 \item[{Acceleration Boundary Effects}] While the $kT$ energy of a
-small biomolecule are orders of magnitude greater than gravity\todo{energy,
-gravity, huh?}, acceleration effects are readily observable for hybridized
+small biomolecule are orders of magnitude greater than gravity\todo{energy, gravity, huh?}
+, acceleration effects are readily observable for hybridized
 oligos and bufers stuff.  We confirm the 2g effect for oligos and provide
 data into the 100g range, as well as confirm the effect for random buffer
 solutions.
@@ -1276,10 +1286,10 @@ in air when a single micron sized gold particle rests on the sensor
 surface.  Remarkably, \name{Dybwad} reported a \textit{positive}
 frequency shift.  The shift was explained with a coupled oscillator model
 shown in \Figure{fig:dybwad}.
-\begin{figure}
- \caption{Coupled oscillator model used by \name{Dybwad}.}
- \label{fig:dybwadschema}
-\end{figure}
+%\begin{figure}
+% \caption{Coupled oscillator model used by \name{Dybwad}.}
+% \label{fig:dybwadschema}
+%\end{figure}
 Here, the quartz crystal with mass $\mq$ and stiffness
 $\kq$ resonates at
 $\omega_\mathrm{q}^2=\kq/\mq$ and is coupled by a spring
@@ -1300,11 +1310,11 @@ eigenvalues $\omega$ of
  \label{eqn:dybwadresult}
 \end{equation}
 
-\begin{figure}
- \caption{Resonant frequency of the Dybwad model as a function of coupling
-  strength, $\kl$.}
- \label{fig:dybwadplot}
-\end{figure}
+%\begin{figure}
+% \caption{Resonant frequency of the Dybwad model as a function of coupling
+%  strength, $\kl$.}
+% \label{fig:dybwadplot}
+%\end{figure}
 \Equation{eqn:dybwadresult}, shown in \Figure{fig:dybwadplot} has two
 important limits about $\omegaq^2 \ml$
 \begin{align}
