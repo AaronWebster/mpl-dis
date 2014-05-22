@@ -21,6 +21,8 @@
 \usepackage{fullpage}
 \usepackage{hyperref}
 \usepackage{attachfile}
+\usepackage{textpos}
+\usepackage{rotating}
 \usepackage[parfill]{parskip}
 
 
@@ -150,6 +152,9 @@
 
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
+\usepackage{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray}{|}\hsp}{0pt}{\Huge\bfseries}
 
 \begin{document}
 
@@ -179,6 +184,10 @@ Doctor of Philosophy\\
 \vspace{0.5cm}
 \today
 \end{center}
+\tikz[overlay,remember picture] {
+ \node at ($(current page.west)+(1,0)$) [rotate=90]
+ {\large\textcolor{gray}{\input{commithash} \pdfdate}};
+}
 \end{titlepage}
 
 %%%%% DECLARATION OF ORIGINALITY %%%%%

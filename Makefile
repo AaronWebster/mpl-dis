@@ -8,6 +8,8 @@
 all: mpl-dis.pdf
 
 # CUSTOM BUILD RULES
+commithash.tex:
+	  git rev-parse HEAD > commithash.tex
 
 # In case you didn't know, '$@' is a variable holding the name of the target,
 # and '$<' is a variable holding the (first) dependency of a rule.
@@ -30,6 +32,7 @@ all: mpl-dis.pdf
 # missing file reference and interactively asking you for an alternative.
 
 mpl-dis.pdf: mpl-dis.tex
+	git rev-parse HEAD > commithash.tex
 	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make mpl-dis.tex
 
 clean:
