@@ -61,6 +61,9 @@ commithash.tex:
 $(TARGET).pdf: $(TARGET).tex
 	git rev-parse HEAD > commithash.tex
 	latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $(TARGET).tex
+	#latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" $(TARGET).tex
+	#make -j4 -f $(TARGET).makefile
+	#latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $(TARGET).tex
 
 # remove build files plus all the latex turds
 clean:
@@ -70,4 +73,7 @@ clean:
 	rm -f $(TARGET)Notes.bib
 	rm -f $(TARGET).bbl
 	rm -f $(TARGET).tdo
+	rm -f $(TARGET).figlist
+	rm -f $(TARGET).makefile
+	rm -f $(TARGET).auxlock
 

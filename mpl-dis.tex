@@ -131,15 +131,7 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{pgfplots.units} 
 \usetikzlibrary{pgfplots.external} 
-\tikzexternalize[prefix=external/,mode=list and make]% externalize
-
-%\newcommand{\inputtikz}[1]{% 
-%\ifdefined\fakejobname% 
-%\ifthenelse{\equal{\jobname}{\detokenize{external/#1-out}}}{% 
-%\beginpgfgraphicnamed{external/#1-out}\input{external/#1.tex}\endpgfgraphicnamed}{}% 
-%\else% 
-%\beginpgfgraphicnamed{external/#1-out}\input{external/#1.tex}\endpgfgraphicnamed% 
-%\fi} 
+\tikzexternalize[prefix=external/]% externalize
 
 % package has problems with externalization, disable it here for
 % convienence
@@ -259,11 +251,6 @@ microbalance.  Most significantly, I would like to recognize
 \pagenumbering{arabic}
 
 \chapter*{Foreword}
-The field of biosensing has this theme: very simple setups were though not
-possible, but then were made relevant 
-
-\todo{Summarize and give a quick overview of the different parts and what
-they are good for.}
 
 \part{Interference and Scattering in Surface Plasmon Resonance}
 \label{part:plasmon}
@@ -1152,7 +1139,7 @@ and $\mathrm{r}$ is the spatial variable.
 \section{Overview}
 Mechanical properties such as viscoelasticity, contact stiffness and
 adhesion, and force-dependent conforma- tional changes have been shown to
-be instrumental in understanding biofunctional behavior from single
+be instrumental in understanding biofunctional, behavior from single
 molecules to complex collections of cells. These properties are often
 descriptive for specific molecules and cell types. For example, force
 extension curves of DNA vary with assembly of histone proteins into
