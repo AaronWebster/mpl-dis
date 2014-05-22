@@ -23,6 +23,7 @@
 \usepackage{attachfile}
 \usepackage{textpos}
 \usepackage{rotating}
+\usepackage{ifthen}
 \usepackage[parfill]{parskip}
 
 
@@ -130,14 +131,24 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{pgfplots.units} 
 \usetikzlibrary{pgfplots.external} 
-\tikzexternalize[prefix=external/]% externalize
+\tikzexternalize[prefix=external/,mode=list and make]% externalize
 
+%\newcommand{\inputtikz}[1]{% 
+%\ifdefined\fakejobname% 
+%\ifthenelse{\equal{\jobname}{\detokenize{external/#1-out}}}{% 
+%\beginpgfgraphicnamed{external/#1-out}\input{external/#1.tex}\endpgfgraphicnamed}{}% 
+%\else% 
+%\beginpgfgraphicnamed{external/#1-out}\input{external/#1.tex}\endpgfgraphicnamed% 
+%\fi} 
+
+% package has problems with externalization, disable it here for
+% convienence
 \usepackage{todonotes}
 \makeatletter
 \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
 \makeatother
 
-
+% my pretty colors
 \import{colors/}{colors}
 
 % siunitx
@@ -150,8 +161,10 @@
 % round-mode = places,
 }%
 
+% set PDF attributes
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
+% prettify chapter/section format
 \usepackage{titlesec}
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray}{|}\hsp}{0pt}{\Huge\bfseries}
@@ -184,10 +197,12 @@ Doctor of Philosophy\\
 \vspace{0.5cm}
 \today
 \end{center}
+\tikzexternaldisable
 \tikz[overlay,remember picture] {
  \node at ($(current page.west)+(1,0)$) [rotate=90]
  {\large\textcolor{gray}{\input{commithash} \pdfdate}};
 }
+\tikzexternalenable
 \end{titlepage}
 
 %%%%% DECLARATION OF ORIGINALITY %%%%%

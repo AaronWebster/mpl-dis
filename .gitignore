@@ -1,5 +1,6 @@
 # latex turd files
 *.aux
+*.auxlock
 *.aux.make
 *.make
 *.log
@@ -11,7 +12,14 @@
 *.fls
 *.out
 *.out.make
-mpl-dis.pdf
 *.tdo
 *.toc
 *.toc.make
+*.pdf_tex
+*.fdb_latexmk
+*.swp
+figures/*.bib
+figures/*.pdf
+commithash.tex
+manuscript-naturecomm.pdf
+manuscript-naturecommNotes.bib
