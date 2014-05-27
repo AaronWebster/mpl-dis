@@ -59,6 +59,7 @@ commithash.tex:
 # missing file reference and interactively asking you for an alternative.
 
 $(TARGET).pdf: $(TARGET).tex
+	mkdir -p external
 	git rev-parse HEAD > commithash.tex
 	latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $(TARGET).tex
 	#latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" $(TARGET).tex
@@ -68,6 +69,7 @@ $(TARGET).pdf: $(TARGET).tex
 # remove build files plus all the latex turds
 clean:
 	latexmk -CA
+	mkdir -p external
 	rm -f commithash.tex
 	rm -rf external/*
 	rm -f $(TARGET)Notes.bib
