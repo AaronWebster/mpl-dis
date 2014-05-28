@@ -38,7 +38,7 @@ commithash.tex:
 #	inkscape --export-pdf=$@ --export-latex $<
 
 %.pdf: %.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $<
+	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $<
 	pdfcrop --pdftex $@ $@
 
 %.pdf: %.svg
@@ -55,16 +55,16 @@ commithash.tex:
 # -pdflatex="" tells latexmk to call a specific backend with specific options.
 # -use-make tells latexmk to call make for generating missing files.
 
-# -interactive=nonstopmode keeps the pdflatex backend from stopping at a
+# -interaction nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
 $(TARGET).pdf: $(TARGET).tex
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $(TARGET).tex
-	#latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" $(TARGET).tex
+	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
+	#latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" $(TARGET).tex
 	#make -j4 -f $(TARGET).makefile
-	#latexmk -f -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $(TARGET).tex
+	#latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
 
 # remove build files plus all the latex turds
 clean:
