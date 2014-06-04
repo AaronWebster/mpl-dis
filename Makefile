@@ -15,8 +15,8 @@ all: $(TARGET).pdf
 
 # build all in figures
 # this is done independently to make the submission process easier
-figures:
-	make -C figures
+#figures:
+#	make -C figures
 
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
@@ -28,21 +28,19 @@ spell:
 # "raw2tex" and "dat2tex" are just placeholders for whatever custom steps
 # you might have.
 
-commithash.tex:
-	git rev-parse HEAD > commithash.tex
-
 #drawing-side-specific.pdf: drawing-side-specific.svg
 #	inkscape --export-pdf=$@ $<
 
 #dybwadmodel.pdf: dybwadmodel.svg
 #	inkscape --export-pdf=$@ --export-latex $<
 
-%.pdf: %.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $<
-	pdfcrop --pdftex $@ $@
-
-%.pdf: %.svg
-	inkscape --export-pdf=$@ $<
+#%.pdf: %.tex
+#	git rev-parse HEAD > commithash.tex
+#	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $<
+#	pdfcrop --pdftex $@ $@
+#
+#%.pdf: %.svg
+#	inkscape --export-pdf=$@ $<
 #	./raw2tex $< > $@
 #
 #	pdflatex $<
@@ -62,9 +60,6 @@ $(TARGET).pdf: $(TARGET).tex
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
 	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
-	#latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" $(TARGET).tex
-	#make -j4 -f $(TARGET).makefile
-	#latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
 
 # remove build files plus all the latex turds
 clean:

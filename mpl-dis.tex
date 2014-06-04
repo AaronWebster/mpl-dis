@@ -122,6 +122,7 @@
 \setlength{\oneupheight}{0.55623059\textwidth}
 
 \usepackage{pgfplots}
+\usepackage{pgfplotstable}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
 \usepgfplotslibrary{external}
@@ -131,6 +132,7 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{pgfplots.units} 
 \usetikzlibrary{pgfplots.external} 
+\usetikzlibrary{pgfplots.groupplots}
 \tikzexternalize[prefix=external/]% externalize
 
 % package has problems with externalization, disable it here for
@@ -141,7 +143,7 @@
 \makeatother
 
 % my pretty colors
-\import{colors/}{colors}
+% \import{colors/}{colors}
 
 % siunitx
 \usepackage{siunitx}
@@ -170,10 +172,10 @@
 { \Huge {\bfseries {\distitle}} \par}
 \vspace{3.0cm}
 \begin{tabular}{lr}
-\includegraphics[height=2cm,keepaspectratio]{logo/Logo_MPL_englisch_kompakt_cmyk_110915}
+\includegraphics[height=2cm,keepaspectratio]{images/Logo_MPL_englisch_kompakt_cmyk_110915}
 \hspace{1.0cm}
 %
-\includegraphics[height=2cm,keepaspectratio]{logo/Logo_IMPRS_4c_042012}
+\includegraphics[height=2cm,keepaspectratio]{images/Logo_IMPRS_4c_042012}
 \end{tabular}
 \vspace{3cm}
 \\
@@ -260,15 +262,15 @@ possible.
 This part is all about what happens when surface plasmons are
 scattered in a prism coupled setup.  The easiest way of understanding this
 is though the experimental setup, shown below in \Figure{fig:kretschmanngeo}.  
-\begin{figure}[hb]
-\centering
-\input{kretschmanngeo.tex}
-\vspace{-1cm}
-\caption{
-Experimental setup.
-} 
-\label{fig:kretschmanngeo} 
-\end{figure}
+%\begin{figure}[hb]
+%\centering
+%\input{kretschmanngeo.tex}
+%\vspace{-1cm}
+%\caption{
+%Experimental setup.
+%} 
+%\label{fig:kretschmanngeo} 
+%\end{figure}
 Light is incident from the left and focussed by lens $f_1$ on to the
 hypotenuse of a hemispherical prism coated with a thin layer of silver.
 $f_2$ acts to image light exiting the system, if desired.
@@ -606,73 +608,73 @@ evanescently there; this is known as a ``quasi-bound mode''  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
 indicates the SPP is localized at the interface in $z$ while having a
 propagating solution in $x$, and is exactly the condition we wish to match.
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-xlabel=$k_x$,
-ylabel=$\omega$,
-xmin=0,
-xmax=0.6e8,
-ymin=0.75e15,
-ymax=6.5e15,
-thick,
-width=0.75\textwidth,
-height=0.75\textwidth,
-minor tick num=2,
-legend pos = south east,
-legend style = { cells = {anchor=west} },
-clip=false,
-]
-\addplot[color=Dark27qual1] file {dispersion/kx_photon_glass.dat}
-node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
-%\textattachfile{dispersion/kx_photon_glass.dat}{}
-\addlegendentry{photon/dielectric}
-
-\addplot[color=Dark27qual2] file {dispersion/kx_photon_glass_tilted.dat}
-node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
-\addlegendentry{photon/dielectric angle}
-
-\addplot[color=Dark27qual3] file {dispersion/kx_photon_vacuum.dat}
-node [anchor=south west,yshift=-10pt]{$ck$}; 
-\addlegendentry{photon/vacuum}
-
-\addplot[color=Dark27qual4] file {dispersion/kx_sp_metal_glass_lower.dat};
-\addlegendentry{SPP/dielectric}
-
-\addplot[color=Dark27qual5] file {dispersion/kx_sp_metal_vacuum_lower.dat};
-\addlegendentry{SPP/vacuum}
-
-\addplot[color=Dark27qual1] file {dispersion/kx_sp_metal_glass_upper.dat};
-\addplot[color=Dark27qual2] file {dispersion/kx_sp_metal_vacuum_upper.dat};
-
-\addplot[color=Dark27qual1,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
-node [anchor=east,xshift=-15pt]{$\omega_p$}; 
-
-\addplot[color=Dark27qual2,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
-node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
-
-\addplot[color=Dark27qual3,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
-node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
-
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
-node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
-node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
-node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
-
-\end{axis}
-\end{tikzpicture}
-\caption{Dispersion relation for photons and plasmons.  Conditions under
-which SPPs may occur at the intersection between the photon light line and
-corresponding SPP light line for the medium in question.  Based on a
-similar plot found in \cite{shsongspp}.}
-\label{fig:dispersionrelation}
-\end{figure}
+%\begin{figure}[ht]
+%\centering
+%\begin{tikzpicture}
+%\begin{axis}[
+%xlabel=$k_x$,
+%ylabel=$\omega$,
+%xmin=0,
+%xmax=0.6e8,
+%ymin=0.75e15,
+%ymax=6.5e15,
+%thick,
+%width=0.75\textwidth,
+%height=0.75\textwidth,
+%minor tick num=2,
+%legend pos = south east,
+%legend style = { cells = {anchor=west} },
+%clip=false,
+%]
+%\addplot[color=Dark27qual1] file {dispersion/kx_photon_glass.dat}
+%node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
+%%\textattachfile{dispersion/kx_photon_glass.dat}{}
+%\addlegendentry{photon/dielectric}
+%
+%\addplot[color=Dark27qual2] file {dispersion/kx_photon_glass_tilted.dat}
+%node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
+%\addlegendentry{photon/dielectric angle}
+%
+%\addplot[color=Dark27qual3] file {dispersion/kx_photon_vacuum.dat}
+%node [anchor=south west,yshift=-10pt]{$ck$}; 
+%\addlegendentry{photon/vacuum}
+%
+%\addplot[color=Dark27qual4] file {dispersion/kx_sp_metal_glass_lower.dat};
+%\addlegendentry{SPP/dielectric}
+%
+%\addplot[color=Dark27qual5] file {dispersion/kx_sp_metal_vacuum_lower.dat};
+%\addlegendentry{SPP/vacuum}
+%
+%\addplot[color=Dark27qual1] file {dispersion/kx_sp_metal_glass_upper.dat};
+%\addplot[color=Dark27qual2] file {dispersion/kx_sp_metal_vacuum_upper.dat};
+%
+%\addplot[color=Dark27qual1,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
+%node [anchor=east,xshift=-15pt]{$\omega_p$}; 
+%
+%\addplot[color=Dark27qual2,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
+%node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
+%
+%\addplot[color=Dark27qual3,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
+%node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
+%
+%
+%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
+%node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
+%
+%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
+%node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
+%
+%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
+%node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
+%
+%\end{axis}
+%\end{tikzpicture}
+%\caption{Dispersion relation for photons and plasmons.  Conditions under
+%which SPPs may occur at the intersection between the photon light line and
+%corresponding SPP light line for the medium in question.  Based on a
+%similar plot found in \cite{shsongspp}.}
+%\label{fig:dispersionrelation}
+%\end{figure}
 \todo{Fix the colors here.}
 The dispersion diagram relates the time-variation of the wave (given by its
 frequency omega) to the spatial variation of the wave (given by its
