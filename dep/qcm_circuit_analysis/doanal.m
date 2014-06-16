@@ -1,6 +1,15 @@
 #!/usr/bin/octave -qf
-[data,colnames,struct] = spice_readfile("test.raw")
-output_precision(20)
+[data,colnames,struct] = spice_readfile("test.raw");
+freq = data(:,1);
+v1 = data(:,2);
+v2 = data(:,3);
+v3 = data(:,4);
+v4 = data(:,5);
+i1 = data(:,6);
+i2 = data(:,7);
+
+
+%output_precision(20)
 %x = real(a(:,1));
 #y = abs(a(:,5)).^2;
 %y = abs(a(:,5)).^2;
