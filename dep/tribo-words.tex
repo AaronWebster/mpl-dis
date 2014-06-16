@@ -1,0 +1,331 @@
+\documentclass[a4paper]{article}
+\input{myinc}
+\begin{document}
+\title{What We Know About QCM Centrifuge Measurements}
+\date{Last Update: \today}
+\maketitle
+\tableofcontents
+
+\section{Equivalent Circuit}
+The typical circuit used to analyze QCM behavior is called the
+\textit{Butterworth van Dyke} (BvD) circuit.  It consists of a capacitor
+$C_s$, an inductor $L_s$, and a resistor $R_s$ in series with a parallel
+capacitance $C_0$.
+\begin{center}
+ \begin{circuitikz}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_s$] (4,1)
+  to[C, l^=$C_s$] (6,1)
+  to[L, l^=$L_s$] (8,1)
+  to[short] (8,-1)
+  to[short] (6,-1)
+  to[C, l^=$C_0$] (4,-1)
+  to[short] (2,-1)
+  to[short] (2,0);
+ \draw (9,0) node[anchor=west] {}
+  to[short, o-*] (8,0);
+\end{circuitikz}
+\end{center}
+
+The top branch is the \textit{motional branch}, and relates to the crysal
+and its interaction with the environment.  The bottom is the \textit{static
+branch}, representing the paracitic capitances of the quartz and its driver.
+In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
+compensated phase locked oscillator circuit, $C_0$ is nulled with
+additional circuitry.  This is absolutely crutial, as the parallel $C_0$ 
+pertdubes the resonance frequency of the circuit by about
+\SI{0.825}{\hertz\per\pico\farad}.  The SRS manual gives a higher value
+of \SI{2}{\hertz\per\pico\farad}.
+
+Typical values for the \SI{1}{in} \SI{5}{\mega\hertz} AT cut quartz
+crystal used in with the QCM200\cite{srsqcmmanual} are
+
+\begin{table}[h]
+\begin{tabular}{ll}
+ $R_s$ & \SI{400}{\ohm} (water), \SI{10}{\ohm} (air) \\
+ $C_s$ & \SI{33}{\femto\farad} (SRS manual)\\
+ $L_s$ & \SI{30}{\milli\henry} (SRS manual), \SI{40}{\milli\henry} (my prediction) \\
+ $C_0$ & \SI{20}{\pico\farad} (SRS manual)
+\end{tabular}
+\end{table}
+
+The circuit may be also be solved using the following second order linear
+differential equation for charge
+\begin{equation}
+ L\ddot{q}+R\dot{q}+q/C = V(t)
+\end{equation}
+The natural frequency is 
+\begin{equation}
+ f_0 = \frac{1}{2 \pi L C}
+\end{equation}
+Where $C$ in the above equation takes into account both $C_0$ and $C_s$
+\begin{equation}
+ C = \frac{C_s C_0}{C_s + C_0}
+\end{equation}
+
+This, as well as more complicated equivalent circuit models can also be
+computed directly using SPICE, as per the following code snippet
+\begin{minted}{text}
+* Butterworth van Dyke equivalent circuit
+V1 0 1 ac 1 dc 0
+Rs 1 2 100
+R1 2 3 375
+C0 2 0 20e-12
+C1 3 4 33.0e-15
+L1 4 0 30e-3
+.control
+ac lin 100000 5.052e6 5.063e6
+write bvd.raw all
+\end{minted}
+
+Liquid sensing under a rigid coating is modeled with a modified Butterworth
+van Dyke circuit as follows 
+
+\begin{center}
+ \begin{circuitikz}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_\text{s}$] (4,1)
+  to[C, l^=$C_\text{s}$] (6,1)
+  to[L, l^=$L_\text{s}$] (8,1)
+  to[L, l^=$L_\text{c}$] (10,1)
+  to[L, l^=$L_\text{l}$] (12,1)
+  to[R, l^=$R_\text{l}$] (14,1)
+  to[short] (14,0);
+  \draw (14,0) node[anchor=west] {}
+  to[short] (14,-1)
+  to[C, l^=$C_0$] (8,-1)
+  to[short] (2,-1);
+ \draw (14,0) node[anchor=west] {}
+  to[short] (14,-3)
+  to[C, l^=$C_\text{l}$] (6,-3)
+  to[short] (2,-3)
+  to[short] (2,0);
+
+ %\draw (9,0) node[anchor=west] {}
+ % to[short, o-*] (14,0);
+\end{circuitikz}
+\end{center}
+
+
+\subsection{Effect of Resonance on Changing the Calues of the Elements}
+From \Equation{eqn:bvdresponse} the following relationships between $f$ and
+the individual circuit elements are clear
+\begin{itemize}
+ \item As $R_s$ goes up, $f$ is unchanged, but the linewidth broadens.
+ \item As $C_s$ goes up, $f$ \textit{decreases} and vice versa.
+ \item As $L_s$ goes up, $f$ \textit{decreases} and vice versa. 
+ \item As $C_0$ goes up, $f$ \textit{increases}.
+\end{itemize}
+
+\section{Measurements of Frequency and Resistance}
+The QCM200 measures both absolute and relative frequency, $f$, and
+resistance, $R$.  Unfortunately, we only have absolute resistance
+measurements so the frequencies are relative through each run.
+
+\section{Cause For Different Types of Signals}
+A great review of the response of a QCM to different phenomena is found in \cite{walls1995fundamental}
+
+Quantity[-2970, (("Centimeters")^2 "Hertz")/("Kilograms")]*
+ Quantity[0.124, "Grams"]/(1 Quantity[1.885`*^8, ("Microns")^2])*100
+%%%%%%%%%%%%%%%%%%
+Essentialy you should just make a table: name, pred. shift, our shift
+%%%%%%%%%%%%%%%%%%
+\subsection{Electric Fields}
+\begin{quote}
+For a resonator to exhibit a sensitivity, the dc electric field must have a
+component along the axis of the crystal. True AT-cuts with regular electrodes
+therefore exhibit little, if any, sensitivity to electric fields. \cite{walls1995fundamental}
+\end{quote}
+\subsection{Magnetic Fields}
+\begin{quote}
+Quartz resonators’ inherent magnetic field sensitivity is
+probably smaller than \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla}. \cite{walls1995fundamental}
+\end{quote}
+ 
+
+\subsection{Temperature}
+I did a quick qualitiative test to assertain the sign of the change in both
+$f$ and $R$ by placing the crystal next to either 
+\begin{inparaenum}[\itshape a\upshape)]
+ \item a hot source, consisting of a beaker filled with hot water and 
+ \item a cold source, consisting of a beaker filled with ice
+\end{inparaenum}
+
+Heat made $f$ go up and $R$ go down.  Cold made $f$ go down and $R$ go
+up.  $R$ goes back to its original value much more slowly than $f$.
+
+all my data is between 20 and 25c
+
+The SRS manual quotes a first order temperature dependence of
+\SI{8}{\hertz\per\degree\celsius} and \SI{4}{\ohm\per\degree\celsius} in
+water based on its temperature coefficent of viscosity.
+
+THIS IS NOT TRUE!  The temp coefficent cannot explain.
+
+Temperature dependence is a second major issue. It is small for AT-cut
+crystals; however, temperature fluctuations cause fluctuations in Rq
+inversely
+proportional to Q [7]. This effect is small compared to temperature ef-
+fects having their origin in properties of the measurand. In liquid appli-
+cations, the most temperature-sensitive value is the liquid viscosity.
+ Here,
+ √
+ temperature-induced variations in frequency increase with ω, whereas
+ mass sensitivity increases with ω. Therefore, an elevated resonance
+ frequency
+ is helpful.
+
+
+
+\subsection{Pressure}
+\subsection{Mechanical Stress}
+When I push on the holder from the top, $f$ goes up and $R$ goes down, but
+not by much.  The same is true for flipping the holder and pressing from
+the other side.
+
+\cite{fletcher1979comparison}
+
+\begin{quote}
+Our static results for symmetrical bending should give an indication of the
+frequency changes to be expected from such accelerations and also indicate
+optimum mounting angles. With an applied load of 5 grammes force the force
+applied to the centre of the crystal 200 is times its mass.  We therefore
+expect similar behaviour to that due to an acceleration of 200 'G'.\cite{fletcher1979comparison}
+\begin{equation}
+\Delta f = 1.62 g^{1.72} 
+\end{equation}
+\end{quote}
+ 
+
+
+
+\subsubsection{Orientation and Gravity}
+\subsection{Sedimentation Potential}
+A secondary effect due to the crystal ionic
+mean energy of the lattice is
+conductivity can be observed. The initial frequen-
+cy shift due to the previous effects
+ is followed
+by a relaxation phenomenon as shown on fig. 12.
+This relaxation corresponds to the migration
+ of
+ionic impurities (Na', Li',
+ ' K
+ .. .
+ ) , under the DC
+ where the summation is performed over all normal
+field. These alkalin ions are trapped by A1++'
+ modes of wave number k and frequency
+ W and
+ over
+atoms and occupy an interstitial position.
+
+
+
+\subsection{Viscous Penetration Depth}
+\subsection{Hydrostatic Pressure}
+
+\subsection{Sauerbrey Mass Loading}
+The Sauerbrey equation has been modified to predict the frequency and
+resistance changes.
+
+\begin{align}
+ \Delta f = -f_u^{3/2} \left(\frac{\rho_l \eta_l}{\pi \rho_q \mu_q}\right)^{1/2}
+\end{align}
+where
+
+\begin{tabular}{ll}
+$f_u$     & frequency of unloaded crystal \\
+$\mu_q$   & shear modulus of quartz \\
+$\rho_q$  & density of quartz \\
+$\rho_l$  & density of contact liquid \\
+$\eta_l$   & viscosity of contact liquid
+\end{tabular}
+
+\begin{align}
+ \Delta R = 2 n f_s L_u \left(\frac{4 \pi f_s \rho_l \eta_l}{\rho_q \mu_q}\right)^{1/2}
+\end{align}
+
+where
+\begin{tabular}{ll}
+$\Delta R$ & change in series resistance \\
+$n$        & number of sides in contact with liquid \\
+$f_s$      & oscillation frequency \\
+$L_u$      & intrinsic inductance of unloaded crystal \\
+\end{tabular}
+
+From these equations, classic liquid loading in this thin film Sauerbrey
+approximation causes an decrease in $\Delta f$ and an increase in $\delta
+R$.
+
+\subsection{Dybwad Model}
+
+\begin{tikzpicture}[every node/.style={draw,outer sep=0pt,thick}]
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+\tikzstyle{damper}=[thick,decoration={markings,  
+  mark connection node=dmp,
+  mark=at position 0.5 with 
+  {
+    \node (dmp) [thick,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+    \draw [thick] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$);
+    \draw [thick] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);
+  }
+}, decorate]
+\tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=0.75cm,minimum height=0.3cm]
+\node[circle] (M1) [minimum width=0.5cm] {$m_\text{p}$};
+\node[circle] (M2) [below=1.5cm of M1.south,minimum width=0.5cm] {$m_\text{q}$};
+\node (ground1) [ground,below=1.5cm of M2.south,anchor=north] {};
+\draw [spring] (M1.south) -- (M2.north) node
+[draw=none,fill=none,midway,right=0.5cm] {$k_\text{p}$};
+\draw [spring] (M2.south) -- (ground1.north) node
+[draw=none,fill=none,midway,right=0.5cm] {$k_\text{q}$};
+\draw [thick,decorate,decoration={brace,raise=0.75cm}] (ground1.north) -- (M2.north)
+node [draw=none,fill=none,midway,left=1.0cm] {QCM};
+\draw [thick,decorate,decoration={brace,raise=0.75cm}] (M2.north) -- (M1.north)
+node [draw=none,fill=none,midway,left=1.0cm] {particle};
+
+%\node (N) at (M.north) [minimum width=3.5cm,minimum height=2cm] {$m$};
+%
+%\draw (ground1.north west) -- (ground1.north east);
+\end{tikzpicture}
+
+
+\section{Buffer Shifts}
+
+\section{Pressing Down}
+
+\section{Oligos}
+
+\section{Lambda DNA}
+
+\section{Mechanical Assembly}
+\subsection{PDMS Cell}
+
+\section{Shift Directions for Unloading}
+\begin{tabular}{lll}
+ \toprule
+ sample & $\Delta f$ & $\Delta R$ \\
+ \midrule
+ Sauerbrey & $\uparrow$ &   $\downarrow$ \\
+ air       & $\uparrow$ & $\uparrow$ \\
+ water     & $\uparrow$ &   $\downarrow$ \\
+ HBFR      & $\downarrow$ & $\uparrow$ \\
+ \bottomrule
+\end{tabular}
+
+Plot Shapes?
+\section{Important Numerical Quantities}
+\begin{table}
+ \centering
+ \begin{tabularx}{\textwidth}{ l l }
+  \toprule
+  temperature dependent viscosity of water & $\mu(T)=\num{2.414e-5}\times 10^{247.8/(T-140)}$\\
+  \bottomrule
+ \end{tabularx}
+\end{table}
+
+\end{document}

@@ -25,6 +25,7 @@
 \usepackage{rotating}
 \usepackage{ifthen}
 \usepackage[parfill]{parskip}
+\usepackage{minted}
 
 
 \hypersetup{
@@ -128,19 +129,14 @@
 \usepgfplotslibrary{external}
 \pgfplotsset{filter discard warning=false}
 
+\usepackage[siunitx]{circuitikz}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usetikzlibrary{patterns,decorations.pathmorphing,decorations.markings,positioning}
 \usetikzlibrary{pgfplots.units} 
 \usetikzlibrary{pgfplots.external} 
 \usetikzlibrary{pgfplots.groupplots}
-\tikzexternalize[prefix=external/]% externalize
-
-% package has problems with externalization, disable it here for
-% convienence
-\usepackage{todonotes}
-\makeatletter
-\renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
-\makeatother
+%\tikzexternalize[prefix=external/]% externalize
 
 % my pretty colors
 % \import{colors/}{colors}
@@ -191,12 +187,12 @@ Doctor of Philosophy\\
 \vspace{0.5cm}
 \today
 \end{center}
-\tikzexternaldisable
+%\tikzexternaldisable
 \tikz[overlay,remember picture] {
  \node at ($(current page.west)+(1,0)$) [rotate=90]
  {\large\textcolor{gray}{\input{commithash} \pdfdate}};
 }
-\tikzexternalenable
+%\tikzexternalenable
 \end{titlepage}
 
 %%%%% DECLARATION OF ORIGINALITY %%%%%
@@ -248,7 +244,7 @@ possible.
 
 %%%%% ABSTRACT %%%%%
 \begin{abstract}
- \todo{Abstract is written last.}
+ Abstract is written last.
 \end{abstract}
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
@@ -323,14 +319,12 @@ refractive index.
 Using the speckle in the cone, we observe the changes in intensity and
 correlation functions associated with the addition or motion of a single
 nanoparticle.
-\todo{After writing, update the list with all the new stuff.}
+After writing, update the list with all the new stuff.
 \end{description}
 
 \section{Organization}
-\todo{%
 How the thesis is organized, what goes where and in what chapter
 -- probably should do this part last.
-}
 
 \chapter{Foundations}
 \section{Historical Perspective}
@@ -396,7 +390,6 @@ to elastically scatter SPPs in a way analogous to surface roughness, but in
 this case its location and interaction can be precisely controlled.
 Lacking this apparatus, we can do similiar experiments using biological
 affinities and gold nanoparticles.
-\todo{Improve this last sentence.}
 
 \section{Surface Plasmon Polaritons}
 A photon is a quantized oscillation of an electromagnetic field.  When this
@@ -676,7 +669,7 @@ propagating solution in $x$, and is exactly the condition we wish to match.
 %similar plot found in \cite{shsongspp}.}
 %\label{fig:dispersionrelation}
 %\end{figure}
-\todo{Fix the colors here.}
+Fix the colors here.
 The dispersion diagram relates the time-variation of the wave (given by its
 frequency omega) to the spatial variation of the wave (given by its
 wave-vector kx)
@@ -818,8 +811,8 @@ excitation configurations is found in \Appendix{ref:physicalproperties}.
 
 
 \section{Experimental Setup}
-\todo{Write here about how the experiment is done so there will be no
-confusion later.}
+Write here about how the experiment is done so there will be no
+confusion later.
 
 \subsection{Spin Coater}
 
@@ -869,7 +862,7 @@ low voltage
 
 
 \begin{table}
- \begin{tabular}
+ \begin{tabular}{ll}
   \toprule
   angular speed (RPM) & error \\
   \midrule
@@ -1304,7 +1297,8 @@ into\dots
 
 \begin{description}
 \item[{Acceleration Boundary Effects}] While the $kT$ energy of a
-small biomolecule are orders of magnitude greater than gravity\todo{energy, gravity, huh?}
+small biomolecule are orders of magnitude greater than gravity (energy,
+gravity, huh?)
 , acceleration effects are readily observable for hybridized
 oligos and bufers stuff.  We confirm the 2g effect for oligos and provide
 data into the 100g range, as well as confirm the effect for random buffer
@@ -1437,6 +1431,110 @@ The experimental setup consists of a
 \section{Driving Circuit}
 The QCM driving circuit employed in our experiments was an SRS 
 \subsection{Butterworth van Dyke Equivalent Circuit}
+The typical circuit used to analyze QCM behavior is called the
+\textit{Butterworth van Dyke} (BvD) circuit.  It consists of a capacitor
+$C_s$, an inductor $L_s$, and a resistor $R_s$ in series with a parallel
+capacitance $C_0$.
+\begin{center}
+ \begin{circuitikz}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_s$] (4,1)
+  to[C, l^=$C_s$] (6,1)
+  to[L, l^=$L_s$] (8,1)
+  to[short] (8,-1)
+  to[short] (6,-1)
+  to[C, l^=$C_0$] (4,-1)
+  to[short] (2,-1)
+  to[short] (2,0);
+ \draw (9,0) node[anchor=west] {}
+  to[short, o-*] (8,0);
+\end{circuitikz}
+\end{center}
+
+The top branch is the \textit{motional branch}, and relates to the crysal
+and its interaction with the environment.  The bottom is the \textit{static
+branch}, representing the paracitic capitances of the quartz and its driver.
+In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
+compensated phase locked oscillator circuit, $C_0$ is nulled with
+additional circuitry.  This is absolutely crutial, as the parallel $C_0$ 
+pertdubes the resonance frequency of the circuit by about
+\SI{0.825}{\hertz\per\pico\farad}.  The SRS manual gives a higher value
+of \SI{2}{\hertz\per\pico\farad}.
+
+Typical values for the \SI{1}{in} \SI{5}{\mega\hertz} AT cut quartz
+crystal used in with the QCM200\cite{srsqcmmanual} are
+
+\begin{table}[h]
+\begin{tabular}{ll}
+ $R_s$ & \SI{400}{\ohm} (water), \SI{10}{\ohm} (air) \\
+ $C_s$ & \SI{33}{\femto\farad} (SRS manual)\\
+ $L_s$ & \SI{30}{\milli\henry} (SRS manual), \SI{40}{\milli\henry} (my prediction) \\
+ $C_0$ & \SI{20}{\pico\farad} (SRS manual)
+\end{tabular}
+\end{table}
+
+The circuit may be also be solved using the following second order linear
+differential equation for charge
+\begin{equation}
+ L\ddot{q}+R\dot{q}+q/C = V(t)
+\end{equation}
+The natural frequency is 
+\begin{equation}
+ f_0 = \frac{1}{2 \pi L C}
+\end{equation}
+Where $C$ in the above equation takes into account both $C_0$ and $C_s$
+\begin{equation}
+ C = \frac{C_s C_0}{C_s + C_0}
+\end{equation}
+
+This, as well as more complicated equivalent circuit models can also be
+computed directly using SPICE, as per the following code snippet
+\begin{minted}{text}
+* Butterworth van Dyke equivalent circuit
+V1 0 1 ac 1 dc 0
+Rs 1 2 100
+R1 2 3 375
+C0 2 0 20e-12
+C1 3 4 33.0e-15
+L1 4 0 30e-3
+.control
+ac lin 100000 5.052e6 5.063e6
+write bvd.raw all
+\end{minted}
+
+Liquid sensing under a rigid coating is modeled with a modified Butterworth
+van Dyke circuit as follows 
+
+\begin{center}
+ \begin{circuitikz}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_\text{s}$] (4,1)
+  to[C, l^=$C_\text{s}$] (6,1)
+  to[L, l^=$L_\text{s}$] (8,1)
+  to[L, l^=$L_\text{c}$] (10,1)
+  to[L, l^=$L_\text{l}$] (12,1)
+  to[R, l^=$R_\text{l}$] (14,1)
+  to[short] (14,0);
+  \draw (14,0) node[anchor=west] {}
+  to[short] (14,-1)
+  to[C, l^=$C_0$] (8,-1)
+  to[short] (2,-1);
+ \draw (14,0) node[anchor=west] {}
+  to[short] (14,-3)
+  to[C, l^=$C_\text{l}$] (6,-3)
+  to[short] (2,-3)
+  to[short] (2,0);
+
+ %\draw (9,0) node[anchor=west] {}
+ % to[short, o-*] (14,0);
+\end{circuitikz}
+\end{center}
+
+
 
 \section{Chemistry and Surface Functionalization}
 \subsection{Cleaning the Crystals}
@@ -1511,7 +1609,6 @@ might be useful to the reader.  They are presented here.
 \bibliographystyle{plain}
 \bibliography{bibliography}
 
-\listoftodos
 
 \end{document}
 
