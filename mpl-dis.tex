@@ -792,7 +792,7 @@ k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 \end{align}
 
 \subsection{Physical Properties}
-The physical properties of SPP propagation are derived from $k_x$ and $k_z$.
+Physical properties of SPP propagation are derived from $k_x$ and $k_z$.
 Since the SPP is confined to the plane of the metal, the surface plasmon
 wavelength $\lambda_\text{sp}$ is defined in terms of the real part of
 $k_x$
@@ -810,19 +810,49 @@ $1/\me$ evanescent decay into either the metal or vacuum is given by
 $\Im(1/k_{z,i})$.  A table of these properties for many different SPP
 excitation configurations is found in \Appendix{ref:physicalproperties}.
 
+\section{Long Range Surface Plasmon Polaritons}
+The typical propagation distances for SPPs in the three layer Kretschmann
+configuration are on the order of $\SI{30}{\nano\meter}$ for Ag films and
+$\SI{6}{\nano\meter}$ for Au films.  The reason for this is the electric
+field extends into the metal and the real part of the metal's dielectric
+function damps the SPP oscillation, causing it to decay as heat.  However,
+if we are able to expel the SPP evanescent field from the metal region, the
+propagation distances can be extended orders of magnitude.  These are
+called \textit{long range surface plasmon polaritons} (LRSPPs), and in
+terms of our geometry can be excited in one of two ways.
 
-\section{Experimental Setup}
-The experimental setup for excitation of SPPs is shown in
+\subsection{Symmetric Configuration}
+Cytop coating crap
+\subsection{Photonic Crystal Configuration}
+
+\Chapter{Experimental Setup}
+
+The experimental setup is depicted schematically in
 \Figure{fig:sppexperimentalsetup}.  Light from a \SI{660}{\nano\meter}
-diode laser is coupled into an optical fiber and 
-
-
+diode laser is first coupled into a single mode optical fiber.  The fiber
+guides the laser light to an optical breadboard mounted on an inverted
+microscope.  All primary functions of the experiment take place here.  The
+Gaussian output from the single mode fiber is collimnated and proceeds
+through a polarizing beamsplitter, passing $p$ polarized light.  This light
+is focussed by a $f=\SI{50}{\milli\meter}$ aspheric lens onto the
+hypotenuse of a hemispherical prism.  The prism is mounted on a planar
+structure supporting either normal or long range SPPs.  Reverse of this
+structure is a microfluidic flow cell where samples can be injected.  The
+specularly reflected and scattered light containing information from SPP
+interference and scattering is ultimately captured at desired locations by
+a pair of custom beam profilers.
 \begin{figure}
- \caption{Experimental Setup.}
+ \caption{Setup.}
  \label{fig:sppexperimentalsetup}
 \end{figure}
 
-\subsection{Spin Coater}
+\section{Planar Layer Structure}
+Perhaps most important to the setup is the layer structure supporting SPP
+propagation.  Two types of structures were created for this work: ones for
+SPPs and LRSPPs.
+
+
+\section{Spin Coater}
 During our experimental work, we did not have convienent access to a
 standard programmable spin coater.  This is of course a pre-requisite to
 producing uniform cytop coatings and thus long range surface plasmons.
@@ -857,9 +887,10 @@ of a proportional-only feedback loop.  The spin speed of the motor was also
 calibrated offline and a linear relationship with the PWM output determined
 such that it could function equally well without feedback.  
 
-The stability of the spin coater and the range of speeds it offers is
-shown in \Table{tbl:spincoatererror}.  Perhaps the most obvious downside of
-the ESC controller is that it does not 
+The stability of the spin coater and the range of speeds it offers is shown
+in \Table{tbl:spincoatererror}.  Perhaps the most obvious downside of the
+ESC is that it does not operate very well in the low RPM limit.
+Fortunately, this is not an issue for us.
 
 brake on
 timing  high
@@ -882,8 +913,6 @@ low voltage
  \label{tbl:spincoatererror}
 \end{table}
 
-\subsection{CYTOP}
-
 \subsubsection{Determination of Film Thickness}
 \begin{equation}
  R = \frac{n_1^2(n_i-n_s)^2 \cos^2\delta + (n_i n_s - n_1^2)^2\sin^2\delta}
@@ -895,20 +924,10 @@ where
 \end{equation}
 
 
-\section{Long Range Surface Plasmon Polaritons}
-The typical propagation distances for SPPs in the three layer Kretschmann
-configuration are on the order of $\SI{30}{\nano\meter}$ for Ag films and
-$\SI{6}{\nano\meter}$ for Au films.  The reason for this is the electric
-field extends into the metal and the real part of the metal's dielectric
-function damps the SPP oscillation, causing it to decay as heat.  However,
-if we are able to expel the SPP evanescent field from the metal region, the
-propagation distances can be extended orders of magnitude.  These are
-called \textit{long range surface plasmon polaritons} (LRSPPs), and in
-terms of our geometry can be excited in one of two ways.
+\section{Chemistry and Surface Functionalization}
+esplandiu2002xps
 
-\subsection{Symmetric Configuration}
-Cytop coating crap
-\subsection{Photonic Crystal Configuration}
+\section{Microfluidic Cell}
 
 \chapter{Interference}
 Don't say this, but maybe say something like it
