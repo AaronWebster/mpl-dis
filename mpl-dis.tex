@@ -110,6 +110,8 @@
 \newcommand{\mq}{m_\mathrm{q}}
 \newcommand{\omegaq}{\omega_\mathrm{q}}
 
+\newcommand{\thetasp}{\theta_\mathrm{sp}}
+
 % custom lengths for figures
 
 % width for side by side figures
@@ -249,49 +251,54 @@ possible.
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
-\chapter*{Foreword}
+%\chapter*{Foreword}
 
 \label{part:plasmon}
 \chapter{Preface}
+\label{ch:preface}
 \section{Synopsis}
-
+\label{sec:synopsis}
 This dissertation is all about what happens when surface plasmon polaritons
-are scattered in a prism coupled setup.  The easiest way of understanding
-this is though a simplified dipiction of the experimental setup, shown in
-\Figure{fig:kretschmanngeo}.  
+interfere and scatter in a prism coupled setup.  The easiest way of
+understanding this is though a simplified dipiction of the experimental
+setup, shown in \Figure{fig:kretschmanngeo}.  
 
-%\begin{figure}[hb]
-%\centering
-%\input{kretschmanngeo.tex}
-%\vspace{-1cm}
-%\caption{
-%Experimental setup.
-%} 
-%\label{fig:kretschmanngeo} 
-%\end{figure}
+\begin{figure}[hb]
+\centering
+\input{meta/kretschmanngeo.tex}
+\vspace{-1cm}
+\caption{Simplified experimental setup: surface plasmon excitation using
+the three layer Kretschmann configuration. } 
+\label{fig:kretschmanngeo} 
+\end{figure}
 Light is incident from the left and focussed by lens $f_1$ on to the
-hypotenuse of a hemispherical prism coated with a thin layer of silver.
-$f_2$ acts to image light exiting the system, if desired.
+hypotenuse of a hemispherical prism $\epsilon_1$ coated with a thin layer
+of metal, $\epsilon_2$.  The refractive index of
+the sample, $\epsilon_3$, is opposite.  $f_2$ acts to image light exiting
+the system, if required.
 
 The evanescent wave present on the $\epsilon_1$-$\epsilon_2$ boundary with
-a wavenumber $k_x = k_0\sqrt{\epsilon_1}\sin \theta$ has an angle such that
-it excites surface plasmon polaritions (SPPs).  SPPs are oscillations of
-free charge strongly coupled to the photons of the incident beam.  The
-majority of light is directed into the specular direction.  Here,
-re-radiated SPPs at $\theta_\mathrm{sp}$ are antiphase with the excitation
-beam.  The result is interference: a dark band or notch in the reflected
-field.  SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until
+a wavenumber $k_x = k_0\sqrt{\epsilon_1}\sin \thetasp$ has an angle such
+that it excites surface plasmon polaritions (SPPs); oscillations of free
+charge strongly coupled to the photons of the incident beam.  The majority
+of light is directed into the specular direction.  Here, re-radiated SPPs
+at $\thetasp$ are antiphase with the excitation beam.  The result is
+interference: a dark band or notch in the reflected field.  The angular
+location of the notch turns out to be extrordinarily sensitive to
+$\epsilon_3$ -- this is the common way to view surface plasmon resonance in
+a biosensing context.  
+
+SPPs will propagate on the $\epsilon_2$-$\epsilon_3$ layer until
 they either decay as heat or scatter into the far field.  During this
 propagation it is possible that surface roughness will elastically modify
 its $k$-vector in the $k_x$-$k_y$ plane.  When this happens, scattered SPPs
 will re-radiate into a thin annular cone at (nearly) the same angle as the
 dark band in the specular direction.
 
-The conically scattered light is of prime importance in this work, because
-within this light is found a wealth of information directly related to the
-SPP scattering.  In particular, the cone contains speckle: a seemingly
-random interference pattern resulting from many components with different
-phase relationships.
+The conically scattered light is of prime importance for us, because within
+this light is found a wealth of information directly related to the SPP
+scattering.  In particular, the cone contains speckle: a seemingly random
+interference pattern resulting from many components with different phases.
 
 \section{What is New Here}
 In many large works it is sometimes difficult to discern what is actually
@@ -302,11 +309,11 @@ results which I present:
 \begin{description}
 \item[{Interference of Scattered SPPs}]
 For SPPs excited in the Kretschmann configuration with a focussed beam
-whose propagation distance is larger than focal spot, a one-sided
-interference pattern, or ``wiggles'', is observed in the specular direction.  This was
+whose propagation distance is larger than focal spot, a particular one-sided
+interference pattern, is observed in the specular direction.  This was
 thought to be an interference effect between the specularly reflected beam
-and a re-radiated plasmon component, but we have discovered that that this is
-simply a consequence of causality.
+and a re-radiated plasmon component, but we have discovered a further
+insight in intrepreting it as a simple consequence of causality.
 \item[{Bulk Refractive Index Sensitivity}] 
 Using Fourier analysis, we have studied the sensitivity of SPR in an intensity
 interrogation configuration as a function of propagation distance.  This
@@ -391,10 +398,22 @@ near-field probes in a Kretschmann-Raether type configuration.  This probe
 analogous to surface roughness, but in this case its location and
 interaction of a single scatterer can be precisely controlled.
 
-% should probably say something here about how this is an extension of the
-% work should probably also introduce the "thrust", the moving scatterer
-% problem and the add a scatter problem
-
+The analysis of our SPP experiments has been greatly advanced by
+theoretical treatment of elastic multiple scattering through disordered
+media.  This was estabilished with the seminal paper by \name{Feng},
+\name{Lee}, \name{Stone}, and \name{Douglas}~\cite{feng1988correlations} on
+the subject of correlations in transmitted waves in mesoscopic systems in
+the diffusive regime.  We borrow mainly from later analysis by
+\name{Berkovits} and \name{Feng}~\cite{berkovits1994correlations} who
+extended the theoretical treatment to optical waves.  This brought about
+several useful experimental tools such as diffusive wave spectroscopy
+\cite{pine1988diffusing}.  Through these calculations it was established
+that the multiple scattering regime is extrordinarily sensitive to the
+arrangement and motion of the scatterers involved.  In this regime it was
+predited that whatever system would be sensitive to the motion of a single
+scatterer.  Recent articles have shown that you can actually localized
+defects in th diffusive regime.  These are still open problems, like the
+moving scatterer problem and the addascatt problem.
 
 \section{Surface Plasmon Polaritons}
 A photon is a quantized oscillation of an electromagnetic field.  When this
@@ -409,10 +428,10 @@ this interface and propagates until it decays; either re-radiating as a
 photon or being absorbed into the metal as heat.
 
 SPPs, like photons, are quantum mechanical objects.  Because this system is
-largely momentum-conserving, elastically scattered plasmons will preserve
-all the information of their parent field.  There are many well written
-treatments which derive SPPs from many different types of first principles.
-Since this has already been done, I will simply sumarize the relevant
+momentum-conserving, elastically scattered plasmons will preserve all the
+information of their parent field.  There are many well written treatments
+which derive SPPs from many different types of first principles.  Since
+this has already been done, I will simply sumarize the relevant
 mathematics.
 
 \subsection{Wave Equation}
@@ -607,77 +626,78 @@ evanescently there; this is known as a ``quasi-bound mode''  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
 indicates the SPP is localized at the interface in $z$ while having a
 propagating solution in $x$, and is exactly the condition we wish to match.
-%\begin{figure}[ht]
-%\centering
-%\begin{tikzpicture}
-%\begin{axis}[
-%xlabel=$k_x$,
-%ylabel=$\omega$,
-%xmin=0,
-%xmax=0.6e8,
-%ymin=0.75e15,
-%ymax=6.5e15,
-%thick,
-%width=0.75\textwidth,
-%height=0.75\textwidth,
-%minor tick num=2,
-%legend pos = south east,
-%legend style = { cells = {anchor=west} },
-%clip=false,
-%]
-%\addplot[color=Dark27qual1] file {dispersion/kx_photon_glass.dat}
-%node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
-%%\textattachfile{dispersion/kx_photon_glass.dat}{}
-%\addlegendentry{photon/dielectric}
-%
-%\addplot[color=Dark27qual2] file {dispersion/kx_photon_glass_tilted.dat}
-%node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
-%\addlegendentry{photon/dielectric angle}
-%
-%\addplot[color=Dark27qual3] file {dispersion/kx_photon_vacuum.dat}
-%node [anchor=south west,yshift=-10pt]{$ck$}; 
-%\addlegendentry{photon/vacuum}
-%
-%\addplot[color=Dark27qual4] file {dispersion/kx_sp_metal_glass_lower.dat};
-%\addlegendentry{SPP/dielectric}
-%
-%\addplot[color=Dark27qual5] file {dispersion/kx_sp_metal_vacuum_lower.dat};
-%\addlegendentry{SPP/vacuum}
-%
-%\addplot[color=Dark27qual1] file {dispersion/kx_sp_metal_glass_upper.dat};
-%\addplot[color=Dark27qual2] file {dispersion/kx_sp_metal_vacuum_upper.dat};
-%
-%\addplot[color=Dark27qual1,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
-%node [anchor=east,xshift=-15pt]{$\omega_p$}; 
-%
-%\addplot[color=Dark27qual2,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
-%node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
-%
-%\addplot[color=Dark27qual3,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
-%node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
-%
-%
-%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
-%node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
-%
-%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
-%node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
-%
-%\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
-%node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
-%
-%\end{axis}
-%\end{tikzpicture}
-%\caption{Dispersion relation for photons and plasmons.  Conditions under
-%which SPPs may occur at the intersection between the photon light line and
-%corresponding SPP light line for the medium in question.  Based on a
-%similar plot found in \cite{shsongspp}.}
-%\label{fig:dispersionrelation}
-%\end{figure}
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$k_x$,
+ylabel=$\omega$,
+xmin=0,
+xmax=0.6e8,
+ymin=0.75e15,
+ymax=6.5e15,
+thick,
+width=0.75\textwidth,
+height=0.75\textwidth,
+minor tick num=2,
+legend pos = south east,
+legend style = { cells = {anchor=west} },
+clip=false,
+]
+\addplot[] file {figures/data/kx_photon_glass.dat}
+node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
+%\textattachfile{figures/data/kx_photon_glass.dat}{}
+\addlegendentry{photon/dielectric}
+
+\addplot[] file {figures/data/kx_photon_glass_tilted.dat}
+node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
+\addlegendentry{photon/dielectric angle}
+
+\addplot[] file {figures/data/kx_photon_vacuum.dat}
+node [anchor=south west,yshift=-10pt]{$ck$}; 
+\addlegendentry{photon/vacuum}
+
+\addplot[] file {figures/data/kx_sp_metal_glass_lower.dat};
+\addlegendentry{SPP/dielectric}
+
+\addplot[] file {figures/data/kx_sp_metal_vacuum_lower.dat};
+\addlegendentry{SPP/vacuum}
+
+\addplot[] file {figures/data/kx_sp_metal_glass_upper.dat};
+\addplot[] file {figures/data/kx_sp_metal_vacuum_upper.dat};
+
+\addplot[,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
+node [anchor=east,xshift=-15pt]{$\omega_p$}; 
+
+\addplot[,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
+node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
+
+\addplot[,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
+node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
+
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
+node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Dispersion relation for photons and plasmons.  Conditions under
+which SPPs may occur at the intersection between the photon light line and
+corresponding SPP light line for the medium in question.  Based on a
+similar plot found in \cite{shsongspp}.}
+\label{fig:dispersionrelation}
+\end{figure}
 Fix the colors here.
 The dispersion diagram relates the time-variation of the wave (given by its
 frequency omega) to the spatial variation of the wave (given by its
 wave-vector kx)
+
 \subsection{Resonance Condition}
 The resonance condition requires the dispersion relation for an
 incident photon intersect the dispersion relation for SPPs, matching both
@@ -832,6 +852,9 @@ symmetric vs asymmetric spps
 Cytop coating crap
 \subsection{Photonic Crystal Configuration}
 
+\section{Typical Response}
+some pictures of spp prop
+
 \chapter{Experimental Setup}
 \label{ch:expsetup}
 
@@ -841,7 +864,7 @@ diode laser is first coupled into a single mode optical fiber.  The fiber
 guides the laser light to an optical breadboard mounted on an inverted
 microscope.  All primary functions of the experiment take place here.  The
 Gaussian output from the single mode fiber is collimnated with a beam waist
-$\w_0=\SI{5}{\milli\meter}$ and proceeds
+$w_0=\SI{5}{\milli\meter}$ and proceeds
 through a polarizing beamsplitter, passing $p$ polarized light.  This light
 is focussed by a 10x microscope objective onto the
 hypotenuse of a hemispherical prism.  The prism is mounted on a planar

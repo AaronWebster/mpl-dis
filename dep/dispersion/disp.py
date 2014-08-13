@@ -6,9 +6,6 @@ import h5py
 import matplotlib.pyplot as plt
 from scipy import constants
 
-
-
-
 lambda0 = 632.8e-9
 
 def kx_sp_metal_glass(omega):
