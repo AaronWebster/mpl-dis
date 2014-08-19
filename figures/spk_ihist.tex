@@ -1,0 +1,25 @@
+\input{../header}
+\begin{document}
+\thispagestyle{empty}
+
+\pgfplotsset{
+ footnotesize,
+ every axis/.style={
+  height=6cm,
+  width=10cm,
+  thick,
+  max space between ticks=30pt,
+  xlabel = $I/\bar{I}$,
+  ylabel = $\bar{I} p_I(I/\bar{I})$,
+ }
+}
+\begin{tikzpicture}
+\begin{axis}
+%\addplot [hist={data=x,bins=20},fill=orange!75] file {speckle/figures/tmp2.dat};
+\addplot [ybar interval,fill=orange!75] file {data/spk_conehistexp.dat};
+\addlegendentry{cone speckle}
+\addplot [color=blue] file {data/spk_conehisttheory.dat};
+\addlegendentry{theory}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -19,7 +19,5 @@
 *.fdb_latexmk
 *.swp
 figures/*.bib
-figures/*.pdf
+#figures/*.pdf
 commithash.tex
-manuscript-naturecomm.pdf
-manuscript-naturecommNotes.bib

@@ -4,6 +4,9 @@ TARGET=mpl-dis
 
 all: figures $(TARGET).pdf
 
+figures:
+	make -C figures
+
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
 
