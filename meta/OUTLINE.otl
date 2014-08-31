@@ -1,0 +1,207 @@
+cone
+	existance
+		historical perspective
+		derive existence of SPPs
+			maxwell's equations
+			plane wave solutions
+			drude/lorentz drude mode
+			complex permittivity
+		dispersion relation
+			==plot, fix existing
+		kretschmann configuration
+			way to match SPP momentum
+			==schematic, use existing from minithesis
+		physical characteristics
+			propagation distance
+			evanescent decay
+		long range surface plasmons
+			==schematic, showing multilayer structure
+			cite opt of layer structure paper
+			note photonic crystal method
+			http://nanophotonics.spiedigitallibrary.org/article.aspx?articleid=1224965
+		fresnel relations
+			transfer matrix method
+			==2d plot, fresnel, both types
+			==3d MRF field with experimental image of notch in gauss beam
+			==density plot fresnel ASPP, gold, silver
+			==density plot fresnel SSPP, gold, silver
+			==full field from MRF simulation
+		conically scattered light
+			==schematic showing where the light goes
+			==2d fresnel plot of the intensity, and a picture (maybe unwrapped)
+			==3d mrf plot of a solid cone
+			==maybe a polar plot somewhere
+
+	experimental (the above has all the basic theory out of the way)
+		basic setup (note that all setups are a variant of this)
+			==schematic of setup
+			==picture of setup from the lab
+			cameras
+				modification of ueyedemo
+		sputtering
+			cleaning slides, prisms
+			+AFM of surface, surface quality
+			annealing of gold layers
+			surface modifications
+				shadow mask lithography
+					+SEM shadow mask
+				influence of heat before sputtering
+		cytop, spin coating
+			hard drive spin coater
+				==schematic
+			measuring layer thickness
+				==plot of fresnel and fit
+		chemistry
+			hexanedithiol
+		functionalizing nanoparticles
+			from jiapeng
+		microfluidics
+			==schematic of microfluidic cell
+		UV adhesive lenses
+			note the different NOA types
+		post processing
+			calculating sensor distance
+				==schematic showing what the coordinates are
+			fiji processing stuff
+				stabilize/deshake algorithm (descrptor based series)
+				removing background
+				extracting speckle line
+
+	bulk refractive index sensitivity
+		predicted sensitivity of the notch
+		predicted sensitivity of the cone 
+			==plot of spr angle shift with RI, include cone and specular
+		observations
+			temperature measurement (jiapeng, ASPPs)
+				refractive index of water
+				calibration with refractometer
+				==plot of this temp measurement
+			glucose exp_12_Aug_2014_ritest*  (me, LRSPPs)
+				refractive index of glucose
+				calibration with refractometer
+				==plot of the glucose measurement
+
+	interference
+		fourier optics perspective of SPR
+			(plasmon resonance is a spatial filter)
+		wiggles in "normal" spr
+			==plot of wiggles as they propagate
+		wiggles in LRSPR
+			==plot of lspr wiggles as they propagate (might be redundant)
+		bulk refractive index sensitivity
+			predicted sensitivity of the wiggled notch
+			predicted sensitivity of the wiggled cone 
+			==plot of wiggles sensitivity
+			==plot of experimental wiggles data
+
+	speckle
+		connection to universal conductance fluctuations
+		statistics of speckle (single scattering)
+			random phasor sum
+				fourier transform method
+					brief note about how great the czt is
+			PDF of the intensity
+				PDF for a low number of scatterers
+					==plot of n=2,5
+				PDF for one brighter than the rest
+					==plot of r=1,5
+				experimental speckle pdf around the ring
+					==image of unwrapped speckle
+				comparison with other types of speckle, ground glass or fiber speckle
+			non-paraxial speckle
+				==pics in speckespr.pdf on office
+		multiple scattering
+			ioffe regel regime
+			influence of multiple scattering on statistics of speckle
+			manifestations
+				coherent backscattering
+				memory effect
+			existence of
+				s/p ratio of backwards scatter guys
+					horstmann "multiple scattering of SPPs"
+					bodesheim/otto "on the quant. measurement of the roughness spectrum"
+				kretschmann "spp dispersion at rough surfaces"
+				wang "observation of coherent multiple scattering"
+				==plot of our s/p measurement
+		correlations
+			angular correlations
+			size of a speckle 
+				Wiener–Khinchin theorem, cross correlation
+				size of focal spot
+					==show images /run/media/awebster/disk0/awebster/office/awebster/jiapeng/experimental_images/
+			frequency "refractive index correlations"
+			connection with diffusive light scattering (temporal)
+				==temperature jiapeng plot 3.22
+				kid thesis has equations, you implemented them in g1g2.nb on office
+					==plot of g1 and g2, make comparison
+		refractive index sensitivity of speckle
+			sanli faez "varying the effective refractive index..."
+		optical vorticies
+			morphological parameters
+				==schematic of the coordinates of the parameters
+			statistics in simulated speckle fields
+				==plot statistics
+				for a low number of scatterers
+					==plot statistics for low number of scatterers
+			subpixel displacement and tracking mechanism
+				"digital speckle correlation" and my implementation
+				? want to do something here ?
+
+	scattering microstructure
+		surface roughness
+			how to get these parameters from experiment
+		simulation
+			monte carlo simulation
+				basics from wlgr-plasmon
+				==plot from wlgr-plasmon
+			mrf simulation
+				==simulation varying some parameters?
+		addascatt
+			sensitivity to add one, single scattering (goodman)
+				==plot of phasor sum
+				monte carlo simulation for single scattering
+					==plot of decorrelation, single scattering
+			sensitivity to add one, multiple scattering
+				berkovitz theory of speckle pattern tomography
+				berkovitz motion of a single scatterer
+				monte carlo simulation for multiple scattering
+					==plot of decorrelation, multiple scattering
+			experiment
+				how it's actuallly implemented with nanoparticles
+					==SEM pictures of nanoparticles
+				1_Aug_2014_npadsorb
+					==plot of decorrelation
+					==histogram of step sizes
+				hairpin jiapeng plot 3.29
+					==plot of decorrelation
+		move a scatt
+			introduce gregory/bert's work
+			berkowitz "motion of a single scatterer"
+				ensemble averaged motion from wierdospace, show decorrelation
+				simulations of moveascatt
+			weirdospace (start with wlgr-plasmon)
+				==plot from wlgr-plasmon
+				monte carlo simulations
+					==around ring
+				mrf simulation
+					==around ring
+				primary stripes
+					reconstruction using a full field
+				secondary stripes
+				==really clever grid, weirdospace
+				radial autocorrelation lambdaspp/2
+					? connection with mesoscopic conduction ?
+				phase reconstruction of the entire field
+					czt plus filter
+			vortex areas
+				mechanism for tip subtraction
+				SPOM problem
+	outlook
+		experimental improvements
+			capture entire cone
+			camera dynamic range/speed could be better
+
+
+	reference data
+
+quartz crystal microbalance

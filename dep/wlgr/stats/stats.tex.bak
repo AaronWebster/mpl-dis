@@ -1,0 +1,99 @@
+The way we choose scattering trajectories in the simulation leads to an
+intersting statistical distribution for the number of scatterers visited.
+Again, there are two criteria which can end a trajectory
+\begin{itemize}
+\item The same scatter is chosen twice.
+\item The path length reaches a hard limit.
+\end{itemize}
+The first exit criteria was chosen ostensibly to provide for the strong
+presence of single scattering off the tip.  Consider a rectangular area
+containing $N$ scatterers.  The probability at each scatterer of choosing
+pairwise sequential the same scatterer is $1/N$.  The extention of this to
+the probability of the path ending on the $n$th scattering site, $P(n)$, is
+modeled by the familiar differential equation for exponential decay
+\begin{align}
+\frac{d P(n)}{dn} = -\frac{1}{N}P(n)
+\end{align}
+which, when solved and the initial condition $P(0)=1/N$ is applied, can be
+expressed as
+\begin{align}
+P(n)=\frac{1}{N}e^{-n/N}
+\end{align}
+%seperation of variables results in
+%\begin{align}
+%\frac{d P(n)}{P(n)}=-\frac{1}{N}dn
+%\end{align}
+%integrating yields
+%\begin{align}
+%\log P(n) = -\frac{n}{N} + C
+%\end{align}
+%and therefore
+%\begin{align}
+%P(N)= e^C e^{-n/N}
+%\end{align}
+%The initial condition represented by $e^C$ is found by noting $P(0)=1/N$,
+%therefore the final form of this equation is given by
+This is the lifetime of the plasmon trajectory considering its only exit
+possibility is due to choosing the same scatterer twice.
+
+The second exit criteria comes when our path length has been exhausted.
+Since the scatterers are randomly distributed throughout the area, it is
+useful to know the mean free path for such a system.  Consider a unit
+square.  The average distance between any two points is given by the box
+integral
+\begin{align}
+\int_0^1 \int_0^1 \int_0^1 \int_0^1 \sqrt{(x_1-y_1)+(x_2-y_2)}\; dx_1 dx_2 dy_1 dy_2
+\end{align}
+This is the {\it square line picking} problem.  Analytic evaluation of the
+above integral is complicated, but yields for its unit dimensions an
+average distance of
+\begin{align}
+\overline{\Delta r} = \frac{\sqrt{2}+2+5\log\left(1+\sqrt{2}\right)}{15}
+\end{align}
+and the probability distribution
+%\begin{align}
+%\begin{array}{l l}
+%P_\mathrm{s}(l) = \left\{
+%2l\left(l^2 -4l + \pi\right) & \quad  0\leq l \leq 1\\
+%2l\left[4\sqrt{l^2-1}-\left(l^2+2-\pi\right)-4\arctan\left({\sqrt{l^2-1}}\right)\right]
+%& \quad 0 \leq l \leq \sqrt{2}\\
+%\right.
+%\end{array}
+%\end{align}
+If we instead suppose a unit disk instead of a unit square, the mean
+distance can be found to be
+\begin{align}
+\overline{\Delta r}= \frac{128}{45 \pi}
+\end{align}
+and probability distribution for a disk of radius $R$ is
+\begin{align}
+P_\mathrm{d}=\frac{4l}{\pi R^2} \arccos\left(\frac{l}{2R}\right) - \frac{2
+l^2}{\pi R^3} \sqrt{1-\frac{l^2}{4 R^2}}
+\end{align}
+\begin{figure}
+\begin{center}
+\begin{psgraph}(0,0)(1.5,1.5){10cm}{4cm}
+\psplot[linecolor=red]{0}{1}{x dup mul 4 x mul sub PI add 2 x mul mul}
+\psplot[linecolor=red]{1}{1.4142}{4 x dup mul 1 sub sqrt mul x dup mul 2
+add PI sub sub 4 x dup mul 1 sub sqrt ATAN mul sub 2 x mul mul}
+\psplot[linecolor=blue]{0}{1}{4 x mul PI 0.5 dup mul mul div x 2 0.5 mul
+div ACOS mul 2 x dup mul mul PI 0.125 mul div 1 x dup mul sub 4 0.5 dup mul
+mul div sqrt mul sub}
+\psxTick(1.4142){\sqrt{2}}
+\end{psgraph}
+\end{center}
+\caption{Probability distrubution function for the square and disk line
+picking problems.}
+\end{figure}
+It is assumed that the superposition of the two probabilities should
+produce the statistical results found in \ref{fig:scatterhist}, but as yet
+I have not found a way to do so.
+
+These line picking problems are useful because they characterize how many
+scatterers on average a plasmon will visit until exiting in the Monte Carlo
+simulation.  They also reveal a limitation: as the scattering density is
+increased, a plasmon as simulated does not visit more scatterers, nor does
+its mean free path decrease.  Rather, the result of increasing the number
+of scatterers is only to supress single scattering off the tip.  This may
+or may not be physical.  The results of this in the limit of many
+scatterers are shown in Figure \ref{fig:manyscatt}.
