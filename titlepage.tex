@@ -1,0 +1,32 @@
+\begin{titlepage}
+\begin{center}
+\hfill\\[4cm]
+{ \Huge {\bfseries {\distitle}} \par}
+\vspace{3.0cm}
+\begin{tabular}{lr}
+\includegraphics[height=2cm,keepaspectratio]{images/Logo_MPL_englisch_kompakt_cmyk_110915}
+\hspace{1.0cm}
+%
+\includegraphics[height=2cm,keepaspectratio]{images/Logo_IMPRS_4c_042012}
+\end{tabular}
+\vspace{3cm}
+\\
+{\huge Aaron Webster}\\
+\vspace{1cm}
+{\large A DISSERTATION}\\
+\vspace{0.5cm}
+Presented to the Max Planck Institute for the Science of Light\\
+and the University of Erlangen-N\"urnberg\\
+in partial fulfillment of the requirements\\
+for the degree of\\
+Doctor of Philosophy\\
+\vspace{0.5cm}
+\today
+\end{center}
+%\tikzexternaldisable
+\tikz[overlay,remember picture] {
+ \node at ($(current page.west)+(1,0)$) [rotate=90]
+ {\large\textcolor{gray}{\input{commithash} \pdfdate}};
+}
+%\tikzexternalenable
+\end{titlepage}

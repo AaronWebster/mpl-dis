@@ -96,6 +96,8 @@ cone
 
 	speckle
 		connection to universal conductance fluctuations
+		speckle parameterns
+			contrast
 		statistics of speckle (single scattering)
 			random phasor sum
 				fourier transform method
@@ -112,6 +114,7 @@ cone
 				==pics in speckespr.pdf on office
 		multiple scattering
 			ioffe regel regime
+			enhanced sensitivity proof
 			influence of multiple scattering on statistics of speckle
 			manifestations
 				coherent backscattering
@@ -146,6 +149,7 @@ cone
 			subpixel displacement and tracking mechanism
 				"digital speckle correlation" and my implementation
 				? want to do something here ?
+			coherent background destroys vorticies
 
 	scattering microstructure
 		surface roughness
@@ -196,6 +200,9 @@ cone
 			vortex areas
 				mechanism for tip subtraction
 				SPOM problem
+			(unsorted gregory)
+				ANSOM, Excess light coming from areas messing up the tip signal
+
 	outlook
 		experimental improvements
 			capture entire cone
@@ -205,3 +212,4 @@ cone
 	reference data
 
 quartz crystal microbalance
+particle counting

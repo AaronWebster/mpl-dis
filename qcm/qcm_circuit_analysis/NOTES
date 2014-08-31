@@ -1,0 +1,4 @@
+source bvd.spice
+ac lin 500 5.0e6 5.1e6
+print v(1) v(2) v(3)
+end
