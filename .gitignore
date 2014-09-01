@@ -19,6 +19,6 @@
 *.fdb_latexmk
 *.swp
 figures/*.bib
-external/
+external/mpl*
 #figures/*.pdf
 commithash.tex
