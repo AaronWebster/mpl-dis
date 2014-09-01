@@ -1,0 +1,27 @@
+for plasma bonding I do exactly this:
+http://umech.mit.edu/HST410/plasma.php
+
+The experimental setup is depicted schematically in
+\Figure{fig:sppexperimentalsetup}.  Light from a \SI{660}{\nano\meter}
+diode laser is first coupled into a single mode optical fiber.  The fiber
+guides the laser light to an optical breadboard mounted on an inverted
+microscope.  All primary functions of the experiment take place here.  The
+Gaussian output from the single mode fiber is collimnated with a beam waist
+$w_0=\SI{5}{\milli\meter}$ and proceeds
+through a polarizing beamsplitter, passing $p$ polarized light.  This light
+is focused by a 10x microscope objective onto the
+hypotenuse of a hemispherical prism.  The prism is mounted on a planar
+structure supporting either normal or long range SPPs.  Reverse of this
+structure is a microfluidic flow cell where samples can be injected.  The
+specularly reflected and scattered light containing information from SPP
+interference and scattering is ultimately captured at desired locations by
+a pair of custom beam profilers. (notch filter).
+\begin{figure}
+ \caption{Setup.}
+ \label{fig:sppexperimentalsetup}
+\end{figure}
+
+\section{Planar Layer Structure}
+Perhaps most important to the setup is the layer structure supporting SPP
+propagation.  Two types of structures were created for this work: ones for
+SPPs and LRSPPs.

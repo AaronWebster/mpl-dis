@@ -1,0 +1,53 @@
+The sensitivity of surface plasmon based biosensors to bulk refractive
+index changes is of primary importance in extracting bio-relevant
+properties. In a prism coupled setup, there are three main modulation
+methods used to monitor changes in the SPR resonance.
+
+\begin{description}
+ \item [{Angular}] The prism is rotated and the signal reflectivity
+  monitored
+  as a function of angle. The prism may be scanned through a range of
+  angles or the angular spectrum may be obtained simultaneously using
+  a focussed beam and sensor array.
+ \item [{Wavelength}] The prism is fixed in place and its reflectivity at
+  a single angle is monitored as a function of wavelength.
+ \item [{Intensity}] The intensity of the signal at a certain angular or
+  spatial point is monitored as the experiment progresses.
+\end{description}
+All three of these interrogation methods are equivalent in terms of
+their real-world resolution and detection limit. In this section we
+will look at the sensitivity of intensity interrogation to different
+(something about parameters)
+
+
+\section{Three Layer Kretschmann, Far Field}
+We will now derive the sensitivity of the three layer Kretschmann
+configuration to bulk index changes. This case will be used as a test
+case for further analysis of the propagation dependent sensitivity.
+
+The bulk sensitivity in an intensity modulation setup is defined as
+the ratio of the change of normalized signal intensity $\delta I=I_{n_{0}}-I_{n_{1}}$
+to the change in bulk refractive index $\delta n=n_{0}-n_{1}$ for
+two refractive indicies $n_{0}$ and $n_{1}$. We restrict ourselves
+to small changes in the refractive index $n$, $\delta n/n_{0}\ll1$.
+The intensity sensitivity is defined as
+\begin{equation}
+S_{\mathrm{I}}=\frac{\delta I}{\delta n}
+\end{equation}
+Without loss of generality, the sensor intensity $I$ may be a function
+of any appropriate coordinate system (e.g. $I(x,y)$). In such a coordinate
+system we always take $S_{\mathrm{I}}$ at the location of maximum
+shift in that coordinate system.
+
+In the Lorentzian approximation{[}{]} using Drude model coefficents
+$\epsilon=\epsilon'+\mi\epsilon''$, the maximum sensitivity for bulk
+index sensing is approximated as
+\begin{equation}
+(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{\mathrm{m}}'}{\epsilon_{\mathrm{m}}''n^{3}}
+\end{equation}
+Where $\epsilon_{\mathrm{m}}$ is the complex Drude-model permittivity
+in the metal layer. At a operating wavelength of \SI{660}{\nano\meter},
+for Au on N-BK7, $(S_{\mathrm{I}})_{\text{max}}=151.66$. This is
+only an approximation, though it is close to the value obtained through
+Lorentz-Drude coefficents used in combination with the transfer matrix
+method, $(S_{\mathrm{I}})_{\text{max}}=153.04$.

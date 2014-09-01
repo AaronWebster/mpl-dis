@@ -1,9 +1,9 @@
 % title of the dissertation
-\def\distitle{Working Title}
-
+\def\distitle{Interference and Scattering in Surface Plasmon Resonance}
 \usepackage{mathtools}
 \usepackage{t1enc}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{ulem}
 \usepackage{import}
 \usepackage{amsmath}
@@ -19,7 +19,6 @@
 \usepackage{enumitem}
 \usepackage{datetime}
 \usepackage{fullpage}
-\usepackage{hyperref}
 \usepackage{attachfile}
 \usepackage{textpos}
 \usepackage{rotating}
@@ -27,6 +26,44 @@
 \usepackage[parfill]{parskip}
 %\usepackage{minted}
 
+\usepackage{hyperref}
+\hypersetup{
+ colorlinks=false,
+ hidelinks=true,
+}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usepgfplotslibrary{external}
+\pgfplotsset{filter discard warning=false}
+
+\usepackage[siunitx]{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns,decorations.pathmorphing,decorations.markings,positioning}
+\usetikzlibrary{pgfplots.units} 
+\usetikzlibrary{pgfplots.external} 
+\usetikzlibrary{pgfplots.groupplots}
+\tikzexternalize[prefix=external/]% externalize
+
+% my pretty colors
+% \import{colors/}{colors}
+
+% siunitx
+\usepackage{siunitx}
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\name{M}}
+\sisetup{ 
+% load-configurations=abbreviations
+% round-mode = places,
+}%
+
+% prettify chapter/section format
+\usepackage{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray}{|}\hsp}{0pt}{\Huge\bfseries}
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
 % This definition puts a little vertical guy at the end so it's more
@@ -101,51 +138,4 @@
 \newcommand{\kq}{k_\mathrm{q}}
 \newcommand{\mq}{m_\mathrm{q}}
 \newcommand{\omegaq}{\omega_\mathrm{q}}
-
 \newcommand{\thetasp}{\theta_\mathrm{sp}}
-
-% custom lengths for figures
-
-% width for side by side figures
-\newlength{\twoupwidth}
-\setlength{\twoupwidth}{7.5cm}
-
-% width and height for default single figure
-\newlength{\oneupwidth}
-\setlength{\oneupwidth}{0.90\textwidth}
-\newlength{\oneupheight}
-\setlength{\oneupheight}{0.55623059\textwidth}
-
-\usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\pgfplotsset{compat=newest}
-\usepgfplotslibrary{units}
-\usepgfplotslibrary{external}
-\pgfplotsset{filter discard warning=false}
-
-\usepackage[siunitx]{circuitikz}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usetikzlibrary{patterns,decorations.pathmorphing,decorations.markings,positioning}
-\usetikzlibrary{pgfplots.units} 
-\usetikzlibrary{pgfplots.external} 
-\usetikzlibrary{pgfplots.groupplots}
-%\tikzexternalize[prefix=external/]% externalize
-
-% my pretty colors
-% \import{colors/}{colors}
-
-% siunitx
-\usepackage{siunitx}
-\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
-\DeclareSIUnit\Molar{\name{M}}
-
-\sisetup{ 
-% load-configurations=abbreviations
-% round-mode = places,
-}%
-
-% prettify chapter/section format
-\usepackage{titlesec}
-\newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray}{|}\hsp}{0pt}{\Huge\bfseries}
