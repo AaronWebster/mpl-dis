@@ -1,0 +1,56 @@
+In the case of no exernal charge or current densities, $\rho=\mathbf{J}=0$,
+the propagation of disturbences in the electromagnetic field can be derived
+as plane wave solutions to Maxwell's equations.  Beginning with Faraday's law
+\begin{align}
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
+\end{align}
+and taking the curl of both sides
+\begin{align}
+\nabla \times
+\left(\nabla\times\mathbf{E}\right)&=\nabla\times\left(-\frac{\partial\mathbf{B}}{\partial
+t}\right)\\
+&=-\frac{\partial}{\partial t}\left(\nabla \times \mathbf{B}\right)
+\end{align}
+The left side can be expanded and simplified using the vector identity
+\begin{align}
+\nabla \times \left( \nabla \times \mathbf{A} \right) = \nabla \left(
+\nabla \cdot \mathbf{A} \right) - \nabla^2 \mathbf{A}
+\end{align}
+in combination with Gauss's law, $\nabla \cdot \mathbf{E}=0$.
+The right hand side is modified using Ampere's law with $\mathbf{B} =\mu
+\mathbf{H}$.
+\begin{align}
+\nabla\left(\nabla\cdot\mathbf{E}\right)-\nabla^2\mathbf{E}
+&=-\mu\frac{\partial}{\partial t}\left(\nabla \times \mathbf{H}\right)\\
+-\nabla^2\mathbf{E}&=-\mu\frac{\partial^2 \mathbf{D}}{\partial t^2}\\
+-\nabla^2\mathbf{E}&=-\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2}\\
+\left(\nabla^2-\mu\epsilon\frac{\partial^2}{\partial t^2}\right)\mathbf{E}&=0
+\label{eqn:ewe}
+\end{align}
+This is the electromagnetic wave equation in terms of the electric field.
+Choosing to solve this equation by separation of variables the following
+plane wave solutions can be obtained
+\begin{align}
+\Aboxed{
+ \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
+ \cdot \mathbf{r} - \omega t )}
+}
+\label{eqn:planewaves}
+\end{align}
+where $k=\omega/c=\omega\sqrt{\epsilon\mu}$.  In this notation,
+$\mathbf{k}$ is the material specific vectorial wavenumber, $\mathbf{r}$ is the
+spatial position, $\omega$ is angular frequency, and $t$ is
+the dimension of time.
+The initial value is chosen with the vectorial constant $\mathbf{E}_0$.
+The magnetic field follows the same form
+\begin{align}
+\Aboxed{
+ \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
+ \cdot \mathbf{r} - \omega t )}
+}
+\end{align}
+where $\mathbf{H}$ is it is orthogonal $\mathbf{E}$ by 
+\begin{align}
+\mathbf{E} \times \mathbf{H} = 0
+\end{align}
+and two are mutually orthogonal with respect to $\mathbf{k}$.

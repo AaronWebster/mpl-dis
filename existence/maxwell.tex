@@ -1,19 +1,20 @@
-Conditions for the existence of SPPs can be predicted from the plane wave
-solutions to Maxwell's equations.  We begin with a derivation of such
-waves, starting with the differential form of Maxwell's equations.
+Conditions for the existence and excitation of SPPs can be completely
+predicted from Maxwell's equations.  We begin with their derivation here,
+starting with the differential form of Maxwell's
+equations~\cite{maier2007plasmonics}~\cite{benson2009elements}.
 \begin{align}
-\nabla \cdot \mathbf{D} &= 0 & \text{Gauss's law} \label{eqn:gausslaw}\\
+\nabla \cdot \mathbf{D} &= \rho & \text{Gauss's law} \label{eqn:gausslaw}\\
 \nabla \cdot \mathbf{B} &= 0 & \text{Gauss's law for magnetism} \label{eqn:gausslawmagnetism}\\
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
 & \text{Faraday's law of induction} \label{eqn:faradayslaw} \\
-\nabla \times \mathbf{H} &= \frac{\partial \mathbf{D}} {\partial
+\nabla \times \mathbf{H} &= \mathbf{J} + \frac{\partial \mathbf{D}} {\partial
 t}  & \text{Ampere's law with Maxwell's correction}
 \label{eqn:ampereslaw}
 \end{align}
-Where $\mathbf{E}$ is the electric field in,
-$\mathbf{B}$ is the magnetic field, $\mathbf{D}$ is the electric
-displacement field, and $\mathbf{H}$ is
-the so-called auxiliary magnetic field.
+Where $\mathbf{E}$ is the electric field, $\mathbf{B}$ is the magnetic
+field, $\mathbf{D}$ is the electric displacement field with an external
+charge density $\rho$, and $\mathbf{H}$ is the auxiliary magnetic field
+with current density $\mathbf{J}$.
 
 In formulating Maxwell's equations it is assumed all electromagnetic
 propagation takes place in a {\it simple dielectric}, that is
@@ -55,71 +56,12 @@ magnetic field to be rewritten according to its definition
 \end{align}
 where $\mu_0$ is the vacuum permeability of free space.  In practice, most
 dielectrics have nearly zero magnetic response, so $\mathbf{M}=0$ and
-$\mu_0=\mu$.  Nevertheless for the sake of generality it is treated as a
+$\mu_0=\mu$ is a valid assumption.  Nevertheless, for the sake of generality it is treated as a
 material dependent parameter.
-\item The material is homogeneous.
-\item The material is isotropic.
+\item The material is homogeneous and isotropic.
+\item Charge is conserved, such that
+\begin{align}
+\mathbf{J} &= \frac{\partial\mathbf{P}}{\partial t}\\
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0}
+\end{align}
 \end{enumerate}
-Note that with the enumerated requirements and the form of Ampere's law we
-have assumed a region with no charges and no currents.  Given that a SPP is
-a charge density oscillation, this is not strictly rigorous.  It does,
-however, simplify the derivation.  The presence of free charges is
-accounted for {a posteriori} by using a complex dielectric $\epsilon =
-\epsilon' + \mi \epsilon''$.  With regards to surface roughness, these
-assumptions are also acceptable as we assume such roughness to be likewise
-homogeneous and isotropic.
-
-Taking these assumptions into account, plane wave solutions for the
-electric field can be derived. Beginning with Faraday's law
-\begin{align}
-\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
-\end{align}
-and taking the curl of both sides
-\begin{align}
-\nabla \times
-\left(\nabla\times\mathbf{E}\right)&=\nabla\times\left(-\frac{\partial\mathbf{B}}{\partial
-t}\right)\\
-&=-\frac{\partial}{\partial t}\left(\nabla \times \mathbf{B}\right)
-\end{align}
-The left side can be expanded and simplified using the vector identity
-\begin{align}
-\nabla \times \left( \nabla \times \mathbf{A} \right) = \nabla \left(
-\nabla \cdot \mathbf{A} \right) - \nabla^2 \mathbf{A}
-\end{align}
-in combination with Gauss's law, $\nabla \cdot \mathbf{E}=0$.
-The right hand side is modified using Ampere's law with $\mathbf{B} =\mu
-\mathbf{H}$.
-\begin{align}
-\nabla\left(\nabla\cdot\mathbf{E}\right)-\nabla^2\mathbf{E}
-&=-\mu\frac{\partial}{\partial t}\left(\nabla \times \mathbf{H}\right)\\
--\nabla^2\mathbf{E}&=-\mu\frac{\partial^2 \mathbf{D}}{\partial t^2}\\
--\nabla^2\mathbf{E}&=-\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2}\\
-\left(\nabla^2-\mu\epsilon\frac{\partial^2}{\partial t^2}\right)\mathbf{E}&=0
-\label{eqn:ewe}
-\end{align}
-This is the electromagnetic wave equation in terms of the electric field.
-Choosing to solve this equation by separation of variables the following
-plane wave solutions can be obtained
-\begin{align}
-\Aboxed{
- \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
- \cdot \mathbf{r} - \omega t )}
-}
-\label{eqn:planewaves}
-\end{align}
-where $k=\omega/c=\omega\sqrt{\epsilon\mu}$.  In this notation,
-$\mathbf{k}$ is the material specific vectorial wavenumber, $\mathbf{r}$ is the
-spatial position, $\omega$ is angular frequency, and $t$ is
-the dimension of time.
-The initial value is chosen with the vectorial constant $\mathbf{E}_0$.
-The magnetic field follows the same form
-\begin{align}
- \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
- \cdot \mathbf{r} - \omega t )}
-\end{align}
-but it is orthogonal $\mathbf{E}$ by 
-\begin{align}
-\mathbf{E} \times \mathbf{H} = 0
-\end{align}
-and the two are mutually orthogonal with the direction of propagation
-$\mathbf{k}$.

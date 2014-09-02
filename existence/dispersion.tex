@@ -1,9 +1,8 @@
-\input{dispersion/kretschmann}
 With plane wave solutions in hand, boundary conditions consistent with a
-dielectric-metal interface can be imposed.
-At a planar interface, it is convenient to restrict the problem to two
-dimensions; in this case the $x$-$z$ plane as shown schematically in
-\Figure{fig:kretschmanngeosimplified}.  Since $\mathbf{k}=(k_x,0,k_z)$,
+single interface can be imposed.
+At a planar interface, it is convenient to restrict the problem to TM
+polarization in two
+dimensions; in this case the $x$-$z$. Since $\mathbf{k}=(k_x,0,k_z)$,
 $\mathbf{r}\cdot\mathbf{k}=k_x x + k_z z$ and $\mathbf{E}_0 = (E_x, 0,
 E_z)$, the electric field can be written 
 \begin{align}
@@ -28,7 +27,7 @@ $\mathbf{H}$ must be orthogonal to $\mathbf{E}$ by
 \, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
 \end{align}
 At the interface there are two values for the (complex) permittivity,
-$\epsilon_1$ in the dielectric and $\epsilon_2$ in the metal.  Consequently
+$\epsilon_1$ and $\epsilon_2$.  Consequently
 there are two sets of plane wave solutions
 \begin{align}
 \left.\begin{aligned}
@@ -45,7 +44,7 @@ E_{x,1}\\
 E_{z,1}\\
 \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
 \end{aligned}
-\right\}& \quad \text{dielectric}, \epsilon_1\label{eqn:planewavedielectric}\\
+\right\}& \quad \epsilon_1\label{eqn:planewavedielectric}\\
 \left.\begin{aligned}
 \mathbf{H}_2(x,z,t) &=
 \begin{pmatrix}
@@ -62,12 +61,12 @@ E_{z,2}\\
 \end{pmatrix}
 \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
 \end{aligned} 
-\right\}&\quad \text{metal}, \epsilon_2
+\right\}&\quad \epsilon_2
 \label{eqn:planewavemetal}
 \end{align}
 where the subscript designates which material the wave equation refers to.
-(e.g. $\mathbf{E}_1$ is the electric field in the dielectric, $\mathbf{H}_2$
-the magnetic field in the metal, etc.)
+(e.g. $\mathbf{E}_1$ is the electric field in $\epsilon_1$, $\mathbf{H}_2$
+the magnetic field in the $\epsilon_2$, etc.)
 Continuity of \Equation{eqn:planewavedielectric} and
 \ref{eqn:planewavemetal} at this interface requires that
 \begin{align}
@@ -98,7 +97,7 @@ each boundary gives
 \label{eqn:vectordisp}
 \end{align}
 where $\mathbf{E}_i$, $\mathbf{H}_i$, $i=1,2$ represent the field in either the
-dielectric or the metal.  The vector components of
+$\epsilon_1$ or $\epsilon_2$.  The vector components of
 \Equation{eqn:vectordisp} are therefore related 
 \begin{align}
 -\mi k_{z,i} H_{y,i} &= -\mi \omega \epsilon_i E_{x,i}\\
@@ -116,9 +115,17 @@ continuous. By substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
 }
 \label{eqn:sprcondition}
 \end{align}
-This is the surface plasmon resonance condition.  In terms of
-its vector components, the following holds in general for all electromagnetic
-waves
+This is the surface plasmon resonance condition.  Note an important aspect
+of \Equation{eqn:sprcondition}.  Due to the way we have defined our
+geometry, $k_{z,1}$ must be postive and $k_{z,2}$ negative.  For
+\Equation{eqn:sprcondition} to hold, this implies that the real part of
+$\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For materials we know
+exist, this is fulfilled if $\epsilon_1$ is a dielectric and $\epsilon_2$
+is a metal.
+
+\section{Dispersion Relation}
+In terms of its vector components, the following holds in general for all
+electromagnetic waves
 \begin{align}
 \mathbf{k}^2=\epsilon_i \left(\frac{\omega}{c}\right)^2=k_x^2 + k_{z,i}^2\\
 \epsilon_i k_0^2=k_x^2 + k_{z,i}^2
@@ -159,72 +166,4 @@ evanescently there; this is known as a ``quasi-bound mode''  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
 indicates the SPP is localized at the interface in $z$ while having a
 propagating solution in $x$, and is exactly the condition we wish to match.
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-xlabel=$k_x$,
-ylabel=$\omega$,
-xmin=0,
-xmax=0.6e8,
-ymin=0.75e15,
-ymax=6.5e15,
-thick,
-width=0.75\textwidth,
-height=0.75\textwidth,
-minor tick num=2,
-legend pos = south east,
-legend style = { cells = {anchor=west} },
-clip=false,
-]
-\addplot[color=colora] file {dispersion/kx_photon_glass.dat}
-node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
-\addlegendentry{photon/dielectric}
-
-\addplot[color=colorg] file {dispersion/kx_photon_glass_tilted.dat}
-node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
-\addlegendentry{photon/dielectric angle}
-
-\addplot[color=colorc] file {dispersion/kx_photon_vacuum.dat}
-node [anchor=south west,yshift=-10pt]{$ck$}; 
-\addlegendentry{photon/vacuum}
-
-\addplot[color=colord] file {dispersion/kx_sp_metal_glass_lower.dat};
-\addlegendentry{SPP/dielectric}
-
-\addplot[color=colore] file {dispersion/kx_sp_metal_vacuum_lower.dat};
-\addlegendentry{SPP/vacuum}
-
-\addplot[color=colord] file {dispersion/kx_sp_metal_glass_upper.dat};
-\addplot[color=colore] file {dispersion/kx_sp_metal_vacuum_upper.dat};
-
-\addplot[color=colore,dashed] coordinates { (6e7,5.819396016587478e+15) (0,5.819396016587478e+15) }
-node [anchor=east,xshift=-15pt]{$\omega_p$}; 
-
-\addplot[color=colore,dashed] coordinates { (6e7,5.461458222933e+15) (0,5.461458222933e+15) }
-node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{2}$}; 
-
-\addplot[color=colord,dashed] coordinates { (6e7,4959276840790959) (0,4959276840790959) }
-node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
-
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
-node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
-node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
-
-\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
-node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
-
-\end{axis}
-\end{tikzpicture}
-\caption{Dispersion relation for photons and plasmons.  Conditions under
-which SPPs may occur at the intersection between the photon light line and
-corresponding SPP light line for the medium in question.  Based on a
-similar plot found in \cite{shsongspp}.}
-\label{fig:dispersionrelation}
-\end{figure}
-%The dispersion diagram relates the time-variation of the wave (given by its
-%frequency &omega) to the spatial variation of the wave (given by its
-%wave-vector kx)
+\import{existence/figures/}{dispersionfig}

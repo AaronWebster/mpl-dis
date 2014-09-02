@@ -80,7 +80,7 @@ if nargin < 2, return; end
 % Physical constants
 %***********************************************************************
 twopic = 2*pi*get_constant('c','SI'); % twopic=2*pi*c where c is speed of light
-omegalight = twopic*(lambda.^(-1)); % angular frequency of light (rad/s)
+omegalight = twopic./lambda; % angular frequency of light (rad/s)
 invsqrt2 = 1/sqrt(2);  % 1/sqrt(2)
 ehbar = get_constant('e','SI')/(get_constant('h','SI')/(2*pi)); % e/hbar 
 

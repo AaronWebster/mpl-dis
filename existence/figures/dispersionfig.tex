@@ -1,0 +1,70 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$k_x$,
+ylabel=$\omega$,
+xmin=0,
+xmax=0.6e8,
+ymin=0.75e15,
+ymax=6.5e15,
+thick,
+width=0.75\textwidth,
+height=0.75\textwidth,
+minor tick num=2,
+legend pos = south east,
+legend style = { cells = {anchor=west} },
+clip=false,
+]
+\addplot[color=black] file {existence/figures/sppdielectric.dat};
+\addlegendentry{SPP/dielectric}
+
+\addplot[color=black] file {existence/figures/photondielectric.dat}
+node [anchor=south west,yshift=-10pt]{$ck/\sqrt{\epsilon_1}$}; 
+\addlegendentry{photon/dielectric}
+
+\addplot[color=black] file {existence/figures/photondielectrictilted.dat}
+node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
+\addlegendentry{photon/dielectric, angle}
+
+
+%\addplot[color=colorg] file {dispersion/kx_photon_glass_tilted.dat}
+%node [anchor=south west,yshift=-10pt]{$ck \sin \theta /\sqrt{\epsilon_1}$};
+%\addlegendentry{photon/dielectric angle}
+%
+%\addplot[color=colorc] file {dispersion/kx_photon_vacuum.dat}
+%node [anchor=south west,yshift=-10pt]{$ck$}; 
+%\addlegendentry{photon/vacuum}
+%
+%\addplot[color=colord] file {dispersion/kx_sp_metal_glass_lower.dat};
+%\addlegendentry{SPP/dielectric}
+%
+%\addplot[color=colore] file {dispersion/kx_sp_metal_vacuum_lower.dat};
+%\addlegendentry{SPP/vacuum}
+%
+%\addplot[color=colord] file {dispersion/kx_sp_metal_glass_upper.dat};
+%\addplot[color=colore] file {dispersion/kx_sp_metal_vacuum_upper.dat};
+%
+\addplot[color=gray,dashed] coordinates { (6e7,5.5925e+15) (0,5.5925e+15) }
+node [anchor=east,xshift=-15pt]{$\omega_p$}; 
+%
+\addplot[color=gray,dashed] coordinates { (6e7,4936476840790959) (0,4936476840790959) }
+node [anchor=east,xshift=-15pt]{$\omega_p/\sqrt{1+\epsilon_2}$}; 
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,6.5e+15)--(axis cs:6e7,5.819396016587478e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{radiative modes\\ $k_x,k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,5.819396016587478e+15)--(axis cs:6e7,4959276840790959)
+node [midway,anchor=west,xshift=10pt,align=left]{quasi-bound modes\\ $k_x \in \mathbb{I}$,  $k_z \in \mathbb{R}$};
+
+\draw [decorate,decoration={brace,amplitude=8pt}] (axis cs:6e7,4959276840790959)--(axis cs:6e7,0.75e+15)
+node [midway,anchor=west,xshift=10pt,align=left]{bound modes\\ $k_x \in \mathbb{R}$\\ $k_z \in \mathbb{I}$};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Dispersion relation for photons and plasmons.  Conditions under
+which SPPs may occur at the intersection between the photon light line and
+corresponding SPP light line for the medium in question.  Based on a
+similar plot found in \cite{shsongspp}.}
+\label{fig:dispersionrelation}
+\end{figure}
