@@ -31,4 +31,4 @@ clean:
 	rm -f $(TARGET).figlist
 	rm -f $(TARGET).makefile
 	rm -f $(TARGET).auxlock
-
+	rm -f $(TARGET).pyg
