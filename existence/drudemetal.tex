@@ -1,39 +1,50 @@
+For metals, there are several models~\cite{rakik1998optical} with which one
+can obtain the frequency dependent complex permittivity $\epsilon(\omega)$.
+Theoretically, the most general expression simply describes
+$\epsilon(\omega)$ as a superposition of (Lorentzian) resonances plus a DC
+term
+\begin{equation}
+\epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}
+\label{eqn:meepdispersion}
+\end{equation}
+where $\epsilon_\infty$ is the instentaneous (DC) dielectric response,
+$\sigma_D$ is the electric conductivity, $\omega_n$ and $\Gamma_n$ are
+material constants, and $\sigma_n$ is a function of position specifying the
+strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
+dimensionless ($c=\hbar=1$), and is usually encountered when working with
+numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.
 
-(Drude metals) The following figures plot the frequency dependent complex permittivity
-$\epsilon = \epsilon' + \mi \epsilon''$ and refractive index $n = n' + \mi
-n''$ for silver, aluminum, gold, copper, chromium, nickel, tungsten,
-titanium, beryllium, palladium, and platinum using either the Drude
-(\Equation{eqn:drude}),
-Lorentz-Drude (\Equation{eqn:lorentzdrude}), or Brendel-Bormann
-(\Equation{eqn:brendelbormann}  models in the range
-\SIrange{200}{2000}{\nano\meter}.  The material parameters and mathematical
-formalism detailed in \cite{rakik1998}.  These tables are generated
-programmatically.
-Three different models for the complex permittivity are tabulated.  The
-first two are the Drude and Lorentz-Drude (LD) models.
+In most other areas, the Lorentz-Drude model is used.  The Lorentz-Drude model is 
 \begin{align}
-\epsilon_{D}&=\epsilon_D\\
-\epsilon_{LD}&=\epsilon_D+\epsilon_L
+\epsilon_{D}(\omega)&=\epsilon_D(\omega)\\
+\epsilon_{LD}(\omega)&=\epsilon_D(\omega)+\epsilon_L(\omega)
 \end{align}
 where $\epsilon_D$ is contribution from the Drude model, representing
 free electron effects
 \begin{align}
-\epsilon_D=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
+\epsilon_D(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
 \mi\Gamma_0^\prime)}
 \label{eqn:drude}
 \end{align}
 and $\epsilon_L$ is the Lorentz contribution, representing the bound
 electron effects
 \begin{align}
-\epsilon_L =\sum_{j=0}^{k}\frac{f_j\omega_p^{\prime 2}}{\omega_j^{\prime
+\epsilon_L(\omega) =\sum_{j=0}^{k}\frac{f_j\omega_p^{\prime 2}}{\omega_j^{\prime
 2}-\omega^2+\mi\omega\Gamma_j^\prime}
 \label{eqn:lorentzdrude}
 \end{align}
-The third is the Brendel-Bormann model which is based instead on an
-infinite superposition of oscillators
+Here, $\omega'_p$ is the plasma frequency of an electron gas.
+The third and perhaps more accurate is the Brendel-Bormann model, is based instead on an
+\textit{infinite} superposition of oscillators
 \begin{align}
-\epsilon_\text{BB} = \frac{1}{\sqrt{2 \pi} \sigma_n} \intinfty
+\epsilon_\text{BB}(\omega) = \frac{1}{\sqrt{2 \pi} \sigma_n} \intinfty
 \exp\left(-\frac{(x-\omega'_n)}{2 \sigma_n^2}\right)
 \frac{f_j \omega_p^2}{(x^2-\omega^2)+\mi \omega \Gamma'_n} \md x
 \label{eqn:brendelbormann}
 \end{align}
+
+Converting between \Equation{eqn:meepdispersion} and
+Equations~\ref{eqn:drude}, \ref{eqn:lorentzdrude}, and
+\ref{eqn:brendelbormann} is accomplished through the subsitutions $\omega_1
+= \num{1e-20}$, $\sigma_n = {f_n \omega_p^{\prime 2}}/{\omega_n^2}$,
+$\epsilon_\infty=1$ and $\Gamma_n^\prime$.

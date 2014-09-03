@@ -1,0 +1,93 @@
+\begin{figure}
+ \centering
+ \includegraphics{existence/figures/multilayerinterfacegeo.pdf}
+ \caption{Geometry and coordinate system for the multilayer system.}
+ \label{fig:multilayergeo}
+\end{figure}
+
+Let us now consider the multilayer geometry shown in
+\Figure{fig:multilayergeo}.  For layers 1 and 3, the equations are the same
+as for the single layer system.
+\begin{align}
+\left.\begin{aligned}
+\mathbf{H}_1(x,z,t) &=
+\begin{pmatrix}
+0\\
+H_{y,1}\\
+0
+\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}\\
+\mathbf{E}_1(x,z,t) &=
+\begin{pmatrix}
+E_{x,1}\\
+0\\
+E_{z,1}\\
+\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
+\end{aligned}
+\right\}& \quad \epsilon_1\label{eqn:planewavedielectric}\\
+\left.\begin{aligned}
+\mathbf{H}_3(x,z,t) &=
+\begin{pmatrix}
+0\\
+H_{y,3}\\
+0
+\end{pmatrix}
+\me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}\\
+\mathbf{E}_3(x,z,t) &=
+\begin{pmatrix}
+E_{x,3}\\
+0\\
+E_{z,3}\\
+\end{pmatrix}
+\me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
+\end{aligned} 
+\right\}&\quad \epsilon_3
+\label{eqn:planewavemetal}
+\end{align}
+
+In the middle layer
+\begin{align}
+\mathbf{H}_2(x,z,t) &=
+\begin{pmatrix}
+0\\
+H^+_{y,2}\\
+0
+\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
++
+\begin{pmatrix}
+0\\
+H^-_{y,2}\\
+0
+\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)} \\
+\mathbf{E}_2(x,z,t) &=
+\begin{pmatrix}
+\mi E^+_{x,2}\\
+0\\
+E^+_{z,2}\\
+\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
++
+\begin{pmatrix}
+\mi E^-_{x,2}\\
+0\\
+E^-_{z,2}\\
+\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+\end{align}
+
+Which is solved to find
+
+\begin{equation}
+\me^{-4 \mi k_{x,1} a} = 
+\frac{k_{x,1}/\epsilon_1 + k_{x,2}/\epsilon_2}
+     {k_{x,1}/\epsilon_1 - k_{x,2}/\epsilon_2}
+\frac{k_{x,1}/\epsilon_1 + k_{x,3}/\epsilon_3}
+     {k_{x,1}/\epsilon_1 - k_{x,3}/\epsilon_3}
+\label{eqn:lrsppdispersion}
+\end{equation}
+
+\Equation{eqn:lrsppdispersion} is transcendental, but we can still plot the
+dispersion diagram by solving the expression for zero.
+\begin{figure}[ht]
+ \centering
+\import{existence/figures/}{lrsppdispersionfig}
+\label{fig:lrsppdispersionrelation}
+\caption{Disperion relation for multilayer system.}
+\end{figure}

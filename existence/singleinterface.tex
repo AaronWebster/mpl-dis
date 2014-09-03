@@ -1,7 +1,7 @@
 \begin{figure}
  \centering
- \includegraphics{existence/figures/singleinterfacegeo.pdf}
- \caption{Geometry.}
+ \includegraphics{existence/figures/singlelayerinterfacegeo.pdf}
+ \caption{Geometry and coordinate system for the single interface system.}
 \end{figure}
 With plane wave solutions in hand, boundary conditions consistent with a
 single interface can be imposed.
@@ -127,51 +127,4 @@ geometry, $k_{z,1}$ must be postive and $k_{z,2}$ negative.  For
 $\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For materials we know
 exist, this is fulfilled if $\epsilon_1$ is a dielectric and $\epsilon_2$
 is a metal.
-
-\section{Dispersion Relation}
-In terms of its vector components, the following holds in general for all
-electromagnetic waves
-\begin{align}
-\mathbf{k}^2=\epsilon_i \left(\frac{\omega}{c}\right)^2=k_x^2 + k_{z,i}^2\\
-\epsilon_i k_0^2=k_x^2 + k_{z,i}^2
-\label{eqn:dispersion1}
-\end{align}
-Substitution of \Equation{eqn:sprcondition} with the relation 
-$k_{x,1}=k_{x,2}$ into \Equation{eqn:dispersion1} allows 
-$k_x$ and $k_{z,i}$ to be rewritten in the form of a dispersion relation
-\begin{align}
-k_x &= k_0\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}} 
-= \frac{\omega}{c}\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}}\\
-k_{z,i} &= k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
-= \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
-\end{align}
-
-This relation, shown in \Figure{fig:dispersionrelation}, is useful because
-it shows graphically the condition under which SPPs may exist: at the
-intersection between the photon light line and corresponding SPP light line
-for the medium in question.  Note that for a photon and a plasmon in both a
-vacuum and a dielectric, this never happens; the photon assumes $\omega = c
-k /\sqrt{\epsilon_i}$ for $i=1,2$, diverging to infinity while the SPP
-asymptotically approaches $\omega_p/\sqrt{1+\epsilon_i}$ as $k_x\to\infty$.
-However, if light is incident from a dielectric $\epsilon_1$ at an angle
-$\theta$, the slope of $\omega(k_x)$ is modified to $c k \sin
-\theta/\sqrt{\epsilon_1}$ and the dispersion relations can be matched.
-This is the principle exploited by Kretschmann \cite{kretschmann1968} to
-excite SPPs with prisms.
-
-There are several regions of interest in \Figure{fig:dispersionrelation},
-depending on the relative value of $\epsilon_1$ and $\epsilon_2$.  We first
-assume that $\epsilon_1$ is a dielectric with $\epsilon_1\in\mathbb{R}$ and
-$\epsilon_1 > 0$ (true for most if not all glass).  In this case, for
-$\Re(\epsilon_2)>0$, both $k_x$ and $k_z$ are real.  These are known as
-``radiative modes'' -- an SPP mode is supported normal to the interface but
-it is not bound there.  For $-\epsilon_1<\Re(\epsilon_2)<0$, $k_z$ is real
-and $k_x$ imaginary.  The SPP is not confined to the interface and decays
-evanescently there; this is known as a ``quasi-bound mode''  However, for
-$\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
-indicates the SPP is localized at the interface in $z$ while having a
-propagating solution in $x$, and is exactly the condition we wish to match.
-\begin{figure}
- \centering
-\import{existence/figures/}{dispersionfig}
-\end{figure}
+% Maybe add here how it won't work with TE polarization

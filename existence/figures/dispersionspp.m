@@ -49,7 +49,7 @@ legend([p1 p2 p3], {'SPP/dielectric','photon/vacuum','photon/dielectric'},'Locat
 hold off;
 
 
-if true
+if false
 filename = sprintf('dispersionfig.tex');
 matlab2tikz(filename, 'showInfo', false, ...
         'parseStrings',false,'standalone', false, ...

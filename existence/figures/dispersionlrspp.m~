@@ -37,10 +37,4 @@ hold off;
 xlabel('$k_x$');
 ylabel('$\omega$');
 
-if true
-filename = sprintf('lrsppdispersionfig.tex');
-matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', false, ...
-        'height', '9cm', 'width','9cm');
-end
-%fun = inline('(exp(-4.*k1./e1)-((k1./e1+k2./e2)./(k1./e1-k2./e2)).*((k1./e1+k3./e3)./(k1./e1-k3./e3)))');
+fun = inline('(exp(-4.*k1./e1)-((k1./e1+k2./e2)./(k1./e1-k2./e2)).*((k1./e1+k3./e3)./(k1./e1-k3./e3)))');
