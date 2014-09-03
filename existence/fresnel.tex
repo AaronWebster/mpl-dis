@@ -1,3 +1,7 @@
+I solve the Abeles matrix formalism
+
+
+
 Much of the behavior of SPR in prism coupled configurations can be
 succinctly expressed in terms of the Fresnel relations with complex
 permittivities.  In this section we derive these relations and predict the
@@ -14,11 +18,26 @@ $\tilde{E}_i$
 Here the presence of a tilde $\sim$ indicates a function in the (spatial) frequency domain.
 For multilayer systems, this can be found through transfer matrix methods where the $i$th matrix $M_i$ is
 \begin{align}
-M_i = \left(\begin{array}{cc}
-\cos \sigma_i & \mi \sin \sigma_i / \gamma_i\\
-\mi \gamma_i \sin \sigma_i & \cos \sigma_i
+r_p &= \frac{\epsilon_i k_{z,j} - \epsilon_j k_{z,k}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,k}} \\
+r_s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
+t_p &= \frac{2 \epsilon_i \epsilon_j k_{z,i}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,i}}\\
+t_s &= \frac{2 k_{z,i}}{k_{z,i}+k_{z,j}}
+\end{align}
+
+\begin{align}
+Cs_n = \left(\begin{array}{cc}
+\me^{-\mi k_{z,n} d_n} & r_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
+r_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
 \end{array}\right)
 \end{align}
+
+\begin{align}
+Cp_n = \left(\begin{array}{cc}
+\me^{-\mi k_{z,n} d_n} & rp_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
+rp_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
+\end{array}\right)
+\end{align}
+
 and the system matrix $M_s = M_1 M_2 \ldots M_{n-1} M_n$.  In the above
 representation
 \begin{align}
