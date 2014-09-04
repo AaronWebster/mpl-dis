@@ -1,0 +1,29 @@
+% This file was created by matlab2tikz v0.4.7 running on MATLAB 8.3.
+% Copyright (c) 2008--2014, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% Minimal pgfplots version: 1.3
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=9cm,
+height=3.5cm,
+axis on top,
+scale only axis,
+xmin=-50.3,
+xmax=100.3,
+xlabel={$x$ [um]},
+y dir=reverse,
+ymin=-50.199203187251,
+ymax=50.199203187251,
+ylabel={$y$ [um]},
+title={focus, $x$-$y$, $z=0$},
+colormap/jet,
+colorbar horizontal,
+colorbar style={ytick={\empty}},
+point meta min=-10.4765509817743,
+point meta max=0
+]
+\addplot [forget plot] graphics [xmin=-50.3,xmax=100.3,ymin=-50.199203187251,ymax=50.199203187251] {./dis-specular-sppplot-d-1.png};
+\end{axis}
+\end{tikzpicture}%
