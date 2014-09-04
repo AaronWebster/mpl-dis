@@ -1,101 +1,44 @@
-I solve the Abeles matrix formalism
-
-
-
-Much of the behavior of SPR in prism coupled configurations can be
-succinctly expressed in terms of the Fresnel relations with complex
-permittivities.  In this section we derive these relations and predict the
-evolution of the field propagating from the prism.  
-
-With no loss of generality, analysis of the field in the specular direction
-is again restricted to the $x$-$z$ plane as shown in \Figure{fig:kretschmanngeo}.  The
-Fresnel reflection coefficient $\tilde{r}$ is defined as the ratio of the
-reflected beam $\tilde{E}_r$ to the incident beam
-$\tilde{E}_i$
+In the proceeding sections we have predicted the existence of SPPs and the
+conditions under which they can be excited, but what is the physical
+manifestation of SPP excitation?  To answer this question, we turn to the
+Fresnel relations.  The fresnel reflection and transmission coefficents for
+$s$ and $p$ polarization and a single ($i$-$j$) interface are
 \begin{align}
-\tilde{r} &= \frac{\tilde{E}_r}{\tilde{E}_i}
-\end{align}
-Here the presence of a tilde $\sim$ indicates a function in the (spatial) frequency domain.
-For multilayer systems, this can be found through transfer matrix methods where the $i$th matrix $M_i$ is
-\begin{align}
-r_p &= \frac{\epsilon_i k_{z,j} - \epsilon_j k_{z,k}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,k}} \\
-r_s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
-t_p &= \frac{2 \epsilon_i \epsilon_j k_{z,i}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,i}}\\
-t_s &= \frac{2 k_{z,i}}{k_{z,i}+k_{z,j}}
+r^s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
+r^p &= \frac{\epsilon_i k_{z,j} - \epsilon_j k_{z,k}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,k}} \\
+t^s &= \frac{2 k_{z,i}}{k_{z,i}+k_{z,j}}\\
+t^p &= \frac{2 \epsilon_i \epsilon_j k_{z,i}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,i}}\\
 \end{align}
 
+For multilayer systems, these equations can be applied recursively.  For
+our purposes we use the much more computationally efficent 
+Abeles matrix formalism.  Here, the $n$th system matrix for $s$ and $p$
+polarization, $C^s_n$ and $C^p_n$, are
 \begin{align}
-Cs_n = \left(\begin{array}{cc}
-\me^{-\mi k_{z,n} d_n} & r_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-r_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
+C^s_n = \left(\begin{array}{cc}
+\me^{-\mi k_{z,n} d_n} & r^s_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
+r^s_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
+\end{array}\right)\\
+C^p_n = \left(\begin{array}{cc}
+\me^{-\mi k_{z,n} d_n} & r^p_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
+r^p_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
 \end{array}\right)
 \end{align}
-
+where $n$ is the index of the layer in question.  A matrix is constructed
+for each layer of the system and a resultant matrix found
 \begin{align}
-Cp_n = \left(\begin{array}{cc}
-\me^{-\mi k_{z,n} d_n} & rp_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-rp_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
-\end{array}\right)
+M^s=\prod_n C^s_n\\
+M^p=\prod_n C^p_n
 \end{align}
 
-and the system matrix $M_s = M_1 M_2 \ldots M_{n-1} M_n$.  In the above
-representation
+From this matrix the system Fresnel coefficents can be found.
 \begin{align}
-\left.\begin{aligned}
-\gamma_i &= \sqrt{\epsilon_i} k_{z,i}\\
-\sigma_i &= k_{z,i} \sqrt{\epsilon_i} d_i
-\end{aligned}
-\right\}& \quad \text{for TE Polarization}\\
-\left.\begin{aligned}
-\gamma_i &= \sqrt{\epsilon_i}/k_{z,i}\\
-\sigma_i &= k_{z,i} \sqrt{\epsilon_i} d_i
-\end{aligned}
-\right\}& \quad \text{for TM Polarization}
+r^p = \frac{M^p_{21}}{M^p_{11}}\\
+r^s = \frac{M^s_{21}}{M^s_{11}}\\
+t^p = \frac{1}{M^p_{11}}\\
+t^s = \frac{1}{M^s_{11}}\\
 \end{align}
-The elements of the resulting elements of $M_s$, $M_{i,j}$ are then
-substituted into the formula
-\begin{align}
-\tilde{r}=
-\frac{\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} - M_{21} - \gamma_3 M_{22}}
-{\gamma_1 M_{11}+\gamma_1 \gamma_3 M_{12} + M_{21} + \gamma_3 M_{22}}
-\end{align}
-Through a bit of algebra, the Fresnel reflection for an arbitrary number of
-layers in the case of TM polarization can be found to be
-\begin{align}
-\tilde{r}_{j,l,m \ldots n} = 
-\frac{\tilde{r}_{j,l} + \tilde{r}_{l,m \ldots n} \me^{2 \mi k_{z,l} d_l}}
-{1+\tilde{r}_{j,l} \tilde{r}_{l,m \ldots n} \me^{2 \mi k_{z,l} d_l}}
-\label{eqn:bertnlayer}
-\end{align}
-where $d_l$ is the thickness of the $l$th metal layer and 
-\begin{align}
-\tilde{r}_{i,j}&=
-\left.\left(\frac{k_{z,i}}{\epsilon_i}-\frac{k_{z,j}}{\epsilon_j}\right)
-\middle/
-\left(\frac{k_{z,i}}{\epsilon_i}+\frac{k_{z,j}}{\epsilon_j}\right)\right.\\
-&=\frac{\epsilon_j k_{z,i}-\epsilon_i k_{z,j}}
-{\epsilon_j k_{z,i}+\epsilon_i k_{z,j}}
-\end{align}
-is the two layer Fresnel relation.  \Equation{eqn:bertnlayer} may be
-recursively applied for any number of layers.  Much more applicable to this
-study is the three layer Fresnel reflectivity $\tilde{r}_{123}$, based on
-the geometry of \Figure{fig:kretschmanngeo}
-\begin{align}
-\tilde{r}_{123}(k_x) &=
-\frac{
-  (\epsilon_2 k_{z,1}+\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}-\epsilon_2 k_{z,3})
-+ (\epsilon_2 k_{z,1}-\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}+\epsilon_2 k_{z,3})\,
-\me^{\mi 2 k_{z,2} d_2}
-}
-{
-  (\epsilon_2 k_{z,1}+\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}+\epsilon_2 k_{z,3})
-+ (\epsilon_2 k_{z,1}-\epsilon_1 k_{z,2})(\epsilon_3 k_{z,2}-\epsilon_2 k_{z,3})\,
-\me^{\mi 2 k_{z,2} d_2}
-}\\
-&=
-\frac{\tilde{r}_{12}+\tilde{r}_{23}\, \me^{\mi 2 k_{z,2} d_2}} {1+\tilde{r}_{12} \tilde{r}_{23} \me^{\mi 2 k_{z,2} d_2}}
-\label{eqn:fresnel123}
-\end{align}
+
 Note that factor of two in the exponential: the SPP accumulates phase
 through the metal film twice (once upon excitation, another upon decay).
 In this equation, $k_{z,i}$ can be equivalently expressed either as a
@@ -104,20 +47,36 @@ function of incident angle $\theta$ or $k_x$
 k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_1 \sin \theta}\\
 &= \sqrt{k_0^2\epsilon_i - k_x^2}
 \end{align}
-The real and imaginary parts of $\tilde{r}_{123}(k_x)$ along with
-$|\tilde{r}_{123}(k_x)|^2$ are plotted in \Figure{fig:fresnelr123} using
-$d_2=\SI{50}{\nano\meter}$ and the Lorentz-Drude model for Ag at
-\SI{632.8}{\nano\meter}.  
-\begin{figure}[ht]
- \centering
-\import{existence/figures/}{fresnellrsppfig}
-\label{fig:fresnellrsppfig}
-\caption{Disperion relation for multilayer system.}
-\end{figure}
+%
+%\begin{figure}[ht]
+% \centering
+%\import{existence/figures/}{fresnellrsppfig}
+%\label{fig:fresnellrsppfig}
+%\caption{Fresnel reflection.}
+%\end{figure}
+%
+%\begin{figure}[ht]
+% \centering
+%\import{existence/figures/}{fresnelsppfig}
+%\label{fig:fresnellrsppfig}
+%\caption{Fresnel reflection.}
+%\end{figure}
 
 \begin{figure}[ht]
  \centering
-\import{existence/figures/}{fresnelsppfig}
+ \pgfplotsset{
+ minor tick num=3,
+ footnotesize,
+ trim axis right,
+ max space between ticks=30pt,
+}
+\tikzset{baseline}
+\begin{tabular}{rr}
+\import{/tmp/}{dis-specular-sppplot-a}&\import{/tmp/}{dis-specular-sppplot-c}\\
+\import{/tmp/}{dis-specular-sppplot-b}&\import{/tmp/}{dis-specular-sppplot-d}
+\end{tabular}
 \label{fig:fresnellrsppfig}
-\caption{Disperion relation for multilayer system.}
+\caption{Fresnel reflection.}
 \end{figure}
+
+
