@@ -1,14 +1,15 @@
 Conditions for the existence and excitation of SPPs can be completely
 predicted from Maxwell's equations.  We begin with their derivation here,
 starting with the differential form of Maxwell's
-equations~\cite{maier2007plasmonics}~\cite{benson2009elements}.
+equations~\cite{maier2007plasmonics}~\cite{benson2009elements} including
+external sources.
 \begin{align}
 \nabla \cdot \mathbf{D} &= \rho & \text{Gauss's law} \label{eqn:gausslaw}\\
 \nabla \cdot \mathbf{B} &= 0 & \text{Gauss's law for magnetism} \label{eqn:gausslawmagnetism}\\
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
 & \text{Faraday's law of induction} \label{eqn:faradayslaw} \\
-\nabla \times \mathbf{H} &= \mathbf{J} + \frac{\partial \mathbf{D}} {\partial
-t}  & \text{Ampere's law with Maxwell's correction}
+\nabla \times \mathbf{H} &= \frac{\partial \mathbf{D}} {\partial
+t} + \mathbf{J}  & \text{Ampere's law with Maxwell's correction}
 \label{eqn:ampereslaw}
 \end{align}
 Where $\mathbf{E}$ is the electric field, $\mathbf{B}$ is the magnetic
@@ -60,9 +61,12 @@ dielectrics have nearly zero magnetic response, so $\mathbf{M}=0$ and
 $\mu_0=\mu$ is a valid assumption.  Nevertheless, for the sake of generality it is treated as a
 material dependent parameter.
 \item The material is homogeneous and isotropic.
-\item Charge is conserved, such that
+\item Charge is conserved.  $\mathbf{J} = \sigma \mathbf{E}$, where
+ $\sigma$ is the conductivity and
 \begin{align}
-\mathbf{J} &= \frac{\partial\mathbf{P}}{\partial t}\\
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0}
+ \frac{\partial \rho}{\partial t} 
+  &= -\nabla \cdot \mathbf{J}\\
+  &= -\sigma \left(\nabla \cdot \mathbf{E} \right) \\
+  &= -\frac{\sigma}{\epsilon} \rho
 \end{align}
 \end{enumerate}

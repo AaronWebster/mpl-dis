@@ -1,5 +1,5 @@
-\Equation{eqn:sprcondition} can be solved analytically to find
-$k_x(\omega)$, the dispersion relation for surface plasmon polaritions.
+\Equation{eqn:sprcondition} can be solved analytically to find the SPP
+dispersion relation $k_x(\omega)$.
 First, in terms of its vector components, the following holds in general
 for all electromagnetic waves
 \begin{align}
@@ -7,9 +7,10 @@ for all electromagnetic waves
 \epsilon_i k_0^2=k_x^2 + k_{z,i}^2
 \label{eqn:dispersion1}
 \end{align}
+where $i$ is the medium index.
 Substitution of \Equation{eqn:sprcondition} with the relation 
 $k_{x,1}=k_{x,2}$ into \Equation{eqn:dispersion1} allows 
-$k_x$ and $k_{z,i}$ to be rewritten in the form of a dispersion relation
+$k_x$ and $k_{z,i}$ to be rewritten as
 \begin{align}
 k_x &= k_0\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}} 
 = \frac{\omega}{c}\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}}\\
@@ -17,18 +18,6 @@ k_{z,i} &= k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
 = \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
 \end{align}
 
-\begin{figure}[ht]
- \centering
-\import{existence/figures/}{dispersionfig}
-\label{fig:dispersionrelation}
-\caption{
-Dispersion relation for photons and plasmons for a single interface
-consisting of a dielectric $\epsilon_1$ (fused silica) and a metal
-$\epsilon_2$ (Ag using the Lorentz-Drude model). Conditions
-under which SPPs may occur at the intersection between the photon 
-line and corresponding SPP line.
-}
-\end{figure}
 Where $\epsilon_i$ is a function of $\omega$, e.g.
 $\epsilon_i\to\epsilon_i(\omega)$.  This relation, shown in
 \Figure{fig:dispersionrelation}, is useful because it describes the
@@ -41,9 +30,8 @@ However, if light is incident from a dielectric $\epsilon_1$ at an angle
 $\theta$, the slope of $\omega(k_x)$ is modified to $c k \sin
 \theta/\sqrt{\epsilon_1}$ and the momentum of light can be matched to
 excite SPPs.  This is the principle exploited by Kretschmann
-\cite{kretschmann1968} to excite SPPs with prisms, known as the Kretschmann
-Atenuated Total Reflection (ATR) configuration: the same setup we will use
-for SPP excitation.
+\cite{kretschmann1968} (and us) to excite SPPs with prisms, known as the
+Kretschmann Atenuated Total Reflection (ATR) configuration.
 
 There are several regions of interest in \Figure{fig:dispersionrelation},
 depending on the relative value of $\epsilon_1$ and $\epsilon_2$.  We first
@@ -57,3 +45,15 @@ evanescently there; this is known as a ``quasi-bound mode''  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
 indicates the SPP is localized at the interface in $z$ while having a
 propagating solution in $x$, and is exactly the condition we wish to match.
+
+\begin{figure}[ht]
+ \centering
+\import{existence/figures/}{dispersionfig}
+\label{fig:dispersionrelation}
+\caption{ Dispersion relation for photons and plasmons for a single
+interface consisting of a dielectric $\epsilon_1$ (fused silica) and a
+metal $\epsilon_2$ (gold using the Lorentz-Drude model, also in
+\Figure{fig:permittivityau}). Conditions under which SPPs may occur at the
+intersection between the photon line and corresponding SPP line.  }
+\end{figure}
+

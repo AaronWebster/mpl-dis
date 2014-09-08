@@ -30,7 +30,10 @@ out = (exp(-4.*k1./e1)-((k1./e1+k2./e2)./(k1./e1-k2./e2)).*((k1./e1+k3./e3)./(k1
 figure(1);
 %out(out>100)=0;
 imagesc(kx,omega,log((abs(real(out)))));
+colormap(brewermap([],'RdBu'));
 set(gca,'YDir','normal')
+t = colorbar('peer',gca);
+set(get(t,'ylabel'),'String', '$log\left(\Re\left(|\mathrm{rhs}-\mathrm{lhs}|\right)\right)$');
 %hold on;
 %plot(kx,c.*kx./sqrt(e1))
 hold off;
@@ -38,9 +41,19 @@ xlabel('$k_x$');
 ylabel('$\omega$');
 
 if true
+%filename = sprintf('lrsppdispersionfig.tex');
 filename = sprintf('lrsppdispersionfig.tex');
 matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', false, ...
+        'parseStrings',false,'standalone', true, ...
         'height', '9cm', 'width','9cm');
 end
 %fun = inline('(exp(-4.*k1./e1)-((k1./e1+k2./e2)./(k1./e1-k2./e2)).*((k1./e1+k3./e3)./(k1./e1-k3./e3)))');
+
+% 
+% F = [.05 .1 .05; .1 .4 .1; .05 .1 .05];
+% x = real(out);
+% x(x>1000)=0;
+% %levels = linspace(mean(x(:))-std(x(:)),mean(x(:))+std(x(:)),10);
+% ZC = conv2(x,F,'same');
+% ZC = conv2(ZC,F,'same');
+% contourf(ZC)

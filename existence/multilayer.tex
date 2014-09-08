@@ -1,13 +1,14 @@
-\begin{figure}
+\begin{figure}[ht]
  \centering
- \includegraphics{existence/figures/multilayerinterfacegeo.pdf}
- \caption{Geometry and coordinate system for the multilayer system.}
+ \import{existence/figures/}{multilayerinterfacegeo}
+ \caption{Geometry and coordinate system for the multilayer system. The
+ thickness of $\epsilon_2$ is $2a$.}
  \label{fig:multilayergeo}
 \end{figure}
-
-Let us now consider the multilayer geometry shown in
-\Figure{fig:multilayergeo}.  For layers 1 and 3, the equations are the same
-as for the single layer system.
+Having predicted the existence of SPPs on a single interface, Let us now
+consider a multilayer geometry shown in \Figure{fig:multilayergeo}.  For
+layers $\epsilon_1$ and $\epsilon_3$, the equations are the same as for the
+single layer system.
 \begin{align}
 \left.\begin{aligned}
 \mathbf{H}_1(x,z,t) &=
@@ -23,7 +24,7 @@ E_{x,1}\\
 E_{z,1}\\
 \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
 \end{aligned}
-\right\}& \quad \epsilon_1\label{eqn:planewavedielectric}\\
+\right\}& \quad \epsilon_1\label{eqn:lrsppplanewavedielectric}\\
 \left.\begin{aligned}
 \mathbf{H}_3(x,z,t) &=
 \begin{pmatrix}
@@ -41,10 +42,11 @@ E_{z,3}\\
 \me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
 \end{aligned} 
 \right\}&\quad \epsilon_3
-\label{eqn:planewavemetal}
+\label{eqn:lrsppplanewavemetal}
 \end{align}
 
-In the middle layer
+For the ``core'' region, $\epsilon_2$ and $-a<z<a$, there are two
+interfaces at $\pm a$
 \begin{align}
 \mathbf{H}_2(x,z,t) &=
 \begin{pmatrix}
@@ -72,8 +74,9 @@ E^-_{z,2}\\
 \end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
 \end{align}
 
-Which is solved to find
-
+Taking this system of equations and applying continuity of $H_y$ and $E_x$
+at the boundaries, with a bit of algebra the following dispersion relation
+is obtained
 \begin{equation}
 \me^{-4 \mi k_{x,1} a} = 
 \frac{k_{x,1}/\epsilon_1 + k_{x,2}/\epsilon_2}
@@ -83,11 +86,16 @@ Which is solved to find
 \label{eqn:lrsppdispersion}
 \end{equation}
 
-\Equation{eqn:lrsppdispersion} is transcendental, but we can still plot the
-dispersion diagram by solving the expression for zero.
+\Equation{eqn:lrsppdispersion} is transcendental, but we can still look at
+the dispersion relation graphically by plotting the difference between the
+left and right hand side of the equation.
+
 \begin{figure}[ht]
  \centering
 \import{existence/figures/}{lrsppdispersionfig}
 \label{fig:lrsppdispersionrelation}
-\caption{Disperion relation for multilayer system.}
+\caption{Disperion relation for multilayer system, shown as the difference
+ between the right hand side (rhs) and left hand side (lhs) of
+\Equation{eqn:lrsppdispersion}.  Possible solutions are found within the
+red areas.}
 \end{figure}

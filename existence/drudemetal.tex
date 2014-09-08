@@ -1,18 +1,29 @@
-For metals, we describe their frequency dependent permittivity as a complex
-number, $\epsilon(\omega) = \epsilon^{\prime} +
-\mi\epsilon^{\prime\prime}$.  Physically this complex number represents
+In our derivation of the plane wave solutions to Maxwell's equations, we
+have preformed a common ``trick'' regarding the permittivity.
+Specifically, we treat the frequency dependent permittivity as complex
+\begin{align}
+ \epsilon(\omega) &= \epsilon^\prime + \mi \frac{\sigma}{\omega}\\
+                   &= \epsilon^\prime + \mi\epsilon^{\prime\prime}
+\end{align}
+This allows the use of plane wave solutions which are essentially identical
+to the solutions obtained for Maxwell's equations in the absence of
+external fields ($\nabla \cdot \mathbf{D} = 0$ and $\mathbf{J} = 0$).  This
+is justified if we can make an adiabatic approximation for the exciting
+field; ($\sigma$ is large and $\rho\approx 0$. Come back to this later.
+Invoke argument from Alfred Leitner's lecture. $\nabla \cdot \mathrm{D} = 0$)
+Physically, $\epsilon$ represents
 both the polarizability, as in Equations \ref{eqn:pdensity} and
-\ref{eqn:dfield}, and the phase delay $\sigma$ between $\mathbf{D}$ and
+\ref{eqn:dfield}, and the phase delay $\delta$ between $\mathbf{D}$ and
 $\mathbf{E}$
 \begin{equation}
-\epsilon(\omega) = \frac{\mathbf{D}}{E
-
-\epsilon(\omega) = \epsilon^{\prime} + \mi\epsilon^{\prime\prime}
-
+ \epsilon(\omega) = \frac{\mathbf{D}}{\mathbf{E}} \,|\epsilon| \,\me^{\mi \delta}
 \end{equation}
 
-there are several models~\cite{rakic1998optical} with which one
-can obtain the frequency dependent complex permittivity 
+This way of treating the permittivity is completely consistent with a complex
+refractive index, e.g. $\tilde{n} = n(1+\mi \kappa) = \sqrt{\epsilon}$.
+
+There are several models~\cite{rakic1998optical} with which one
+can obtain the frequency dependent complex permittivity for metals.
 Theoretically, the most general expression simply describes
 $\epsilon(\omega)$ as a superposition of (Lorentzian) resonances plus a DC
 term
@@ -70,9 +81,16 @@ and the Lorentz Drude model.}
 \label{fig:permittivityau}
 \end{figure}
 
-In \Figure{fig:permittivityau}, $\epsilon(\omega)$ is shown for gold, a
-popular metal used in this work.  
-
+To get a feel for what a complex permittivity looks like, in
+\Figure{fig:permittivityau} $\epsilon_\mathrm{LD}(\omega)$ and
+$\epsilon_\mathrm{D}(\omega)$ are shown for gold (a metal which we will be
+popular in this work).  There are several important points to this plot.
+First, note that the Lorentz-Drude model is much better at predicting high
+frequency behavior.  Second, the real part is negative and the
+imaginary part positive.  This is necessary; $\epsilon(\omega)$ is
+\textit{casual} and as such obeys the Kramers-Kronig relations
 \begin{align}
-\chi(\omega)=\mi \hf{\chi(\omega)}
+\epsilon(\omega)=\mi \hf{\epsilon(\omega)}
 \end{align}
+where $\hf{\epsilon(\omega)}$ is the Hilbert transform of
+$\epsilon(\omega)$.

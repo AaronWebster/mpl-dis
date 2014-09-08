@@ -1,0 +1,15 @@
+%\documentclass[tikz]{standalone}
+%\usepackage[utf8]{inputenc}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{plotmarks}
+%\begin{document}
+\begin{tikzpicture}
+\fill[gray!20] (0,0) rectangle (4,1);
+\fill[gray!95] (0,0) rectangle (4,-1);
+\draw (2,0.5) node {$\epsilon_1$};
+\draw (2,-0.5) node {$\epsilon_2$};
+\draw[->,>=latex',color=black,thick] (0,0) -- (4.5,0) node [anchor=south west] {$x$};
+\draw[->,>=latex',color=black,thick] (0,-1) -- (0,1.5) node [anchor=south east] {$z$};
+\end{tikzpicture}
+%\end{document}
