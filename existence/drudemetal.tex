@@ -1,5 +1,18 @@
-For metals, there are several models~\cite{rakik1998optical} with which one
-can obtain the frequency dependent complex permittivity $\epsilon(\omega)$.
+For metals, we describe their frequency dependent permittivity as a complex
+number, $\epsilon(\omega) = \epsilon^{\prime} +
+\mi\epsilon^{\prime\prime}$.  Physically this complex number represents
+both the polarizability, as in Equations \ref{eqn:pdensity} and
+\ref{eqn:dfield}, and the phase delay $\sigma$ between $\mathbf{D}$ and
+$\mathbf{E}$
+\begin{equation}
+\epsilon(\omega) = \frac{\mathbf{D}}{E
+
+\epsilon(\omega) = \epsilon^{\prime} + \mi\epsilon^{\prime\prime}
+
+\end{equation}
+
+there are several models~\cite{rakic1998optical} with which one
+can obtain the frequency dependent complex permittivity 
 Theoretically, the most general expression simply describes
 $\epsilon(\omega)$ as a superposition of (Lorentzian) resonances plus a DC
 term
@@ -8,21 +21,20 @@ term
 \label{eqn:meepdispersion}
 \end{equation}
 where $\epsilon_\infty$ is the instentaneous (DC) dielectric response,
-$\sigma_D$ is the electric conductivity, $\omega_n$ and $\Gamma_n$ are
+$\sigma_\mathrm{D}$ is the electric conductivity, $\omega_n$ and $\Gamma_n$ are
 material constants, and $\sigma_n$ is a function of position specifying the
 strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
 dimensionless ($c=\hbar=1$), and is usually encountered when working with
 numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.
-
 In most other areas, the Lorentz-Drude model is used.  The Lorentz-Drude model is 
 \begin{align}
-\epsilon_{D}(\omega)&=\epsilon_D(\omega)\\
-\epsilon_{LD}(\omega)&=\epsilon_D(\omega)+\epsilon_L(\omega)
+\epsilon_\mathrm{D}(\omega)&=\epsilon_\mathrm{D}(\omega)\\
+\epsilon_\mathrm{LD}(\omega)&=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega)
 \end{align}
-where $\epsilon_D$ is contribution from the Drude model, representing
+where $\epsilon_\mathrm{D}$ is contribution from the Drude model, representing
 free electron effects
 \begin{align}
-\epsilon_D(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
+\epsilon_\mathrm{D}(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
 \mi\Gamma_0^\prime)}
 \label{eqn:drude}
 \end{align}
@@ -48,3 +60,19 @@ Equations~\ref{eqn:drude}, \ref{eqn:lorentzdrude}, and
 \ref{eqn:brendelbormann} is accomplished through the subsitutions $\omega_1
 = \num{1e-20}$, $\sigma_n = {f_n \omega_p^{\prime 2}}/{\omega_n^2}$,
 $\epsilon_\infty=1$ and $\Gamma_n^\prime$.
+
+\begin{figure}[ht]
+\centering
+\import{includes/}{setpgfinc}
+\import{existence/figures/}{permittivityau}
+\caption{Comparison of the complex permittivity for gold calculated using the Drude
+and the Lorentz Drude model.}
+\label{fig:permittivityau}
+\end{figure}
+
+In \Figure{fig:permittivityau}, $\epsilon(\omega)$ is shown for gold, a
+popular metal used in this work.  
+
+\begin{align}
+\chi(\omega)=\mi \hf{\chi(\omega)}
+\end{align}

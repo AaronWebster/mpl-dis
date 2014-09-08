@@ -6,11 +6,24 @@
 %
 % defining custom colors
 \definecolor{mycolor1}{rgb}{0.93725,0.95294,1.00000}%
-\definecolor{mycolor2}{rgb}{0.89412,0.10196,0.10980}%
-\definecolor{mycolor3}{rgb}{0.21569,0.49412,0.72157}%
-\definecolor{mycolor4}{rgb}{0.30196,0.68627,0.29020}%
-%
+%\definecolor{Set14qual1}{rgb}{0.89412,0.10196,0.10980}%
+%\definecolor{Set14qual2}{rgb}{0.21569,0.49412,0.72157}%
+%\definecolor{Set14qual3}{rgb}{0.30196,0.68627,0.29020}%
+
+
+
 \begin{tikzpicture}
+\pgfplotsset{
+ footnotesize,
+ minor tick num=1,
+ max space between ticks=30pt,
+ every axis/.style={
+   thick,
+ },
+ every node/.style={
+  font=\footnotesize,
+ },
+}
 
 \begin{axis}[%
 width=9cm,
@@ -46,7 +59,7 @@ x	y\\
 0	4.93643209795788e+15\\
 55000000	4.93643209795788e+15\\
 };
-\addplot [color=mycolor2,solid]
+\addplot [color=Set14qual1,solid]
   table[row sep=crcr]{%
 30791411.39008	6.72732702610305e+15\\
 30043656.7037641	6.68621345843357e+15\\
@@ -1051,7 +1064,7 @@ x	y\\
 };
 \addlegendentry{SPP/dielectric};
 
-\addplot [color=mycolor3,solid]
+\addplot [color=Set14qual2,solid]
   table[row sep=crcr]{%
 33659921.2884621	6.72732702610305e+15\\
 33454211.1384615	6.68621345843357e+15\\
@@ -2056,7 +2069,7 @@ x	y\\
 };
 \addlegendentry{photon/vacuum};
 
-\addplot [color=mycolor4,solid]
+\addplot [color=Set14qual3,solid]
   table[row sep=crcr]{%
 47602317.1945539	6.72732702610305e+15\\
 47311399.1105053	6.68621345843357e+15\\
@@ -3062,14 +3075,14 @@ x	y\\
 \addlegendentry{photon/dielectric};
 
 \node[right, inner sep=0mm, text=black]
-at (axis cs:35000000,6.55681428920969e+15,0) {$ck/\sqrt{\epsilon_1}$};
+at (axis cs:35000000,6.55681428920969e+15,0) {\footnotesize$ck/\sqrt{\epsilon_1}$};
 \node[right, inner sep=0mm, text=black]
-at (axis cs:42000000,5.75e+15,0) {$ck\sin\theta/\sqrt{\epsilon_1}$};
+at (axis cs:42000000,5.75e+15,0) {\footnotesize$ck\sin\theta/\sqrt{\epsilon_1}$};
 \node[right, inner sep=0mm, text=black]
-at (axis cs:2500000,5.26447127327391e+15,0) {quasi-bound};
+at (axis cs:2500000,5.26447127327391e+15,0) {\footnotesize quasi-bound};
 \node[right, inner sep=0mm, text=black]
-at (axis cs:2500000,4.60839292264185e+15,0) {bound};
+at (axis cs:2500000,4.60839292264185e+15,0) {\footnotesize bound};
 \node[right, inner sep=0mm, text=black]
-at (axis cs:2500000,5.92054962390598e+15,0) {radiative};
+at (axis cs:2500000,5.92054962390598e+15,0) {\footnotesize radiative};
 \end{axis}
 \end{tikzpicture}%

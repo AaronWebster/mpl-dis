@@ -226,6 +226,22 @@ for y = 1:ymx
     end
     text(xmx+0.1,y-0.5,typ, 'Parent',axh)
 end
+
+% figure;
+% idx = 1;
+% load('dis-specular-sppplot-b')
+% for y = 1:ymx
+%     [num,typ,rgb] = cbSelect(seq{y});
+%     subplot(7,4,idx);
+%     imagesc(Pbg);
+%     try
+%         colormap(brewermap([],seq{y}));
+%     catch
+%         continue;
+%     end
+%     freezeColors;
+%     idx = idx + 1
+% end
 %
 end
 %----------------------------------------------------------------------END:cbDemoFig
