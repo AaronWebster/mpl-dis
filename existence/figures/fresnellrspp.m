@@ -1,8 +1,8 @@
 %% away we go
-addpath('~/mpl-dis/includes');
+%addpath('~/mpl-dis/includes');
 N=500;
-theta = linspace(48.78,74.65,200);
-lambda = linspace(275e-9,1250e-9,200);
+theta = linspace(48.78,74.65,500);
+lambda = linspace(275e-9,1250e-9,500);
 
 rp = zeros(length(theta),length(lambda));
 rs = zeros(length(theta),length(lambda));
@@ -30,7 +30,7 @@ end
 %% plot
 figure(1)
 clf;
-colormap(brewermap([],'Blues'));
+colormap(brewermap([],'YlOrRd'));
 imagesc(theta,lambda,abs(flipud(rp)).^2)
 set(gca,'YDir','normal')
 xlabel('$\theta$ [degrees]')
@@ -38,8 +38,10 @@ ylabel('$\lambda$ [m]')
 t = colorbar('peer',gca);
 set(get(t,'ylabel'),'String', '$|r_p|^2$');
 
+save('-v7.3','fresnelsppA.mat','theta','lambda','rp')
+
 %% save to file
-filename = sprintf('fresnellrsppfig.tex');
-matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', false, ...
-        'height', '9cm', 'width','9cm');
+% filename = sprintf('fresnellrsppfig.tex');
+% matlab2tikz(filename, 'showInfo', false, ...
+%         'parseStrings',false,'standalone', false, ...
+%         'height', '9cm', 'width','9cm');

@@ -1,6 +1,12 @@
+We move now to using the wave equation to predict some of the the
+observable phenomena of SPP exciation.  To this accord, we will use the
+Fresnel equations to calculate the coupling conditions and properties of
+the excited field.   We begin this section with our strategy for efficient
+computation of the Fresnel relations, and follow with a discussion of its
+predictions for both the near and far optical fields. 
+
 \subsection{Matrix Formalism}
-Insight into this question will be found through the Fresnel
-relations.  The Fresnel reflection and transmission coefficents for $s$ and
+The Fresnel reflection and transmission coefficents for $s$ and
 $p$ polarization and a single ($i$-$j$) interface are given by
 \begin{align}
 r^s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
@@ -46,43 +52,125 @@ t^s = \frac{1}{M^s_{11}}\\
 \end{align}
 
 \subsection{Prism Coupled Excitation}
+From the information in the dispersion relation, SPP excitation at a
+metal-dielectric interface is possible if we are incident at an angle such
+that the light line moves from $ck/\sqrt{\epsilon}$ to
+$ck\sin\theta/\sqrt{\epsilon}$.  Furthermore, we observe the following
+conditions must also hold
+\begin{enumerate}
+\item SPP excitation will be accomplished with evanescent waves.  The
+incident light must be at an angle greater than the critical angle, e.g.
+$\theta>\arcsin\left(n_1/n_2\right)$.
+\item The metal layer must
+\begin{enumerate}
+\item be thin enough to be at least partially optically transparent at the excitation wavelength
+\item have small enough damping, set by its permittivity, so that SPPs can propagate
+\end{enumerate}
+\end{enumerate}
 
-%
-%\begin{figure}[ht]
-% \centering
-%\import{existence/figures/}{fresnellrsppfig}
-%\label{fig:fresnellrsppfig}
-%\caption{Fresnel reflection.}
-%\end{figure}
-%
-%\begin{figure}[ht]
-% \centering
-%\import{existence/figures/}{fresnelsppfig}
-%\label{fig:fresnellrsppfig}
-%\caption{Fresnel reflection.}
-%\end{figure}
+\begin{figure}[ht]
+ \centering
+ \begin{subfigure}[b]{0.4\textwidth}
+  \centering
+  \import{existence/figures/}{singlelayerinterfacegeo-kretschmann}
+  \caption{Kretschmann SSP.}
+ \end{subfigure}
+ \begin{subfigure}[b]{0.4\textwidth}
+  \centering
+  \import{existence/figures/}{multilayerinterfacegeo-kretschmann}
+  \caption{Kretschmann ASP.}
+ \end{subfigure}
+\label{fig:prismcoupledsetups}
+\caption{Prism coupled excitation of SPPs.  (a) Kretschmann three layer
+system, supporting asymmetric SPPs (ASP).  (b) Kretschmann
+four layer system supporting symmetric SPPs (SSP). }
+\end{figure}
+Let us discuss these first in terms of the single interface system, as
+first shown in \Figure{fig:singlelayergeo}.  We modify this system with
+another layer, $\epsilon_3$, as shown in
+\Figure{fig:prismcoupledsetups}(a).  In this system, light is incident from
+$\epsilon_1$ and $\epsilon_1>\epsilon_3$, with both satisfying
+$\epsilon^\prime_1>\epsilon^\prime_3>1$ as per the first constraint.
+$\epsilon_2$ is a metal.  Since the real part of the metals permittivity
+$\epsilon^\prime$ is a measure of its ability to store energy, and the
+imaginary part $\epsilon^{\prime\prime}$ a measure of its dissipation, we
+are looking for a metal with a large (negative) real part and a small
+imaginary part.  \Table{tbl:epsmetal600} shows the complex permittivity for
+several metals at $\lambda=\SI{660}{\nano\meter}$.
+
+\begin{table}[ht]
+\centering
+\sisetup{round-mode=places,round-precision=3}
+\begin{tabular}{lSS}
+\toprule
+metal & {$\epsilon^\prime$} & {$\epsilon^{\prime\prime}$} \\
+\midrule
+Ag & -16.0648691498177 & 1.18528458742412\\
+Al & -55.0747552231730 & 22.2259823038134\\
+Au & -11.3606990407702 & 1.92302171486855\\
+Cu & -14.1858191543517 & 2.33420338076507\\
+Cr & -6.04524862130375 & 31.2186141440352\\
+Ni & -10.1637074922586 & 15.8784172933422\\
+W  & +5.66969276029247 & 21.5082218271489\\
+Ti & -5.85926367167276 & 13.6799220553247\\
+Be & +1.61777122030528 & 22.0352487178570\\
+Pd & -15.1527887328324 & 16.2452542701191\\
+Pt & -12.7783923033094 & 20.6732739687699\\
+\bottomrule
+\end{tabular}
+\caption{Complex permittivity for select metals at
+$\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude model.}
+\label{tbl:epsmetal600}
+\end{table}
+
+From \Table{tbl:epsmetal600} it is easy to filter out an appropriate
+choice: silver, gold, or copper, with silver having the lowest loss.  At
+this point we choose gold and restrict our parameter space to this metal.
+It has the second lowest loss, does not oxidize, and most importantly has
+the most compatability with existing biochemistry.  Furthermore, we find
+via the Fresnel equations for such a three layer system that the thickness
+of the metal layer must be below \SI{100}{\nano\meter}.  The multilayer
+system is also modified as in \Figure{fig:prismcoupledsetups}(b), with the
+prism being a supporting layer $\epsilon_0$ such that
+$\epsilon^\prime_0>\epsilon^\prime_{1,3}>1$.  We also assume that
+$\epsilon_1=\epsilon_3$ and that $\epsilon_2$ is gold.
+
+Simultaneous optimization of all of these parameters is a task best suited
+for a computer.  For the three layer system something \SI{50}{\nano\meter},
+ for the four layer system someting \SI{16}{\nano\meter}
+
+something \Figure{fig:fresnelangle} shows you get excitation for many
+wavelengths as a function of angle.
+
+\begin{figure}[ht]
+\centering
+\import{existence/figures/}{fresneltogether}
+\caption{Fresnel reflection coefficent as a function of angle and
+excitation wavelength for the two SPP structures in a Kretschmann ATR 
+configuration.}
+\label{fig:fresnelangle}
+\end{figure}
 
 \subsection{Near Field}
+\begin{figure}[ht]
+ \centering
+ \pgfplotsset{
+ minor tick num=3,
+ footnotesize,
+ trim axis right,
+ max space between ticks=30pt,
+}
+\tikzset{baseline}
+\begin{tabular}{rr}
+\import{existence/figures/}{dis-specular-sppplot-a}&\import{existence/figures/}{dis-specular-sppplot-c}\\
+\import{existence/figures/}{dis-specular-sppplot-b}&\import{existence/figures/}{dis-specular-sppplot-d}
+\end{tabular}
+\begin{tabular}{rr}
+\import{existence/figures/}{dis-specular-lrsppplot-a}&\import{existence/figures/}{dis-specular-lrsppplot-c}\\
+\import{existence/figures/}{dis-specular-lrsppplot-b}&\import{existence/figures/}{dis-specular-lrsppplot-d}
+\end{tabular}
 
-%\begin{figure}[ht]
-% \centering
-% \pgfplotsset{
-% minor tick num=3,
-% footnotesize,
-% trim axis right,
-% max space between ticks=30pt,
-%}
-%\tikzset{baseline}
-%\begin{tabular}{rr}
-%\import{existence/figures/}{dis-specular-sppplot-a}&\import{existence/figures/}{dis-specular-sppplot-c}\\
-%\import{existence/figures/}{dis-specular-sppplot-b}&\import{existence/figures/}{dis-specular-sppplot-d}
-%\end{tabular}
-%\begin{tabular}{rr}
-%\import{existence/figures/}{dis-specular-lrsppplot-a}&\import{existence/figures/}{dis-specular-lrsppplot-c}\\
-%\import{existence/figures/}{dis-specular-lrsppplot-b}&\import{existence/figures/}{dis-specular-lrsppplot-d}
-%\end{tabular}
-%
-%\label{fig:fresnellrsppfig}
-%\caption{Fresnel reflection.}
-%\end{figure}
-%
+\label{fig:fresnellrsppfig}
+\caption{Fresnel reflection.}
+\end{figure}
+
