@@ -1,0 +1,78 @@
+% figure of experimental setup
+% annotated picture of experimental setup
+The paragon setup for all experiments in this work is depicted
+schematically in \Figure{fig:sppexperimentalsetup}.  Light from a variable
+current \SI{50}{\milli\watt} \SI{660}{\nano\meter} diode
+laser\footnote{Ignis 660} with a bandwidth of \SI{30}{\giga\hertz} is first
+coupled into a single mode optical fiber via an integrated air-spaced
+doublet fiber collimnator\footnote{Thorlabs F810FC-635}.  The fiber guides
+the laser light to an optical breadboard mounted on an inverted
+microscope\footnote{Nikon XXX}.  All primary functions of the experiment
+take place here.  At the breadboard, the Gaussian output from the single
+mode fiber is collimnated by an output coupler to a Gaussian beam with beam
+waist $w_0=\SI{5}{\milli\meter}$ and proceeds through a polarizing
+beamsplitter\footnote{beamsplitter}, passing $p$ polarized light.  The
+light is focused by a 10X microscope objective onto the hypotenuse of a
+hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.  The
+beamsplitter and microscope objective are mounted on precision rotation
+stage which itself is mounted on a precision micrometer stage.  The
+objective itself is mounted on a zoom housing enabling linear travel on the
+optical axis.  When the rotation stage is at the surface plasmon resonance
+angle, the micrometer $z$ axis is fixed with the diffraction limited spot
+at the center of the prism's hypotenuse.  The size of the spot then be
+modified via the zoom housing, and the surface location by the $x$ and $y$
+lead screws on the micrometer stage.  
+
+The hemispherical prism is mounted on a planar structure supporting
+either normal or long range SPPs.  Reverse of this structure is a
+microfluidic flow cell where samples can be introduced.  The specularly
+reflected and scattered light containing information from SPP interference
+and scattering is ultimately captured at desired locations with a series of imaging
+sensors.
+
+Both the microfluics and the substructure supporting the prism are thin and
+optically transparent.  In this way, the sensing surface may be imaged with
+an objective from the inverted microscope.  The breadboard containing the
+experiment was fixed to the optical table with a micrometer stage
+permitting translation of the entire experiment in the plane of the optical
+table.
+
+We experimented with several different focussing strategies in the
+refinement of the experiment, and found that a microscope objective is the
+best choice.  Because microscope objectives fullfill the sine condition,
+focussing to the central point on the hypotenuse of a hemispherical prism
+should (ideally) introduce no abberations.
+
+\subsection{Imaging Sensor}
+As stated, light from the experiment was directly recorded with imaging
+sensors at select locations around the ring.  Because no optics (besides
+the hemispherical prism itself) were used in this capture, it is important
+that the sensors be as close to the prism as possible.  To facilitate this,
+the sensors were removed from their housings and the naked PCB used as the
+mount.
+% picture here of the modified imaging sensor
+
+Two types of imaging sensors were used in the experiment: an IDS USB 2.0
+8-bit CMOS camera with a resolution of 1280x1024 pixels and a PixelGrey
+IEEE-1394 (Firewire) 16-bit CCD  with a resolution of 1280x1024 pixels.
+Both cameras are capable of what is known as a ``limited area of interest
+(AOI)''.  This feature allows the cameras to capture a sub-region of their
+available pixel region \textit{before} the information traverses the serial
+bus to the host computer.  The IDS datasheet specifies that in AOI mode,
+with sufficient lighting conditions framerates of up to \SI{250}{fps} are
+possible.  We have found that this framerate was a limitation imposed due
+to bad design of both the stock acquisition software and the USB serial
+bus, and with simple modifications this can be extended to over \SI{1}{fps}.
+
+The modifications were carried out in the following way.  On the software
+side, the raw sensor data is read directly from camera memory and written
+to a single binary file on the disk of the host computer.  This carries
+with it two speed advantages: first, it suppresses all calls to image or
+video libraries by removing the need to transcode the pixel data.  Second,
+saving to a single file is much faster than saving to multiple files
+because it elliminates (seeking and updating of metadata).
+
+Second, each camera is assigned to its own USB bus.  This allows the USB
+polling frequency to be set at maxiumun and it is not interupted by other
+devices or whatever.
+%(480 megabits per second)/((1280*128*8 bits) per frame)
