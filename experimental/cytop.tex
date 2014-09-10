@@ -1,7 +1,11 @@
 For the fabrication of multilayer substrates supporting long range surface
 plasmons, we used a flouropolymer,
 poly(1,1,2,4,4,5,5,6,7,7-decafluoro-3-oxa-1,6-heptadiene), better known by
-its brand name Cytop.
+its brand name Cytop.  At our operating wavelength of \SI{660}{\nano\meter}
+and at \SI{20}{\celsius}, its refractive index is very close to water --
+1.341 for Cytop~\cite{mikevs2005synthesis} versus 1.331 for water.  This
+index matching property allows us to construct a symmetric for long range
+surface plasmons.
 
 Cytop was purchased from AGC Chemicals as item number CTX-809A.  The last
 letter ``A'' in the item number designates it is intended for use on
@@ -10,5 +14,11 @@ following that designates the concentration.  For example, CTX-809A is
 \SI{9}{\percent} cytop and \SI{91}{\percent} solvent, and likewise CTX-803A
 is \SI{3}{\percent} cytop and \SI{97}{\percent} solvent.
 
-refractive index reference: \cite{mikevs2005synthesis}
-
+\begin{equation}
+ R = \frac{n_1^2(n_i-n_s)^2 \cos^2\delta + (n_i n_s - n_1^2)^2\sin^2\delta}
+          {n_1^2(n_i+n_s)^2 \cos^2\delta + (n_i n_s + n_1^2)^2\sin^2\delta}
+\end{equation}
+where
+\begin{equation}
+\delta = 2\pi/\lambda n_j d_j cos \theta
+\end{equation}
