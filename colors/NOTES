@@ -1,5 +1,9 @@
 These are the colors I've decided on:
 
-Set1 for lines
+Set1 for lines, example:
+				mycolor = brewermap(5,'Set1');
+				plot(x,y,'Color',mycolor(1,:))
+
 YlOrRd for sequential, all positive.
+
 RdBu for signed data.
