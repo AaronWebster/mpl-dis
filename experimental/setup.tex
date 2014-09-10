@@ -1,8 +1,13 @@
-% figure of experimental setup
-% annotated picture of experimental setup
+\begin{figure}[ht]
+ \centering
+ \ersatzfigure
+ \caption{Experimental setup. Have a normal setup plus an annotated picture
+ of the setup.}
+ \label{fig:experimentalsetup}
+\end{figure}
 
 The paragon setup for all experiments is depicted schematically in
-\Figure{fig:sppexperimentalsetup}.  Light from a \SI{50}{\milli\watt}
+\Figure{fig:experimentalsetup}.  Light from a \SI{50}{\milli\watt}
 \SI{660}{\nano\meter} diode laser with a bandwidth of \SI{30}{\giga\hertz}
 is first coupled into a single mode optical fiber via an integrated
 air-spaced doublet fiber collimnator.  The fiber guides the laser light to
@@ -49,11 +54,16 @@ the hemispherical prism itself) were used in this capture, it is important
 that the sensors be as close to the prism as possible, to capture the
 widest amount of feature area possible.  To facilitate this, the sensors
 were removed from their housings and the naked PCB used as the mount.
-% picture here of the modified imaging sensor
+\begin{figure}[ht]
+ \centering
+ \ersatzfigure
+ \caption{Modified imaging sensor.}
+ \label{fig:imagingsensor}
+\end{figure}
 
 Two types of imaging sensors were used in the experiment: an IDS USB 2.0
-8-bit CMOS camera with a resolution of 1280x1024 pixels and a PixelGrey
-IEEE-1394 (Firewire) 16-bit CCD  with a resolution of 1280x1024 pixels.
+\SI{8}{\bit} CMOS camera with a resolution of 1280x1024 pixels and a PixelGrey
+IEEE-1394 (Firewire) \SI{16}{\bit} CCD  with a resolution of 1280x1024 pixels.
 Both cameras are capable of what is known as a ``limited area of interest
 (AOI)''.  This feature allows the cameras to capture a sub-region of their
 available pixel region \textit{before} the information traverses the serial

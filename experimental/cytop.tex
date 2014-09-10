@@ -1,24 +1,55 @@
 For the fabrication of multilayer substrates supporting long range surface
 plasmons, we used a flouropolymer,
-poly(1,1,2,4,4,5,5,6,7,7-decafluoro-3-oxa-1,6-heptadiene), better known by
-its brand name Cytop.  At our operating wavelength of \SI{660}{\nano\meter}
-and at \SI{20}{\celsius}, its refractive index is very close to water --
-1.341 for Cytop~\cite{mikevs2005synthesis} versus 1.331 for water.  This
-index matching property allows us to construct a symmetric for long range
-surface plasmons.
+poly(1,1,2,4,4,5,5,6,7,7-decafluoro-3-oxa-1,6-heptadiene), better known as
+Cytop.  At our operating wavelength of \SI{660}{\nano\meter} and at
+\SI{20}{\celsius}, its refractive index is very close to water --
+1.341 for Cytop~\cite{mikevs2005synthesis} versus 1.331 for distilled
+water.  This index matching property allows us to construct a symmetric for
+long range surface plasmons.
 
 Cytop was purchased from AGC Chemicals as item number CTX-809A.  The last
 letter ``A'' in the item number designates it is intended for use on
 ``amorphous'' (i.e. glass) applications, and the number immediately
 following that designates the concentration.  For example, CTX-809A is
 \SI{9}{\percent} cytop and \SI{91}{\percent} solvent, and likewise CTX-803A
-is \SI{3}{\percent} cytop and \SI{97}{\percent} solvent.
+is \SI{3}{\percent} cytop and \SI{97}{\percent} solvent.  Its adhesion to
+both metals and glass was very poor, but again not enough to justify taking
+action to remedy it.
 
+The thin films were made according to the following spin-coating procedure.
+A small drop of CTX-809A was placed directly on a clean
+\SI{12}{\milli\meter} round glass slide and the slide spun at
+\SI{3000}{RPM} for \SI{30}{\second}.  Immediately the slide was removed and
+placed on a hot plate at \SI{50}{\celsius} for \SI{30}{\minute}.  The
+temperature of the hot plate was then increased to \SI{200}{\celsius} and
+the Cytop allowed to cure at this temperature for \SI{12}{\hour} to remove
+any remaining solvent.  After cooling, the metal films were sputtered
+directly without any further surface modification.
+
+The resultant film thicknesses were determined with a spectrometer by
+measuring its broadband reflectance $\theta=\SI{45}{\degree}$ and fitting with the Fresnel
+reflectivity $R$
 \begin{equation}
  R = \frac{n_1^2(n_i-n_s)^2 \cos^2\delta + (n_i n_s - n_1^2)^2\sin^2\delta}
           {n_1^2(n_i+n_s)^2 \cos^2\delta + (n_i n_s + n_1^2)^2\sin^2\delta}
+          \label{eqn:fitfresnel}
 \end{equation}
 where
 \begin{equation}
-\delta = 2\pi/\lambda n_j d_j cos \theta
+ \delta = \frac{2\pi}{\lambda_0} n_i d_i \cos \theta
 \end{equation}
+and the Cytop layer has a refractive index $n_i$ and thickness $d_i$, the
+substrate a refrative index $n_s$, and the whole thing is in the presence
+of refractive index $n_1$ (air).  Note that stated this way,
+\Equation{eqn:fitfresnel} has only one free parameter: $d_i$.  A typical 
+
+\begin{figure}
+ \centering
+ \import{includes/}{setpgfinc}
+ \import{experimental/figures/}{fresnelfit}
+ \caption{Reflectivity of a thin Cytop layer on BK7 at
+ $\theta=\SI{45}{\degree}$.  Shown is the experimental data and the
+ best-fit theory.  Calculated layer thickness for this measurement was
+\SI{1150}{\nano\meter}.}
+ \label{fig:fresnelfit}
+\end{figure}

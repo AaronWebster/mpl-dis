@@ -58,12 +58,14 @@
 
 % siunitx
 \usepackage{siunitx}
-\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
-\DeclareSIUnit\Molar{\name{M}}
 \sisetup{ 
+binary-units,
 % load-configurations=abbreviations
 % round-mode = places,
 }%
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\torr{torr}
 
 % prettify chapter/section format
 \usepackage{titlesec}
@@ -144,3 +146,5 @@
 \newcommand{\mq}{m_\mathrm{q}}
 \newcommand{\omegaq}{\omega_\mathrm{q}}
 \newcommand{\thetasp}{\theta_\mathrm{sp}}
+
+\newcommand{\ersatzfigure}{\includegraphics[width=10cm,keepaspectratio]{includes/ersatz}}
