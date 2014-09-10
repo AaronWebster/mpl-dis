@@ -1,55 +1,54 @@
 % figure of experimental setup
 % annotated picture of experimental setup
-The paragon setup for all experiments is depicted
-schematically in \Figure{fig:sppexperimentalsetup}.  Light from a 
-\SI{50}{\milli\watt} \SI{660}{\nano\meter} diode
-laser with a bandwidth of \SI{30}{\giga\hertz} is first
-coupled into a single mode optical fiber via an integrated air-spaced
-doublet fiber collimnator\footnote{Thorlabs F810FC-635}.  The fiber guides
-the laser light to an optical breadboard mounted on an inverted
-microscope.  All primary functions of the experiment
-take place here.  At the breadboard, the Gaussian output from the single
-mode fiber is collimnated by an output coupler to a beam
-waist of $w_0=\SI{5}{\milli\meter}$ and proceeds through a polarizing
-beamsplitter, passing $p$ polarized light.  The
-light is focused by a 10X microscope objective onto the hypotenuse of a
-hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.  The
-beamsplitter and microscope objective are mounted on precision rotation
-stage which itself is mounted on a precision micrometer stage.  The
-objective itself is mounted on a zoom housing enabling linear travel on the
-optical axis.  When the rotation stage is at the surface plasmon resonance
-angle, the micrometer $z$ axis is fixed with the diffraction limited spot
-at the center of the prism's hypotenuse.  The size of the spot then be
-modified via the zoom housing, and the surface location by the $x$ and $y$
-lead screws on the micrometer stage.  
 
-The hemispherical prism is mounted on a planar structure supporting
-either normal or long range SPPs.  Reverse of this structure is a
-microfluidic flow cell where samples can be introduced.  The specularly
-reflected and scattered light containing information from SPP interference
-and scattering is ultimately captured at desired locations with a series of imaging
+The paragon setup for all experiments is depicted schematically in
+\Figure{fig:sppexperimentalsetup}.  Light from a \SI{50}{\milli\watt}
+\SI{660}{\nano\meter} diode laser with a bandwidth of \SI{30}{\giga\hertz}
+is first coupled into a single mode optical fiber via an integrated
+air-spaced doublet fiber collimnator.  The fiber guides the laser light to
+an optical breadboard mounted on an inverted microscope.  All primary
+functions of the experiment take place here.  At the breadboard, the
+Gaussian beam from the single mode fiber is collimnated by an output
+coupler to a beam waist of $w_0=\SI{5}{\milli\meter}$ and proceeds through
+a polarizing beamsplitter, passing $p$ polarized light.  The light is
+focused by a 10X microscope objective onto the hypotenuse of a
+hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.  The
+beamsplitter and microscope objective are mounted on rotation stage which
+itself is mounted on a micrometer stage.  The objective itself is mounted
+on a zoom housing enabling linear travel along the optical axis.  When the
+rotation stage is at the surface plasmon resonance angle, the micrometer
+$z$ axis is fixed with a diffraction limited spot at the center of the
+prism's hypotenuse.  The size of the spot then be modified via the zoom
+housing, and its transverse location on the surface by the $x$ and $y$ lead
+screws on the micrometer stage.  
+
+The hemispherical prism is mounted on a planar structure supporting either
+normal or long range SPPs.  Reverse of this structure is a microfluidic
+flow cell where samples can be introduced.  The specularly reflected and
+scattered light containing information from SPP interference and scattering
+is ultimately captured at desired locations with a series of imaging
 sensors.
 
-Both the microfluics and the substructure supporting the prism are thin and
+Both the microfluidics and the substructure supporting the prism are thin and
 optically transparent.  In this way, the sensing surface may be imaged with
 an objective from the inverted microscope.  The breadboard containing the
-experiment was fixed to the optical table with a micrometer stage
+experiment was fixed to the optical table with its own micrometer stage,
 permitting translation of the entire experiment in the plane of the optical
 table.
 
 We experimented with several different focussing strategies in the
 refinement of the experiment, and found that a microscope objective is the
-best choice.  Because microscope objectives fullfill the sine condition,
+simplest choice.  Because microscope objectives fulfill the sine condition,
 focussing to the central point on the hypotenuse of a hemispherical prism
-should (ideally) introduce no abberations.
+should (ideally) introduce no aberrations.
 
 \subsection{Imaging Sensor}
 As stated, light from the experiment was directly recorded with imaging
 sensors at select locations around the ring.  Because no optics (besides
 the hemispherical prism itself) were used in this capture, it is important
-that the sensors be as close to the prism as possible.  To facilitate this,
-the sensors were removed from their housings and the naked PCB used as the
-mount.
+that the sensors be as close to the prism as possible, to capture the
+widest amount of feature area possible.  To facilitate this, the sensors
+were removed from their housings and the naked PCB used as the mount.
 % picture here of the modified imaging sensor
 
 Two types of imaging sensors were used in the experiment: an IDS USB 2.0
@@ -62,7 +61,7 @@ bus to the host computer.  The IDS datasheet specifies that in AOI mode,
 with sufficient lighting conditions framerates of up to \SI{250}{fps} are
 possible.  We have found that this framerate was a limitation imposed due
 to bad design of both the stock acquisition software and the USB serial
-bus, and with simple modifications this can be extended to over \SI{1}{fps}.
+bus, and with simple modifications this can be extended to over \SI{1400}{fps}.
 
 The modifications were carried out in the following way.  On the software
 side, the raw sensor data is read directly from camera memory and written
