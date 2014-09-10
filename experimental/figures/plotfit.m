@@ -4,11 +4,11 @@ figure(1)
 clf;
 hold on;
 mycolor = brewermap(5,'Set1');
-plot(a(:,1),a(:,2),'Color',mycolor(1,:))
 plot(a(:,1),a(:,3),'o','Color',mycolor(2,:))
+plot(a(:,1),a(:,2),'Color',mycolor(1,:))
 xlabel('wavelength [m]')
 ylabel('$R$')
-legend('fit','data')
+legend('data','fit')
 hold off;
 
 filename = sprintf('fresnelfit.tex');
