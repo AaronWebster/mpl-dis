@@ -22,7 +22,8 @@ ymax=0.11,
 ylabel={$R$},
 axis x line*=bottom,
 axis y line*=left,
-legend style={draw=black,fill=white,legend cell align=left}
+legend style={draw=black,fill=white,legend cell align=left},
+clip marker paths=true
 ]
 \addplot [color=mycolor1,only marks,mark=o,mark options={solid}]
   table[row sep=crcr]{%
@@ -527,7 +528,7 @@ legend style={draw=black,fill=white,legend cell align=left}
 7.9929868e-07	0.073120755\\
 8e-07	0.08526\\
 };
-\addlegendentry{data};
+\addlegendentry{raw};
 
 \addplot [color=mycolor2,solid]
   table[row sep=crcr]{%
