@@ -1,5 +1,5 @@
 addpath('~/mpl-dis/includes')
-a = load('fitfresnel.dat');
+a = load('fresnelfit.dat');
 figure(1)
 clf;
 hold on;
