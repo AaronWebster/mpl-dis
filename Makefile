@@ -18,7 +18,7 @@ all: $(TARGET).pdf
 $(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex") 
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
+	latexmk -f -pdf -pdflatex="/usr/bin/pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
 
 # remove build files plus all the latex turds
 clean:

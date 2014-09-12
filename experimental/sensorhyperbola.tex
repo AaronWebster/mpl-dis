@@ -33,10 +33,8 @@ spot and the sensor, the line $\overline{OB}$ with length $d$.
 We denote the coordinates of the sensor as $(\xi,y)$.  Here we have the
 following relationships
 \begin{align}
-x &= \xi \cos \thetasp\\
-\label{eqn:conic01a}
-r &= \left(d \sec \thetasp + \xi \sin \thetasp\right) \tan\thetasp
-\label{eqn:conic01b}
+x &= \xi \cos \thetasp \label{eqn:conic01a} \\
+r &= \left(d \sec \thetasp + \xi \sin \thetasp\right) \tan\thetasp \label{eqn:conic01b}
 \end{align}
 and
 \begin{equation}
@@ -75,6 +73,21 @@ d =& \Biggl(-4 \sqrt{2} \Bigl(\delta^2 \sin ^2\thetasp \cos
 \end{align}
 where $\delta$ is the distance the cone goes up at the coordinate $y$.  
 In this way, given the dimensions of the pixels on the imaging sensor, $d$
-can be determined.  Once this is known, the absolute coordinates in
-spherical or cartesian coordinates can be found via Equations
-\ref{eqn:conic01a}, \ref{eqn:conic01b}, and \ref{eqn:conic01c}.
+can be determined.  Once this is known, the absolute coordinates $(x,y,z$ of the
+sensor are given by 
+\begin{equation}
+	\begin{pmatrix} 
+					x\\ 
+					y\\ 
+					z
+	\end{pmatrix} 
+	=
+	\begin{pmatrix} 
+					x^\prime \cos\thetasp + d \sin\thetasp\\ 
+					y^\prime \\
+					d \cos\thetasp - x^\prime \sin\thetasp\\ 
+	\end{pmatrix} 
+\label{eqn:sensorcoordinates}
+\end{equation}
+where $x^\prime$ and $y^\prime$ are the local coordinates of the sensor
+with $(0,0)$ as its origin.  
