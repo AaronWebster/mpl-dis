@@ -1,22 +1,82 @@
-The sensitivity of surface plasmon based biosensors to bulk refractive
-index changes is of primary importance in extracting bio-relevant
-properties. In a prism coupled setup, there are three main modulation
-methods used to monitor changes in the SPR resonance condition.
+The sensitivity of surface plasmon resonance to bulk refractive index
+pertrubations is perhaps its most popular and widely utilized property.
+(Why is SPR so sensitive, a little bit about field enhancements and so
+forth).  In a biosensing context, molecules binding to the metal layer will
+change the local refractive index a surface plasmon ``sees'', and its
+resonance condition will change.
+
+In a prism coupled setup, there are three main methods used to
+monitor changes in the SPR resonance condition.  All three of these
+interrogation methods are equivalent in terms of their real-world
+resolution and detection limit.~\cite{pines1952collective}
 \begin{description}
- \item [{Angular}] The prism is rotated and the signal reflectivity
-  monitored
-  as a function of angle. The prism may be scanned through a range of
-  angles or the angular spectrum may be obtained simultaneously using
-  a focussed beam and sensor array.
+	\item [{Angular}] The change in the angle of the SPR minimum as a function
+					of refractive index is monitored.  In the angular modulation method,
+					The prism may be scanned through a range of angles or the angular
+					spectrum may be obtained simultaneously using a focussed beam and
+					sensor array.
  \item [{Wavelength}] The prism is fixed in place and its reflectivity at
   a single angle is monitored as a function of wavelength.
- \item [{Intensity}] The intensity of the signal at a certain angular or
-  spatial point is monitored as the experiment progresses.
+	\item [{Intensity}] For a fixed wavelength and incident angle, the
+		intensity of the signal at a certain angular or spatial point is
+		monitored as the experiment progresses.
 \end{description}
-All three of these interrogation methods are equivalent in terms of
-their real-world resolution and detection limit. In this section we
-will look at the sensitivity of intensity interrogation to different
-(something about parameters)
+
+In this chapter we will study the bulk refractive index of the cone as
+compared to the specular notch using both angular and intensity
+interrogation methods.  We do not possess the means to carry out wavelength
+interrogation, though this is funamentally equivalent to sweeping the SPR
+angle. 
+
+\section{ASPs}
+
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+	\import{bulkri/figures/}{sens_angular_asp}
+ \caption{Angular sensitivity of the notch and the cone for the Kretschmann
+									three layer system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+									\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310$.
+									The thickness of the metal layer is \SI{45}{\nano\meter}.}
+ \label{fig:sensangularasp}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+	\import{bulkri/figures/}{sens_angular_ssp}
+	\caption{dingus}
+ \label{fig:sensangularssp}
+\end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{lll}
+\toprule
+location & {angular ($d\theta/dn$, deg)} & {intensity ($dI/dn$)} \\
+\midrule
+cone & \num{1.365122e+02} & \num{2.421350e+01}\\
+notch & \num{1.452312e+02} & \num{2.721749e+01}\\
+\bottomrule
+\end{tabular}
+\caption{Sensitivity calculations.}
+\label{tab:3layersens}
+\end{table}
+
+%>> sens_angular_ASP
+%cone angular:    1.453671e+02
+%notch angular:   1.452312e+02
+%cone intensity:  3.529935e+01
+%notch intensity: 2.721749e+01
+
+%>> sens_angular_SSP
+%cone angular:    3.938117e+01
+%notch angular:   3.943097e+01
+%cone intensity:  9.666660e+01
+%notch intensity: 9.295699e+01
+
+\section{Maximum Theoretical Sensitivity}
+Before beginning, it is approprate to 
 
 We will now derive the sensitivity of the three layer Kretschmann
 configuration to bulk index changes. This case will be used as a test

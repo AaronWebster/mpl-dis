@@ -1,7 +1,3 @@
-These are the colors I've decided on:
-
-Set1 for lines, example:
-
 addpath('~/mpl-dis/includes')
 
 mycolor = brewermap(5,'Set1');
@@ -12,10 +8,3 @@ matlab2tikz(filename, 'showInfo', false, ...
     'parseStrings',false,'standalone', true, ...
 				'height', '9cm', 'width','9cm');
 
-
-'YlOrRd' for sequential, all positive.
-
-'RdBu' for signed data.
-
-You can use 'Paired' with 'Set1', but they are out of order.  Use Set1(1)
-and Set1(2) with Paired(6,5) and Paired(2,1)
