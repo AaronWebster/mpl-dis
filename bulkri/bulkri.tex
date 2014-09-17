@@ -1,3 +1,4 @@
+\textbf{ASP SHOULD BE CONVENTIONAL SP}
 The sensitivity of surface plasmon resonance to bulk refractive index
 pertrubations is perhaps its most popular and widely utilized property.
 This is motivated by the system's quite remarkable response, which has been
@@ -30,7 +31,6 @@ wavelength interrogation, though this is funamentally equivalent to
 sweeping the SPR angle. 
 
 \section{Angular Interrogation}
-
 To study the sensitivity in the angular interrogation method, first we
 simulate angular response with ($\delta n = 0$) and without ($\delta n \ne
 0$) a refractive index pertrubation.  The choice here of the pertrubation
@@ -46,7 +46,7 @@ not concerned at the moment with the \textit{optimization} of sensitivity.
 Rather we focus on the difference between angular response to refractive
 index pertrubations in the cone and the notch.  
 
-Simulated responses for symmetric (SSP) and asymmetric (ASP) configurations
+Simulated responses for symmetric (SSP) and conventional (SP) configurations
 in the notch and the cone are shown in \Figure{fig:sensangularasp} and
 \ref{fig:sensangularssp} for $\delta n = 0.01$.  The maximum obtainable
 results for these conigurations are tabulated in \Table{tbl:angularsens}.
@@ -97,18 +97,23 @@ track each other very well.
 
 \section{Intensity Interrogation}
 In contrast to angular interrogation, intensity interrogation shows
-significant differences between
-
-aspnotch = 8.0708
-aspcone = 4.7795
-sspnotch = 0.2349
-sspcone = 0.2325
-
+significant differences between the notch and the cone.  This is due to
+both the sharper resonance and narrower linewidth.  For the systems under
+discussion, we calculate the angular width of the notch to be
+$\theta_{1/2}=\SI{8.0708}{\degree}$ for ASPs, with the cone being nearly
+twice as narrow at $\theta_{1/2}=\SI{4.7795}{\degree}$.  SSPs show the same
+trend, but the discrepancy is not nearly as large with
+$\theta_{1/2}=\SI{0.2349}{\degree}$ for the notch and
+$\theta_{1/2}=\SI{0.2325}{\degree}$ for the cone.  The theoretical maximum
+sensitivities for both cases are shown in \Table{tbl:intensitysens}.  This
+was calculated using the same nonlinear minimization method as in angular
+case, but instead we look for the angular location where the difference in Fresnel
+coefficents is greatest and take $\delta n \to 0$.
 \begin{table}
 \centering
 \begin{tabular}{lSS}
 \toprule
-{configuration} & {notch} & {cone} \\
+{configuration} & {notch [1/RIU]} & {cone [1/RIU]} \\
 \midrule
 ASP & 32.1657 & 42.3053 \\
 SSP & 203.5365 & 251.9765 \\
@@ -117,6 +122,5 @@ SSP & 203.5365 & 251.9765 \\
 \caption{Theoretical maximum intensity sensitivity.}
 \label{tbl:intensitysens}
 \end{table}
-
 
 
