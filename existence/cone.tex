@@ -3,28 +3,37 @@ classic signature of SPR in the Kretchmann ATR setup.  Fundamentally this
 is due to the interference between the specularly reflected beam and the
 re-radiated SPP field which is antiphase at $\theta_\mathrm{SP}$.  There
 is, however, an additional important signature which can be observed in the
-same half-space.  During propagation, surface roughness or other
-inhomogenities in the metal surface can change the in-plane momentum of an
-SPP such that for initial and resultant $k$-vectors $\mathbf{k}_a$ and
-$\mathbf{k}_b$, $\mathbf{k}_a = (k_x,0,k_z) \to \mathbf{k}_b =
-(k_x,k_y,k_z)$ and $\mathbf{k}_a\cdot\mathbf{k}_a =
-\mathbf{k}_b\cdot\mathbf{k}_b$.  The plasmon is elastically scattered in
-the plane of propagation.  This is also known as ``directional
-scattering'', the signature of which is a annular cone of light at
-$\theta_\mathrm{SP}$ along the azimuthal coordinate $\phi$.
+same half-space.  During propagation, roughness or other surface
+inhomogenities can elastically modify the in-plane momentum of an SPP.
+This is known as ``directional scattering'', the signature of which is a
+annular cone of light at $\theta_\mathrm{SP}$ along the azimuthal
+coordinate $\phi$.
 
-The angular profile of the cone results from two processes.  First, light
-permeates the metal film, which is identified by the Fresnel transmission
-coefficent $t^p_+$, where ``$+$'' denotes the \textit{forward}
-transmission, from the prism to the metal film.  The SPP is then
-re-radiated through the film to the prism, which we identify by the Fresnel
-\textit{reverse} transmission $t^p_-$.  The field in the cone 
-to 
+Physically, an SPP first is transmitted from the prism and permeates the
+metal film.  We identifiy this by the Fresnel forward transmission
+coefficent, $t^p_+$.  Upon re-radiation as a photon, the SPP will take this
+path in reverse, which we identify by the Fresnel reverse transmission,
+$t^p_-$.  The field in the cone $E_\mathrm{cone}$ is proportional to the
+product of these two.
 \begin{equation}
 |E_\mathrm{cone}|^2 \propto	|t^p_+|^2 |t^p_-|^2
 \end{equation}
 
 In this aspect the Fresnel equations do not 
+
+In the subsequent discussions, we will use the term ``cone'' when refering
+to light scattered into the cone, and ``notch'' when refering to light in
+the specular direction.
+
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+ \import{existence/figures/}{cone_vs_notch}
+ \caption{Comparison of the angular profiles of the cone and notch.  The
+	cone has been inverted and normalized to the same range as the notch for
+	comparison.}
+ \label{fig:conevsnotch}
+\end{figure}
 
 
 % cone related to roughness spectrum
