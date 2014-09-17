@@ -1,9 +1,11 @@
 The sensitivity of surface plasmon resonance to bulk refractive index
 pertrubations is perhaps its most popular and widely utilized property.
-(Why is SPR so sensitive, a little bit about field enhancements and so
-forth).  In a biosensing context, molecules binding to the metal layer will
-change the local refractive index a surface plasmon ``sees'', and its
-resonance condition will change.
+This is motivated by their quite remarkable response --- up to
+\SI{1e-8}{RIU} (refractive index units) in some
+applications~\cite{sprreview}.  Bulk refractive index sensing with SPR is
+well understood, so in this chapter we focus on these types of measurements
+in the cone without consideration of speckle ,a topic reserved for
+\Chapter{ch:speckle}.  
 
 In a prism coupled setup, there are three main methods used to
 monitor changes in the SPR resonance condition.  All three of these
@@ -22,45 +24,55 @@ resolution and detection limit.~\cite{pines1952collective}
 		monitored as the experiment progresses.
 \end{description}
 
-In this chapter we will study the bulk refractive index of the cone as
-compared to the specular notch using both angular and intensity
-interrogation methods.  We do not possess the means to carry out wavelength
-interrogation, though this is funamentally equivalent to sweeping the SPR
-angle. 
+In this chapter we will restrict ourselves to analysis in the angular and
+intensity interrogation methods.  We do not possess the means to carry out
+wavelength interrogation, though this is funamentally equivalent to
+sweeping the SPR angle. 
 
-\section{ASPs}
-
+\section{Angular Interrogation}
+The maximum theoretical sensitivity for angular sensitivity, $\delta
+\theta/\delta n$ can be found by solving the dispersion relations
+\Equation{eqn:dispersion1}.  Here we do not concentrate on optimizing the
+sensitivity in a prism coupled setup, rather we focus on the difference
+between angular response to refractive index pertrubations in the cone and
+the notch.  Simulated responses for symmetric (SSP) and asymmetric
+configurations in the notch and the cone are found in
+\Figure{fig:sensangularasp} and \ref{fig:sensangularssp}.  The results
+are tabulated in \Table{tbl:angularsens}.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
 	\import{bulkri/figures/}{sens_angular_asp}
  \caption{Angular sensitivity of the notch and the cone for the Kretschmann
-									three layer system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+									three layer (ASP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
 									\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310$.
 									The thickness of the metal layer is \SI{45}{\nano\meter}.}
  \label{fig:sensangularasp}
 \end{figure}
-
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
 	\import{bulkri/figures/}{sens_angular_ssp}
-	\caption{dingus}
+ \caption{Angular sensitivity of the notch and the cone for the Kretschmann
+									four layer (SSP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+									\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and $n_4=1.3310$.
+									The thickness of the metal layer is \SI{16.97}{\nano\meter}.}
  \label{fig:sensangularssp}
 \end{figure}
-
 \begin{table}
 \centering
-\begin{tabular}{lll}
+\begin{tabular}{lSS}
 \toprule
-location & {angular ($d\theta/dn$, deg)} & {intensity ($dI/dn$)} \\
+{configuration} & {notch} & {cone} \\
 \midrule
-cone & \num{1.365122e+02} & \num{2.421350e+01}\\
-notch & \num{1.452312e+02} & \num{2.721749e+01}\\
+ASP & 1.452312e+02 & 1.453671e+02 \\
+SSP & 3.943097e+01 & 3.938117e+01 \\
 \bottomrule
 \end{tabular}
-\caption{Sensitivity calculations.}
-\label{tab:3layersens}
+\caption{Theoretical maximum angular sensitivity calculations for the
+								configurations in Figures \ref{fig:sensangularasp} and
+								\ref{fig:sensangularssp}.}
+\label{tbl:angularsens}
 \end{table}
 
 %>> sens_angular_ASP
