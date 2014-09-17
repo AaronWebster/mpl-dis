@@ -31,14 +31,15 @@ sweeping the SPR angle.
 
 \section{Angular Interrogation}
 The maximum theoretical sensitivity for angular sensitivity, $\delta
-\theta/\delta n$ can be found by solving the dispersion relations
-\Equation{eqn:dispersion1}.  Here we do not concentrate on optimizing the
-sensitivity in a prism coupled setup, rather we focus on the difference
-between angular response to refractive index pertrubations in the cone and
-the notch.  Simulated responses for symmetric (SSP) and asymmetric
-configurations in the notch and the cone are found in
-\Figure{fig:sensangularasp} and \ref{fig:sensangularssp}.  The results
-are tabulated in \Table{tbl:angularsens}.
+\theta/\delta n$ can be found by solving the relevant dispersion relations.
+For the three layer system this is \Equation{eqn:dispersion1}.  For other
+systems this needs to be done numerically.  Here we do not concentrate on
+optimizing the sensitivity in a prism coupled setup, rather we focus on the
+difference between angular response to refractive index pertrubations in
+the cone and the notch.  Simulated responses for symmetric (SSP) and
+asymmetric configurations in the notch and the cone are found in
+\Figure{fig:sensangularasp} and \ref{fig:sensangularssp}.  The results are
+tabulated in \Table{tbl:angularsens}.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
@@ -75,6 +76,20 @@ SSP & 3.943097e+01 & 3.938117e+01 \\
 \label{tbl:angularsens}
 \end{table}
 
+\section{Intensity Interrogation}
+\begin{table}
+\centering
+\begin{tabular}{lSS}
+\toprule
+{configuration} & {notch} & {cone} \\
+\midrule
+ASP & 2.721749e+01 & 3.529935e+01 \\
+SSP & 9.295699e+01 & 9.666660e+01 \\
+\bottomrule
+\end{tabular}
+\caption{Theoretical maximum intensity sensitivity.}
+\label{tbl:intensitysens}
+\end{table}
 %>> sens_angular_ASP
 %cone angular:    1.453671e+02
 %notch angular:   1.452312e+02
