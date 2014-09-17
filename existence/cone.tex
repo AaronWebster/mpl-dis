@@ -15,25 +15,54 @@ direction.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
- \import{existence/figures/}{conefig}
+ %\import{existence/figures/}{conefig}
+ \includegraphics{existence/figures/conefig}
  \caption{Coordinates of the conically scattered light in relation to the
  prism, incident, and specular reflected beams.}
  \label{fig:conefig}
 \end{figure}
 
-
-Physically, an SPP first is transmitted from the prism and permeates the
-metal film.  We identifiy this by the Fresnel forward transmission
-coefficent, $t^p_+$.  Upon re-radiation as a photon, the SPP will take this
-path in reverse, which we identify by the Fresnel reverse transmission,
-$t^p_-$.  The field in the cone $E_\mathrm{cone}$ is proportional to the
-product of these two.
+Physically, light first transmits the prism and permeates the metal film,
+exciting SPPs.  We identifiy this by the Fresnel \textit{forward}
+transmission coefficent, $t^p_+$ (e.g. for a three layer system with layers
+0, 1, and 2, $t^p_+ \equiv t^p_{012}$).  Upon re-radiation as a photon, the
+light will take this path in reverse, which we identify by the Fresnel
+\textit{reverse} transmission, $t^p_-$ (e.g. $t^p_- \equiv t^p_{210}$).  We
+define intensity in the cone $I_\mathrm{cone}$ is proportional to the
+product of these two~\cite{simon1976directional}.
 \begin{equation}
-|E_\mathrm{cone}|^2 \propto	|t^p_+|^2 |t^p_-|^2
+I_\mathrm{cone} 
+= \frac{1}{I_0}\frac{\mathrm{d}I}{\mathrm{d}\Omega} 
+= 4 \left(\frac{\omega}{c}\right)^4 |t^p_+|^2
+|t^p_-|^2\,W(\theta_i,\theta_s,\phi)\, |s(\Delta \mathbf{k})|^2
+\label{eqn:guhacone}
+\end{equation}
+where $I_0$ is the incident power, $\mathrm{d}I/\mathrm{d}\Omega$ is the
+scattered power per solid angle, $s(\Delta \mathbf{k})$ is the surface
+roughness spectrum, and $W(\theta_i,\theta_s,\phi)$ \textit{describes the
+								interference of the two roughness induced current components in the
+plane of incidence}.
+
+\begin{equation}
+|s(\Delta \mathbf{k})|^2 = \frac{\sigma^2}{4\pi} \left<S^2\right>
+\me^{-(\Delta k^2 \sigma^2)/4}
+\label{eqn:surfaceroughness}
 \end{equation}
 
-In this aspect the Fresnel equations do not 
+Whatever, some roughness stuff, I just say the following:
+\begin{equation}
+|E_\mathrm{cone}|^2 \propto	|t^p_+|^2 |t^p_-|^2
+\label{eqn:conefield}
+\end{equation}
 
+Due to the double enhancement factor in \Equation{eqn:guhacone}, light in
+the cone has a narrower linewidth than its specular counterpart in the
+notch.  In \Figure{fig:conevsnotch} we show a simulated provfile of the
+normalized and inverted cone vs notch for a three layer system
+($n_1=1.5142$, $n_2=\num{0.2843 + 3.3825i}$, $n_3=1.331$ and
+$d_2=\SI{45}{\nano\meter}$).  This aspect causes certain measurements in
+the cone to be more sensitive than those in the notch, an aspect we will
+visit in \Chapter{ch:bulkri}.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
@@ -44,8 +73,4 @@ In this aspect the Fresnel equations do not
  \label{fig:conevsnotch}
 \end{figure}
 
-
-% cone related to roughness spectrum
-% cone very dim
-% dis_specular_cone.m, plot of the cone
-% some diagram showing where it looks like
+Finally, something about speckle and how we'll talk about it later.
