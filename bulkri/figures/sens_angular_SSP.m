@@ -54,7 +54,7 @@ parfor i=1:length(kx0)
 end
 
 % calculate angular spectrum for the refractive index modified one
-dn = 0.01;
+dn = 0.00001;
 nJ = [n1,n2,n3,n4+dn];
 parfor i=1:length(kx0)
     [Mp, Ms] = transfer_matrix_multi(k0,kx0(i),nJ,dJ);
@@ -82,7 +82,9 @@ TP2ab = TP2a.*TP2b;
 % fit to spline
 %fit spline to the reflectance, calculate dtheta/dn
 FR1a = fit(theta',RP1a','smoothingspline');
-r1a = fminbnd(FR1a,ta,tb);
+%r1a = fminbnd(FR1a,ta,tb);
+[X,IX] = min(RP1a);
+r1a = theta(IX);
 FR2a = fit(theta',RP2a','smoothingspline');
 r2a = fminbnd(FR2a,ta,tb);
 

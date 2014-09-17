@@ -1,11 +1,11 @@
 The sensitivity of surface plasmon resonance to bulk refractive index
 pertrubations is perhaps its most popular and widely utilized property.
-This is motivated by their quite remarkable response --- up to
-\SI{1e-8}{RIU} (refractive index units) in some
-applications~\cite{sprreview}.  Bulk refractive index sensing with SPR is
-well understood, so in this chapter we focus on these types of measurements
-in the cone without consideration of speckle ,a topic reserved for
-\Chapter{ch:speckle}.  
+This is motivated by the system's quite remarkable response, which has been
+reported at up to \SI{1e-8}{RIU} (refractive index units) in some
+applications~\cite{sprreview}, shot noise limited.  Bulk refractive index
+sensing with SPR is well understood, so in this chapter we focus on these
+types of measurements in the cone without consideration of speckle, a topic
+reserved for \Chapter{ch:speckle}.  
 
 In a prism coupled setup, there are three main methods used to
 monitor changes in the SPR resonance condition.  All three of these
@@ -30,23 +30,34 @@ wavelength interrogation, though this is funamentally equivalent to
 sweeping the SPR angle. 
 
 \section{Angular Interrogation}
-The maximum theoretical sensitivity for angular sensitivity, $\delta
-\theta/\delta n$ can be found by solving the relevant dispersion relations.
-For the three layer system this is \Equation{eqn:dispersion1}.  For other
-systems this needs to be done numerically.  Here we do not concentrate on
-optimizing the sensitivity in a prism coupled setup, rather we focus on the
-difference between angular response to refractive index pertrubations in
-the cone and the notch.  Simulated responses for symmetric (SSP) and
-asymmetric configurations in the notch and the cone are found in
-\Figure{fig:sensangularasp} and \ref{fig:sensangularssp}.  The results are
-tabulated in \Table{tbl:angularsens}.
+
+To study the sensitivity in the angular interrogation method, first we
+simulate angular response with ($\delta n = 0$) and without ($\delta n \ne
+0$) a refractive index pertrubation.  The choice here of the pertrubation
+$\delta n = 0.01$ in Figures~\ref{sensangularasp} and \ref{sensangularasp}
+was done for illustrative purposes.  The minimum of the angular response
+was determined by the zero of the function found using nonlinear
+minimization~\cite{fminbnd} and optimizing that function as $\delta n \to
+0$.  In this way the maximum theoretical sensitivity for angular
+sensitivity, $\delta \theta/\delta n$ is determined.  This theoretical
+sensitivity should not be confused with acheivable sensitivity as we do not
+take into account real world instruments and noise.  Also note that we are
+not concerned at the moment with the \textit{optimization} of sensitivity.
+Rather we focus on the difference between angular response to refractive
+index pertrubations in the cone and the notch.  
+
+Simulated responses for symmetric (SSP) and asymmetric (ASP) configurations
+in the notch and the cone are shown in \Figure{fig:sensangularasp} and
+\ref{fig:sensangularssp} for $\delta n = 0.01$.  The maximum obtainable
+results for these conigurations are tabulated in \Table{tbl:angularsens}.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
 	\import{bulkri/figures/}{sens_angular_asp}
  \caption{Angular sensitivity of the notch and the cone for the Kretschmann
 									three layer (ASP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-									\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310$.
+									\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and
+									$n_3=1.3310 + \delta n$.
 									The thickness of the metal layer is \SI{45}{\nano\meter}.}
  \label{fig:sensangularasp}
 \end{figure}
@@ -56,7 +67,8 @@ tabulated in \Table{tbl:angularsens}.
 	\import{bulkri/figures/}{sens_angular_ssp}
  \caption{Angular sensitivity of the notch and the cone for the Kretschmann
 									four layer (SSP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-									\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and $n_4=1.3310$.
+									\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 +
+									3.3825i}$, and $n_4=1.3310+\delta n$.
 									The thickness of the metal layer is \SI{16.97}{\nano\meter}.}
  \label{fig:sensangularssp}
 \end{figure}
@@ -64,19 +76,30 @@ tabulated in \Table{tbl:angularsens}.
 \centering
 \begin{tabular}{lSS}
 \toprule
-{configuration} & {notch} & {cone} \\
+{configuration} & {notch [$\mathrm{deg}/\mathrm{RIU}]$} & {cone [$\mathrm{deg}/\mathrm{RIU}$]} \\
 \midrule
 ASP & 1.452312e+02 & 1.453671e+02 \\
 SSP & 3.943097e+01 & 3.938117e+01 \\
 \bottomrule
 \end{tabular}
-\caption{Theoretical maximum angular sensitivity calculations for the
-								configurations in Figures \ref{fig:sensangularasp} and
-								\ref{fig:sensangularssp}.}
+\caption{Theoretical maximum angular sensitivity, $\delta \theta/\delta n$,
+in degrees per refractive index unit, for the configurations in Figures
+\ref{fig:sensangularasp} and \ref{fig:sensangularssp}.}
 \label{tbl:angularsens}
 \end{table}
 
+\Table{tbl:angularsens} tells us all we need to know about using this
+interrogation method: there is no readily apparent sensitivity benefit to
+looking at the cone versues looking at the notch.  Though the angle of the
+SPR minima (notch) and maxima (cone) are at slightly different angles --
+approximately \SI{0.006}{\degree} for the SSP setup -- their responses
+track each other very well.
+
 \section{Intensity Interrogation}
+
+
+
+
 \begin{table}
 \centering
 \begin{tabular}{lSS}
@@ -101,37 +124,3 @@ SSP & 9.295699e+01 & 9.666660e+01 \\
 %notch angular:   3.943097e+01
 %cone intensity:  9.666660e+01
 %notch intensity: 9.295699e+01
-
-\section{Maximum Theoretical Sensitivity}
-Before beginning, it is approprate to 
-
-We will now derive the sensitivity of the three layer Kretschmann
-configuration to bulk index changes. This case will be used as a test
-case for further analysis of the propagation dependent sensitivity.
-
-The bulk sensitivity in an intensity modulation setup is defined as
-the ratio of the change of normalized signal intensity $\delta I=I_{n_{0}}-I_{n_{1}}$
-to the change in bulk refractive index $\delta n=n_{0}-n_{1}$ for
-two refractive indicies $n_{0}$ and $n_{1}$. We restrict ourselves
-to small changes in the refractive index $n$, $\delta n/n_{0}\ll1$.
-The intensity sensitivity is defined as
-\begin{equation}
-S_{\mathrm{I}}=\frac{\delta I}{\delta n}
-\end{equation}
-Without loss of generality, the sensor intensity $I$ may be a function
-of any appropriate coordinate system (e.g. $I(x,y)$). In such a coordinate
-system we always take $S_{\mathrm{I}}$ at the location of maximum
-shift in that coordinate system.
-
-In the Lorentzian approximation{[}{]} using Drude model coefficents
-$\epsilon=\epsilon'+\mi\epsilon''$, the maximum sensitivity for bulk
-index sensing is approximated as
-\begin{equation}
-(S_{\text{I}})_{\text{max}}=\frac{4\sqrt{3}}{9}\frac{\epsilon_{\mathrm{m}}'}{\epsilon_{\mathrm{m}}''n^{3}}
-\end{equation}
-Where $\epsilon_{\mathrm{m}}$ is the complex Drude-model permittivity
-in the metal layer. At a operating wavelength of \SI{660}{\nano\meter},
-for Au on N-BK7, $(S_{\mathrm{I}})_{\text{max}}=151.66$. This is
-only an approximation, though it is close to the value obtained through
-Lorentz-Drude coefficents used in combination with the transfer matrix
-method, $(S_{\mathrm{I}})_{\text{max}}=153.04$.
