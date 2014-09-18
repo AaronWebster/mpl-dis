@@ -31,7 +31,7 @@ out = zeros(1,10);
 j = 1;
 nr = linspace(1.30,1.35,10);
 for j = 1:10
-    nJ = [n1,n2,nr(j)];
+    nJ = [n1,n2,n3];
     %% calculate angular spectrum
     parfor i=1:length(kx0)
         [Mp, Ms] = transfer_matrix_multi(k0,kx0(i),nJ,dJ);

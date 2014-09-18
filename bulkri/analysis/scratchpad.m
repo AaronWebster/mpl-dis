@@ -1,3 +1,8 @@
+addpath('~/mpl-dis/code/mrf_SPP_speckle')
+addpath('~/mpl-dis/includes')
+addpath('~/mpl-dis/bulkri/figures')
+
+
 lambda = 660e-9;
 eps_met = LD(lambda,'Au','D');
 (4*sqrt(3)/9)*(real(eps_met)^2/(imag(eps_met)*nBK7(lambda)^3))
@@ -19,5 +24,11 @@ ta = 40;
 tb = 85; 
 theta = linspace(ta,tb,2000);
 max(abs(fresnel_asp_rp(theta,0)-fresnel_asp_rp(theta,dn)))/dn
+
+a = load('drdn-homola-sp.csv');
+x = a(:,1).*1e-9;
+y = a(:,2);
+F = fit(x,y,'smoothingspline');
+F(660e-9)
 
 %*(real(eps_met)/(real(eps_met)+nH20(lambda)^2))^(3/2)
