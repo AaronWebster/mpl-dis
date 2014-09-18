@@ -148,3 +148,22 @@ binary-units,
 \newcommand{\thetasp}{\theta_\mathrm{sp}}
 
 \newcommand{\ersatzfigure}{\includegraphics[width=10cm,keepaspectratio]{includes/ersatz}}
+
+% hilight text... a "work in progress" type thing
+\tikzstyle{todobox} = [draw=Blues9seq9, fill=Blues9seq1,
+rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{todotitle} =[fill=Blues9seq9, text=white]
+
+\newcommand{\todo}[1]{%
+\begin{center}
+\begin{tikzpicture}
+\node [todobox] (box){%
+ \begin{minipage}{0.9\textwidth}
+ #1
+ \end{minipage}
+};
+\node[todotitle, right=10pt] at (box.north west) {Note};
+\end{tikzpicture}
+\end{center}
+}
+

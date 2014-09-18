@@ -2,10 +2,33 @@ addpath('~/mpl-dis/code/mrf_SPP_speckle')
 addpath('~/mpl-dis/includes')
 addpath('~/mpl-dis/bulkri/figures')
 
-
+%% quick look
 lambda = 660e-9;
 k0 = 2*pi/lambda;
 c = 299792458;
+
+theta = linspace(30,65,1000);
+
+rp = fresnel_jiapeng_rp(theta,0);
+tp = fresnel_jiapeng_tp(theta,0);
+tp = (tp-min(tp))./range(tp);
+rp = (rp-min(rp))./range(rp);
+
+% angular width in notch
+ta = find(rp<0.5,1);
+tb = find(rp(end:-1:1)<0.5,1);
+aspnotch = theta(length(theta)-tb) - theta(ta)
+
+% angular width in cone
+ta = find(tp>0.5,1);
+tb = find(tp(end:-1:1)>0.5,1);
+aspcone = theta(length(theta)-tb) - theta(ta)
+
+
+plot(theta,rp,theta,tp)
+
+
+%% stop looking!
 eps_met = LD(lambda,'Au','LD');
 (4*sqrt(3)/9)*(real(eps_met)^2/(imag(eps_met)*nBK7(lambda)^3))
 
