@@ -1,6 +1,6 @@
 ta = 55;
 tb = 85; 
-theta = linspace(ta,tb,1000);
+theta = linspace(ta,tb,2000);
 
 % these two plots give you hints as to the range you should set in fminbnd
 %plot(theta,abs(fresnel_asp_rp(theta,0)-fresnel_asp_rp(theta,0.001)))
