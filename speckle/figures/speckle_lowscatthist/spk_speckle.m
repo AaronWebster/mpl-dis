@@ -29,10 +29,10 @@ clf;
 subplot(121)
 %imagesc(c);
 contourf(c)
-colorbar('location','southoutside')
+h = colorbar('location','southoutside')
 set(gca,'XTickLabel','')
 set(gca,'YTickLabel','')
-set(gca,'ZTickLabel','')
+set(h,'XTickLabel','')
 
 subplot(122);
 hold on;
