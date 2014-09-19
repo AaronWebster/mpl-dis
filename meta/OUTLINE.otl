@@ -125,13 +125,14 @@ cone
 					bodesheim/otto "on the quant. measurement of the roughness spectrum"
 				kretschmann "spp dispersion at rough surfaces"
 				wang "observation of coherent multiple scattering"
-				==plot of our s/p measurement
+				==plot of our s/p measurement (look in poster-webster.pdf) or horizon in downloads?
 		correlations
 			angular correlations
 			size of a speckle 
 				Wiener–Khinchin theorem, cross correlation
 				size of focal spot
 					==show images /run/media/awebster/disk0/awebster/office/awebster/jiapeng/experimental_images/
+					==in disk0 there is a run where you change the spot size
 			frequency "refractive index correlations"
 			connection with diffusive light scattering (temporal)
 				==temperature jiapeng plot 3.22
