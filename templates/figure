@@ -2,6 +2,7 @@
  \centering
  \import{includes/}{setpgfinc}
  \import{<++>/}{<++>}
+ %\includegraphics[keepaspectratio,width=10cm]{<++>}
  \caption{<++>}
  \label{<++>}
 \end{figure}
