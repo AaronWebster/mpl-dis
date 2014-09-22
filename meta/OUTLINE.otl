@@ -110,6 +110,7 @@ cone
 				experimental speckle pdf around the ring
 					==image of unwrapped speckle
 				comparison with other types of speckle, ground glass or fiber speckle
+				cone speckle PDF
 			non-paraxial speckle
 				==pics in speckespr.pdf on office
 		multiple scattering
@@ -133,6 +134,7 @@ cone
 				size of focal spot
 					==show images /run/media/awebster/disk0/awebster/office/awebster/jiapeng/experimental_images/
 					==in disk0 there is a run where you change the spot size
+				speckle size independent in this region
 			frequency "refractive index correlations"
 			connection with diffusive light scattering (temporal)
 				==temperature jiapeng plot 3.22
