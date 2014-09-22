@@ -6,8 +6,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{ulem}
 \usepackage{import}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{paralist}
 \usepackage{booktabs}
 \usepackage[version=3]{mhchem}
@@ -15,6 +13,7 @@
 \usepackage{pifont}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
+%\usepackage{kpfonts}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{datetime}
@@ -27,6 +26,7 @@
 %\usepackage{minted}
 \usepackage[inline]{showlabels}
 \usepackage{subcaption}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -167,4 +167,54 @@ rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
 \end{tikzpicture}
 \end{center}
 }
+\makeatletter
+\def\tensor#1{\protect\@ontopof{#1}{\leftrightarrow}{1.15}\mathord{\box2}}
+\def\overstar#1{\protect\@ontopof{#1}{\ast}{1.15}\mathord{\box2}}
+\def\overdots#1{\protect\@ontopof{#1}{\cdots}{1.0}\mathord{\box2}}
+\def\overcirc#1{\protect\@ontopof{#1}{\circ}{1.2}\mathord{\box2}}
+\def\loarrow#1{\protect\@ontopof{#1}{\leftarrow}{1.15}\mathord{\box2}}
+\def\roarrow#1{\protect\@ontopof{#1}{\rightarrow}{1.15}\mathord{\box2}}
 
+\def\@ontopof#1#2#3{%
+{\mathchoice
+{\@@ontopof{#1}{#2}{#3}\displaystyle\scriptstyle}%
+{\@@ontopof{#1}{#2}{#3}\textstyle\scriptstyle}%
+{\@@ontopof{#1}{#2}{#3}\scriptstyle\scriptscriptstyle}%
+{\@@ontopof{#1}{#2}{#3}\scriptscriptstyle\scriptscriptstyle}%
+}}
+\def\@@ontopof#1#2#3#4#5{%
+\setbox0=\hbox{$#4#1$}%
+\setbox1=\hbox{$#5#2$}%
+\setbox2=\hbox{}\ht2=\ht0 \dp2=\dp0 %
+\ifdim\wd0>\wd1 %
+\setbox1=\hbox to\wd0{\hss\box1\hss}%
+\mathord{\rlap{\raise#3\ht0\box1}\box0}%
+\else   %
+\setbox1=\hbox to.9\wd1{\hss\box1\hss}%
+\setbox0=\hbox to\wd1{\hss$#4\relax#1$\hss}%
+\mathord{\rlap{\copy0}\raise#3\ht0\box1}%
+\fi
+}
+
+\def\lambdabar{\protect\@lambdabar}
+\def\@lambdabar{%
+\relax
+\bgroup
+\def\@tempa{\hbox{\raise.73\ht0
+\hbox to0pt{\kern.25\wd0\vrule width.5\wd0
+height.1pt depth.1pt\hss}\box0}}%
+\mathchoice{\setbox0\hbox{$\displaystyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\textstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptscriptstyle\lambda$}\@tempa}%
+\egroup
+}
+\makeatother
+%\def\shrinkage{2.1mu}
+%\def\vecsign{\mathchar"017E}
+%\def\vecsign{\mathchar"3221}
+%\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+%\def\tensor#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+%\usepackage{stackengine}
+%\stackMath
+%\newcommand{\tensor}[1]{\stackrel{\leftrightarrow}{#1}}

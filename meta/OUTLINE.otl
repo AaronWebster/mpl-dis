@@ -125,7 +125,7 @@ cone
 					bodesheim/otto "on the quant. measurement of the roughness spectrum"
 				kretschmann "spp dispersion at rough surfaces"
 				wang "observation of coherent multiple scattering"
-				==plot of our s/p measurement (look in poster-webster.pdf) or horizon in downloads?
+				==plot of our s/p measurement (s_p.m)
 		correlations
 			angular correlations
 			size of a speckle 
