@@ -128,6 +128,7 @@ cone
 				wang "observation of coherent multiple scattering"
 				==plot of our s/p measurement (s_p.m)
 		correlations
+			NOTE THAT THE SPECKLE SIZE SHOULD BE INDEPENDENT OF EVERYTHING!
 			angular correlations
 			size of a speckle 
 				Wiener–Khinchin theorem, cross correlation
