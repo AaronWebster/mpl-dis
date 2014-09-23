@@ -4,6 +4,7 @@ Specifically, we assume the field at each detector position $\mathbf{E}(\mathbf{
 is due to the coherent linear superposition of $N$ random phasors
 \begin{equation}
 \mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \phi_n}
+\label{eqn:phasorsum}
 \end{equation}
 where $a_n$ and $\phi_n$ is the amplitude and phase of the $n$th phasor.
 Furthermore, $\phi$ is randomly distributed on the interval $(-\pi,\pi)$.
@@ -39,24 +40,62 @@ C=\frac{\sigma_I}{\bar{I}}
 The exponential PDF and unity contrast account for the discincitive
 appearance of speckle.
 
-Before looking at the experimentally obtained speckle PDFs, we look at two
-situations which might occur in the experiment.  These are: low number of
-scatterers and one scatterer much larger than the other
+Before looking at the PDF of the intensity of the experimental cone
+speckle, we will study two edge cases to prepare us for some of the
+observed behavior.  These cases are for
+\begin{inparaenum}[(\itshape a\upshape)]
+\item a small number of scatters, and 
+\item a strong single scatterer.
+\end{inparaenum}
 
 \subsection{Small Number of Scatterers}
-\begin{figure}
+For a small number of scatterers $N$ of intensity $a$, $\rho_I(I)$ becomes
+\begin{equation}
+p_I(I) = 2\pi^2 \int_0^\infty\! \rho J_0\!\left(\frac{2\pi a
+\rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho
+\label{eqn:smallscatteqn}
+\end{equation}
+with $\rho_I^2=(1-1/N)a^4$.  This is demonstrated in \Figure{fig:lowscatthist} for
+$N=2,\ldots,5$.  In this figure, a single speckle pattern was generated in 2D
+using \Equation{eqn:phasorsum} and its histogram plotted against the
+theoretical prediction of \Equation{eqn:smallscatteqn}.  No ensemble
+averaging was used, though this is typically necessary.
+\Figure{fig:lowscatthist} shows an important point about random phasor sums
+with a low number of scatterers.  \Equation{eqn:smallscatteqn} converges on
+\Equation{eqn:exppdf} fairly rapidly as $N$ increases.  Even at $N=6$ the
+difference is fairly negligble, with a sum squared error \num{4.75e-5}.
+This means we can treat systems with even a small number of scatterers
+using the statistics of random phasor sums.
+\begin{figure}[ht]
 \centering
 \import{speckle/figures/lowscatthist/}{spk_hist_2}
 \import{speckle/figures/lowscatthist/}{spk_hist_3}
 \import{speckle/figures/lowscatthist/}{spk_hist_4}
 \import{speckle/figures/lowscatthist/}{spk_hist_5}
-\caption{Cone speckle: negative exp vs guy}
+\caption{Simulated speckle fields and PDF of the resulting intensities for
+the case of a small number of scatterers.}
+\label{fig:lowscatthist}
 \end{figure}
 
-\begin{equation}
-p_I(I) = 2\pi^2 \int_0^\infty\! \rho J_0\!\left(\frac{2\pi a
-\rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho
-\end{equation}
-with $\rho_I^2=(1-1/N)a^4$.
+\subsection{Strong Single Scatterer}
+The next edge case is that of a strong single scatterer.
+\begin{figure}[ht]
+\centering
+\import{speckle/figures/lowscatthist/}{spk_hist_intensity_1}
+\import{speckle/figures/lowscatthist/}{spk_hist_intensity_2}
+\import{speckle/figures/lowscatthist/}{spk_hist_intensity_4}
+\import{speckle/figures/lowscatthist/}{spk_hist_intensity_6}
+\caption{intensity guy}
+\label{fig:lowscatthist}
+\end{figure}
 
-\subsection{
+\subsection{PDFs of the Cone Speckle}
+\begin{figure}[ht]
+\centering
+\import{speckle/figures/conepdf/}{spk_cone_pdf}
+\caption{cone pdf}
+\label{fig:conepdf}
+\end{figure}
+
+std/mean 1.0637
+

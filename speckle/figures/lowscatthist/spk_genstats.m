@@ -3,7 +3,7 @@ close all;
 
 %% do calculation
 % number of scatterers
-M=2;
+M=6;
 % size of output field
 N = 1000;
 % spatial extent in real coordinates
@@ -69,7 +69,7 @@ xlabel('x')
 ylabel('y')
 hold off;
 
-if true
+if false
 filename = sprintf('spk_hist_%d.tex',M);
 matlab2tikz(filename, 'showInfo', false, ...
         'parseStrings',false,'standalone', false, ...

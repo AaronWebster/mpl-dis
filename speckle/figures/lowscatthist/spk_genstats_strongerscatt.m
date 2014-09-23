@@ -22,7 +22,7 @@ out = zeros(N,N);
 scatt = (rand(2,M).*ext-ext/2);
 % add them all up in a very ineffient way
 
-mult=6;
+mult=4;
 i=1;
 out = out + (mult./sqrt(M)).*exp((1.0i.*k0-0.00).*(sqrt((X-scatt(1,i)).^2+(Y-scatt(2,i)).^2)));
 
