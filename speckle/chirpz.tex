@@ -1,9 +1,9 @@
 A quick digression on the numerical computation of Fourier transforms.  It
 has become all but standard to assume that when Fourier transforms of real
 data are carried out in a work, the author has used the fast Fourier
-transform~\cite{frigo1998fftw}~\cite{cooley1965algorithm}.  In this work we
-have adopted a different, much more powerful convention, which we briefly
-describe.
+transform~\cite{frigo1998fftw}~\cite{cooley1965algorithm}.  Here we
+have adopted a different, much more powerful convention, which is herein briefly
+described.
 
 \subsubsection{The Fast Fourier Transform}
 Recall that for a finite number of sampling points, the discrete
@@ -21,8 +21,8 @@ Direct computation of a DFT is of $O(N^2)$ complexity for $N$ sampling
 points.  However, if the DFT data is linearly sampled, a fast Fourier
 transform (FFT) can be used. The FFT is able to compute sums of the form of
 \Equation{eqn:dft} in $O(N \log N)$ time.  The ``cost'' of this
-computational efficiency is that the sampling of the output $X_k$ is fixed
-according to the sampling of the input $x_n$.
+computational efficiency is that the sampling of $X_k$ is fixed
+according to the sampling of $x_n$.
 
 \begin{figure}[ht]
 \centering
@@ -35,7 +35,7 @@ $x_n \mapsto X_k$ (and vice versa) in the FFT.  For example, assume one
 obtains $N$ samples of $x$ with bounds $x_1$ and $x_N$.  The
 spacing $\delta x$ between $x_n$ and $x_{n+1}$ is just the range (denoted
 by a $\star$)
-$x_\star = x_N-x_1$ divided by the number of samples $N$. 
+$x_\star = x_N-x_1$ divided by the number of samples, $N$,
 \begin{equation}
 \delta x = \frac{x_\star}{N}
 \end{equation}
@@ -56,28 +56,27 @@ Restated, these relationships are
 \end{align}
 
 \subsubsection{The Chirp-Z Transform}
-As hinted at, there is a much more interesting way of doing things.  This
-is known as the chirp-Z
-transform~\cite{rabiner1969chirp}~\cite{rabiner1969chirp2}.
+As hinted at, there is a much more interesting way of doing things.
 Consider a more general type of DFT of the form
 \begin{equation}
-X_k = \sum_{n=1}^{N} x_n\, z_k^{-n}, \qquad k=1,\ldots,M
+X_k = \sum_{n=1}^{N} x_n\, z_k^n, \qquad k=1,\ldots,M
 \label{eqn:czt}
 \end{equation}
 for $N$ elements of input $X_n$ and $M$ elements of output $x_k$ as a
-function of the (sampled) complex variable  $z_k$. If we define
+function of the (sampled) complex variable  $z_k$.  This is called the
+chirp-z transform~\cite{rabiner1969chirp}~\cite{rabiner1969chirp2}.
+If we define
 \begin{equation}
-z_k = \me^{\mi 2\pi k n/N}, \qquad k=1,\ldots,N
+z_k = \me^{\mi 2\pi k/N}, \qquad k=1,\ldots,N
 \end{equation}
-we recover \Equation{eqn:dft}.  The size of input and output
-elements is not the same, which it itself is interesting.  Let us now
-generalize $z_k$ to a contour in the complex plane
+we recover \Equation{eqn:dft}.  Note that the size of $x_n$ and $X_k$
+are not the same.  Let us now generalize $z_k$ to a contour in the complex plane
 \begin{equation}
-z_k = A W^{-k}, \qquad k=1,\ldots,N
+z_k = A W^k, \qquad k=1,\ldots,N
 \end{equation}
 where $A$ and $W$ are complex numbers.  Specifically, $A$ defines the
 starting point and $W$ the complex ratio between adjacent points on the
-contour.  For $M=N$, $A=1$ and $W=\exp(-\mi 2 \pi/N)$, \Equation{eqn:dft}
+contour.  For $M=N$, $A=1$ and $W=\exp(\mi 2 \pi/N)$, \Equation{eqn:dft}
 is again recovered.  
 
 The amazing property here is that we can choose resolution and coordinates
@@ -85,8 +84,8 @@ of the output field.  For example, suppose one samples $x$ with $N$ samples
 of spacing $\delta x$.  If we want to obtain $M$ samples in the output
 $X$ field with spacing $\delta X$ beginning with $X_1$, we set
 \begin{align}
-								W&=\exp(-\mi 2 \pi \delta x \delta X)\\
-								A&=\exp( \mi 2 \pi X_1 \delta x)
+								W&=\exp(\mi 2 \pi \delta x \delta X)\\
+								A&=\exp(\mi 2 \pi X_1 \delta x)
 \end{align}
 
 Remarkably, the chirp-z transform can be computed with the same efficiency
