@@ -64,7 +64,7 @@ axis([0 10 0 1.5])
 %% intensity plot with scatterers
 subplot(122);
 hold on;
-colormap(brewermap([],'Reds'))
+colormap(brewermap([],'YlOrRd'))
 imagesc(outa./ibar);
 h = colorbar;
 title(h,'$I/\bar{I}$')
@@ -77,7 +77,9 @@ xlabel('x')
 ylabel('y')
 hold off;
 
-filename = sprintf('/tmp/spk_hist_intensity_%d.tex',mult);
+if true
+filename = sprintf('spk_hist_intensity_%d.tex',mult);
 matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', true, ...
+        'parseStrings',false,'standalone', false, ...
         'height', '4cm', 'width','7cm');
+end

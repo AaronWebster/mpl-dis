@@ -3,7 +3,7 @@ close all;
 
 %% do calculation
 % number of scatterers
-M=4;
+M=2;
 % size of output field
 N = 1000;
 % spatial extent in real coordinates
@@ -56,7 +56,7 @@ axis([0 3 0 1.5])
 %% intensity plot with scatterers
 subplot(122);
 hold on;
-colormap(brewermap([],'Reds'))
+colormap(brewermap([],'YlOrRd'))
 imagesc(outa./ibar);
 h = colorbar;
 title(h,'$I/\bar{I}$')
@@ -69,11 +69,12 @@ xlabel('x')
 ylabel('y')
 hold off;
 
+if true
 filename = sprintf('spk_hist_%d.tex',M);
 matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', true, ...
+        'parseStrings',false,'standalone', false, ...
         'height', '4cm', 'width','7cm');
-
+end
 % figure(3);
 % clf;
 % outf = fftshift(abs(fft2(outa)).^2);

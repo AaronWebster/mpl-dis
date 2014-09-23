@@ -1,18 +1,19 @@
-\section{Statistical Properties}
-To begin, we assume the field at each detector position $E(\mathbf{r})$ is
-due to the coherent linear superposition of $N$ random phasors
+We begin with the assumption that speckle is due to a random phasor sum,
+following the treatment of \name{Goodman}~\cite{goodman2007speckle}.
+Specifically, we assume the field at each detector position $\mathbf{E}(\mathbf{r})$
+is due to the coherent linear superposition of $N$ random phasors
 \begin{equation}
-E(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \phi_n}
+\mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \phi_n}
 \end{equation}
-where the amplitude of the $n$th phasor is $a_n$ and its phase $\phi_n$ is
-randomly distributed on the interval $(-\pi,\pi)$.  In reality, these
-conditions may be loosened by the physics of the actual experiment, which
-we will describe later.
+where $a_n$ and $\phi_n$ is the amplitude and phase of the $n$th phasor.
+Furthermore, $\phi$ is randomly distributed on the interval $(-\pi,\pi)$.
+In reality, these conditions may be loosened by the physics of the actual
+experiment, which we will describe in turn.
 
 By the central limit theorem, as $N\to\infty$, the resultant probability
-distribution $p_E(E)$ of $E(\mathbf{r})$ is Rayleigh distributed and the
+distribution $p_\mathbf{E}(\mathbf{E})$ of $\mathbf{E}(\mathbf{r})$ is Rayleigh distributed and the
 corresponding probability distribution $p_I(I)$ of the intensity
-$I(\mathbf{r})=|E(\mathbf{r})|^2$ is an exponential
+$I(\mathbf{r})=|\mathbf{E}(\mathbf{r})|^2$ is an exponential
 \begin{equation}
 p_I(I) = \frac{1}{2\sigma_I^2}\exp\left(-\frac{I}{2\sigma_I^2}\right)
 \label{eqn:propexp}
@@ -23,30 +24,39 @@ Because the $q$th moment of $p_I(I)$ is given by
 \bar{I}^q&=(2\sigma_I^2)^q q!\\
          &=\bar{I}^q q!
 \end{align}
-we see that the standard deviation of is equal to the mean: 
+the standard deviation of is equal to the mean,
 $\sigma_I=\bar{I}$.  \Equation{eqn:propexp} can then be rewritten
 \begin{equation}
 p_I(I) = \frac{1}{\bar{I}}\exp\left(-\frac{I}{\bar{I}}\right)
+\label{eqn:exppdf}
 \end{equation}
+We define here the notion of the \textit{contrast} of speckle, $C$, as the
+ratio of the standard deviation to the mean of the intensity
+\begin{equation}
+C=\frac{\sigma_I}{\bar{I}}
+\label{eqn:specklecontrast}
+\end{equation}
+The exponential PDF and unity contrast account for the discincitive
+appearance of speckle.
 
-called fully developed speckle
-The fact that the 
+Before looking at the experimentally obtained speckle PDFs, we look at two
+situations which might occur in the experiment.  These are: low number of
+scatterers and one scatterer much larger than the other
 
+\subsection{Small Number of Scatterers}
 \begin{figure}
 \centering
-\includegraphics[keepaspectratio]{figures/speckle_lowscatthist/spk_hist_2.pdf}
-\includegraphics[keepaspectratio]{figures/speckle_lowscatthist/spk_hist_3.pdf}
-\includegraphics[keepaspectratio]{figures/speckle_lowscatthist/spk_hist_4.pdf}
-\includegraphics[keepaspectratio]{figures/speckle_lowscatthist/spk_hist_5.pdf}
+\import{speckle/figures/lowscatthist/}{spk_hist_2}
+\import{speckle/figures/lowscatthist/}{spk_hist_3}
+\import{speckle/figures/lowscatthist/}{spk_hist_4}
+\import{speckle/figures/lowscatthist/}{spk_hist_5}
 \caption{Cone speckle: negative exp vs guy}
 \end{figure}
 
-\subsection{Small Number of Scatterers}
 \begin{equation}
 p_I(I) = 2\pi^2 \int_0^\infty\! \rho J_0\!\left(\frac{2\pi a
 \rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho
 \end{equation}
 with $\rho_I^2=(1-1/N)a^4$.
 
-single scattering
-contrast
+\subsection{
