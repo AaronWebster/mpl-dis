@@ -18,8 +18,8 @@ k_{z,i} &= k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
 = \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
 \end{align}
 
-Where $\epsilon_i$ is a function of $\omega$, e.g.
-$\epsilon_i\to\epsilon_i(\omega)$.  This relation, shown in
+Where $\epsilon_i$ is always assumed to be a function of $\omega$, 
+$\epsilon_i\\equiv\epsilon_i(\omega)$.  This relation, shown in
 \Figure{fig:dispersionrelation}, is useful because it describes the
 condition under which the momentum of SPPs are matched for a given
 $\omega$.  For a photon in a dielectric $\omega = c k /\sqrt{\epsilon_i}$
@@ -30,20 +30,20 @@ However, if light is incident from a dielectric $\epsilon_1$ at an angle
 $\theta$, the slope of $\omega(k_x)$ is modified to $c k \sin
 \theta/\sqrt{\epsilon_1}$ and the momentum of light can be matched to
 excite SPPs.  This is the principle exploited by Kretschmann
-\cite{kretschmann1968} (and us) to excite SPPs with prisms, known as the
+\cite{kretschmann1968} to excite SPPs with prisms, known as the
 Kretschmann Atenuated Total Reflection (ATR) configuration.  To be sure,
-there are a multitude of different excitation strategies beyond this one.
-However, for our experiments we will focus only on ATR.
+there are a multitude of different excitation strategies beyond this one,
+however for our experiments we will focus only on ATR.
 
 There are several regions of interest in \Figure{fig:dispersionrelation},
 depending on the relative value of $\epsilon_1$ and $\epsilon_2$.  We first
 assume that $\epsilon_1$ is a dielectric with $\epsilon_1\in\mathbb{R}$ and
 $\epsilon_1 > 0$ (true for most if not all glass).  In this case, for
 $\Re(\epsilon_2)>0$, both $k_x$ and $k_z$ are real.  These are known as
-``radiative modes'' -- an SPP mode is supported normal to the interface but
+radiative modes; an SPP mode is supported normal to the interface but
 it is not bound there.  For $-\epsilon_1<\Re(\epsilon_2)<0$, $k_z$ is real
 and $k_x$ imaginary.  The SPP is not confined to the interface and decays
-evanescently there; this is known as a ``quasi-bound mode''  However, for
+evanescently there. This is known as a quasi-bound mode.  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary.  This
 indicates the SPP is localized at the interface in $z$ while having a
 propagating solution in $x$, and is exactly the condition we wish to match.
@@ -52,10 +52,10 @@ propagating solution in $x$, and is exactly the condition we wish to match.
  \centering
 \import{existence/figures/}{dispersionfig}
 \caption{ Dispersion relation for photons and plasmons for a single
-interface consisting of a dielectric $\epsilon_1$ (fused silica) and a
-metal $\epsilon_2$ (gold using the Lorentz-Drude model, also in
-\Figure{fig:permittivityau}). Conditions under which SPPs may occur at the
-intersection between the photon line and corresponding SPP line.  }
+interface consisting of a dielectric $\epsilon_1$, fused silica, and a
+metal $\epsilon_2$, gold using the Lorentz-Drude model, also in
+\Figure{fig:permittivityau}. Conditions under which SPPs are excited are at the
+intersection between the photon line in a dielectric and corresponding SPP line.  }
 \label{fig:dispersionrelation}
 \end{figure}
 

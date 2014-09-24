@@ -1,13 +1,19 @@
-We move now to using the wave equation to predict some of the the
-observable phenomena of SPP exciation.  To this accord, we will use the
-Fresnel equations to calculate the coupling conditions and properties of
-the excited field.   We begin this section with our strategy for efficient
-computation of the Fresnel relations, and follow with a discussion of its
-predictions for both the near and far optical fields. 
+We have shown that SPPs can exist under certain momentum-matching
+conditions layed out in Equations \ref{eqn:sprcondition} and
+\ref{eqn:lrsppdispersion}.  We move now to predictions of what SPP
+excitation actually looks like in an experiment.  To this accord, we will
+use the Fresnel equations to calculate the coupling conditions and
+properties of the excited field and the profiles of the reflected,
+transmitted, and scattered optical fields.   We begin this section with our
+strategy for efficient computation of the Fresnel relations, and follow
+with a discussion of its predictions for both the near and far optical
+fields. 
 
 \subsection{Matrix Formalism}
-The Fresnel reflection and transmission coefficents for $s$ and
-$p$ polarization and a single ($i$-$j$) interface are given by
+The Fresnel reflection and transmission coefficents $r$ and $t$ for $s$
+(transverse-electric) and $p$ (transverse-magnetic) polarization and a
+single ($i$-$j$) interface are derived from the wave equation and are given
+by
 \begin{align}
 r^s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
 r^p &= \frac{\epsilon_i k_{z,j} - \epsilon_j k_{z,k}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,k}} \\
@@ -15,7 +21,7 @@ t^s &= \frac{2 k_{z,i}}{k_{z,i}+k_{z,j}}\\
 t^p &= \frac{2 \epsilon_i \epsilon_j k_{z,i}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,i}}\\
 \end{align}
 where the superscript denotes the polarization.
-Note that $k_{z,i}$ can be equivalently expressed either as a
+Note that $k_{z}$ can be equivalently expressed either as a
 function of incident angle $\theta$ or $k_x$
 \begin{align}
  k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_{i-1} \sin \theta}\\
@@ -36,30 +42,31 @@ r^p_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n}
 \end{array}\right)
 \end{align}
 where $n$ and $n+1$ are the layer indicies for a single interface.  A
-matrix is constructed for each layer of the system and a resultant matrix
-found as the product of these matricies.
+matrix is constructed for each layer of the system and the resultant matrix
+found as the product of these matricies
 \begin{align}
 M^s=\prod_n C^s_n\\
 M^p=\prod_n C^p_n
 \end{align}
 
-From this matrix the system Fresnel coefficents are
+From this matrix the system Fresnel coefficents are determined viz.
 \begin{align}
 r^p = \frac{M^p_{21}}{M^p_{11}}\\
 r^s = \frac{M^s_{21}}{M^s_{11}}\\
 t^p = \frac{1}{M^p_{11}}\\
 t^s = \frac{1}{M^s_{11}}\\
 \end{align}
+where the subscripts identify the matrix elements.
 
 \subsection{Prism Coupled Excitation}
 From the information in the dispersion relation, SPP excitation at a
 metal-dielectric interface is possible if we are incident at an angle such
 that the light line moves from $ck/\sqrt{\epsilon}$ to
 $ck\sin\theta/\sqrt{\epsilon}$.  Furthermore, we observe the following
-conditions must also hold
+conditions must also hold:
 \begin{enumerate}
 \item SPP excitation will be accomplished with evanescent waves.  The
-incident light must be at an angle greater than the critical angle, e.g.
+incident light must be at an angle greater than the critical angle, i.e.
 $\theta>\arcsin\left(n_1/n_2\right)$.
 \item The metal layer must
 \begin{enumerate}

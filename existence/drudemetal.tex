@@ -1,31 +1,32 @@
 In our derivation of the plane wave solutions to Maxwell's equations, we
-have preformed a common ``trick'' regarding the permittivity.
-Specifically, we treat the frequency dependent permittivity as complex
+have preformed a common trick regarding the permittivity.
+Specifically, we have treated frequency dependent permittivity as complex
 \begin{align}
  \epsilon(\omega) &= \epsilon^\prime + \mi \frac{\sigma}{\omega}\\
                    &= \epsilon^\prime + \mi\epsilon^{\prime\prime}
 \end{align}
 This allows the use of plane wave solutions which are essentially identical
 to the solutions obtained for Maxwell's equations in the absence of
-external fields ($\nabla \cdot \mathbf{D} = 0$ and $\mathbf{J} = 0$).  This
+external fields: $\nabla \cdot \mathbf{D} = 0$ and $\mathbf{J} = 0$.  This
 is justified if we can make an adiabatic approximation for the exciting
-field; ($\sigma$ is large and $\rho\approx 0$. Come back to this later.
-Invoke argument from Alfred Leitner's lecture. $\nabla \cdot \mathrm{D} = 0$)
+field viz. $\sigma\gg1$ and $\rho\approx 0$. 
+\todo{Come back to this later.
+Invoke argument from Alfred Leitner's lecture. $\nabla \cdot \mathrm{D} =
+0$}
 Physically, $\epsilon$ represents
-both the polarizability, as in Equations \ref{eqn:pdensity} and
-\ref{eqn:dfield}, and the phase delay $\delta$ between $\mathbf{D}$ and
+both the polarizability in Equations \ref{eqn:pdensity} and
+\ref{eqn:dfield} and the phase delay $\delta$ between $\mathbf{D}$ and
 $\mathbf{E}$
 \begin{equation}
  \epsilon(\omega) = \frac{\mathbf{D}}{\mathbf{E}} \,|\epsilon| \,\me^{\mi \delta}
 \end{equation}
-
-This way of treating the permittivity is completely consistent with a complex
-refractive index, e.g. $\tilde{n} = n(1+\mi \kappa) = \sqrt{\epsilon}$.
+This way of treating the permittivity is also completely consistent with a complex
+refractive index $\tilde{n} = n(1+\mi \kappa) = \sqrt{\epsilon}$.
 
 There are several models~\cite{rakic1998optical} with which one
 can obtain the frequency dependent complex permittivity for metals.
 Theoretically, the most general expression simply describes
-$\epsilon(\omega)$ as a superposition of (Lorentzian) resonances plus a DC
+$\epsilon(\omega)$ as a superposition of Lorentzian resonances plus a DC
 term
 \begin{equation}
 \epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}
@@ -37,7 +38,7 @@ material constants, and $\sigma_n$ is a function of position specifying the
 strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
 dimensionless ($c=\hbar=1$), and is usually encountered when working with
 numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.
-In most other areas, the Lorentz-Drude model is used.  The Lorentz-Drude model is 
+In most other areas, the Lorentz-Drude model is used.  Formally, the Lorentz-Drude model
 \begin{align}
 \epsilon_\mathrm{D}(\omega)&=\epsilon_\mathrm{D}(\omega)\\
 \epsilon_\mathrm{LD}(\omega)&=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega)
@@ -83,14 +84,17 @@ and the Lorentz Drude model.}
 
 To get a feel for what a complex permittivity looks like, in
 \Figure{fig:permittivityau} $\epsilon_\mathrm{LD}(\omega)$ and
-$\epsilon_\mathrm{D}(\omega)$ are shown for gold (a metal which we will be
-popular in this work).  There are several important points to this plot.
+$\epsilon_\mathrm{D}(\omega)$ are shown for gold, a metal which we will use
+extensively in this work.  There are several important points to this plot.
 First, note that the Lorentz-Drude model is much better at predicting high
 frequency behavior.  Second, the real part is negative and the
 imaginary part positive.  This is necessary; $\epsilon(\omega)$ is
 \textit{casual} and as such obeys the Kramers-Kronig relations
 \begin{align}
-\epsilon(\omega)=\mi \hf{\epsilon(\omega)}
+\epsilon^\prime(\omega)=\mi \hf{\epsilon^{\prime\prime}(\omega)}
 \end{align}
 where $\hf{\epsilon(\omega)}$ is the Hilbert transform of
-$\epsilon(\omega)$.
+$\epsilon(\omega)$.  In practice, 
+the choice of model ultimately depends on how well it fits observation for
+a particular experiment.  Here, we will use the Lorentz-Drude model almost
+exclusively.
