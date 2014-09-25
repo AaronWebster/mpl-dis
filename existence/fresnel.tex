@@ -159,7 +159,7 @@ configuration.}
 \label{fig:fresnelangle}
 \end{figure}
 
-\subsection{Near Field}
+\subsection{Near and Far Fields}
 The Fresnel equations may also be used to predict the near field intensity,
 including effects from SPP propagation.  This is accomplished by taking
 advantage of the shift theorem using the standard Fourier transform recipe
@@ -171,26 +171,47 @@ advantage of the shift theorem using the standard Fourier transform recipe
 where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field
 found using the Fresnel equations, taking into account the distribution of
 the incident field, and $\exp(\mi \mathbf{k} \cdot
-\mathbf{z}^\prime$ is the free-space transfer function along the 
+\mathbf{z}^\prime)$ is the free-space transfer function along the 
 propagation direction $\mathbf{z}^\prime$.  The details of this procedure
 will be elaborated in \Section{sec:interferencetheory}.  
 
 Plots of the incident, reflected, and near field intensities are shown in
-\Figure{fig:fresnellrsppfig} for both long range and conventional SPPs.
-The 
+\Figure{fig:fresnelnearfieldspp} for conventional and
+\Figure{fig:fresnelnearfieldlrspp} for long range SPPs.  Both were excited
+at \SI{660}{\nano\meter} with a Gaussian beam of numerical aperture
+$\mathrm{NA}=0.2$.  As might be infered  from \Figure{fig:fresnelangle},
+the most prominent feature of SPP excitation is a minimum, or ``notch'' in the
+specularly reflected light.  The angular location of this minimum is highly
+sensitive to the refractive index in which the SPP propagates; this is the
+mechanism most commonly exploited in SPP based biosensors.
 
+Owing to their greater attenuation, conventional SPPs show a relatively
+broad notch compared with LRSPPs.  Following, the SPP propagation distance
+is much lower.  Compare the near field plots of the focal region
+Figures~\ref{fig:fresnelnearfieldspp} and \ref{fig:fresnelnearfieldlrspp},
+noting the difference in scale.  The focal spot can be seen at the origin
+as a small \SI{3x5}{\micro\meter} ellipse with the SPPs propagating along
+the metal interface in the positive $x$ direction.  It can be seen that the
+LRSPP propagation distance is nearly 10 times that of conventional SPPs.
 
 \begin{figure}[ht]
 \centering
 \import{existence/figures/}{dis-specular-spp.tex}
-\caption{Fresnel reflection.}
+\caption{Near and far field intensities for excitation of conventional SPPs
+				in a three layer system. $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+				\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310$.  The thickness of the metal layer is
+				\SI{45}{\nano\meter}.}
 \label{fig:fresnelnearfieldspp}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \import{existence/figures/}{dis-specular-lrspp.tex}
-\caption{Fresnel reflection.}
+\caption{Near and far field intensities for excitation long range SPPs in a
+				symmetric layer system $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+				\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and
+				$n_4=1.3310$.  The thickness of the metal layer is
+				\SI{16.97}{\nano\meter}.}
 \label{fig:fresnelnearfieldlrspp}
 \end{figure}
 
