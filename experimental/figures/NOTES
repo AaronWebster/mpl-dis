@@ -1,0 +1,9 @@
+modifications to dis-specular plots:
+
+First, change the plot width to 8.5c on second and third plots,
+
+Second, change the third plot to
+
+at=(plot1.right of south east),
+anchor=left of south west,
+

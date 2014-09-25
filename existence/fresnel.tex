@@ -164,23 +164,16 @@ The Fresnel equations may also be used to predict the near field intensity
 distribution, including effects from SPP propagation.
 
 \begin{figure}[ht]
- \centering
- \pgfplotsset{
- minor tick num=3,
- footnotesize,
- trim axis right,
- max space between ticks=30pt,
-}
-\tikzset{baseline}
-\begin{tabular}{rr}
-\import{existence/figures/}{dis-specular-sppplot-a}&\import{existence/figures/}{dis-specular-sppplot-c}\\
-\import{existence/figures/}{dis-specular-sppplot-b}&\import{existence/figures/}{dis-specular-sppplot-d}
-\end{tabular}
-\begin{tabular}{rr}
-\import{existence/figures/}{dis-specular-lrsppplot-a}&\import{existence/figures/}{dis-specular-lrsppplot-c}\\
-\import{existence/figures/}{dis-specular-lrsppplot-b}&\import{existence/figures/}{dis-specular-lrsppplot-d}
-\end{tabular}
-\label{fig:fresnellrsppfig}
+\centering
+\import{existence/figures/}{dis-specular-spp.tex}
 \caption{Fresnel reflection.}
+\label{fig:fresnelnearfieldspp}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\import{existence/figures/}{dis-specular-lrspp.tex}
+\caption{Fresnel reflection.}
+\label{fig:fresnelnearfieldlrspp}
 \end{figure}
 
