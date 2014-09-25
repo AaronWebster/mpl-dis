@@ -60,10 +60,9 @@ where the subscripts identify the matrix elements.
 
 \subsection{Prism Coupled Excitation}
 From the information in the dispersion relation, SPP excitation at a
-metal-dielectric interface is possible if we are incident at an angle such
-that the light line moves from $ck/\sqrt{\epsilon}$ to
-$ck\sin\theta/\sqrt{\epsilon}$.  Furthermore, we observe the following
-conditions must also hold:
+metal-dielectric interface is possible if light is incident at an angle such
+that  $ck/\sqrt{\epsilon} \to ck\sin\theta/\sqrt{\epsilon}$.  Furthermore, we observe the following
+conditions must also be true:
 \begin{enumerate}
 \item SPP excitation will be accomplished with evanescent waves.  The
 incident light must be at an angle greater than the critical angle, i.e.
@@ -150,6 +149,8 @@ coupling angle must be optimized this way as well.  This is shown
 graphically in \Figure{fig:fresnelangle} for different excitation
 wavelengths and coupling angles.  In particular, note the broad range of
 conditions for which SPP excitation is possible.
+
+
 \begin{figure}[ht]
 \centering
 \import{existence/figures/}{fresneltogether}
@@ -180,19 +181,25 @@ Plots of the incident, reflected, and near field intensities are shown in
 \Figure{fig:fresnelnearfieldlrspp} for long range SPPs.  Both were excited
 at \SI{660}{\nano\meter} with a Gaussian beam of numerical aperture
 $\mathrm{NA}=0.2$.  As might be infered  from \Figure{fig:fresnelangle},
-the most prominent feature of SPP excitation is a minimum, or ``notch'' in the
-specularly reflected light.  The angular location of this minimum is highly
-sensitive to the refractive index in which the SPP propagates; this is the
-mechanism most commonly exploited in SPP based biosensors.
+the most prominent feature of SPP excitation is a minimum, or ``notch'' in
+the specularly reflected light at an angle $\thetasp$.  The angular
+location of this minimum is highly sensitive to the refractive index in
+which the SPP propagates; this is the mechanism most commonly exploited in
+SPP based biosensors.  Also observe that the notch is close to the critical
+angle for total internal reflection, with the narrower resonance being
+closer to that angle.
 
-Owing to their greater attenuation, conventional SPPs show a relatively
-broad notch compared with LRSPPs.  Following, the SPP propagation distance
-is much lower.  Compare the near field plots of the focal region
-Figures~\ref{fig:fresnelnearfieldspp} and \ref{fig:fresnelnearfieldlrspp},
-noting the difference in scale.  The focal spot can be seen at the origin
-as a small \SI{3x5}{\micro\meter} ellipse with the SPPs propagating along
-the metal interface in the positive $x$ direction.  It can be seen that the
-LRSPP propagation distance is nearly 10 times that of conventional SPPs.
+% might want to introduce and define the terms normal and long range spps here
+
+Owing to their greater attenuation, excitation of conventional SPPs
+displays a relatively broad notch compared with LRSPPs.  Following, the SPP
+propagation distance is much lower.  Compare the near field plots of the
+focal region Figures~\ref{fig:fresnelnearfieldspp} and
+\ref{fig:fresnelnearfieldlrspp}, noting the difference in scale.  The focal
+spot can be seen at the origin as a small \SI{3x5}{\micro\meter} ellipse
+with the SPPs propagating along the metal interface in the positive $x$
+direction.  It can be seen that the LRSPP propagation distance is nearly 10
+times that of conventional SPPs.
 
 \begin{figure}[ht]
 \centering
