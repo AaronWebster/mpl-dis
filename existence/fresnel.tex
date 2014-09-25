@@ -160,8 +160,25 @@ configuration.}
 \end{figure}
 
 \subsection{Near Field}
-The Fresnel equations may also be used to predict the near field intensity
-distribution, including effects from SPP propagation.
+The Fresnel equations may also be used to predict the near field intensity,
+including effects from SPP propagation.  This is accomplished by taking
+advantage of the shift theorem using the standard Fourier transform recipe
+\begin{equation}
+\mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
+\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime}
+\,\me^{\mi \mathbf{k} \cdot \mathbf{r}}\md \mathbf{k}
+\end{equation}
+where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field
+found using the Fresnel equations, taking into account the distribution of
+the incident field, and $\exp(\mi \mathbf{k} \cdot
+\mathbf{z}^\prime$ is the free-space transfer function along the 
+propagation direction $\mathbf{z}^\prime$.  The details of this procedure
+will be elaborated in \Section{sec:interferencetheory}.  
+
+Plots of the incident, reflected, and near field intensities are shown in
+\Figure{fig:fresnellrsppfig} for both long range and conventional SPPs.
+The 
+
 
 \begin{figure}[ht]
  \centering
