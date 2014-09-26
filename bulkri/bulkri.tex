@@ -1,17 +1,18 @@
-\textbf{ASP SHOULD BE CONVENTIONAL SP}
 The sensitivity of surface plasmon resonance to bulk refractive index
 pertrubations is perhaps its most popular and widely utilized property.
-This is motivated by the system's quite remarkable response, which has been
-reported at up to \SI{1e-8}{RIU} (refractive index units) in some
-applications~\cite{sprreview}, shot noise limited.  Bulk refractive index
-sensing with SPR is well understood, so in this chapter we focus on these
-types of measurements in the cone without consideration of speckle, a topic
-reserved for \Chapter{ch:speckle}.  
+This is motivated by the system's quite remarkable response. By monitoring
+properties of the notch in the specular direction, sensitivites of up to
+\SI{1e-8}{RIU} (refractive index units) have been reported in some
+applications~\cite{fan2008sensitive}, shot noise limited.  Bulk refractive
+index sensing and its limits are very
+understood~\cite{piliarik2009surface}, so in this chapter we focus on these
+types of measurements in the cone.  We wil not consider effects from
+speckle, a topic reserved for \Chapter{ch:speckle}.  
 
 In a prism coupled setup, there are three main methods used to
 monitor changes in the SPR resonance condition.  All three of these
 interrogation methods are equivalent in terms of their real-world
-resolution and detection limit.~\cite{pines1952collective}
+resolution and detection limit.~\cite{homola2006surface}
 \begin{description}
 	\item [{Angular}] The change in the angle of the SPR minimum as a function
 					of refractive index is monitored.  In the angular modulation method,
@@ -24,34 +25,32 @@ resolution and detection limit.~\cite{pines1952collective}
 		intensity of the signal at a certain angular or spatial point is
 		monitored as the experiment progresses.
 \end{description}
-
 In this chapter we will restrict ourselves to analysis in the angular and
 intensity interrogation methods.  We do not possess the means to carry out
-wavelength interrogation, though this is funamentally equivalent to
+wavelength interrogation, though this is in many ways equivalent to
 sweeping the SPR angle. 
 
 \section{Angular Interrogation}
+To study the sensitivity in the angular interrogation method, we first
+simulate the angular response of the system using the Fresnel equations
+with ($\Delta n = 0$) and without ($\Delta n \ne 0$) a refractive index
+pertrubation of the sensing layer.  An example of what this looks like is
+shown in \Figure{fig:sensangularasp} for both conventional and long range
+SPPs.  The choice here of 
+$\Delta n = 0.01$ is somewhat arbitrary and was made to 
+illustrate the change of the resonance line.  The major point here is that
+the resonance shifts when a refractive index pertrubation is made.
 
-To study the sensitivity in the angular interrogation method, first we
-simulate angular response with ($\Delta n = 0$) and without ($\Delta n \ne
-0$) a refractive index pertrubation of the sensing layer.  The choice here
-of the pertrubation $\Delta n = 0.01$ in Figures~\ref{fig:sensangularasp}
-and \ref{fig:sensangularasp} is somewhat arbitrary and only serves to
-illustrate the change of the resonance line.  The minimum of the angular
-response was determined by the zero of the function found using nonlinear
+In our simulation, the minimum of the angular response was determined by
+the zero of the function found using nonlinear
 minimization~\cite{brent1973algorithms} and optimizing that function as
 $\Delta n \to 0$.  In this way the maximum theoretical sensitivity for
 angular sensitivity, $\Delta \theta/\Delta n$ is determined.  This
-theoretical sensitivity should not be confused with real world sensitivity:
+theoretical sensitivity should not be confused with real world sensitivity;
 we do not take into sources of noise in the experiment and detector.  We
-are also not concerned at the moment with the \textit{optimization} of
-sensitivity.  Rather we focus on the difference between angular response to
-refractive index pertrubations in the cone and the notch.  
-
-Simulated responses for symmetric (SSP) and conventional (SP)
-configurations in the notch and the cone are shown in
-\Figure{fig:sensangularasp} for $\Delta n = 0.01$.  The maximum obtainable
-results for these conigurations are tabulated in \Table{tbl:angularsens}.
+are also not concerned at the moment with the optimization of sensitivity.
+Rather, we focus on the difference between angular response to refractive
+index pertrubations in the cone and the notch.  
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
@@ -63,19 +62,21 @@ results for these conigurations are tabulated in \Table{tbl:angularsens}.
 									$n_3=1.3310 + \Delta n$.  The thickness of the metal layer is
 									\SI{45}{\nano\meter}. (bottom) 
 	Angular sensitivity of the notch and the cone for the Kretschmann
-									four layer (SSP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+									four layer (LRSPP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
 									\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 +
 									3.3825i}$, and $n_4=1.3310+\Delta n$.
 									The thickness of the metal layer is \SI{16.97}{\nano\meter}.  }
  \label{fig:sensangularasp}
 \end{figure}
 
-\Table{tbl:angularsens} tells us all we need to know about using this
-interrogation method: there is no readily apparent sensitivity benefit to
-the cone versues the notch in angular interrogation.  Though the angle of the
-SPR minima (notch) and maxima (cone) are at slightly different angles, 
-approximately \SI{0.006}{\degree} for SPs, their responses
-track each other very well.  
+In compliment to \Figure{fig:sensangularasp}, the maximum obtainable
+sensitivies for these configurations are tabulated in
+\Table{tbl:angularsens}.  \Table{tbl:angularsens} tells us all we need to
+know about using this interrogation method: there is no readily apparent
+sensitivity benefit to the cone versues the notch in angular interrogation.
+Though the angle of the SPR minima (notch) and maxima (cone) are at
+slightly different angles, approximately \SI{0.006}{\degree} for SPs, their
+responses track each other very well.  
 \begin{table}[ht]
 \centering
 \sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
@@ -84,7 +85,7 @@ track each other very well.
 {configuration} & {notch [$\mathrm{deg}/\mathrm{RIU}]$} & {cone [$\mathrm{deg}/\mathrm{RIU}$]} \\
 \midrule
 SP & 1.452312e+02 & 1.453671e+02 \\
-SSP & 3.943097e+01 & 3.938117e+01 \\
+LRSPP& 3.943097e+01 & 3.938117e+01 \\
 \bottomrule
 \end{tabular}
 \caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$,
@@ -99,10 +100,11 @@ significant differences between the notch and the cone.  This is due to
 both the sharper resonance and narrower linewidth.  For the systems under
 discussion, we calculate the angular width of the notch to be
 $\theta_{1/2}=\SI{8.0708}{\degree}$ for SPs, with the cone being nearly
-twice as narrow at $\theta_{1/2}=\SI{4.7795}{\degree}$.  SSPs show the same
+twice as narrow at $\theta_{1/2}=\SI{4.7795}{\degree}$.  LRSPPs show the same
 trend, but the discrepancy is not nearly as large with
 $\theta_{1/2}=\SI{0.2349}{\degree}$ for the notch and
-$\theta_{1/2}=\SI{0.2325}{\degree}$ for the cone.  The theoretical maximum
+$\theta_{1/2}=\SI{0.2325}{\degree}$ for the cone.  The theoretically
+predicted maximum
 sensitivities for both cases are shown in \Table{tbl:intensitysens}.  This
 was calculated using the same nonlinear minimization method as in angular
 case, but instead we look for the angular location where the difference in Fresnel
@@ -132,7 +134,7 @@ commercial systems remains to be seen.
 {configuration} & {notch [1/RIU]} & {cone [1/RIU]} \\
 \midrule
 SP & 32.1657 & 42.3053 \\
-SSP & 203.5365 & 251.9765 \\
+LRSPP & 203.5365 & 251.9765 \\
 \bottomrule
 \end{tabular}
 \caption{Theoretical maximum intensity sensitivity, $\Delta I/\Delta n$,
