@@ -30,7 +30,7 @@ ylabel('$I_p/I_s$ [a.u.]');
 legend('measured smooth','measured rough','theoretically perfect smooth','Location','NorthWest');
 
 
-if true
+if false
     filename = sprintf('../spfig.tex');
     matlab2tikz(filename, 'showInfo', false, ...
         'parseStrings',false,'standalone', false, ...

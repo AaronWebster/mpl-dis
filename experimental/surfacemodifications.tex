@@ -27,3 +27,49 @@ interpretation of results during our investigation.
  nanoparticles.}
  \label{fig:aunpspectrum}
 \end{figure}
+
+To quantify the influence of surface roughness, we conducted polarization
+measurements of the so called ``rest light
+intensity''~\cite{horstmann1977multiple}.  Essentially this involves
+looking at the angular dependence of the ratios between the polarization
+components of light which is emitted from the \textit{back} of the
+prism~\cite{kretschmann1972decay}.
+For surface scattering process, the angular dependent ratio is said to be
+\begin{equation}
+\frac{I_p}{I_s} = \frac{\tan^2\theta}{1+(\tan^2\theta)/|\epsilon|}
+\label{eqn:ipssurface}
+\end{equation}
+and for volume scattering
+\begin{equation}
+\frac{I^\prime_p}{I^\prime_s} = \frac{1}{|\epsilon|^2} I_p I_s
+\label{eqn:ipsvolume}
+\end{equation}
+The supporting literature for Equations~\ref{eqn:ipssurface} and
+\ref{eqn:ipsvolume} is lacking.  Apparently it is to be found in a 1972
+dissertation \name{Kretschmann} made during his Ph.D. work in Hamburg, but
+at the time we have not actually seen this document.  In any event, the
+polarization mixing cannot be described as a first order process and thus
+is though to arise from multiple scattering of SPPs.
+
+We have measured this ratio for films which we believe to be smooth, those
+which we have not made modifications to, and ones roughened with heat
+pretreatment.  This was carried out with the normal setup but with the
+addition of a polarizing beamsplitter connected to two cameras (acting as
+photodiodes) which is positioned on a rotation stage on the bottom
+halfspace of the hemisphere.  Our results are shown in \Figure{fig:spratio}.
+The theoretically perfect smooth value of \Equation{eqn:ipssurface} is also
+plotted for comparison.  We do not plot volume scattering, as this value is
+too low to be determined with our apparatus, and furthermore it is expected
+not to be a contributing factor~\cite{kretschmann1972decay}.  The
+significantly increased rest light at $\theta=\SI{0}{\degree}$ fits well
+with this model, suggestive of increased surface roughness.
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+ \import{experimental/figures/}{spfig}
+ \caption{Ratio of polarization intensties $I_p/I_s$ scattering microsctructure}
+ \label{fig:spratio}
+\end{figure}
+
+We will refer to these measurements and rest light intensity more when we
+discuss the scattering microstructure in \Chapter{ch:scatteringmicro}.
