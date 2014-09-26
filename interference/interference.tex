@@ -18,15 +18,16 @@ phenomena went unreported until
 2005~\cite{schumann2008near}~\cite{andaloro2005optical}, and has since then
 only been reported in a handful of limited
 cases~\cite{shan2009measuring}~\cite{simon2007observation}.  An example of
-this pattern is shown in \Figure{fig:coneintrofig} for a silver film on
-high refractive index glass (LAH79) in air.
+this pattern in the cone is shown in \Figure{fig:coneintrofig} for a silver
+film on high refractive index glass (LAH79) in air.  We have studied these
+structures under several conditions and observed properties that observe
+only self-interference of the scattered SPPs without any contributions from
+specular reflection.  This is contrary to several literature explainations;
+we believe our explaination rectifies such discrepancy.
 
-There are a number of reasons why these guys are important.  First, the
-description of them being whatever interference between specularly
-reflected beam is wrong.  And second, they may provide additional features
-with which to increase fitting accuracy or whatever.
-
-This chapter is something devoted to the study of these guys.
+In this chapter we study spatial evolution of these fields in the context
+of Fourier optics and discuss potential applications to increasing the
+resolution of based biosensing.
 
 \section{Theory} \label{sec:interferencetheory}
 For simplicity we restrict the problem to the $x$-$z$ plane.  Consider an
@@ -44,12 +45,10 @@ g(x) = \exp\left(-\frac{x^2}{w_0^2} + \mi \ksp x\right)
 \end{equation}
 where $w_0$ denotes the Gaussian beam waist parameter at the focus.  In the
 specular direction, the field $\tilde{E}_\mathrm{notch}(k_x)$ is given by its
-Fresnel reflectivity $\tilde{r}(k_x)$ multiplied by $\tilde{g}(k_x)$
+Fresnel reflectivity $\tilde{r}^p(k_x)$ multiplied by $\tilde{g}(k_x)$
 \begin{equation}
-\tilde{E}_\mathrm{notch}(k_x)=\tilde{g}(k_x)\,\tilde{r}(k_x)
+\tilde{E}_\mathrm{notch}(k_x)=\tilde{g}(k_x)\,\tilde{r}^p(k_x)
 \end{equation}
-We assume $p$ polarization for the rest of this chapter and omit the
-superscripts.
 
 Let us now consider the spatial evolution of the light as it propagates
 away from the surface.
@@ -58,17 +57,19 @@ the Fourier transform of $\tilde{E}_\mathrm{notch}(k_x)$ multiplied
 by a free space transfer function $\me^{\mi k_{z} z}$
 \begin{align}
 E_\mathrm{notch}(x,z) &= \intinfty \tilde{E}_\mathrm{notch}\, \me^{\mi k_{z,1} z}\, \me^{\mi k_x x} \md k_x\\
- &= \intinfty \tilde{g}(k_x)\, \tilde{r}(k_x)\, \me^{\mi \sqrt{k_0^2 \epsilon_1 - k_x^2}z}\, \me^{\mi k_x x} \md k_x
+ &= \intinfty \tilde{g}(k_x)\, \tilde{r}^p(k_x)\, \me^{\mi \sqrt{k_0^2 \epsilon_1 - k_x^2}z}\, \me^{\mi k_x x} \md k_x
 \label{eqn:fourier123}
 \end{align}
 Likewise, conically scattered light may be found using the same treatment
 \begin{align}
 E_\text{cone}(x,z) = \intinfty \tilde{g}(k_x)\, 
-\tilde{t}_+(k_x)\, \tilde{t}_-(k_x)\,\me^{\mi k_z z}\, \me^{\mi k_x x} \md k_x
+\tilde{t}^p_+(k_x)\, \tilde{t}^p_-(k_x)\,\me^{\mi k_z z}\, \me^{\mi k_x x} \md k_x
 \label{eqn:fourier321}
 \end{align}
 Though this integral seems to have no analytic solution, its evaluation is
-nonetheless straightforward on a computer.
+nonetheless straightforward on a computer.  The same Fourier transform
+recipe may be used to find fields in three dimensions, as was done in
+\Section{sec:fresnelnearfar}.
 
 \section{Experiment}
 \begin{figure}[ht]
@@ -94,7 +95,7 @@ $f=\SI{20}{\milli\meter}$ antireflection coated aspherical lens, which
 focuses the light to the central point of the hypotenuse of a
 \SI{10}{\milli\meter} diameter LAH79 hemispherical prism
 ($n(\SI{632.8}{\nano\meter})\approx1.98$).  The beam makes a central angle
-of $\theta_\text{sp}\approx\SI{32}{\degree}$ with the hypotenuse.
+of $\thetasp\approx\SI{32}{\degree}$ with the hypotenuse.
 On the hypotenuse of the prism is a \SI{49.8}{\nano\meter} silver film
 obtained through a sputtering process.  This thickness was chosen because
 it optimizes the far field ATR minimum in the specularly reflected
@@ -155,12 +156,12 @@ here both SPP propagation and radiative decay are observed simultaneously.
 
 The far field is often defined as as $z\gg 2 D^2/\lambda$, where $D$ is the
 spatial width of the source.  For Ag at \SI{632.8}{\nano\meter}, the Drude
-model permittivity is $\epsilon \approx \num{-16.858+0.437i}$ and the
+model permittivity is $\epsilon = \num{-16.858+0.437i}$ and the
 $1/\me$ SPP propagation distance normal to the interface $D = 1/(2 k_x)
 \approx \SI{60}{\micro\meter}$ and the resulting far field limit is $2
 D^2/\lambda \approx \SI{10}{\milli\meter}$.  This seems to be consistent
 with both the simulated and experimental results, as it is approximately
-the distance in \Figure{fig:fresnelpropagate} for which the oscillations
+the distance in \Figure{fig:fresnelprop} for which the oscillations
 disappear.
 
 \subsection{Interference and Diffraction}
@@ -259,5 +260,3 @@ oscillations are then essentially a manifestation of Gibb's phenomena.
 This seems to be well supported, because if the SPR resonance is broadened,
 say in the case of a BK7-Au-\ce{H2O} system, the interference is greatly
 attenuated.
-
-
