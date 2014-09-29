@@ -37,27 +37,37 @@ I_\mathrm{cone}
 |t^p_-|^2\,W(\theta_i,\theta_s,\phi)\, |s(\Delta \mathbf{k})|^2
 \label{eqn:guhacone}
 \end{equation}
-where $I_0$ is the incident power, $\mathrm{d}I/\mathrm{d}\Omega$ is the
-scattered power per solid angle, $s(\Delta \mathbf{k})$ is the surface
-roughness spectrum, and $W(\theta_i,\theta_s,\phi)$ \textit{describes the
-								interference of the two roughness induced current components in the
-plane of incidence}.
-
+where $I_0$ is the incident power and $\mathrm{d}I/\mathrm{d}\Omega$ is the
+scattered power per solid angle. $s(\Delta \mathbf{k})$ is the surface
+roughness spectrum, the Fourier transform of the surface autocorrelation
+function.  
 \begin{equation}
 |s(\Delta \mathbf{k})|^2 = \frac{\sigma^2}{4\pi} \left<S^2\right>
 \me^{-(\Delta k^2 \sigma^2)/4}
 \label{eqn:surfaceroughness}
 \end{equation}
+The final term, $W(\theta_i,\theta_s,\phi)$, is a dipole function which
+describes the interference of two roughness induced currents on the surface.
 
-Whatever, some roughness stuff, I just say the following:
+For practial purposes, $W(\theta_i,\theta_s,\phi)$ and $s(\Delta
+\mathbf{k})$ can be treated as constants if we restrict ourselves to a
+small angular range~\cite{heitmann1977determination}.  The angular width of
+the cone is approximately
+\begin{equation}
+\theta_{1/2} = 2 k^{\prime\prime} \frac{c}{\omega \cos \theta}
+\end{equation}
+which is on the order of \SI{0.2}{\degree} for LRSPPs and \SI{4}{\degree}
+for conventional SPs.  Therefore, in our treatment we will neglect these
+functions, except in a limited scope in \Chapter{ch:scatteringmicro}, and
+state that
 \begin{equation}
 |E_\mathrm{cone}|^2 \propto	|t^p_+|^2 |t^p_-|^2
 \label{eqn:conefield}
 \end{equation}
 
-Due to the double enhancement factor in \Equation{eqn:guhacone}, light in
-the cone has a narrower linewidth than its specular counterpart in the
-notch.  In \Figure{fig:conevsnotch} we show a simulated provfile of the
+Due to the \textit{double} enhancement factor in \Equation{eqn:guhacone},
+light in the cone has a narrower linewidth than its specular counterpart in
+the notch.  In \Figure{fig:conevsnotch} we show a simulated provfile of the
 normalized and inverted cone vs notch for a three layer system
 ($n_1=1.5142$, $n_2=\num{0.2843 + 3.3825i}$, $n_3=1.331$ and
 $d_2=\SI{45}{\nano\meter}$).  This aspect causes certain measurements in
@@ -72,7 +82,3 @@ visit in \Chapter{ch:bulkri}.
 	comparison.}
  \label{fig:conevsnotch}
 \end{figure}
-
-Finally, something about speckle and how we'll talk about it later.
-
-Look what I have done!
