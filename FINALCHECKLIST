@@ -1,3 +1,4 @@
 1.  Commas after equations, such as eqn:dft.  Be consistent.
 2.  Remove footnotesize from plots.
 3.  Spellcheck, of course.  Might not want to trust the built in one.
+4.  Correct formatting of equations, going back to norbert thesis.
