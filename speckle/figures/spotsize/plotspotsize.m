@@ -2,6 +2,7 @@ clear all;
 close all;
 
 addpath('~/mpl-dis/includes')
+det_scale = 500/133; % scale in microns/px
 
 % load data files
 a = load('zoom-spotsmall');
@@ -27,22 +28,25 @@ c.frame_b = double(c.frame_b(300:900,400:1000));
 %b.frame_b = (min(b.frame_b(:))-b.frame_b)./range(b.frame_b(:));
 %c.frame_b = (min(c.frame_b(:))-c.frame_b)./range(c.frame_b(:));
 
+
+scale = 0:length(a.frame_b);
+scale = scale*500/133;
 figure(1);
 clf;
 subplot(521)
-imagesc(c.frame_b);
+imagesc(scale,scale,c.frame_b);
 axis square;
 subplot(522)
 imagesc(c.frame_a);
 
 subplot(523)
-imagesc(b.frame_b);
+imagesc(scale,scale,b.frame_b);
 axis square;
 subplot(524)
 imagesc(b.frame_a);
 
 subplot(525)
-imagesc(a.frame_b);
+imagesc(scale,scale,a.frame_b);
 axis square;
 subplot(526)
 imagesc(a.frame_a);
