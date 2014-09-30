@@ -1,5 +1,38 @@
-We begin with the assumption that speckle is due to a random phasor sum,
-following the treatment of \name{Goodman}~\cite{goodman2007speckle}.
+We describe the process by which this comes to pass
+as follows.  Consider a surface plasmon which is created by a focussed beam
+in a prism coupled setup.  Without loss of generality, we define the center
+of the focussed beam as the origin of a Cartesian coordinate system
+$(0,0,0)$.  If the beam is incident in the $x$-$z$ plane, the plasmon will
+have an initial phase of $\exp(\mi \ksp x)$.  For simplicity, we neglect
+that a Gaussian beam will have small out of plane components.  As mentioned
+in \Section{sec:coneexist}, surface roughness or other inhomogenities can
+elastically scatter an SPP during propagation.  This changes the direction,
+but not the magnitude, of the in-plane $k$-vector.  Upon re-radiation as a
+photon, the phase to a point
+$(x^\prime,y^\prime,z^\prime)$ in the far field is 
+\begin{equation}
+\exp\!\left(\mi k_0 \sqrt{ (x-x^\prime)^2 + (y-y^\prime)^2 + (z-z^\prime)^2}\right)
+\end{equation}
+
+Because $z=0$ is the plane of scattering, we can rewrite the contribution
+to the field by a single SPP scattering event as
+\begin{equation}
+\mathbf{E}\left(\theta,\phi\right)=\exp\!\big( \mi \ksp x  
++ \mi k_0 \sin\theta \left(x\cos\phi+y\sin\phi\right)
++ \varphi\big)
+\label{eqn:sppsinglescattering}
+\end{equation}
+where we have used the far field approximation $z^\prime\to\infty$ and the
+coordinates of the far field are $(\theta,\phi)$.  Furthermore, in
+\Equation{eqn:sppsinglescattering} we have assumed single scattering; an
+SPP is scattered only once during propagation.  We will relax this
+assumption in \Section{sec:multiplescattering} when we consider multiple
+scattering.
+
+If we can assume that the $(x,y)$ coordinates from which an SPP is
+re-radiated as a photon are randomly distributed, we can follow the
+treatment of \name{Goodman}~\cite{goodman2007speckle} and assume that our
+speckle is described by a random phasor sum.
 Specifically, we assume the field at each detector position $\mathbf{E}(\mathbf{r})$
 is due to the coherent linear superposition of $N$ random phasors
 \begin{equation}
