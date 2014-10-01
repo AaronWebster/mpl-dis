@@ -5,7 +5,7 @@ It assumes the geometry shown in \Figure{fig:plasmongeo} consisting of
 \item An elliptical {\it illuminated region}, representing the incident evanescent
 field used to excite plasmons on the surface.  This ellipse has 
 typical radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.  
-\item A {\it tip} - a single movable scatterer representing the STM tip.
+\item A {\it tip} - a single movable scatterer.
 \item The {\it scan area}, a square area wherein the tip rasters, typically
 $128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.  
 \item {\it Scatterers}, fixed point scatterers (usually \num{20})
@@ -40,8 +40,8 @@ length accumulated as the plasmon visits each scatterer.  The trajectory
 ends when
 \begin{itemize}
 \item The same scatterer is visited twice in a row, or
-\item The total accumulated path length exceeds a pre-defined limit
-(\SI{18}{\micro\meter}).  
+\item The total accumulated path length exceeds a pre-defined limit based
+				on the SPP $1/\me$ propagation length.  
 \end{itemize}
 This process is repeated many times for each tip position in the scan area.
 Usually \numrange{250000}{1000000} trajectories will be used for each point
@@ -60,7 +60,7 @@ angle along the plasmon ring for the respective tip position in the scan
 area.  The weirdospace image for each angle $\phi$ along the ring is
 calculated by adding a final phase $\varphi_\mathrm{ff,n}$ equal to the
 propagation from the final scatterer to the far field along plasmon
-scattering angle $\theta_\mathrm{sp}\approx \SI{44}{\degree}$.  This is 
+scattering angle $\theta_\mathrm{sp}$.  This is 
 \begin{align}
 \varphi_\mathrm{ff,n} = k_0 \sin
 \theta_\mathrm{sp}\left(x_n\cos\phi+y_n\sin\phi\right)
@@ -150,6 +150,8 @@ space with the saturation always being set to unity.
 \subsubsection{Statistics}
 \begin{figure}
 \centering
+\import{includes/}{setpgfinc}
+\import{scatteringmicro/figures/}{pdfpicking}
 %\begin{center}
 %\psset{xAxisLabel=,yAxisLabel=}
 %\begin{psgraph}(0,0)(1.5,1.5){10cm}{4cm}
