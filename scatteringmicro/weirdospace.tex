@@ -1,0 +1,56 @@
+Central to these experiments is the generation of a topology map known
+colloqually as ``weirdospace''.  Weirdospace is, quite simply, a two
+dimensional map of the intensity of a particular point on the cone as a
+function of tip position.  
+
+We begin by assigning the tip position on the
+prism surface with two dimensional cartesian coordinates $(x,y,z=0)$, and
+the far field intensity on the detector as $(x^\prime,y^\prime,z^\prime)$.
+The far field has two phase contributions: the first from the local SPP field
+$\ksp x$ and the second from propagation into the far field,
+$k_0\left((x-x^\prime)^2+ (y-y^\prime)^2+
+(z-z^\prime)^2\right)^{1/2}$.  Together, this yields
+\begin{equation}
+E(x^\prime,y^\prime,z^\prime) = \exp\!\left( \mi\ksp x + %
+\mi k_0\sqrt{ (x-x^\prime)^2+ (y-y^\prime)^2+ (z-z^\prime)^2 } \right)
+\end{equation}
+or, in spherical coordinates,
+\begin{equation}
+E(\rho,\theta,\phi) = \exp\!\left( \mi\ksp x + %
+\mi k_0\sqrt{
+(\rho\sin\theta\cos\phix+x)^2+(\rho\sin\theta\sin\phi+y)^2+(\rho\cos\theta+z)^2 } \right)
+\end{equation}
+If we assume the detector is in the far field $\rho\gg\lambda_0$, we can
+make a couple of approximations.  First, we neglect the additional optical
+path length accumulated propagating through the prism.  Second, if we
+consider the path length difference between the origin and the far field,
+$\rho$, we can consider only the path length difference
+\begin{align}
+E(\rho,\theta,\phi) &= \exp\!\left( \mi\ksp x + %
+\mi k_0(\rho-\sqrt{ (\rho\sin\theta\cos\phix+x)^2+(\rho\sin\theta\sin\phi+y)^2+(\rho\cos\theta+z)^2
+}) \right)\\
+E(\rho\gg\lambda,\theta,\phi) &= \exp\!\big( \mi \ksp x
+ + \mi k_0 \sin\theta \left(x\cos\phi+y\sin\phi\right)
+ + \varphi\big)
+	\label{eqn:primarystripes}
+\end{align}
+where we have assigned the variable $\varphi$ to represent the complex phase term
+from non-tip-scattering events (a coherent background).  
+
+\Equation{eqn:primarystripes} predicts an important feature of weirdospace.
+For sufficiently strong tip scattering a set of angled interference stripes
+will be present.  We call this feature \textit{primary stripes}.  The
+frequency and orientation of primary stripes is a function of $\phi$ as per
+\Equation{eqn:primarystripes}.  \Figure{fig:primarystripes} shows this
+dependence graphically for a simulated set of stripes.  Note that in
+\Equation{eqn:primarystripes} we have not specified $\varphi$.  This term
+could lead to higher order features in wierdospace, which we will discuss
+shortly.
+\begin{figure}
+\centering
+\caption{Primary stripes around the ring.}
+\label{fig:primarystripes}
+\end{figure}
+
+We will now show that primary stripes allow enable reconstruction of the
+phase of the far field speckle pattern.  
