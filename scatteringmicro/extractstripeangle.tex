@@ -1,3 +1,15 @@
+It turns out that the phase of the primary stripes in a weirdospace image
+can be used to determine the relative phase of the far field speckle
+pattern from which the primary stripes are derived.  To see how this is
+done, first observe that the frequency of the primary stripes are set in
+\Equation{eqn:primarystripes} only as a function of tip position.  The tip
+is always in phase with the SPP field.  However, the phase of all
+non-tip-scattering paths interfere with the thip path and determine the
+phase of the primary stripes.  Thus, if we make a raster scan of the
+surface and take a pullback image, i.e. an image with no tip present, the
+phase of the primary stripes will represent the phase of this field (again,
+we already know the phase of the tip).
+
 For each photometry map, the wavevectors $k_x$ and $k_y$ describing the
 spatial frequency and orientation of the primary stripes was determined
 from the peaks in its Fourier spectrum~\cite{huntley1989speckle}.  The
@@ -9,6 +21,25 @@ by using the shift property of the Fourier transform
 \mathbf{E}\left(\mathbf{k}\right)\\
 &= \me^{\mi \varphi}\, \mathbf{E}\left(\mathbf{k}\right)
 \end{align}
+with respect to a set of reference stripes
+\begin{equation}
+I_\mathrm{ref} = \cos(k_x x + k_y y)
+\end{equation}
+Again, $k_x$, $k_y$, and $\varphi$ are parameters for weirdospace.
 
-Again, $k_x$, $k_y$, and $\varphi$ are parameters for weirdospace.  At
-first 
+We can verify experimentally that the phase retreival algorthm works as
+advertised by considering the presence of optical vorticies.  As described
+in \Section{sec:x}, the locations occur at the intersections of the zeros
+of the real and imaginary components of the complex field; at these
+locations the intensity is zero and the phase is undefined.  Therefore, at
+these locations the pullback intensity should also be zero.  Furthermore, a
+trajectory passing through (or near) a vortex should see a sudden jump of
+phase (a $\pi$ shift, I think).
+
+\begin{figure}
+\centering
+\caption{Phase extraction technique.}
+\label{fig:phaseextractiontechnique}
+\end{figure}
+
+We show an example dataset in \Figure{fig:}
