@@ -1,10 +1,66 @@
-Several methods were developed to control surface roughness.  The first
-method was to heat the substrate to \SI{200}{\celsius} immediately prior to
-sputtering.  After sputtering, the substrates were allowed to cool slowly
-at room temperature before use.  This method was able to increase the
-measured surface roughness by nearly two fold (see
-\Chapter{ch:scatteringmicro} for analysis).
+The width of the SPR resonance, the speckle in the cone, and the type of
+SPP scattering are all intimately related to the scattering microsctucture.
+It is therefore essential that we have control, or at least consistency,
+regarding the metal surface.  To this end we have investigated several
+methods for influencing the surface properties.  
 
+\subsection{Heat}
+The idea of substrate heating as a mechanism for increasing surface
+roughness came to use though an anedcote by
+\name{Horstmann}~\cite{horstmann1977multiple}.  The experimental procedure
+consists of heating the glass substrate to \SI{200}{\celsius} immediately
+prior to sputtering.  After sputtering, the substrates are allowed to cool
+slowly at room temperature before use.  We did not have the ability to heat
+our substrate \textit{in situ}, however because the primary mechanism for
+heat dissipation in a vacuum (with a properly insulated sample) is radiant,
+pre-heating the substrate before evacuating gave us ample time to carry out
+the sputtering procedure at the appropriate tempterature.  In consideration
+of this method we find that it was able to increase the measured surface
+roughness by nearly two fold See \Chapter{ch:scatteringmicro} for analysis.
+
+\subsection{Shadow Mask Lithography}
+A second method was explored in collaboration with
+\name{Huang}~\cite{huang2014speckle} which we refer to as \textit{shadow
+mask lithography}.  This method involves the deposition of large,
+micron-sized particles on the surface before sputtering, and then removing
+them after the process is complete.  The result is a random arrangement of
+holes, which act as scatterers.  To understand why this is, note the
+Fresnel reflection coefficent for a single interface at normal incidence in
+terms of the refractive indicies
+\begin{equation}
+r^s = \frac{n_1 - n_2}{n_1+n_2}
+\end{equation}
+and the reflectance $R^p=|r^p|^2$.  In other words, the Fresnel
+reflectivity is
+roughly proportional to the difference in refractive indicies, and when
+considering the reflectance the phase shift is discarded and the results
+are the same for both $n_1>n_2$ and $n_2>n_1$.
+
+We carried out this method as follows.  Free \SI{1}{\micro\meter} (mean
+diameter \SI{0.9}{\micro\meter}) silica particles in water at a density of
+\SI{2}{\gram\per\centi\meter\cubed} were centrifuged and their suspending
+solution decanted and replaced with dry acetone.  This was done three times
+to minimize the amount of residual water in the final suspension.
+Additional acetone was then added to obtain a final solution concentration
+of \SI{8e5}{particle\per\micro\liter}.  
+
+Glass substrates were cleaned in piranha solution (three parts
+\SI{96}{\percent} \ce{H2SO4} to one part \SI{30}{\percent} \ce{H2O2}) for
+\SI{10}{\minute} prior to use.  This process makes the surfaces
+hydrophillic, and combined with the lowered surface tension
+(\SI{23.4}{\milli\newton\per\meter} for acetone compared with
+\SI{72.8}{\milli\newton\per\meter} for water at \SI{20}{\celsius}), a
+droplet placed on the surface will spread evenly.  We let this evaporate on
+its own and the try surfaces are sputtered with metal.  Afterwards, we
+found that sonicating the substrate for \SI{10}{\minute} in dry acetone was
+sufficient to overcome the Van der Waals forces between the particles and
+substrate, washing them away and leaving holes in their stead.  For these
+particles of mean diameter \SI{0.9}{\micro\meter} the resultant average
+hole size was \SI{600}{\nano\meter}, circular.  As with the heat method,
+the effect on surface roughness is discussed in
+\Chapter{ch:scatteringmicro}.
+
+\subsection{Nanoparticles}
 The second method used nanoparticles to modify the surface, for which
 \SI{57}{\nano\meter} citrate capped spherical gold nanoparticles were
 obtained.  These specific particles were chosen because
