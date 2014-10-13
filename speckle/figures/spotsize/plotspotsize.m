@@ -89,7 +89,7 @@ imagesc(scale_ax,scale_ay,a.frame_a);
 xlabel('$x$ [um]')
 ylabel('$y$ [um]')
 
-if false
+if true
 filename = sprintf('/tmp/test.tex');
 matlab2tikz(filename, 'showInfo', false, ...
     'parseStrings',false,'standalone', true, ...
