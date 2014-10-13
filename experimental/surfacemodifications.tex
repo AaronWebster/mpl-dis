@@ -61,10 +61,15 @@ the effect on surface roughness is discussed in
 \Chapter{ch:scatteringmicro}.
 
 \subsection{Nanoparticles}
-The second method used nanoparticles to modify the surface, for which
-\SI{57}{\nano\meter} citrate capped spherical gold nanoparticles were
-obtained.  These specific particles were chosen because
-\begin{inparaenum}{(a)}
+The surface modification method which ultimately proved most fruitful
+involved nanoparticle deposition.  Addition of nanoparticles is
+conceptually similar to shadow mask lithography; in both cases
+discontinuities in the systems permittivity cause reflections in the
+propagating waves.  For this we chose citrate-capped spherical gold
+nanoparticles (AuNPs) with diameters in the range of
+\SI{20-100}{\nano\meter}.  
+These specific particles were chosen because
+\begin{inparaenum}[(a)]
 \item gold has a significant amount of established biorelevant chemistry
 				protocols, and
 \item the localized surface plasmon resonance of these particles is not
@@ -84,7 +89,8 @@ interpretation of results during our investigation.
  \label{fig:aunpspectrum}
 \end{figure}
 
-To quantify the influence of surface roughness, we conducted polarization
+\subsection{Measurement of Surface Roughness}
+To quantify the amount of surface roughness, we conducted polarization
 measurements of the so called ``rest light
 intensity''~\cite{horstmann1977multiple}.  Essentially this involves
 looking at the angular dependence of the ratios between the polarization
@@ -100,18 +106,22 @@ and for volume scattering
 \frac{I^\prime_p}{I^\prime_s} = \frac{1}{|\epsilon|^2} I_p I_s
 \label{eqn:ipsvolume}
 \end{equation}
+Where $I_p$ and $I_s$ are the intensities of $p$ and $s$ polarized light,
+respectively.
+
 The supporting literature for Equations~\ref{eqn:ipssurface} and
 \ref{eqn:ipsvolume} is lacking.  Apparently it is to be found in a 1972
-dissertation \name{Kretschmann} made during his Ph.D. work in Hamburg, but
+dissertation \name{Kretschmann} made during his doctoral work in Hamburg, but
 at the time we have not actually seen this document.  In any event, the
-polarization mixing cannot be described as a first order process and thus
-is though to arise from multiple scattering of SPPs.
+polarization mixing cannot arise from a first order process and thus
+the mixing is supported by the idea of SPP multiple scattering.
 
 We have measured this ratio for films which we believe to be smooth, those
 which we have not made modifications to, and ones roughened with heat
 pretreatment.  This was carried out with the normal setup but with the
-addition of a polarizing beamsplitter connected to two cameras (acting as
-photodiodes) which is positioned on a rotation stage on the bottom
+addition of a polarizing beamsplitter connected to two cameras whose pixel
+intensities we integrated to obtain an intensity value.  These \textit{de
+facto} photodiodes are positioned on a rotation stage on the bottom
 halfspace of the hemisphere.  Our results are shown in \Figure{fig:spratio}.
 The theoretically perfect smooth value of \Equation{eqn:ipssurface} is also
 plotted for comparison.  We do not plot volume scattering, as this value is
@@ -127,5 +137,5 @@ with this model, suggestive of increased surface roughness.
  \label{fig:spratio}
 \end{figure}
 
-We will refer to these measurements and rest light intensity more when we
+We will refer to these measurements and rest light intensity again when we
 discuss the scattering microstructure in \Chapter{ch:scatteringmicro}.
