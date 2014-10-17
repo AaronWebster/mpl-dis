@@ -17,7 +17,8 @@ Fourier transform of the power spectral density, vis.
 \Gamma_I(\Delta x, \Delta y) = \ff{|I(x,y)|^2}(\Delta x, \Delta y)
 \end{equation}
 and thus  $c_I(\Delta x, \Delta y)$ can be efficiently calculated on a
-computer.
+computer\footnote{For example in MATLAB this is implimented with
+\verb|xcov(I,'coeff')|}.
 
 With these definitions out of the way, the area of $c_I(\Delta x, \Delta
 y)$ is simply its integral over $\Delta x$ and $\Delta y$
@@ -42,3 +43,11 @@ plasmons.  This is evidenced in \Figure{fig:spotsize} for three different
 spot sizes.  Here we have made a qualiatative measurement of the scattering
 spot size by fitting a gaussian to its transverse dimension, and reporting
 the full width at half maximum of that measurement as the spot size.
+
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+ \import{speckle/figures/}{spotsizefig}
+ \caption{Speckle size versues spot size.}
+ \label{fig:spotsizefig}
+\end{figure}
