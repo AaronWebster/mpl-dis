@@ -9,54 +9,7 @@ strategy for efficient computation of the Fresnel relations, and follow
 with a discussion of its predictions for both the near and far optical
 fields. 
 
-\subsection{Matrix Formalism}
-The Fresnel reflection and transmission coefficents $r$ and $t$ for $s$
-(transverse-electric) and $p$ (transverse-magnetic) polarization and a
-single ($i$-$j$) interface are derived from the wave equation and are given
-by
-\begin{align}
-r^s &= \frac{k_{z,i}-k_{z,j}}{k_{z,i}+k_{z,j}}\\
-r^p &= \frac{\epsilon_i k_{z,j} - \epsilon_j k_{z,k}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,k}} \\
-t^s &= \frac{2 k_{z,i}}{k_{z,i}+k_{z,j}}\\
-t^p &= \frac{2 \epsilon_i \epsilon_j k_{z,i}}{\epsilon_i k_{z,j} + \epsilon_j k_{z,i}}\\
-\end{align}
-where the superscript denotes the polarization.
-Note that $k_{z}$ can be equivalently expressed either as a
-function of incident angle $\theta$ or $k_x$
-\begin{align}
- k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_{i-1} \sin \theta}\\
-&= \sqrt{k_0^2\epsilon_i - k_x^2}
-\end{align}
-For multilayer systems, these equations can be applied recursively. In 
-this work we use the much more computationally efficent 
-Abeles matrix formalism.  Here, the $n$th system matrix for $s$ and $p$
-polarization, $C^s_n$ and $C^p_n$, are
-\begin{align}
-C^s_n = \left(\begin{array}{cc}
-\me^{-\mi k_{z,n} d_n} & r^s_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-r^s_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
-\end{array}\right)\\
-C^p_n = \left(\begin{array}{cc}
-\me^{-\mi k_{z,n} d_n} & r^p_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-r^p_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
-\end{array}\right)
-\end{align}
-where $n$ and $n+1$ are the layer indicies for a single interface.  A
-matrix is constructed for each layer of the system and the resultant matrix
-found as the product of these matricies
-\begin{align}
-M^s=\prod_n C^s_n\\
-M^p=\prod_n C^p_n
-\end{align}
-
-From this matrix the system Fresnel coefficents are determined viz.
-\begin{align}
-r^p = \frac{M^p_{21}}{M^p_{11}}\\
-r^s = \frac{M^s_{21}}{M^s_{11}}\\
-t^p = \frac{1}{M^p_{11}}\\
-t^s = \frac{1}{M^s_{11}}\\
-\end{align}
-where the subscripts identify the matrix elements.
+(say here that you use the ables matrix stuff)
 
 \subsection{Prism Coupled Excitation}
 From the information in the dispersion relation, SPP excitation at a
