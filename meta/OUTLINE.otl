@@ -215,5 +215,10 @@ cone
 
 	reference data
 
-quartz crystal microbalance
-particle counting
+Centrifugal Force Quartz Crystal Microbalance
+	BvD circuit analysis (spice)
+	coupled oscillator model
+	experimental setup
+	simulation
+		verification examples (supplement)
+	basically the whole paper
