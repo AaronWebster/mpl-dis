@@ -1,0 +1,210 @@
+\documentclass[a4paper,twocolumn,floatfix]{revtex4-1}
+\usepackage{t1enc}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{datetime}
+\usepackage{textcomp}
+\usepackage{relsize}
+\usepackage{pgfplotstable}
+%\setlist{noitemsep}
+%\usepackage{lineno}
+%\linenumbers
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units} 
+\usetikzlibrary{calc} 
+\usepgfplotslibrary{groupplots}
+\usepackage{siunitx}
+%\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+%\DeclareSIUnit\textsc{M}{\textsc{M}}
+
+\usepackage{hyperref}
+\hypersetup{
+ colorlinks=false,
+ hidelinks=true,
+}
+
+\newcommand{\Figure}[1]{Fig.~\ref{#1}}
+\newcommand{\Equation}[1]{Eqn.~\ref{#1}}
+\newcommand{\Table}[1]{Tbl.~\ref{#1}}
+\newcommand{\Section}[1]{Sec.~\ref{#1}}
+\newcommand{\Chapter}[1]{Ch.~\ref{#1}}
+\newcommand{\Appendix}[1]{Appendix~\ref{#1}}
+
+% use roman type for natural base e and sqrt(-1)
+\newcommand{\me}{{\mathrm{e}}}
+\newcommand{\mi}{{\mathrm{i}}}
+
+\definecolor{colora}{RGB}{24,90,169}
+\definecolor{colorb}{RGB}{238,46,47}
+\definecolor{colorc}{RGB}{0,140,72}
+\definecolor{colord}{RGB}{244,125,35}
+\definecolor{colore}{RGB}{61,90,153}
+\definecolor{colorf}{RGB}{102,44,145}
+
+\definecolor{tangoorange}{RGB}{245,121,0}
+
+\newcommand{\todo}[1]{%
+\textcolor{tangoorange}{#1}
+}
+
+\import{colors/}{colors}
+
+% color cycle thing
+\pgfplotscreateplotcyclelist{cbDark27qual}{
+ {color=Dark27qual1,mark=x},
+ {color=Dark27qual2,mark=+},
+ {color=Dark27qual3,mark=o},
+ {color=Dark27qual4,mark=x},
+ {color=Dark27qual5,mark=x},
+ {color=Dark27qual6,mark=x},
+ {color=Dark27qual7,mark=x},
+}
+\begin{document}
+\thispagestyle{empty}
+
+
+% assuming here that \textwidth is 510pt (from manuscript-pnas.tex loadplot.tex)
+% figures used here are
+%
+% command definition example
+%\myplot{Air}{QCM00431b}{QCM00431b}{QCM00431b}{QCM00431b}
+
+\newcommand{\myplot}[7]{
+\begin{tikzpicture}[baseline]
+\begin{axis}[ 
+ title={\textbf{#1}},
+ axis y line*=left,
+ ylabel={\textcolor{colora}{\uline{$\Delta\!f$}}},
+ ylabel absolute, 
+ ylabel style={
+  rotate=-90,
+  at={(yticklabel* cs:1)},
+  xshift=34pt,
+  anchor=north east,
+  fill=white,color=white,
+ },
+ legend columns=-1,
+ legend entries={
+  $\Delta\!f$ loading,
+  $\Delta\!f$ unloading,
+  $\Delta \Gamma$ loading,
+  $\Delta \Gamma$ unloading},
+ legend to name=named,
+ xmin=-5,xmax=#7,
+ ymin=#4,ymax=#5,
+]
+% loading
+%\node[anchor=near yticklabel opposite] at (yticklabel* cs:1) {dingus};
+\addplot [ 
+ color=colora,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ error bars/.cd, y dir=both, y explicit,
+] table [x index=0, y index=1, y error index=2] {data/#2-ang-freq-ebar.txt};
+% unloading
+\addplot [
+ color=colora,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ mark options={rotate=180},
+ error bars/.cd, y dir=both, y explicit,
+] table [x index=0, y index=1, y error index=2] {data/#3-ang-freq-ebar.txt};
+\node[anchor=south west] at (xticklabel* cs:0)
+  {\includegraphics[height=38.25pt,keepaspectratio]{images/loadplot-#6.pdf}};
+\addplot [
+ color=colorb,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ error bars/.cd, y dir=both, y explicit,
+] coordinates {(1000,1000)};
+% unloading
+\addplot [
+ color=colorb,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ mark options={rotate=180},
+] coordinates {(1000,1000)};
+\node[anchor=north west] at (yticklabel* cs:1) {(#6)};
+\end{axis}
+\begin{axis}[
+ hide x axis,
+ axis y line*=right,
+ ylabel={\textcolor{colorb}{\uline{$\Delta \Gamma$}}},
+ ylabel absolute, 
+ ylabel style={
+  rotate=-90,
+  at={(yticklabel* cs:1)},
+  xshift=36pt,
+  anchor=north west,
+  fill=white,color=white,
+ },
+ xmin=-5,xmax=#7,
+ ymin=#4,ymax=#5,
+]
+% loading
+\addplot [
+ color=colorb,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ error bars/.cd, y dir=both, y explicit,
+] table [x index=0, y index=1, y error index=2] {data/#2-ang-res-ebar.txt};
+% unloading
+\addplot [
+ color=colorb,
+ mark=halfcircle*,
+ mark size=1.5pt,
+ mark options={rotate=180},
+ error bars/.cd, y dir=both, y explicit,
+] table [x index=0, y index=1, y error index=2] {data/#3-ang-res-ebar.txt};
+\end{axis}
+\end{tikzpicture}
+}
+
+\pgfplotsset{
+ minor tick num=3,
+ footnotesize,
+ every
+ axis/.style={height=163.2pt,width=163.2pt,
+ every axis y label/.append style={fill=white,color=white},
+ enlargelimits=false,
+ xlabel=g-force,
+ x unit=g,
+ },
+ legend style={font=\footnotesize},
+}
+
+\begin{figure*}
+\begin{tabular}{lll}
+ \myplot{Air} {QCM00431b} {QCM00434} {-9} {5} {a} {100}
+&
+\myplot{Water} {QCM00450} {QCM00170} {-9} {5} {b} {90}
+&
+\myplot{Free Particles} {QCM00306c} {QCM00306a} {-30} {45} {c} {100}
+\\
+\myplot{Attached Particles} {QCM00328b} {QCM00321b} {-35} {9} {d} {100}
+&
+\myplot{Lambda DNA} {QCM00461} {QCM00458} {-21} {8} {e} {75}
+&
+\myplot{Tethered Particles} {QCM00510a} {QCM00511c} {-65} {25} {f} {70}
+\\
+\multicolumn{3}{c}{ \ref{named} }
+\end{tabular}
+\end{figure*}
+
+\end{document}

@@ -1,0 +1,147 @@
+\documentclass[a4paper,twocolumn,floatfix]{revtex4-1}
+\usepackage{t1enc}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{datetime}
+\usepackage{textcomp}
+\usepackage{relsize}
+\usepackage{pgfplotstable}
+%\setlist{noitemsep}
+%\usepackage{lineno}
+%\linenumbers
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usetikzlibrary{pgfplots.units} 
+\usetikzlibrary{calc} 
+\usepackage{siunitx}
+%\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+%\DeclareSIUnit\textsc{M}{\textsc{M}}
+
+\usepackage{hyperref}
+\hypersetup{
+ colorlinks=false,
+ hidelinks=true,
+}
+
+\newcommand{\Figure}[1]{Fig.~\ref{#1}}
+\newcommand{\Equation}[1]{Eqn.~\ref{#1}}
+\newcommand{\Table}[1]{Tbl.~\ref{#1}}
+\newcommand{\Section}[1]{Sec.~\ref{#1}}
+\newcommand{\Chapter}[1]{Ch.~\ref{#1}}
+\newcommand{\Appendix}[1]{Appendix~\ref{#1}}
+
+% use roman type for natural base e and sqrt(-1)
+\newcommand{\me}{{\mathrm{e}}}
+\newcommand{\mi}{{\mathrm{i}}}
+
+\definecolor{colora}{RGB}{24,90,169}
+\definecolor{colorb}{RGB}{238,46,47}
+\definecolor{colorc}{RGB}{0,140,72}
+\definecolor{colord}{RGB}{244,125,35}
+\definecolor{colore}{RGB}{61,90,153}
+\definecolor{colorf}{RGB}{102,44,145}
+
+\definecolor{tangoorange}{RGB}{245,121,0}
+
+\newcommand{\todo}[1]{%
+\textcolor{tangoorange}{#1}
+}
+
+\import{colors/}{colors}
+
+% color cycle thing
+\pgfplotscreateplotcyclelist{cbDark27qual}{
+ {color=Dark27qual1,mark=x},
+ {color=Dark27qual2,mark=+},
+ {color=Dark27qual3,mark=o},
+ {color=Dark27qual4,mark=x},
+ {color=Dark27qual5,mark=x},
+ {color=Dark27qual6,mark=x},
+ {color=Dark27qual7,mark=x},
+}
+
+%\tikzset{every pin/.style={draw=black,fill=yellow!10}}
+\tikzset{small dot/.style={draw=colorf,fill=colorf, circle,scale=0.4}}
+
+\begin{document}
+\thispagestyle{empty}
+\pgfplotsset{
+ minor tick num=3,
+ footnotesize,
+}
+\begin{tikzpicture}[baseline]
+ \begin{axis}[
+ height=250pt,width=250pt,
+ enlargelimits=false,
+ %xmin=-1.0e-6,xmax=2e-6,
+ %ymin=-3.25e5,ymax=8.5e5,
+ xlabel={$\Delta\!f$},
+ x unit=\si{\hertz},
+ ylabel={$\Delta\Gamma$},
+ y unit = \si{\hertz},
+ %restrict x to domain = {-1e-6:2e-6},
+ max space between ticks=30pt,
+ %scaled x ticks = {real:1e-6},
+ xticklabel style={/pgf/number format/fixed},
+ every x tick scale label/.style={color=white},
+ legend pos = south west,
+ ]
+ \addplot [
+  each nth point={50},
+  filter discard warning=false,
+  unbounded coords=discard,
+  mark=halfcircle*,
+  mark size=2pt,
+  color=colora,
+ ] 
+ file {data/circlefit2.tsv};
+ \input{data/circlefit2inc}
+ %\def\ra{42.5946}
+ %\def\sxa{-17.4514}
+ %\def\sya{38.6834}
+ \def\a{1.2}
+ % circle fit
+ \addplot [gray,dashed,thick,domain=0:360,samples=100,color=colorc] ({\ra*cos(\x)+\sxa},{\ra*sin(\x)+\sya});
+ % example loading line
+ \addplot [->,-stealth,thick,domain=315:350,samples=100]
+ ({(\a*\ra*cos(\x)+\sxa},{\a*\ra*sin(\x)+\sya}) node[pos=0,anchor=north west] {\footnotesize loading};
+ % horizontal guy
+ \addplot [gray,dashed,domain={\ra*cos(180)+\sxa-5}:{\ra*sin(0)+\sya}] (\x,0);
+ % vert guy
+ \addplot [gray,dashed,domain={\ra*cos(270)+\sxa}:{\ra*sin(90)+\sya+5}] (0,\x);
+ %\node[
+ % small dot,
+ % pin={[pin distance=0.1cm]85:{\footnotesize $\displaystyle \Delta\!f=\frac{-f_\mathrm{F} N_\mathrm{L} m_\mathrm{L} \omega_\mathrm{q}}{\pi Z_\mathrm{q}}$}},
+ %] at (axis cs:-35,0) {};
+
+ %\node[small dot,anchor=north,pin={[inner sep=0pt,label={[inner sep=0pt,xshift=-0mm]70:
+ %{\footnotesize $\displaystyle \Delta\!f=\frac{-f_\mathrm{F} N_\mathrm{L} m_\mathrm{L} \omega_\mathrm{q}}{\pi Z_\mathrm{q}}$} }]45:{}}] at (axis cs:\sdota,0) {};
+ \node[small dot,pin={[pin distance=0.4cm]40:{\footnotesize $\displaystyle \Delta\!f=\frac{-f_\mathrm{F} N_\mathrm{L} m_\mathrm{L} \omega_\mathrm{q}}{\pi Z_\mathrm{q}}$}}] at (axis cs:\sdota,0) {};
+
+ %\node[anchor=north west,fill=white,xshift=3pt,yshift=-3pt] at (yticklabel* cs:1)
+ %{\includegraphics[keepaspectratio]{table.pdf}};
+
+%\node[small dot,anchor=north,pin={[inner sep=0pt,label={[inner sep=0pt,xshift=-7mm]50:
+%{\footnotesize $k_\mathrm{zc}=\omega_q^2 m_\mathrm{L}$} }]0:{}}] at (axis cs:0,\sdotb) {};
+
+ \node[small dot,pin={[pin distance=0.2cm]40:{\footnotesize $k_\mathrm{zc}=\omega_q^2 m_\mathrm{L}$}}] at (axis cs:0,\sdotb) {};
+
+ \end{axis}
+\end{tikzpicture}
+
+\end{document}
