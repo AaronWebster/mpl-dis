@@ -1,0 +1,68 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'geometry.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{396.85039063bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.20255378)%
+    \put(0,0){\includegraphics[width=\unitlength]{geometry.pdf}}%
+    \put(0.15133519,0.05768837){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
+    \put(0.88614713,0.00789776){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p_0=0$}}}%
+    \put(0.29880704,0.11591848){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\mathbf{F}_2 = \mi \rho_1 \mathbf{\dot{u}}_1$}}}%
+    \put(0.25270575,0.14032932){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{particle}}}%
+    \put(0.89952161,0.09460324){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{no-slip}}}%
+    \put(0.08213108,0.08323443){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\dot{u}_\perp=\mi \omega u_0$}}}%
+    \put(0.08259764,0.10664533){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{sliding wall}}}%
+    \put(0.19397812,0.01166878){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x$}}}%
+    \put(0.52543283,0.09493988){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\mathbf{F}_1 = \mi \rho_2 \mathbf{\dot{u}}_2$}}}%
+    \put(0.52524384,0.11769326){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{medium}}}%
+    \put(0.20385713,0.09245941){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$D_1$}}}%
+    \put(0.73339061,0.09229995){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$D_2$}}}%
+    \put(0.52738177,0.18417468){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{periodic flow condition}}}%
+    \put(0.52738177,0.00503181){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{periodic flow condition}}}%
+  \end{picture}%
+\endgroup%

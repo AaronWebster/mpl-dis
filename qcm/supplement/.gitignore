@@ -1,0 +1,23 @@
+# latex turd files
+*.aux
+*.auxlock
+*.aux.make
+*.make
+*.log
+*.auxbbl.make
+*.auxtarget.make
+*.bbl
+*.blg
+*.d
+*.fls
+*.out
+*.out.make
+*.tdo
+*.toc
+*.toc.make
+#*.pdf_tex
+*.fdb_latexmk
+*.swp
+supplement.pdf
+supplementNotes.bib
+external/*
