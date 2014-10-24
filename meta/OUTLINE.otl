@@ -216,9 +216,21 @@ cone
 	reference data
 
 Centrifugal Force Quartz Crystal Microbalance
-	BvD circuit analysis (spice)
-	coupled oscillator model
+	intro, motivation
+	what is new here
+	historical perspective
+		sauerbrey equation
+		gordon-kanazawa relations
+	physics of qcm
+		BvD circuit analysis (spice)
+		coupled oscillator model
+		coupled oscillator plot
 	experimental setup
-	simulation
+		mechanical
+		chemistry
+	load situations
+	weird buffer effects
+	sensitivity of QCM to a bunch of different things (magnetic, etc)
+	simulation, other things that can be done
 		verification examples (supplement)
-	basically the whole paper
+
