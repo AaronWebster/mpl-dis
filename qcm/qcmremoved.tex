@@ -73,9 +73,9 @@ for the direct manipulation of elective dynamic versions of these
 parameters through centrifugal force gradients.
 Examples of loads which could be probed and the possible action of
 centrifugal force are shown in \Figure{fig:cfqcm}
-%\begin{figure}
-% \caption{Schematic of the CF-QCM.}
-%\end{figure}
+\begin{figure}
+ \caption{Schematic of the CF-QCM.}
+\end{figure}
 \begin{table}
  \centering
 \begin{tabular}{lll}
@@ -240,7 +240,7 @@ The typical circuit used to analyze QCM behavior is called the
 $C_s$, an inductor $L_s$, and a resistor $R_s$ in series with a parallel
 capacitance $C_0$.
 \begin{center}
- \begin{circuitikz}[scale=0.75]
+ \begin{tikzpicture}[scale=0.75]
  \draw (1,0) node[anchor=east] {}
   to[short, o-*] (2,0)
   to[short] (2,1)
@@ -254,7 +254,7 @@ capacitance $C_0$.
   to[short] (2,0);
  \draw (9,0) node[anchor=west] {}
   to[short, o-*] (8,0);
-\end{circuitikz}
+\end{tikzpicture}
 \end{center}
 
 The top branch is the \textit{motional branch}, and relates to the crysal
@@ -312,7 +312,7 @@ Liquid sensing under a rigid coating is modeled with a modified Butterworth
 van Dyke circuit as follows 
 
 \begin{center}
- \begin{circuitikz}[scale=0.75]
+ \begin{tikzpicture}[scale=0.75]
  \draw (1,0) node[anchor=east] {}
   to[short, o-*] (2,0)
   to[short] (2,1)
@@ -335,7 +335,7 @@ van Dyke circuit as follows
 
  %\draw (9,0) node[anchor=west] {}
  % to[short, o-*] (14,0);
-\end{circuitikz}
+\end{tikzpicture}
 \end{center}
 
 
@@ -360,8 +360,3 @@ different radii
 \section{Bubble Resonance}
 
 \chapter{Future Work}
-
-\part{Appendix}
-\appendix
-
-
