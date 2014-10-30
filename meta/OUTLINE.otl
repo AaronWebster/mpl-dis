@@ -219,18 +219,35 @@ Centrifugal Force Quartz Crystal Microbalance
 	intro, motivation
 	what is new here
 	historical perspective
-		sauerbrey equation
+	what is a qcm
+	math of "normal" qcm
+		sauerbrey equation (derive)
 		gordon-kanazawa relations
-	physics of qcm
 		BvD circuit analysis (spice)
+			differential equation LCR
 		coupled oscillator model
-		coupled oscillator plot
+			strong and weak coupling limits (1-3)
 	experimental setup
-		mechanical
+		centrifuge
+		mechanical holder
+		microfluidic cell
+		cleaning the crystals
+		mounting and stress
+		driving circuit
 		chemistry
 	load situations
+		environmental sources of noise
+		air
+		deioonized water
+		free particles
+		attached particles
+		lambda DNA
+		tethered particles
+	particle sizing
 	weird buffer effects
-	sensitivity of QCM to a bunch of different things (magnetic, etc)
-	simulation, other things that can be done
-		verification examples (supplement)
+	bubble resonance
+
+	simulation of behavior
+		response of cells, agarose microparticle and lysozyme microcyrstals
+		
 
