@@ -234,12 +234,15 @@ Centrifugal Force Quartz Crystal Microbalance
 		cleaning the crystals
 		mounting and stress
 		driving circuit
-		chemistry
+		chemistry and surface functionalization
+		temperature drift (over time)
+
 	load situations
-		environmental sources of noise
+		environmental effects sources of noise
 		air
 		deioonized water
 		free particles
+			magnetic lift-off
 		attached particles
 		lambda DNA
 		tethered particles

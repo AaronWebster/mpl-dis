@@ -1,0 +1,134 @@
+\documentclass[a4paper]{article}
+\input{myinc}
+\usepgfplotslibrary{groupplots}
+\begin{document}
+\title{QCM Centrifuge Notes}
+\author{Aaron Webster}
+\date{Last Update: \today}
+\maketitle
+\tableofcontents
+\newpage
+
+Typical values for a 1” diameter, 5 MHz crystal used in the QCM200 System are
+Cm = 33 fF, Lm = 30 mH, and R m = 10 Ω (for a dry crystal), Rm = 400 Ω (for a crystal
+with one face in water), or Rm = 3500 Ω (for a crystal with one face in 85% glycerol).
+The motional arm is shunted by the parasitic capacitance, Co , which represents the sum
+of the static capacitances of the crystal’s electrodes, holder, and connector capacitance. In
+the QCM200 System 4, Co is about 20 pF, a value which has been kept small by placing
+the electronics directly on the Crystal Holder, thereby eliminating any cable capacitance.
+
+
+\section{Stress on the Crystal}
+\cite{filler1988acceleration}
+
+
+When I push on the holder from the top, $f$ goes up and $R$ goes down, but
+not by much.  The same is true for flipping the holder and pressing from
+the other side.
+
+\section{Sauerbrey Equation}
+The Sauerbrey equation has been modified to predict the frequency and
+resistance changes.
+
+\begin{align}
+ \Delta f = -f_u^{3/2} \left(\frac{\rho_l \eta_l}{\pi \rho_q \mu_q}\right)^{1/2}
+\end{align}
+where
+
+\begin{tabular}{ll}
+$f_u$     & frequency of unloaded crystal \\
+$\mu_q$   & shear modulus of quartz \\
+$\rho_q$  & density of quartz \\
+$\rho_l$  & density of contact liquid \\
+$\eta_l$   & viscosity of contact liquid
+\end{tabular}
+
+\begin{align}
+ \Delta R = 2 n f_s L_u \left(\frac{4 \pi f_s \rho_l \eta_l}{\rho_q \mu_q}\right)^{1/2}
+\end{align}
+
+where
+\begin{tabular}{ll}
+$\Delta R$ & change in series resistance \\
+$n$        & number of sides in contact with liquid \\
+$f_s$      & oscillation frequency \\
+$L_u$      & intrinsic inductance of unloaded crystal \\
+\end{tabular}
+
+From these equations, classic liquid loading in this thin film Sauerbrey
+approximation causes an decrease in $\Delta f$ and an increase in $\delta
+R$.
+
+\section{Air}
+R 7-12 Ohm
+shifts on unloading <0.1 Ohm
+
+370 ohm water
+
+\section{Temperature}
+Heat makes $f$ go up and $R$ go down.  Cold makes $f$ go down and $R$ go
+up.  $R$ goes back to its original value much more slowly than $f$.
+
+\section{Mumon's Commentary}
+
+\section{Force-Parameter Plots}
+Force-parameter plots plot one of the QCM parameters ($f$, $R$, etc.) as a
+function of force.  There are several commonly occuring features in these
+plots that are worth noting.  To explore these I look at 
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+%\section{Direction of Shift in $f$ and $R$}
+%
+%\begin{tabular}{llllll}
+%\toprule
+%sample & func. & $f$ & $R$ & comment \\
+%\midrule
+%\SI{1.07}{\micro\meter} PS       & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{15}{\micro\meter}   PS       & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{24.8}{\micro\meter} PS       & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{1.89}{\micro\meter} paramag. & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{5.86}{\micro\meter} paramag. & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{9.10}{\micro\meter} paramag. & none & $\uparrow$ & $\uparrow$ &  \\
+%\SI{1.07}{\micro\meter} PS       & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{15}{\micro\meter}   PS       & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{24.8}{\micro\meter} PS       & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{1.89}{\micro\meter} paramag. & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{5.86}{\micro\meter} paramag. & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{9.10}{\micro\meter} paramag. & oligo & $\uparrow$ & $\uparrow$ &  \\
+%\SI{1.07}{\micro\meter} PS       & lambda & $\uparrow$ & $\uparrow$ &  \\
+%\SI{15}{\micro\meter}   PS       & lambda & $\uparrow$ & $\uparrow$ &  \\
+%\SI{24.8}{\micro\meter} PS       & lambda & $\uparrow$ & $\uparrow$ &  \\
+%\SI{1.89}{\micro\meter} paramag. & lambda & $\uparrow$ & $\uparrow$ &  \\
+%\SI{5.86}{\micro\meter} paramag. & lambda & $\uparrow$ & $\uparrow$ &  \\
+%\SI{9.10}{\micro\meter} paramag. & lambda & $\uparrow$ & $\uparrow$ &  \\
+%HBFR                             & none   & $\uparrow$ & $\uparrow$ &  \\
+%water                            & none   & $\uparrow$ & $\uparrow$ &  
+%\bottomrule
+%\end{tabular}
+%
+%\section{Big Loop Stuff}
+%Big loop stuff corresponds to a delay.
+%
+
+\section{Shift Directions for Unloading}
+\begin{tabular}{lll}
+ \toprule
+ sample & $\Delta f$ & $\Delta R$ \\
+ \midrule
+ Sauerbrey & $\uparrow$ &   $\downarrow$ \\
+ air       & $\uparrow$ & $\uparrow$ \\
+ water     & $\uparrow$ &   $\downarrow$ \\
+ HBFR      & $\downarrow$ & $\uparrow$ \\
+ $\lambda$ only & 
+ \bottomrule
+\end{tabular}
+\end{document}
+
+
+

@@ -1,0 +1,108 @@
+\section{Driving Circuit}
+The QCM driving circuit employed in our experiments was an SRS 
+\subsection{Butterworth van Dyke Equivalent Circuit}
+The typical circuit used to analyze QCM behavior is called the
+\textit{Butterworth van Dyke} (BvD) circuit.  It consists of a capacitor
+$C_s$, an inductor $L_s$, and a resistor $R_s$ in series with a parallel
+capacitance $C_0$.
+\begin{center}
+ \begin{tikzpicture}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_s$] (4,1)
+  to[C, l^=$C_s$] (6,1)
+  to[L, l^=$L_s$] (8,1)
+  to[short] (8,-1)
+  to[short] (6,-1)
+  to[C, l^=$C_0$] (4,-1)
+  to[short] (2,-1)
+  to[short] (2,0);
+ \draw (9,0) node[anchor=west] {}
+  to[short, o-*] (8,0);
+\end{tikzpicture}
+\end{center}
+
+The top branch is the \textit{motional branch}, and relates to the crysal
+and its interaction with the environment.  The bottom is the \textit{static
+branch}, representing the paracitic capitances of the quartz and its driver.
+In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
+compensated phase locked oscillator circuit, $C_0$ is nulled with
+additional circuitry.  This is absolutely crutial, as the parallel $C_0$ 
+pertdubes the resonance frequency of the circuit by about
+\SI{0.825}{\hertz\per\pico\farad}.  The SRS manual gives a higher value
+of \SI{2}{\hertz\per\pico\farad}.
+
+Typical values for the \SI{1}{in} \SI{5}{\mega\hertz} AT cut quartz
+crystal used in with the QCM200\cite{srsqcmmanual} are
+
+\begin{table}[h]
+\begin{tabular}{ll}
+ $R_s$ & \SI{400}{\ohm} (water), \SI{10}{\ohm} (air) \\
+ $C_s$ & \SI{33}{\femto\farad} (SRS manual)\\
+ $L_s$ & \SI{30}{\milli\henry} (SRS manual), \SI{40}{\milli\henry} (my prediction) \\
+ $C_0$ & \SI{20}{\pico\farad} (SRS manual)
+\end{tabular}
+\end{table}
+
+The circuit may be also be solved using the following second order linear
+differential equation for charge
+\begin{equation}
+ L\ddot{q}+R\dot{q}+q/C = V(t)
+\end{equation}
+The natural frequency is 
+\begin{equation}
+ f_0 = \frac{1}{2 \pi L C}
+\end{equation}
+Where $C$ in the above equation takes into account both $C_0$ and $C_s$
+\begin{equation}
+ C = \frac{C_s C_0}{C_s + C_0}
+\end{equation}
+
+This, as well as more complicated equivalent circuit models can also be
+computed directly using SPICE, as per the following code snippet
+\begin{minted}{text}
+* Butterworth van Dyke equivalent circuit
+V1 0 1 ac 1 dc 0
+Rs 1 2 100
+R1 2 3 375
+C0 2 0 20e-12
+C1 3 4 33.0e-15
+L1 4 0 30e-3
+.control
+ac lin 100000 5.052e6 5.063e6
+write bvd.raw all
+\end{minted}
+
+Liquid sensing under a rigid coating is modeled with a modified Butterworth
+van Dyke circuit as follows 
+
+\begin{center}
+ \begin{tikzpicture}[scale=0.75]
+ \draw (1,0) node[anchor=east] {}
+  to[short, o-*] (2,0)
+  to[short] (2,1)
+  to[R, l^=$R_\text{s}$] (4,1)
+  to[C, l^=$C_\text{s}$] (6,1)
+  to[L, l^=$L_\text{s}$] (8,1)
+  to[L, l^=$L_\text{c}$] (10,1)
+  to[L, l^=$L_\text{l}$] (12,1)
+  to[R, l^=$R_\text{l}$] (14,1)
+  to[short] (14,0);
+  \draw (14,0) node[anchor=west] {}
+  to[short] (14,-1)
+  to[C, l^=$C_0$] (8,-1)
+  to[short] (2,-1);
+ \draw (14,0) node[anchor=west] {}
+  to[short] (14,-3)
+  to[C, l^=$C_\text{l}$] (6,-3)
+  to[short] (2,-3)
+  to[short] (2,0);
+
+ %\draw (9,0) node[anchor=west] {}
+ % to[short, o-*] (14,0);
+\end{tikzpicture}
+\end{center}
+
+
+
