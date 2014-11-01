@@ -219,10 +219,13 @@ Centrifugal Force Quartz Crystal Microbalance
 	intro, motivation
 	what is new here
 	historical perspective
-	what is a qcm
-	math of "normal" qcm
-		sauerbrey equation (derive)
+	theory
+		at cut quartz, electrodes
+		sets up shear wave
+		frequency determined by acoustic impedance, both of quartz and the load
+		sauerbrey equation 
 		gordon-kanazawa relations
+		equivalent circuit for measuring, important for reasons
 		BvD circuit analysis (spice)
 			differential equation LCR
 		coupled oscillator model
