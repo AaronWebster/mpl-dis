@@ -1,97 +1,52 @@
 As sensors, QCMs found their initial applications monitoring thin film
 deposition in vacuums.  Here it was found that a QCM would exhibit a
-frequency shift $\df$ proportional to the adsorbed mass $m$
-\begin{equation}
- \df=-\frac{2f_{F}^{2}}{A\sqrt{\rho_{q}\mu_{q}}}\Delta m
- \label{eqn:sauerbrey}
-\end{equation}
-where $A$ is the active area of the crystal, $\Delta m$ is the adsorbed
-mass, $\rho_{q}$ is the density of quartz and $\mu_{q}$ is the shear
-modulus of quartz. Usually \Equation{eqn:sauerbrey} is condenced such that
-$\Delta m$ is a linear function of a single ``sensitivity factor''
-$C_\mathrm{f}$
-\begin{equation}
- \Delta f=-C_{\text{f}}\Delta m
-\end{equation}
-where $C_{\text{f}}=\SI{56.6}{\hertz\per\micro\gram\centi\meter\squared}$.
-\Equation{eqn:sauerbrey} is known as the
-\textit{Sauerbrey relation}.  A typical QCM might have a
-$f_F=\SI{5}{\mega\hertz}$ and a frequency resolution of \SI{0.1}{\hertz};
-\Equation{eqn:sauerbrey} predicts sub-monolayer (and is only valid in this
-range) resolution of the thickness
-metal and dielectric layers.  This is the reason the name QCM includes the
-word ``microbalance''.
+frequency shift $\df$ linearly proportional to the adsorbed mass.  This
+work was first carried out by \name{Sauerbrey} in the vacuum phase.  This
+\texit{Sauerbrey relation} predicted (and was only vaild for) sub-monolayer
+thicknesses of rigidly attached (metal, dielectric) layers.  This is the
+reason the name QCM includes the word ``microbalance''.
 
 Initially it was thought that the low $Q$ mechanical resonance of the QCM
 precluded its use in the liquid phase.  This was incorrect, as subsequent
-work published in 1985 by \name{Gordon} and \name{Kanazawa}~\cite{guys} extended the
-treatment of \name{Sauerbrey} to the liquid phase.  These relations,
-derived from a Butterworth van Dyke equivalent circuit, predicted the
-resonant frequency of the QCM
-to be sensitive to the density-viscosity product of the liquid in contact
-with the crystal, 
-\begin{align}
-\df=&-f_{\text{F}}^{3/2}\left(\frac{\rho_{\text{L}}\eta_{\text{L}}}{\pi\rho_{q}\mu_{q}}\right)^{1/2}\\
-\Delta R=&2f_{\text{F}}L\left(\frac{4\pi
- f_{\text{F}}\rho_{\text{L}}\eta_{\text{L}}}{\rho_{q}\mu_{q}}\right)^{1/2}
-\end{align}
-where $\rho_{\text{L}}$ and $\eta_{\text{L}}$ are the unknown density and
-viscosity of the liquid.  Note that in the treatment by both Sauerbrey and
-Gordon and Kanazawa, the frequency shifts are always \textit{negative} as a
-function of increasing mass or density-viscosity.
+work published in 1985 by \name{Gordon} and
+\name{Kanazawa}~\cite{kanazawa1985frequency} extended the treatment of
+\name{Sauerbrey} to the liquid phase.  These relations, derived from a
+Butterworth van Dyke equivalent circuit, predicted the resonant frequency
+of the QCM to be sensitive to the density-viscosity product of the liquid
+in contact with the crystal.  It is important to note that, in the
+treatment by both Sauerbrey and Gordon and Kanazawa, the frequency shifts
+are always \textit{negative} as a function of increasing mass or
+density-viscosity.
 
-The same year, \name{G. Dybwad} published a rather elegant
+The same year, \name{Dybwad} published a rather elegant
 experiment~\cite{dybwad} in which he looked at the frequency shift of a QCM
-in air when a single micron sized gold particle rests on the sensor
-surface.  Remarkably, \name{Dybwad} reported a \textit{positive}
-frequency shift.  The shift was explained with a coupled oscillator model
-shown in \Figure{fig:dybwad}.
-%\begin{figure}
-% \caption{Coupled oscillator model used by \name{Dybwad}.}
-% \label{fig:dybwadschema}
-%\end{figure}
-Here, the quartz crystal with mass $\mq$ and stiffness
-$\kq$ resonates at
-$\omega_\mathrm{q}^2=\kq/\mq$ and is coupled by a spring
-$\kl$ to a load mass $\ml$.  The load mass is the actual mass of
-the particle, $4/3 \pi r^3 \rho$.  The spring $\kl$ represents the
-``stiffness'' of the contact -- how strongly the particle is coupled to the
-QCM surface.  The coupled system in \Figure{fig:dybwadschema} is described
-by the differential equations
-\begin{align}
- \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q}\\
- \ml \ddot{x}_\mathrm{L} &= -\kl (x_\mathrm{q}-x_\mathrm{L})
-\end{align}
-which, using an ansatz of
-$x_{\mathrm{q},\mathrm{L}}=A_{\mathrm{q},\mathrm{L}}\me^{\mi \omega t}$ has
-eigenvalues $\omega$ of
-\begin{equation}
- 2\omega^{2}=\left(\frac{\kq}{\mq}+\frac{\kl}{\mq}+\frac{\kl}{m}\right)\pm\left(\left(\frac{\kq}{\mq}+\frac{\kl}{\mq}+\frac{\kl}{\ml}\right)^{2}-4\frac{\kq}{\mq}\frac{\kl}{\ml}\right)^{1/2}
- \label{eqn:dybwadresult}
-\end{equation}
+in air when a single micron sized gold particle was placed on the sensor
+surface.  Remarkably, \name{Dybwad} reported a \textit{positive} frequency
+shift.  Dybwad explained this result with a coupled oscillator model,
+assuming that the gold particle remained at rest in the laboratory frame
+while the QCM oscillated beneath it.  The coupling between the two systems
+was mediated by the strength of the contact between the particle and the
+QCM, which determined the sign of the frequency shift.  In the weak
+coupling regime, the particle was at rest and the negative frequency shift
+predicted by \name{Sauerbrey} was observed.  In the strong coupling regime,
+the particle took part in the motion of the QCM and a positive frequency
+shift was observed.
 
-%\begin{figure}
-% \caption{Resonant frequency of the Dybwad model as a function of coupling
-%  strength, $\kl$.}
-% \label{fig:dybwadplot}
-%\end{figure}
-\Equation{eqn:dybwadresult}, shown in \Figure{fig:dybwadplot} has two
-important limits about $\omegaq^2 \ml$
-\begin{align}
- \lim_{\kl\to\infty} \omega^2 &= \frac{\kq}{\mq+\ml}\\
- \lim_{\kl\to0} \omega^2 &= \frac{\kq}{\mq}
-\end{align}
-In the weak coupling regime, $\kl\ll\omegaq^2\ml$, the particle causes a
-positive frequency shift proportional to $\kl$ and independent of $\ml$.
-Indeeed, in \name{Dybwad}'s model, in the weak coupling regime the
-particle is seen to be at rest in the labratory frame. In the limit of strong
-coupling, $\kl\gg\omegaq^2\ml$, the mass adsorption predicted by
-\name{Sauerbrey} takes over.  Dybwad's work is important because it
-establishes a continuum model for QCM behavior, encompassing both positive
-and negative frequency shifts.
+We will partake of the details of this model shortly, for now it is enough
+to note the importance of \name{Dybwad}'s work as the first attempt at a
+continuum model for QCM behavior, encompassing both positive and negative
+frequency shifts.
+
+\name{Dybwad}'s work remained largely unnoticed until the last decade, with 
+
 
 Some dingus guys use a nanoindenter probe combined with a QCM, this is
 where we jump off.
+
+Our story begins with 
+
+This takes us to the present day when \name{Sato}, inspired by another
+centrfugal force guy, proposed blah by Ken and Wesley.
 
 Last, Yuki got the idea from other applicaions of force on stuff done by
 Ken and Wesley.  So plan to jump into the main text.
