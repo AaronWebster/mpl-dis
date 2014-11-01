@@ -18,6 +18,7 @@
 *.pdf_tex
 *.fdb_latexmk
 *.swp
+*.pyg
 figures/*.bib
 external/
 #figures/*.pdf
