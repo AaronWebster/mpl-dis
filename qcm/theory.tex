@@ -23,19 +23,33 @@ temperature coefficent at \SI{25}{\celsius}.
  \label{fig:qcmtsm}
 \end{figure}
 
-In this work we will sidestep 
+\subsection{Small Load Approximation}
 
 
+Shifts in frequency, $\df$, and bandwidth (half-width at half maximum),
+$\dg$, are computed by evaluating the stress-speed ratio of the oscillating
+boundary according to the relationship
+\begin{equation}
+ \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
+\label{eqn:comsolextract}
+\end{equation}
+where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
+velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
+denotes a line average along the boundary.  In \comsol, and in the
+coordinates of \Figure{fig:compgeometry}, $\sigma$ is 
+\texttt{Total stress, y component} (\texttt{v}) and $\dot{u}$ is 
+\texttt{Velocity field, y component}, (\texttt{spf.T\_stressy}).  Note that
+the stress speed ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to
+specific acoustic impedance, also called ``shock impedance'', sound
+pressure over velocity.  In other words, the stress-speed ratio is the
+impedance of the film. 
 
-The specific fundamental resonance frequency is determined largely by the
-dimensions of the crystal, 
+\begin{equation}
+Z_\mathrm{L} = \left<\frac{\sigma}{\dot{u}}\right>
+\label{eqn:comsolextract}
+\end{equation}
 
-do derivation starting on page 70
-
-(actually, just do the mass spring system because that's all you're going
-to use anyway)
-
-only odd harmonics can be exited
+%% small load approximation -> other paper -> equivalent mechanical model
 
 
 As sensors, QCMs found their initial applications monitoring thin film
