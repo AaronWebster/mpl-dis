@@ -1,4 +1,4 @@
-\section{Basic Setup}
+\section{Setup}
 \begin{figure}[ht]
 \centering
 \import{qcm/figures/}{qcm_annotated_picture.pdf_tex}
@@ -6,19 +6,20 @@
 centrifuge is a standard swinging bucket type.}
 \label{fig:cfqcmexpsetup}
 \end{figure}
-The CF-QCM paragon experimental setup is shown in
-\Figure{fig:cfqcmexpsetup}.  The basic setup consists a
-\SI{25}{\milli\meter} diameter \SI{5}{\mega\hertz} gold coated crystal in
-combination with an SRS QCM200 PLL based driver circuit and an external
-rubidium frequency standard.  The driver circuit and crystal are integrated
-into the arm of a commercial swinging bucket centrifuge.  The QCM is then
-connected in proximity to a remote driver which is tethered via a slip-ring
-connector to external data acquisition electronics and a computer.  The crystal itself is
-mounted in a holder radially by its edges such that the centrifugal force
-$F_\mathrm{c}$ is always normal to the surface of the crystal.  On the
-sensing side of the crystal is a $\SI{125}{\micro\liter}$ volume PDMS/glass
-cell containing the sample.  The cell is made of a thin o-ring of PDMS
-(Sylgard 184, 10:1 ratio, cured \SI{20}{\minute} at \SI{120}{\celsius})
+
+The CF-QCM experimental setup is shown in \Figure{fig:cfqcmexpsetup}.  It
+consists of a \SI{25}{\milli\meter} diameter \SI{5}{\mega\hertz} gold
+coated crystal in combination with an SRS QCM200 PLL based driver circuit
+and an external rubidium frequency standard.  The driver circuit and
+crystal are integrated into the arm of a commercial swinging bucket
+centrifuge.  The QCM is then connected in proximity to a remote driver
+which is tethered via a slip-ring connector to external data acquisition
+electronics and a computer.  The crystal itself is mounted in a holder
+radially by its edges such that the centrifugal force $F_\mathrm{c}$ is
+always normal to the surface of the crystal.  On the sensing side of the
+crystal is a $\SI{125}{\micro\liter}$ volume PDMS/glass cell containing the
+sample.  The cell is made of a thin o-ring of PDMS (Sylgard 184, 10:1
+ratio, cured \SI{20}{\minute} at \SI{120}{\celsius})
 $\text{OD}=\SI{25}{\milli\meter}$, $\text{ID}=\SI{15.5}{\milli\meter}$ in
 contact with the sensing side of the crystal and covered with
 \SI{25}{\milli\meter} round N\raisebox{0.25em}{\relsize{-2}\b{o}}~1
@@ -167,6 +168,13 @@ added to the annealed linker.  The reaction was allowed to proceed at room
 temperature for \SI{3}{\hour}.
 
 \section{Environmental Effects and Noise}
+In the next chapter we will present the response of the CF-QCM under
+different load situations.  Before doing so, it is prudent that all
+non-sample phenomena that could influence the sensogram are taken into
+account.  These have been tabulated in \Table{tbl:environmentaleffects}.
+We will discuss this table in the next chapter.
+\begin{table}
+\centering
 \begin{tabular}{l>{\raggedright}p{5cm}llllll}
 \textbf{phenomena} & \textbf{response} & \textbf{refs} & \multicolumn{5}{l}{\textbf{predicted shifts}}\tabularnewline
  &  &  & \multicolumn{2}{l}{max} & \multicolumn{3}{l}{avg}\tabularnewline
@@ -189,14 +197,6 @@ parasitic capacitance & \SI{2}{\hertz\per\pico\farad} & \cite{srsqcm200manual} &
 acceleration & \SI{9e-11}{\per g}, depending on orientation & \cite{norton1993tactical} & 0.9 & - & 0.045 & \multicolumn{2}{l}{-}\tabularnewline
  & \SI{0.0218813}{\hertz\per g} in air & \cite{1536938} & 4.3763 & - & 2.1881 &  & -\tabularnewline
 \end{tabular}
-
-\subsection*{Notes}
-\begin{itemize}
-\item Temperature effects as described in the manual are most accurate,
-but are too slow compared to the force-frequency curves we see.
-\item Pressure is also ruled out. The mass difference between water and
-\SI{1}{M} \ce{NaCl} is about \SI{7.5}{\milli\gram}, while the signal
-difference is \SI{-1}{\hertz} for water and \SI{-30}{\hertz} for
-\SI{1}{M} \ce{NaCl}.
-\item Mechanical stress also ruled out for the same reason.
-\end{itemize}
+\caption{Environmental effects on the QCM resonance frequency.}
+\label{tbl:environmentaleffects}
+\end{table}
