@@ -15,7 +15,6 @@
 *.tdo
 *.toc
 *.toc.make
-*.pdf_tex
 *.fdb_latexmk
 *.swp
 *.pyg

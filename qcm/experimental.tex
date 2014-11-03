@@ -13,7 +13,7 @@ combination with an SRS QCM200 PLL based driver circuit and an external
 rubidium frequency standard.  The driver circuit and crystal are integrated
 into the arm of a commercial swinging bucket centrifuge.  The QCM is then
 connected in proximity to a remote driver which is tethered via a slip-ring
-connector to external data acquisition electronics.  The crystal itself is
+connector to external data acquisition electronics and a computer.  The crystal itself is
 mounted in a holder radially by its edges such that the centrifugal force
 $F_\mathrm{c}$ is always normal to the surface of the crystal.  On the
 sensing side of the crystal is a $\SI{125}{\micro\liter}$ volume PDMS/glass
@@ -32,9 +32,24 @@ to} the sensing side or, by mounting it upside down, in the
 \textit{unloading} configuration, where the force is \textit{away from} the
 sensing side.
 
-The centrifuge was further modified to facilitate control and data
-acquisition with a computer.  In addition to the QCM driver output, we
-also.
+In addition to the standard QCM driver output, the computer simultaneously
+records the angular velocity and internal temperature of the centrifuge
+itself.  The angular velocity is obtained with an optical interrupter
+switch placed over the spokes of an internal gear, acting as an ersatz
+wheel encoder.  The temperature is obtained with a standard K-type
+thermocouple.
+
+The internal motor of the centrifuge was also interfaced to an external DC
+power supply whose voltage was controlled by the same computer.  In this
+way, the spin speed and acceleration could be controlled.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10cm,keepaspectratio]{qcm/figures/qcm_holderdiss.jpg}
+\caption{Holder for the crystal, shown here split into its two halves.  The
+crystal is shown on the right.}
+\label{fig:cfqcmexpsetup}
+\end{figure}
 
 \section{Noise and Comparison to QCM-D} \label{sec:suppqcmdcomp}
 Typical of most QCM circuits, the QCM200 provides an output proportional to
@@ -100,7 +115,6 @@ that the important aspect of the CF-QCM, the centrifugal force, is
 independent of the type of technique used to drive and monitor the quartz
 crystal.  We therefore see no reason why our technique would not apply to
 all QCM based measurement techniques.  
-
 
 
 \section*{Results}
