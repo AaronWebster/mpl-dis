@@ -5,7 +5,7 @@
 
 # The first rule in a Makefile is the one executed by default ("make"). It
 # should always be the "all" rule, so that "make" and "make all" are identical.
-all: table.pdf dybwadmodel.pdf circlefit.pdf loadplot.pdf lowersphere.pdf multisweep.pdf drawing-side-specific.pdf 
+all: dybwadmodel.pdf
 
 # CUSTOM BUILD RULES
 
@@ -13,18 +13,13 @@ all: table.pdf dybwadmodel.pdf circlefit.pdf loadplot.pdf lowersphere.pdf multis
 # and '$<' is a variable holding the (first) dependency of a rule.
 # "raw2tex" and "dat2tex" are just placeholders for whatever custom steps
 # you might have.
-movefigure:
-	cp drawing-side-specific.pdf ../figure1.pdf
-	cp loadplot.pdf ../figure2.pdf
-	cp lowersphere.pdf ../figure3.pdf
-	cp circlefit.pdf ../figure4.pdf 
-	cp multisweep.pdf ../figure5.pdf
-
-drawing-side-specific.pdf: drawing-side-specific.svg
-	inkscape --export-pdf=$@ $<
 
 dybwadmodel.pdf: dybwadmodel.svg
 	inkscape --export-pdf=$@ --export-latex $<
+
+qcm_annotated_picture.pdf: qcm_annotated_picture.svg
+	inkscape --export-pdf=$@ --export-latex $<
+
 
 # MAIN LATEXMK RULE
 
@@ -32,11 +27,11 @@ dybwadmodel.pdf: dybwadmodel.svg
 # -pdflatex="" tells latexmk to call a specific backend with specific options.
 # -use-make tells latexmk to call make for generating missing files.
 
-# -interaction nonstopmode keeps the pdflatex backend from stopping at a
+# -interactive=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 %.pdf: %.tex
-	latexmk -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $< 
-	#pdfcrop --pdftex $@ $@
+	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode --shell-escape" -use-make $<
+	pdfcrop --pdftex $@ $@
 
 clean:
 	latexmk -CA

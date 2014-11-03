@@ -7,7 +7,6 @@
 \usepackage{ulem}
 \usepackage{import}
 \usepackage{paralist}
-\usepackage{booktabs}
 \usepackage[version=3]{mhchem}
 \usepackage{wrapfig}
 \usepackage{pifont}
@@ -27,6 +26,9 @@
 \usepackage[inline]{showlabels}
 \usepackage{subcaption}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{relsize}
+\usepackage{tabularx}
+\usepackage{booktabs}
 %\usepackage[toc,page]{appendix}
 
 \usepackage{hyperref}
@@ -61,12 +63,16 @@
 \usepackage{siunitx}
 \sisetup{ 
 binary-units,
+per-mode=reciprocal,
 % load-configurations=abbreviations
 % round-mode = places,
 }%
+
 \DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
 \DeclareSIUnit\Molar{\textsc{m}}
 \DeclareSIUnit\torr{torr}
+\DeclareSIUnit\particle{particle}
+\DeclareSIUnit\g{g}
 
 % prettify chapter/section format
 \usepackage{titlesec}
@@ -146,9 +152,13 @@ binary-units,
 \newcommand{\ml}{m_\mathrm{L}}
 \newcommand{\kq}{k_\mathrm{q}}
 \newcommand{\mq}{m_\mathrm{q}}
+\newcommand{\Rm}{R_\mathrm{m}}
+\newcommand{\Ac}{A_\mathrm{c}}
+\newcommand{\Lm}{L_\mathrm{m}}
 \newcommand{\omegaq}{\omega_\mathrm{q}}
 \newcommand{\thetasp}{\theta_\mathrm{sp}}
 \newcommand{\ksp}{k_\mathrm{sp}}
+\newcommand{\comsol}{\texttt{COMSOL}}
 
 \newcommand{\ersatzfigure}{\includegraphics[width=10cm,keepaspectratio]{includes/ersatz}}
 
