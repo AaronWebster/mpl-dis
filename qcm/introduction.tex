@@ -1,12 +1,19 @@
+\begin{figure}[ht]
+ \centering
+ \includegraphics[keepaspectratio,width=10cm]{qcm/figures/qcm_holding.jpg}
+ \caption{A \SI{25}{\milli\meter} \SI{5}{\mega\hertz} quartz crystal microbalance.}
+ \label{fig:qcmholding}
+\end{figure}
 There are few experimental techniques that allow the application of force
 on biological molecules. Among them, optical or magnetic tweezers and
 atomic force microscopes (AFMs) have provided much insight into the
-mechanics of DNA, RNA and
+mechanics of molecules such as DNA, RNA and
 chromatin~\cite{felsenfeld1992chromatin}~\cite{cui2000pulling}~\cite{larson2012trigger}~\cite{marko1995stretching},
-friction and wear in
-proteins~\cite{suda2001origin}~\cite{bormuth2009protein}, and stepwise
-motion of motor proteins~\cite{asbury2003kinesin}, all of which are
-important for understanding disease.
+improved understanding of friction and wear in
+proteins~\cite{suda2001origin}~\cite{bormuth2009protein}, and have even
+been able to observe stepwise motion of motor
+proteins~\cite{asbury2003kinesin}, all of which are important for
+understanding disease.
 
 However powerful, these methods are not able to be deployed as integrated
 devices to probe the mechanical properties of heterogeneous samples in a
@@ -14,19 +21,6 @@ wide range of applications; tweezer and AFM experiments rely on highly
 trained experimentalists, are not widely applicable as analytical tools,
 and are often constrained to the analysis of well prepared homogeneous
 samples not amenable to multiplexing.
-
-Among direct mechanical transduction methods, the sensitivity, low cost,
-and ease of use make the quartz crystal microbalance (QCM) ideal for real
-time monitoring of biomechanical properties such as viscoelasticity,
-conformal changes~\cite{fant2000adsorption}, and contact
-rigidity~\cite{cooper2007survey}.  Naturally, these benefits
-do not come without disadvantages. The underlying mechanical properties of
-the sample are often not revealed by the stepwise changes in the QCM
-sensorgram, an issue complicated by the choice of theoretical model.
-Operation in the liquid phase is also associated with a rather low-Q
-resonance QCM precluding their use for single molecule detection; up to now
-it has not been possible to integrate force on biomolecules in QCM
-measurements.
 
 Among tools suitable for direct mechanical transduction, the quartz crystal
 microbalance has seen increasing real-world utility as simple, cost
@@ -45,12 +39,33 @@ phase~\cite{kanazawa1985frequency}, non-destructive contact
 mechanics~\cite{johannsman2007contacts}, and complex topologies of
 biopolymers and biomacromolecules~\cite{marx2003quartz}. 
 
-In light of these issues and the analytical power of force based
-techniques, this part concerns a novel type of instrument that uses a QCM
-as a direct mechanical transducer for the response of biomolecules placed
-in a variable force field provided by a standard commercial centrifuge.
-This \textit{centrifugal force quartz crystal microbalance} (CF-QCM)
-concept is about direct introduction of pico to nanoscale forces in the
-liquid phase for analyzing the mechanical properties of biomaterials.
+Naturally, QCMs do not come without their own disadvantages. The underlying
+mechanical properties of the sample are often not revealed by the stepwise
+changes in the QCM sensorgram, an issue complicated by the choice of
+theoretical model.  Operation of QCMs in the liquid phase is also
+associated with a rather low-Q resonance, limiting their sensitivity and
+precluding their use for single molecule detection.  Furthermore, up to now
+it has not been possible to integrate force on biomolecules in QCM
+measurements.
 
-(maybe say how the whole thing is organized)
+In light of these issues and the analytical power of force based
+techniques, we discribe in this part a novel type of instrument that uses a
+QCM as a direct mechanical transducer for the response of discrete samples
+(molecules, particles) placed in a variable force field provided by a
+standard commercial centrifuge.  This \textit{centrifugal force quartz
+crystal microbalance} (CF-QCM) concept is about direct introduction of pico
+to nanoscale forces in the liquid phase for analyzing the mechanical
+properties of biomaterials.
+
+\subsection{Organization}
+We begin in this chapter with a small historical perspective and proceed
+with a derivation of the relevant mathematics which will allow us to
+predict the response of a QCM for samples under centrifugal force.
+Following, \Chapter{ch:qcmexperimental} outlines the nuts and bolts of the
+CF-QCM; hardware, electronics, and data acquisition.  Drawing on the theory
+presented, the main results of this work are presented in
+\Chapter{ch:qcmloadsituations} for many different types of samples.  We have
+also constructed a finite element simulation which complements the
+theoretical model.  This is presented in \Chapter{ch:qcmsimulation} along
+with predictions of CF-QCM behavior for samples which we have not yet had
+the opportunity to probe.

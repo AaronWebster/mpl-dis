@@ -1,32 +1,33 @@
-A rigerous derivation of QCM behavior is beyond the scope of this work.
-Rather, we begin much closer to the physics relevant to our new results with what is
-known as the \textit{small load approximation}  Here, the shift in
-frequency, $\df$ and bandwidth (half-width at half maximum), $\dg$, of a
-QCM under load are computed by evaluating the stress-speed ratio on the
-oscillating boundary according to the relationship
+\subsection{The Small Load Approximation}
+A rigerous outline of QCM theory is beyond the scope of this work.  Rather,
+we begin much closer to the physics relevant to our new results with what
+is known as the \textit{small load approximation}.  The small load
+approximation is a statement that the for a QCM under load, the
+\textit{change} in frequency, $\df$ and bandwidth (half-width at half
+maximum), $\dg$, of a QCM under load are computed by evaluating the
+stress-speed ratio on the oscillating boundary according to the
+relationship
 \begin{equation}
  \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
 \label{eqn:comsolextract}
 \end{equation}
 where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
 velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
-denotes a line average along the boundary.  
-Note that the stress speed ratio $\left<\sigma/\dot{u}\right>$ is
-dimensionally equivalent to specific acoustic impedance, also called
-``shock impedance'', sound pressure over velocity.  In other words, the
-stress-speed ratio is the impedance of the film.
-\begin{equation}
-Z_\mathrm{L} = \left<\frac{\sigma}{\dot{u}}\right>
-\label{eqn:comsolextractzl}
-\end{equation}
+denotes a line average along the boundary.  Note that the stress speed
+ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to specific
+acoustic impedance, also called ``shock impedance'', sound pressure over
+velocity.  In other words, the stress-speed ratio is the impedance of the
+film.  Furthermore, in \Equation{eqn:comsolextract} we have used the
+common convention of a complex frequency, where $\df$ represents the
+maximum of the resonance and $\dg$ the half-width at half maximum of the
+same resonance distribution.
 
-With this in mind, we turn to a classic mechanical model based on coupled
-oscillators, shown in \Figure{fig:mechanicalmodel}.  Here the resonance of
-the QCM at $\omegaq^2=\kq/\mq$ is coupled to a mass $\ml$ through a spring
-$\kl$ and dashpot $\xil$.  The spring and dashpot are not \textit{actual}
-springs and dashpots, rather they are analogies for the coupling of two
-systems with different resonances in the small load approximation.  The QCM
-itself has a small damping term, but it is small enough that we neglect it.
+The small load approximation is a perturbation of the main resonance, and
+thus is only applicable when the impedance of the load is much smaller than
+the impedance of the crystal, $Z_\mathrm{L} \ll Z_\mathrm{q}$, or
+equivalently $\df \ll f_\mathrm{F}$.
+
+\subsection{Mechanical Model}
 \begin{figure}[ht]
  \centering
  \import{qcm/figures/}{dybwadmodel.pdf_tex}
@@ -34,18 +35,25 @@ itself has a small damping term, but it is small enough that we neglect it.
  \label{fig:mechanicalmodel}
 \end{figure}
 
-Here, the quartz crystal with mass $\mq$ and stiffness $\kq$ resonates at
-$\omega_\mathrm{q}^2=\kq/\mq$ and is coupled by a spring $\kl$ to a load
-mass $\ml$.  The load mass is the actual mass of the particle, $4/3 \pi r^3
-\rho$.  The spring $\kl$ represents the ``stiffness'' of the contact -- how
-strongly the particle is coupled to the QCM surface.  The coupled system in
-\Figure{fig:mechanicalmodel} is described by the system of equations
+With the small load approximation in mind, we now turn to classical
+mechanics for a model of a QCM under load.  Consider the coupled oscillator
+system in \Figure{fig:mechanicalmodel}.  Here the resonance of the QCM at
+$\omegaq^2=\kq/\mq$ is coupled to a load mass $\ml$ through a spring $\kl$
+and dashpot $\xil$.  The spring and dashpot are not \textit{actual} springs
+and dashpots, rather they are analogies for the coupling of two systems
+with different resonances in the small load approximation analogous with
+$\ml\ll\mq$.  The QCM itself has a small damping term, but it is small
+enough that we neglect it.  The spring $\kl$ represents the ``stiffness''
+of the contact -- how strongly the particle is coupled to the QCM surface
+and the dashpot $\xil$ represents energy lost through the coupling.  
+
+The coupled system in \Figure{fig:mechanicalmodel}, for displacements of
+$\mq$ by $x_\mathrm{q}$ and $\ml$ by $x_\mathrm{L}$, is described by the
+set of differential equations
 \begin{align}
- \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q}\\
+ \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q} +\kl (x_\mathrm{q}-x_\mathrm{L}) + \xil ((\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})\\
  \ml \ddot{x}_\mathrm{L} &= -\kl (x_\mathrm{q}-x_\mathrm{L}) - \xil ((\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})
 \end{align}
-
-% equation 2 on prl paper leads to 
 
 which, using an ansatz of
 $x_{\mathrm{q},\mathrm{L}}=A_{\mathrm{q},\mathrm{L}}\me^{\mi \omega t}$ has

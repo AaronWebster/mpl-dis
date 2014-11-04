@@ -5,7 +5,7 @@
 
 # The first rule in a Makefile is the one executed by default ("make"). It
 # should always be the "all" rule, so that "make" and "make all" are identical.
-all: dybwadmodel.pdf qcm_annotated_picture.pdf
+all: dybwadmodel.pdf qcm_annotated_picture.pdf qcm_shearmode.pdf
 
 # CUSTOM BUILD RULES
 
@@ -20,6 +20,8 @@ dybwadmodel.pdf: dybwadmodel.svg
 qcm_annotated_picture.pdf: qcm_annotated_picture.svg
 	inkscape --export-pdf=$@ --export-latex $<
 
+qcm_shearmode.pdf: qcm_shearmode.svg
+	inkscape --export-pdf=$@ $<
 
 # MAIN LATEXMK RULE
 
