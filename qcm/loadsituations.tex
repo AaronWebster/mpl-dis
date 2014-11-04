@@ -1,34 +1,25 @@
-\begin{figure*}[ht]
+\begin{figure}[ht]
 \centering
 \includegraphics{qcm/figures/figure1.pdf}
-\caption{Overview of the CF-QCM.  (a) Experimental setup.  A QCM and its driver are integrated into one
-arm of a standard swinging bucket centrifuge.  Data acquisition is done
-electrically through a tether and a centrally mounted slip ring.  When
-spinning, centrifugal force is applied to a sample under assay. Here
-$F_\mathrm{c} \equiv m \sqrt{a_\mathrm{c}^2 +a_\mathrm{g}^2}$, where
-$a_\mathrm{c}=\omega^2 R$ and $a_\mathrm{g}$ are centripetal and gravitational
-accelerations, respectively.  (b)
-Example CF-QCM experiment with \SI{1}{\micro\meter} particles in water,
+\caption{Overview of the CF-QCM and its sensogram.  (a) Schematic of the
+experimental setup.  (b) Example CF-QCM sensogram
+for a sample consisting of with \SI{1}{\micro\meter} particles in water,
 $N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$, in the
 ``loading'' configuration (inset).  The horizontal arrows indicate the
-motion of the QCM's transverse shear mode.
-The spin up to \SI{90}{g} in
-loading configuration enhances the QCM frequency shift signal and allows
-extraction of mechanical properties of the sample, as well as particle 
-size. See text for details.
-}
+motion of the QCM's transverse shear mode.  }
 \label{fig:expsetup}
-\end{figure*}
+\end{figure}
 
+We now turn to study of the CF-QCM sensogram for different load situations.
 An example CF-QCM response for free particles is depicted to the left in
 \Figure{fig:expsetup}(b).  Here, free \SI{1}{\micro\meter} streptavidin
 coated polystyrene particles in water are introduced into the sample cell.
 When the cell is rotated to the loading configuration under the influence
-of gravity alone, the particles fall toward the sensing surface and a positive
-shift in the QCM's frequency signal is observed.  When the cell is then
-rotated 180 degrees to the unloading configuration, the particles fall off
-and the frequency response returns to its original state.  Again the cell
-is rotated 180 degrees to the loading configuration and the positive
+of gravity alone, the particles fall toward the sensing surface and a
+positive shift in the QCM's frequency signal is observed.  When the cell is
+then rotated 180 degrees to the unloading configuration, the particles fall
+off and the frequency response returns to its original state.  Again the
+cell is rotated 180 degrees to the loading configuration and the positive
 frequency shift is observed.  As the centrifuge spins up towards
 \SI{90}{g}, the particles are ``pressed'' towards the QCM surface and a
 four fold increase in the frequency shift is observed.  The centrifuge then
@@ -38,8 +29,9 @@ recovered.
 Traditional QCM experiments assume that the inertial properties and
 rigidity of the sample's coupling are taken as a fixed parameter (or
 statistical distribution) under assay.  With this approach however, one is
-only able to obtain discrete values in an otherwise continuous parameter space.  Hybrid-QCM experiments
-involving nanoindenters~\cite{borovsky2001measuring} or AFM probe
+only able to obtain discrete values in an otherwise continuous parameter
+space.  Hybrid-QCM experiments involving
+nanoindenters~\cite{borovsky2001measuring} or AFM probe
 tips~\cite{richter2003pathways} have shown intriguing behavior when force
 is applied to a sample in a QCM measurement.  There have also been reports
 that accelerations as small as \SI{1}{g} have a measurable effect on a
@@ -66,18 +58,6 @@ accessible with our technique.  They are:
 \item polystyrene particles tethered to the sensor via \SI{48}{kbp} lambda phage DNAs.
 \end{inparaenum}
 
-The employed QCM driver circuit outputs Butterworth van Dyke (BvD)
-equivalent relative frequency $\df$ (in hertz) and motional resistance $R$ (in ohms).
-$R$ is approximately related to the bandwidth $\Gamma$ (half width at half
-maximum of the frequency response) by $\Gamma=R/\left(4\pi L\right)$, where
-$L=\SI{40}{\milli\henry}$ is the motional inductance of the BvD
-equivalent circuit~\cite{arnau2002circuit}.  For this
-relationship we assume the small load approximation $\df/f_\mathrm{F} \ll
-1$, where $f_\mathrm{F}$ is the fundamental frequency~\cite{geelhood2002transient}.
-It is therefore relevant to note our assumption that $\Delta R$ is an
-approximate, and indirect, measure of the bandwidth $\dg$ (in
-hertz).  In addition $\dg$ is an equivalent representation of the ``dissipation'', $D$, used in
-QCM-D devices by $D=2\dg/f_\mathrm{F}$ 
 \begin{figure*}[ht]
 \centering
 %\hspace{-1.0cm}
@@ -111,43 +91,52 @@ run.
 \end{figure*}
 
 \section{Air}
-The instrument's response was first tested in air, shown parametrically in 
-\Figure{fig:loadplot}(a).  The base acceleration sensitivity (change in
-frequency versus change in g-force) of AT cut quartz normal to the plane of
-the crystal has a reported value~\cite{valdois2794influence} of $\df/\Delta
-g =\SI{2.188+-0.006e-2}{\hertz\per\g}$.  Our instrument shows similar
+As a first step, we record the instrument's response in air, shown
+parametrically in \Figure{fig:loadplot}(a).  The base acceleration
+sensitivity (change in frequency versus change in g-force) of AT cut quartz
+normal to the plane of the crystal has a reported
+value~\cite{valdois2794influence} of $\df/\Delta g
+=\SI{2.188+-0.006e-2}{\hertz\per\g}$.  The CF-QCM data shows similar
 behavior: $\df/\Delta g =\SI{2.682+-0.023e-2}{\hertz\per\g}$ in the loading
 configuration.  The signs of $\df/\Delta g$ are found to be opposite in the
-loading and unloading configurations.  We have not found a reference for
+loading and unloading configurations.  Though we have not found a reference for
 the bandwidth or motional resistance dependence of a QCM under
-acceleration, but we find the value to be $\dg/\Delta g =
+acceleration, the data predicts a linear relationship of $\dg/\Delta g =
 \SI{9.203+-0.171e-4}{\hertz\per\g}$.
 
 \section{Deionized Water}
-Next, deionized water was used as a control sample for measurement in the
+Next, we use deionized water as a control sample for measurement in the
 liquid phase, as shown in \Figure{fig:loadplot}(b).  The initial shift in
-frequency and bandwidth is in agreement with what is obtained the Kanazawa-Gordon
-relations~\cite{kanazawa1985frequency} for water
-($\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
-$\eta=\SI{1}{\milli\pascal\second}$): $\df = \SI{-714}{\hertz}$ and
+frequency and bandwidth is in agreement with what is obtained the
+Kanazawa-Gordon relations~\cite{kanazawa1985frequency} 
+\begin{align}
+\df=&-f_{\text{F}}^{3/2}\left(\frac{\rho_{\text{L}}\eta_{\text{L}}}{\pi\rho_{q}\mu_{q}}\right)^{1/2}\\
+\Delta R=&2f_{\text{F}}L\left(\frac{4\pi
+ f_{\text{F}}\rho_{\text{L}}\eta_{\text{L}}}{\rho_{q}\mu_{q}}\right)^{1/2}
+\end{align}
+where $\rho_{\text{L}}$ and $\eta_{\text{L}}$ are the unknown density and
+viscosity of the liquid.   Plugging in the values for water,
+$\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
+$\eta=\SI{1}{\milli\pascal\second}$, $\df = \SI{-714}{\hertz}$ and
 $R=\SI{359}{\ohm}$, which are close to the measured values of $\df =
-\SI{-716}{\hertz}$ and $R=\SI{357}{\ohm}$.  The response under centrifugal
-load was found to be linear and smaller than that of air: $\df/\Delta g=
+\SI{-716}{\hertz}$ and $R=\SI{357}{\ohm}$.  As is evidenced in
+\Figure{fig:loadplot}(b), the response under centrifugal
+load is linear and smaller than that of air: $\df/\Delta g=
 \SI{1.357+-0.024e-2}{\hertz \per\g}$ and $\dg/\Delta g=
-\SI{2.865+-0.073e-3}{\hertz\per\g}$.  We observe that these acceleration
-dependent forces in the liquid phase are not necessarily commensurate with
-those in the gas phase, but as the effects are small compared to
-experiments with actual loads, we treat them as baselines to be
-subtracted.
+\SI{2.865+-0.073e-3}{\hertz\per\g}$ by linear least squares fitting.  
+
+It is obvious here that these acceleration dependent forces in the liquid
+phase are not necessarily commensurate with those in the gas phase, but as
+the effects are small compared to experiments with actual loads, we will
+treat them as baselines to be subtracted.
 
 \section{Free Particles}
-% settling velocity
 Utilizing the flexibility that the instrument provides in modifying the
 coupling between the load and the sensor surface, we have applied the
 technique to the study of discrete micron sized particles.  As first
 referenced in \Figure{fig:expsetup}(b), the frequency and bandwidth shifts
 of free particles in the liquid phase as a function of g-force is shown in
-\Figure{fig:loadplot}(c).  Here, streptavidin coated polystyrene particles,
+\Figure{fig:loadplot}(c).  Here, free streptavidin coated polystyrene particles,
 mean diameter $\bar{d}=\SI{1.07}{\micro\meter}$, are placed in the sample volume with
 a surface density of
 $N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$ and the signal is
@@ -161,6 +150,8 @@ shift in $\df$ and $\dg$ was observed, consistent with
 previously observed responses for weakly coupled particles in this size
 range~\cite{johannsman2007contacts}.  
 
+% This is shown in ... settling velocity, flip cell upside/rightside, etc.
+
 The initial shift under \SI{1}{g} was found to be $\df=
 \SI{2.2}{\hertz}$ and $\dg=\SI{7.5}{\hertz}$.  At the maximum acceleration of \SI{90}{g} the
 signal increases to $\df = \SI{16.5}{\hertz}$ and $\dg=\SI{37}{\hertz}$. This also
@@ -168,8 +159,6 @@ represents a sensitivity enhancement in the minimum resolvable surface
 density of the particles.  The scaling of $\df$ and $\dg$ with increasing
 centrifugal load is nonlinear in the applied load, implying non-Hertzian
 behavior~\cite{borovsky2001measuring}.
-%The exact mechanism of coupling and relation of the applied force with is
-%beyond the scope of this manuscript.
 
 The same experiment was also carried out with \num{2}, \num{6}, \num{15},
 and \SI{25}{\micro\meter} polystyrene particles.
