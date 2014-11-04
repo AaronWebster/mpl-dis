@@ -1,0 +1,78 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'qcmresponse.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{507.47202148bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.27385943)%
+    \put(0,0){\includegraphics[width=\unitlength]{qcmresponse.pdf}}%
+    \put(0.28563922,0.17197122){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{weak coupling}}}%
+    \put(0.28485579,0.15372114){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{inertial loading}}}%
+    \put(0.66377848,0.12721765){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.52745751,0.05635125){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{mass loading}}}%
+    \put(0.52800665,0.07436465){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{strong coupling}}}%
+    \put(0.8530207,0.01671736){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\Delta\!f$}}}%
+    \put(0.46675461,0.00239641){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\omega_\mathrm{q}^2 m_\mathrm{L}$}}}%
+    \put(0.84917817,0.0415835){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$k_\mathrm{L} \to \infty$}}}%
+    \put(0.87478471,0.0415835){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L} \to 0$}}}%
+    \put(0.56089373,0.21209191){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta\!f$}}}%
+    \put(0.56089373,0.19166187){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta \Gamma$}}}%
+    \put(0.74259854,0.13548112){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[b]{\smash{$\Delta \Gamma$}}}}%
+    \put(0.95304728,0.08861042){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.81487488,0.14021512){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{strong}}}%
+    \put(0.81486757,0.12297702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
+    \put(0.89526157,0.13935112){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{weak}}}%
+    \put(0.89581439,0.12297702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
+    \put(0.03138221,0.22546355){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{load}}}%
+    \put(0.14974638,0.24678973){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{L}$}}}%
+    \put(0.16257192,0.18614579){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.0860675,0.18614579){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\xi_\mathrm{L}$}}}%
+    \put(0.02993008,0.0771389){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{QCM}}}%
+    \put(0.1604678,0.1079529){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{q}$}}}%
+    \put(0.14265239,0.04578497){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{q}$}}}%
+  \end{picture}%
+\endgroup%
