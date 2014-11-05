@@ -1,17 +1,17 @@
 \subsection{The Small Load Approximation}
-A rigerous outline of QCM theory is beyond the scope of this work.  Rather,
+A rigerous outline of QCM theory is well beyond the scope of this work.  Rather,
 we begin much closer to the physics relevant to our new results with what
 is known as the \textit{small load approximation}.  The small load
 approximation is a statement that the for a QCM under load, the
 \textit{change} in frequency, $\df$ and bandwidth (half-width at half
-maximum), $\dg$, of a QCM under load are computed by evaluating the
-stress-speed ratio on the oscillating boundary according to the
+maximum of the resonance), $\dg$, of a QCM under load are computed by evaluating the
+stress-speed ratio on the oscillating boundary, according to the
 relationship
 \begin{equation}
  \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
 \label{eqn:comsolextract}
 \end{equation}
-where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
+where $Z_\mathbf{q}$ is the acoustic impedance of AT cut quartz, $\sigma$ is the stress, $\dot{u}$ is the
 velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
 denotes a line average along the boundary.  Note that the stress speed
 ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to specific
@@ -28,41 +28,49 @@ the impedance of the crystal, $Z_\mathrm{L} \ll Z_\mathrm{q}$, or
 equivalently $\df \ll f_\mathrm{F}$.
 
 \subsection{Mechanical Model}
-\begin{figure}[ht]
- \centering
- \import{qcm/figures/}{dybwadmodel.pdf_tex}
- \caption{Coupled oscillator mechanical model for QCM behavior.}
- \label{fig:mechanicalmodel}
+\begin{figure}
+\centering
+\import{qcm/figures/}{qcmresponse.pdf_tex}
+\caption{ Mass-spring-dashpot mechanical model for a QCM under load. In the
+weak coupling regime the system experiences a positive frequency shift
+identified with inertial loading, while in the strong coupling regime the
+system experiences a negative frequency shift identified with mass loading.
+The fixed relationship between the shift in frequency $\df$ and bandwidth
+$\dg$ trace out a circle like path as a parametric function of $\kl$ .  }
+\label{fig:mechanicalmodel}
 \end{figure}
 
-With the small load approximation in mind, we now turn to classical
-mechanics for a model of a QCM under load.  Consider the coupled oscillator
-system in \Figure{fig:mechanicalmodel}.  Here the resonance of the QCM at
-$\omegaq^2=\kq/\mq$ is coupled to a load mass $\ml$ through a spring $\kl$
-and dashpot $\xil$.  The spring and dashpot are not \textit{actual} springs
-and dashpots, rather they are analogies for the coupling of two systems
-with different resonances in the small load approximation analogous with
-$\ml\ll\mq$.  The QCM itself has a small damping term, but it is small
-enough that we neglect it.  The spring $\kl$ represents the ``stiffness''
-of the contact -- how strongly the particle is coupled to the QCM surface
-and the dashpot $\xil$ represents energy lost through the coupling.  
+With the small load approximation in mind, we invoke a simple mechanical
+model based on coupled oscillators.  The arrangement of the mechanical
+model and the frequency response is shown in
+\Figure{fig:mechanicalmodel}(a).
+Here, the resonance of the quartz crystal
+$\omega_\mathrm{q}^2=k_\mathrm{q}/m_\mathrm{q}$ is coupled to a sample load
+with mass $m_\mathrm{L}$ though a parallel spring $k_\mathrm{L}$ and
+dashpot $\xi_\mathrm{L}$ representing a Kelvin-Voigt viscoelastic material.
+The spring and dashpot are not \textit{actual} springs and dashpots, rather
+they are analogies for the coupling of two systems with different
+resonances in the small load approximation analogous with $\ml\ll\mq$.  The
+QCM itself has a small damping term, but it is small enough that we neglect
+it.  The spring $\kl$ represents the ``stiffness'' of the contact -- how
+strongly the particle is coupled to the QCM surface and the dashpot $\xil$
+represents energy lost through the coupling.  
 
 The coupled system in \Figure{fig:mechanicalmodel}, for displacements of
 $\mq$ by $x_\mathrm{q}$ and $\ml$ by $x_\mathrm{L}$, is described by the
 set of differential equations
 \begin{align}
- \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q} +\kl (x_\mathrm{q}-x_\mathrm{L}) + \xil ((\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})\\
- \ml \ddot{x}_\mathrm{L} &= -\kl (x_\mathrm{q}-x_\mathrm{L}) - \xil ((\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})
+ \mq \ddot{x}_\mathrm{q} &= -\kq x_\mathrm{q} +\kl (x_\mathrm{q}-x_\mathrm{L}) + \xil (\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})\\
+ \ml \ddot{x}_\mathrm{L} &= -\kl (x_\mathrm{q}-x_\mathrm{L}) - \xil (\dot{x}_\mathrm{q}-\dot{x}_\mathrm{L})
 \end{align}
 
 which, using an ansatz of
-$x_{\mathrm{q},\mathrm{L}}=A_{\mathrm{q},\mathrm{L}}\me^{\mi \omega t}$ has
+$x_\mathrm{q}A_\mathrm{q}$ and $x_\mathrm{L}=A_\mathrm{L}\me^{\mi \omega t}$
 eigenvalues $\omega$ of
+$N_\mathrm{L}$ is a number surface density (number per unit area) for discrete
+loads.
 
-The derivation of this equation is described in detail in~\cite{olsson2012probing}.  Here we use the same equation but as a function
-of $\kl$, rather than that of the load resonance
-$\omega_\mathrm{L}^2=\kl/\ml$; the former being more appropriate to our
-analysis.  Using the small load approximation, the response of the system
+Using the small load approximation, the response of the system
 as a function of its coupling $\kl$ is
 \begin{equation}
 \frac{\Delta\!f + \mi \Delta \Gamma}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
@@ -73,18 +81,14 @@ as a function of its coupling $\kl$ is
 \omega_\mathrm{q} \xil\right)}
 \label{eqn:suppmastereq}
 \end{equation}
-where $\mathrm{Z}_\mathrm{q}$ is the acoustic impedance of AT cut quartz,
-$f_\mathrm{F}$ is the fundamental frequency of the resonator, and
-$N_\mathrm{L}$ is a number surface density (number per unit area) for discrete
-loads.
 
-The mechanical model has two important limits as a function of the contact
+The mechanical model is plotted in \Figure{fig:mechanical}(b), and 
+has two important limits as a function of the contact
 stiffness, $\kl$, known as \textit{strong} and \textit{weak} coupling.
 These limits occur to the left and right of a zero crossing in $\df$ at
 $k_\mathrm{zc}=\omegaq^2 \ml$.
-
-\vspace{-\baselineskip}
-\vspace{-\parskip}
+%\vspace{-\baselineskip}
+%\vspace{-\parskip}
 \begin{align}
 \frac{\df}{f_\mathrm{F}}&= 
 \frac{N_\mathrm{L} \kl}
@@ -99,6 +103,7 @@ $k_\mathrm{zc}=\omegaq^2 \ml$.
 \omegaq^2\right)
 \label{eqn:couplinguy2}
 \end{align}
+Note that $\dg$ goes to zero in either limit.
 
 Strong coupling is identified with mass loading
 (Sauerbrey~\cite{sauerbrey1959verwendung} behavior) and a \textit{negative}
@@ -111,13 +116,6 @@ identified by a \textit{positive} frequency shift independent of the mass
 and linearly proportional to $\kl$.  Here, the coupling is sufficiently
 weak such that the particle remains at rest in the labratory frame.  It is
 ``clamped'' by its own inertia.~\cite{du2008role}
-
-\begin{figure}
-\centering
-\import{qcm/figures/}{qcmresponse.pdf_tex}
-\caption{Mechanical model of.  The changes in frequency and bandwidth.}
-\label{fig:qcmresponse}
-\end{figure}
 
 %% small load approximation -> other paper -> equivalent mechanical model
 
