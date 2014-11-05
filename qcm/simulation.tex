@@ -1,3 +1,4 @@
+\section{Finite Element Modeling}
 Finite element simulations were carried out using the software
 \texttt{COMSOL Multiphysics 4.3 (4.3.0.233)}~\cite{multiphysics1994comsol}.
 Though this software's source code is not available for
@@ -118,11 +119,11 @@ specific acoustic impedance, also called ``shock impedance'', sound
 pressure over velocity.  In other words, the stress-speed ratio is the
 impedance of the film. 
 
-\subsection{Verification Examples}
+\section{Verification Examples}
 Here we check the validity of the numerical simulation with examples for
 which the QCM's response is well known.
 
-\subsubsection{Evanescent Shear Wave}
+\subsection{Evanescent Shear Wave}
 Setting up the model as described produces a shear wave which closely
 matches theory, as shown in \Figure{fig:suppshearwave}.  An analytic expression
 of the evanescent shear wave in a liquid has been reported~\cite{steinem2007piezoelectric} to be 
@@ -175,7 +176,7 @@ simulation and theory.}
 \label{fig:suppshearwave}
 \end{figure}
 
-\subsubsection{Semi-Infinite Viscoelastic Medium}
+\subsection{Semi-Infinite Viscoelastic Medium}
 A semi-infinite medium will produce a complex response described
 by~\cite{kanazawa1985frequency}~\cite{martin1991characterization}
 \begin{align}
@@ -311,9 +312,7 @@ solved for $\mathbf{u}$.  It is perhaps possible to couple these two
 domains, but we have not attempted to do so.
 
 
-\subsection{Theory and Modeling}
-\label{sec:theoryandmodeling}
-\subsection{Finite Element Modeling}
+\section{Something and Predictions}
 %\label{sec:simulation}
 To elucidate QCM behavior for samples with discrete particles, we have
 performed 2D finite element simulations based on steady state solutions to
@@ -405,97 +404,11 @@ dominated by loss, hence $\dg>\df$.  On the other hand, larger particles
 the double-layer forces and make contact with the QCM through a finite
 contact radius.  In this case the coupling losses decrease and $\df>\dg$.
 
-\subsection{Mechanical Model}
-\label{sec:mechanicalmodel}
-Without mention of the actual physics of the coupling, we observe that the
-finite element simulation, as well as the experimental data, follow a simple
-mechanical model based on coupled
-oscillators~\cite{dybwad1985sensitive}~\cite{olsson2012probing}.  The
-arrangement of this mass-spring-dashpot mechanical model is shown in
-\Figure{fig:lowersphere}(d).  Here, the resonance of the quartz crystal
-$\omegaq^2=\kq/\mq$ is coupled to a sample load with mass $\ml$ though a
-parallel spring $\kl$ and dashpot $\xil$ (Voigt
-model~\cite{sips1950mechanical}).  Note that $\kl$ is not an actual spring; it
-is simply a coupling strength between two oscillators.  The same is true for
-$\xil$.  $\ml$ is an actual mass, though in this model it represents a
-Sauerbrey mass uncorrected for viscoelastic properties.  
-
-Using the small load approximation, the response of the system as a
-function of its coupling $\kl$ can be expressed
-as~\cite{steinem2007piezoelectric}
-\begin{equation}
-\frac{\df + \mi \dg}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
-\mathrm{Z}_\mathrm{q}}
-\frac{\ml \omegaq \left( \kl + \mi
-\omegaq \xil\right) }
-{\ml \omegaq^2 - \left(\kl + \mi
-\omegaq \xil\right)}
-\label{eqn:mastereq}
-\end{equation}
-where $\mathrm{Z}_\mathrm{q}$ is the acoustic impedance of AT cut quartz,
-$f_\mathrm{F}$ is the fundamental frequency of the resonator, and
-$N_\mathrm{L}$ is a surface density (number per unit area) for discrete
-loads.  \Equation{eqn:mastereq} as a function of $\kl$ reproduces the
-response of the finite element simulation in \Figure{fig:lowersphere},
-which is a function of contact surface density $A_\mathrm{c}$ (or in
-un-normalized terms the contact radius $r_\mathrm{c}$).  A best-fit comparison to 
-the finite element simulation is shown as points in conjunction with the simulation
-in \Figure{fig:lowersphere}.  See Supplementary Note 3.
-
-The mechanical model has two important limits as a function of the contact
-stiffness, $\kl$, known as \textit{strong} and \textit{weak}
-coupling.  These limits occur to the left and right of a zero crossing in $\df$ at
-$k_\mathrm{zc}=\omegaq^2 \ml$.
-
-\vspace{-\baselineskip}
-\vspace{-\parskip}
-\begin{align}
-\frac{\df}{f_\mathrm{F}}&= 
-\frac{N_\mathrm{L} \kl}
-{\omegaq\pi \mathrm{Z}_\mathrm{q}}
-&\,&\left(\text{weak,}\quad \kl\ll \ml
-\omegaq^2\right)
-\label{eqn:couplinguy1}
-\\
-\frac{\df}{f_\mathrm{F}}&=  -\frac{N_\mathrm{L}
-\ml \omegaq}{\pi Z_\mathrm{q}}
-&\,&\left(\text{strong,}\quad \kl\gg \ml
-\omegaq^2\right)
-\label{eqn:couplinguy2}
-\end{align}
-where we have made the approximation that
-$\xil\ll\kl$.~\cite{steinem2007piezoelectric}
-
-
-Strong coupling is identified with mass loading
-(Sauerbrey~\cite{sauerbrey1959verwendung} behavior) and a \textit{negative}
-frequency shift linearly proportional $\ml$.  This behavior is the
-one which is most commonly associated with QCM measurements.  Physically
-this situation is identified with a coupling rigid enough such that
-the particle takes part in the oscillation of the QCM.
-In the
-opposite limit is weak coupling, also called inertial
-loading~\cite{dybwad1985sensitive}, and is identified by a \textit{positive}
-frequency shift independent of the mass and linearly proportional
-to $\kl$.  Here, the coupling is sufficiently weak such that the particle
-remains at rest in the labratory frame.  It is ``clamped'' by its own
-inertia.~\cite{du2008role}
-
 %This mechanical model fully describes the behavior of the finite element simulations
 %for larger ($d\gtrsim\SI{5}{\micro\meter}$) particles, but fails in the
 %limit of smaller particles.
 
-Experiments with nanoindentation probes operating on QCMs in the gas
-phase~\cite{borovsky2001measuring}, where micron sized spherical tips are
-pressed against the sensor surface, have observed the same positive
-frequency shift as a function of applied force,  which is identified with
-the lateral (sphere-plate) Hertzian spring constant.  We conjecture that
-similar behavior will be observed in the liquid phase: the centrifugal load
-will primarily act on $\kl$.  We now turn to discussion of how certain
-sample parameters can be extracted using this model.
-
 \section{Discussion}
-\label{sec:discussion}
 The response of the QCM for different load situations under centrifugal
 force exhibits a rich and complex set of behavior. Interpretation of all
 signals will require experiments beyond the scope of this
@@ -527,7 +440,8 @@ simulated QCM surface.  In all cases the coverage ratio was
 thus the rigidity of its contact with the QCM.
 \begin{figure}[ht]
  \centering
-\includegraphics{qcm/figures/figure5.pdf}
+	% height=2.43cm for side pictures, 4cm for axis
+\includegraphics{qcm/figures/multisweep.pdf}
 \caption{Simulated response for different materials.  Finite element simulation of normalized $\df$ and $\dg$ for three
  categories of samples as a function of contact surface density, 
  $A_\mathrm{c}$.
@@ -582,42 +496,3 @@ Increasing the contact parameter, $\dg$ sees a maximum and $\df$ a zero
 crossing.  As the microcrystal becomes strongly coupled to the QCM, the
 familiar negative $\df$ is recovered which, as in \Figure{fig:circlefit},
 can be used to determine the particle size or mass.
-
-\subsection{Conclusion}
-\label{sec:conclusion}
-We have observed the QCM sensorgram under the influence of centrifugal force
-for samples such as DNA monolayers, free discrete polystyrene particles,
-and particles tethered to the QCM electrode with lambda DNA.  We present
-simulations and a theoretical framework to interpret the QCM signals in the
-context of the sample's properties.
-
-The data presented thus far points to a potentially interesting avenue for
-the investigation of force on biomolecules using a quartz crystal
-microbalance.  In addition to the data discussed, we have also observed
-other types of signals in some of our datasets within the overall trend
-shown here, which we suspect may be related to ionic
-transport~\cite{tolman1911electromotive}~\cite{des1893unpolarisirbare}, the
-conformal state of DNA, and nonlinear viscoelastic behavior.  Objects such
-as microparticles attached or tethered to a biopolymer on the QCM surface
-become inertial transducers through which one can extract mechanical and
-thermodynamic properties of the macromolecules. Furthermore, the technique
-is applicable to microscopic biological objects such as viruses, bacteria,
-and cells where measurements of mechanical properties and their changes
-have been directly linked to
-disease~\cite{merkel1989molecular}~\cite{yeri2009mutation}~\cite{tevet2011friction}.
-
-The enhanced signal for most samples under centrifugal load points to a
-interesting avenue of increasing the sensitivity of a state of the art QCM
-biosensor.  This is true even with the present state of our instrument,
-which is limited to low-g regimes when compared to other commercial
-centrifuges. With operation below \SI{90}{g}, we have observed sensitivity
-increases corresponding to changes of \SI{10}{\percent} in the
-density-viscosity product for viscoelastic loads, and up to a factor of 10
-increase in sensitivity for discrete particles.  However, there is no
-technical reason why future incarnations could not spin much faster and
-considerably clarify the CF-QCM sensogram.  There are also possibilities in
-using this platform in other related modalities such as the
-nanotribological effects of sliding friction~\cite{krim1991nanotribology}
-caused by orienting the crystal at an angle to the applied centrifugal
-force, propelling biomolecules across the surface.
-

@@ -44,6 +44,8 @@ The internal motor of the centrifuge was also interfaced to an external DC
 power supply whose voltage was controlled by the same computer.  In this
 way, the spin speed and acceleration could be controlled.
 
+We tried o-rings made of other stuff, but its just not as good as the pdms.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=10cm,keepaspectratio]{qcm/figures/qcm_holderdiss.jpg}
@@ -79,20 +81,21 @@ value~\cite{kanazawa1985frequency} of \SI{357}{\ohm}.  In this sense,
 dissipation $D$ and motional resistance $\Rm$ are independent but
 equivalent measures of the QCM bandwidth.
 
-We have calculated the noise in $\df$ and $\Rm$ for the SRS QCM200 in our
-experiment and find it to be about \SI{0.4}{\hertz} (\SI{0.008}{ppm}) for
-$\df$ and \SI{0.006}{\ohm} (\SI{13}{ppm}) for $\Rm$, corresponding to a
-signal to noise ratio of \SI{110}{\decibel}.  This is close to the
-manufacturer's specification~\cite{srsqcm200manual} of \SI{0.1}{\hertz} for
-$\df$ and $\pm\SI{28}{ppm}$ for $\Rm$.  We have analyzed the noise
-separately for both the loading and unloading orientations of the crystal,
-as well as for different centrifuge spin speeds.  We find no discernible
-difference in the noise between any of these cases.  We did not at any
-point modify the centrifuge or bucket assembly in an attempt to try and
-reduce system noise.
+We have calculated the noise in $\df$ and $\Rm$ by obtaining the standard
+deviation of the output signal at constant acceleration.  For the SRS
+QCM200 employed in our experiment we find this to be \SI{0.4}{\hertz}
+(\SI{0.008}{ppm}) for $\df$ and \SI{0.006}{\ohm} (\SI{13}{ppm}) for $\Rm$,
+corresponding to a signal to noise ratio of \SI{110}{\decibel}.  This is
+close to the manufacturer's specification~\cite{srsqcm200manual} of
+\SI{0.1}{\hertz} for $\df$ and $\pm\SI{28}{ppm}$ for $\Rm$.  We have
+analyzed the noise separately for both the loading and unloading
+orientations of the crystal, as well as for different centrifuge spin
+speeds.  We find no discernible difference in the noise between any of
+these cases.  We did not at any point modify the centrifuge or bucket
+assembly in an attempt to try and reduce system noise.
 
 In comparison, a typical QCM-D such as those sold by
-Q-Sense~\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
+Q-Sense\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
 Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
 about \SI{0.3}{\hertz} in $\df$ and \num{0.2e-6} in $D$ at
 \SI{5}{\mega\hertz}~\cite{su2005comparison}~\cite{peh2007understanding}.
@@ -117,96 +120,55 @@ independent of the type of technique used to drive and monitor the quartz
 crystal.  We therefore see no reason why our technique would not apply to
 all QCM based measurement techniques.  
 
-\section{Chemistry}
-The quartz crystals are always cleaned before use by immersion
-in fresh piranha solution (3:1 mixture of \SI{97}{\percent} \ce{H2SO4} and
-\SI{30}{\percent} \ce{H2O2}) for \SI{5}{\minute} and rinsing liberally with
-pure water.
-
-Free particles (Spherotech SVP-10-5, SVM-15-10, and SVP-200-4), of
-different diameters were prepared by diluting a solution of
-\SI{30}{\micro\liter} particles in \SI{300}{\micro\liter} \ce{H2O}.  A
-\SI{125}{\micro\liter} aliquot of the \SI{300}{\micro\liter} volume was
-then placed in the PDMS cell in contact with the sensing side of the
-crystal.  The sensing area was calculated to be
-\SI{1.195}{\centi\meter\squared}.  The particles in solution experience a
-buoyant force which reduces their apparent mass. The surface density
-$N_\mathrm{L}$ was determined by counting the average number of particles
-per unit area with a microscope and was found to be within
-\SI{20}{\percent} of the value predicted by the volume concentration.
-
-For experiments involving oligos, the crystals were first immersed in a
-\SI{1}{\micro\textsc{M}} solution of thiolated oligos (5'-ThioMC6-TTT TTT
-TTT CAC TAA AGT TCT TAC CCA TCG CCC-3') in a \SI{1}{\textsc{M}} potassium
-phosphate buffer, \SI{0.5}{\textsc{M}} \ce{KH2PO4}, pH 3.8 for
-\SI{1}{\hour}.  Following, immersion in \SI{1}{\milli\textsc{M}}
-6-Mercapto-1-hexanol (MCH) was used to block residual reactive sites on the
-gold electrode.  After rinsing, attachment to the prepared particles was
-done in STE buffer: \SI{1}{\textsc{M}} \ce{NaCl} with
-\SI{10}{\milli\textsc{M}} Tris buffer, pH 7.4 and \SI{1}{\milli\textsc{M}}
-EDTA\@.  A complimentary strand (5'-biotin-CT CAC TAT AGG GCG ATG GGT AAG
-AAC TTT AGT-3') was attached to the streptavidin coated particles.  The
-particles were first washed two times by alliquoting a
-\SI{100}{\micro\liter} base solution of particles in \SI{100}{\micro\liter}
-STE buffer, \SI{5000}{RPM} for \SI{3}{\minute} and decanting the
-supernatant.  The particles were resuspended in \SI{20}{\micro\liter} of
-STE buffer and \SI{10}{\micro\gram} of oligos were added.  The mixture was
-incubated \SI{15}{\minute} at room temperature under slow vortexing, then
-washed again and resuspended in \SI{100}{\micro\liter} STE buffer.  The
-oligo attached particle suspension was allowed to attach to the gold
-surface for \SI{15}{\minute} before spinning.
- 
-Lambda DNAs were prepared by combining \SI{50}{\micro\liter} of lambda DNA
-at \SI{500}{\micro\gram\per\milli\liter}, \SI{5.5}{\micro\liter} of 10x T4
-ligase, and \SI{0.5}{\micro\liter} of diluted \SI{10}{\micro\textsc{M}}
-thiolated linker oligonucleotide and heating to \SI{70}{\celsius} for
-\SI{5}{\minute}.  The suspension was left to cool to room temperature as
-the litigation of the oligos to the DNA COS ends occured. Once the mixture
-was at room temperature, \SI{15}{\micro\liter} 10x ligase buffer,
-\SI{127}{\micro\liter} \ce{H2O}, and \SI{2}{\micro\liter} T4 DNA ligase was
-added to the annealed linker.  The reaction was allowed to proceed at room
-temperature for \SI{3}{\hour}.
-
 \section{Environmental Effects and Noise}
 In the next chapter we will present the response of the CF-QCM under
 different load situations.  Before doing so, it is prudent that all
 non-sample phenomena that could influence the sensogram are taken into
 account.  These have been tabulated in \Table{tbl:environmentaleffects}.
-We will discuss this table in the next chapter.
-\begin{table}
+\begin{table}[ht]
 \centering
-\begin{tabular}{l>{\raggedright}p{5cm}llllll}
-\textbf{phenomena} & \textbf{response} & \textbf{refs} & \multicolumn{5}{l}{\textbf{predicted shifts}}\tabularnewline
- &  &  & \multicolumn{2}{l}{max} & \multicolumn{3}{l}{avg}\tabularnewline
- &  &  & $f$ & $R$ & $f$ & \multicolumn{2}{l}{$R$}\tabularnewline
-temperature & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water & \cite{srsqcm200manual} & 10.3768 & -5.1884 & 1.97248 & \multicolumn{2}{l}{-0.98624}\tabularnewline
- & Third order polynomial with maximum arount \SI{24}{\celsius} with
+\begin{tabular}{l>{\raggedright}p{10cm}l}
+\toprule
+\textbf{phenomena} & \textbf{response} & \textbf{refs}\tabularnewline
+\midrule
+temperature & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water & \cite{srsqcm200manual}\tabularnewline
+ & Third order polynomial with maximum around \SI{24}{\celsius} with
 $a_1=\num{2.3888}$, $a_2=\num{-1.8719e+02}$, $a_3=\num{4.8587e+03}$,
-$a_4=\num{-4.1814e+04}$. & \cite{reipa2006long} & 76.195 & - & 14.176 & \multicolumn{2}{l}{-}\tabularnewline
-electric field & negligible  & \cite{walls1995fundamental} & $\sim0$ & $\sim0$ & $\sim0$ & \multicolumn{2}{l}{$\sim0$}\tabularnewline
-magnetic field & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla} & \cite{walls1995fundamental} & $\sim0$ & $\sim0$ & $\sim0$ & \multicolumn{2}{l}{$\sim0$}\tabularnewline
+$a_4=\num{-4.1814e+04}$. & \cite{reipa2006long}\tabularnewline
+electric field & negligible  & \cite{walls1995fundamental}\tabularnewline
+magnetic field & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla} & \cite{walls1995fundamental}\tabularnewline
 pressure & \SI{-2970}{\hertz\centi\meter\squared\per\kilo\gram} for changes
-to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} & \cite{reipa2006long} & 30.02 & - & 20.01 & \multicolumn{2}{l}{-}\tabularnewline
+to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} & \cite{reipa2006long}\tabularnewline
  & \SI{-1458}{\hertz\centi\meter\squared\per\kilo\gram} (\SI{10}{\mega\hertz}
-crystal) & \cite{heusler1988measurement} & 14.73 & - & 9.82 & \multicolumn{2}{l}{-}\tabularnewline
+crystal) & \cite{heusler1988measurement}\tabularnewline
 mechanical stress & $\Delta f = 1.62 g_f^{1.72}$ for two point symmetrical mounting in
-air & \cite{fletcher1979comparison} & n/a & n/a & n/a & \multicolumn{2}{l}{n/a}\tabularnewline
-sedimentation potential &  &  &  &  &  & \multicolumn{2}{l}{}\tabularnewline
-parasitic capacitance & \SI{2}{\hertz\per\pico\farad} & \cite{srsqcm200manual} & ? & ? & ? & \multicolumn{2}{l}{?}\tabularnewline
- & \SI{0.825}{\hertz\per\pico\farad} (BvD analysis) & \cite{webster2013} & ? & ? & ? & \multicolumn{2}{l}{?}\tabularnewline
-acceleration & \SI{9e-11}{\per g}, depending on orientation & \cite{norton1993tactical} & 0.9 & - & 0.045 & \multicolumn{2}{l}{-}\tabularnewline
- & \SI{0.0218813}{\hertz\per g} in air & \cite{1536938} & 4.3763 & - & 2.1881 &  & -\tabularnewline
+air & \cite{fletcher1979comparison}\tabularnewline
+sedimentation potential &  & \tabularnewline
+parasitic capacitance & \SI{2}{\hertz\per\pico\farad} & \cite{srsqcm200manual}\tabularnewline
+ & \SI{0.825}{\hertz\per\pico\farad} (BvD analysis) & \cite{webster2013}\tabularnewline
+acceleration & \SI{9e-11}{\per g}, depending on orientation & \cite{norton1993tactical}\tabularnewline
+ & \SI{0.0218813}{\hertz\per g} in air & \cite{1536938}\tabularnewline
+\bottomrule
 \end{tabular}
 \caption{Environmental effects on the QCM resonance frequency.}
 \label{tbl:environmentaleffects}
 \end{table}
 
-\section{Temperature Noise}
+From \Table{tbl:environmentaleffects} it is apparent that the dominant
+source of signal \textit{drift} will be due to the inherent temperature
+dependent viscosity of water.  This is a good thing, because temperature
+drift can be a rather slow process compared with other types of signals.
+To evidence this, we show a parametric plot of g-force verses temperature
+for a typical run, total time \SI{200}{\second}, shown in
+\Figure{fig:qcmairtime} for both air and water.  In both cases it is
+evident that the temperature increases as the centrifuge spins.  However,
+the temperature drifts are extremely small during the course of a run, less
+than \SI{0.1}{\celsius} in both cases.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
- \import{qcm/figures/}{showtempair}
- \caption{Air}
+ \import{qcm/figures/}{showtempairwater}
+ \caption{Parametric plot showing temperature drift during an experimental
+	run from 0 to \SI{90}{g} and back, taking \SI{200}{\second}.}
  \label{plt:qcmairtime}
 \end{figure}
-

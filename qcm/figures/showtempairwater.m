@@ -24,19 +24,19 @@ temp =  load('data/QCM00450-temp.txt');
 plot(ang(:,2),temp(:,2),'Color',mycolor(2,:))
 xlabel('g-force [g]')
 ylabel('$T$ [C]')
+legend('Air','Location','SouthEast')
 
 subplot(122)
 ang = load('data/QCM00431b-ang.txt');
 temp =  load('data/QCM00431b-temp.txt');
-hold on;
 plot(ang(:,2),temp(:,2),'Color',mycolor(1,:))
 xlabel('g-force [g]')
 ylabel('$T$ [C]')
-
+legend('Water','Location','SouthEast')
 
 if true
-filename = sprintf('/tmp/test.tex');
+filename = sprintf('showtempairwater.tex');
 matlab2tikz(filename, 'showInfo', false, ...
-    'parseStrings',false,'standalone', true, ...
-	'height', '5cm', 'width','5cm');
+    'parseStrings',false,'standalone', false, ...
+	'height', '6cm', 'width','6cm');
 end

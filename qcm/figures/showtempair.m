@@ -32,7 +32,7 @@ legend('g-force');
 ylabel('g-force');
 xlabel('time [s]');
 
-if false
+if true
 filename = sprintf('showtempair.tex');
 matlab2tikz(filename, 'showInfo', false, ...
     'parseStrings',false,'standalone', false, ...

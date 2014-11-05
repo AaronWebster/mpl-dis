@@ -10,8 +10,9 @@ motion of the QCM's transverse shear mode.  }
 \label{fig:expsetup}
 \end{figure}
 
-We now turn to study of the CF-QCM sensogram for different load situations.
-An example CF-QCM response for free particles is depicted to the left in
+We have now arrived at the central aspect of our work, the study of the
+CF-QCM sensogram for different load situations.  We begin with an example
+dataset, free particles, which is depicted left in
 \Figure{fig:expsetup}(b).  Here, free \SI{1}{\micro\meter} streptavidin
 coated polystyrene particles in water are introduced into the sample cell.
 When the cell is rotated to the loading configuration under the influence
@@ -49,16 +50,16 @@ To demonstrate this, we have examined six different samples in the CF-QCM
 under variable accelerations from approximately \SIrange{1}{90}{g}.  These
 samples were chosen to be examples of the breadth of load situations
 accessible with our technique.  They are:
-\begin{inparaenum}[(a)]
+\begin{enumerate}
 \item air,
 \item deionized water,
 \item free particles in water,
 \item paramagnetic particles attached to the sensor via short oligonucleotides,
 \item \SI{48}{kbp} lambda phage DNAs attached to the gold electrode, and
 \item polystyrene particles tethered to the sensor via \SI{48}{kbp} lambda phage DNAs.
-\end{inparaenum}
+\end{enumerate}
 
-\begin{figure*}[ht]
+\begin{figure}[t]
 \centering
 %\hspace{-1.0cm}
 %\includegraphics{Figure-3_webster.pdf}
@@ -88,7 +89,11 @@ the centrifuge both spinning up and spinning down in a single experimental
 run.
 } 
 \label{fig:loadplot}
-\end{figure*}
+\end{figure}
+The quartz crystals are always cleaned before use by immersion
+in fresh piranha solution (3:1 mixture of \SI{97}{\percent} \ce{H2SO4} and
+\SI{30}{\percent} \ce{H2O2}) for \SI{5}{\minute} and rinsing liberally with
+pure water.
 
 \section{Air}
 As a first step, we record the instrument's response in air, shown
@@ -96,7 +101,8 @@ parametrically in \Figure{fig:loadplot}(a).  The base acceleration
 sensitivity (change in frequency versus change in g-force) of AT cut quartz
 normal to the plane of the crystal has a reported
 value~\cite{valdois2794influence} of $\df/\Delta g
-=\SI{2.188+-0.006e-2}{\hertz\per\g}$.  The CF-QCM data shows similar
+=\SI{2.188+-0.006e-2}{\hertz\per\g}$ (see
+\Table{tbl:environmentaleffects}).  The CF-QCM data shows similar
 behavior: $\df/\Delta g =\SI{2.682+-0.023e-2}{\hertz\per\g}$ in the loading
 configuration.  The signs of $\df/\Delta g$ are found to be opposite in the
 loading and unloading configurations.  Though we have not found a reference for
@@ -131,24 +137,42 @@ the effects are small compared to experiments with actual loads, we will
 treat them as baselines to be subtracted.
 
 \section{Free Particles}
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio,width=12cm]{qcm/figures/qcm_beadssurface.jpg}
+\caption{Free particles on the surface of the QCM, observed with a
+microscope to obtain the number density.}
+\label{fig:countparticles}
+\end{figure}
 Utilizing the flexibility that the instrument provides in modifying the
 coupling between the load and the sensor surface, we have applied the
-technique to the study of discrete micron sized particles.  As first
-referenced in \Figure{fig:expsetup}(b), the frequency and bandwidth shifts
-of free particles in the liquid phase as a function of g-force is shown in
-\Figure{fig:loadplot}(c).  Here, free streptavidin coated polystyrene particles,
-mean diameter $\bar{d}=\SI{1.07}{\micro\meter}$, are placed in the sample volume with
-a surface density of
-$N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$ and the signal is
-observed in both the loading and unloading configurations.
-The particles
-did not exhibit adhesion to either the unmodified gold electrode or the
-glass/PDMS cell surrounding it; in the unloading configuration, the particles
-quickly drifted away from the sensing area and a signal identical to water
-was observed.  In the loading configuration, a large positive
-shift in $\df$ and $\dg$ was observed, consistent with
-previously observed responses for weakly coupled particles in this size
-range~\cite{johannsman2007contacts}.  
+technique to the study of discrete micron sized particles.  
+Free particles (Spherotech SVP-10-5, SVM-15-10, and SVP-200-4), of
+different diameters were prepared by diluting a solution of
+\SI{30}{\micro\liter} particles in \SI{300}{\micro\liter} \ce{H2O}.  A
+\SI{125}{\micro\liter} aliquot of the \SI{300}{\micro\liter} volume was
+then placed in the PDMS cell in contact with the sensing side of the
+crystal.  The sensing area was calculated to be
+\SI{1.195}{\centi\meter\squared}.  The particles in solution experience a
+buoyant force which reduces their apparent mass. The surface density
+$N_\mathrm{L}$ was determined as in \Figure{fig:countparticles} by counting the average number of particles
+per unit area with a microscope and was found to be within
+\SI{20}{\percent} of the value predicted by the volume concentration.
+
+As first referenced in \Figure{fig:expsetup}(b), the frequency and
+bandwidth shifts of free particles in the liquid phase as a function of
+g-force is shown in \Figure{fig:loadplot}(c).  Here, free streptavidin
+coated polystyrene particles, mean diameter
+$\bar{d}=\SI{1.07}{\micro\meter}$, are placed in the sample volume with a
+surface density of $N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$
+and the signal is observed in both the loading and unloading
+configurations.  The particles did not exhibit adhesion to either the
+unmodified gold electrode or the glass/PDMS cell surrounding it; in the
+unloading configuration, the particles quickly drifted away from the
+sensing area and a signal identical to water was observed.  In the loading
+configuration, a large positive shift in $\df$ and $\dg$ was observed,
+consistent with previously observed responses for weakly coupled particles
+in this size range~\cite{johannsman2007contacts}.  
 
 % This is shown in ... settling velocity, flip cell upside/rightside, etc.
 
@@ -183,7 +207,7 @@ $24.80^p$ & 5.01\text{\sc{e}-}07 & 1.53\text{\sc{e}-}07 & 3.26\text{\sc{e}-}07 &
  \bottomrule
 \end{tabularx}
 \caption{Normalized frequency and bandwidth shifts (in
- \si{\hertz\meter\squared} at \num{1} and
+ \si{\hertz\meter\squared}) at \num{1} and
 \SI{90}{g} for various particle sizes in water. The quoted diameter
 $\bar{d}$ is
 their mean diameter. $p$: polystyrene particles, $m$:
@@ -197,20 +221,61 @@ behavior of the CF-QCM in a regime where particles are rigidly coupled to
 the sensor by attaching \SI{2}{\micro\meter} (mean diameter
 $\bar{d}=\SI{1.89}{\micro\meter}$) streptavidin coated paramagnetic
 particles modified with biotinylated \SI{25}{mer} oligos to complimentary
-strands conjugated to the QCM gold surface via thiol bonds (see
-Materials).  This is shown in \Figure{fig:loadplot}(d).  Note
-that, $\df$ and $\dg$ are both negative and decrease
-with centrifugal force in the loading orientation.  
-When spinning with the oligo attached
-particles, we suspect we are not sensing the presence of the particle
-directly but rather the conformational state of the oligonucleotide layer.
-Such an acceleration effect has been observed
+strands conjugated to the QCM gold surface via thiol bonds 
+
+To accomplish this, the crystals were first immersed in a
+\SI{1}{\micro\textsc{M}} solution of thiolated oligos (5'-ThioMC6-TTT TTT
+TTT CAC TAA AGT TCT TAC CCA TCG CCC-3') in a \SI{1}{\textsc{M}} potassium
+phosphate buffer, \SI{0.5}{\textsc{M}} \ce{KH2PO4}, pH 3.8 for
+\SI{1}{\hour}.  Following, immersion in \SI{1}{\milli\textsc{M}}
+6-Mercapto-1-hexanol (MCH) was used to block residual reactive sites on the
+gold electrode.  After rinsing, attachment to the prepared particles was
+done in STE buffer: \SI{1}{\textsc{M}} \ce{NaCl} with
+\SI{10}{\milli\textsc{M}} Tris buffer, pH 7.4 and \SI{1}{\milli\textsc{M}}
+EDTA\@.  A complimentary strand (5'-biotin-CT CAC TAT AGG GCG ATG GGT AAG
+AAC TTT AGT-3') was attached to the streptavidin coated particles.  The
+particles were first washed two times by alliquoting a
+\SI{100}{\micro\liter} base solution of particles in \SI{100}{\micro\liter}
+STE buffer, \SI{5000}{RPM} for \SI{3}{\minute} and decanting the
+supernatant.  The particles were resuspended in \SI{20}{\micro\liter} of
+STE buffer and \SI{10}{\micro\gram} of oligos were added.  The mixture was
+incubated \SI{15}{\minute} at room temperature under slow vortexing, then
+washed again and resuspended in \SI{100}{\micro\liter} STE buffer.  The
+oligo attached particle suspension was allowed to attach to the gold
+surface for \SI{15}{\minute} before spinning.
+
+The response for oligo attached particles is shown in
+\Figure{fig:loadplot}(d).  Note that, $\df$ and $\dg$ are both negative and
+decrease with centrifugal force in the loading orientation.  When spinning
+with the oligo attached particles, we suspect we are not sensing the
+presence of the particle directly but rather the conformational state of
+the oligonucleotide layer.  Such an acceleration effect has been observed
 before~\cite{yoshimoto2002effect}~\cite{fawcett2004evidence}, but only
 within the \SI{2}{g} orientation difference of gravity.  When the oligo
 layer is under centrifugal load, it compresses, causing the
 density-viscosity product to increase.  This behavior is consistent with
 the behavior of DNA observed on QCMs under the influence of gravity
 alone~\cite{fawcett2004evidence}.
+
+\subsection{Verification of the Oligo Attachment}
+The way we set up the experiment provided two separate mechanisms for
+confirming that
+\begin{inparaenum}[(a)]
+\item there were thiolated oligos attached to the QCM gold surface and
+\item the particles were rigidly attached to the oligos.
+\end{inparaenum}
+
+First, we note that with the attachment of oligos, the motional resistance
+of the QCM increased from $R=\SI{357}{\ohm}$ (pure water) to a typical
+value of about \SI{550}{\ohm} for oligos with a standard deviation of
+\SI{4.3}{\ohm} over five different runs.  Second, while observing the
+sample under a microscope, we brought a handheld neodymnium magnet in
+proximity to the sample.  In the absence of the oligo attachment, the
+particles readily moved from the surface to the magnet.  For samples for
+which we believed the particles to be attached, no such motion was
+possible.  It was in this way that we convinced ourselves that the
+particles were indeed attached to the surface.
+
 %The initial trend in
 %frequency follows Sauerbrey (negative frequency shift proportional to mass
 %adsorption) like behavior.  For mass loading at this number density, the
@@ -222,19 +287,32 @@ alone~\cite{fawcett2004evidence}.
 \section{Lambda DNA}
 Moving from particles to viscoelastic monolayers, in
 \Figure{fig:loadplot}(e), \SI{48}{kbp} lambda phage DNA in STE buffer were
-attached to the gold sensor electrode via a complimentary thiolated oligo.  Previous studies have shown that,
-through the use of dissipation monitoring, QCMs are sensitive to not only
-the adsorbed mass and viscosity, but the physical conformal state
-(``shape'') of DNAs hybridized to the sensor
-surface~\cite{tsortos2008shear}.  In the experiment, even though the force
-on the lambda DNAs is on the order of femtonewtons, we observe a strong
-linear decrease ($\dg=\SI{-2.912+-0.0095}{\hertz\per\g}$) in the
-bandwidth as function of g-force, indicating an
-increase in viscoelastic loss.  However, under larger g-forces the sign of
-$\df$ reverses.  The origin of this effect is not understood, but
-could indicate a nonlinear viscoelastic compliance under load.  The
-unloading configuration sees a smaller negative response in $\dg$ with little
-effect on $\df$.
+attached to the gold sensor electrode via a complimentary thiolated oligo.  
+Lambda DNAs were prepared by combining \SI{50}{\micro\liter} of lambda DNA
+at \SI{500}{\micro\gram\per\milli\liter}, \SI{5.5}{\micro\liter} of 10x T4
+ligase, and \SI{0.5}{\micro\liter} of diluted \SI{10}{\micro\textsc{M}}
+thiolated linker oligonucleotide and heating to \SI{70}{\celsius} for
+\SI{5}{\minute}.  The suspension was left to cool to room temperature as
+the litigation of the oligos to the DNA COS ends occured. Once the mixture
+was at room temperature, \SI{15}{\micro\liter} 10x ligase buffer,
+\SI{127}{\micro\liter} \ce{H2O}, and \SI{2}{\micro\liter} T4 DNA ligase was
+added to the annealed linker.  The reaction was allowed to proceed at room
+temperature for \SI{3}{\hour}.  Upon the attachment of the lambda DNA, the
+motional resistance of the QCM was observed to have increased from its base
+value of $R=\SI{357}{\ohm}$ for pure water to a typical value of
+\SI{575}{\ohm}.
+
+Previous studies have shown that, through the use of dissipation
+monitoring, QCMs are sensitive to not only the adsorbed mass and viscosity,
+but the physical conformal state (``shape'') of DNAs hybridized to the
+sensor surface~\cite{tsortos2008shear}.  In the experiment, even though the
+force on the lambda DNAs is on the order of femtonewtons, we observe a
+strong linear decrease ($\dg=\SI{-2.912+-0.0095}{\hertz\per\g}$) in the
+bandwidth as function of g-force, indicating an increase in viscoelastic
+loss.  However, under larger g-forces the sign of $\df$ reverses.  The
+origin of this effect is not understood, but could indicate a nonlinear
+viscoelastic compliance under load.  The unloading configuration sees a
+smaller negative response in $\dg$ with little effect on $\df$.
 
 At this point we make an observation about the influence of salt buffer,
 which was used in experiments involving DNA.  There are several
@@ -264,6 +342,10 @@ exert to about \SI{40}{\pico\newton} which, according to the worm-like
 chain model~\cite{marko1995stretching}, should almost fully extend the
 lambda DNA to a length of \SI{16}{\micro\meter}.
 
+In addition to the streptavidin coated polystyrene particles, we visually
+confirmed the attachment process with a microscope, magnet, and
+paramagnetic paricles in the same way as was done for the free particles.
+
 Though the instrument has not yet been developed enough to make accurate
 quantitative measurements in this load situation, the behavior of the data
 is a clear indication of its potential.  As the tethered bead extends the
@@ -289,7 +371,7 @@ single tether.
 \section{Particle Sizing}
 \begin{figure}[ht]
 \centering
-\includegraphics{qcm/figures/figure4.pdf}
+\includegraphics{qcm/figures/circlefit.pdf}
 \caption{ Particle sizing.  Method for sizing micron-sized particles using the CF-QCM. 
 $\df$ versus $\dg$ is plotted parametrically as a function of g-force, and
 the data is fit to a circle.  The point on the circle for which $\dg=0$ and
@@ -309,55 +391,47 @@ liquid phase.  Thus far this has only been possible with nanometer-sized
 particles which lie within the QCM's shear acoustic
 wave.~\cite{olsson2013using}  If one plots $\df$ verses $\dg$ in
 \Equation{eqn:mastereq} as a parametric function of $\kl$, the points are
-found to lie on a circle with radius $r_\mathrm{L}$.  In doing so, the physical
-mechanism modifying $\kl$ is removed from the problem.
-If we then fit a
-circle to the experimentally observed $\df$-$\dg$ data (plotted
-parametrically as a function of g-force), we can extrapolate the behavior
-in the strong coupling regime by finding the point at which $\dg=0$ and
-$\df<0$.  Knowing $\df$, \Equation{eqn:couplinguy2} can then be inverted to
-solve for either number density or particle size/mass.  An example of this
-procedure is shown in \Figure{fig:circlefit} using the same data for
-\SI{1}{\micro\meter} particles shown in
-\Figure{fig:expsetup} and \Figure{fig:loadplot}.  Inset is a table for the same
-predictions done for particles with known diameter
-$\bar{d}_\mathrm{actual}=1, 2, 15,\,\mathrm{and}\;\SI{25}{\micro\meter}$.
-In all cases the surface density was known and the diameter
-$\bar{d}_\text{predicted}$ was derived from the mass $\ml$, found by
-inverting \Equation{eqn:couplinguy2}.  The results are surprisingly accurate
-despite the exploratory nature of the instrument's construction, which
-illustrates the robustness of this unique methodology that CF-QCM
-provides.
-It should also be mentioned that with knowledge of the way in which the
-g-force modifies $\kl$, the frequency zero crossing at
-$k_\mathrm{zc}=\omegaq^2\ml$ can be used to determine the mass $\ml$
-without knowledge of the number density $N_\mathrm{L}$. 
-\begin{table}[ht]
-\centering
-Particle Sizing\\
- \begin{tabularx}{80pt}{XX}
- \toprule
- $\bar{d}_\mathrm{actual}$ & $\bar{d}_\mathrm{predicted}$ \\
- \midrule
-  $1.07^p$ & \num{1.23+-0.23} \\
-  $1.89^m$ & \num{1.84+-0.06} \\
-  $15.0^p$ & \num{13.8+-1.3} \\
-  $24.8^p$ & \num{22.6+-4.6} \\
- \bottomrule
-\end{tabularx}
-\caption{Results of the particle sizing method applied to particles with diameters
-$\bar{d}_\mathrm{actual}=1, 2, 15,\,\mathrm{and}\;\SI{25}{\micro\meter}$.}
-\label{tbl:particlesizing}
-\end{table}
+found to lie on a circle with radius $r_\mathrm{L}$ (see
+\Figure{fig:mechanicalmodel}).  
 
-\section{Strange Buffer Effects}
+If we make the approximation that that $\xil\ll \kl$ and that the damping
+is small, $\xil\ll1$, the radius is 
+\begin{align}
+\frac{r_\mathrm{L}}{f_\mathrm{F}} &=
+\frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
+\frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}
+\sqrt{1+\left(\frac{\xi_\mathrm{L}}{m_\mathrm{L}\omega_\mathrm{q}}\right)^2}\\
+&\approx \frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
+\frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}, \quad \mathrm{for}\; \xi_\mathrm{L} \ll 1
+\label{eqn:radius}
+\end{align}
+In considering the parametric represenation of $\df$ and $\dg$, the physical mechanism
+modifying $\kl$ is removed from the problem.  If we then fit a circle to
+the experimentally observed $\df$-$\dg$ data (again, plotted parametrically as a
+function of g-force), we can extrapolate the behavior in the strong
+coupling regime by finding the point at which $\dg=0$ and $\df<0$.  Knowing
+$\df$, \Equation{eqn:couplinguy2} can then be inverted to solve for either
+number density or particle size/mass.  An example of this procedure is
+shown in \Figure{fig:circlefit} using the same data for
+\SI{1}{\micro\meter} particles shown in \Figure{fig:expsetup} and
+\Figure{fig:loadplot}.  Inset is a table for the same predictions done for
+particles with known diameter $\bar{d}_\mathrm{actual}=1, 2,
+15,\,\mathrm{and}\;\SI{25}{\micro\meter}$.  In all cases the surface
+density was known and the diameter $\bar{d}_\text{predicted}$ was derived
+from the mass $\ml$, found by inverting \Equation{eqn:couplinguy2}.  The
+results are surprisingly accurate despite the exploratory nature of the
+instrument's construction.  It should also be mentioned that with
+knowledge of the way in which the g-force modifies $\kl$, the frequency
+zero crossing at $k_\mathrm{zc}=\omegaq^2\ml$ can be used to determine the
+mass $\ml$ without knowledge of the number density $N_\mathrm{L}$. 
 
-\begin{itemize}
-\item Temperature effects as described in the manual are most accurate,
-but are too slow compared to the force-frequency curves we see.
-\item Pressure is also ruled out. The mass difference between water and
-\SI{1}{M} \ce{NaCl} is about \SI{7.5}{\milli\gram}, while the signal
-difference is \SI{-1}{\hertz} for water and \SI{-30}{\hertz} for
-\SI{1}{M} \ce{NaCl}.
-\item Mechanical stress also ruled out for the same reason.
-\end{itemize}
+%\section{Strange Buffer Effects}
+%\begin{itemize}
+%\item Temperature effects as described in the manual are most accurate,
+%but are too slow compared to the force-frequency curves we see.
+%\item Pressure is also ruled out. The mass difference between water and
+%\SI{1}{M} \ce{NaCl} is about \SI{7.5}{\milli\gram}, while the signal
+%difference is \SI{-1}{\hertz} for water and \SI{-30}{\hertz} for
+%\SI{1}{M} \ce{NaCl}.
+%\item Mechanical stress also ruled out for the same reason.
+%\end{itemize}
