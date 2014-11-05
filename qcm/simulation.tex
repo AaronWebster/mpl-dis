@@ -1,5 +1,5 @@
 \section{Finite Element Modeling}
-Finite element simulations were carried out using the software
+A finite element simulation was constructed using the software
 \texttt{COMSOL Multiphysics 4.3 (4.3.0.233)}~\cite{multiphysics1994comsol}.
 Though this software's source code is not available for
 scrutinous review, our implementation is generic and may be carried out
@@ -52,12 +52,14 @@ where $\rho$ is the density of the material, (e.g. $\rho_1 =
 constraint of $p_0=0$ is assigned to the point in the bottom right of the
 domain.  
 
-The sphere (or, more appropriately, cylinder in 2D) comprising $D_1$ with
-diameter $d$ and radius $r$ is located a distance $s>-r$, measured from the
-bottom of the sphere, from the oscillating
-boundary.  If $s>0$, the sphere does not make contact with the boundary.
-If $s\leq0$, the sphere is truncated at the boundary resulting in a finite
-contact radius $r_\mathrm{c}$.  It is useful to sample in either domain, so
+The sphere (or, more appropriately, cylinder, since the simulation is two
+dimensional) is domain $D_1$ with diameter $d$ and radius $r$ and is
+located a distance $s>-r$, measured from the bottom of the sphere, from the
+oscillating boundary.  If $s>0$, the sphere does not make contact with the
+boundary.  If $s\leq0$, the sphere is truncated at the boundary resulting
+in a finite contact radius $r_\mathrm{c}$; we identify this truncation with
+a finite contact radius $r_\mathrm{c}$ in terms of contact mechanics.
+It is useful to sample in either domain, so
 we either sweep $r_\mathrm{c}$ or $s$, converting between them with
 \begin{align}
  r_\mathrm{c}\left(s\right) &= \sqrt{2r-s}\sqrt{s}\\
@@ -92,13 +94,13 @@ boundary) of $h=2d$ and width (perpendicular to the oscillating boundary)
 $w=2d$, minimum of \SI{500}{\nano\meter}, produces consistent results with a
 minimum of error and computational resources.
 
-It is important to note that, because the simulation is two dimensional,
-what is actually simulated are infinite cylinders rather than spheres.  For
-Sauerbrey type viscoelastic films, the influence of this is negligible.
-However, for asperity contacts such as spheres, we find that the results,
-however qualitatively correct, do not always result in exact numerical
-agreement with experiment~\cite{Vittorias2010489}.  An extended simulation
-in three dimensions at some point is warranted.
+Again, it is important to note that, because the simulation is two
+dimensional, what is actually simulated are infinite cylinders rather than
+spheres.  For Sauerbrey type viscoelastic films, the influence of this is
+negligible.  However, for asperity contacts such as spheres, we find that
+the results, however qualitatively correct, do not always result in exact
+numerical agreement with experiment~\cite{Vittorias2010489}.  An extended
+simulation in three dimensions at some point is warranted.
 
 \subsection{Extracting Shifts}
 Shifts in frequency, $\df$, and bandwidth (half-width at half maximum),
@@ -106,27 +108,28 @@ $\dg$, are computed by evaluating the stress-speed ratio of the oscillating
 boundary according to the relationship
 \begin{equation}
  \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
-\label{eqn:comsolextract}
+\label{eqn:comsolextracttwo}
 \end{equation}
 where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
 velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
 denotes a line average along the boundary.  In \comsol, and in the
-coordinates of \Figure{fig:compgeometry}, $\sigma$ is 
-\texttt{Total stress, y component} (\texttt{v}) and $\dot{u}$ is 
-\texttt{Velocity field, y component}, (\texttt{spf.T\_stressy}).  Note that
-the stress speed ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to
-specific acoustic impedance, also called ``shock impedance'', sound
-pressure over velocity.  In other words, the stress-speed ratio is the
-impedance of the film. 
+coordinates of \Figure{fig:compgeometry}, $\sigma$ is \texttt{Total stress,
+y component} (\texttt{v}) and $\dot{u}$ is \texttt{Velocity field, y
+component}, (\texttt{spf.T\_stressy}).  As in \Equation{eqn:comsolextract},
+note again that that the stress speed ratio $\left<\sigma/\dot{u}\right>$
+is dimensionally equivalent to specific acoustic impedance, also called
+``shock impedance'', sound pressure over velocity; the
+stress-speed ratio is the impedance of the film. 
 
-\section{Verification Examples}
-Here we check the validity of the numerical simulation with examples for
-which the QCM's response is well known.
+\subsection{Verification Examples}
+We have checked the validity of the numerical simulation with a few
+examples for which the QCM's response is well known.  
 
-\subsection{Evanescent Shear Wave}
+\subsubsection{Evanescent Shear Wave}
 Setting up the model as described produces a shear wave which closely
-matches theory, as shown in \Figure{fig:suppshearwave}.  An analytic expression
-of the evanescent shear wave in a liquid has been reported~\cite{steinem2007piezoelectric} to be 
+matches theory~\cite{steinem2007piezoelectric}, shown in
+\Figure{fig:suppshearwave}.  For this, we express the shear evanescent wave
+as in the literature,
 \begin{equation}
  \frac{u(z)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} z\right)
 \end{equation}
@@ -139,11 +142,11 @@ and $z$ is the spatial extension.  The $1/\me$ penetration depth $\delta$ is
  \label{eqn:suppshearwavedelta}
 \end{equation}
 
-With $\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and 
+With the material properties of water,
+$\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
 $|\eta|^2=\SI{1}{\milli\pascal\second}$, \Equation{eqn:suppshearwavedelta}
-predicts
-$\delta\approx\SI{252}{\nano\meter}$.  This is in good agreement with the
-simulation data, shown in \Figure{fig:suppshearwave}.
+predicts $\delta\approx\SI{252}{\nano\meter}$.  This is in good agreement
+with the simulation data, shown in \Figure{fig:suppshearwave}.
 
 \begin{figure}[h]
  \centering
@@ -152,6 +155,7 @@ simulation data, shown in \Figure{fig:suppshearwave}.
  footnotesize,
  every
  axis/.style={
+ 	thick,
   xmin=0,xmax=1e-6,ymin=-0.1,ymax=1.1,
   width=0.71\textwidth,height=0.45\textwidth,
   xticklabel style={/pgf/number format/fixed,
@@ -171,12 +175,12 @@ simulation data, shown in \Figure{fig:suppshearwave}.
  \addlegendentry{theory}
 \end{axis}
 \end{tikzpicture}
-\caption{QCM shear wave decay at \SI{5}{\mega\hertz}, comparison between
-simulation and theory.}
+\caption{QCM shear wave decay at \SI{5}{\mega\hertz}, obtained with the
+finite element simulation, compared with theory (\Equation{eqn:viscoshear}).}
 \label{fig:suppshearwave}
 \end{figure}
 
-\subsection{Semi-Infinite Viscoelastic Medium}
+\subsubsection{Semi-Infinite Viscoelastic Medium}
 A semi-infinite medium will produce a complex response described
 by~\cite{kanazawa1985frequency}~\cite{martin1991characterization}
 \begin{align}
@@ -243,10 +247,10 @@ simulation is applicable for a wide range of materials.
      },
    ]
    %\addplot table [ y expr=\thisrowno{1} ] {\datatablea};
-   \addplot [color=Set14qual1, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
+   \addplot [color=Set14qual2, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
    \addplot [color=Set14qual1, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
 
-   \addplot [color=Set14qual1, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
+   \addplot [color=Set14qual2, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
    \addplot [color=Set14qual1, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
 
    \draw [color=gray,dashed,semithick] (axis cs:-0.0001,0) -- (axis cs:6e-2,0);
@@ -280,12 +284,12 @@ simulation is applicable for a wide range of materials.
       anchor=center,
      },
    ]
-   \addplot [color=Set14qual1, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
+   \addplot [color=Set14qual2, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
    \addlegendentry{$\df$ theory~~}
    \addplot [color=Set14qual1, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
    \addlegendentry{$\dg$ theory~~}
 
-   \addplot [color=Set14qual1, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
+   \addplot [color=Set14qual2, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
    \addlegendentry{$\df$ simulation~~}
    \addplot [color=Set14qual1, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
    \addlegendentry{$\dg$ simulation~~}
@@ -312,25 +316,11 @@ solved for $\mathbf{u}$.  It is perhaps possible to couple these two
 domains, but we have not attempted to do so.
 
 
-\section{Something and Predictions}
-%\label{sec:simulation}
-To elucidate QCM behavior for samples with discrete particles, we have
-performed 2D finite element simulations based on steady state solutions to
-the incompressible Navier-Stokes equations.  This model and its
-implementation are described in Supplementary Note 2.  The
-simulation is setup as depicted in \mbox{\Figure{fig:lowersphere}(a-c)}.  Particles
-are represented as spheres (or rather cylinders, in 2D, see Supplementary
-Figure 1) which are moved
-towards a tangentially oscillating boundary at the bottom of the
-computational domain, representing the QCM surface.  Periodic conditions
-are imposed on the left and right boundaries such that the ratio of the
-domain width to the particle size determines the surface coverage and thus
-$N_\mathrm{L}$.  As the particle intersects the oscillating boundary it is
-truncated; we identify this truncation with a finite contact radius
-$r_\mathrm{c}$ in terms of contact mechanics.
+\section{Analysis and Prediction}
+\subsection{Particles}
 \begin{figure}[ht]
 \centering
-\includegraphics{qcm/figures/figure3.pdf}
+\includegraphics{qcm/figures/lowersphere.pdf}
 \caption{%
 Simulation of the CF-QCM behavior.
 Finite element simulation for a \SI{10}{\micro\meter} polystyrene
@@ -342,8 +332,8 @@ Note that in all situations with finite contact radius,
 stress is annularly distributed around the edge of the contact as per the
 Mindlin model~\cite{kumacheva1998interfacial}.
 (main plot): Shifts in $\df$ and $\dg$.
-(d): Mechanical model based on coupled oscillators. Points on the plot are
-a best fit of the mechanical model to the simulation.}
+Points on the plot are
+a best fit of the mechanical model, \Equation{eqn:comsolextract}, to the simulation.}
 \label{fig:lowersphere}
 \end{figure}
 
@@ -372,7 +362,7 @@ mass adsorption takes hold.
 % thing
 
 There are two aspects of the simulation that deserve additional
-consideration:
+consideration:%
 \begin{inparaenum}[(1)]
 \item positive shifts in $\df$ and $\dg$ begin 
 before physical contact with the oscillating boundary and 
@@ -408,17 +398,11 @@ contact radius.  In this case the coupling losses decrease and $\df>\dg$.
 %for larger ($d\gtrsim\SI{5}{\micro\meter}$) particles, but fails in the
 %limit of smaller particles.
 
-\section{Discussion}
-The response of the QCM for different load situations under centrifugal
-force exhibits a rich and complex set of behavior. Interpretation of all
-signals will require experiments beyond the scope of this
-manuscript, but we comment on a few examples where our
-preliminary data can be predictive within the general model we have set forth.
 
 \subsection{Sample Viscoelasticity}
 \label{sec:sampleviscoelasticity}
 Finally, we comment on the potential of the CF-QCM technique to be
-sensitive to different viscoelastic properties of discrete samples.  While
+sensitive to different specific viscoelastic properties of discrete samples.  While
 the mechanical properties seen in biomaterials spans an enormous
 range~\cite{meyers2008biological}, we choose three general categories to
 highlight potentially interesting sensor responses.  As per

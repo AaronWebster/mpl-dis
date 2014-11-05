@@ -31,7 +31,7 @@ First, a random scatterer with index $n$ and coordinates $(x_n,y_n)$ is
 chosen within the illuminated region as the first scatterer a plasmon
 visits.  Since the illuminated region always encloses the scan area, we are
 guaranteed at least one scatterer (the tip) to choose from.  The plasmon
-initializes with local phase $\varphi_\mathrm{l,n}=\kspx_n$
+initializes with local phase $\varphi_\mathrm{l,n}=\ksp x_n$
 representing the local phase advance from the (arbitrary) point where the
 plasmon is excited by the (linear in either $x$ or $y$) evanescent field to
 the first scatterer.  Next, scatterers are randomly and sequentially chosen
@@ -88,10 +88,8 @@ mean intensity, and variance of intensity for each weirdospace image.  This
 file is no longer created by the main program, but computed from the output
 by a supporting script {\tt mkring.sh}.
 \item {\tt parameters}, a file containing program variables, scatterer
-locations, and statistics.  The parameters are as shown in Table
-\ref{tbl:parameters}.
+locations, and statistics.  The parameters are as shown in \Table{tbl:parameters}.
 \begin{table}
-\label{tbl:parameters}
 \begin{center}
 \begin{tabular}{ll}
 \toprule
@@ -110,6 +108,7 @@ parameter & description \\
 \end{tabular}
 \end{center}
 \caption{Explanation of variables used in the {\tt parameters} file.}
+\label{tbl:parameters}
 \end{table}
 At the end there is a section called {\tt STATS}.  The first column of this
 section represents the number of scatterers visited, the second the
@@ -241,7 +240,7 @@ P_\mathrm{d}(l)=\frac{4l}{\pi R^2} \arccos\left(\frac{l}{2R}\right) - \frac{2
 l^2}{\pi R^3} \sqrt{1-\frac{l^2}{4 R^2}}
 \end{align}
 It is assumed that the superposition of the two probabilities should
-produce the statistical results found in \ref{fig:scatterhist}, but as yet
+produce the statistical results found \Figure{fig:linepickingpdf}, but as yet
 I have not found a way to do so.
 
 These line picking problems are useful because they characterize how many

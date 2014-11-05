@@ -19,6 +19,7 @@
 *.swp
 *.pyg
 *.tex.latexmain
+*.tex.orig
 figures/*.bib
 external/
 #figures/*.pdf
