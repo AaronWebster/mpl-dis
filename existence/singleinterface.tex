@@ -2,19 +2,23 @@
 \begin{figure}[ht]
  \centering
  \import{existence/figures/}{singlelayerinterfacegeo}
- \caption{Geometry and coordinate system for a single interface which has
-									the possibliity of supporting SPPs.  $\epsilon_1$ is typically a dielectric and $\epsilon_2$ a conductive metal.}
+	\caption{Geometry and coordinate system for a single interface which can
+support SPPs.  Domain $D_1$ has permittivity $\epsilon_1$, typically a
+dielectric, and domain $D_2$ a permittivity $\epsilon_2$, typically a
+conductive metal.}
  \label{fig:singleinterfacegeo}
 \end{figure}
+
 With plane wave solutions to Maxwell's equations in hand, we move forward
 with our derivation of the existence of surface plasmon polaritions,
-beginning first by imposing boundary
-conditions consistent with a single interface.  At such an
-interface, it is convenient to restrict the problem to TM polarization in
-two dimensions; (why restrict to TM polarisation) in this case the $x$-$z$ plane as shown in
-\Figure{fig:singleinterfacegeo}. Since $\mathbf{k}=(k_x,0,k_z)$,
+beginning first by imposing boundary conditions consistent with a single
+interface.  Since SPP modes are not supported with TE polarization, it is
+convenient to restrict the problem to TM polarization in two dimensions.
+In this case, consider the geometry in \Figure{fig:singleinterfacegeo}.  If
+a TM wave is incident at an angle on this interface,
+$\mathbf{k}=(k_x,0,k_z)$,
 $\mathbf{r}\cdot\mathbf{k}=k_x x + k_z z$ and $\mathbf{E}_0 = (E_x, 0,
-E_z)$, the electric field can be written 
+E_z)$, the electric field is
 \begin{align}
 \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
 \cdot \mathbf{r} - \omega t )}\\
@@ -24,9 +28,7 @@ E_x\\ 0\\ E_z
 \, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
 \label{eqn:planewavexz}
 \end{align}
-The magnetic field propagates in the same direction with the
-same $\mathbf{k}$-vector components, but the direction
-$\mathbf{H}$ must be orthogonal to $\mathbf{E}$. 
+Similarly, for the magnetic field,
 \begin{align}
 \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
 \cdot \mathbf{r} - \omega t )}\\
@@ -35,7 +37,7 @@ $\mathbf{H}$ must be orthogonal to $\mathbf{E}$.
 \end{pmatrix}
 \, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
 \end{align}
-At the interface there are two values for the (complex) permittivity,
+At the interface between $D_1$ and $D_2$ there are two values for the permittivity,
 $\epsilon_1$ and $\epsilon_2$.  Consequently
 there are two sets of plane wave solutions
 \begin{align}
@@ -53,7 +55,7 @@ E_{x,1}\\
 E_{z,1}\\
 \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
 \end{aligned}
-\right\}& \quad \epsilon_1\label{eqn:planewavedielectric}\\
+\right\}& \quad D_1\label{eqn:planewavedielectric}\\
 \left.\begin{aligned}
 \mathbf{H}_2(x,z,t) &=
 \begin{pmatrix}
@@ -70,13 +72,13 @@ E_{z,2}\\
 \end{pmatrix}
 \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
 \end{aligned} 
-\right\}&\quad \epsilon_2
+\right\}&\quad D_2
 \label{eqn:planewavemetal}
 \end{align}
 
 where the subscript designates which material the wave equation refers to,
-e.g. $\mathbf{E}_1$ is the electric field in $\epsilon_1$, $\mathbf{H}_2$
-the magnetic field in the $\epsilon_2$, etc. Continuity of
+e.g. $\mathbf{E}_1$ is the electric field in $D_1$, $\mathbf{H}_2$
+the magnetic field in the $D_2$, etc. Continuity of
 \Equation{eqn:planewavedielectric} and
 \ref{eqn:planewavemetal} requires that
 \begin{align}
@@ -106,9 +108,7 @@ each boundary gives
 \end{pmatrix}
 \label{eqn:vectordisp}
 \end{align}
-where $\mathbf{E}_i$, $\mathbf{H}_i$, $i=1,2$ represent the field in either the
-$\epsilon_1$ or $\epsilon_2$.  The vector components of
-\Equation{eqn:vectordisp} are therefore related 
+The vector components of \Equation{eqn:vectordisp} are therefore related 
 \begin{align}
 -\mi k_{z,i} H_{y,i} &= -\mi \omega \epsilon_i E_{x,i}\\
 k_{z,1} H_{y,1} &= \omega \epsilon_1 E_{x,1}\\
@@ -116,9 +116,8 @@ k_{z,2} H_{y,2} &= \omega \epsilon_2 E_{x,2}
 \label{eqn:spderivsteptwo}
 \end{align}
 %\todo{not the components, either e or h, since Ez is perpendicular to the interface}
-Since the components of both $\mathbf{E}_i$ and $\mathbf{H}_i$ are
-perpendicular to the interface, $E_{x,i}$ and $H_{y,i}$ are also
-continuous. By substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
+Since $E_{x,i}$ and $H_{y,i}$ are continuous,
+by substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
 \begin{align}
 \frac{k_{z,1}}{\epsilon_1}H_{y,1}&=\frac{k_{z,2}}{\epsilon_2}H_{y,2}\\ 
 %\Aboxed{
@@ -130,8 +129,6 @@ This is the surface plasmon resonance condition for a single interface.  Note an
 of \Equation{eqn:sprcondition}:  due to the way we have defined our
 geometry, $k_{z,1}$ must be postive and $k_{z,2}$ negative.  For
 \Equation{eqn:sprcondition} to hold, this implies that the real part of
-$\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For materials we know
+$\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For natural materials we know
 exist, this is fulfilled if $\epsilon_1$ is a dielectric and $\epsilon_2$
 is a metal.
-% Maybe add here how it won't work with TE polarization
-%\todo{maybe refer to media with indicies, not e1, e2, e3, etc}

@@ -8,7 +8,7 @@ Having predicted the existence of SPPs on a single interface, we now
 consider a multilayer geometry, shown in \Figure{fig:multilayergeo}.  This
 has the potential to excite a different variety of SPP, as we shall soon
 see.  For
-layers $\epsilon_1$ and $\epsilon_3$, the equations are the same the
+layers $D_1$ and $D_3$, the equations are the same the
 single layer system
 \begin{align}
 \left.\begin{aligned}
@@ -25,7 +25,7 @@ E_{x,1}\\
 E_{z,1}\\
 \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
 \end{aligned}
-\right\}& \quad \epsilon_1\label{eqn:lrsppplanewavedielectric}\\
+\right\}& \quad D_1\label{eqn:lrsppplanewavedielectric}\\
 \left.\begin{aligned}
 \mathbf{H}_3(x,z,t) &=
 \begin{pmatrix}
@@ -42,12 +42,13 @@ E_{z,3}\\
 \end{pmatrix}
 \me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
 \end{aligned} 
-\right\}&\quad \epsilon_3
+\right\}&\quad D_3
 \label{eqn:lrsppplanewavemetal}
 \end{align}
 
-If $a$ is sufficently small, this type of setup may be though of as a waveguide for SPPs.
-In the ``core'' region, $\epsilon_2$ and $-a<z<a$, there are two interfaces at $\pm a$
+If the half-thickness of $D_2$, $a$, is sufficently small, this type of setup may be thought of as a
+waveguide for SPPs.  In the ``core'' region, $D_2$ and $-a<z<a$,
+there are two interfaces at $\pm a$
 \begin{align}
 \mathbf{H}_2(x,z,t) &=
 \begin{pmatrix}
@@ -60,7 +61,7 @@ H^+_{y,2}\\
 0\\
 H^-_{y,2}\\
 0
-\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)} \\
+\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)} \\
 \mathbf{E}_2(x,z,t) &=
 \begin{pmatrix}
 \mi E^+_{x,2}\\
@@ -72,7 +73,7 @@ E^+_{z,2}\\
 \mi E^-_{x,2}\\
 0\\
 E^-_{z,2}\\
-\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)}
 \end{align}
 
 Taking this system of equations and applying continuity of $H_y$ and $E_x$

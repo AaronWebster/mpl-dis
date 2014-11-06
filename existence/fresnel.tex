@@ -1,15 +1,14 @@
-We have shown that SPPs can exist under certain momentum-matching
-conditions layed out in Equations \ref{eqn:sprcondition} and
-\ref{eqn:lrsppdispersion}.  We move now to predictions of what SPP
-excitation actually looks like in an experiment.  To this accord, we will
-use the Fresnel equations to calculate the coupling conditions and
-properties of the excited field and the profiles of the reflected,
-transmitted, and scattered optical fields.   We begin this section with our
-strategy for efficient computation of the Fresnel relations, and follow
-with a discussion of its predictions for both the near and far optical
-fields. 
-
-(say here that you use the ables matrix stuff)
+We have shown that SPPs can exist under the momentum-matching conditions of
+Equations~\ref{eqn:sprcondition} and \ref{eqn:lrsppdispersion}.  We move
+now to predictions of what SPP excitation actually looks like in an
+experiment.  In this aim, we will use the Fresnel equations to calculate
+the coupling conditions and properties of the excited field and the
+profiles of the reflected, transmitted, and scattered optical fields.   We
+begin this section with our strategy for efficient computation of the
+Fresnel relations, and follow with a discussion of its predictions for both
+the near and far optical fields.  For implementation of this method on a
+computer, see the note on the Abeles matrix formalism in
+\Chapter{ch:abeles}.
 
 \subsection{Prism Coupled Excitation}
 From the information in the dispersion relation, SPP excitation at a
@@ -39,22 +38,22 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
   \import{existence/figures/}{multilayerinterfacegeo-kretschmann}
   %\caption{Kretschmann SP.}
  \end{subfigure}
-\caption{Prism coupled excitation of SPPs in the Kretschmann configuration.  (a) three layer
-system.  (b) four layer system. }
+\caption{Prism coupled excitation of SPPs in the Kretschmann configuration.
+								Left, a three layer system.  Right, a four layer system. }
 \label{fig:prismcoupledsetups}
 \end{figure}
-Let us discuss these first in terms of the single interface system, as
-first shown in \Figure{fig:prismcoupledsetups}.  We modify this system with
-another layer, $\epsilon_3$, as shown in
+Let us discuss these first in terms of the single interface system
+first shown in \Figure{fig:prismcoupledsetups}.  We modify this system by
+adding another layer, $D_3$, as shown in
 \Figure{fig:prismcoupledsetups}(a).  In this system, light is incident from
-$\epsilon_1$ and $\epsilon_1>\epsilon_3$, with both satisfying
-$\epsilon^\prime_1>\epsilon^\prime_3>1$ as per the first constraint.
-$\epsilon_2$ is a metal.  Since the real part of the metals permittivity
-$\epsilon^\prime$ is a measure of its ability to store energy, and the
-imaginary part $\epsilon^{\prime\prime}$ a measure of its dissipation, we
-are looking for a metal with a large (negative) real part and a small
-imaginary part.  \Table{tbl:epsmetal600} shows the complex permittivity for
-several metals at $\lambda=\SI{660}{\nano\meter}$.
+$D_1$ and $\epsilon_1>\epsilon_3$, both satisfying
+$\epsilon^\prime_1>\epsilon^\prime_3>1$ as per the first constraint.  $D_2$
+is a metal.  Since the real part of the metal permittivity,
+$\epsilon_2^\prime$, is a measure of its ability to store energy, and the
+imaginary part, $\epsilon_2^{\prime\prime}$, a measure of its dissipation,
+we are looking for a metal with a large negative real part and a small
+imaginary part.  In this spirit, \Table{tbl:epsmetal600} shows the complex
+permittivity for several metals at $\lambda=\SI{660}{\nano\meter}$.
 
 \begin{table}[ht]
 \centering
@@ -77,8 +76,10 @@ Pt & -12.7783923033094 & 20.6732739687699\\
 \bottomrule
 \end{tabular}
 \caption{Complex permittivity for select metals at
-$\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude model.}
-\label{tbl:epsmetal600}
+$\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude
+model.  Constants are from Refs.~\cite{ung2007interference} and
+\cite{rakic1998optical}.}
+	\label{tbl:epsmetal600}
 \end{table}
 
 From \Table{tbl:epsmetal600} it is easy to filter out an appropriate
@@ -94,29 +95,32 @@ $\epsilon^\prime_0>\epsilon^\prime_{1,3}>1$.  We also assume that
 $\epsilon_1=\epsilon_3$ and that $\epsilon_2$ is gold.
 
 Simultaneous optimization of all of these parameters, including the
-incident angle is a task best suited for a computer.  For $\epsilon_2$ gold
-and $\epsilon_3$ water, the three layer system predicts optimum coupling
-around \SI{50}{\nano\meter} metal thickness, and \SI{16}{\nano\meter} for
-the four layer system.  This is shown graphically in
-\Figure{fig:fresnelangle} for different excitation wavelengths and coupling
-angles.  In particular, note the broad range of conditions for which SPP
-excitation is possible (though not necessairly optimal).
+incident angle was performed using nonlinear
+minimization~\cite{brent1973algorithms}, on the notch depth.  For
+$\epsilon_2$ gold and $\epsilon_3$ water, the three layer system predicts
+optimum coupling around \SI{50}{\nano\meter} metal thickness, and
+\SI{16}{\nano\meter} for the four layer system.  This is shown graphically
+in \Figure{fig:fresnelangle} for different excitation wavelengths and
+coupling angles.  In particular, note the broad range of conditions for
+which SPP excitation is possible (though not necessairly optimal).
 
 \begin{figure}[ht]
 \centering
 \import{existence/figures/}{fresneltogether}
-\caption{Fresnel reflection coefficent as a function of angle and
-excitation wavelength for conventioal (right) and long range (left) SPP structures in a Kretschmann ATR 
-configuration.}
+\caption{Fresnel reflection coefficent for $p$ polarization, $|r^p|^2$, a
+function of angle and excitation wavelength for conventioal (right) and
+long range (left) SPP structures in a Kretschmann ATR configuration.  SPP
+excitation occurs in regions of low reflectivity to the right of the angle
+for total internal reflection (dashed line).}
 \label{fig:fresnelangle}
 \end{figure}
 
 \subsection{Near and Far Fields} \label{sec:fresnelnearfar}
-We now use the Fresnel equations to predict the near and far optical
-fields, including effects from SPP propagation.  Computation of the far
-field is straightforward, as the Fresnel equations already provide an
-angular spectrum.  The near field is found by taking advantage of the shift
-theorem using the standard Fourier transform recipe
+We now use the Fresnel equations to predict optical fields taking into
+account effects from SPP propagation.  Computation of the far field is
+straightforward, as the Fresnel equations already provide an angular
+spectrum.  The near field is found by taking advantage of the shift theorem
+using the standard Fourier transform recipe
 \begin{equation}
 \mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
 \,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime}
@@ -126,7 +130,8 @@ where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field
 found using the Fresnel equations, taking into account the distribution of
 the incident field, and $\exp(\mi \mathbf{k} \cdot
 \mathbf{z}^\prime)$ is the free-space transfer function along the 
-propagation direction $\mathbf{z}^\prime$.  The mathematical details of this procedure
+propagation direction $\mathbf{z}^\prime$ which includes the evanescent
+wave due to the domain of integration.  The mathematical details of this procedure
 will be elaborated in \Section{sec:interferencetheory}, and the
 computational details in \Section{sec:mrfsim}.
 
