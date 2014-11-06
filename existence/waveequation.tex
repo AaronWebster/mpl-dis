@@ -23,15 +23,13 @@ The left side can be expanded and simplified using the vector identity
 &=-\mu\frac{\partial}{\partial t}\left(\nabla \times \mathbf{H}\right)\\
 -\nabla^2\mathbf{E}&=-\mu\frac{\partial}{\partial t}\left( \frac{\partial \mathbf{D}}{\partial t} + \mathbf{J}\right) \\
 -\nabla^2\mathbf{E}&=-\mu\frac{\partial^2 \mathbf{D}}{\partial t^2} -\mu\frac{\partial\mathbf{J}}{\partial t} \\
-\nabla^2\mathbf{E} -\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2} -\mu\sigma\frac{\partial\mathbf{E}}{\partial t}  &= \mathrm{0} 
+\nabla^2\mathbf{E} -\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2} -\mu\sigma\frac{\partial\mathbf{E}}{\partial t}  &= \mathbf{0} 
 \label{eqn:ewe}
 \end{align}
-\todo{zero should be the null vector}
 This is the electromagnetic wave equation in terms of the electric field.
-\todo{motivate why you are using plane waves}
-We choose here to solve the equation using separation of varaibles and a plane wave
+Because much of our work involves excitation of SPPs using laser beams, we 
+choose to solve this equation using separation of varaibles and a plane wave
 ansatz which yields
-\todo{plane waves are only one of the solutions to maxwell's equations}
 \begin{align}
 %\Aboxed{
  \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
@@ -49,7 +47,7 @@ $\mathbf{k}$ is the material specific vectorial wavenumber, $\mathbf{r}$ is the
 spatial position, $\omega$ is angular frequency, $t$ is
 the dimension of time, and $c$ is the speed of light.
 The initial value is chosen with the vectorial constant $\mathbf{E}_0$.
-The magnetic field follows the same form
+The magnetic field follows the same form,
 \begin{align}
 %\Aboxed{
  \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
