@@ -19,12 +19,12 @@ an output coupler to a beam waist of $w_0=\SI{5}{\milli\meter}$ and
 proceeds through a polarizing beamsplitter, passing $p$ polarized light.
 The light is focused by a 10X microscope objective onto the hypotenuse of a
 hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.  The
-beamsplitter and microscope objective are mounted on rotation stage which
+beamsplitter and microscope objective are mounted on a rotation stage which
 itself is mounted on a micrometer stage.  The objective itself is mounted
 on a zoom housing enabling linear travel along the optical axis.  When the
 rotation stage is at the surface plasmon resonance angle, the micrometer
 $z$ axis is fixed with a diffraction limited spot at the center of the
-prism's hypotenuse.  The size of the spot then be modified via the zoom
+prism's hypotenuse.  The size of the spot can then be modified via the zoom
 housing, and its transverse location on the surface by the $x$ and $y$ lead
 screws on the micrometer stage.  
 
@@ -75,8 +75,9 @@ were removed from their housings and the naked PCB used as a mount support.
 \end{figure}
 
 Two types of imaging sensors were used in the experiment: an IDS USB 2.0
-\SI{8}{\bit} CMOS camera with a resolution of 1280x1024 pixels and a PixelGrey
-IEEE-1394 (Firewire) \SI{16}{\bit} CCD  with a resolution of 1280x1024 pixels.
+\SI{8}{\bit} CMOS camera with a resolution of $1280\times1024$ pixels and a PixelGrey
+IEEE-1394 (Firewire) \SI{16}{\bit} CCD  with a resolution of
+$1280\times1024$ pixels.
 Both cameras are capable of what is known as a ``limited area of interest''
 (AOI).  This feature allows the cameras to capture a subset of their
 available pixel region before the information traverses the serial
@@ -102,6 +103,6 @@ its own dedicated USB bus.  This allowed us to maximize the USB polling
 frequency and avoid traffic on the bus which would otherwise interrupt the
 datastream.  Firewire cameras did not need this effort, as the IEEE-1394
 protocol supports isochronous transfers which are able to guarantee a
-device certain amount of bandwidth.
+device a certain amount of bandwidth.
 
 %(480 megabits per second)/((1280*128*8 bits) per frame)
