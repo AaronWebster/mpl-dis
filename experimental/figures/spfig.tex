@@ -1,7 +1,8 @@
-% This file was created by matlab2tikz v0.4.7 (commit 7b3b49ee002823be99ff0102bcff58422815edaf) running on MATLAB 8.3.
+% This file was created by matlab2tikz v0.4.7 (commit 3a0728779a928636b28f57ba87a1776b45e88f25) running on MATLAB 8.3.
 % Copyright (c) 2008--2014, Nico Schlömer <nico.schloemer@gmail.com>
 % All rights reserved.
 % Minimal pgfplots version: 1.9
+% 
 %
 % defining custom colors
 \definecolor{mycolor1}{rgb}{0.21569,0.49412,0.72157}%
@@ -24,7 +25,7 @@ axis x line*=bottom,
 axis y line*=left,
 legend style={at={(0.03,0.97)},anchor=north west,draw=black,fill=white,legend cell align=left}
 ]
-\addplot [color=mycolor1,solid]
+\addplot [color=mycolor1,dashed]
  plot [error bars/.cd, y dir = both, y explicit]
  table[row sep=crcr, y error plus index=2, y error minus index=3]{%
 0	0.501568754590076	0.0204630848470331	0.0204630848470331\\
@@ -37,7 +38,7 @@ legend style={at={(0.03,0.97)},anchor=north west,draw=black,fill=white,legend ce
 };
 \addlegendentry{measured rough};
 
-\addplot [color=mycolor2,solid]
+\addplot [color=mycolor2,dash pattern=on 1pt off 3pt on 3pt off 3pt]
  plot [error bars/.cd, y dir = both, y explicit]
  table[row sep=crcr, y error plus index=2, y error minus index=3]{%
 0	0.194357741243696	0.0381618545028324	0.0381618545028324\\
