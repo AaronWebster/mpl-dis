@@ -1,6 +1,6 @@
-The next edge case is that of a strong single scatterer, which is shown in 
+The next edge case is that of a strong single scatterer, shown in 
 Figure{fig:strongsinglefig}.  The intensity PDF in this case is modified
-from a Rayleigh distribution to a Rician 
+from a Rayleigh distribution to a Rician~\cite{goodman2007speckle} 
 \begin{equation}
 p_I(I) = \frac{1}{\bar{I}_n} \exp\left(-\frac{I}{\bar{I}_n} - r\right) 2 I_0
 \sqrt{\frac{I}{\bar{I}_n} r}
@@ -11,13 +11,3 @@ intensity of a single scatterer is equivalent to a random phasor sum plus a
 constant background.  It is thus difficult to distinguish in an experiment
 between a speckle fields with strong single scatterer and those whose
 background have not been adequately subtracted.
-\begin{figure}[ht]
-\centering
-\import{speckle/figures/lowscatthist/}{spk_hist_intensity_1}
-\import{speckle/figures/lowscatthist/}{spk_hist_intensity_2}
-\import{speckle/figures/lowscatthist/}{spk_hist_intensity_4}
-\import{speckle/figures/lowscatthist/}{spk_hist_intensity_6}
-\caption{Simulated speckle fields and PDF of the resulting intensities for
-the case of one scatter $r$ times brighter than the rest.}
-\label{fig:strongsinglefig}
-\end{figure}

@@ -4,24 +4,15 @@ p_I(I) = 2\pi^2 \int_0^\infty\! \rho J_0\!\left(\frac{2\pi a
 \rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho
 \label{eqn:smallscatteqn}
 \end{equation}
-with $\rho_I^2=(1-1/N)a^4$.  This is demonstrated in \Figure{fig:lowscatthist} for
-$N=2,\ldots,5$.  In this figure, a single speckle pattern was generated in 2D
+with $\rho_I^2=(1-1/N)a^4$.  This is shown in \Figure{fig:lowscatthist} for
+$N=2,\ldots,5$.  In this figure, a single realization of a speckle pattern was generated in 2D
 using \Equation{eqn:phasorsum} and its histogram plotted against the
 theoretical prediction of \Equation{eqn:smallscatteqn}.  No ensemble
-averaging was used, though this is typically necessary.
+averaging was used, though this is typically required to produce reasonable 
+statistics~\cite{goodman2007speckle}.
 \Figure{fig:lowscatthist} shows an important point about random phasor sums
 with a low number of scatterers.  \Equation{eqn:smallscatteqn} converges on
 \Equation{eqn:exppdf} fairly rapidly as $N$ increases.  Even at $N=6$ the
 difference is fairly negligble, with a sum squared error \num{4.75e-5}.
 This means we can treat systems with even a small number of scatterers
 using the statistics of random phasor sums.
-\begin{figure}[ht]
-\centering
-\import{speckle/figures/lowscatthist/}{spk_hist_2}
-\import{speckle/figures/lowscatthist/}{spk_hist_3}
-\import{speckle/figures/lowscatthist/}{spk_hist_4}
-\import{speckle/figures/lowscatthist/}{spk_hist_5}
-\caption{Simulated speckle fields and PDF of the resulting intensities for
-the case of a small number of scatterers.}
-\label{fig:lowscatthist}
-\end{figure}

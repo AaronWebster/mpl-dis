@@ -1,3 +1,14 @@
+%The ``size'' of the speckles is a function of the wavelength of the light,
+%the size of the laser beam which illuminates the first surface, and the
+%distance between this surface and the surface where the speckle pattern is
+%formed. This is the case because when the angle of scattering changes such
+%that the relative path difference between light scattered from the centre
+%of the illuminated area compared with light scattered from the edge of the
+%illuminated changes by λ, the intensity becomes uncorrelated. Dainty [1]
+%derives an expression for the mean speckle size as λz/L where L is the
+%width of the illuminated area and z is the distance between the object and
+%the location of the speckle pattern.
+
 Following \name{Goodman} and \name{Dainty}, we define the size of a
 speckle in terms of the area of the normalized
 autocovariance function of the speckle intensity pattern, $c_I(\Delta x,
@@ -46,8 +57,10 @@ the full width at half maximum of that measurement as the spot size.
 
 \begin{figure}[ht]
  \centering
- %\import{includes/}{setpgfinc}
- %\import{speckle/figures/}{spotsizefig}
- \caption{Speckle size versues spot size.}
+ \includegraphics[keepaspectratio]{speckle/figures/spotsize/test.pdf}
+ \caption{Speckle size versues spot size.  Inset images show an example of
+ the raw spot size data from which the plot was computed.  Inset images are
+ \SI{2.26x2.26}{\milli\meter} with major ticks at
+ \SI{500}{\micro\meter} intervals.}
  \label{fig:spotsize}
 \end{figure}
