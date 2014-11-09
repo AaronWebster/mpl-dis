@@ -2,12 +2,10 @@ During our experimental work, we did not have convienent access to a
 standard programmable spin coater.  This is of course a pre-requisite to
 producing uniform cytop coatings and thus long range surface plasmons.
 Being a rather expensive piece of equipment, we opted to build one
-ourselves using a repurposed spinning platter type hard disk drive.
-Spin coaters built this way have been reported
-before~\cite{bianchi2006spin}, but we have made enough improvements on the
-design to justify its inclusion here.  Most significantly, the entire
-electronic drive and control are put together from off the shelf
-components.
+ourselves using a repurposed spinning platter type hard disk drive.  Spin
+coaters built this way have been reported before~\cite{bianchi2006spin},
+but we have found a much simpler and economic implementation using off the
+shelf components.
 
 The cover from all internal components except for the motor are first
 removed.  A solid aluminum plate is affixed to the top of the motor using
@@ -24,14 +22,10 @@ pressing a button.  Finally, connected to the motor spindle is a small
 flange and an optical interrupter switch which serves to monitor the spin
 speed.  
 
-
-
-We have experimented with using the optical interrupter as feedback for a
-proportional-integral-derivative (PID) loop in hopes that this would be a
-superior way of controlling the motor, but this idea was abandoned in favor
-of a proportional-only feedback loop.  The spin speed of the motor was also
-calibrated offline and a linear relationship with the PWM output determined
-such that it could function equally well without feedback.  
+The spin speed of the motor was recorded as a function of PWM signal and
+this relationship fit to a second order polynomial.  This calibration was
+then used to set the PWM output given a desired spin speed without using a
+feedback loop.
 
 The stability of the spin coater and the range of speeds it offers is shown
 in \Table{tbl:spincoatererror}.  Perhaps the most obvious downside of the
