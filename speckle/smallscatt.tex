@@ -1,10 +1,11 @@
-For a small number of scatterers $N$ of intensity $a$, $\rho_I(I)$ becomes
+For a small number of scatterers $N$ of intensity $a$, $\rho_I(I)$
+becomes~\cite{goodman2007speckle}
 \begin{equation}
 p_I(I) = 2\pi^2 \int_0^\infty\! \rho J_0\!\left(\frac{2\pi a
-\rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho
+\rho}{\sqrt{N}}\right)^N J_0\!\left(2\pi\sqrt{I}\rho\right)\md\rho,\quad \rho_I^2=(1-1/N)a^4.
 \label{eqn:smallscatteqn}
 \end{equation}
-with $\rho_I^2=(1-1/N)a^4$.  This is shown in \Figure{fig:lowscatthist} for
+This is shown in \Figure{fig:lowscatthist} for
 $N=2,\ldots,5$.  In this figure, a single realization of a speckle pattern was generated in 2D
 using \Equation{eqn:phasorsum} and its histogram plotted against the
 theoretical prediction of \Equation{eqn:smallscatteqn}.  No ensemble
@@ -14,5 +15,5 @@ statistics~\cite{goodman2007speckle}.
 with a low number of scatterers.  \Equation{eqn:smallscatteqn} converges on
 \Equation{eqn:exppdf} fairly rapidly as $N$ increases.  Even at $N=6$ the
 difference is fairly negligble, with a sum squared error \num{4.75e-5}.
-This means we can treat systems with even a small number of scatterers
-using the statistics of random phasor sums.
+The implication here is that the statistics of systems with even a small
+number of scatterers follow that of a random phasor sum.
