@@ -14,16 +14,21 @@ x = 0:5:30;
 x_c = 0:0.1:30;
 
 figure(1);
+%set(gca, 'LineStyleOrder', {'-', ':', '--', '-.'});
 clf;
 
 hold on;
+set(gca, 'LineStyle', '--');
 eb_2 = errorbar(x,rough.dmean,rough.dstd,'Color',mycolor(2,:));
+set(gca, 'LineStyle', '-.');
 eb_1 = errorbar(x,smooth.dmean,smooth.dstd,'Color',mycolor(1,:));
+
 
 %plot(smooth1.a(:,1),smooth1.a(:,2)./smooth1.b(:,2),'Color',mycolor(4,:))
 
 theo =tan(deg2rad(x_c)).^2./(1+tan(deg2rad(x_c)).^2./abs(eps_met));
-plot(x_c,theo,'Color',mycolor(3,:))
+plot(x_c,theo,'-','Color',mycolor(3,:))
+%set(gca, 'LineStyle', '-');
 
 xlabel('angle [deg]');
 ylabel('$I_p/I_s$ [a.u.]');

@@ -1,15 +1,23 @@
-A PDF of the intensity in the cone is shown in \Figure{fig:conepdf} for a
-single speckle realization in the cone.  Again, it is usually required to
-ensemble average over many different speckle realizations, but we find
-useful statistics emerge for a single realization when the observed area is
-large.  The observed intensity is very well described by a Rayleigh
-distribution (\Equation{eqn:exppdf}).  There is a small constant
-background, but this is likely attributed to experimental noise or an
-imperfect background subtraction in image processing.  The contrast is near
-unity, with a value of $C=1.0637$. 
+The intensity PDF of the cone is shown in \Figure{fig:conepdf} for a single
+speckle realization at an azimuthal angle of $\phi=\SI{90}{\degree}$.
+Again, it is usually required to ensemble average over many different
+realizations, but as shown useful statistics emerge for a single
+realization when averaging over many speckles; the same strategy employed
+in multispeckle diffusing wave spectroscopy~\cite{zakharov2006multispeckle}.
+
+The observed PDF is well described by the Rayleigh distribution of
+\Equation{eqn:exppdf}.  There is a small constant background, but this is
+likely attributed to experimental noise or an imperfect background
+subtraction in image processing.  The contrast is near unity, with a value
+of $C=1.0637$.  Averaging over many speckle realizations we obtain the same
+result of a near unity contrast.  
 \begin{figure}[ht]
 \centering
 \import{speckle/figures/conepdf/}{spk_cone_pdf}
 \caption{cone pdf}
 \label{fig:conepdf}
 \end{figure}
+
+Averaging over many speckle realizations we obtain the same result of a
+near unity contrast.  The intensity PDF of cone speckle is therefore very
+well described by the statistics of a random phasor sum.

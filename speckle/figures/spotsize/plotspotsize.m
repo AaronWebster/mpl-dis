@@ -25,19 +25,19 @@ tmp = sum(a.frame_b,2);
 x = 1:length(tmp);
 x = x.*500e-6./133;
 F = fit(x',tmp,'gauss1');
-size_a = 2*sqrt(log(2))*F.c1;
+size_a = 2*sqrt(log(2))*F.c1
 
 tmp = sum(b.frame_b,2);
 x = 1:length(tmp);
 x = x.*500e-6./133;
 F = fit(x',tmp,'gauss1');
-size_b = 2*sqrt(log(2))*F.c1;
+size_b = 2*sqrt(log(2))*F.c1
 
 tmp = sum(c.frame_b,2);
 x = 1:length(tmp);
 x = x.*500e-6./133;
 F = fit(x',tmp,'gauss1');
-size_c = 2*sqrt(log(2))*F.c1;
+size_c = 2*sqrt(log(2))*F.c1
 
 % normalize images so they plot nicely
 %a.frame_a = (min(a.frame_a(:))-a.frame_a)./range(a.frame_a(:));
@@ -89,7 +89,7 @@ imagesc(scale_ax,scale_ay,a.frame_a);
 xlabel('$x$ [um]')
 ylabel('$y$ [um]')
 
-if true
+if false
 filename = sprintf('/tmp/test.tex');
 matlab2tikz(filename, 'showInfo', false, ...
     'parseStrings',false,'standalone', true, ...
