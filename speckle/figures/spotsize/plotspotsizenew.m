@@ -29,32 +29,37 @@ scale_by = (0:size(a.frame_b,1)).*(500/133);
 scale_ax = (0:size(a.frame_a,2)).*(5.2);
 scale_ay = (0:size(a.frame_a,1)).*(5.2);
 
-
+F = fit(x,y,'poly1');
+figure(1)
+clf;
+hold on;
 mycolor = brewermap(5,'Set1');
-plot(x,y,'Color',mycolor(2,:));
+plot(x,y,'-','Color',mycolor(2,:));
+plot(x,F(x),'--','Color',mycolor(1,:));
 xlabel('reference spot size [um]');
 ylabel('speckle size [deg]');
 axis([min(x) max(x) 0.1 0.9 ])
+legend('relative spot size','linear fit');
 
-axes('Position',[.7 .7 .2 .2])
-imagesc(scale_bx,scale_by,a.frame_b);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
-axis square;
+% axes('Position',[.7 .7 .2 .2])
+% imagesc(scale_bx,scale_by,a.frame_b);
+% xlabel('$x$ [um]')
+% ylabel('$y$ [um]')
+% axis square;
+% 
+% axes('Position',[.5 .7 .2 .2])
+% imagesc(scale_bx,scale_by,b.frame_b);
+% xlabel('$x$ [um]')
+% ylabel('$y$ [um]')
+% axis square;
+% 
+% axes('Position',[0.2 .7 .2 .2])
+% imagesc(scale_bx,scale_by,c.frame_b);
+% xlabel('$x$ [um]')
+% ylabel('$y$ [um]')
+% axis square;
 
-axes('Position',[.5 .7 .2 .2])
-imagesc(scale_bx,scale_by,b.frame_b);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
-axis square;
-
-axes('Position',[0.2 .7 .2 .2])
-imagesc(scale_bx,scale_by,c.frame_b);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
-axis square;
-
-if true
+if false
     %filename = sprintf('../spotsizefig.tex');
     filename = sprintf('/tmp/test.tex');
     matlab2tikz(filename, 'showInfo', false, ...
