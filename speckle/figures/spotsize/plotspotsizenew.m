@@ -33,12 +33,15 @@ F = fit(x,y,'poly1');
 figure(1)
 clf;
 hold on;
+%y = y./div;
 mycolor = brewermap(5,'Set1');
 plot(x,y,'-','Color',mycolor(2,:));
 plot(x,F(x),'--','Color',mycolor(1,:));
+plot(x,660e-9*1.5e-3./(x*1e-6./2))
+
 xlabel('reference spot size [um]');
 ylabel('speckle size [deg]');
-axis([min(x) max(x) 0.1 0.9 ])
+%axis([min(x) max(x) 0.1 0.7 ])
 legend('relative spot size','linear fit');
 
 % axes('Position',[.7 .7 .2 .2])
@@ -59,10 +62,11 @@ legend('relative spot size','linear fit');
 % ylabel('$y$ [um]')
 % axis square;
 
+
 if false
-    %filename = sprintf('../spotsizefig.tex');
-    filename = sprintf('/tmp/test.tex');
+    filename = sprintf('../spotsizefig.tex');
+    %filename = sprintf('/tmp/test.tex');
     matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', true, ...
+        'parseStrings',false,'standalone', false, ...
         'height', '3.5cm', 'width','9cm');
 end
