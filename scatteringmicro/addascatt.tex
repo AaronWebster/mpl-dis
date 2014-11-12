@@ -40,52 +40,37 @@ altered and the speckle pattern will change.  Detecting this change will
 correspond to a nanoparticle binding event.
 
 \subsection{Theoretical Sensitivity}
+
 The theoretical sensitivity of a speckle pattern to the addition of a
-single scatterer depends on whether the underlying scattering process is in
-the single or multiple scattering regime.
+single scatterer depends on strongly the underlying scattering process;
+whether it is in the single or multiple scattering regime.  In the purely
+single scattering regime the result is straightforward.  Since each phasor
+of \Equation{eqn:phasorsum} contributes equally, the average 
+sum of $N$ phasors, the field is given by
 
-scattering regime, single or multiple, and
-the degree to which each process takes place in the speckle pattern.  To
-begin, we treat them separately.
-
-
-To quantify the difference between two specklegrams, we use the Pearson's
-correlation coefficent, $C_I$, defined as 
 \begin{equation}
-C_I = \frac{1}{N-1} \frac{1}{M-1} 
-\sum_{i=1}^N \sum_{j=1}^M 
-\left(\frac{X_{i,j} - \bar{X}}{\sigma_X}\right)
-\left(\frac{Y_{i,j} - \bar{Y}}{\sigma_Y}\right)
+\mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \phi_n}.
+\label{eqn:phasorsumdingus}
 \end{equation}
-for two $N \times M$ specklegrams $X$ and $Y$ with indicies $i$ and $j$.
-For all $X$ and $Y$, $C_I \in (-1,1)$.
-The advantage of this formalism is that dividing subtracting the mean and
-dividing by the standard deviation effectively normalizes intensity
-fluctuations which occur in a real experiment.
 
-Consider first a single scattering speckle pattern which is the result of a
-random phasor sum, similar to \Equation{eqn:phasorsum}
-\begin{equation}
-\mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \phi_n}
-\end{equation}
-This is equivalent to a 2D random walk in the complex plane.  Because each
-phasor is randomly distributed on the interval $[0,2\pi)$
+\Equation{eqn:phasorsumdingus} is equivalent to a 2D random walk in the
+complex plane.  Because each phasor is randomly distributed on the interval
+$[0,2\pi)$
 \begin{equation}
 \left<|\mathbf{E}(\mathbf{r})|^2\right> = \frac{N}{\sqrt{N}^2} = 1
 \end{equation}
-where $\left<\dots\right>$ denotes ensemble averaging.  We thus expect the
-addition of a single scatterer to decorrelate the speckle pattern by $N$
-(or something like that.  Why not derive this thing again?
+where $\left<\dots\right>$ denotes ensemble averaging.  
 
-\subsection{Experiment}
-To demonstrate the principle of our method, we introduce
-\SI{50}{\nano\meter} citrate-capped spherical gold nanoparticles in water
-into the microfluidic cell and monitor the system as the particles adsorb
-to the gold sensor surface.  These particles scatter light strongly enough
-that we can observe them with the inverted microscope (similar to a TIRF
-setup) while simultaneously recording the speckle.  With regards to the
-speckle we quantify changes using the Pearson product-moment
-correlation coefficient $C_I$, defined as 
+The influence on the speckle field in a multiple scattering regime is much
+more difficult to 
+
+(single scattering result)
+
+(segway to multiple scattering result being a bit more tricky)
+
+With regards to the speckle we quantify changes using the Pearson
+product-moment correlation coefficient $C_I$ of the speckle intensity,
+defined as 
 \begin{equation}
 C_I = \frac{\mathrm{cov}(a,b)}{\sigma_a \sigma_b}
 \end{equation}
@@ -94,6 +79,30 @@ and $\sigma_a$ and $\sigma_b$ are the respective standard deviations.  This
 allows us to measure changes in the speckle structure while removing the
 effect of global intensity fluctuations which we identify as noise.
 
+(the pearsons introduces whatever)
+(we're not smart enough to do multiple scattering stuff, so here you go)
+
+The results from (single and multiple scattering, show theoretical plots)
+
+\Figure{fig:scatteringpearson}
+
+\begin{figure}
+\centering
+\caption{Monte Carlo simulation comparing the Pearson product-moment
+				correlation $C_I$ for the addition of a single scatterer in both
+				single and multiple scattering systems.}
+\label{fig:scatteringpearson}
+\end{figure}
+
+
+
+\subsection{Experiment}
+To demonstrate the principle of our method, we introduce
+\SI{50}{\nano\meter} citrate-capped spherical gold nanoparticles in water
+into the microfluidic cell and monitor the system as the particles adsorb
+to the gold sensor surface.  These particles scatter light strongly enough
+that we can observe them with the inverted microscope (similar to a TIRF
+setup) while simultaneously recording the speckle. 
 A sample of the sensor output is shown in \Figure{fig:expdata}
 
 Consider a speckle pattern which is the consequence of $N$ fixed
