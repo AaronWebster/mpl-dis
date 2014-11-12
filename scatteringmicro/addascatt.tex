@@ -40,13 +40,37 @@ altered and the speckle pattern will change.  Detecting this change will
 correspond to a nanoparticle binding event.
 
 \subsection{Theoretical Sensitivity}
-
 The theoretical sensitivity of a speckle pattern to the addition of a
-single scatterer depends on strongly the underlying scattering process;
-whether it is in the single or multiple scattering regime.  In the purely
-single scattering regime the result is straightforward.  Since each
-component in the random phasor sum (\Equation{eqn:phasorsum}) contributes
-equally, the addition of a single phasor will cause a change in the 
+single scatterer depends on strongly the specifics of the underlying
+scattering process.  The dimensionality, degree of single and multiple
+scattering, and geometry from which light is both incident and collected
+must all be taken into account.  Such theoretical analysis has been solved
+for specific cases such as in the transmission geometries of dynamic light
+scattering or diffusive wave spectroscopy, but in general the problem is
+difficult.  Determination of the relevant analytic expressions for the
+sensitivity of a speckle pattern created by SPP single and multiple
+scattering are, quite frankly, beyond our abilities.  We will therefore
+emphasize our experimental findings, comparing them with numerical
+simulations where we have found them descriptive.
+
+With regards to the speckle we quantify changes using the Pearson
+product-moment correlation coefficient $C_I$ of the speckle intensity,
+defined as 
+\begin{equation}
+C_I = \frac{\mathrm{cov}(a,b)}{\sigma_a \sigma_b}
+\end{equation}
+where $\mathrm{cov}(a,b)$ is the covariance between signals $a$ and $b$,
+and $\sigma_a$ and $\sigma_b$ are the respective standard deviations.  This
+allows us to measure changes in the speckle structure while removing the
+effect of experimental system noise.
+
+\begin{figure}
+\centering
+\caption{Monte Carlo simulation comparing the Pearson product-moment
+				correlation $C_I$ for the addition of a single scatterer in both
+				single and multiple scattering systems.}
+\label{fig:scatteringpearson}
+\end{figure}
 
 
 \begin{equation}
@@ -69,31 +93,11 @@ more difficult to
 
 (segway to multiple scattering result being a bit more tricky)
 
-With regards to the speckle we quantify changes using the Pearson
-product-moment correlation coefficient $C_I$ of the speckle intensity,
-defined as 
-\begin{equation}
-C_I = \frac{\mathrm{cov}(a,b)}{\sigma_a \sigma_b}
-\end{equation}
-where $\mathrm{cov}(a,b)$ is the covariance between signals $a$ and $b$,
-and $\sigma_a$ and $\sigma_b$ are the respective standard deviations.  This
-allows us to measure changes in the speckle structure while removing the
-effect of global intensity fluctuations which we identify as noise.
-
-(the pearsons introduces whatever)
-(we're not smart enough to do multiple scattering stuff, so here you go)
 
 The results from (single and multiple scattering, show theoretical plots)
 
 \Figure{fig:scatteringpearson}
 
-\begin{figure}
-\centering
-\caption{Monte Carlo simulation comparing the Pearson product-moment
-				correlation $C_I$ for the addition of a single scatterer in both
-				single and multiple scattering systems.}
-\label{fig:scatteringpearson}
-\end{figure}
 
 
 
