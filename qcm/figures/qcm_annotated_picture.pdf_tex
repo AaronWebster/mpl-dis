@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'qcm_annotated_picture.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{339.75739746bp}%
+    \setlength{\unitlength}{439.37006836bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,14 +48,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.64991126)%
+  \begin{picture}(1,0.64991128)%
     \put(0,0){\includegraphics[width=\unitlength]{qcm_annotated_picture.pdf}}%
-    \put(0.9654944,0.54936396){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{tether}}}%
-    \put(0.96564602,0.41164959){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{crystal}}}%
-    \put(0.96534278,0.59671759){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{slip-ring}}}%
-    \put(0.9654944,0.46471285){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{oscillator}}}%
-    \put(0.96591879,0.08302025){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{centrifuge}}}%
-    \put(0.9654944,0.35076458){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{holder}}}%
-    \put(0.96579749,0.13007689){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{counterbalance}}}%
+    \put(0.95828146,0.49848683){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{tether}}}%
+    \put(0.95839871,0.39199465){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{crystal}}}%
+    \put(0.95816422,0.53510459){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{slip-ring}}}%
+    \put(0.95828146,0.43302757){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{oscillator}}}%
+    \put(0.95860964,0.13787118){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{centrifuge}}}%
+    \put(0.95828146,0.34491331){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{holder}}}%
+    \put(0.95851584,0.17425928){\color[rgb]{0.82745098,0.84313725,0.81176471}\makebox(0,0)[rb]{\smash{counterbalance}}}%
   \end{picture}%
 \endgroup%

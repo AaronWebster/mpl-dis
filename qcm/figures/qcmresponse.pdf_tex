@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'qcmresponse.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{507.47202148bp}%
+    \setlength{\unitlength}{453.54331055bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,31 +48,31 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.27385943)%
+  \begin{picture}(1,0.30642278)%
     \put(0,0){\includegraphics[width=\unitlength]{qcmresponse.pdf}}%
-    \put(0.28563922,0.17197122){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{weak coupling}}}%
-    \put(0.28485579,0.15372114){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{inertial loading}}}%
-    \put(0.66377848,0.12721765){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
-    \put(0.52745751,0.05635125){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{mass loading}}}%
-    \put(0.52800665,0.07436465){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{strong coupling}}}%
-    \put(0.8530207,0.01671736){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\Delta\!f$}}}%
-    \put(0.46675461,0.00239641){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\omega_\mathrm{q}^2 m_\mathrm{L}$}}}%
-    \put(0.84917817,0.0415835){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$k_\mathrm{L} \to \infty$}}}%
-    \put(0.87478471,0.0415835){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L} \to 0$}}}%
-    \put(0.56089373,0.21209191){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta\!f$}}}%
-    \put(0.56089373,0.19166187){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta \Gamma$}}}%
-    \put(0.74259854,0.13548112){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[b]{\smash{$\Delta \Gamma$}}}}%
-    \put(0.95304728,0.08861042){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
-    \put(0.81487488,0.14021512){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{strong}}}%
-    \put(0.81486757,0.12297702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
-    \put(0.89526157,0.13935112){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{weak}}}%
-    \put(0.89581439,0.12297702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
-    \put(0.03138221,0.22546355){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{load}}}%
-    \put(0.14974638,0.24678973){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{L}$}}}%
-    \put(0.16257192,0.18614579){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
-    \put(0.0860675,0.18614579){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\xi_\mathrm{L}$}}}%
-    \put(0.02993008,0.0771389){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{QCM}}}%
-    \put(0.1604678,0.1079529){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{q}$}}}%
-    \put(0.14265239,0.04578497){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{q}$}}}%
+    \put(0.28045891,0.18782639){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{weak coupling}}}%
+    \put(0.27968226,0.16973417){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{inertial loading}}}%
+    \put(0.6553273,0.14345994){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.5201855,0.07320652){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{mass loading}}}%
+    \put(0.52072988,0.09106411){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{strong coupling}}}%
+    \put(0.8429326,0.03391546){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\Delta\!f$}}}%
+    \put(0.46000767,0.01971839){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\omega_\mathrm{q}^2 m_\mathrm{L}$}}}%
+    \put(0.83912331,0.05856651){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$k_\mathrm{L} \to \infty$}}}%
+    \put(0.86450836,0.05856651){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L} \to 0$}}}%
+    \put(0.55333249,0.22760004){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta\!f$}}}%
+    \put(0.55333249,0.20734672){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta \Gamma$}}}%
+    \put(0.73346558,0.15165193){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[b]{\smash{$\Delta \Gamma$}}}}%
+    \put(0.94209397,0.10518665){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.80511674,0.15634497){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{strong}}}%
+    \put(0.80510949,0.13925598){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
+    \put(0.88480809,0.15548845){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{weak}}}%
+    \put(0.88535613,0.13925598){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{coupling}}}%
+    \put(0.02840119,0.24085602){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{load}}}%
+    \put(0.14574153,0.26199773){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{L}$}}}%
+    \put(0.15845613,0.20187836){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{L}$}}}%
+    \put(0.08261347,0.20187836){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\xi_\mathrm{L}$}}}%
+    \put(0.02696163,0.09381436){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{QCM}}}%
+    \put(0.15637021,0.12436182){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m_\mathrm{q}$}}}%
+    \put(0.1387089,0.06273163){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k_\mathrm{q}$}}}%
   \end{picture}%
 \endgroup%
