@@ -1,6 +1,8 @@
+\section{Introduction}
+
 \section{Finite Element Modeling}
 A finite element simulation was constructed using the software
-\texttt{COMSOL Multiphysics 4.3 (4.3.0.233)}~\cite{multiphysics1994comsol}.
+\texttt{COMSOL Multiphysics 4.3 (4.3.0.233)} (Comsol Inc., Burlington, MA).
 Though this software's source code is not available for
 scrutinous review, our implementation is generic and may be carried out
 using other software (e.g. \texttt{OpenFOAM}~\cite{jasak2007openfoam},
@@ -31,9 +33,10 @@ The left hand side (
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
-is a sliding wall and is given a tangential velocity of $\dot{u}_\perp = \mi
+is a sliding wall and is given a tangential speed of $\dot{u}_\perp = \mi
 \omega u_0$, where $\omega=2\pi f$ is the angular frequency of oscillation
 and $u_0=\SI{1e-2}{\nano\meter}$ is its amplitude.  The top and bottom
+boundaries
 (%
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
