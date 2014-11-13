@@ -5,19 +5,15 @@
 
 %%%%% TITLE PAGE %%%%%
 \import{frontmatter/}{titlepage}
-
-%%%%% DECLARATION OF ORIGINALITY %%%%%
-\import{frontmatter/}{declaration}
-
-%%%%% ACKNOWLEDGEMENTS %%%%%
-\import{frontmatter/}{acknowledgments}
+\import{frontmatter/}{prufung}
 
 %%%%% TABLE OF CONTENTS &&&&&
 \pagenumbering{roman}
-\tableofcontents
 
 %%%%% ABSTRACT %%%%%
 \import{frontmatter/}{abstract}
+
+\tableofcontents
 
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
@@ -28,11 +24,13 @@
 \import{foreword/}{foreword}
 
 \part{Surface Plasmon Resonance}
-\chapter{Surface Plasmon Polaritons} \label{ch:existence}
-\section{Introduction}
+
+\chapter{Introduction}
 \import{existence/}{introduction}
 \section{Historical Perspective}
 \import{existence/}{historical}
+
+\chapter{Surface Plasmon Polaritons} \label{ch:existence}
 \section{Maxwell's Equations}
 \import{existence/}{maxwell}
 \subsection{The Wave Equation}
@@ -161,6 +159,8 @@
 \import{qcm/}{loadsituations}
 \chapter{Simulation} \label{ch:qcmsimulation}
 \import{qcm/}{simulation}
+\chapter{Conclusions} \label{ch:qcmconclusions}
+\import{qcm/}{conclusions}
 
 \appendix
 \chapter{Appendix}
@@ -177,5 +177,11 @@
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
+
+\chapter*{Declaration of Originality}
+\import{frontmatter/}{declaration}
+\chapter*{Acknowledgements}
+\import{frontmatter/}{acknowledgments}
+
 
 \end{document}
