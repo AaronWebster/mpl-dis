@@ -1,8 +1,10 @@
-In our derivation of the plane wave solutions to Maxwell's equations, we
-treat frequency dependent permittivity as complex
+In the derivation of the plane wave solutions to Maxwell's equations,
+Equations~\ref{eqn:planewaves} and \ref{eqn:planewavesh}, the
+frequency dependent permittivity is a complex parameter
 \begin{align}
  \epsilon(\omega) &= \epsilon^\prime + \mi \frac{\sigma}{\omega}\\
-                   &= \epsilon^\prime + \mi\epsilon^{\prime\prime}
+                   &= \epsilon^\prime + \mi\epsilon^{\prime\prime}.
+																			\label{eqn:complexpermittivity}
 \end{align}
 %This allows the use of plane wave solutions which are essentially identical
 %to the solutions obtained for Maxwell's equations in the absence of
@@ -15,92 +17,81 @@ both the polarizability in Equations \ref{eqn:pdensity} and
 \ref{eqn:dfield} and the phase delay $\delta$ between the scalar $D_0$ and
 $E_0$
 \begin{equation}
- \epsilon(\omega) = \frac{D_0}{E_0} \,|\epsilon| \,\me^{\mi \delta}
+ \epsilon(\omega) = \frac{D_0}{E_0} \,|\epsilon| \,\me^{\mi \delta}.
+	\label{eqn:phasedelay}
 \end{equation}
 %\todo{can't divide vector by vector}
-This formalism is also consistent with a complex
-refractive index $\tilde{n} = n(1+\mi \kappa) = \sqrt{\epsilon}$.
+Equations~\ref{eqn:complexpermittivity} and \ref{eqn:phasedelay} are
+consistent with a complex refractive index $\tilde{n} = n(1+\mi \kappa) =
+\sqrt{\epsilon}$.
 
-There are several models~\cite{rakic1998optical} with which one
-can obtain the frequency dependent complex permittivity for metals.  Here
-we present the equations which will allow one to work amongst them.
+There are several models~\cite{rakic1998optical} from which
+the frequency dependent complex permittivity for metals can be obtained.
+As such, it is relevant to be able to convert from one model to another.
 Theoretically, the most general expression simply describes
 $\epsilon(\omega)$ as a superposition of Lorentzian resonances plus a DC
-term
+term,
 \begin{equation}
-\epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}
+\epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}.
 \label{eqn:meepdispersion}
 \end{equation}
-where $\epsilon_\infty$ is the low frequency dielectric response,
-describing the material's response to a static (DC) electric field,
-$\sigma_\mathrm{n}$ is the electric conductivity, $\omega_n$ and $\Gamma_n$ are
-material constants, and $\sigma_n$ is a function of position specifying the
-strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
+
+In \Equation{eqn:meepdispersion} $\epsilon_\infty$ is the low frequency
+dielectric response, describing the material's response to a static (DC)
+electric field, $\sigma_\mathrm{n}$ is the electric conductivity,
+$\omega_n$ and $\Gamma_n$ are material constants, and $\sigma_n$ specifies
+the strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
 dimensionless ($c=\hbar=1$), and is usually encountered when working with
-numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.
-In most other areas, the Lorentz-Drude model is used.  Formally, the
-Lorentz-Drude model is
+numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.  In
+most other areas, the Lorentz-Drude model is used.  Formally, the
+Lorentz-Drude model is given by
 \begin{equation}
-\epsilon_\mathrm{LD}(\omega)=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega)
+\epsilon_\mathrm{LD}(\omega)=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega),
 \end{equation}
 where $\epsilon_\mathrm{D}$ is contribution from the Drude model, representing
 free electron effects
 \begin{align}
 \epsilon_\mathrm{D}(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
-\mi\Gamma_0^\prime)}
+\mi\Gamma_0^\prime)},
 \label{eqn:drude}
 \end{align}
 and $\epsilon_L$ is the Lorentz contribution, representing the bound
-electron effects
+electron effects,
 \begin{align}
 \epsilon_L(\omega) =\sum_{j=0}^{k}\frac{f_j\omega_p^{\prime 2}}{\omega_j^{\prime
-2}-\omega^2+\mi\omega\Gamma_j^\prime}
+2}-\omega^2+\mi\omega\Gamma_j^\prime}.
 \label{eqn:lorentzdrude}
 \end{align}
-Here, $\omega'_p$ is the plasma frequency of an electron gas.
-The third and perhaps more accurate model is the Brendel-Bormann model, based instead on an
-\textit{infinite} superposition of oscillators
+In \Equation{eqn:lorentzdrude}, $\omega'_p$ is the plasma frequency of an
+electron gas.  The third and perhaps more
+accurate~\cite{jahanshahi2014study} model is the
+Brendel-Bormann model, based instead on an infinite superposition
+of oscillators
 \begin{align}
 \epsilon_\text{BB}(\omega) = \frac{1}{\sqrt{2 \pi} \sigma_n} \intinfty
 \exp\left(-\frac{(x-\omega'_n)}{2 \sigma_n^2}\right)
-\frac{f_j \omega_p^2}{(x^2-\omega^2)+\mi \omega \Gamma'_n} \md x
+\frac{f_j \omega_p^2}{(x^2-\omega^2)+\mi \omega \Gamma'_n} \md x.
 \label{eqn:brendelbormann}
 \end{align}
-
 Converting between \Equation{eqn:meepdispersion} and
 Equations~\ref{eqn:drude}, \ref{eqn:lorentzdrude}, and
 \ref{eqn:brendelbormann} is accomplished through the subsitutions $\sigma_n
 = {f_n \omega_p^{\prime 2}}/{\omega_n^2}$, $\epsilon_\infty=1$ and
-$\Gamma_n^\prime$.  To prevent numerical instability, in computer codes we
-set $\omega_0$, the DC term, to be a very small but nonzero value, e.g.
-$\omega_1 = \num{1e-20}$. 
-%\begin{figure}[ht]
-%\centering
-%\import{includes/}{setpgfinc}
-%\import{existence/figures/}{permittivityau}
-%\caption{Comparison of the complex permittivity for gold calculated using the Drude
-%and the Lorentz Drude model.}
-%\label{fig:permittivityau}
-%\end{figure}
-%
-%To get a feel for what a complex permittivity looks like, in
-%\Figure{fig:permittivityau} $\epsilon_\mathrm{LD}(\omega)$ and
-%$\epsilon_\mathrm{D}(\omega)$ are shown for gold, a metal which we will use
-%extensively in this work.  
-%
-%There are several important points to this plot.
-%First, note that the Lorentz-Drude model is much better (define
-%better) at predicting high
-%frequency behavior.  Second, the real part is negative and the
-%imaginary part positive.  This is necessary; $\epsilon(\omega)$ is
-%\textit{casual} and as such obeys the Kramers-Kronig relations
-%\begin{align}
-%\epsilon^\prime(\omega)=\mi \hf{\epsilon^{\prime\prime}(\omega)}
-%\end{align}
-%where $\hf{\epsilon(\omega)}$ is the Hilbert transform of
-%$\epsilon(\omega)$.  In practice, 
-%the choice of model ultimately depends on how well it fits observation for
-%a particular experiment.  Here, we will use the Lorentz-Drude model almost
-%exclusively.
-%%\todo{define sign convention}
-%%\todo{why do you use lorentz-drude model in the first place}
+$\Gamma_n^\prime$.  To prevent numerical instability, in computer codes
+$\omega_0$, the DC term, should be to be a very small but nonzero value,
+e.g.  $\omega_1 = \num{1e-20}$. 
+
+The Drude model considers only free electrons and thus has only a single
+pole in its expression, limiting its accuracy.  The agreement with
+experiment is particularly bad for metals such as gold and
+silver~\cite{ahmedcomputational}~\cite{jahanshahi2014study}, with
+deviations of approximately \SI{50}{\percent} in the real part and
+\SI{150}{\percent} in the imaginary up to \SI{650}{\micro\meter}.  At
+higher frequencies the Drude model continues to diverge and is not
+applicable.  Furthermore, the higher error in the imaginary part of
+$\epsilon$ gives narrorer SPR resonances than are experimentally
+observed~\cite{jahanshahi2014study}.  The simulations in this work all use
+the Lorentz-Drude model, which has an accuracy of () within the (range of
+frequencies I will use and stuff).  A comparison between the models and
+experiment is shown in \Figure{fig:permittivityau} of
+\Section{ch:reference}.

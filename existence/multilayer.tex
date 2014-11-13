@@ -4,12 +4,13 @@
  \caption{Geometry and coordinate system for the multilayer system. }
  \label{fig:multilayergeo}
 \end{figure}
-Having predicted the existence of SPPs on a single interface, we now
-consider a multilayer geometry, shown in \Figure{fig:multilayergeo}.  This
-has the potential to excite a different variety of SPP, as we shall soon
-see.  For
-layers $D_1$ and $D_3$, the equations are the same the
-single layer system
+
+Having shown the existence of SPPs on a single interface, the multilayer
+geometry, shown in \Figure{fig:multilayergeo} is now considered.  It will
+be shown that for certain multilayer geometries, the SPP propagation length
+can be increased by an order of magnitude.
+
+For layers $D_1$ and $D_3$, the equations are the same as for the single layer system
 \begin{align}
 \left.\begin{aligned}
 \mathbf{H}_1(x,z,t) &=
@@ -42,13 +43,14 @@ E_{z,3}\\
 \end{pmatrix}
 \me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
 \end{aligned} 
-\right\}&\quad D_3
+\right\}&\quad D_3.
 \label{eqn:lrsppplanewavemetal}
 \end{align}
 
-If the half-thickness of $D_2$, $a$, is sufficently small, this type of setup may be thought of as a
-waveguide for SPPs.  In the ``core'' region, $D_2$ and $-a<z<a$,
-there are two interfaces at $\pm a$
+If the half-thickness of $D_2$, $a$, is sufficently small, $D_2$ will act
+as a waveguide for SPPs.  In $D_2$ there are two interfaces, the
+$D_2$-$D_1$ interface at $+a$ and the $D_2$-$D_3$ interface at $-a$,
+leading to
 \begin{align}
 \mathbf{H}_2(x,z,t) &=
 \begin{pmatrix}
@@ -62,6 +64,7 @@ H^+_{y,2}\\
 H^-_{y,2}\\
 0
 \end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)} \\
+\label{eqn:multihhx}
 \mathbf{E}_2(x,z,t) &=
 \begin{pmatrix}
 \mi E^+_{x,2}\\
@@ -73,24 +76,25 @@ E^+_{z,2}\\
 \mi E^-_{x,2}\\
 0\\
 E^-_{z,2}\\
-\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)}
+\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)}.
+\label{eqn:multieex}
 \end{align}
 
-Taking this system of equations and applying continuity of $H_y$ and $E_x$
-at the boundaries, with a bit of algebra the following dispersion relation
-is obtained
+Taking Equations~\ref{eqn:multihhx} and \ref{eqn:multieex} and applying
+continuity of $H_y$ and $E_x$ at the boundaries, the dispersion relation is
+expressed as
 \begin{equation}
 \me^{-4 \mi k_{x,1} a} = 
 \frac{k_{x,1}/\epsilon_1 + k_{x,2}/\epsilon_2}
      {k_{x,1}/\epsilon_1 - k_{x,2}/\epsilon_2}
 \frac{k_{x,1}/\epsilon_1 + k_{x,3}/\epsilon_3}
-     {k_{x,1}/\epsilon_1 - k_{x,3}/\epsilon_3}
+     {k_{x,1}/\epsilon_1 - k_{x,3}/\epsilon_3}.
 \label{eqn:lrsppdispersion}
 \end{equation}
 
-\Equation{eqn:lrsppdispersion} is transcendental, but we can still look at
-the dispersion relation graphically by plotting the difference between the
-left and right hand side of the equation.
+\Equation{eqn:lrsppdispersion} is transcendental, but can still be
+visualized by plotting the difference between the left and right hand side
+of the equation, shown in \Figure{fig:lrsppdispersionrelation}.
 
 \begin{figure}[ht]
  \centering
@@ -98,8 +102,7 @@ left and right hand side of the equation.
 \label{fig:lrsppdispersionrelation}
 \caption{Disperion relation for multilayer system, shown as the difference
  between the right hand side (rhs) and left hand side (lhs) of
-\Equation{eqn:lrsppdispersion}.  Possible solutions are found within the
-red areas.}
+\Equation{eqn:lrsppdispersion}.  SPP excitation occurs in the red areas.}
 \end{figure}
 
 \subsection{Photonic Crystal Structures}
@@ -108,14 +111,14 @@ The systems in Figures \ref{fig:singleinterfacegeo} and
 excitation, at least as far as biosensing is concerned.  There
 is, however, a very intriguing geometry based on a multilayer stack with
 which one can obtain SPP propagation distances in the \textit{millimeter}
-range.  Currently, much of the work on these structures is being carried
+range.  Currently, much of the work on photonic crystal structures is being carried
 out by \name{Konopsky}~\cite{konopsky2006long}~\cite{konopsky2009long}.
 The working principle is akin to a Bragg mirror; a one dimensional stack of
 layers with varying refractive index is built up on the surface of a prism,
 ultimately depositing a metal as the final layer.  The multilayer stack
 works to minimize the tangential component of the electric field in the
-metal, reducing SPP atenuation.  This has several advantages to the
-geometries mentioned: specifically, it is possible to use lossy metals with
+metal, reducing SPP attenuation.  Reduction of SPP attenuation has several
+advantages to ATR configurations; specifically, it is possible to use lossy metals with
 more interesting surface chemistries (Pd and Pt), and it becomes possible
 to study long range surface plasmons with near field probes, which the
 liquid phase would otherwise make difficult.

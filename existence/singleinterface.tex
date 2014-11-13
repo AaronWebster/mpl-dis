@@ -1,4 +1,5 @@
-%\todo{the ansatz here is that we're looking for bound solutions k1 must be positive and k2 negative because we are looking for bounds olutions}
+%\todo{the ansatz here is that we're looking for bound solutions k1 must be
+%positive and k2 negative because we are looking for bounds olutions}
 \begin{figure}[ht]
  \centering
  \import{existence/figures/}{singlelayerinterfacegeo}
@@ -9,23 +10,23 @@ conductive metal.}
  \label{fig:singleinterfacegeo}
 \end{figure}
 
-With plane wave solutions to Maxwell's equations in hand, we move forward
-with our derivation of the existence of surface plasmon polaritions,
-beginning first by imposing boundary conditions consistent with a single
+From the plane wave ansatz to Maxwell's equations, the 
+derivation for the existence of surface plasmon polaritions proceeds 
+by imposing boundary conditions consistent with a single
 interface.  Since SPP modes are not supported with TE polarization, it is
 convenient to restrict the problem to TM polarization in two dimensions.
-In this case, consider the geometry in \Figure{fig:singleinterfacegeo}.  If
-a TM wave is incident at an angle on this interface,
+Consider the geometry in \Figure{fig:singleinterfacegeo}.  If
+a TM wave is incident at an angle on the $D_1$-$D_2$ interface,
 $\mathbf{k}=(k_x,0,k_z)$,
 $\mathbf{r}\cdot\mathbf{k}=k_x x + k_z z$ and $\mathbf{E}_0 = (E_x, 0,
-E_z)$, the electric field is
+E_z)$. The electric field is then
 \begin{align}
 \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
 \cdot \mathbf{r} - \omega t )}\\
 \mathbf{E}(x,z,t)&=\begin{pmatrix}
 E_x\\ 0\\ E_z
 \end{pmatrix}
-\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
+\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
 \label{eqn:planewavexz}
 \end{align}
 Similarly, for the magnetic field,
@@ -35,11 +36,11 @@ Similarly, for the magnetic field,
 \mathbf{H}(x,z,t)&=\begin{pmatrix}
 0\\ H_y\\ 0
 \end{pmatrix}
-\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}
+\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
 \end{align}
 At the interface between $D_1$ and $D_2$ there are two values for the permittivity,
-$\epsilon_1$ and $\epsilon_2$.  Consequently
-there are two sets of plane wave solutions
+$\epsilon_1$ and $\epsilon_2$.  Consequently there are two sets of plane
+wave solutions,
 \begin{align}
 \left.\begin{aligned}
 \mathbf{H}_1(x,z,t) &=
@@ -72,19 +73,17 @@ E_{z,2}\\
 \end{pmatrix}
 \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
 \end{aligned} 
-\right\}&\quad D_2
+\right\}&\quad D_2,
 \label{eqn:planewavemetal}
 \end{align}
-
 where the subscript designates which material the wave equation refers to,
 e.g. $\mathbf{E}_1$ is the electric field in $D_1$, $\mathbf{H}_2$
-the magnetic field in $D_2$, etc. Continuity of
-\Equation{eqn:planewavedielectric} and
-\ref{eqn:planewavemetal} requires that
+the magnetic field in $D_2$, etc. Continuity at the boundary 
+requires
 \begin{align}
 E_{x,2}&=E_{x,1}\\
 H_{y,2}&=H_{y,1}\\
-\epsilon_2 E_{z,2}&=\epsilon_1 E_{z,1}
+\epsilon_2 E_{z,2}&=\epsilon_1 E_{z,1}.
 \end{align}
 Applying Ampere's law (\Equation{eqn:ampereslaw}) to the field on 
 each boundary gives
@@ -105,14 +104,14 @@ each boundary gives
 -\mi \omega \epsilon_i E_{x,i}\\
 0\\
 -\mi \omega \epsilon_i E_{z,i}
-\end{pmatrix}
+\end{pmatrix}.
 \label{eqn:vectordisp}
 \end{align}
-The vector components of \Equation{eqn:vectordisp} are therefore related 
+The vector components of \Equation{eqn:vectordisp} are therefore related,
 \begin{align}
 -\mi k_{z,i} H_{y,i} &= -\mi \omega \epsilon_i E_{x,i}\\
 k_{z,1} H_{y,1} &= \omega \epsilon_1 E_{x,1}\\
-k_{z,2} H_{y,2} &= \omega \epsilon_2 E_{x,2}
+k_{z,2} H_{y,2} &= \omega \epsilon_2 E_{x,2}.
 \label{eqn:spderivsteptwo}
 \end{align}
 %\todo{not the components, either e or h, since Ez is perpendicular to the interface}
@@ -121,14 +120,17 @@ by substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
 \begin{align}
 \frac{k_{z,1}}{\epsilon_1}H_{y,1}&=\frac{k_{z,2}}{\epsilon_2}H_{y,2}\\ 
 %\Aboxed{
-\frac{k_{z,1}}{\epsilon_1}&=\frac{k_{z,2}}{\epsilon_2} 
+\frac{k_{z,1}}{\epsilon_1}&=\frac{k_{z,2}}{\epsilon_2}.
 %}
 \label{eqn:sprcondition}
 \end{align}
-This is the surface plasmon resonance condition for a single interface.  Note an important aspect
-of \Equation{eqn:sprcondition}:  due to the way we have defined our
-geometry, $k_{z,1}$ must be postive and $k_{z,2}$ negative.  For
-\Equation{eqn:sprcondition} to hold, this implies that the real part of
-$\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For natural materials we know
-exist, this is fulfilled if $\epsilon_1$ is a dielectric and $\epsilon_2$
-is a metal.
+
+\Equation{eqn:sprcondition} is the surface plasmon resonance condition for
+a single interface.  Note an important aspect of
+\Equation{eqn:sprcondition}:  due to the way the geometry was defined
+(\Figure{fig:singleinterfacegeo}), $k_{z,1}$ must be postive and $k_{z,2}$
+negative to avoid unphysical diverging solutions.  For
+\Equation{eqn:sprcondition} to hold, this implies the real part of
+$\epsilon_1$ and $\epsilon_2$ are opposite in sign.  For natural materials,
+\Equation{eqn:sprcondition} is fulfilled if $\epsilon_1$ is a dielectric
+and $\epsilon_2$ is a metal.

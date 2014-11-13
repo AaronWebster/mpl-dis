@@ -8,73 +8,77 @@ incremental and has its roots in earlier theoretical proposals by
 Ultimately the work of \name{Richie}, \name{Pine}, and \name{Bohm} would
 explain a bulk SPP phenomena known as ``Wood's anomaly'' -- a sharp and
 spectrally narrow energy loss observed in diffraction gratings by
-\name{Wood} in 1902.
+\name{Wood} in
+1902~\cite{wood1902remarkable}~\cite{rayleigh1907remarkable}.
 
 Optical excitation of surface plasmons was made accessible through
 pioneering work in the late 1960's by
 \name{Kretschmann}~\cite{kretschmann1968},
 \name{Raether}~\cite{raether1988springer} and
-\name{Otto}~\cite{otto1968excitation}.  These experiments used the
+\name{Otto}~\cite{otto1968excitation}.  These SPP experiments used the
 principle of attenuated total reflection (ATR) in a prism to excite surface
 plasmons evanescently.  A great deal of research on the topic of surface
 plasmons took place in the subsequent decade, including an improved
-theoretical understanding based on the Fresnel relations
-\cite{chen1976excitation} and descriptions of conically scattered light in
-the presence of surface roughness~\cite{simon1976directional}.  A concise
-overview of this research can be found in~\cite{raether1997surface}.
+theoretical understanding based on the Fresnel
+relations~\cite{chen1976excitation} and descriptions of conically scattered
+light in the presence of surface roughness~\cite{simon1976directional}.  A
+concise historical overview of prism coupled SPP studies can be found
+in~\cite{raether1997surface}.
 
-The introduction of surface plasmon resonance (SPR) as a biosensing platform began in the early 1980's
-with work by \name{Liedberg}, \name{Nylander} and
-\name{Lundstrom}~\cite{liedberg1983surface} who described the
-extraordinary sensitivity of the surface plasmon resonance condition to
-perturbations in the refractive index of the medium on one side of the
-metal film.  The subsequent commercialization of SPR biosensors has largely
-been influenced by these authors and Pharmacia Biosensor AB (now
-Biacore)~\cite{liedberg1995biosensing}.
+The introduction of surface plasmon resonance (SPR) as a biosensing
+platform began in the early 1980's with work by \name{Liedberg},
+\name{Nylander} and \name{Lundstrom}~\cite{liedberg1983surface} who
+described the extraordinary sensitivity of the surface plasmon resonance
+condition to perturbations in the refractive index of the medium on one
+side of the metal film.  The subsequent commercialization of SPR biosensors
+has largely been influenced by these authors and Pharmacia Biosensor AB
+(now Biacore)~\cite{liedberg1995biosensing}.
 
 The commercial success of SPR biosensors brought about a knowledge gap
 between the biosensing community and their more theoretical predecessors
 from whom the field owes its genesis; the scope of SPR biosensing
 experiments is disproportionately narrower than the breadth of phenomena
-discovered since \name{Richie}.  As an example particular to this
-dissertation, in 2005 and 2007, two
+discovered since \name{Richie}.  As an example particular to this work, in
+2005 and 2007, two
 papers~\cite{andaloro2005optical}~\cite{simon2007observation} based on
 theoretical work by \name{Chuang}~\cite{chuang1986lateral} and \name{Chen}
 \cite{chen1976excitation} reported a curious interference pattern occurring
 in the specularly reflected light for certain systems (among them,
-Kretschmann-Raether type) illuminated with focused Gaussian beams.  This
-was also independently reported a year later in \cite{schumann2008near}.
-Interestingly, observation of this interference required nothing more than
-the addition of a lens pair to an otherwise ubiquitous optical setup, but
-it somehow escaped attention during earlier research.  
+Kretschmann-Raether type) illuminated with focused Gaussian beams.  The
+interference pattern was also independently reported a year later in
+\cite{schumann2008near}.  Interestingly, observation required nothing more
+than the addition of a lens pair to an otherwise ubiquitous optical setup,
+but it somehow escaped attention during earlier research.  
 
 The thrust of this work is primarily inspired by experiments done at the
-University of Oregon in the laboratory of \name{Stephen Gregory}, summarized
-in a 2009 thesis \textit{Surface Plasmon Random Scattering and Related
-Phenomena} \cite{schumann2009surface} by \name{R\@.P.\@~Schumann}.  Here
-the authors describe plasmon experiments with scanning apertureless
-near-field probes in a Kretschmann-Raether type configuration.  This probe,
-a sharp tungsten tip, is able to elastically scatter SPPs in a way
-analogous to surface roughness, but in this case its location and
-interaction of a single scatterer can be precisely controlled.  We will
-show that similar experiments can be carried out in the context of
+University of Oregon in the laboratory of \name{Gregory}, summarized in a
+2009 thesis \textit{Surface Plasmon Random Scattering and Related
+Phenomena} \cite{schumann2009surface} by \name{Schumann}.  \name{Schumann}
+describes plasmon experiments with scanning apertureless near-field probes
+in a Kretschmann-Raether type configuration.  The probe, composed of a
+sharp tungsten tip, is able to elastically scatter SPPs in a way analogous
+to surface roughness, but its location precisely controlled.  Controlling
+the location of a single scatterer amongst a fixed background was shown to
+be revealing of the entire scattering microstructure.  In this work it is
+shown that analgous experiments can be carried out in the context of
 biosensing, using metallic nanoparticles as scatterers.
 
-The final important historical development we cross is that of correlations
-in elastic multiple scattering through disordered media.  Most notable is
-the seminal paper by \name{Feng}, \name{Lee}, \name{Stone}, and
+The final important historical development was on correlations in elastic
+multiple scattering through disordered media.  Most notable is a seminal
+paper by \name{Feng}, \name{Lee}, \name{Stone}, and
 \name{Douglas}~\cite{feng1988correlations}.  Here it was established that
 the random fluctuations in the output channel contain correlations which
-track the behavior of the input channel.  In the optical regime these
-fluctuations are known as speckle, whose statistal properties have been
+track the behavior of the input channel.  In the optical regime, such
+fluctuations are known as speckle, whose statistical properties have been
 explored in depth by
 \name{Goodman}~\cite{goodman2007speckle}~\cite{goodman1975statistical}.
-Correlations in speckle patters was perhaps best summarized by
-\name{Berkovits} and \name{Feng}~\cite{berkovits1994correlations}.  These
-works established that the multiple scattering regime is extraordinarily
+Correlations in optical speckle patterns were theoretically explored in
+depth by \name{Berkovits} and \name{Feng}~\cite{berkovits1994correlations},
+establishing that the multiple scattering regime is extraordinarily
 sensitive to both the position~\cite{berkovits1990theory} and
-motion~\cite{berkovits1991sensitivity} of even a single scatterer.  This
-problem has important implications in many diverse fields of study:
+motion~\cite{berkovits1991sensitivity} of even a single scatterer.  The
+motion of scattering locations in a multiple scattering system
+has important implications in many diverse fields of study:
 diffusive wave spectroscopy~\cite{pine1988diffusing}, tracking and
 identification of targets with radio waves (the ``cruise missile''
 problem~\cite{atkins1991neural}), fluctuations in signal power in cellular

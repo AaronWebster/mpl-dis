@@ -1,15 +1,14 @@
-Conditions for the existence and excitation of SPPs can be completely
-predicted from Maxwell's equations.  We begin with their derivation here,
-starting with the differential form of Maxwell's
-equations~\cite{maier2007plasmonics}~\cite{benson2009elements} including
-external sources
+The existence of SPPs and the conditions under which they may be excited
+can be fully predicted from Maxwell's equations.  The differential form of
+Maxwell's equations~\cite{maier2007plasmonics}~\cite{benson2009elements}
+including external sources are
 \begin{align}
 \nabla \cdot \mathbf{D} &= \rho & \text{Gauss's law} \label{eqn:gausslaw}\\
 \nabla \cdot \mathbf{B} &= 0 & \text{Gauss's law for magnetism} \label{eqn:gausslawmagnetism}\\
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
 & \text{Faraday's law of induction} \label{eqn:faradayslaw} \\
 \nabla \times \mathbf{H} &= \frac{\partial \mathbf{D}} {\partial
-t} + \mathbf{J}  & \text{Ampere's law with Maxwell's correction}
+t} + \mathbf{J}  & \text{Ampere's law with Maxwell's correction},
 \label{eqn:ampereslaw}
 \end{align}
 where $\mathbf{E}$ is the electric field, $\mathbf{B}$ is the magnetic
@@ -21,40 +20,45 @@ In formulating Maxwell's equations it is assumed all electromagnetic
 propagation takes place in a {\it simple dielectric}, that is
 \begin{enumerate}
 \item The polarization density $\mathbf{P}$ is linear with the electric
-field $\mathbf{E}$.  
+field $\mathbf{E}$,
 \begin{align}
-\mathbf{P}=\epsilon_0\chi_e\mathbf{E}
+\mathbf{P}=\epsilon_0\chi_e\mathbf{E}.
 \label{eqn:pdensity}
 \end{align}
-where $\chi_e$ is the electric susceptibility.  From this and the definition
-of $\mathbf{D}$
+with $\chi_e$ defined as the electric susceptibility.  From
+\Equation{eqn:pdensity} and the definition
+of $\mathbf{D}$,
 \begin{align}
-\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P}
+\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P},
 \label{eqn:dfield}
-\end{align},
-where $\epsilon_0$ is the permittivity of free space, one can simplify the
+\end{align}
+with $\epsilon_0$ is the permittivity of free space, one can simplify the
 $\mathbf{D}$-field as 
 \begin{align}
 \mathbf{D}&=\epsilon_0\mathbf{E}+\mathbf{P}\\
 %&=\epsilon_0 \mathbf{E}+\epsilon_0 \chi_e \mathbf{E}\\
 &=\epsilon_0(1+\chi_e)\mathbf{E}\\
-&=\epsilon\mathbf{E}
+&=\epsilon\mathbf{E}.
+\label{eqn:permittivitydangle}
 \end{align}
-Here $\epsilon$ has been defined to be the permittivity of the
-dielectric.  The convention in this work is usually that variables with a
-subscript $0$ can always be assumed to be that variable {\it in vacuo},
-while their material dependent counterparts have no subscript.
-\item The magnetization $\mathbf{M}$, related to the auxiliary magnetic
-field by is linear in $\mathbf{H}$
+In \Equation{eqn:permittivitydangle}, $\epsilon$ is defined as the
+permittivity of the dielectric.  The convention is taken 
+that variables with a subscript $0$ can always be assumed to be 
+{\it in vacuo}, while material dependent counterparts have
+no subscript.  
+\item The magnetization $\mathbf{M}$, related to the
+auxiliary magnetic field by 
 \begin{align}
-\mathbf{M}=\mu_0\chi_m\mathbf{H}
+\mathbf{M}=\mu_0\chi_m\mathbf{H},
+\label{eqn:auxfield}
 \end{align}
-where $\chi_m$ is the volume magnetic susceptibility.  This allows the
-magnetic field to be rewritten according to its definition
+where $\chi_m$ is the volume magnetic susceptibility.
+\Equation{eqn:auxfield} allows the
+magnetic field to be rewritten as
 \begin{align}
 \mathbf{B}&=\mu_0\left(\mathbf{H}+\mathbf{M}\right)\\
 &=\mu_0\left(1+\chi_m\right)\mathbf{H}\\
-&=\mu \mathbf{H}
+&=\mu \mathbf{H},
 \end{align}
 where $\mu_0$ is the vacuum permeability of free space.  In practice, most
 dielectrics have nearly zero magnetic response, so $\mathbf{M}=0$ and
@@ -67,6 +71,6 @@ material dependent parameter.
  \frac{\partial \rho}{\partial t} 
   &= -\nabla \cdot \mathbf{J}\\
   &= -\sigma \left(\nabla \cdot \mathbf{E} \right) \\
-  &= -\frac{\sigma}{\epsilon} \rho
+  &= -\frac{\sigma}{\epsilon} \rho.
 \end{align}
 \end{enumerate}

@@ -1,5 +1,5 @@
-In the case of no exernal charge or current densities, $\rho=\mathbf{J}=0$,
-the propagation of disturbences in the electromagnetic field can be derived
+In the case of no charge or current densities, $\rho=0$ and
+the propagation of disturbances in the electromagnetic field can be derived
 as plane wave solutions to Maxwell's equations.  Beginning with Faraday's law
 \begin{align}
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
@@ -9,13 +9,14 @@ and taking the curl of both sides
 \nabla \times
 \left(\nabla\times\mathbf{E}\right)&=\nabla\times\left(-\frac{\partial\mathbf{B}}{\partial
 t}\right)\\
-&=-\frac{\partial}{\partial t}\left(\nabla \times \mathbf{B}\right)
+&=-\frac{\partial}{\partial t}\left(\nabla \times \mathbf{B}\right).
 \end{align}
-The left side can be expanded and simplified using the vector identity
+The left hand side can be expanded and simplified using the vector identity
 \begin{align}
 \nabla \times \left( \nabla \times \mathbf{A} \right) = \nabla \left(
 \nabla \cdot \mathbf{A} \right) - \nabla^2 \mathbf{A}
 \end{align}
+such that
 %The right hand side is modified using Ampere's law with $\mathbf{B} =\mu
 %\mathbf{H}$.
 \begin{align}
@@ -23,17 +24,17 @@ The left side can be expanded and simplified using the vector identity
 &=-\mu\frac{\partial}{\partial t}\left(\nabla \times \mathbf{H}\right)\\
 -\nabla^2\mathbf{E}&=-\mu\frac{\partial}{\partial t}\left( \frac{\partial \mathbf{D}}{\partial t} + \mathbf{J}\right) \\
 -\nabla^2\mathbf{E}&=-\mu\frac{\partial^2 \mathbf{D}}{\partial t^2} -\mu\frac{\partial\mathbf{J}}{\partial t} \\
-\nabla^2\mathbf{E} -\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2} -\mu\sigma\frac{\partial\mathbf{E}}{\partial t}  &= \mathbf{0} 
+\nabla^2\mathbf{E} -\mu\epsilon\frac{\partial^2 \mathbf{E}}{\partial t^2} -\mu\sigma\frac{\partial\mathbf{E}}{\partial t}  &= \mathbf{0}.
 \label{eqn:ewe}
 \end{align}
-This is the electromagnetic wave equation in terms of the electric field.
-Because much of our work involves excitation of SPPs using laser beams, we 
-choose to solve this equation using separation of varaibles and a plane wave
-ansatz which yields
+\Equation{eqn:ewe} is the electromagnetic wave equation in terms of the
+electric field.  Given that excitation of SPPs in this work is accomplished
+using laser beams, the technique of separation of variables using a plane
+wave ansatz is used to solve \Equation{eqn:ewe}, resulting in
 \begin{align}
 %\Aboxed{
  \mathbf{E} ( \mathbf{r}, t ) &= \mathbf{E}_0\, \me^{\mi (\mathbf{k}
- \cdot \mathbf{r} - \omega t )}
+ \cdot \mathbf{r} - \omega t )},
 %}
 \label{eqn:planewaves}
 \end{align}
@@ -42,7 +43,7 @@ where
  \mathbf{k}^2 = \mu \epsilon \omega^2 + \mi \mu \epsilon \omega = \omega^2 \mu \left(\epsilon + \mi \frac{\sigma}{\omega}\right)
  \label{eqn:planewavedispersion}
 \end{equation}
-and $k=\omega/c=\omega\sqrt{\epsilon\mu}$.  In this notation,
+and $k=\omega/c=\omega\sqrt{\epsilon\mu}$.  In \Equation{eqn:planewaves},
 $\mathbf{k}$ is the material specific vectorial wavenumber, $\mathbf{r}$ is the
 spatial position, $\omega$ is angular frequency, $t$ is
 the dimension of time, and $c$ is the speed of light.
@@ -51,6 +52,7 @@ The magnetic field follows the same form,
 \begin{align}
 %\Aboxed{
  \mathbf{H} ( \mathbf{r}, t ) &= \mathbf{H}_0\, \me^{\mi (\mathbf{k}
- \cdot \mathbf{r} - \omega t )}
+ \cdot \mathbf{r} - \omega t )}.
+	\label{eqn:planewavesh}
 %}
 \end{align}
