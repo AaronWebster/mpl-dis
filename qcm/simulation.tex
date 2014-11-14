@@ -1,11 +1,11 @@
 \section{Introduction}
 
-\section{Finite Element Modeling}
-A finite element simulation was constructed using the software
+\section{Finite Element Modeling} \label{sec:finiteelementdingus}
+A finite element simulation was carried out using the software
 \texttt{COMSOL Multiphysics 4.3 (4.3.0.233)} (Comsol Inc., Burlington, MA).
-Though this software's source code is not available for
-scrutinous review, our implementation is generic and may be carried out
-using other software (e.g. \texttt{OpenFOAM}~\cite{jasak2007openfoam},
+Though the source code of COMSOL is not available for scrutinous review,
+the following implementation is generic and may be carried out using other
+software (e.g. \texttt{OpenFOAM}~\cite{jasak2007openfoam},
 \texttt{SU2}~\cite{palacios2013stanford}).  Unless otherwise stated,
 implementation specific information is applicable to \comsol.
 
@@ -18,31 +18,62 @@ two dimensions
  \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}\\
  \rho \nabla \cdot \mathbf{\dot{u}} &= 0
 \end{align}
-where $\mathbf{\dot{u}}$ is flow velocity field, $\rho$ is fluid density,
-$\eta$ is dynamic viscosity, and $\mathbf{F}$ is the body force per unit
-volume.  The computational domain is set up as shown in
-\Figure{fig:compgeometry}.  
+where $\mathbf{\dot{u}}$ is the flow velocity field, $\rho$ is the fluid
+density, $\eta = \eta^\prime + \mi\eta^{\prime\prime}$ is the complex
+dynamic viscosity, $\mathbf{I}$ is the identity matrix, and $\mathbf{F}$ is
+the body force per unit volume.  The computational domain is set up as
+shown in \Figure{fig:compgeometry}.  
 \begin{figure}[h]
  \centering
  \import{qcm/figures/}{geometry.pdf_tex}
- \caption{Computational geometry for the simulation.}
+ \caption{Two dimensional computational domain for the finite element simulation.}
  \label{fig:compgeometry}
 \end{figure}
 
-The left hand side (
+It is important to note that, because the simulation is two dimensional,
+what is actually simulated are infinite cylinders rather than spheres.  For
+Sauerbrey type viscoelastic films, the difference between two and three
+dimensional simulations is negligible.  However, for asperity contacts such
+as spheres, the results however qualitatively correct, did not always
+result in exact numerical agreement with
+experiment~\cite{Vittorias2010489}.  An extended simulation in three
+dimensions at some point is warranted.
+
+The left hand (%
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
-is a sliding wall and is given a tangential speed of $\dot{u}_\perp = \mi
-\omega u_0$, where $\omega=2\pi f$ is the angular frequency of oscillation
-and $u_0=\SI{1e-2}{\nano\meter}$ is its amplitude.  The top and bottom
+is a sliding wall given a tangential velocity of 
+\begin{equation}
+\mathbf{\dot{u}} =
+\begin{pmatrix}
+	\dot{u}_x\\
+	\dot{u}_y
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\dot{u}_\parallel\\
+	\dot{u}_\perp
+\end{pmatrix}
+=
+\begin{pmatrix}
+	0\\
+	\mi\omega u_0	
+\end{pmatrix}
+\end{equation}
+where $\omega=2\pi f$ is the angular frequency of oscillation,
+$u_0=\SI{1e-2}{\nano\meter}$ the amplitude, $\dot{u}_x=\dot{u}_\parallel=0$
+is the parallel velocity component, and
+$\dot{u}_y=\dot{u}{\perp}=\mi\omega u_0$ is the tangential velocity
+component.
+The top and bottom
 boundaries
 (%
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
-}%
-) are given a periodic flow condition such that their pressure difference
-is zero.  The right hand side (
+} )%
+are given a periodic flow condition such that their pressure difference
+is zero.  The right hand side (%
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
 }) %
@@ -60,96 +91,96 @@ dimensional) is domain $D_1$ with diameter $d$ and radius $r$ and is
 located a distance $s>-r$, measured from the bottom of the sphere, from the
 oscillating boundary.  If $s>0$, the sphere does not make contact with the
 boundary.  If $s\leq0$, the sphere is truncated at the boundary resulting
-in a finite contact radius $r_\mathrm{c}$; we identify this truncation with
+in a finite contact radius $r_\mathrm{c}$; this truncation is identified with
 a finite contact radius $r_\mathrm{c}$ in terms of contact mechanics.
 It is useful to sample in either domain, so
-we either sweep $r_\mathrm{c}$ or $s$, converting between them with
+either $r_\mathrm{c}$ or $s$ is swept, converting between them with
 \begin{align}
  r_\mathrm{c}\left(s\right) &= \sqrt{2r-s}\sqrt{s}\\
- s\left(r_\mathrm{c}\right) &= \left(r-\sqrt{r^2-r_\mathrm{c}^2}\right)\sgn\left(r_\mathrm{c}\right)
+ s\left(r_\mathrm{c}\right) &= \left(r-\sqrt{r^2-r_\mathrm{c}^2}\right)\sgn\left(r_\mathrm{c}\right).
 \end{align}
 The number density $N_\mathrm{L}$ was controlled by increasing or
 decreasing the height of the domain proportional to the size of the sphere.
 
 The materials in the simulation are assigned a complex dynamic viscosity
-$\eta = \eta'-\mi\eta''$.  This is related to the complex bulk modulus
+$\eta = \eta'-\mi\eta''$.  The complex dynamic viscosity is related to the complex bulk modulus
 $G=G'+\mi G''$ by
 \begin{align}
  \eta = \frac{G}{\mi \omega}
 \end{align}
-and the loss tangent, the angle between the real and imaginary components
-is 
+and the loss tangent, the angle of the complex phasor relative to the real axis is
 \begin{equation}
- \tan \delta = \frac{G''}{G'}
+ \tan \delta = \frac{G''}{G'}.
 \end{equation}
 
 Specific to the stationary solver in \comsol, in the
 \texttt{Study$\rightarrow$Stationary Solver$\rightarrow$Advanced} window,
 ``Allow complex-valued output from functions with real input'' was checked.
-This, coupled with the complex valued input for the body forces, will
-produce shear waves in the simulation.
+Enabling complex-valued output, coupled with the complex valued input for
+the body forces produced shear waves in the simulation.
 
 The mesh settings were calibrated in \comsol~for fluid dynamics with a
 maximum mesh size of \SI{1e-9}{\meter} along the oscillating boundary.  All
 other meshes were generated automatically.  As for the size of the
 computational domain, we find that a height (parallel to the oscillating
-boundary) of $h=2d$ and width (perpendicular to the oscillating boundary)  
+boundary) of $h=2d$ and width (tangential to the oscillating boundary)  
 $w=2d$, minimum of \SI{500}{\nano\meter}, produces consistent results with a
 minimum of error and computational resources.
 
-Again, it is important to note that, because the simulation is two
-dimensional, what is actually simulated are infinite cylinders rather than
-spheres.  For Sauerbrey type viscoelastic films, the influence of this is
-negligible.  However, for asperity contacts such as spheres, we find that
-the results, however qualitatively correct, do not always result in exact
-numerical agreement with experiment~\cite{Vittorias2010489}.  An extended
-simulation in three dimensions at some point is warranted.
 
 \subsection{Extracting Shifts}
 Shifts in frequency, $\df$, and bandwidth (half-width at half maximum),
 $\dg$, are computed by evaluating the stress-speed ratio of the oscillating
 boundary according to the relationship
 \begin{equation}
- \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
+ \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi
+									Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi
+																	Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}_\perp}\right>
 \label{eqn:comsolextracttwo}
 \end{equation}
-where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
-velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
+where $\sigma$ is the complex stress, $\dot{u}_\perp$ is the complex
+tangential velocity component, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
 denotes a line average along the boundary.  In \comsol, and in the
 coordinates of \Figure{fig:compgeometry}, $\sigma$ is \texttt{Total stress,
 y component} (\texttt{v}) and $\dot{u}$ is \texttt{Velocity field, y
 component}, (\texttt{spf.T\_stressy}).  As in \Equation{eqn:comsolextract},
-note again that that the stress speed ratio $\left<\sigma/\dot{u}\right>$
+note again that the stress speed ratio $\left<\sigma/\dot{u}\right>$
 is dimensionally equivalent to specific acoustic impedance, also called
-``shock impedance'', sound pressure over velocity; the
+``shock impedance'', sound pressure over tangential velocity; the
 stress-speed ratio is the impedance of the film. 
 
 \subsection{Verification Examples}
-We have checked the validity of the numerical simulation with a few
-examples for which the QCM's response is well known.  
+The validity of the numerical simulation was checked against two results
+for which the response is well known: the extension of a shear evanescent
+wave beyond the oscillating boundary and the complex frequency shifts in
+the presence of viscoelastic media.
 
-\subsubsection{Evanescent Shear Wave}
-Setting up the model as described produces a shear wave which closely
-matches theory~\cite{steinem2007piezoelectric}, shown in
-\Figure{fig:suppshearwave}.  For this, we express the shear evanescent wave
-as in the literature,
+\subsubsection{Shear Evanescent Wave}
+The finite element simulation, when set up as described in
+\Section{sec:finiteelementdingus} predicts a shear evanescent wave out from
+the tangentially oscillating boundary.  The predictions from the finite
+element simulation closely match theory~\cite{steinem2007piezoelectric},
+shown in \Figure{fig:suppshearwave}.  The theoretical expression for the
+shear evanescent wave is taken as~\cite{steinem2007piezoelectric}
 \begin{equation}
- \frac{u(z)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} z\right)
+ \frac{u(x)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} x\right),
 \end{equation}
-where $\eta=\eta'-\mi\eta''$ is the complex viscosity, $\rho$ is the density
-of the liquid, $\omega$ is the angular frequency of the QCM oscillation,
-and $z$ is the spatial extension.  The $1/\me$ penetration depth $\delta$ is
+where $x$ is the spatial extension from the tangentially oscillating
+boundary in the coorinates of \Figure{fig:compgeometry}.  The $1/\me$
+penetration depth $\delta$ is
 \begin{equation}
  \delta =
- -\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)^{-1}
+ -\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)^{-1}.
  \label{eqn:suppshearwavedelta}
 \end{equation}
+In \Equation{eqn:suppshearwavedelta}, $\Im$ represents a function returning
+the imaginary component of a complex variable.
 
 With the material properties of water,
 $\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
-$|\eta|^2=\SI{1}{\milli\pascal\second}$, \Equation{eqn:suppshearwavedelta}
-predicts $\delta\approx\SI{252}{\nano\meter}$.  This is in good agreement
-with the simulation data, shown in \Figure{fig:suppshearwave}.
+$\eta=\SI{1}{\milli\pascal\second}$, \Equation{eqn:suppshearwavedelta}
+predicts $\delta\approx\SI{252}{\nano\meter}$, in good agreement with the
+simulation data shown in \Figure{fig:suppshearwave}.
 
 \begin{figure}[h]
  \centering
@@ -164,8 +195,8 @@ with the simulation data, shown in \Figure{fig:suppshearwave}.
   xticklabel style={/pgf/number format/fixed,
                      /pgf/number format/precision=1},
  },
- xlabel = $z$ distance,
- ylabel = $\|\mathbf{\dot{u}}\|$,
+ xlabel = $y$ distance,
+ ylabel = $|\mathbf{\dot{u}}|$,
  x unit = \si{\micro\meter},
  y unit = a.u.,
  max space between ticks=1000pt,
@@ -178,40 +209,40 @@ with the simulation data, shown in \Figure{fig:suppshearwave}.
  \addlegendentry{theory}
 \end{axis}
 \end{tikzpicture}
-\caption{QCM shear wave decay at \SI{5}{\mega\hertz}, obtained with the
-finite element simulation, compared with theory (\Equation{eqn:viscoshear}).}
+\caption{Finite element prediction of a shear evanescent wave at
+\SI{5}{\mega\hertz} in a liquid with
+$\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
+$\eta=\SI{1}{\milli\pascal\second}$, compared with theory
+(\Equation{eqn:viscoshear}).}
 \label{fig:suppshearwave}
 \end{figure}
 
 \subsubsection{Semi-Infinite Viscoelastic Medium}
 A semi-infinite medium will produce a complex response described
-by~\cite{kanazawa1985frequency}~\cite{martin1991characterization}
+by~\cite{kanazawa1985frequency}~\cite{martin1991characterization}, valid
+for crystals with one side in contact with a viscoelastic material,
 \begin{align}
- \frac{\df+\mi\dg}{f_\mathrm{F}}&=\frac{\mi}{\pi Z_\mathrm{q}}\sqrt{\rho G}\\
-                                &= \frac{1}{\pi Z_\mathrm{q}}\frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\omega \rho \eta}
+ \frac{\df+\mi\dg}{f_\mathrm{F}}&=\frac{\mi}{\pi Z_\mathrm{q}}\sqrt{\rho G}\label{eqn:impeqfirst}\\
+                                &= \frac{1}{\pi
+																																								Z_\mathrm{q}}\frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\omega \rho \eta}.
 \label{eqn:impeq}
 \end{align}
 
-%\Equation{eqn:comsolextract} is equivalent to
-$f=\omega/(2\pi)$ is the frequency of the crystal, $\rho$ and $\eta$ are the density and viscosity
-of the medium in contact with the crystal, and $\rho_\mathrm{q}$ and
-$\mu_\mathrm{q}$ are the density and shear modulus of quartz.  This model
-applies for crystals with one side in contact with the viscoelastic
-material.  This is related to the dynamic viscosity and shear
-modulus by
+In terms of the complex dynamic viscosity and shear modulus,
+Equations~\ref{eqn:impeqfirst} and \ref{eqn:impeq} can be expressed as
 \begin{align}
 \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}&=\frac{\mi}{\pi Z_{\mathrm{q}}}
 \frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\rho\omega\left(\eta'-\mi\eta''\right)}\\
-&=\frac{\mi}{\pi Z_{\mathrm{q}}}\sqrt{\rho\left(G'+\mi G''\right)}
+&=\frac{\mi}{\pi Z_{\mathrm{q}}}\sqrt{\rho\left(G'+\mi G''\right)}.
 \label{eqn:viscoshear}
 \end{align}
 The simulation geometry was set as described in \Figure{fig:compgeometry}
-but without $D_1$ (no sphere).  Extracted values of $\df$ and $\dg$ are
+but without $D_1$ (no cylinder).  Extracted values of $\df$ and $\dg$ are
 presented in \Figure{fig:viscosweep} as a function of the viscosity $\eta$
-of medium 1.  In \Figure{fig:viscosweep}(a) we sweep $\eta'$ for a
-Newtonian fluid, $\eta''=0$.  In \Figure{fig:viscosweep}(b) we model a
-non-Newtonian sample; $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is
-swept.  The excellent agreement with theory demonstrates that our
+of medium 2.  In \Figure{fig:viscosweep}(a) $\eta'$ is swept for a
+Newtonian fluid, $\eta''=0$.  In \Figure{fig:viscosweep}(b) a non-Newtonian
+sample is modeled; $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is
+swept.  The excellent agreement with theory demonstrates that the
 simulation is applicable for a wide range of materials.
 
 \begin{figure}[h]
@@ -312,11 +343,11 @@ $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is swept.}
 \label{fig:viscosweep}
 \end{figure}
 
-It is of note that our Navier-Stokes approach (which solves for
+It is of note that the Navier-Stokes approach (which solves for
 $\dot{\mathbf{u}}$) does not converge in the limit of a perfectly elastic
-material, e.g. $G=G'$ or $\eta=\eta''$; these systems are typically
-solved for $\mathbf{u}$.  It is perhaps possible to couple these two
-domains, but we have not attempted to do so.
+material, e.g. $G=G'$ or $\eta=\eta''$; these systems are typically solved
+for $\mathbf{u}$.  It is perhaps possible to couple these two domains, but
+we have not attempted to do so.
 
 
 \section{Analysis and Prediction}
@@ -340,18 +371,16 @@ a best fit of the mechanical model, \Equation{eqn:comsolextract}, to the simulat
 \label{fig:lowersphere}
 \end{figure}
 
-
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \import{qcm/figures/}{lowersphere2}
 \end{figure}
-
 A plot of the simulated response in frequency and bandwidth for a
 \SI{10}{\micro\meter} particle is depicted in \Figure{fig:lowersphere}.
-The spheres were modeled as polystyrene with density
+The spheres were modeled as polystyrene cylinders with density
 $\rho=\SI{1.06}{\gram\per\centi\meter\cubed}$, shear modulus
 $|G_\mathrm{L}|=\SI{1.3}{\giga\pascal}$, and loss tangent $\tan \delta =
-0.001$.  The spheres are in water with density
+0.001$.  The cylinders are in water with density
 \SI{1.0}{\gram\per\centi\meter\cubed} and viscosity
 \SI{1.0}{\milli\pascal\second}.  The shifts in $\df$ and $\dg$ are plotted
 as a function of a dimensionless contact surface density $A_\mathrm{c}$,
@@ -359,10 +388,10 @@ defined as the contact area of the sample per unit area on the oscillating
 boundary. 
 
 The behavior of the simulation closely matches
-experimental observations.  As the sphere approaches and makes (weak)
+experimental observations.  As the cylinder approaches and makes (weak)
 contact with the oscillating boundary, a \textit{positive} shift in both
 frequency and bandwidth is observed.  As the contact radius increases, the
-sphere becomes more strongly coupled to the boundary. The amount of energy
+cylinder becomes more strongly coupled to the boundary. The amount of energy
 dissipated into the particle increases until $\dg$ reaches a maximum and
 $\df$ experiences a zero crossing.  The limiting case sees a rigid
 attachment and the common \textit{negative} frequency shift proportional to
@@ -378,42 +407,42 @@ before physical contact with the oscillating boundary and
 \item for smaller particles $\dg>\df$ while for
 larger particles $\df>\dg$.
 \end{inparaenum}
+
 The experiment shows the same behavior, as evidenced in
-\Table{tbl:particlesize}.  We note however that the procedure of truncation
-and its interpretation as finite contact radius in the framework of contact
-mechanics utilized here on discrete objects are more accurate for larger
-particles (\SI{10}{\micro\meter}, as shown in \Figure{fig:lowersphere})
-than smaller ones.  We explain this in the following way.
-It is known in
-the context of DVLO theory~\cite{israelachvili2011intermolecular} that a
-micron-sized polystyrene sphere in water near a similarly charged gold
-surface will experience a repulsive force due to electrostatic double-layer
+\Table{tbl:particlesize}.  It is noted however that the procedure of
+truncation and its interpretation as finite contact radius in the framework
+of contact mechanics utilized on discrete objects are more accurate for
+larger particles (\SI{10}{\micro\meter}, as shown in
+\Figure{fig:lowersphere}) than smaller ones.  The accuracy discrepancy is
+explained in the following way.  It is known in the context of
+DVLO\footnote{Derjaguin, Landau, Verwey and Overbeek}
+theory~\cite{israelachvili2011intermolecular} that a micron-sized
+polystyrene sphere in water near a similarly charged gold surface will
+experience a repulsive force due to electrostatic double-layer
 effects~\cite{alexander1987hydrodynamic}~\cite{flicker1993quantifying}.
-The balance between this and the gravitational force determines the height
-at which the particle will be at equilibrium above the surface.  For the
-relevant material
+The balance between electrostatic double-layer effects and the
+gravitational force determines the height at which the particle will be at
+equilibrium above the surface.  For the relevant material
 parameters~\cite{israelachvili2011intermolecular}~\cite{sharma1992factors}
-we find that, even at \SI{90}{g}, the smaller \num{1} and
+it is found that, even at \SI{90}{g}, the smaller \num{1} and
 \SI{2}{\micro\meter} particles never make contact with the surface, but
 ``hover'' at separations of approximately
-\SIrange{0.3}{0.15}{\micro\meter}.  At nonzero separations we posit that
-the sphere-surface coupling, being mediated by a viscous liquid, will be
-dominated by loss, hence $\dg>\df$.  On the other hand, larger particles
+\SIrange{0.3}{0.15}{\micro\meter}.  At nonzero separations it is posited
+that the sphere-surface coupling, being mediated by a viscous liquid, will
+be dominated by loss, hence $\dg>\df$.  On the other hand, larger particles
 ($\sim\SI{10}{\micro\meter}$ and above) with significant mass will overcome
 the double-layer forces and make contact with the QCM through a finite
 contact radius.  In this case the coupling losses decrease and $\df>\dg$.
-
 %This mechanical model fully describes the behavior of the finite element simulations
 %for larger ($d\gtrsim\SI{5}{\micro\meter}$) particles, but fails in the
 %limit of smaller particles.
 
-
 \subsection{Sample Viscoelasticity}
 \label{sec:sampleviscoelasticity}
-Finally, we comment on the potential of the CF-QCM technique to be
+Finally, a comment on the potential of the CF-QCM technique to be
 sensitive to different specific viscoelastic properties of discrete samples.  While
 the mechanical properties seen in biomaterials spans an enormous
-range~\cite{meyers2008biological}, we choose three general categories to
+range~\cite{meyers2008biological}, three general categories were chosen to
 highlight potentially interesting sensor responses.  As per
 \Figure{fig:multisweep} these are: cells~\cite{li2008thickness}, agarose
 microparticles~\cite{li2011surface}~\cite{patra2009viscoelastic}, and
@@ -428,7 +457,7 @@ the dimensionless contact surface density $A_\mathrm{c}$.
 A fictitious negative $A_\mathrm{c}$
 is identified with a finite separation distance from the
 simulated QCM surface.  In all cases the coverage ratio was
-\SI{50}{\percent}, and furthermore we assume that centrifugal force will act to
+\SI{50}{\percent}, and furthermore it is assumed that centrifugal force will act to
 ``push'' the sample into the QCM surface, increasing $A_\mathrm{c}$ and
 thus the rigidity of its contact with the QCM.
 \begin{figure}[ht]
@@ -438,7 +467,7 @@ thus the rigidity of its contact with the QCM.
 \caption{Simulated response for different materials.  Finite element simulation of normalized $\df$ and $\dg$ for three
  categories of samples as a function of contact surface density, 
  $A_\mathrm{c}$.
- Negative values indicate the sample has not made contact with the sensor
+	Negative values of $A_\mathrm{c}$ indicate the sample has not made contact with the sensor
  surface.
  The samples are (a) cells, $G_\mathrm{L}=\SI{10+50i}{\kilo\pascal}$, (b)
  agarose microparticles, $G_\mathrm{L}=\SI{78+78i}{\kilo\pascal}$ and (c) lysozyme
@@ -448,7 +477,8 @@ thus the rigidity of its contact with the QCM.
 
 As can be seen, the simulated response of the CF-QCM is markedly different
 in each case. Cells, shown in \Figure{fig:multisweep}(a), are assigned a
-shear modulus of $G_\mathrm{L}=\SI{10+50i}{\kilo\pascal}$ and density
+shear modulus of
+$G_\mathrm{L}=\SI{10+50i}{\kilo\pascal}$~\cite{li2008thickness}~\cite{mahaffy2004quantitative} and density
 $\rho_\mathrm{L}$ equal to the surrounding liquid medium.  The high loss
 modulus and low storage modulus predict the cell will exhibit shifts
 characteristic of a viscous fluid.  Likewise, the simulation shows $\df$
@@ -470,22 +500,25 @@ the CF-QCM response will recover $G_\mathrm{L}$ or $\rho_\mathrm{L}$.
 
 Next, \Figure{fig:multisweep}(b) shows the simulated response of agarose
 microparticles with a complex shear modulus of
-$G_\mathrm{L}=\SI{78+78i}{\kilo\pascal}$. Again the density was assumed to
-be the same as the surrounding medium.  Similar to the viscous behavior of
-cells, $\dg$ decreases linearly with $A_\mathrm{c}$.  In this
-sample however, an equally large elastic term, $G'_\mathrm{L}$, precludes
-the equally linear decrease in $\df$ seen for cells.  Instead, $\df$ increases
-slightly before contact and decreases slightly.
+$G_\mathrm{L}=\SI{78+78i}{\kilo\pascal}$~\cite{yao1999situ}~\cite{dimitriadis2002determination}.
+Again the density was assumed to be the same as the surrounding medium.
+Similar to the viscous behavior of cells, $\dg$ decreases linearly with
+$A_\mathrm{c}$.  However, in the simulated agarose microparticles, an
+equally large elastic term, $G'_\mathrm{L}$, precludes the equally linear
+decrease in $\df$ seen for cells.  Instead, $\df$ increases slightly before
+contact and decreases slightly.
 
 At the end of the spectrum, \Figure{fig:multisweep}(c) are lysozyme
 microcrystals.  These microcrystals are ``hard'', having been assigned a
-complex shear modulus of $G_\mathrm{L}=\SI{0.659+0.235i}{\giga\pascal}$.
-The response of these is similar to what we experimentally observe with
-polystyrene microparticles ($G_\mathrm{L}=\SI{1.3}{\giga\pascal}$).  When
-the microcrystal enters the acoustic evanescent wave, there is an initial
-negative shift as the effective viscosity-density product increases.  At
-small contact parameters there is a positive shift in $\df$ and $\dg$.
-Increasing the contact parameter, $\dg$ sees a maximum and $\df$ a zero
-crossing.  As the microcrystal becomes strongly coupled to the QCM, the
-familiar negative $\df$ is recovered which, as in \Figure{fig:circlefit},
-can be used to determine the particle size or mass.
+complex shear modulus of
+$G_\mathrm{L}=\SI{0.659+0.235i}{\giga\pascal}$~\cite{zamiri2009modeling}~\cite{guo2008investigation}.
+The simulated response of these is similar to what is experimentally
+observed with polystyrene microparticles
+($G_\mathrm{L}=\SI{1.3}{\giga\pascal}$).  When the microcrystal enters the
+acoustic evanescent wave, there is an initial negative shift as the
+effective viscosity-density product increases.  At small contact parameters
+there is a positive shift in $\df$ and $\dg$.  Increasing the contact
+parameter, $\dg$ sees a maximum and $\df$ a zero crossing.  As the
+microcrystal becomes strongly coupled to the QCM, the familiar negative
+$\df$ is recovered which, as in \Figure{fig:circlefit}, can be used to
+determine the particle size or mass.
