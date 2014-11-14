@@ -7,8 +7,8 @@ all: $(TARGET).pdf
 single:
 	pdflatex -shell-escape $(TARGET).tex
 
-#spell:
-#	hunspell -l -t -i utf-8 $(TARGET).tex
+spell:
+	hunspell -l -t -i utf-8 $(TARGET).tex
 
 # svg figures which should be latex'd
 #%.pdf_tex: $(shell find figures -type f -name "*.svg")
