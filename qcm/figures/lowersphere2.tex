@@ -26,20 +26,20 @@
  ylabel style={yshift=-10pt},
  thick,
  %legend style={font=\tiny},
- ]
+ ]%dash pattern={on 3pt off 0.5pt}, 
   \draw [color=gray,dashed,semithick] (axis cs:0,1.75) -- (axis cs:0,-0.6);
-  \addplot [custom,smooth,color=Set14qual1] table [ y expr=\thisrowno{1} ] {\datatablea};
+  \addplot [custom,smooth,color=Set14qual2] table [ y expr=\thisrowno{1} ] {\datatablea};
   \label{p1}
   \addlegendentry{$\Delta\!f/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=Set14qual1, dash pattern={on 3pt off 0.5pt}, ] table [ y expr=\thisrowno{2} ] {\datatablea};
+  \addplot [custom,smooth,color=Set14qual1, dashed] table [ y expr=\thisrowno{2} ] {\datatablea};
   \label{p2}
   \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=Set14qual1] table [ y expr=\thisrowno{1} ] {\datatableb};
+  \addplot [custom,smooth,color=Set14qual2, dotted] table [ y expr=\thisrowno{1} ] {\datatableb};
   \label{p3}
   \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
-  \addplot [custom,smooth,color=Set14qual1] table [ y expr=\thisrowno{2} ] {\datatableb};
+  \addplot [custom,smooth,color=Set14qual1, dashdotted] table [ y expr=\thisrowno{2} ] {\datatableb};
   \label{p4}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
+  \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, theory}
 
  \end{axis}
 \end{tikzpicture}
