@@ -1,25 +1,140 @@
-The commercialization of biosensing platforms is driven by application.
-Toward this goal, some of the more interesting physics of said platforms
-are often de-emphasized in the quest for a quantitative and repeatable
-assay.  As 
 
-As the engineering of the platform is refined, something, there can be a
-rift in the knowledge between the people who are interested in new physical
-phenomena, the physics of the system, and those who are mainly concerned
-with refining the device.  No place is that more true that with two
-biotransduction devices.  Two of the most popular biotransduction devices
-are optical and mechanical.
 
-Surface plasmon polaritons (SPPs) are excited by evanescent wave in
-incident light of photons which interact with free electrons in a metal and
-generate collective oscillation propagating along the metal/dielectric
-interface [1,2]. Consequently, they possess the character of not only
-ultra-high resolution beyond the diffraction limit, but substantially
-enhancement of the evanescent field intensity. 
 
-The commercial success of biosensors based on surface plasmon resonance
-seems to have brought about a knowledge gap between the biosensing
-community and their more theoretical predecessors from whom the field owes
-its genesis. This is to say that the scope of SPR biosensing experiments is
-disproportionately narrower than the breadth of phenomena discovered since
-Richie. 
+Biosensors based on surface plasmon resonance (SPR) play a central role as
+a simple and remarkably responsive label-free method for characterizing and
+quantifying biomolecular
+interactions~\cite{homola1999surface}~\cite{homola2006surface}.  Among the
+most popular of these sensors are those which excite localized surface
+plasmon polaritons on thin metal films in prism coupled
+configurations~\cite{hoa2007towards}.  These platforms, despite their
+ubiquity and commercial success, are host to an amazing depth of useful
+phenomena which has yet to be explored in the context of biosensing.  In
+addition to the high field enhancement responsible for 
+
+The
+sensitivity of SPR is primarily due to the field enhancement by SPPs on the
+sensor surface, but the SPPs themselves also possess high spatial
+resolution beyond the diffraction limit; a property which traditionally has
+not manifest itself as a specific feature of the SPR sensorgram.  
+
+However, in this work it is shown that by considering optical speckle from
+singly and multiply scattered SPPs inherent in the SPR signal, an entirely
+new set of information can be obtained describing the underlying scattering
+microstructure.  It is further demonstrated that one can resolve the motion
+and addition of single nanoparticles in an unmodified SPR setup, extending
+the breadth of SPR experiments to encompass both bulk sensing and discrete
+events.
+
+
+
+look at the structure of the re-radiated optical field which contain
+additional features such as near field self-interference, speckle, and
+optical vortices, and their relations to the scattering microstructure.
+
+Our results suggest several possible avenues for advancing the detection
+limits of surface plasmon based biosensors for both single particles and
+bulk refractive index measurements.
+
+A photon is a quantized oscillation of an electromagnetic field.  When an
+electromagnetic  field is in proximity to an interface such as the surface
+of a metal, oscillations of free charge can be induced.  If the field is
+evanescent in both directions orthogonal to the surface, the oscillations
+become localized and are known as surface plasmons (SPs).  Furthermore, if
+conditions exist such that the in-plane momentum and phase of an incident
+photon and the surface plasmon match, the coupling produces a hybrid
+excitation known as surface plasmon polariton (SPP).  An SPP is trapped on
+the interface and propagates until it decays; either re-radiating as a
+photon or being absorbed into the metal as heat.
+
+SPPs, like photons, are quantum mechanical objects.  Given system is
+momentum-conserving, elastically scattered plasmons will preserve all the
+information of their parent field.  
+
+There are few experimental techniques allowing application of force on
+biological molecules. Among them, optical or magnetic tweezers and atomic
+force microscopes (AFMs) have provided much insight into the mechanics of
+molecules such as DNA~\cite{cui2000pulling}~\cite{marko1995stretching},
+improved understanding of friction and wear in
+proteins~\cite{suda2001origin}~\cite{bormuth2009protein}, and have even
+been able to observe stepwise motion of motor
+proteins~\cite{asbury2003kinesin}.
+
+However powerful, these methods are not able to be deployed as integrated
+devices to probe the mechanical properties of heterogeneous samples in a
+wide range of applications; tweezer and AFM experiments rely on highly
+trained experimentalists, are not widely applicable as analytical tools,
+and are often constrained to the analysis of well prepared homogeneous
+samples not amenable to multiplexing.
+
+Among tools suitable for direct mechanical transduction, the quartz crystal
+microbalance (QCM) has seen increasing real-world utility as a simple, cost
+effective, and highly versatile mechanical biosensing platform. A QCM is
+typically a thin disk-shaped piece of strategically cut piezoelectric
+quartz with electrodes on either side. When part of an electronic
+oscillator circuit, the quartz can form a mechanical resonator which
+vibrates at certain fundamental frequencies. Changes in the fundamental
+frequencies and their associated bandwidths upon sample adsorption or
+desorption are related to the properties of the sample and the strength of
+its coupling to the QCM. Since its introduction by
+Sauerbrey~\cite{sauerbrey1959verwendung} in 1959 as sub-monolayer thin-film
+mass sensors in the gas phase, the understanding of QCM sensors has been
+repeatedly enhanced to study phenomena such as viscoelastic films in the
+liquid phase~\cite{kanazawa1985frequency}, non-destructive contact
+mechanics~\cite{johannsman2007contacts}, and complex topologies of
+biopolymers and biomacromolecules~\cite{marx2003quartz}. 
+
+Naturally, QCMs do not come without their own disadvantages. The underlying
+mechanical properties of the sample are often not revealed by the stepwise
+changes in the QCM sensorgram, an issue complicated by the choice of
+theoretical model.  Operation of QCMs in the liquid phase is also
+associated with a rather low-Q resonance, limiting their sensitivity and
+precluding their use for single molecule detection.  Furthermore, up to now
+it has not been possible to integrate the application of force on
+biomolecules in QCM measurements.
+
+In light of these issues and the analytical power of force based
+techniques, herein is described a novel type of instrument using a QCM as a
+direct mechanical transducer for the response of discrete samples
+(molecules, particles) placed in a variable force field provided by a
+standard commercial centrifuge.  This \textit{centrifugal force quartz
+crystal microbalance} (CF-QCM) concept is concerned with direct
+introduction of pico to nanoscale forces in the liquid phase for analyzing
+the mechanical properties of biomaterials.
+
+\subsection{Organization}
+This chapter begins with a small historical perspective and proceeds
+with a derivation of the relevant mathematics which will allow the
+prediction of the response of a QCM for samples under centrifugal force.
+Subsequently, \Chapter{ch:qcmexperimental} outlines the technical details of the
+CF-QCM; hardware, electronics, and data acquisition.  Drawing on the theory
+presented, the main results of this work are presented in
+\Chapter{ch:qcmloadsituations} for different types of samples.  A
+finite element simulation was also employed to compliment the
+theoretical model.  The simulation is presented in
+\Chapter{ch:qcmsimulation} along with predictions of CF-QCM behavior for
+samples which have not yet been subjected to experiment.
+
+This work is roughly organized in the following way.
+\Chapter{ch:existence} is what you are currently reading.  Here is laid out
+theory, mathematical details regarding the conditions under which SPPs may
+be excited, and physical properties.  In \Chapter{ch:experimental} we
+describe all details regarding the physical experiment: construction,
+protocols, , and data analysis.  These first two chapters form the
+mathematical and physical basis for the remaining text.
+
+Discussion of our studies and new results begins with \Chapter{ch:bulkri}.
+Here, the bulk refractive index sensing properties of the cone are
+described.  Closely related, \Chapter{ch:interference} discusses a newly
+discovered interference phenomena in the cone and the possible utility in
+the context of SPR refractive index sensing.
+
+Perhaps one of the most interesting features of the cone is speckle, the
+subject of \Chapter{ch:speckle}.  Here we compare the properties of cone
+speckle with those of classic speckle fields in the context of
+correlations, refractive index perturbations, and multiple scattering
+effects.
+
+Finally, in \Chapter{ch:scatteringmicro} we look at the influence of the
+cone speckle on the scattering microstructure itself.
+
