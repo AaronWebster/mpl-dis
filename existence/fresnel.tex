@@ -31,12 +31,12 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
 \begin{figure}[ht]
  \centering
  \begin{subfigure}[b]{0.4\textwidth}
-  \centering
+  \centering(a)
   \import{existence/figures/}{singlelayerinterfacegeo-kretschmann}
   %\caption{}
  \end{subfigure}
  \begin{subfigure}[b]{0.4\textwidth}
-  \centering
+  \centering(b)
   \import{existence/figures/}{multilayerinterfacegeo-kretschmann}
   %\caption{Kretschmann SP.}
  \end{subfigure}
@@ -45,19 +45,17 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
 \label{fig:prismcoupledsetups}
 \end{figure}
 
-Let us discuss these first in terms of the single interface system
-first shown in \Figure{fig:prismcoupledsetups}.  We modify this system by
-adding another layer, $D_3$, as shown in
-\Figure{fig:prismcoupledsetups}(a).  In this system, light is incident from
-$D_1$ and $\epsilon_1>\epsilon_3$, both satisfying
-$\epsilon^\prime_1>\epsilon^\prime_3>1$ as per the first constraint.  $D_2$
-is a metal.  Since the real part of the metal permittivity,
-$\epsilon_2^\prime$, is a measure of its ability to store energy, and the
-imaginary part, $\epsilon_2^{\prime\prime}$, a measure of its dissipation,
-we are looking for a metal with a large negative real part and a small
-imaginary part.  In this spirit, \Table{tbl:epsmetal600} shows the complex
-permittivity for several metals at $\lambda=\SI{660}{\nano\meter}$.
-
+To begin, consider the single interface system, first shown in
+\Figure{fig:singleinterfacegeo}.  The single interface system is modified
+into a two interface, three layer system by adding another layer, $D_3$, as
+shown in \Figure{fig:prismcoupledsetups}(a).  In the three layer system,
+light is incident from the bulk media $D_1$ where $\epsilon_1>\epsilon_3$,
+both satisfying $\epsilon^\prime_1>\epsilon^\prime_3>1$ as per the first
+constraint.  $D_2$ is a metal.  Since the real part of the metal
+permittivity, $\epsilon_2^\prime$, is a measure of its ability to store
+energy, and the imaginary part, $\epsilon_2^{\prime\prime}$, a measure of
+its dissipation, a metal is desired for $D_2$ with a large negative real
+part and a small imaginary part.  
 \begin{table}[ht]
 \centering
 \sisetup{round-mode=places,round-precision=3}
@@ -80,22 +78,23 @@ Pt & -12.7783923033094 & 20.6732739687699\\
 \end{tabular}
 \caption{Complex permittivity for select metals at
 $\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude
-model.  Constants are from Refs.~\cite{ung2007interference} and
+model.  Model parameters are from Refs.~\cite{ung2007interference} and
 \cite{rakic1998optical}.}
 	\label{tbl:epsmetal600}
 \end{table}
 
-From \Table{tbl:epsmetal600} it is easy to filter out an appropriate
-choice: silver, gold, or copper, with silver having the lowest loss.  At
-this point we choose gold and restrict our parameter space to this metal.
-It has the second lowest loss, does not oxidize, and most importantly has
-the most compatibility with existing biochemistry.  Furthermore, we find
-via the Fresnel equations for such a three layer system that the thickness
-of the metal layer must be below \SI{100}{\nano\meter}.  The multilayer
-system is also modified as in \Figure{fig:prismcoupledsetups}(b), with the
-prism being a supporting layer $\epsilon_0$ such that
-$\epsilon^\prime_0>\epsilon^\prime_{1,3}>1$.  We also assume that
-$\epsilon_1=\epsilon_3$ and that $\epsilon_2$ is gold.
+\Table{tbl:epsmetal600} shows the complex permittivity for several metals
+at $\lambda=\SI{660}{\nano\meter}$.  From \Table{tbl:epsmetal600} it is
+easy to filter out an appropriate choice: silver, gold, or copper, with
+silver having the lowest loss.  At this point gold is chosen and the
+parameter space restricted to this metal.  It has the second lowest loss,
+does not oxidize, and most importantly has the most compatibility with
+existing biochemistry.  Furthermore, it is found via the Fresnel equations
+for such a three layer system that the thickness of the metal layer must be
+below \SI{100}{\nano\meter}.  The multilayer system is also modified as in
+\Figure{fig:prismcoupledsetups}(b), with the prism being a supporting layer
+$\epsilon_0$ such that $\epsilon^\prime_0>\epsilon^\prime_{1,3}>1$.  It is
+also assumed that $\epsilon_1=\epsilon_3$ and that $\epsilon_2$ is gold.
 
 Simultaneous optimization of all of these parameters, including the
 incident angle was performed using nonlinear
@@ -126,8 +125,8 @@ spectrum.  The near field is found by taking advantage of the shift theorem
 using the standard Fourier transform recipe
 \begin{equation}
 \mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
-\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime}
-\,\me^{\mi \mathbf{k} \cdot \mathbf{r}}\md \mathbf{k}
+\,\me^{\mi \mathbf{k} \cdot \mathbf{r}}
+\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime} \md \mathbf{k}
 \end{equation}
 where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field
 found using the Fresnel equations, taking into account the distribution of
@@ -153,7 +152,7 @@ location of this minimum is highly sensitive to the refractive index in
 which the SPP propagates; this is the mechanism most commonly exploited for
 biosensing.  The notch can always be found close to the critical
 angle for total internal reflection, with sharper resonances being closer
-than broader ones (see \Appendix{ch:reference}).
+than broader ones.
 \item Owing to their greater attenuation, excitation of conventional SPPs
 displays a relatively broader notch compared with long range SPPs.
 \item In the near field $x$-$y$ plots, both show the diffraction limited
