@@ -1,34 +1,37 @@
 \begin{figure}[ht]
  \centering
  \includegraphics[keepaspectratio]{experimental/figures/spr_annotatedexperiment.pdf}
- \caption{Annotated picture of the experimental setup.  Description in the
-	text.}
+ \caption{Image of the experimental setup with the functional
+  components annotated.  Description in the text.}
  \label{fig:experimentalpicture}
 \end{figure}
 
 An image of experimental setup for SPP experiments is shown in
-\Figure{fig:experimentalpicture} with the important components annotated.
-A simplified schematic of the same setup is also shown in
-\Figure{fig:experimentalsetup}.
+\Figure{fig:experimentalpicture} with its functional components annotated.
+A simplified schematic is also shown in \Figure{fig:experimentalsetup}.
 
-Light from a \SI{50}{\milli\watt} \SI{660}{\nano\meter} diode laser with a
-bandwidth of \SI{30}{\giga\hertz} is first coupled into a single mode
-optical fiber via an integrated air-spaced doublet fiber collimator.  The
-fiber guides the laser light to an optical breadboard mounted on an
-inverted microscope.  All primary functions of the experimental setup take
-place on the breadboard.  Here, the Gaussian beam from the single mode
-fiber is collimated by an output coupler to a beam waist of
-$w_0=\SI{5}{\milli\meter}$ and proceeds through a polarizing beamsplitter,
-passing $p$ polarized light.  The light is focused by a 10X microscope
-objective onto the hypotenuse of a hemispherical prism of diameter
-$d=\SI{10}{\milli\meter}$.  The beamsplitter and microscope objective are
-mounted on a rotation stage which itself is mounted on a micrometer stage.
-The objective itself is mounted on a zoom housing enabling linear travel
-along the optical axis.  When the rotation stage is at the surface plasmon
-resonance angle, the micrometer $z$ axis is fixed with a diffraction
-limited spot at the center of the prism's hypotenuse.  The size of the spot
-can then be modified via the zoom housing, and its transverse location on
-the surface by the $x$ and $y$ lead screws on the micrometer stage.  
+Light from a \SI{50}{\milli\watt} \SI{660}{\nano\meter} diode laser (Ingis
+660, Laser Quantum Ltd.) with a bandwidth of \SI{30}{\giga\hertz} is first
+coupled into a single mode optical fiber via an integrated air-spaced
+doublet fiber collimator.  The fiber guides the laser light to an optical
+breadboard mounted on an inverted microscope.  All primary functions of the
+experimental setup take place on the breadboard.  At the breadboard stage,
+the Gaussian beam from the single mode fiber is collimated by an output
+coupler to a beam waist of $w_0=\SI{5}{\milli\meter}$ and proceeds through
+a polarizing beamsplitter, passing $p$ polarized light.  The light is
+focused by a 10X microscope objective (Olympus plan achromat,
+$\mathrm{NA}=0.25$, \SI{10.6}{\milli\meter} working distance) onto the
+hypotenuse of a hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.
+The beamsplitter and microscope objective are mounted on a rotation stage
+which itself is mounted on a micrometer stage.  The objective itself is
+mounted on a zoom housing enabling linear travel along the optical axis,
+greatly simplifying the task of focussing.  When the rotation stage is at
+the surface plasmon resonance angle, the micrometer $z$ axis is fixed with
+a near-diffraction limited spot at the center of the prism's hypotenuse.
+The size of the spot can then be modified via the zoom housing, and its
+transverse location on the surface by the $x$ and $y$ lead screws on the
+micrometer stage.  
+
 \begin{figure}[ht]
 \centering
  \includegraphics[keepaspectratio]{experimental/figures/conefig.pdf}
@@ -37,73 +40,87 @@ the surface by the $x$ and $y$ lead screws on the micrometer stage.
 \end{figure}
 
 The hemispherical prism is mounted on a planar structure supporting either
-normal or long range SPPs.  Reverse of this structure is a microfluidic
-flow cell where samples can be introduced.  The specularly reflected and
-scattered light containing information from SPP interference and scattering
-is ultimately recorded at desired locations with a series of imaging
-sensors.
+normal or long range SPPs.  Reverse of the structure is a microfluidic flow
+cell where samples are introduced.  Both the microfluidics and the
+substructure supporting the prism are thin and optically transparent.  In
+this way, the sensing surface may be imaged with the objective on the
+inverted microscope.  The breadboard containing the experiment was fixed to
+the optical table with its own micrometer stage, permitting translation of
+the entire experiment in the plane of the optical table, and thus a way to
+position the inverted microscope objective without disturbing the rest of
+the setup.
 
-Both the microfluidics and the substructure supporting the prism are thin
-and optically transparent.  In this way, the sensing surface may be imaged
-with an objective from the inverted microscope.  The breadboard containing
-the experiment was fixed to the optical table with its own micrometer
-stage, permitting translation of the entire experiment in the plane of the
-optical table.
+The hemispherical prism affords a useful optical feature with regards to
+the optical system.  If the focal spot is positioned at the central point
+of the hemispherical prism's hypotenuse and the focussing optic obeys the
+sine condition, a minimum amount of abberation will be introduced by the
+presence of the hemispherical prism.  To take advantage of this feature, a
+microscope objective was chosen to as the focussing optic.  The use of a
+microscope objective and hemispherical prism is not strictly necessary
+however; previous versions of the experimental setup made use of an
+$f=\SI{25}{\milli\meter}$ aspheric lens for focussing and a
+\SI{25}{\milli\meter} diameter, $f=\SI{20}{\milli\meter}$ aspheric
+condenser lens as an ersatz hemispherical prism.  The aspheric focussing
+and condenser lens does distort the incident and reflected light precluding
+a diffraction limited spot, however this choice affords qualatatively the
+same physics with a much lower cost.
 
-We experimented with several different focussing strategies in the
-refinement of the experiment, and found that a microscope objective is the
-simplest choice.  Because microscope objectives fulfill the sine condition,
-focussing to the central point on the hypotenuse of a hemispherical prism
-should introduce a minimum amount of aberrations.
-
-Extra attention was not given to mechanical stability.  Though most of the
-stages were high quality, the mounting of components such as the imaging
-sensors and the prism on its glass slide were less than what would normally be considered optically rigid.
-We did not observe any negative effects resulting from these choices.
+Extra attention was not given to mechanical stability.  Though the quality
+of the optomechanical components was acceptable, the mounting of imaging
+sensors and the prism extended on a glass slide were less than what would
+typically be considered optically rigid.  Despite this, no effects were
+observed on the specular or cone sensor which could be attributed to
+mechanical instability.  The image from the inverted microscope objective
+however was subject to low frequency ($<\SI{5}{\hertz}$) displacements
+coincident with transient events in the laboratory: footsteps, opening and
+shutting of doors, etc.  Such artifacts when present were corrected for
+after data acquisition with image stabilization functions built in to the
+software program Fiji~\cite{schindelin2012fiji}.
 
 \subsection{Imaging Sensor}
-As stated, light from the experiment was directly recorded with imaging
-sensors at select locations around the ring.  Because no optics besides the
-hemispherical prism itself were used in this capture, we desire the sensors
-to be close to the prism in order to capture the largest area of cone
-features possible.  To facilitate this, the sensors were removed from their
-housings and the naked PCB used as a mount support as in
-\Figure{fig:imagingsensor}.
+
+Three identical imaging sensors were employed concurrently to acquire
+experiemntal data.  The imaging sensors used were IDS USB 2.0 \SI{8}{\bit}
+CMOS sensors with a spatial resolution of $1280\times1024$ pixels.  The
+sensors were capable an ``limited area of interest'' (AOI) capture mode,
+allowing a subset of the available pixel region to be transmitted via the
+serial bus to the host computer.  Under sufficient lighting, framerates of
+up to \SI{250}{fps} (frames per second) were possible with the smallest AOI
+region.  In practice, the cone, specular, and surface images were all
+acquired at \SI{100}{fps}.
+
+To allow the cone sensor to capture the largest angular region of the cone
+possible, the sensor was removed from its housing and its naked PCB used as
+a mount support (\Figure{fig:imagingsensor}).  Removing the housing allowed
+the cone sensor to be positioned approximately \SI{10}{\milli\meter} from
+the focal spot and to capture an angular region of approximately
+\SI{37}{\degree}.
 \begin{figure}[ht]
  \centering
  \includegraphics[width=6cm,keepaspectratio]{experimental/figures/nakedsensorcrop.jpg}
- \caption{Imaging sensor removed from its housing.}
+	\caption{The cone sensor, an IDS USB 2.0 \SI{8}{\bit} CMOS sensor, removed
+	from its housing to allow it to be positioned close to the prism.}
  \label{fig:imagingsensor}
 \end{figure}
 
-Two types of imaging sensors were used in the experiment: an IDS USB 2.0
-\SI{8}{\bit} CMOS camera and a PixelGrey IEEE-1394 (Firewire) \SI{16}{\bit}
-CCD.  Both had a spatial resolution of $1280\times1024$ pixels.  The
-cameras are capable of what is known as a ``limited area of interest''
-(AOI).  This feature allows the cameras to capture a subset of their
-available pixel region before the information traverses the serial bus to
-the host computer.  The IDS datasheet specifies that in AOI mode, with
-sufficient lighting conditions framerates of up to \SI{250}{fps} are
-possible.  We have found that this framerate was a limitation imposed due
-to bad design of both the stock acquisition software and the USB serial
-bus, and with simple modifications this can be extended to over
-\SI{1400}{fps} for the smallest AOI.
+A modified version of the program \texttt{ueyedemo} included with the IDS
+UEye SDK version 3.82 was used to read the raw sensor data directly from
+memory and write it to a single binary file on the disk of the host
+computer.  The modifications afforded the data acquistion several speed
+advantages compared with the stock software included with the IDS sensors.
+First, all calls to image or video libraries were suppressed by removing
+the need to transcode the pixel data, instead writing raw pixel data
+directly to disk.  Second, the raw pixel data was saved to a single file,
+eliminating seeking of the computer's physical disk read/write head during
+both file creation and updating the disk's filesystem journal when
+acquiring data as an image sequence.
 
-The modifications were carried out in the following way.  On the software
-side, we used the IDS UEye SDK version 3.82 to read the raw sensor data
-directly from camera memory and write it to a single binary file on the
-disk of the host computer.  This has two speed advantages compared with the
-default method.  First, it suppresses all calls to image or video libraries
-by removing the need to transcode the pixel data.  Second, saving to a
-single file is much faster than saving to multiple files because it
-eliminates seeking of the computer's physical disk read/write head during
-both file creation and updating the disk's filesystem journal.  
-
-On the hardware side, we found it necessary to assign each USB camera to
-its own dedicated USB bus.  This allowed us to maximize the USB polling
-frequency and avoid traffic on the bus which would otherwise interrupt the
-datastream.  Firewire cameras did not need this effort, as the IEEE-1394
-protocol supports isochronous transfers which are able to guarantee a
-device a certain amount of bandwidth.
+On the hardware side, each imaging sensor was given its own dedicated USB
+bus, maximizing the USB polling frequency and avoiding other bus traffic
+which would otherwise retard the sensor datastream.  
+%Firewire cameras did
+%not need this effort, as the IEEE-1394 protocol supports isosynchronous
+%transfers which are able to guarantee a device a certain amount of
+%bandwidth.
 
 %(480 megabits per second)/((1280*128*8 bits) per frame)

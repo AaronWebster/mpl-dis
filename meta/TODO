@@ -1,3 +1,8 @@
 Commas after equations, such as eqn:dft.  Be consistent.
 
 fig:fresnelangle should have an outline where the SPP excitation is
+
+camera -> sensor in fig:experimentalpicture
+
+imaging sensor angle in imaging sensor subsection in experimental chapter,
+is it right?
