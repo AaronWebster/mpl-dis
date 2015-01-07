@@ -1,81 +1,139 @@
-The width of the SPR resonance, the speckle in the cone, and the type of
-SPP scattering are all intimately related to the scattering microsctucture.
-It is therefore essential that we have control, or at least consistency,
-regarding the metal surface.  To this end we have investigated several
-methods for influencing the surface properties.  
+The width of the SPR resonance and the characteristics of speckle in the
+cone are fundamentally related to the underlying scattering microsctucture.
+In this respect it is important to note that in the limit of a perfectly
+flat and smooth film, surface plasmons are non-radiative and do not couple
+with the exciting
+field~\cite{johansson1990theory}~\cite{otto1968excitation}, and therefore
+none of the aforementioned physical manifestations of surface plasmon
+resonance (e.g. the notch and the cone) can be observed.  Surface roughness
+of some degree is required.  Fortunately, fabrication of perfectly smooth
+films is difficult to achieve and some degree of roughness will always be
+present using the sputtering procedure described in the previous section.
+
+Though fabrication of a perfectly smooth film was not possible with the
+present apparatus, several procedures were investigated to introduce
+increased amounts of surface roughness on the metal film, to be discussed
+after the following subsection on experimental determination of surface
+roughness.
+
+\subsection{Measurement of Surface Roughness}
+To quantify the amount of surface roughness, polarization measurements were
+conducted to determine the so-called ``rest light
+intensity''~\cite{horstmann1977multiple} of the system.  The rest light
+intensity is determined by measuring the angular dependence of the p- to
+s-polarization components of light emitted from the components of light
+which is emitted from the \textit{back} of the
+prism~\cite{kretschmann1972decay}.  For surface scattering processes, the
+angular dependent ratio is given by~\cite{kretschmann1972thesis}
+\begin{equation}
+\frac{I_p}{I_s} = \frac{\tan^2\theta}{1+(\tan^2\theta)/|\epsilon|}
+\label{eqn:ipssurface}
+\end{equation}
+and for volume scattering by
+\begin{equation}
+\frac{I^\prime_p}{I^\prime_s} = \frac{1}{|\epsilon|^2} I_p I_s
+\label{eqn:ipsvolume}
+\end{equation}
+where $I_p$ and $I_s$ are the intensities of $p$ and $s$ polarized light,
+respectively.
+
+The incident light and the excited SPPs are strictly p-polarized;
+polarization mixing cannot arise from a first order scattering process.
+In this way, the degree of polarization mixing measures the degree of
+higher-order (multiple) scattering.
+
+Rest light intensity measurements were conducted for an unmodified silver
+film, a film roughened with substrate heating, and a film subjected to
+shadow mask lithography, shown in \Figure{fig:spratio} along with the
+theoretical prediction for a film with no multiple scattering film (denoted
+``perfectly smooth'').  The p- and s-polarization components were measured
+separately with a polarizing beamsplitter and to two cameras whose pixel
+intensities were integrated to obtain an intensity value.  These ersatz
+photodiodes were positioned on a rotation stage on the bottom halfspace of
+the hemisphere and measurements taken in \SI{5}{\degree} increments.
+
+The volume scattering components in \Equation{eqn:ipsvolume} are not taken
+into account, as its value is too low to be determined with the present
+apparatus, and furthermore it is expected not to be a contributing
+factor~\cite{kretschmann1972decay}.  The increased rest light at
+$\theta=\SI{0}{\degree}$ fits the model well, suggestive of increased
+surface roughness.
+\begin{figure}[ht]
+ \centering
+ \import{includes/}{setpgfinc}
+ \import{experimental/figures/}{spfig}
+ \caption{Rest light measurements, the ratio of polarization intensties
+									$I_p/I_s$,  for different surface roughness enhancing procedures.}
+ \label{fig:spratio}
+\end{figure}
 
 \subsection{Heat}
-The idea of substrate heating as a mechanism for increasing surface
-roughness came to use though an anecdote by
-\name{Horstmann}~\cite{horstmann1977multiple}.  The experimental procedure
-consists of heating the glass substrate to \SI{200}{\celsius} immediately
+During sputtering, heating applied to the substrate can be used to enhance
+surface roughness.  Following
+\name{Horstmann}~\cite{horstmann1977multiple}, the experimental procedure
+consisted of heating the glass substrate to \SI{200}{\celsius} immediately
 prior to sputtering.  After sputtering, the substrates are allowed to cool
-slowly at room temperature before use.  We did not have the ability to heat
-our substrate \textit{in situ}, however because the primary mechanism for
-heat dissipation in a vacuum (with a properly insulated sample) is radiant,
-pre-heating the substrate before evacuating gave us ample time to carry out
-the sputtering procedure at the appropriate temperature.  In consideration
-of this method we find that it was able to increase the measured surface
-roughness by nearly two fold See \Chapter{ch:scatteringmicro} for analysis.
+slowly at room temperature before use.  Though the sputtering apparatus
+employed did not have the ability to heat the substrate \textit{in situ},
+surface roughness could be reliably enhanced by heating the substrate
+immediately prior to evacuation.  From rest light intensity measurements it
+was found that this method increased the measured surface roughness by a
+factor of two.
 
 \subsection{Shadow Mask Lithography}
 A second method was explored in collaboration with
-\name{Huang}~\cite{huang2014speckle} which we refer to as \textit{shadow
-mask lithography}.  This method involves the deposition of large,
-micron-sized particles on the surface before sputtering, and then removing
-them after the process is complete.  The result is a random arrangement of
-holes, which act as scatterers.  To understand why this is, note the
-Fresnel reflection coefficient for a single interface at normal incidence in
-terms of the refractive indices
-\begin{equation}
-r^s = \frac{n_1 - n_2}{n_1+n_2}
-\end{equation}
-and the reflectance $R^p=|r^p|^2$.  In other words, the Fresnel
-reflectivity is
-roughly proportional to the difference in refractive indices, and when
-considering the reflectance the phase shift is discarded and the results
-are the same for both $n_1>n_2$ and $n_2>n_1$.
+\name{Huang}~\cite{huang2014speckle} which is herein referd to as
+\textit{shadow mask lithography}.  Shadow mask lithography was carried out
+by depositing large, micron-sized particles on the surface before
+sputtering, and then removing them after the process completed.  The
+resulting random arrangement of holes acted as scatterers, increasing
+surface roughness.  Note that the Fresnel reflection coefficient is roughly
+proportional to the difference in refractive indices $n_1$ and $n_2$ for a
+single-layer interface.  When considering the magnitude squared reflectance
+the phase shift is discarded, resulting in the same reflectance for both
+$n_1>n_2$ and $n_2>n_1$.
 
-We carried out this method as follows.  Free \SI{1}{\micro\meter} (mean
-diameter \SI{0.9}{\micro\meter}) silica particles in water at a density of
-\SI{2}{\gram\per\centi\meter\cubed} were centrifuged and their suspending
-solution decanted and replaced with dry acetone.  This was done three times
-to minimize the amount of residual water in the final suspension.
-Additional acetone was then added to obtain a final solution concentration
-of \SI{8e5}{particle\per\micro\liter}.  
+The procedure for shadow mask lithography was carried out as follows.  Free
+silica particles in water, mean diameter \SI{0.9}{\micro\meter} and density
+\SI{2}{\gram\per\centi\meter\cubed}, were centrifuged and their suspending
+solution decanted and replaced with dry acetone.  The centrifuging and
+decanting step was then repeated three times to minimize the amount of
+residual water in the final suspension.  Additional acetone was then added
+to obtain a final solution concentration of
+\SI{8e5}{particle\per\micro\liter}.  
 
 Glass substrates were cleaned in piranha solution (three parts
 \SI{96}{\percent} \ce{H2SO4} to one part \SI{30}{\percent} \ce{H2O2}) for
-\SI{10}{\minute} prior to use.  This process makes the surfaces
-hydrophilic, and combined with the lowered surface tension
+\SI{10}{\minute} prior to use.  Cleaning glass with piranha makes the
+surface hydrophilic, and combined with the lowered surface tension
 (\SI{23.4}{\milli\newton\per\meter} for acetone compared with
 \SI{72.8}{\milli\newton\per\meter} for water at \SI{20}{\celsius}), a
-droplet placed on the surface will spread evenly.  We let this evaporate on
-its own and the try surfaces are sputtered with metal.  Afterwards, we
-found that sonicating the substrate for \SI{10}{\minute} in dry acetone was
-sufficient to overcome the Van der Waals forces between the particles and
-substrate, washing them away and leaving holes in their stead.  For these
-particles of mean diameter \SI{0.9}{\micro\meter} the resultant average
-hole size was \SI{600}{\nano\meter}, circular.  As with the heat method,
-the effect on surface roughness is discussed in
-\Chapter{ch:scatteringmicro}.
+droplet placed on the surface will spread evenly.  The droplet was allowed
+to evaporate in air and the sputtering process was then carried out as
+usual.  Afterwards, sonicattion of the substrate for \SI{10}{\minute} in
+dry acetone was sufficient to remove the adsorbed particles and reveal the
+underlying holes.  For particles of mean diameter \SI{0.9}{\micro\meter}
+the resultant average hole size was \SI{600}{\nano\meter}, circular.  As
+with the heat method, the effect on surface roughness is further discussed
+in \Chapter{ch:scatteringmicro}.
 
 \subsection{Nanoparticles}
-The surface modification method which ultimately proved most fruitful
+The third surface modification method which ultimately proved most fruitful
 involved nanoparticle deposition.  Addition of nanoparticles is
 conceptually similar to shadow mask lithography; in both cases
 discontinuities in the systems permittivity cause reflections in the
-propagating waves.  For this we chose citrate-capped spherical gold
-nanoparticles (AuNPs) with diameters in the range of
-\SIrange{20}{100}{\nano\meter}.  These specific particles were chosen for
-two reasons: gold has a significant amount of established bio-relevant
-chemistry protocols, and the localized surface plasmon resonance of these
-particles is not coincident with the laser frequency.  A UV-Vis spectrum for
-these particles, shown in \Figure{fig:aunpspectrum}, confirms the second
+propagating waves.  Citrate-capped spherical gold nanoparticles (AuNPs)
+with diameters in the range of \SIrange{20}{100}{\nano\meter} were used for
+the modification.  These specific particles were chosen for two reasons:
+first, gold has a significant amount of established bio-relevant chemistry
+protocols, and second, the localized surface plasmon resonance of these
+particles is not coincident with the laser frequency.  A UV-Vis spectrum
+for the particles, shown in \Figure{fig:aunpspectrum}, confirms the second
 assumption.  Though it would be perhaps interesting at some point to look
-at the effects of matched resonances, we wished to narrow the range of
+at the effects of matched resonances, it was desired to narrow the range of
 physical principles in play in order to simplify interpretation of results
-during our investigation.
+during the investigation.
+
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
@@ -85,54 +143,3 @@ during our investigation.
  \label{fig:aunpspectrum}
 \end{figure}
 
-\subsection{Measurement of Surface Roughness}
-To quantify the amount of surface roughness, we conducted polarization
-measurements of the so called ``rest light
-intensity''~\cite{horstmann1977multiple}.  Essentially this involves
-looking at the angular dependence of the ratios between the polarization
-components of light which is emitted from the \textit{back} of the
-prism~\cite{kretschmann1972decay}.
-For surface scattering process, the angular dependent ratio is said to be
-\begin{equation}
-\frac{I_p}{I_s} = \frac{\tan^2\theta}{1+(\tan^2\theta)/|\epsilon|}
-\label{eqn:ipssurface}
-\end{equation}
-and for volume scattering
-\begin{equation}
-\frac{I^\prime_p}{I^\prime_s} = \frac{1}{|\epsilon|^2} I_p I_s
-\label{eqn:ipsvolume}
-\end{equation}
-Where $I_p$ and $I_s$ are the intensities of $p$ and $s$ polarized light,
-respectively.
-
-The supporting literature for Equations~\ref{eqn:ipssurface} and
-\ref{eqn:ipsvolume} is lacking.  Apparently it is to be found in a 1972
-dissertation \name{Kretschmann} made during his doctoral work in Hamburg, but
-at the time we have not actually seen this document.  In any event, the
-polarization mixing cannot arise from a first order process and thus
-the mixing is supported by the idea of SPP multiple scattering.
-
-We have measured this ratio for films which we believe to be smooth, those
-which we have not made modifications to, and ones roughened with heat
-pretreatment.  This was carried out with the normal setup but with the
-addition of a polarizing beamsplitter connected to two cameras whose pixel
-intensities we integrated to obtain an intensity value.  These \textit{de
-facto} photodiodes are positioned on a rotation stage on the bottom
-halfspace of the hemisphere.  Our results are shown in \Figure{fig:spratio}.
-The theoretically perfect smooth value of \Equation{eqn:ipssurface} is also
-plotted for comparison.  We do not plot volume scattering, as this value is
-too low to be determined with our apparatus, and furthermore it is expected
-not to be a contributing factor~\cite{kretschmann1972decay}.  The
-significantly increased rest light at $\theta=\SI{0}{\degree}$ fits well
-with this model, suggestive of increased surface roughness.
-\begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
- \import{experimental/figures/}{spfig}
- \caption{Ratio of polarization intensties $I_p/I_s$ for different
- surface roughnesses.}
- \label{fig:spratio}
-\end{figure}
-
-We will refer to these measurements and rest light intensity again when we
-discuss the scattering microstructure in \Chapter{ch:scatteringmicro}.

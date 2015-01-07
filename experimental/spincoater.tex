@@ -1,11 +1,9 @@
-During our experimental work, we did not have convenient access to a
-standard programmable spin coater.  This is of course a pre-requisite to
-producing uniform cytop coatings and thus long range surface plasmons.
-Being a rather expensive piece of equipment, we opted to build one
-ourselves using a repurposed spinning platter type hard disk drive.  Spin
-coaters built this way have been reported before~\cite{bianchi2006spin},
-but we have found a much simpler and economic implementation using off the
-shelf components.
+During the course of the present experimental work, a standard programmable
+spin coater was not available.  Being a rather expensive piece of
+equipment, a device was made in its stead using a repurposed spinning
+platter type hard disk drive.  Spin coaters built in this fashion have been
+reported before~\cite{bianchi2006spin}, but herein is described a much
+simpler and economic implementation using off the shelf components.
 
 The cover from all internal components except for the motor are first
 removed.  A solid aluminum plate is affixed to the top of the motor using
@@ -23,13 +21,14 @@ flange and an optical interrupter switch which serves to monitor the spin
 speed.  
 
 The spin speed of the motor was recorded as a function of PWM signal and
-this relationship fit to a second order polynomial.  This calibration was
-then used to set the PWM output given a desired spin speed without using a
-feedback loop.
+the relationship fit to a second order polynomial.  The fit parameters were
+then used to set the PWM output given a desired spin speed without
+feedback.
 
 The stability of the spin coater and the range of speeds it offers is shown
 in \Table{tbl:spincoatererror}.  Perhaps the most obvious downside of the
-ESC is that it does not operate very well in the low RPM limit.
+ESC is that it does not operate very well in the low RPM limit,
+particularly at around \SI{2800}{RPM}.
 %brake on
 %timing  high
 %low voltage
@@ -52,7 +51,7 @@ ESC is that it does not operate very well in the low RPM limit.
 6691.978  & 1.61663545800572\\
   \bottomrule
  \end{tabular}
- \caption{Standard deviation of the spin speed at certain angular speeds
+ \caption{Standard deviation of the spin speed at certain nominal angular speeds
  for the hard disk spin coater.}
  \label{tbl:spincoatererror}
 \end{table}

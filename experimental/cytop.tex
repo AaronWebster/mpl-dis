@@ -1,36 +1,34 @@
-For the fabrication of multilayer substrates supporting long range surface
-plasmons, we used a fluoropolymer,
-poly(1,1,2,4,4,5,5,6,7,7-decafluoro-3-oxa-1,6-heptadiene), more commonly
-referred to by its commercial name Cytop.  At our operating wavelength of
-\SI{660}{\nano\meter} and at \SI{20}{\celsius}, its refractive index is
-very close to water --
+A fluoropolymer, poly(1,1,2,4,4,5,5,6,7,7-decafluoro-3-oxa-1,6-heptadiene),
+more commonly referred to by its commercial name Cytop, was employed to
+make multilayer substrates supporting long range surface plasmons.
+
+At an operating wavelength of \SI{660}{\nano\meter} and at
+\SI{20}{\celsius}, the refractive index of Cytop is very close to water --
 1.341 for Cytop~\cite{mikevs2005synthesis} versus 1.331 for distilled
-water.  This index matching property allows us to construct the
-near-symmetric refractive index profile required for long range surface
-plasmons.
+water~\cite{andreasson1971measurement}.  The similar refractive index
+allows a near-symmetric refractive index profile required for long range
+surface plasmons.
 
 Cytop was purchased from AGC Chemicals as item number CTX-809A.  The last
 letter ``A'' in the item number designates it is intended for use on
-amorphous (glass) applications, and the number following that designates
-the concentration.  For example, CTX-809A is \SI{9}{\percent} cytop and
+amorphous (glass) applications, and the subsequent number designates the
+concentration.  For example, CTX-809A is \SI{9}{\percent} cytop and
 \SI{91}{\percent} solvent, and likewise CTX-803A is \SI{3}{\percent} cytop
-and \SI{97}{\percent} solvent.  Atachi makes another item with an ``M''
-designation designed for metals, but in either case we would have to put up
-with one side of the layer in contact with a non-optimal material.  We
-found that its adhesion to both metals and glass was very poor, but not
-enough to justify taking action to remedy it.  If we are careful in the
-experiment to not disturb or stress the film, the poor adhesion is
-inconsequential.
+and \SI{97}{\percent} solvent.  Atachi manufactures another item with an
+``M'' designation designed for metals, but in either case the multilayer
+structure would have one side in contact with a non-optimal material.
+Similar to the metal layers described in \Section{sec:expsputtering}, the
+adhesion of the cytop to both metals and glass was very poor, but with
+careful handling is not an issue.
 
-The thin films were made according to the following spin-coating procedure.
-A small drop of CTX-809A was placed directly on a clean
-\SI{12}{\milli\meter} round glass slide and the slide spun at
-\SI{3000}{RPM} for \SI{30}{\second}.  Immediately the slide was removed and
-placed on a hot plate at \SI{50}{\celsius} for \SI{30}{\minute}.  The
-temperature of the hot plate was then increased to \SI{200}{\celsius} and
-the Cytop allowed to cure at this temperature for \SI{12}{\hour} to remove
-any remaining solvent.  After cooling, the metal films were sputtered
-directly without any further surface modification.
+The thin films were made following a spin-coating procedure.  A small drop
+of CTX-809A was placed directly on a clean \SI{12}{\milli\meter} round
+glass slide and the slide spun at \SI{3000}{RPM} for \SI{30}{\second}.
+Immediately after the slide was removed and placed on a hot plate at
+\SI{50}{\celsius} for \SI{30}{\minute}.  The temperature of the hot plate
+was then increased to \SI{200}{\celsius} and the Cytop allowed to cure for
+\SI{12}{\hour} to remove any remaining solvent.  After cooling, the metal
+films were sputtered directly without any further surface modification.
 
 The resultant film thicknesses were determined with a spectrometer by
 measuring its broadband reflectance at $\theta=\SI{45}{\degree}$ and using
@@ -47,10 +45,11 @@ where
  \delta = \frac{2\pi}{\lambda_0} n_i d_i \cos \theta
 \end{equation}
 and the Cytop layer has a refractive index $n_i$ and thickness $d_i$, the
-substrate a refractive index $n_s$, and the whole thing is in the presence
-of refractive index $n_1$ (air).  \Equation{eqn:fitfresnel} assumes the
-reflection coefficient is the same for both polarizations.  Stated this way,
-\Equation{eqn:fitfresnel} has only one free parameter: $d_i$ and fitting
+substrate a refractive index $n_s$, and the system in the presence of
+refractive index $n_1$ (air).  \Equation{eqn:fitfresnel} assumes the
+reflection coefficient for TE polarization, which 
+\Equation{eqn:fitfresnel} has only one free parameter: $d_i$, which was
+solved for using a linear least squares fitting algorithm.
 An example of the raw spectrometer data and and its best fit is shown in
 \Figure{fig:fresnelfit}.
 
@@ -60,17 +59,14 @@ An example of the raw spectrometer data and and its best fit is shown in
  \import{experimental/figures/}{fresnelfit}
  \caption{Reflectivity of a thin Cytop layer on BK7 at
  $\theta=\SI{45}{\degree}$.  Shown is the experimental data and the
- best-fit theory.  Calculated layer thickness for this measurement was
-\SI{1150}{\nano\meter}.}
+	best-fit with \Equation{eqn:fitfresnel}.  Calculated layer thickness was \SI{1150}{\nano\meter}.}
  \label{fig:fresnelfit}
 \end{figure}
 
-We did not have occasion to properly characterize the surface quality of
-the Cytop films, but our experiments suggest indirectly that the local
-surface roughness must be extremely small.  This is evidenced by the
-observation that the intensity of light scattered into the cone is too
-small to be observed when exciting SPPs in an unmodified cytop-gold-water
-setup -- additional surface roughness must be present before the cone
-becomes visible.  This stands in comparison to experiments we have made in
-the traditional glass-silver-air and glass-gold-water setups where the cone
-is always visible.
+The surface quality of the Cytop films was not measured, but the
+experiments suggest this value to be small; the intensity of light
+scattered into the cone is too small to be observed when exciting SPPs in
+an unmodified cytop-gold-water setup -- additional surface features must be
+added before the cone becomes visible.  This observatino stands in
+comparison to experiments in the traditional glass-silver-air and
+glass-gold-water setups where the cone is always found to be visible.
