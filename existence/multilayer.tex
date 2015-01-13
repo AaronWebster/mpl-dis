@@ -1,14 +1,20 @@
 \begin{figure}[ht]
- \centering
- \import{existence/figures/}{multilayerinterfacegeo}
- \caption{Geometry and coordinate system for the multilayer system. }
- \label{fig:multilayergeo}
+\centering
+\import{existence/figures/}{multilayerinterfacegeo}
+\caption{Geometry and coordinate system for the multilayer system. }
+\label{fig:multilayergeo}
 \end{figure}
 
-Having shown the existence of SPPs on a single interface, the multilayer
-geometry, shown in \Figure{fig:multilayergeo} is now considered.  It will
-be shown that for certain multilayer geometries, the SPP propagation length
-can be increased by an order of magnitude.
+The single metal-dielectric interface is the principle under which most
+labratory and commercial SPR biosensors operate.  Apart from this, certain
+multilayer interface geometries, such as the one shown in
+\Figure{fig:multilayergeo}, have attractive features relevant to the
+present work.  In particular, it will be shown that multilayer interface
+geometries support SPP propagation lengths more than order of magnitude
+greater than the single layer interface.  For example, symmetric multilayer
+interface with \SI{10}{\nano\meter} gold layers at \SI{632.8}{\nano\meter}
+see ehancements of $10$-$60$, with propagation lengths up to
+\SI{250}{\micro\meter}~\cite{kuwamura1983experimental}~\cite{craig1983experimental}.
 
 For layers $D_1$ and $D_3$, the equations are the same as for the single layer system
 \begin{align}
@@ -79,7 +85,7 @@ E^-_{z,2}\\
 \label{eqn:multieex}
 \end{align}
 
-Taking Equations~\ref{eqn:multihhx} and \ref{eqn:multieex} and applying
+Taking Equations~\ref{eqn:multihhx} and~\ref{eqn:multieex} and applying
 continuity of $H_y$ and $E_x$ at the boundaries, the dispersion relation is
 expressed as
 \begin{equation}
@@ -92,29 +98,37 @@ expressed as
 \end{equation}
 
 \Equation{eqn:lrsppdispersion} is transcendental, but can still be
-visualized by plotting the difference between the left and right hand side
-of the equation, shown in \Figure{fig:lrsppdispersionrelation}.
+visualized by plotting the difference between the left hand side (lhs) and
+right hand side (rhs) of the equation, 
+$\log\left(\Re\left(|\mathrm{rhs}-\mathrm{lhs}|\right)\right)$.  The result
+is plotted in \Figure{fig:lrsppdispersionrelation}, with the negative
+values representing regions where SPP modes are supported.
 
 \begin{figure}[ht]
  \centering
 \import{existence/figures/}{lrsppdispersionfig}
-\label{fig:lrsppdispersionrelation}
-\caption{Disperion relation for multilayer system, shown as the difference
+\caption{Disperion relation for the multilayer interface system, shown as the difference
  between the right hand side (rhs) and left hand side (lhs) of
-\Equation{eqn:lrsppdispersion}.  SPP excitation occurs in the red areas.}
+\Equation{eqn:lrsppdispersion}.  SPP excitation occurs in the red areas.
+This specific system is also used in the experiment.  Plot is for a three
+layer interface system with $\epsilon_1=1.331$, $\epsilon_2$ Au using the
+frequency-dependent Lorentz-Drude model, $\epsilon_3=1.332$, and the
+thickness of $D_2$ is \SI{15}{\nano\meter}.  }
+\label{fig:lrsppdispersionrelation}
 \end{figure}
 
 \subsection{Photonic Crystal Structures}
-The systems in Figures \ref{fig:singleinterfacegeo} and
-\ref{fig:multilayergeo} are by far the most popular geometries for SPP
+The systems in Figures~\ref{fig:singleinterfacegeo} and~\ref{fig:multilayergeo} are by far the most popular geometries for SPP
 excitation, at least as far as biosensing is concerned.  There
 is, however, a very intriguing geometry based on a multilayer stack with
 which one can obtain SPP propagation distances in the \textit{millimeter}
 range.  A typical three layer system in the Kretschmann ATR configuration
 will exhibit SPP propagation distances on the order of
-\SI{8}{\micro\meter} for gold.  The symmetric configuration increases the
-propagation distance by a factor of 10, and the photonic crystal structure
-has been reported to increase the propagation distance by a factor of
+\SI{8}{\micro\meter} for gold.  The symmetric configuration has been
+experimentally reported to increase the
+propagation distance by a factor of
+$10$-$60$~\cite{kuwamura1983experimental}~\cite{craig1983experimental}, and the photonic crystal structure
+has been reported to further increase the propagation distance by a factor of
 100~\cite{konopsky2009long}.
 
 Currently, much of the work on photonic crystal structures is being carried

@@ -1,10 +1,9 @@
 Having shown the existence of SPPs under the momentum-matching conditions
-of Equations~\ref{eqn:sprcondition} and \ref{eqn:lrsppdispersion}, it is
-now pertinent to predict how excitation of SPPs would manifest in an
+of Equations~\ref{eqn:sprcondition} and~\ref{eqn:lrsppdispersion}, it is
+now relevant to predict how SPP excitation would manifest in a physical
 experiment.  To do this, the Fresnel equations are used to calculate the
 coupling conditions and properties of the excited field and the profiles of
 the reflected, transmitted, and scattered optical fields.  
-
 %We begin this section with our strategy for efficient computation of the
 %Fresnel relations, and follow with a discussion of its predictions for both
 %the near and far optical fields.  For implementation of this method on a
@@ -12,13 +11,12 @@ the reflected, transmitted, and scattered optical fields.
 %\Chapter{ch:abeles}.
 
 \subsection{Prism Coupled Excitation}
-According to the dispersion relation, \Equation{eqn:dispersion1}, 
-SPPs will be excited on a
-metal-dielectric interface if an optical field is incident at an angle 
-$ck/\sqrt{\epsilon} \to ck\sin\theta/\sqrt{\epsilon}$.  Furthermore, the following
-conditions must also be true:
+According to the dispersion relation, \Equation{eqn:dispersion1}, SPPs are
+excited on a metal-dielectric interface if an optical field is incident at
+an angle $ck/\sqrt{\epsilon} \to ck\sin\theta/\sqrt{\epsilon}$.
+Furthermore, the following conditions must also be true:
 \begin{enumerate}
-\item SPPs will be excited with evanescent waves.  The
+\item SPPs are excited with evanescent waves.  The
 incident light must be at an angle greater than the critical angle, i.e.
 $\theta>\arcsin\left(n_1/n_2\right)$.
 \item The metal layer must
@@ -40,8 +38,9 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
   \import{existence/figures/}{multilayerinterfacegeo-kretschmann}
   %\caption{Kretschmann SP.}
  \end{subfigure}
-\caption{Prism coupled excitation of SPPs in the Kretschmann configuration.
-								Left, a three layer system.  Right, a four layer system. }
+\caption{Prism coupled excitation of SPPs in the Kretschmann configuration,
+								(a), a three layer interface system, and (b), a four layer
+								interface system. }
 \label{fig:prismcoupledsetups}
 \end{figure}
 
@@ -80,89 +79,122 @@ Pt & -12.7783923033094 & 20.6732739687699\\
 $\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude
 model.  Model parameters are from Refs.~\cite{ung2007interference} and
 \cite{rakic1998optical}.}
-	\label{tbl:epsmetal600}
+\label{tbl:epsmetal600}
 \end{table}
 
 \Table{tbl:epsmetal600} shows the complex permittivity for several metals
-at $\lambda=\SI{660}{\nano\meter}$.  From \Table{tbl:epsmetal600} it is
-easy to filter out an appropriate choice: silver, gold, or copper, with
-silver having the lowest loss.  At this point gold is chosen and the
-parameter space restricted to this metal.  It has the second lowest loss,
-does not oxidize, and most importantly has the most compatibility with
-existing biochemistry.  Furthermore, it is found via the Fresnel equations
-for such a three layer system that the thickness of the metal layer must be
-below \SI{100}{\nano\meter}.  The multilayer system is also modified as in
-\Figure{fig:prismcoupledsetups}(b), with the prism being a supporting layer
-$\epsilon_0$ such that $\epsilon^\prime_0>\epsilon^\prime_{1,3}>1$.  It is
-also assumed that $\epsilon_1=\epsilon_3$ and that $\epsilon_2$ is gold.
+at $\lambda=\SI{660}{\nano\meter}$, from which it is straighforward to
+select an appropriate metal: silver, gold, or copper, with silver having
+the smallest value for $\epsilon^{\prime\prime}$.  Since
+$\epsilon^{\prime\prime}$ is related to energy lost in the medium, a small
+value suggests longer SPP propagation lengths (indeed, silver is more
+electrically conductive than copper which is more electrically conductive
+than gold).  From these three gold is chosen and the parameter space
+restricted to this metal.  Among the metals listed, gold has the second
+lowest loss, does not oxidize, and most importantly has the most
+compatibility with existing biochemical protols.  Furthermore, the Fresnel
+equations predict for a three layer interface system, $D_2$ gold, the
+thickness must be below \SI{100}{\nano\meter} to maintain transparency.
+The multilayer system is modified as in \Figure{fig:prismcoupledsetups}(b),
+with the prism being a supporting layer $D_4$ with permittivity
+$\epsilon_4$, such that $\epsilon^\prime_4>\epsilon^\prime_{1,3}>1$ where
+$\epsilon_1=\epsilon_3$ (in practice, $\epsilon_1\approx\epsilon_3$).
 
-Simultaneous optimization of all of these parameters, including the
-incident angle was performed using nonlinear
-minimization~\cite{brent1973algorithms}, on the notch depth.  For
-$\epsilon_2$ gold and $\epsilon_3$ water, the three layer system predicts
-optimum coupling around \SI{50}{\nano\meter} metal thickness, and
-\SI{16}{\nano\meter} for the four layer system.  This is shown graphically
-in \Figure{fig:fresnelangle} for different excitation wavelengths and
-coupling angles.  In particular, note the broad range of conditions for
-which SPP excitation is possible (though not necessarily optimal).
+For a fixed incident wavelength of $\lambda_0=\SI{660}{\nano\meter}$, layer
+$D_1$ $\epsilon_1=1.5142$ (BK7), layer $D_2$
+$\epsilon_2=\num{-11.361+1.923i}$ (gold), layer $D_3$ $\epsilon_3=1.33$
+(water~\cite{andreasson1971measurement}), and $D_4$ $\epsilon_4=1.33$,
+simultaneous optimization of the incident angle $\theta$ and thicknesses of
+$D_2$ and optionally $D_4$ was carried out using a nonlinear
+minimization~\cite{brent1973algorithms} of the Fresnel reflectivity.  A
+minimum in the Fresnel reflectivity is commensurate with optimal coupling
+of light into SPPs.  For the three layer interface system in
+\Figure{fig:prismcoupledsetups}(a), optimal coupling occurs for a $D_2$
+thickness of approximately SI{50}{\nano\meter}.  For the four layer
+interface system in \Figure{fig:prismcoupledsetups}(b), optimal coupling
+occurs for a $D_2$ thickness of \SI{16}{\nano\meter} and a $D_1$ thickness
+of \SI{1150}{\nano\meter}.
+
+The Fresnel reflectivity for $p$-polarization in the three and four layer
+interface systems of \Figure{fig:prismcoupledsetups} are shown graphically
+in in \Figure{fig:fresnelangle} as a function of both excitation wavelength
+and coupling angle.  In particular, note the broad range of conditions for
+which SPP excitation is possible (though not necessarily optimal),
+corresponding to regions to the right of the critical angle for total
+internal reflection with a minimum in $|r_p|^2$.
 
 \begin{figure}[ht]
 \centering
 \import{existence/figures/}{fresneltogether}
 \caption{Fresnel reflection coefficient for $p$ polarization, $|r^p|^2$, a
 function of angle and excitation wavelength for conventional (right) and
-long range (left) SPP structures in a Kretschmann ATR configuration.  SPP
-excitation occurs in regions of low reflectivity to the right of the angle
-for total internal reflection (dashed line).}
+long range (left) SPP structures in a Kretschmann ATR configuration.
+Coupling of light into SPPs is possible in regions of low reflectivity to the right of the
+critical angle for total internal reflection (dashed line).}
 \label{fig:fresnelangle}
 \end{figure}
 
-\subsection{Near and Far Fields} \label{sec:fresnelnearfar}
-We now use the Fresnel equations to predict optical fields taking into
-account effects from SPP propagation.  Computation of the far field is
-straightforward, as the Fresnel equations already provide an angular
-spectrum.  The near field is found by taking advantage of the shift theorem
-using the standard Fourier transform recipe
+\subsection{Near and Far Fields}\label{sec:fresnelnearfar}
+The Fresnel equations have thus far been used to predict the conditions for
+optimal SPP excitation, manifest as a minimum in the Fresnel reflectivity
+for light incident at a particular angle and wavelength for a given layer
+geometry.  In addition to the coupling conditions, the Fresnel equations
+can also be used to predict the complete near and far optical fields,
+taking into account effects from SPP propagation.  
+
+Evaluation of the near and far fields is carried out by taking advantage of
+the shift theorem using the standard Fourier transform recipe,
 \begin{equation}
 \mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
 \,\me^{\mi \mathbf{k} \cdot \mathbf{r}}
-\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime} \md \mathbf{k}
+\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime} \md \mathbf{k},
 \end{equation}
-where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field
-found using the Fresnel equations, taking into account the distribution of
-the incident field, and $\exp(\mi \mathbf{k} \cdot
-\mathbf{z}^\prime)$ is the free-space transfer function along the 
+where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field at
+the surface ($z^\prime=0$) given by Fresnel equations, taking into account
+the distribution of the exciting field, and $\exp(\mi \mathbf{k} \cdot
+\mathbf{z}^\prime)$ is the free-space transfer function along the
 propagation direction $\mathbf{z}^\prime$ which includes the evanescent
-wave due to the domain of integration.  The mathematical details of this procedure
-will be elaborated in \Section{sec:interferencetheory}, and the
-computational details in \Section{sec:mrfsim}.
+wave due to the domain of integration.  The mathematical details of the
+computation are further elaborated in \Section{sec:interferencetheory} and
+\Section{sec:mrfsim}.  Note that even though the Fresnel equations provides 
+an angular spectrum, the far field is not simply given by multiplying
+$\tilde{\mathbf{E}}(\mathbf{k})$ by the angular spectrum of the exciting
+field; a small lateral shift of the beam is introduced in certain
+cases~\cite{chuang1986lateral}.
 
-Plots of the incident, reflected, and near field intensities are shown in
-\Figure{fig:fresnelnearfieldspp} for the three layer structure, which we
-will call ``conventional SPPs'', and in \Figure{fig:fresnelnearfieldlrspp}
-for the four layer structure, which we will call ``long range SPPs''
-(LRSPPs).  This terminology will shortly become clear.  Both were excited
-at \SI{660}{\nano\meter} with a Gaussian beam of numerical aperture
-$\mathrm{NA}=0.2$.  The important features of these plots are as follows:
-\begin{itemize}
-\item As might be inferred from \Figure{fig:fresnelangle},
-the most prominent feature of SPP excitation is a minimum, or ``notch'' in
-the specularly reflected light at an angle $\thetasp$.  The angular
-location of this minimum is highly sensitive to the refractive index in
-which the SPP propagates; this is the mechanism most commonly exploited for
-biosensing.  The notch can always be found close to the critical
-angle for total internal reflection, with sharper resonances being closer
-than broader ones.
-\item Owing to their greater attenuation, excitation of conventional SPPs
-displays a relatively broader notch compared with long range SPPs.
-\item In the near field $x$-$y$ plots, both show the diffraction limited
-focal spot at the origin as a small \SI{3x5}{\micro\meter} ellipse, with
-SPPs propagating along the metal interface in the positive $x$ direction.
-It can be seen that the LRSPP propagation distance is nearly 10 times that
-of conventional SPPs.  This isn't necessarily a comment on the system's
-refractive index sensitivity, though we will use this property to explore
-single and multiple scattering effects in \Chapter{ch:scatteringmicro}.
-\end{itemize}
+The Fourier transform recipe was used to generate plots of the incident,
+reflected, and near field intensities, shown in
+\Figure{fig:fresnelnearfieldspp} for the three layer structure, designated
+``conventional SPPs'', and in \Figure{fig:fresnelnearfieldlrspp} for the
+four layer structure, designated ``long range SPPs'' (LRSPPs).  The choice
+of this terminology is motivated by the respective SPP propagation lengths.
+Figures~\ref{fig:fresnelnearfieldspp} and~\ref{fig:fresnelnearfieldlrspp} were
+both computed using an excitation wavelength of \SI{660}{\nano\meter} and a
+Gaussian incident beam of numerical aperture $\mathrm{NA}=0.2$. 
+
+As evident from the coupling conditions predicted by the Fresnel equations,
+the most prominent optical feature of SPP excitation is a minimum, or
+``notch'' in the specularly reflected light at the surface plasmon
+resonance angle $\thetasp$.  The angular location of the minimum is highly
+sensitive to the refractive index in which the SPP propagates; the
+mechanism most commonly exploited for biosensing.  In prism coupled setups,
+the notch is always be found close to the critical angle for total internal
+reflection, with sharper resonances being closer than broader ones.
+Regarding the notch, owing to their greater attenuation, excitation of
+conventional SPPs displays a relatively broader notch compared with long
+range SPPs.
+
+In the near field $x$-$y$ plots, both \Figure{fig:fresnelnearfieldspp} and
+\Figure{fig:fresnelnearfieldlrspp} show a diffraction limited focal spot at
+the origin, as a small \SI{3x5}{\micro\meter} ellipse with SPPs propagating
+along the metal interface at $z=0$ in the positive $x$ direction.  Here it
+can be observed that the LRSPP propagation length is nearly 10 times that
+of conventional SPPs.  Such increased propagation lengths aren't
+necessarily connected to the system's inherent bulk refractive index
+sensitivity, though in practice physical instrumentation provides a better
+signal with sharper optical resonances compared with broad ones.  
+
+%Questions of bulk refractive index sensitivity are further expounded in \Chapter
 
 \begin{figure}[ht]
 \centering

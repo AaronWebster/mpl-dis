@@ -31,7 +31,7 @@
 %\usepackage[toc,page]{appendix}
 
 \usepackage{hyperref}
-\hypersetup{
+\hypersetup{%
  colorlinks=false,
  hidelinks=true,
  pdfauthor={Aaron Webster},
@@ -61,7 +61,7 @@
 
 % siunitx
 \usepackage{siunitx}
-\sisetup{ 
+\sisetup{%
 binary-units,
 per-mode=reciprocal,
 % load-configurations=abbreviations
@@ -85,7 +85,7 @@ per-mode=reciprocal,
 \makeatother  
 
 % insert an unnumbered chapter
-\newcommand{\silentchapter}[2]{
+\newcommand{\silentchapter}[2]{%
  \setcounter{chapter}{#1}
  \setcounter{section}{0}
  \chapter*{#2}

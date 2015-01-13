@@ -7,7 +7,7 @@
 support SPPs.  Domain $D_1$ has permittivity $\epsilon_1$, typically a
 dielectric, and domain $D_2$ a permittivity $\epsilon_2$, typically a
 conductive metal.}
- \label{fig:singleinterfacegeo}
+\label{fig:singleinterfacegeo}
 \end{figure}
 
 From the plane wave ansatz to Maxwell's equations, the 
@@ -86,28 +86,29 @@ H_{y,2}&=H_{y,1}\\
 \epsilon_2 E_{z,2}&=\epsilon_1 E_{z,1}.
 \end{align}
 Applying Ampere's law (\Equation{eqn:ampereslaw}) to the field on 
-each boundary gives
-\begin{align}
-\nabla \times \mathbf{H}_i &= \epsilon_i \frac{\partial \mathbf{E}_i}{\partial t}\\
-\begin{pmatrix}
-\frac{\partial H_{z,i}}{\partial y} - \frac{\partial H_{y,i}}{\partial z}\\
-\frac{\partial H_{x,i}}{\partial y} - \frac{\partial H_{z,i}}{\partial z}\\
-\frac{\partial H_{y,i}}{\partial y} - \frac{\partial H_{x,i}}{\partial z}
-\end{pmatrix}
-&= \begin{pmatrix}
--\mi k_{z,i} H_{y,i}\\
-0\\
-\mi k_{x,i} H_{y,i}
-\end{pmatrix}
-\\
-&= \begin{pmatrix}
--\mi \omega \epsilon_i E_{x,i}\\
-0\\
--\mi \omega \epsilon_i E_{z,i}
-\end{pmatrix}.
-\label{eqn:vectordisp}
-\end{align}
-The vector components of \Equation{eqn:vectordisp} are therefore related,
+each boundary and relating the vector components gives
+%each boundary gives
+%\begin{align}
+%\nabla \times \mathbf{H}_i &= \epsilon_i \frac{\partial \mathbf{E}_i}{\partial t}\\
+%\begin{pmatrix}
+%\frac{\partial H_{z,i}}{\partial y} - \frac{\partial H_{y,i}}{\partial z}\\
+%\frac{\partial H_{x,i}}{\partial y} - \frac{\partial H_{z,i}}{\partial z}\\
+%\frac{\partial H_{y,i}}{\partial y} - \frac{\partial H_{x,i}}{\partial z}
+%\end{pmatrix}
+%&= \begin{pmatrix}
+%-\mi k_{z,i} H_{y,i}\\
+%0\\
+%\mi k_{x,i} H_{y,i}
+%\end{pmatrix}
+%\\
+%&= \begin{pmatrix}
+%-\mi \omega \epsilon_i E_{x,i}\\
+%0\\
+%-\mi \omega \epsilon_i E_{z,i}
+%\end{pmatrix}.
+%\label{eqn:vectordisp}
+%\end{align}
+%The vector components of \Equation{eqn:vectordisp} are therefore related,
 \begin{align}
 -\mi k_{z,i} H_{y,i} &= -\mi \omega \epsilon_i E_{x,i}\\
 k_{z,1} H_{y,1} &= \omega \epsilon_1 E_{x,1}\\
