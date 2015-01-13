@@ -1,4 +1,4 @@
-\documentclass[a4paper,titlepage,onecolumn]{report}
+\documentclass[12pt,a4paper,titlepage,onecolumn]{report}
 \input{preamble}
 
 \begin{document}
@@ -19,12 +19,12 @@
 \pagenumbering{arabic}
 
 %%%%% THE FUN STARTS HERE %%%%%
-\chapter{Introduction} \label{ch:allintro}
+\silentchapter*{Overview and Organization} \label{ch:allintro}
 \import{preface/}{preface}
 
-\part{Surface Plasmon Resonance}
+\part{Surface Plasmon Resonance} \label{part:spr}
 \chapter{Introduction}
-%\import{existence/}{introduction}
+\import{existence/}{introduction}
 \section{Historical Perspective}
 \import{existence/}{historical}
 
@@ -138,7 +138,7 @@
 \import{scatteringmicro/}{mrfsim}
 \chapter{Outlook} \label{ch:outlook}
 
-\part{The Centrifugal Force Quartz Crystal Microbalance}
+\part{The Centrifugal Force Quartz Crystal Microbalance} \label{part:qcm}
 \chapter{Foundations} \label{ch:qcmfoundations}
 \section{Introduction}
 \import{qcm/}{introduction}
@@ -176,9 +176,9 @@
 \bibliographystyle{plain}
 \bibliography{bibliography}
 
-\chapter*{Declaration of Originality}
+\silentchapter*{Declaration of Originality}
 \import{frontmatter/}{declaration}
-\chapter*{Acknowledgements}
+\silentchapter*{Acknowledgements}
 \import{frontmatter/}{acknowledgments}
 
 

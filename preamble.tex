@@ -78,6 +78,20 @@ per-mode=reciprocal,
 \usepackage{titlesec}
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray}{|}\hsp}{0pt}{\Huge\bfseries}
+
+% reset chapter numbers at the parts
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother  
+
+% insert an unnumbered chapter
+\newcommand{\silentchapter}[2]{
+ \setcounter{chapter}{#1}
+ \setcounter{section}{0}
+ \chapter*{#2}
+ \addcontentsline{toc}{chapter}{#2}
+}
+
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
 % This definition puts a little vertical guy at the end so it's more
