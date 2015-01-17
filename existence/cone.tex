@@ -1,17 +1,21 @@
-The signature of surface plasmon resonance in a prism coupled setup is the
-notch in the specular direction, which can be thought of as arising from
-interference between the specularly reflected beam and the re-radiated SPP
-field anti-phase at $\thetasp$.  There is is, however, an additional
-important signature which can be observed in the same half-space.
+The notch in the angular intensity of light reflected in the specular
+direction arises due to interference between the specularly reflected beam
+and the re-radiated SPP field anti-phase at the excitation angle,
+$\thetasp$.  As most of the incident light is specularly reflected into
+this direction, the notch is the most obvious spatial signature of surface
+plasmon resonance in a prism coupled configuration.  Much less obvious, but
+equally important for the present discussion, is an additional optical
+feature observable in the same half-space.
 
-As observed in SPOM experiments with near field probes, during propagation
+As first shown in SPOM experiments with near field probes, during propagation
 roughness or other surface inhomogeneities can elastically modify the
 in-plane momentum of an SPP\@.  This phenomena is known as ``directional
 scattering'', the signature of which is a annular ``cone'' of light at
 $\thetasp$ along an azimuthal coordinate $\phi$ (\Figure{fig:conefig}).
 Though light in the cone is far less intense than in the specular
-direction, with even a \SI{5}{\milli\watt} HeNe laser it is bright enough
-to be observed with the naked eye or recorded using an image sensor.
+direction, it can be readily observed with the naked eye with a visible
+laser of only a few milliwatts (e.g.\ a \SI{5}{\milli\watt} HeNe at
+\SI{632.8}{\nano\meter}~\cite{schumann2009surface}).
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}
@@ -21,15 +25,16 @@ to be observed with the naked eye or recorded using an image sensor.
 \label{fig:conefig}
 \end{figure}
 
-The physical process describing light in the cone proceeds as follows:
-light first transmits the prism and permeates the metal film, exciting
-SPPs.  The first transmission is identified by the Fresnel \textit{forward}
-transmission coefficient, $t^p_+$ (e.g.\ for a three layer system with
-layers 0, 1, and 2, $t^p_+ \equiv t^p_{012}$).  Upon SPP re-radiation as a
-photon, light will take the transmitted path in reverse, which is
-identified by the Fresnel \textit{reverse} transmission, $t^p_-$ (e.g.
-$t^p_- \equiv t^p_{210}$).  The intensity in the cone $I_\mathrm{cone}$ is
-proportional to the product of these two~\cite{simon1976directional}.
+The physical process responsible for directionally scattered light begins
+with the transmission of the incident light at $\thetasp$ through the layer
+structure, evanescently exciting SPPs.  This first transmission is
+identified by the Fresnel \textit{forward} transmission coefficient,
+$t^p_+$ (e.g.\ for a three layer system with layers 0, 1, and 2, $t^p_+
+\equiv t^p_{012}$).  Upon SPP re-radiation as a photon, light will take the
+transmitted path in reverse, back through the layer structure into the
+prism, which is identified by the Fresnel \textit{reverse} transmission,
+$t^p_-$ (e.g.  $t^p_- \equiv t^p_{210}$).  The intensity in the cone
+$I_\mathrm{cone}$ is proportional to the product $t^p_+$ and $t^p_-$~\cite{simon1976directional},
 \begin{equation}
 I_\mathrm{cone} 
 = \frac{1}{I_0}\frac{\mathrm{d}I}{\mathrm{d}\Omega} 
@@ -66,13 +71,13 @@ except in a limited scope in \Chapter{ch:scatteringmicro}, such that
 \label{eqn:conefield}
 \end{equation}
 
-Due to the \textit{double} plasmonic enhancement in \Equation{eqn:guhacone},
-light in the cone has a smaller angular width than its specular counterpart in
-the notch, shown in \Figure{fig:conevsnotch} for a three layer system
-($n_1=1.5142$, $n_2=\num{0.2843 + 3.3825i}$, $n_3=1.331$ and
-$d_2=\SI{45}{\nano\meter}$).  In \Figure{fig:conevsnotch}, the cone has
-been inverted and normalized to the same range as the notch.
-
+Due to the \textit{double} plasmonic enhancement in
+\Equation{eqn:guhacone}, light in the cone has a smaller angular width than
+its specular counterpart in the notch, shown in \Figure{fig:conevsnotch}
+for a three layer system ($n_1=1.5142$, $n_2=\num{0.2843 + 3.3825i}$,
+$n_3=1.331$ and $d_2=\SI{45}{\nano\meter}$).  In \Figure{fig:conevsnotch},
+the cone signal has been inverted and normalized to the same range as the
+notch to facilitate this comparison.
 %The smaller angular width will enhance
 %This aspect causes certain measurements in
 %the cone to be more sensitive than those in the notch, an aspect we will
@@ -81,8 +86,27 @@ been inverted and normalized to the same range as the notch.
 \centering
 \import{includes/}{setpgfinc}
 \import{existence/figures/}{cone_vs_notch}
-\caption{Comparison of the angular profiles of the cone and notch.  The
-cone has been inverted and normalized to the same range as the notch for
+\caption{Comparison of the angular optical profile of the cone and notch.  The
+cone signal has been inverted and normalized to the same range as the notch for
 comparison.}
 \label{fig:conevsnotch}
 \end{figure}
+
+The notch is the prime spatial feature of SPR biosensing in prism coupled
+setups and, as a result of the significant academic and commercial interest
+in the field, it is very well understood.  Furthermore, advancements in the
+engineering and implementation of such devices already achieved shot-noise
+limited performance~\cite{piliarik2009surface}.  In contrast, very little
+information is avaliable about the cone apart from a few material-science
+oriented papers showing the utility of its integrated intensity in SPOM
+measurements~\cite{kim1995scanning}, connection with surface
+roughness~\cite{simon1976directional}, and angular polarization
+distribution~\cite{kim1997conical}.  The present work attempts to addresses
+this difficiency in the context of biosensing with new investigations into
+the influence of the spatial intensity distribution in the cone on both
+changes in bulk refractive index (\Section{sec:bulkri}) as well as
+pertrubations in the underlying scattering microstructure
+(\Chapter{ch:scattteringmicro}).  In particular, it will be shown under
+certain conditions the cone will contain optical speckle, which can be used
+to great utility to sense discrete binding events which perturb the
+scattering microstructure.

@@ -22,7 +22,7 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
 \item The metal layer must
 \begin{enumerate}
 \item be thin enough to be at least partially optically transparent at the excitation wavelength
-\item have small enough damping, set by its permittivity, so that SPPs can propagate
+\item have small enough damping, set by its permittivity, such that SPPs can propagate
 \end{enumerate}
 \end{enumerate}
 
@@ -39,12 +39,26 @@ $\theta>\arcsin\left(n_1/n_2\right)$.
   %\caption{Kretschmann SP.}
  \end{subfigure}
 \caption{Prism coupled excitation of SPPs in the Kretschmann configuration,
-								(a), a three layer interface system, and (b), a four layer
-								interface system. }
+(a), a three layer interface system, and (b), a four layer interface system. }
 \label{fig:prismcoupledsetups}
 \end{figure}
 
-To begin, consider the single interface system, first shown in
+The above conditions are satisfied when using the Kretschmann ATR
+configuration to excite SPPs.  In the Kretschmann ATR configuration, light
+incident at an angle from a dielectric prism is totally reflected from a
+surface with the aforementioned multilayer structure.  The incident angle
+is tuned such that the momentum of evanescent light on the surface matches
+that of an SPP, i.e.\ the intersection of the SPP and light line
+for a dielectric in \Figure{fig:dispersionrelation}.  
+
+The Kretschmann ATR configuration is perhaps the most popular amongst many
+different strategies capable of exciting SPPs.  Apart from ATR, the next
+most commonly encountered strategy matches the SPP momentum using
+diffractive gratings~\cite{homola1999surface}, though the grating coupler's
+refractive index sensitivity is not as high as
+ATR~\cite{homola1999senscomparison}.
+
+Consider the single interface system, first shown in
 \Figure{fig:singleinterfacegeo}.  The single interface system is modified
 into a two interface, three layer system by adding another layer, $D_3$, as
 shown in \Figure{fig:prismcoupledsetups}(a).  In the three layer system,
@@ -83,7 +97,7 @@ model.  Model parameters are from Refs.~\cite{ung2007interference} and
 \end{table}
 
 \Table{tbl:epsmetal600} shows the complex permittivity for several metals
-at $\lambda=\SI{660}{\nano\meter}$, from which it is straighforward to
+at $\lambda=\SI{660}{\nano\meter}$, from which it is straightforward to
 select an appropriate metal: silver, gold, or copper, with silver having
 the smallest value for $\epsilon^{\prime\prime}$.  Since
 $\epsilon^{\prime\prime}$ is related to energy lost in the medium, a small
@@ -135,12 +149,12 @@ critical angle for total internal reflection (dashed line).}
 \end{figure}
 
 \subsection{Near and Far Fields}\label{sec:fresnelnearfar}
-The Fresnel equations have thus far been used to predict the conditions for
+The Fresnel equations have used to predict the conditions for
 optimal SPP excitation, manifest as a minimum in the Fresnel reflectivity
 for light incident at a particular angle and wavelength for a given layer
 geometry.  In addition to the coupling conditions, the Fresnel equations
 can also be used to predict the complete near and far optical fields,
-taking into account effects from SPP propagation.  
+taking into account effects from SPPs.
 
 Evaluation of the near and far fields is carried out by taking advantage of
 the shift theorem using the standard Fourier transform recipe,
@@ -156,7 +170,7 @@ the distribution of the exciting field, and $\exp(\mi \mathbf{k} \cdot
 propagation direction $\mathbf{z}^\prime$ which includes the evanescent
 wave due to the domain of integration.  The mathematical details of the
 computation are further elaborated in \Section{sec:interferencetheory} and
-\Section{sec:mrfsim}.  Note that even though the Fresnel equations provides 
+\Section{sec:mrfsim}.  Even though the Fresnel equations provides 
 an angular spectrum, the far field is not simply given by multiplying
 $\tilde{\mathbf{E}}(\mathbf{k})$ by the angular spectrum of the exciting
 field; a small lateral shift of the beam is introduced in certain
@@ -166,17 +180,18 @@ The Fourier transform recipe was used to generate plots of the incident,
 reflected, and near field intensities, shown in
 \Figure{fig:fresnelnearfieldspp} for the three layer structure, designated
 ``conventional SPPs'', and in \Figure{fig:fresnelnearfieldlrspp} for the
-four layer structure, designated ``long range SPPs'' (LRSPPs).  The choice
-of this terminology is motivated by the respective SPP propagation lengths.
-Figures~\ref{fig:fresnelnearfieldspp} and~\ref{fig:fresnelnearfieldlrspp} were
-both computed using an excitation wavelength of \SI{660}{\nano\meter} and a
-Gaussian incident beam of numerical aperture $\mathrm{NA}=0.2$. 
+four layer structure, designated ``long range SPPs'' (LRSPPs).  The use of
+this terminology is motivated by the respective propagation lengths,
+though physically the SPPs are identical.
+Figures~\ref{fig:fresnelnearfieldspp} and~\ref{fig:fresnelnearfieldlrspp}
+were computed using an excitation wavelength of \SI{660}{\nano\meter}
+and a Gaussian incident beam of numerical aperture $\mathrm{NA}=0.2$. 
 
-As evident from the coupling conditions predicted by the Fresnel equations,
-the most prominent optical feature of SPP excitation is a minimum, or
-``notch'' in the specularly reflected light at the surface plasmon
-resonance angle $\thetasp$.  The angular location of the minimum is highly
-sensitive to the refractive index in which the SPP propagates; the
+As evidenced from the coupling conditions predicted by the Fresnel
+equations, the most prominent optical feature of SPP excitation is a
+minimum, or ``notch'' in the specularly reflected light at the surface
+plasmon resonance angle $\thetasp$.  The angular location of the minimum is
+highly sensitive to the refractive index in which the SPP propagates; the
 mechanism most commonly exploited for biosensing.  In prism coupled setups,
 the notch is always be found close to the critical angle for total internal
 reflection, with sharper resonances being closer than broader ones.
@@ -187,14 +202,15 @@ range SPPs.
 In the near field $x$-$y$ plots, both \Figure{fig:fresnelnearfieldspp} and
 \Figure{fig:fresnelnearfieldlrspp} show a diffraction limited focal spot at
 the origin, as a small \SI{3x5}{\micro\meter} ellipse with SPPs propagating
-along the metal interface at $z=0$ in the positive $x$ direction.  Here it
-can be observed that the LRSPP propagation length is nearly 10 times that
-of conventional SPPs.  Such increased propagation lengths aren't
-necessarily connected to the system's inherent bulk refractive index
-sensitivity, though in practice physical instrumentation provides a better
-signal with sharper optical resonances compared with broad ones.  
-
-%Questions of bulk refractive index sensitivity are further expounded in \Chapter
+along the metal interface at $z=0$ in the positive $x$ direction.  The
+multilayer structure (LRSPPs) exhibits a propagation length nearly 10 times
+that of the single layer (conventional SPPs).  Such increased propagation
+lengths aren't necessarily connected to the system's inherent bulk
+refractive index sensitivity, though in practice physical instrumentation
+provides a better signal with sharper optical resonances compared with
+broad ones.  
+%Questions of bulk refractive index sensitivity are further expounded in
+%\Chapter
 
 \begin{figure}[ht]
 \centering
