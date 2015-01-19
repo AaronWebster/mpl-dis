@@ -35,6 +35,7 @@
  colorlinks=false,
  hidelinks=true,
  pdfauthor={Aaron Webster},
+ pageanchor=false,
 }
 
 \usepackage{pgfplots}
@@ -85,11 +86,11 @@ per-mode=reciprocal,
 \makeatother  
 
 % insert an unnumbered chapter
-\newcommand{\silentchapter}[2]{%
- \setcounter{chapter}{#1}
+\newcommand{\silentchapter}[1]{%
+ \setcounter{chapter}{0}
  \setcounter{section}{0}
- \chapter*{#2}
- \addcontentsline{toc}{chapter}{#2}
+ \chapter*{#1}
+ \addcontentsline{toc}{chapter}{#1}
 }
 
 % New definition of square root:
