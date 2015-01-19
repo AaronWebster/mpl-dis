@@ -22,7 +22,7 @@
 \usepackage{rotating}
 \usepackage{ifthen}
 \usepackage[parfill]{parskip}
-\usepackage[inline]{showlabels}
+%\usepackage[inline]{showlabels}
 \usepackage{subcaption}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{relsize}
@@ -96,7 +96,7 @@ per-mode=reciprocal,
 % it renames \sqrt as \oldsqrt
 % This definition puts a little vertical guy at the end so it's more
 % obvious where the square root actually ends.
-\let\oldsqrt\sqrt%
+\let\oldsqrt\sqrt
 % it defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
