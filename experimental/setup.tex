@@ -6,45 +6,31 @@
 \label{fig:experimentalpicture}
 \end{figure}
 
-%A magnetic sensor consisting of a prism coupler and a magnetic thin film has
-%been theoretically proposed [11], but the Otto configuration of attenu- ated
-%total reflection has been applied in the design, requiring the thickness of the
-%air gap that exists between the prism and the thin film to be smaller than the
-%light wavelength. This is necessary for efficient coupling of the evanescent
-%wave to the film, and thus con- siderably limits any practical applications. In
-%fact, effective coupling between the evanescent wave and the thin film can be
-%achieved more simply and easily in the Kretschmann attenuated total reflec-
-%tion configuration, in which the thin film is directly deposited on the surface
-%where the total internal reflection occurs.
-
-The experimental setup for SPP experiments was based on a modified Kretschmann
-attenuated total relfection configuration
-
-An image of the experimental setup for experiemnts in this part is shown in
-\Figure{fig:experimentalpicture} with its functional components annotated.  A
-simplified schematic is also shown in \Figure{fig:experimentalsetup}.
-
-Light from a \SI{50}{\milli\watt} \SI{660}{\nano\meter} diode laser (Ingis
-660, Laser Quantum Ltd.) with a bandwidth of \SI{30}{\giga\hertz} is first
-coupled into a single mode optical fiber via an integrated air-spaced
-doublet fiber collimator.  The fiber guides the laser light to an optical
-breadboard mounted on an inverted microscope.  All primary functions of the
-experimental setup take place on the breadboard.  At the breadboard stage,
-the Gaussian beam from the single mode fiber is collimated by an output
-coupler to a beam waist of $w_0=\SI{5}{\milli\meter}$ and proceeds through
-a polarizing beamsplitter, passing $p$ polarized light.  The light is
-focused by a 10X microscope objective (Olympus plan achromat,
+Prism coupled excitation of SPPs were carried out using a modified
+experimental setup based on the simple Kretschmann attenuated total reflection
+(ATR) configuration, shown as an annotated image in
+\Figure{fig:experimentalpicture} and schematically in
+\Figure{fig:experimentalsetup}.  Light from a \SI{50}{\milli\watt}
+\SI{660}{\nano\meter} diode laser (Ingis 660, Laser Quantum Ltd.) with a
+bandwidth of \SI{30}{\giga\hertz} is first coupled into a single mode optical
+fiber via an integrated air-spaced doublet fiber collimator.  The fiber guides
+the laser light to an optical breadboard mounted on an inverted microscope.
+All primary functions of the experimental setup take place on the breadboard.
+At the breadboard stage, the Gaussian beam from the single mode fiber is
+collimated by an output coupler to a beam waist of $w_0=\SI{5}{\milli\meter}$
+and proceeds through a polarizing beamsplitter, passing $p$ polarized light.
+The light is focused by a 10X microscope objective (Olympus plan achromat,
 $\mathrm{NA}=0.25$, \SI{10.6}{\milli\meter} working distance) onto the
 hypotenuse of a hemispherical prism of diameter $d=\SI{10}{\milli\meter}$.
 The beamsplitter and microscope objective are mounted on a rotation stage
 which itself is mounted on a micrometer stage.  The objective itself is
 mounted on a zoom housing enabling linear travel along the optical axis,
-greatly simplifying the task of focussing.  When the rotation stage is at
-the surface plasmon resonance angle, the micrometer $z$ axis is fixed with
-a near-diffraction limited spot at the center of the prism's hypotenuse.
-The size of the spot can then be modified via the zoom housing, and its
-transverse location on the surface by the $x$ and $y$ lead screws on the
-micrometer stage.  
+greatly simplifying the task of focussing.  When the rotation stage is at the
+surface plasmon resonance angle, the micrometer $z$ axis is fixed with a
+near-diffraction limited spot at the center of the prism's hypotenuse.  The
+size of the spot can then be modified via the zoom housing, and its transverse
+location on the surface by the $x$ and $y$ lead screws on the micrometer
+stage.  
 
 \begin{figure}[ht]
 \centering
@@ -64,35 +50,33 @@ the entire experiment in the plane of the optical table, and thus a way to
 position the inverted microscope objective without disturbing the rest of
 the setup.
 
-The hemispherical prism affords a useful optical feature with regards to
-the optical system.  If the focal spot is positioned at the central point
-of the hemispherical prism's hypotenuse and the focussing optic obeys the
-sine condition, a minimum amount of abberation will be introduced by the
-presence of the hemispherical prism.  To take advantage of this feature, a
-microscope objective was chosen to as the focussing optic.  The use of a
-microscope objective and hemispherical prism is not strictly necessary
-however; previous versions of the experimental setup made use of an
-$f=\SI{25}{\milli\meter}$ aspheric lens for focussing and a
-\SI{25}{\milli\meter} diameter, $f=\SI{20}{\milli\meter}$ aspheric
-condenser lens as an ersatz hemispherical prism.  The aspheric focussing
-and condenser lens does distort the incident and reflected light precluding
-a diffraction limited spot, however this choice affords qualatatively the
-same physics with a much lower cost.
+The hemispherical prism affords a useful optical feature with regards to the
+optical system.  If the focal spot is positioned at the central point of the
+hemispherical prism's hypotenuse and the focussing optic obeys the sine
+condition, a minimum amount of abberation will be introduced by the presence
+of the hemispherical prism.  To take advantage of this feature, a microscope
+objective was chosen to as the focussing optic.  The use of a microscope
+objective and hemispherical prism is not strictly necessary; previous versions
+of the experimental setup made use of an $f=\SI{25}{\milli\meter}$ aspheric
+lens for focussing and a \SI{25}{\milli\meter} diameter,
+$f=\SI{20}{\milli\meter}$ aspheric condenser lens as an ersatz hemispherical
+prism.  The aspheric focussing and condenser lens does distort the incident
+and reflected light precluding a diffraction limited spot, however this choice
+affords qualatatively the same physics with a much lower cost.
 
-Extra attention was not given to mechanical stability.  Though the quality
-of the optomechanical components was acceptable, the mounting of imaging
-sensors and the prism extended on a glass slide were less than what would
+Extra attention was not given to mechanical stability.  Though the quality of
+the optomechanical components was acceptable, the mounting of imaging sensors
+and the prism extended on a glass slide were less than what would
 typically be considered optically rigid.  Despite this, no effects were
 observed on the specular or cone sensor which could be attributed to
-mechanical instability.  The image from the inverted microscope objective
-however was subject to low frequency ($<\SI{5}{\hertz}$) displacements
-coincident with transient events in the laboratory: footsteps, opening and
-shutting of doors, etc.  Such artifacts when present were corrected for
-after data acquisition with image stabilization functions built in to the
-software program Fiji~\cite{schindelin2012fiji}.
+mechanical instability, however the image from the inverted microscope
+objective exhibited low frequency ($<\SI{5}{\hertz}$) displacements coincident
+with transient events in the laboratory: footsteps, opening and shutting of
+doors, etc.  Such artifacts when present were corrected for after data
+acquisition with image stabilization functions built in to the software
+program Fiji~\cite{schindelin2012fiji}.
 
 \subsection{Imaging Sensor}
-
 Three identical imaging sensors were employed concurrently to acquire
 experiemntal data.  The imaging sensors used were IDS USB 2.0 \SI{8}{\bit}
 CMOS sensors with a spatial resolution of $1280\times1024$ pixels.  The
@@ -119,7 +103,7 @@ the focal spot and to capture an angular region of approximately
 A modified version of the program \texttt{ueyedemo} included with the IDS
 UEye SDK version 3.82 was used to read the raw sensor data directly from
 memory and write it to a single binary file on the disk of the host
-computer.  The modifications afforded the data acquistion several speed
+computer.  The modifications afforded the data acquisition several speed
 advantages compared with the stock software included with the IDS sensors.
 First, all calls to image or video libraries were suppressed by removing
 the need to transcode the pixel data, instead writing raw pixel data
