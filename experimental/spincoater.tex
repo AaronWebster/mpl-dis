@@ -1,9 +1,9 @@
 During the course of the present experimental work, a standard programmable
-spin coater was not available.  Being a rather expensive piece of
-equipment, a device was made in its stead using a repurposed spinning
-platter type hard disk drive.  Spin coaters built in this fashion have been
-reported before~\cite{bianchi2006spin}, but herein is described a much
-simpler and economic implementation using off the shelf components.
+spin coater was not available.  Being a rather expensive piece of equipment, a
+ersatz spin coater was made using a spinning platter type hard disk drive.
+Spin coaters built in this fashion have been reported
+before~\cite{bianchi2006spin}, but herein is described a much simpler and
+economic implementation using off the shelf components.
 
 The cover from all internal components except for the motor are first
 removed.  A solid aluminum plate is affixed to the top of the motor using
@@ -32,12 +32,12 @@ particularly at around \SI{2800}{RPM}.
 %brake on
 %timing  high
 %low voltage
-\begin{table}
+\begin{table}[h]
 \sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
  \centering
  \begin{tabular}{SS}
   \toprule
-	{angular speed (RPM)} & {standard deviation} \\
+	{spin speed (RPM)} & {standard deviation} \\
   \midrule
 1269.8894 & 1.14048935075416\\
 2107.5322 & 1.86546956391079\\
@@ -49,12 +49,37 @@ particularly at around \SI{2800}{RPM}.
 5683.387  & 0.891548183367202\\
 6176.233  & 0.733084759973966\\
 6691.978  & 1.61663545800572\\
-  \bottomrule
- \end{tabular}
- \caption{Standard deviation of the spin speed at certain nominal angular speeds
- for the hard disk spin coater.}
+\bottomrule
+\end{tabular}
+\caption{Standard deviation of the spin speed at nominal angular speeds for the hard disk spin coater.}
 \label{tbl:spincoatererror}
 \end{table}
+
+The reproducability of Cytop layers obtained in this way was found to be on
+average approximately \SI{70}{\nano\meter} across the entire spin speed range.
+The is greater than the fit error of the Fresnel reflectivity, which was
+always found to be on the order of or less than \SI{1}{\nano\meter}.
+
+% 5000 4.6406e-08
+% 4000 7.6441e-08
+% 3000 6.4829e-08
+% 7000 9.4872e-08
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{SSS}
+%\toprule
+%{spin speed (RPM)} & {average thickness (\si{\meter})} & {error (\si{\meter})} \\
+%\midrule
+%3000  & 1.54e-06 & 2.429e-09\\
+%4000  & 1.18e-06 & 6.000e-10\\
+%5000  & 1.05e-06 & 5.540e-10\\
+%6000  & 9.81e-07 & 8.349e-10\\
+%\bottomrule
+%\end{tabular}
+%\caption{Accuracy of Cytop layers produced using the spin coating method.}
+%\label{tbl:spincoataccuracy}
+%\end{table}
+
 %\begin{figure}
 % \centering
 % \import{includes/}{setpgfinc}

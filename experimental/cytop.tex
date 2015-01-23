@@ -3,32 +3,33 @@ more commonly referred to by its commercial name Cytop, was employed to
 make multilayer substrates supporting long range surface plasmons.
 
 At an operating wavelength of \SI{660}{\nano\meter} and at
-\SI{20}{\celsius}, the refractive index of Cytop is very close to water --
+\SI{20}{\celsius}, the refractive index of Cytop is very close to water ---
 1.341 for Cytop~\cite{mikevs2005synthesis} versus 1.331 for distilled
 water~\cite{andreasson1971measurement}.  The similar refractive index
 allows a near-symmetric refractive index profile required for long range
-surface plasmons.
+surface plasmons as described in \Section{sec:fresnelexist}.
 
 Cytop was purchased from AGC Chemicals as item number CTX-809A.  The last
-letter ``A'' in the item number designates it is intended for use on
-amorphous (glass) applications, and the subsequent number designates the
-concentration.  For example, CTX-809A is \SI{9}{\percent} cytop and
-\SI{91}{\percent} solvent, and likewise CTX-803A is \SI{3}{\percent} cytop
-and \SI{97}{\percent} solvent.  Atachi manufactures another item with an
-``M'' designation designed for metals, but in either case the multilayer
-structure would have one side in contact with a non-optimal material.
-Similar to the metal layers described in \Section{sec:expsputtering}, the
-adhesion of the cytop to both metals and glass was very poor, but with
-careful handling is not an issue.
+letter ``A'' in the item number designates it is intended for use on amorphous
+(glass) applications, and the subsequent number designates the concentration.
+For example, CTX-809A is \SI{9}{\percent} cytop and \SI{91}{\percent} solvent,
+and likewise CTX-803A is \SI{3}{\percent} cytop and \SI{97}{\percent} solvent.
+Atachi manufactures another item with an ``M'' designation designed for
+metals, but in either case the multilayer structure would have one side in
+contact with a non-optimal material.  Similar to the metal layers described in
+\Section{sec:expsputtering}, the adhesion of the cytop to both metals and
+glass was poor, as such careful handling combined with a low pressure
+differentials in the microfluidic stage was employed to prevent separation.
 
-The thin films were made following a spin-coating procedure.  A small drop
-of CTX-809A was placed directly on a clean \SI{12}{\milli\meter} round
-glass coverslip and the coverslip spun at \SI{3000}{RPM} for \SI{30}{\second}.
+Thin films were made following a spin-coating procedure.  A small drop of
+CTX-809A was placed directly on a clean \SI{12}{\milli\meter} round glass
+coverslip and the coverslip spun at \SI{3000}{RPM} for \SI{30}{\second}.
 Immediately after the coverslip was removed and placed on a hot plate at
-\SI{50}{\celsius} for \SI{30}{\minute}.  The temperature of the hot plate
-was then increased to \SI{200}{\celsius} and the Cytop allowed to cure for
-\SI{12}{\hour} to remove any remaining solvent.  After cooling, the metal
-films were sputtered directly without any further surface modification.
+\SI{50}{\celsius} for \SI{30}{\minute}.  The temperature of the hot plate was
+then increased to \SI{200}{\celsius} and the Cytop allowed to cure for
+\SI{12}{\hour} assure all solvents had evaporated.  After cooling, the metal
+films were sputtered directly on the Cytop layer without any further surface
+modification.
 
 The resultant film thicknesses were determined with a spectrometer by
 measuring its broadband reflectance at $\theta=\SI{45}{\degree}$ and using
@@ -36,8 +37,8 @@ a nonlinear least squares routine~\cite{more1977LevAlgImpThe_2} to
 fit the Fresnel intensity reflection coefficient for a single layer
 film $R$~\cite{steck2006classical} 
 \begin{equation}
- R = \frac{n_1^2(n_i-n_s)^2 \cos^2\delta + (n_i n_s - n_1^2)^2\sin^2\delta}
-          {n_1^2(n_i+n_s)^2 \cos^2\delta + (n_i n_s + n_1^2)^2\sin^2\delta}
+				R = \frac{n_1^2{(n_i-n_s)}^2 \cos^2\delta + {(n_i n_s - n_1^2)}^2\sin^2\delta}
+				{n_1^2{(n_i+n_s)}^2 \cos^2\delta + {(n_i n_s + n_1^2)}^2\sin^2\delta}
           \label{eqn:fitfresnel}
 \end{equation}
 where
@@ -47,10 +48,10 @@ where
 and the Cytop layer has a refractive index $n_i$ and thickness $d_i$, the
 substrate a refractive index $n_s$, and the system in the presence of
 refractive index $n_1$ (air).  \Equation{eqn:fitfresnel} assumes the
-reflection coefficient for TE polarization, which 
-\Equation{eqn:fitfresnel} has only one free parameter: $d_i$, which was
-solved for using a linear least squares fitting algorithm.
-An example of the raw spectrometer data and and its best fit is shown in
+reflection coefficient for TE polarization, of which \Equation{eqn:fitfresnel}
+has only one free parameter: $d_i$.  The thickness $d_i$ was solved for using
+a linear least squares fitting algorithm.  An example of the raw spectrometer
+data and and its best fit is shown in
 \Figure{fig:fresnelfit}.
 
 \begin{figure}
@@ -63,10 +64,12 @@ An example of the raw spectrometer data and and its best fit is shown in
 \label{fig:fresnelfit}
 \end{figure}
 
-The surface quality of the Cytop films was not measured, but the
-experiments suggest this value to be small; the intensity of light
-scattered into the cone is too small to be observed when exciting SPPs in
-an unmodified cytop-gold-water setup -- additional surface features must be
-added before the cone becomes visible.  This observatino stands in
-comparison to experiments in the traditional glass-silver-air and
-glass-gold-water setups where the cone is always found to be visible.
+The surface roughness of the Cytop films was not measured, but the experiments
+suggest the surface roughness must be very small.  The intensity of light
+scattered into the cone is too low to be observed when exciting SPPs in an
+unmodified cytop-gold-water setup --- additional surface features must be
+added before the cone becomes visible.  In comparison to metal films sputtered
+directly on BK7 glass substrates with a typical surface roughness of
+\SI{0.3}{\nano\meter} within
+\SI{1}{\micro\meter\squared}~\cite{cheang2011study}~\cite{chiu2011optimizing},
+the cone is always found to be visible.  
