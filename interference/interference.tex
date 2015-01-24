@@ -5,30 +5,27 @@
  \includegraphics[keepaspectratio,width=15.5cm]{interference/figures/coneintro.png}
  \caption{Section of the cone exhibiting one sided interference fringes.
  System parameters: $\lambda_0 = \SI{632.8}{\nano\meter}$,
- $n_1=1.9961$ (LAH79), $n_2 = \num{-14.4824 + 1.0946i}$ (Ag), $n_3=1.0$
+ $n_1=1.9961$ (LAH79), $n_2 = \num{-14.4824 + 1.0946i}$ (silver), $n_3=1.0$
  (air), and $d_2=\SI{48}{\nano\meter}$.}
 \label{fig:coneintrofig} 
 \end{figure}
 
 When SPPs are excited in a prism coupled setup using a focused beam, it is
-possible to observe a spatial interference pattern in either the specular
-or conically scattered light~\cite{webster2013interference}.  Surprisingly,
+possible to observe a spatial interference pattern in either the specular or
+conically scattered light~\cite{webster2013interference}.  Surprisingly,
 despite the popularity of SPR as a biosensing tool, the phenomena went
-unreported until 2005~\cite{schumann2008near}~\cite{andaloro2005optical},
-and has since then only been reported in a handful of limited
-cases~\cite{shan2009measuring}~\cite{simon2007observation}.  An example of
-the pattern in the cone is shown in \Figure{fig:coneintrofig} for a silver
-film on high refractive index glass (LAH79) in air.  In the present chapter
-it is shown that, in contradction to previous
+unreported until 2005~\cite{schumann2008near}~\cite{andaloro2005optical}, and
+has since then only been reported in a handful of limited
+cases~\cite{shan2009measuring}~\cite{simon2007observation}.  An example of the
+pattern in the cone is shown in \Figure{fig:coneintrofig} for a silver film on
+high refractive index glass (LAH79) in air.  In the present chapter it is
+shown that, in contradction to previous
 explainations~\cite{schumann2008near}~\cite{andaloro2005optical}, the
-presence of these oscillations indicates self-interference of the scattered
-SPPs without any contributions from specular reflection.  
+interference phenomena may be observed without any contribution from specular
+reflection.  
 
-%In this chapter we study spatial evolution of these fields in the context
-%of Fourier optics and discuss potential applications to increasing the
-%resolution of based biosensing.
 
-\section{Theory} \label{sec:interferencetheory}
+\section{Theory}\label{sec:interferencetheory}
 For simplicity the problem is restricted to the $x$-$z$ plane.  Consider an
 incident $p$-polarized Gaussian beam passing through a prism evanescently
 exciting either normal or long range SPPs on a metal film.  On the film,
@@ -74,22 +71,21 @@ recipe may be used to find fields in three dimensions, as was done in
 
 \section{Experiment}
 \begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
- \includegraphics[keepaspectratio,width=10cm]{interference/figures/opticalsetup.pdf}
- \caption{Experimental setup.  Light from a laser passes
- through a beamsplitter BS passing p-polarized light which is expanded by two lenses, $f_1$ and $f_2$.
- Mirrors $m_1$ and $m_2$ steer the expanded beam to lens $f_3$ which
-	focuses the light on to hypotenuse of the hemispherical prism.  Lens $f_4$ re-images the reflected
- field to a beam profiler where it is recorded.}
+\centering
+\import{includes/}{setpgfinc}
+\includegraphics[keepaspectratio,width=14cm]{interference/figures/opticalsetup.pdf}
+\caption{Experimental setup.  Light from a laser passes through beamsplitter
+BS passing p-polarized light and expanded by two lenses, $f_1$ and $f_2$.
+Mirrors $m_1$ and $m_2$ steer the expanded beam to lens $f_3$, focusing the
+light on to hypotenuse of a hemispherical prism.  Lens $f_4$ re-images the reflected field to a beam profiler where it is recorded.}
 \label{fig:opticalsetup}
 \end{figure}
-Experimental verification of the predictions of \Equation{eqn:fourier123}
-and \Equation{eqn:fourier321} was performed with the setup shown in
+Experimental verification of the predictions of Equations~\ref{eqn:fourier123}
+and~\ref{eqn:fourier321} was performed with the setup shown in
 \Figure{fig:opticalsetup}.  Light from an
 unpolarized \SI{30}{\milli\watt} \SI{632.8}{\nano\meter} helium-neon
 laser first passes through the polarizing
-beamsplitter BS.  It is then expanded and re-collimated by lenses $f_1$ and $f_2$ as an
+beamsplitter BS\@.  It is then expanded and re-collimated by lenses $f_1$ and $f_2$ as an
 approximately Gaussian beam with a $1/\me^2$ beam waist of
 \SI{3}{\milli\meter} The light is steered by mirrors $m_1$ and $m_2$ to
 lens $f_3$, antireflection coated aspherical lens with a focal length of
@@ -99,7 +95,7 @@ focuses the light to the central point of the hypotenuse of a
 ($n(\SI{632.8}{\nano\meter})\approx1.98$).  The beam makes a central angle
 of $\thetasp\approx\SI{32}{\degree}$ with the hypotenuse.
 On the hypotenuse of the prism is a \SI{49.8}{\nano\meter} silver film
-obtained through a sputtering process (See \Section{sec:expsputtering}.
+obtained through a sputtering process (See \Section{sec:expsputtering}).
 The specific thickness was chosen to
 optimizes the far field ATR minimum in the specularly reflected
 direction.  Silver was used because it has the longest SPP propagation
@@ -121,7 +117,7 @@ planes can be imaged.
  \centering
  \import{includes/}{setpgfinc}
  \includegraphics[width=16cm,keepaspectratio]{interference/figures/fig2-crop.pdf}
-	\caption{ Theoretical and experimental values of
+\caption{Theoretical and experimental values of
 $|E_\text{notch}(x,z)|^2$ and $|E_\text{cone}(x,z)|^2$ obtained for three
 characteristic propagation distances.  Theoretical values are solid lines,
 while experimental values are shown with points.  Distances are
@@ -136,8 +132,7 @@ surface were taken of light in both the notch
 cone is more or less radially isotropic, the choice of $\phi$ in this
 experiment is arbitrary as long as it is far enough away from the incident
 or specular beam.  The data is shown in \Figure{fig:fresnelprop} along with 
-theoretical calculations based on \Equation{eqn:fourier123} and
-\Equation{eqn:fourier321}. Linear (2D) sections of the experimentally obtained results for
+theoretical calculations based on Equations~\ref{eqn:fourier123} and~\ref{eqn:fourier321}. Linear (2D) sections of the experimentally obtained results for
 three different characteristic propagation distances are also shown.  
 The $z=\SI{10}{\micro\meter}$ and $z=\SI{100}{\milli\meter}$ distances
 are representative of the near and far field; their optical fields 
@@ -145,33 +140,81 @@ related by a Fourier transform.  The intermediate propagation
 distance $z=\SI{0.1}{\milli\meter}$ was chosen because of the high visibility of the oscillations.  As is evident from the figures, as the field propagates it
 diffracts, exhibiting an evolving asymmetric oscillatory structure between
 the near and far fields.  The experimentally obtained field matches well with
-theoretical calculations using an unmodified Drude model for Ag.
-
-At $z=0$, $|E_\text{notch}(x,z=0)|^2$ matches the near field theoretically
-predicted via a similar method by \name{Chuang}~\cite{chuang1986lateral}, or through
-vector Gaussian beam decomposition~\cite{baida1999theoretical}.  It has
-also been experimentally verified through near field optical measurements
-(SNOM), though this only permits observation of the field on the 2-3
-interface, or $|E_\text{cone}(x,z=0)|^2$.  Near field measurements of the
-1-2 interface are not possible due to the presence of the prism.  It is
-interesting that both fields have been obtained using optical-only methods;
-both SPP propagation and radiative decay are observed simultaneously.
+theoretical calculations using an unmodified Drude model for silver.
 
 The far field is often defined as as $z\gg 2 D^2/\lambda$, where $D$ is the
-spatial width of the source.  For Ag at \SI{632.8}{\nano\meter}, the Drude
-model permittivity is $\epsilon = \num{-16.858+0.437i}$ and the $1/\me$ SPP
+spatial width of the source.  For silver at \SI{632.8}{\nano\meter}, the
+Lorentz-Drude
+model permittivity is $\epsilon = \num{-14.48+1.09}$ and the $1/\me$ SPP
 propagation distance normal to the interface $D = 1/(2 k_x) \approx
-\SI{60}{\micro\meter}$ and the resulting far field limit is $2 D^2/\lambda
+\SI{17}{\micro\meter}$ and the resulting far field limit is $2 D^2/\lambda
 \approx \SI{10}{\milli\meter}$.  This seems to be consistent with both the
 simulated and experimental results, as it is approximately the distance in
 \Figure{fig:fresnelprop} for which the oscillations disappear.
+
+At $z=0$, $|E_\text{notch}(x,z=0)|^2$ matches the near field theoretically
+predicted via a similar method by \name{Chuang}~\cite{chuang1986lateral}, or
+through vector Gaussian beam decomposition~\cite{baida1999theoretical}, shown
+in \Figure{fig:baidacompare} for comparison.  It has also been experimentally
+verified through near field optical measurements~\cite{dawson2001surface}
+(SNOM), though this only permits observation of the field on the 2--3
+interface, or $|E_\text{cone}(x,z=0)|^2$.  Near field measurements of the 1--2
+interface are not possible due to the presence of the prism.  It is
+interesting that both fields have been obtained using optical-only methods;
+both SPP propagation and radiative decay are obtained simultaneously.  The
+results by \name{Baida} (\Figure{fig:baidacompare}) are very similar to what
+was obtained in \Figure{fig:fresnelprop}.  In this sense,
+$|E_\text{cone}(x,z=\SI{10}{\micro\meter})|^2$ approximates the field on the
+metal-vacuum/air (2--3) interface and
+$|E_\text{notch}(x,z=\SI{10}{\micro\meter})|^2$ the metal-glass (1--2)
+interface.  The SPP propagation distance is greater for \name{Baida} due to a
+difference in the value chosen for the permittivity of silver:
+\num{-17.9+0.7i} versus the value of \num{-14.48+1.09i} used for the
+calculation of \Figure{fig:fresnelprop}.
+
+\begin{figure}[ht]
+\centering
+\import{includes/}{setpgfinc}
+\includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaReflected.png}
+\hspace{1cm}
+\includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaTransmitted.png}
+\caption{Predictions of the optical field made by
+				\name{Baida}~\cite{baida1999theoretical}.  On the left is the field on
+				the metal-glass (1--2) interface.  On the right, the field on the
+				metal-vacuum (2--3) interface.  Compare with the near fields for the
+				notch and cone in \Figure{fig:fresnelprop}.}
+\label{fig:baidacompare}
+\end{figure}
+
+As a final comparison, \Figure{fig:dawsoncompare} shows a near-field
+measurement of the optical field on the metal-air (2--3) surface made by
+\name{Dawson}~\cite{dawson2001surface} using a photon scanning tunneling
+microscope (PSTM).  As mentioned, this method only permits measurements on one
+side of the metal film.  Again, except for the differing values of the
+dielectric function for silver controlling the propagation length
+(\Section{sec:sppphysicalchar}), the results match that of \name{Baida} and of
+\Figure{fig:fresnelprop}.
+\begin{figure}[ht]
+\centering
+\import{includes/}{setpgfinc}
+\includegraphics[keepaspectratio,width=6cm]{interference/figures/DawsonTransmitted.png}
+\caption{Photon scanning tunneling microscope image of the metal-vacuum (2--3)
+				interface from \name{Dawson}~\cite{dawson2001surface}.  No scale was
+				given except that the $1/\me$ propagation length was
+				\SI{13.8}{\micro\meter}.  Compare with
+				the near field cone image in \Figure{fig:fresnelprop}.  The model of
+				\name{Dawson} assumes a \SI{2.65}{\nano\meter} layer of \ce{Ag2S} on
+				top of the silver layer, hence the reduced SPP propagation length.}
+\label{fig:dawsoncompare}
+\end{figure}
+
 
 \subsection{Interference and Diffraction}
 Previous reports of the oscillations in the specular direction for long
 range surface plasmons~\cite{simon2007observation} and localized surface
 plasmons~\cite{schumann2008near} have described it as arising due to
 interference between the specular reflection of the Gaussian beam from the
-1-2 interface and the re-radiated plasmon field from the 2-3 interface.
+1--2 interface and the re-radiated plasmon field from the 2--3 interface.
 These components can be identified by the two peaks in the near field
 specular signal.  While it is true that the field in the
 specular direction contains both components, and that $\tilde{r}_{12}$ and
@@ -188,8 +231,8 @@ both cases.  }
 \label{fig:r123m12}
 \end{figure}
 
-In \Figure{fig:r123m12}, the contribution of the 1-2 interface has been
-removed by propagating $\tilde{r}_{123}-\tilde{r}_{12}$.  to
+In \Figure{fig:r123m12}, the contribution of the 1--2 interface has been
+removed by propagating $\tilde{r}_{123}-\tilde{r}_{12}$ to
 $z=\SI{1.17}{\milli\meter}$.  Note that the oscillations persist, despite
 the absence of $\tilde{r}_{12}$.  In terms of the experiment, this is
 equivalent to the profile found in the conically scattered light, itself
