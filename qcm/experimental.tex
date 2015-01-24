@@ -53,7 +53,7 @@ crystal is inside the holder on the right.}
 \label{fig:cfqcmexpsetup}
 \end{figure}
 
-\section{Noise and Comparison to QCM-D} \label{sec:suppqcmdcomp}
+\section{Noise and Comparison to QCM-D}\label{sec:suppqcmdcomp}
 Typical of most QCM circuits, the QCM200 provides an output proportional to
 $\df$, which is used directly in all discussions of $\df$.  However, unlike
 a QCM-D device which gives a ``dissipation factor'', $D$, defined in
@@ -123,25 +123,23 @@ phenomena have been tabulated in \Table{tbl:environmentaleffects}.
 \centering
 \begin{tabular}{l>{\raggedright}p{10cm}l}
 \toprule
-\textbf{phenomena} & \textbf{response} & \textbf{refs}\tabularnewline
+\textbf{phenomena} & \textbf{response} & \textbf{refs}\tabularnewline%
 \midrule
-temperature & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water & \cite{srsqcm200manual}\tabularnewline
+temperature & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water
+&\cite{srsqcm200manual}\tabularnewline%
  & Third order polynomial with maximum around \SI{24}{\celsius} with
 $a_1=\num{2.3888}$, $a_2=\num{-1.8719e+02}$, $a_3=\num{4.8587e+03}$,
-$a_4=\num{-4.1814e+04}$. & \cite{reipa2006long}\tabularnewline
-electric field & negligible  & \cite{walls1995fundamental}\tabularnewline
-magnetic field & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla} & \cite{walls1995fundamental}\tabularnewline
-pressure & \SI{-2970}{\hertz\centi\meter\squared\per\kilo\gram} for changes
-to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} & \cite{reipa2006long}\tabularnewline
- & \SI{-1458}{\hertz\centi\meter\squared\per\kilo\gram} (\SI{10}{\mega\hertz}
-crystal) & \cite{heusler1988measurement}\tabularnewline
-mechanical stress & $\Delta f = 1.62 g_f^{1.72}$ for two point symmetrical mounting in
-air & \cite{fletcher1979comparison}\tabularnewline
-sedimentation potential &  & \tabularnewline
-parasitic capacitance & \SI{2}{\hertz\per\pico\farad} & \cite{srsqcm200manual}\tabularnewline
- & \SI{0.825}{\hertz\per\pico\farad} (BvD analysis) & \cite{webster2013}\tabularnewline
-acceleration & \SI{9e-11}{\per g}, depending on orientation & \cite{norton1993tactical}\tabularnewline
- & \SI{0.0218813}{\hertz\per g} in air & \cite{1536938}\tabularnewline
+$a_4=\num{-4.1814e+04}$. &\cite{reipa2006long}\tabularnewline%
+electric field & negligible  &\cite{walls1995fundamental}\tabularnewline%
+magnetic field & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla} &\cite{walls1995fundamental}\tabularnewline%
+pressure & \SI{-2970}{\hertz\centi\meter\squared\per\kilo\gram} for changes to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} &\cite{reipa2006long}\tabularnewline%
+ & \SI{-1458}{\hertz\centi\meter\squared\per\kilo\gram} (\SI{10}{\mega\hertz} crystal) &\cite{heusler1988measurement}\tabularnewline%
+mechanical stress & $\Delta f = 1.62 g_f^{1.72}$ for two point symmetrical mounting in air &\cite{fletcher1979comparison}\tabularnewline%
+sedimentation potential &  & \tabularnewline%
+parasitic capacitance & \SI{2}{\hertz\per\pico\farad} &\cite{srsqcm200manual}\tabularnewline%
+& \SI{0.825}{\hertz\per\pico\farad} (BvD analysis) & [~] \tabularnewline%
+acceleration & \SI{9e-11}{\per g}, depending on orientation &\cite{norton1993tactical}\tabularnewline%
+ & \SI{0.0218813}{\hertz\per g} in air &\cite{1536938}\tabularnewline%
 \bottomrule
 \end{tabular}
 \caption{Environmental effects on the QCM resonance frequency.}

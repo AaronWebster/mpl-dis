@@ -5,17 +5,17 @@
  \includegraphics[keepaspectratio,width=15.5cm]{interference/figures/coneintro.png}
  \caption{Section of the cone exhibiting one sided interference fringes.
  System parameters: $\lambda_0 = \SI{632.8}{\nano\meter}$,
- $n_1=1.9961$ (LAH79), $n_2 = \num{-14.4824 + 1.0946i}$ (silver), $n_3=1.0$
+ $n_1=1.9961$ (LAH79), $n_2 = \num{-14.48+1.09i}$ (silver), $n_3=1.0$
  (air), and $d_2=\SI{48}{\nano\meter}$.}
 \label{fig:coneintrofig} 
 \end{figure}
-
 When SPPs are excited in a prism coupled setup using a focused beam, it is
-possible to observe a spatial interference pattern in either the specular or
-conically scattered light~\cite{webster2013interference}.  Surprisingly,
-despite the popularity of SPR as a biosensing tool, the phenomena went
-unreported until 2005~\cite{schumann2008near}~\cite{andaloro2005optical}, and
-has since then only been reported in a handful of limited
+possible to observe a fringed spatial interference in either the
+specular or conically scattered light~\cite{webster2013interference}.
+Surprisingly, despite the popularity of SPR as a biosensing tool, the
+phenomena went unreported until
+2005~\cite{schumann2008near}~\cite{andaloro2005optical}, and has since then
+only been reported in a handful of limited
 cases~\cite{shan2009measuring}~\cite{simon2007observation}.  An example of the
 pattern in the cone is shown in \Figure{fig:coneintrofig} for a silver film on
 high refractive index glass (LAH79) in air.  In the present chapter it is
@@ -23,7 +23,6 @@ shown that, in contradction to previous
 explainations~\cite{schumann2008near}~\cite{andaloro2005optical}, the
 interference phenomena may be observed without any contribution from specular
 reflection.  
-
 
 \section{Theory}\label{sec:interferencetheory}
 For simplicity the problem is restricted to the $x$-$z$ plane.  Consider an
@@ -124,46 +123,48 @@ while experimental values are shown with points.  Distances are
 approximate.  Inset is the experimentally obtained optical intensity.}
 \label{fig:fresnelprop}
 \end{figure}
-Verification of the optical fields were obtained using a beam profiler for
-an optimally focused lens $f_3$ while the focal plane of lens $f_4$ was moved normal
-to the direction of radiation.  Images at increasing distances from the
-surface were taken of light in both the notch
-($\phi=0$) and the cone at an angle $\phi = \SI{90}{\degree}$.  Since the
-cone is more or less radially isotropic, the choice of $\phi$ in this
-experiment is arbitrary as long as it is far enough away from the incident
-or specular beam.  The data is shown in \Figure{fig:fresnelprop} along with 
-theoretical calculations based on Equations~\ref{eqn:fourier123} and~\ref{eqn:fourier321}. Linear (2D) sections of the experimentally obtained results for
-three different characteristic propagation distances are also shown.  
-The $z=\SI{10}{\micro\meter}$ and $z=\SI{100}{\milli\meter}$ distances
-are representative of the near and far field; their optical fields 
-related by a Fourier transform.  The intermediate propagation
-distance $z=\SI{0.1}{\milli\meter}$ was chosen because of the high visibility of the oscillations.  As is evident from the figures, as the field propagates it
-diffracts, exhibiting an evolving asymmetric oscillatory structure between
-the near and far fields.  The experimentally obtained field matches well with
-theoretical calculations using an unmodified Drude model for silver.
+Verification of the optical fields were obtained using a beam profiler for an
+optimally focused lens $f_3$ while the focal plane of lens $f_4$ was moved
+normal to the direction of radiation.  Images at increasing distances from the
+surface were taken of light in both the notch ($\phi=0$) and the cone at an
+angle $\phi = \SI{90}{\degree}$.  Since the cone is more or less radially
+isotropic, the choice of $\phi$ in this experiment is arbitrary as long as it
+is far enough away from the incident or specular beam.  The data is shown in
+\Figure{fig:fresnelprop} along with theoretical calculations based on
+Equations~\ref{eqn:fourier123} and~\ref{eqn:fourier321}. Linear (2D) sections
+of the experimentally obtained results for three different characteristic
+propagation distances are also shown.  The $z=\SI{10}{\micro\meter}$ and
+$z=\SI{100}{\milli\meter}$ distances are representative of the near and far
+field; their optical fields related by a Fourier transform.  The intermediate
+propagation distance $z=\SI{0.1}{\milli\meter}$ was chosen because of the high
+visibility of the interference fringes.  As is evident from the figures, as
+the field propagates it diffracts, exhibiting an evolving asymmetric
+fringe structure between the near and far fields.  The experimentally
+obtained field matches well with theoretical calculations using an unmodified
+Drude model for silver.
 
 The far field is often defined as as $z\gg 2 D^2/\lambda$, where $D$ is the
 spatial width of the source.  For silver at \SI{632.8}{\nano\meter}, the
 Lorentz-Drude
-model permittivity is $\epsilon = \num{-14.48+1.09}$ and the $1/\me$ SPP
+model permittivity is $\epsilon = \num{-14.48+1.09i}$ and the $1/\me$ SPP
 propagation distance normal to the interface $D = 1/(2 k_x) \approx
 \SI{17}{\micro\meter}$ and the resulting far field limit is $2 D^2/\lambda
 \approx \SI{10}{\milli\meter}$.  This seems to be consistent with both the
 simulated and experimental results, as it is approximately the distance in
-\Figure{fig:fresnelprop} for which the oscillations disappear.
+\Figure{fig:fresnelprop} for which the interference fringes disappear.
 
 At $z=0$, $|E_\text{notch}(x,z=0)|^2$ matches the near field theoretically
 predicted via a similar method by \name{Chuang}~\cite{chuang1986lateral}, or
 through vector Gaussian beam decomposition~\cite{baida1999theoretical}, shown
 in \Figure{fig:baidacompare} for comparison.  It has also been experimentally
-verified through near field optical measurements~\cite{dawson2001surface}
-(SNOM), though this only permits observation of the field on the 2--3
-interface, or $|E_\text{cone}(x,z=0)|^2$.  Near field measurements of the 1--2
-interface are not possible due to the presence of the prism.  It is
-interesting that both fields have been obtained using optical-only methods;
-both SPP propagation and radiative decay are obtained simultaneously.  The
-results by \name{Baida} (\Figure{fig:baidacompare}) are very similar to what
-was obtained in \Figure{fig:fresnelprop}.  In this sense,
+verified through near field optical measurements~\cite{dawson2001surface},
+though this only permits observation of the field on the 2--3 interface, or
+$|E_\text{cone}(x,z=0)|^2$.  Near field measurements of the 1--2 interface are
+not possible due to the presence of the prism.  It is interesting that both
+fields have been obtained using optical-only methods; both SPP propagation and
+radiative decay are obtained simultaneously.  The results by \name{Baida}
+(\Figure{fig:baidacompare}) are very similar to what was obtained in
+\Figure{fig:fresnelprop}.  In this sense,
 $|E_\text{cone}(x,z=\SI{10}{\micro\meter})|^2$ approximates the field on the
 metal-vacuum/air (2--3) interface and
 $|E_\text{notch}(x,z=\SI{10}{\micro\meter})|^2$ the metal-glass (1--2)
@@ -191,8 +192,8 @@ measurement of the optical field on the metal-air (2--3) surface made by
 \name{Dawson}~\cite{dawson2001surface} using a photon scanning tunneling
 microscope (PSTM).  As mentioned, this method only permits measurements on one
 side of the metal film.  Again, except for the differing values of the
-dielectric function for silver controlling the propagation length
-(\Section{sec:sppphysicalchar}), the results match that of \name{Baida} and of
+dielectric function for silver (determining the propagation length, see
+\Section{sec:sppphysicalchar}), the results match \name{Baida} and 
 \Figure{fig:fresnelprop}.
 \begin{figure}[ht]
 \centering
@@ -210,66 +211,43 @@ dielectric function for silver controlling the propagation length
 
 
 \subsection{Interference and Diffraction}
-Previous reports of the oscillations in the specular direction for long
-range surface plasmons~\cite{simon2007observation} and localized surface
-plasmons~\cite{schumann2008near} have described it as arising due to
+Previous reports of the spatial interference fringes in the specular direction
+for long range surface plasmons~\cite{simon2007observation} and localized
+surface plasmons~\cite{schumann2008near} have described it as arising due to
 interference between the specular reflection of the Gaussian beam from the
 1--2 interface and the re-radiated plasmon field from the 2--3 interface.
-These components can be identified by the two peaks in the near field
-specular signal.  While it is true that the field in the
-specular direction contains both components, and that $\tilde{r}_{12}$ and
-$\tilde{r}_{23}$ are indeed antiphase at $k_\text{sp}$ the asymmetric 
-oscillatory pattern does not require a specular component to be observed.
+These components can be identified by the two peaks in the near field specular
+signal (\Figure{fig:fresnelprop}, $z=\SI{10}{\micro\meter}$).  While it is true that the field in the specular direction contains
+both components, and that $\tilde{r}_{12}$ and $\tilde{r}_{23}$ are indeed
+antiphase at $k_\text{sp}$ the fringes do not require a specular component to
+be observed.
 \begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
- \import{interference/figures/}{r123m12}
- %\includegraphics[keepaspectratio,width=10cm]{<++>}
+\centering
+\import{includes/}{setpgfinc}
+\import{interference/figures/}{r123m12}
 \caption{Comparison of the propagated $\tilde{r}_{123}(k_x)$ verses
-$(\tilde{r}_{123}(k_x)-\tilde{r}_{12})$.  Note that oscillations occur in
+$(\tilde{r}_{123}(k_x)-\tilde{r}_{12})$.  Note that interference fringes occur in
 both cases.  }
 \label{fig:r123m12}
 \end{figure}
 
 In \Figure{fig:r123m12}, the contribution of the 1--2 interface has been
 removed by propagating $\tilde{r}_{123}-\tilde{r}_{12}$ to
-$z=\SI{1.17}{\milli\meter}$.  Note that the oscillations persist, despite
-the absence of $\tilde{r}_{12}$.  In terms of the experiment, this is
-equivalent to the profile found in the conically scattered light, itself
-containing spatial oscillations.
+$z=\SI{1.17}{\milli\meter}$.  Nevertheless, the fringes persist despite the
+absence of $\tilde{r}_{12}$.  In terms of the experiment, removing
+$\tilde{r}_{12}$, the specular reflection, is equivalent to what is found in
+the cone (itself containing fringes).
 
-In light of these observations, it is more correct to ascribe the
-asymmetric oscillatory structure as being a diffraction, rather than a two
-component interference phenomena motivated by phase alone.  It should be
-noted that this can also be found in almost any causal function propagated
-by a free space transfer term. As a paragon example, the Fourier
-transformed Lorentzian absorption $\tilde{f}(k) = 1/(1+\mi k)$
-qualitatively displays the phenomena of the conical radiation when
-propagated.
+In light of these observations, it is more correct to ascribe the fringe
+structure as being a diffraction, rather than a two component interference
+phenomena motivated by phase alone (although there are two components in the
+specular direction).  Note that similar behavior is found in almost any causal
+function propagated by a free space transfer term, for example the Fourier
+transformed Lorentzian absorption $\tilde{f}(k) = 1/(1+\mi k)$.
 
-%\subsection{Evanescent Solutions}
-%In the context of diffraction integrals, the free space transfer function
-%$\exp(\mi k_{z,1} z)$ is often concerned with evanescent and propagating
-%terms, giving rise to the diffraction limit.  Here,
-%$k_{z,1}=\sqrt{k_0^2 \epsilon_1 - k_x^2}$ is imaginary for $k_0^2
-%\epsilon_1 < k_x^2$.  It is interesting to note that this never occurs.
-%Ignoring the condition for total internal reflection, 
-%$k_x = k_0 \sqrt{\epsilon_1} \sin \theta$ and we can set up an inequality
-%\begin{align}
-%k_0^2 \epsilon_1 &< k_x^2\\
-%k_0^2 \epsilon_1 &< \left(k_0 \sqrt{\epsilon_1} \sin \theta\right)^2\\
-%k_0^2 \epsilon_1 &< k_0^2 \epsilon_1 \sin^2 \theta\\
-%1 &< \sin^2 \theta
-%\end{align}
-%which is false, suggesting that if all light is collected, no information is
-%lost during propagation from the near to far field.
-
-\section{The Fourier Optics Perspective}
-There are several perspectives of SPR phenomena which can be insightful in
-explaining why exactly the spatial oscillations are asymmetric.  The first
-is an argument from causality.  Assume a complex function $\chi(\omega) =
-\chi'(\omega) + \mi \chi''(\omega)$ whose real and imaginary parts are
-related by Kramers-Kronig relations
+The asymmetry of the interference results from the causality of the system.
+Assume a complex function $\chi(\omega) = \chi'(\omega) + \mi \chi''(\omega)$
+whose real and imaginary parts are related by Kramers-Kronig relations
 \begin{align}
 \chi(\omega)=\mi \hf{\chi(\omega)}
 \end{align}
@@ -292,16 +270,12 @@ Or succinctly,
 \ff{\hf{\chi(\omega)}} = (-\mi \sgn(\omega)) \ff{\chi(\omega)}
 \end{align}
 In other words, the Fourier transform of any function which satisfies
-Kramers-Kronig relations is ``one-sided'' as a necessary
-condition of causality.  This is also true for the Fresnel
-reflectivity as well as the complex permittivity.
-
-The second perspective is couched in Fourier optics.  Here, because SPR
-occurs at the focus of a Gaussian beam, it can be seen as a spatial filter
-which modifies the local $k$-vectors to produce the resulting far field
-optical pattern.  If the SPR resonance condition is sharp, the Fourier
-integral (\Equation{eqn:fourier123}) is truncated and the discontinuity
-acts as a low pass filter for light.  The asymmetric oscillations are then
-essentially a manifestation of Gibb's phenomena.  This idea seems to be
-well supported, because if the SPR resonance is broadened, say in the case
-of a BK7-Au-\ce{H2O} system, the interference is greatly attenuated.
+Kramers-Kronig relations is asymmetric (``one-sided'') as a necessary
+condition of causality.  This condition is also known as Gibb's phenomena.
+Since no physical system can respond infinitely fast to an input signal, high
+frequency components are lost.  In the case of SPR occurring at the focus of
+an incident Gaussian beam, it can be seen as a spatial filter which modifies
+the local $k$-vectors to produce the resulting far field optical pattern.  If
+the SPR resonance condition is sharp, the Fourier integral
+(\Equation{eqn:fourier123}) is truncated and the plasmon resonance acts as a low
+pass filter for light.  

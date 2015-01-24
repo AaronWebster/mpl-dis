@@ -1,37 +1,36 @@
-Consider a surface plasmon polariton excited by a focussed beam in a prism
-coupled setup.  Without loss of generality, we define the center of the
-focussed beam as the origin of a three dimensional Cartesian coordinate
-system.  If the beam is incident in the $x$-$z$ plane, the SPP will have an
-initial phase upon creation of $\exp(\mi \ksp x)$.  For simplicity, we
-neglect any potential out of plane components a Gaussian beam may possess. 
+Consider an SPP excited by a focussed beam in a prism coupled setup.  Without
+loss of generality, the center of the focussed beam is defined as the origin
+of a three dimensional Cartesian coordinate system $(x,y,z)$.  If the beam is
+incident in the $x$-$z$ plane, the SPP has an initial phase of $\exp(\mi \ksp
+x)$.  In the present analysis, the out of plane components of the Gaussian
+beam are neglected.
 
 As mentioned in \Section{sec:coneexist}, surface roughness or other
-inhomogeneities can elastically scatter an SPP during propagation.  This
-acts to change the direction, but not the magnitude, of the in-plane
-$k$-vector.  Upon re-radiation as a photon, the phase to a point
+inhomogeneities can elastically scatter an SPP during propagation.  SPP
+scattering on the surface changes the direction, but not the magnitude of the
+in-plane $k$-vector.  Upon re-radiation as a photon, the phase to a point
 $(x^\prime,y^\prime,z^\prime)$ in the far field is 
 \begin{equation}
-\exp\!\left(\mi k_0 \sqrt{ (x-x^\prime)^2 + (y-y^\prime)^2 + (z-z^\prime)^2}\right).
+\exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
 \end{equation}
-
-Because $z=0$ is the plane of scattering, we can rewrite the contribution
-to the field by a single SPP scattering event as
+In the present coordinate system, $z=0$ is the plane of scattering and the
+contribution to the field by a single scattering event is
 \begin{equation}
 \mathbf{E}\big(x^\prime,y^\prime,z^\prime\big)=\exp\!\big( \mi \ksp x \big)
-\exp\!\left(\mi k_0 \sqrt{ (x-x^\prime)^2 + (y-y^\prime)^2 + (z-z^\prime)^2}\right).
+\exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
 \label{eqn:sppsinglescattering}
 \end{equation}
-In \Equation{eqn:sppsinglescattering} we have assumed single scattering; an
-SPP is scattered only once during propagation.  We will relax this
-assumption in \Section{sec:multiplescattering} when we consider multiple
-scattering.
+\Equation{eqn:sppsinglescattering} assumes single scattering: an
+SPP is scattered only once during its propagation.
+%We will relax this
+%assumption in \Section{sec:multiplescattering} when we consider multiple
+%scattering.
 
-We assume that the $(x,y,z=0)$ coordinates from which an SPP is re-radiated
-as a photon are randomly distributed and follow the treatment of
-\name{Goodman}~\cite{goodman2007speckle}, describing the speckle as a
-random phasor sum.  To wit, we assume the field at each detector position
-$\mathbf{E}(\mathbf{r})$ is due to the coherent linear superposition of $N$
-random phasors
+It is further assumed that the $(x,y,z=0)$ coordinates from which an SPP is
+re-radiated as a photon are randomly distributed following the treatment of
+\name{Goodman}~\cite{goodman2007speckle} for random phasor sums.  To wit, the
+field at each detector position $\mathbf{E}(\mathbf{r})$ is due to the
+coherent linear superposition of $N$ random phasors
 \begin{equation}
 \mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \varphi_n},
 \label{eqn:phasorsum}
@@ -51,29 +50,23 @@ p_I(I) = \frac{1}{2\sigma_I^2}\exp\left(-\frac{I}{2\sigma_I^2}\right).
 \label{eqn:propexp}
 \end{equation}
 
-Given that $q$th moment of $p_I(I)$ is 
+Given that the $q$th moment of $p_I(I)$ is 
 \begin{align}
-\bar{I}^q&=(2\sigma_I^2)^q q!\\
+\bar{I}^q&={(2\sigma_I^2)}^q q!\\
          &=\bar{I}^q q!,
 \end{align}
-the standard deviation of is equal to the mean,
+the standard deviation is equal to the mean,
 $\sigma_I=\bar{I}$.  \Equation{eqn:propexp} can then be rewritten as
 \begin{equation}
 p_I(I) = \frac{1}{\bar{I}}\exp\left(-\frac{I}{\bar{I}}\right).
 \label{eqn:exppdf}
 \end{equation}
 
-We define here the \textit{contrast} of speckle, $C$, as the
-ratio of the standard deviation to the mean of the intensity
+As a convienent measure, the \textit{contrast} of speckle, $C$, is defined as
+the ratio of the standard deviation to the mean of the intensity
 \begin{equation}
 C=\frac{\sigma_I}{\bar{I}}\quad\text{(speckle contrast)}.
 \label{eqn:specklecontrast}
 \end{equation}
 The exponential PDF and unity contrast are often mentioned as the reason
 for the discincitive appearance of speckle~\cite{goodman2007speckle}.
-
-As our ultimate goal in this section is to understand the statistics of cone
-speckle in the context of the mathematics of a random phasor sum, it
-is pertinent to look at a couple of edge cases: situations for which
-there are only small number of scatterers in the phasor sum, and ones in
-which the intensity of a single scatterer dominate amongst many.
