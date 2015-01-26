@@ -3,7 +3,7 @@ clear all;
 close all;
 
 addpath('~/mpl-dis/includes')
-det_scale = 500/133; % scale in microns/px
+det_scale = 500/133; % scale in \microns/px
 
 %% load data files
 a = load('zoom-spotsmall');
@@ -62,39 +62,40 @@ imagesc(scale_bx,scale_by,c.frame_b);
 xlabel('$x$ [um]')
 ylabel('$y$ [um]')
 axis square;
-title('haldo')
-
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_a*1e6)))
 subplot(522)
-imagesc(scale_ax,scale_ay,c.frame_a);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
+imagesc(c.frame_a);
+xlabel('$x$ [px]')
+ylabel('$y$ [px]')
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_a*1e6)))
 
 subplot(523)
 imagesc(scale_bx,scale_by,b.frame_b);
 xlabel('$x$ [um]')
 ylabel('$y$ [um]')
 axis square;
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_b*1e6)))
 subplot(524)
-imagesc(scale_ax,scale_ay,b.frame_a);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
+imagesc(b.frame_a);
+xlabel('$x$ [px]')
+ylabel('$y$ [px]')
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_b*1e6)))
 
 subplot(525)
 imagesc(scale_bx,scale_by,a.frame_b);
 xlabel('$x$ [um]')
 ylabel('$y$ [um]')
 axis square;
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_c*1e6)))
 subplot(526)
-imagesc(scale_ax,scale_ay,a.frame_a);
-xlabel('$x$ [um]')
-ylabel('$y$ [um]')
+imagesc(a.frame_a);
+xlabel('$x$ [px]')
+ylabel('$y$ [px]')
+title(sprintf('\\\textbf{\\SI{%d}{\\micro\\meter}}',round(size_c*1e6)))
 
-if false
+if true
 filename = sprintf('/tmp/test.tex');
 matlab2tikz(filename, 'showInfo', false, ...
     'parseStrings',false,'standalone', true, ...
         'height', '3.5cm', 'width','9cm');
 end
-
-
-

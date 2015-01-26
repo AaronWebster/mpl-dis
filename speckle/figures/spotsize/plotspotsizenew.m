@@ -10,7 +10,7 @@ clear all;
 close all;
 addpath('~/mpl-dis/includes')
 
-load('spotsizenew.mat');
+load('fixedplot.mat');
 
 a = load('zoom-spotsmall');
 b = load('zoom-spotmed');
@@ -36,13 +36,22 @@ hold on;
 %y = y./div;
 mycolor = brewermap(5,'Set1');
 plot(x,y,'-','Color',mycolor(2,:));
-plot(x,F(x),'--','Color',mycolor(1,:));
-plot(x,660e-9*1.5e-3./(x*1e-6./2))
+%plot(x,F(x),'--','Color',mycolor(1,:));
+
+out = zeros(length(x),1);
+i = 1;
+for d = linspace(min(x),max(x),100)
+	out(i) = getthing(d.*1e-6);
+	i = i+1;
+end
+d = linspace(min(x),max(x),100);
+plot(d,out,'--','Color',mycolor(1,:));
+%plot(x,660e-9*1.5e-3./(x*1e-6./2))
 
 xlabel('reference spot size [um]');
 ylabel('speckle size [deg]');
-%axis([min(x) max(x) 0.1 0.7 ])
-legend('relative spot size','linear fit');
+axis([100 450 mean(y)-0.1 mean(y)+0.1 ])
+legend('speckle size (experiment)','objective speckles (theory)');
 
 % axes('Position',[.7 .7 .2 .2])
 % imagesc(scale_bx,scale_by,a.frame_b);
@@ -63,10 +72,10 @@ legend('relative spot size','linear fit');
 % axis square;
 
 
-if false
-    filename = sprintf('../spotsizefig.tex');
+if true
+    filename = sprintf('spotsizefig.tex');
     %filename = sprintf('/tmp/test.tex');
     matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', false, ...
+        'parseStrings',false,'standalone', true, ...
         'height', '3.5cm', 'width','9cm');
 end
