@@ -12,7 +12,7 @@
 
 \begin{axis}[%
 width=12cm,
-height=4cm,
+height=5cm,
 scale only axis,
 xmin=100,
 xmax=450,
@@ -22,7 +22,8 @@ ymax=0.384271191695258,
 ylabel={speckle size [deg]},
 axis x line*=bottom,
 axis y line*=left,
-legend style={draw=black,fill=white,legend cell align=left}
+legend style={draw=black,fill=white,legend cell align=left},
+max space between ticks=60pt,
 ]
 \addplot [color=mycolor1,solid]
   table[row sep=crcr]{%
