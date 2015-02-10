@@ -1,0 +1,18 @@
+run stephists.m first, select range and set
+
+c = xlim
+
+then run stephists.m again
+
+then run doxp to get out
+
+then run plotspkhists to get the plot
+
+lambda = 3.5
+F = 
+
+     General model Exp1:
+     F(x) = a*exp(b*x)
+     Coefficients (with 95% confidence bounds):
+       a =       1.015  (0.6135, 1.417)
+       b =     -0.5239  (-0.705, -0.3428)
