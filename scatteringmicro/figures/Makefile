@@ -1,6 +1,6 @@
 all:
-	latex montecarlogeo.tex
-	dvipdf montecarlogeo.dvi
-	rm montecarlogeo.aux
-	rm montecarlogeo.log
-	rm montecarlogeo.dvi
+	latex montecarlogeosimple.tex
+	dvipdf montecarlogeosimple.dvi
+	rm montecarlogeosimple.aux
+	rm montecarlogeosimple.log
+	rm montecarlogeosimple.dvi
