@@ -2,7 +2,7 @@
 
 TARGET = scatter
 
-CC = mpicc 
+CC = gcc
 
 CFLAGS = -finline $(DFLAGS)
 

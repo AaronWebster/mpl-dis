@@ -1,22 +1,20 @@
-% looks at transmission fluctuations from the monte carlo simulation
-
-dir = 'onlyss'
-% angle around the ring in degrees
-phi = 1:360;
-
-% start and end scatterer index
-M=10;
-N=30;
-%out = zeros(1,N-M);
-j=1;
-for i=M:N
-    filename = sprintf('%s%d/phi.dat',dir,M);
-    a = load(filename);
-    filename = sprintf('%s%d/phi.dat',dir,i);
-    b = load(filename);
-    out(j) = mean((a-b).^2/i.^2);
-    j = j+1;
+nscat = 20
+nout = 25;
+out = zeros(1,nout);
+for j=1:500
+	for i=1:nout
+		rseed = randi(10000000);
+		command = sprintf('./scatter --nscat=%d --MS --random-seed=%d',nscat,rseed);
+		system(command);
+		a = load('out.dat');
+		a = a./trapz(a);
+		a = a(100:400);
+		command = sprintf('./scatter --nscat=%d --MS --random-seed=%d',nscat+i-1,rseed);
+		system(command);
+		b = load('out.dat');
+		b = b./trapz(a);
+		b = b(100:400);
+		out(i) = out(i) + 1/(length(a)-1)*sum((a-mean(a)).*(b-mean(b)))/(std(a)*std(b));
 end
-x = M:N;
-plot(out)
-%plot(x,a,x,b)
+end
+
