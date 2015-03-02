@@ -14,12 +14,15 @@
 \import{frontmatter/}{abstract}
 
 \tableofcontents
+\listoffigures
+\listoftables
+
 
 % the first part is in roman numbering, switch now to arabic
 \pagenumbering{arabic}
 
 %%%%% THE FUN STARTS HERE %%%%%
-\silentchapter*{Overview and Organization}
+\silentchapter{Overview and Organization}
 \label{ch:allintro}
 \import{preface/}{preface}
 
@@ -121,25 +124,23 @@
 \import{scatteringmicro/}{multiplescattering}
 \section{Addition of a Single Scatterer}
 \import{scatteringmicro/}{addascatt}
-\subsection{Addition of a Single Scatterer, Single Scattering}
-\subsection{Addition of a Single Scatterer, Multiple Scattering}
-\subsection{Experimental Observation}
-\section{The Moving Scatterer Problem}
-\import{scatteringmicro/}{moveascatt}
-\subsection{Weirdospace}
-\import{scatteringmicro/}{weirdospace}
-\subsection{Phase Retreival}
-\import{scatteringmicro/}{extractstripeangle}
+%\subsection{Addition of a Single Scatterer, Single Scattering}
+%\subsection{Addition of a Single Scatterer, Multiple Scattering}
+%\subsection{Experimental Observation}
+%\section{The Moving Scatterer Problem}
+%\import{scatteringmicro/}{moveascatt}
+%\subsection{Weirdospace}
+%\import{scatteringmicro/}{weirdospace}
+%\subsection{Phase Retreival}
+%\import{scatteringmicro/}{extractstripeangle}
 	%\subsection{Motion of a Single Scatter}
 	%\subsection{Vortex Areas}
-\subsection{Unsorted}
-\section{Simulations}
-\import{scatteringmicro/}{simulations}
-\subsection{Monte Carlo Simulation}\label{sec:montecarlo}
-\import{scatteringmicro/}{montecarlosim}
-\subsection{Dipole-Dipole Simulation}\label{sec:mrfsim}
-\import{scatteringmicro/}{mrfsim}
-\chapter{Outlook}\label{ch:outlook}
+%\subsection{Unsorted}
+%\section{Simulations}
+%\import{scatteringmicro/}{simulations}
+%\subsection{Monte Carlo Simulation}\label{sec:montecarlo}
+%\import{scatteringmicro/}{montecarlosim}
+%\chapter{Outlook}\label{ch:outlook}
 
 \part{The Centrifugal Force Quartz Crystal Microbalance}\label{part:qcm}
 \chapter{Foundations}\label{ch:qcmfoundations}
@@ -175,13 +176,15 @@
 \label{ref:physicalproperties}
 \section{Colophon}
 \import{backmatter/}{colophon}
+\section{Dipole-Dipole Simulation}\label{sec:mrfsim}
+\import{scatteringmicro/}{mrfsim}
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
 
-\silentchapter*{Declaration of Originality}
+\silentchapter{Declaration of Originality}
 \import{frontmatter/}{declaration}
-\silentchapter*{Acknowledgements}
+\silentchapter{Acknowledgements}
 \import{frontmatter/}{acknowledgments}
 
 
