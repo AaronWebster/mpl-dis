@@ -22,7 +22,7 @@ out = zeros(N,N);
 scatt = (rand(2,M).*ext-ext/2);
 % add them all up in a very ineffient way
 
-mult=4;
+mult=5;
 i=1;
 out = out + (mult./sqrt(M)).*exp((1.0i.*k0-0.00).*(sqrt((X-scatt(1,i)).^2+(Y-scatt(2,i)).^2)));
 
@@ -53,7 +53,7 @@ plot(px,py,'Color',mycolor(4,:));
 
 s = (1-1/M);
 plot(px,1/sqrt(s).*exp(-px./sqrt(s)),'k--');
-%plot(px,1/ibar.*exp(-px./ibar-(mult./sqrt(M))).*((mult./sqrt(M)).*10.*sqrt(px.*(mult./sqrt(M))./ibar)));
+plot(px,1/ibar.*exp(-px./ibar-(mult./sqrt(M))).*((mult./sqrt(M)).*10.*sqrt(px.*(mult./sqrt(M))./ibar)));
 hold off;
 ylabel('$\bar{I}p_I(I/\bar{I})$')
 xlabel('$I/\bar{I}$')
@@ -77,7 +77,7 @@ xlabel('x')
 ylabel('y')
 hold off;
 
-if true
+if false
 filename = sprintf('spk_hist_intensity_%d.tex',mult);
 matlab2tikz(filename, 'showInfo', false, ...
         'parseStrings',false,'standalone', false, ...
