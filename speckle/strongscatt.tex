@@ -4,13 +4,35 @@ from a Rayleigh distribution to a Rician~\cite{goodman2007speckle}
 \begin{equation}
 p_I(I) = \frac{1}{\bar{I}_n} \exp\left(-\frac{I}{\bar{I}_n} - r\right) 2 I_0
 \sqrt{\frac{I}{\bar{I}_n} r},
-\label{ricedpf}
+\label{eqn:ricepdf}
 \end{equation}
-where $r$ is the relative scattering strength of the dominant scatterer.
-Modifying the intensity of a single scatterer is equivalent to a random phasor
-sum plus a constant background.  Unfortunately, in an experiment, failure to
-completely account for background light using dark frames results in speckle
-statistics indistinguishable from the presence of a marginally strong single
-scatterer.  In experimentally acquiring images of speckle, dark frames have
-been used in an attempt to keep background noise to a minimum, though some is
-unavoidable.
+where $r$ is the relative scattering strength of the dominant scatterer
+compared to the mean intensity, $r=I_0/\bar{I}_n$ where $I_0$ is the intensity
+of the single scatterer.  Modifying the intensity of a single scatterer is
+equivalent to a random phasor sum plus a constant background.  Unfortunately,
+in an experiment, failure to completely account for background light using
+dark frames results in speckle statistics indistinguishable from the presence
+of a marginally strong single scatterer.  In experimentally acquiring images
+of speckle, dark frames have been used in an attempt to keep background noise
+to a minimum, though some is unavoidable.
+\begin{figure}[ht]
+\centering
+\import{includes/}{setpgfinc}
+\import{speckle/figures/hitspot/}{exp_strongscatt_both}
+\caption{Experimental verification of the speckle intensity PDF for a strong
+scatterer (left) versues traditional Rayleigh speckle (right).  Surface images
+are seen below their respective histograms.}
+\label{fig:strongscattexperiment}
+\end{figure}
+
+In \Figure{fig:strongscattexperiment}, experimental speckle intensity PDFs
+along with surface images are shown for a typical experiment compared with the
+case of a ``strong single scatterer'' --- the incident beam focused directly
+on a surface feature which strongly scatters light.  The strongly scattering
+surface feature is readily apparent in its corresponding surface image.
+\SI{57}{\nano\meter} citrate-capped gold nanoparticles were used in this
+experiment as scatterers.  It is unknown whether the surface feature causing
+light to scatter strongly is a nanoparticle or nanoparticle aggregation, or
+simply a surface defect.  Plotted along with the speckle intensity PDFs is
+\Equation{eqn:ricepdf} for $r=0$, typical Rayleigh scattering, and $r=10$,
+which fits the observed distribution.

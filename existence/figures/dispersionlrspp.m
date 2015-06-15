@@ -9,9 +9,9 @@ hbar = get_constant('h','SI')/(2*pi);
 N=2000;
 
 %omega = linspace(2*pi*c./2000e-9,2*pi*c./200e-9,500);
-omega = 2*pi*c./linspace(280e-9,2000e-9,N);
+omega = 2*pi*c./linspace(330e-9,1000e-9,N);
 %omega = omega(end:-1:1);
-kx = linspace(0,10e7,N);
+kx = linspace(0,7e7,N);
 e1 = 1.331.^2;
 e3 = 1.332.^2;
 a = 15e-9/2;
@@ -34,6 +34,9 @@ colormap(brewermap([],'RdBu'));
 set(gca,'YDir','normal')
 t = colorbar('peer',gca);
 set(get(t,'ylabel'),'String', '$log\left(\Re\left(|\mathrm{rhs}-\mathrm{lhs}|\right)\right)$');
+annotation(gcf,'textarrow',[0.429090909090909 0.398181818181818],...
+    [0.761295081967216 0.815573770491805],'TextEdgeColor','none',...
+        'String',{'SPP mode'});
 %hold on;
 %plot(kx,c.*kx./sqrt(e1))
 hold off;
@@ -44,8 +47,8 @@ if true
 %filename = sprintf('lrsppdispersionfig.tex');
 filename = sprintf('lrsppdispersionfig.tex');
 matlab2tikz(filename, 'showInfo', false, ...
-        'parseStrings',false,'standalone', true, ...
-        'height', '9cm', 'width','9cm');
+        'parseStrings',false,'standalone', false, ...
+        'height', '11cm', 'width','13cm');
 end
 %fun = inline('(exp(-4.*k1./e1)-((k1./e1+k2./e2)./(k1./e1-k2./e2)).*((k1./e1+k3./e3)./(k1./e1-k3./e3)))');
 

@@ -38,13 +38,12 @@ term,
 
 In \Equation{eqn:meepdispersion} $\epsilon_\infty$ is the low frequency
 dielectric response, describing the material's response to a static (DC)
-electric field, $\sigma_\mathrm{n}$ is the electric conductivity,
-$\omega_n$ and $\Gamma_n$ are material constants, and $\sigma_n$ specifies
-the strength of the $n$th resonance.  \Equation{eqn:meepdispersion} is
-dimensionless ($c=\hbar=1$), and is usually encountered when working with
-numerical simulations of electromagnetic fields~\cite{oskooi2010meep}.  In
-most other areas, the Lorentz-Drude model is used.  Formally, the
-Lorentz-Drude model is given by
+electric field, $\omega_n$ and $\Gamma_n$ are material constants, and
+$\sigma_n$ specifies the strength of the $n$th resonance.
+\Equation{eqn:meepdispersion} is dimensionless ($c=\hbar=1$), and is usually
+encountered when working with numerical simulations of electromagnetic
+fields~\cite{oskooi2010meep}.  In most other areas, the Lorentz-Drude model is
+used.  Formally, the Lorentz-Drude model is given by
 \begin{equation}
 \epsilon_\mathrm{LD}(\omega)=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega),
 \end{equation}
@@ -74,23 +73,23 @@ of oscillators
 \label{eqn:brendelbormann}
 \end{align}
 Converting between \Equation{eqn:meepdispersion} and
-Equations~\ref{eqn:drude},~\ref{eqn:lorentzdrude}, and~\ref{eqn:brendelbormann} is accomplished through the substitutions $\sigma_n
-= {f_n \omega_p^{\prime 2}}/{\omega_n^2}$, $\epsilon_\infty=1$ and
+Equations~\ref{eqn:drude},~\ref{eqn:lorentzdrude},
+and~\ref{eqn:brendelbormann} is accomplished through the substitutions
+$\sigma_n = {f_n \omega_p^{\prime 2}}/{\omega_n^2}$, $\epsilon_\infty=1$ and
 $\Gamma_n^\prime$.  To prevent numerical instability, in computer codes
-$\omega_0$, the DC term, should be to be a very small but nonzero value,
-e.g.  $\omega_1 = \num{1e-20}$. 
+$\omega_0$, the DC term, should be to be a very small but nonzero value, e.g.
+$\omega_1 = \num{1e-20}$. 
 
-The Drude model considers only free electrons and thus has only a single
-pole in its expression, limiting its accuracy.  The agreement with
-experiment is particularly bad for metals such as gold and
-silver~\cite{ahmedcomputational}~\cite{jahanshahi2014study}, with
-deviations of approximately \SI{50}{\percent} in the real part and
-\SI{150}{\percent} in the imaginary up to \SI{650}{\micro\meter}.  At
-higher frequencies the Drude model continues to diverge and is not
-applicable.  Furthermore, the higher error in the imaginary part of
-$\epsilon$ gives narrower SPR resonances than are experimentally
-observed~\cite{jahanshahi2014study}.  The simulations in this work all use
-the Lorentz-Drude model, which has an accuracy of () within the (range of
-frequencies I will use and stuff).  A comparison between the models and
-experiment is shown in \Figure{fig:permittivityau} of
-\Section{ch:reference}.
+The Drude model considers only free electrons and thus has only a single pole
+in its expression, limiting its accuracy.  The agreement with experiment is
+particularly bad for metals such as gold and
+silver~\cite{ahmedcomputational}~\cite{jahanshahi2014study}, with deviations
+of approximately \SI{50}{\percent} in the real part and \SI{150}{\percent} in
+the imaginary up to \SI{650}{\micro\meter}.  At higher frequencies the Drude
+model continues to diverge and is not applicable.  Furthermore, the higher
+error in the imaginary part of $\epsilon$ gives narrower SPR resonances than
+are experimentally observed~\cite{jahanshahi2014study}.  The simulations in
+this work all use the Lorentz-Drude model which falls within \SI{5}{\percent}
+of experimentally determined permittivities in the visible spectrum. A
+comparison between the models and experiment is shown in
+\Figure{fig:permittivityau} of \Section{ch:reference}.

@@ -44,18 +44,18 @@ insensitive to experimental artifacts such as system noise and global
 intensity fluctuations.
 
 \subsection{Theoretical Sensitivity}
-The theoretical sensitivity of a speckle pattern to the addition of a
-single scatterer depends on strongly the specifics of the underlying
-scattering process.  The dimensionality, degree of single and multiple
-scattering, and geometry from which light is both incident and collected
-must all be taken into account.  Such theoretical analysis has been solved
-for specific cases such as in the transmission geometries of dynamic light
-scattering or diffusive wave spectroscopy, but in general the problem is
-difficult.  Determination of the relevant analytic expressions for the
-sensitivity of a speckle pattern created by SPP single and multiple
-scattering are, quite frankly, beyond our abilities.  We will therefore
-emphasize our experimental findings, comparing them with numerical
-simulations where we have found them descriptive.
+The theoretical sensitivity of a speckle pattern to the addition of a single
+scatterer depends on strongly the specifics of the underlying scattering
+process.  The dimensionality, degree of single and multiple scattering, and
+geometry from which light is both incident and collected must all be taken
+into account.  Such theoretical analysis has been solved for specific cases
+such as in the transmission geometries of dynamic light scattering or
+diffusive wave spectroscopy, but in general the problem is difficult.  As
+mentioned in \Section{sec:senspaths}, determination of the relevant analytic
+expressions for the sensitivity of a speckle pattern created by SPP single and
+multiple scattering are beyond the scope of this work.  Experimental findings
+will therefore be emphasized and compared with numerical simulations where
+they have been found descriptive.
 
 Though speckle from a single and multiple scattering process share the same
 first order statistics given in \Chapter{ch:speckle}, significant differences
@@ -66,7 +66,7 @@ transmission and reflection geometries~\cite{berkovits1994correlations}.
 Additionally, the mathematical methods used in such computations (Feynman
 diagrams, ladder propagators, vertex operators, etc.) are beyond the scope of
 this work.  Numerical and statistical methods based on the simplified
-scattering model of \Figure{fig:plasmongeosimple} will therefore be employed
+scattering model of \Figure{fig:plasmongeosimple} are employed
 to encompass the observed phenomena, drawing comparisons to established theory
 when available.
 
@@ -119,22 +119,25 @@ a \SI{50}{\milli\watt} \SI{660}{\nano\meter} diode laser is coupled into a
 single mode fiber and is re-collimated into a cage system mounted on
 rotation and translation stages.  The light is incident on a polarizing
 beamsplitter passing $p$-polarized light, and continues through a 10x
-objective which is focussed on the hypotenuse of a hemispherical prism.
+objective which is focused on the hypotenuse of a hemispherical prism.
 Upon the prism's hypotenuse is a structure containing a gold surface
 whereupon SPPs are excited.  The specularly directed and scattered light is
 collected directly by two imaging sensors, one in the specular direction
 and one in the cone \SI{90}{deg} out of this direction.  The entire setup
-is mounted on an inverted microscope stage.  A 10x objective is focussed on
+is mounted on an inverted microscope stage.  A 10x objective is focused on
 the underside of the prism and simultaneously records the focal spot
 through an additional image sensor.  The sensing area of the prism is
 enclosed in a transparent microfluidic cell, permitting the controlled
 introduction of a sample.
 
-%A sample of the sensor output is shown in \Figure{fig:expdata}
-
-Consider a speckle pattern which is the consequence of $N$ fixed
-scatterers.  How does the speckle pattern change upon the addition of a
-single ($N+1$) scatterer?  
+\begin{figure}
+\centering
+\import{includes/}{setpgfinc}
+\import{scatteringmicro/figures/}{zoomout}
+\caption{Change in speckle measured through the PPMCC (top) before (bottom
+left) and after (bottom right) the adsorption of a nanoparticle.  }
+\label{fig:zoomout}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -142,7 +145,7 @@ single ($N+1$) scatterer?
 \import{scatteringmicro/figures/beforeafter/}{beforeafter}
 \caption{Change in speckle measured through the PPMCC (top) before (bottom
 left) and after (bottom right) the adsorption of a nanoparticle.  }
-\label{fig:scattbeforeafter}
+\label{fig:scattbeforeafterone}
 \end{figure}
 
 \begin{figure}
@@ -151,8 +154,8 @@ left) and after (bottom right) the adsorption of a nanoparticle.  }
 \import{scatteringmicro/figures/spkcompare/}{spkcompare}
 \caption{Visual change in the specklegram upon the adsorption of a
 				nanoparticle.  This figure is taken from the same data and timeframe
-				as a compliment to \Figure{fig:scattbeforeafter}.}
-\label{fig:scattspkcompare}
+				as a compliment to \Figure{fig:scattbeforeafterone}.}
+\label{fig:scattspkcomparetwo}
 \end{figure}
 
 \begin{figure}
@@ -162,6 +165,6 @@ left) and after (bottom right) the adsorption of a nanoparticle.  }
 \caption{Statistics of nanoparticle adsorption.  Right: event frequency.
 Left: inter-event time.  Adsorption statistics match well that of theoretical
 Poisson statistics.}
-\label{fig:scattbeforeafter}
+\label{fig:scattbeforeafterthree}
 \end{figure}
 
