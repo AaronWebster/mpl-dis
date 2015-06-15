@@ -20,6 +20,8 @@
 *.pyg
 *.tex.latexmain
 *.tex.orig
+mpl-dis.lof
+mpl-dis.lot
 figures/*.bib
 external/
 #figures/*.pdf
