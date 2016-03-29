@@ -2,11 +2,6 @@
 
 %%% PREAMBLE %%%
 \usepackage{amsmath}
-%\usepackage{amsthm}
-%\usepackage{amssymb}
-%\usepackage{booktabs}
-%\usepackage{tabularx}
-%\usepackage{subfigure}
 \usepackage{mathrsfs}
 \usepackage{textcomp}
 \usepackage{siunitx}
@@ -26,13 +21,8 @@
  colorlinks=false,
  linkbordercolor={1 1 1},
  citebordercolor={1 1 1},
- urlbordercolor={1 1 1} 
+ urlbordercolor={1 1 1}
 }
-
-\sisetup{ 
-% load-configurations=abbreviations
-% round-mode = places,
-}%
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -85,10 +75,9 @@
 
 % display units on plots
 \usepgfplotslibrary{units}
-\usetikzlibrary{pgfplots.units} 
+\usetikzlibrary{pgfplots.units}
 
 \input{../../colors/colors.tex}
-
 %%% END PREAMBLE %%%
 
 \begin{document}
@@ -102,7 +91,7 @@
  legend style={draw=none},
  axis on top,
  normalise/.style 2 args={
-  scaled x ticks=manual:{}{% 
+  scaled x ticks=manual:{}{%
    \pgfmathparse{ ( ##1 - (#1) ) }%
   }
  }
