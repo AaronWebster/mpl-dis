@@ -1,33 +1,32 @@
-The sensitivity of surface plasmon resonance to bulk refractive index
-perturbations is perhaps its most popular and widely utilized property.
-This is motivated by the system's quite remarkable response. By monitoring
+Surface plasmon resonance is remarkably sensitive to perturbations in the bulk
+refractive index of the medium in which SPPs propagate.  By monitoring
 properties of the notch in the specular direction, sensitivities of up to
 \SI{1e-8}{RIU} (refractive index units) have been reported in some
 applications~\cite{fan2008sensitive}, shot noise limited.  Bulk refractive
-index sensing and its limits are very well
-understood~\cite{piliarik2009surface}, so this section focuses on similar
-types of measurements in the cone.  Effects from speckle are not considered.
+index sensing and its limits are particularly well
+understood~\cite{piliarik2009surface}, so this section focuses on similar types
+of measurements in the cone.  Effects from speckle are not considered.
 
 In a prism-coupled setup, there are three main methods used to monitor changes
 in the SPR resonance condition.  All three of these interrogation methods are
 equivalent in terms of their real-world resolution and detection
 limit~\cite{homola2006surface}.
 \begin{description}
-	\item [{Angular}] The change in the angle of the SPR minimum as a function
-					of refractive index is monitored.  In the angular modulation method,
-					The prism may be scanned through a range of angles or the angular
-					spectrum may be obtained simultaneously using a focused beam and
-					sensor array.
- \item [{Wavelength}] The prism is fixed in place and its reflectivity at
-  a single angle is monitored as a function of wavelength.
-	\item [{Intensity}] For a fixed wavelength and incident angle, the
-		intensity of the signal at a certain angular or spatial point is
-		monitored as the experiment progresses.
+\item [{Angular}] The change in the angle of the SPR minimum as a function
+of refractive index is monitored.  In the angular modulation method,
+the prism may be scanned through a range of angles or the angular
+spectrum may be obtained simultaneously using a focused beam and
+sensor array.
+\item [{Wavelength}] The prism is fixed in place and its reflectivity at
+a single angle is monitored as a function of wavelength.
+\item [{Intensity}] For a fixed wavelength and incident angle, the
+intensity of the signal at a certain angular or spatial point is
+monitored as the experiment progresses.
 \end{description}
 This section is restricted to analysis in the angular and intensity
 interrogation methods.  The experimental setup does not possess the means to
 carry out wavelength interrogation, though this is in many ways equivalent to
-sweeping the SPR angle. 
+sweeping the SPR angle.
 
 \subsection{Angular Interrogation}
 To study the sensitivity in the angular interrogation method, the angular
@@ -49,20 +48,20 @@ present analysis concerned with optimization of sensitivity, rather it is most
 relevant to ascertain the difference between angular response to refractive
 index perturbations in the cone and the notch.  
 \begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
-	\import{bulkri/figures/}{sens_angular_asp}
-	\import{bulkri/figures/}{sens_angular_ssp}
- \caption{(top) Angular sensitivity of the notch and the cone for the Kretschmann
-									three-layer (SP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-									\num{1.5142}$, $n_2=\num{0.2843 + 3.3825i}$, and
-									$n_3=1.3310 + \Delta n$.  The thickness of the metal layer is
-									\SI{45}{\nano\meter}. (bottom) 
-	Angular sensitivity of the notch and the cone for the Kretschmann
-									four-layer (LRSPP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-									\num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 +
-									3.3825i}$, and $n_4=1.3310+\Delta n$.
-									The thickness of the metal layer is \SI{16.97}{\nano\meter}.  }
+\centering
+\import{includes/}{setpgfinc}
+\import{bulkri/figures/}{sens_angular_asp}
+\import{bulkri/figures/}{sens_angular_ssp}
+\caption{(top) Angular sensitivity of the notch and the cone for the
+	Kretschmann three-layer (SP) system.
+	$\lambda_0=\SI{660}{\nano\meter}$, $n_1 = \num{1.5142}$,
+	$n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310 + \Delta n$.  The
+	thickness of the metal layer is \SI{45}{\nano\meter}. (bottom) Angular
+	sensitivity of the notch and the cone for the Kretschmann four-layer
+	(LRSPP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1
+	= \num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and
+	$n_4=1.3310+\Delta n$.  The thickness of the metal layer is
+	\SI{16.97}{\nano\meter}.  }
 \label{fig:sensangularasp}
 \end{figure}
 In compliment to \Figure{fig:sensangularasp}, the maximum obtainable
@@ -71,7 +70,7 @@ sensitivities for these configurations are tabulated in
 there is no readily apparent sensitivity benefit to the cone versus the notch
 in angular interrogation.  Though the angle of the SPR minima (notch) and
 maxima (cone) are at slightly different angles, approximately
-\SI{0.006}{\degree}, their responses track each other very well.  
+\SI{0.006}{\degree}, their responses track each other very well.
 
 \begin{table}[ht]
 \centering
@@ -84,9 +83,9 @@ SP & 1.452312e+02 & 1.453671e+02 \\
 LRSPP& 3.943097e+01 & 3.938117e+01 \\
 \bottomrule
 \end{tabular}
-\caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$,
-in degrees per refractive index unit, for the configurations in 
-\Figure{fig:sensangularasp}.}
+\caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$, in
+	degrees per refractive index unit, for the configurations in
+	\Figure{fig:sensangularasp}.}
 \label{tbl:angularsens}
 \end{table}
 
@@ -102,9 +101,9 @@ Long-range surface plasmons show the same trend, but the discrepancy is not
 nearly as large with $\theta_{1/2}=\SI{0.2349}{\degree}$ for the notch and
 $\theta_{1/2}=\SI{0.2325}{\degree}$ for the cone.  The theoretically predicted
 maximum sensitivities for both cases are shown in \Table{tbl:intensitysens}.
-The tabulated data was calculated using the same nonlinear minimization method
-as in angular case, but instead is sought the angular location where the
-difference in Fresnel coefficients is greatest and take $\Delta n \to 0$.
+The tabulated data was obtained using the same nonlinear minimization method
+as for angular case, but the calculation instead sought the angular location where the
+difference in Fresnel coefficients is maximized as $\Delta n \to 0$.
 Specifically, for an $N$ layer system with refractive indices $(n_1,n_2,
 \ldots,n_N)$,
 \begin{equation}
@@ -154,7 +153,7 @@ microfluidic flow cell after \SI{57}{\micro\meter} AuNPs had been adsorbed on
 to the sensor as in \Section{sec:specklesizeexpf}.
 
 A \SI{10}{\percent} glucose solution was prepared and small amounts of water
-added until its refractive index as measured by a water cooled Abbe
+added until its refractive index as measured by a water-cooled Abbe
 refractometer was $n=1.341$ at \SI{20}{\celsius}.  The refractive index of
 deionized water was likewise measured at $n=1.331$.  The combination of these
 two liquids amounted to a refractive index pertrubation of $\Delta n = 0.01$.
@@ -176,11 +175,11 @@ The cone images were unwrapped as described in \Section{sec:spkline} and
 compared using a one-dimensional average of their azimuthal speckle intensity.
 At the extreme of $\Delta n = 0.01$, the Pearson product moment correlation
 coefficent, (see \Equation{eqn:pearsonproductmoment} and surrounding
-discussion) which has a value of 1 for perfectly correlated signals,reached a
+discussion) which has a value of 1 for perfectly correlated signals, reached a
 minimum value of $0.9262$, and was naturally higher during the transition from
 $\Delta n = 0$ to $\Delta n = 0.01$.
 
-From the measurements it is apparent that small refractive index pertrubations
+From the measurements it is apparent that small refractive index perturbations
 have little effect on the structure of speckle in this setup.  In the next
 chapter it will be seen that the underlying scattering microstructure, not
 refractive index, is the most sensitive and determining factor concerning

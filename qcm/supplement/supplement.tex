@@ -186,7 +186,7 @@ Finite element simulations were carried out using the software
 \texttt{COMSOL Multiphysics 4.3 (4.3.0.233)}~\cite{multiphysics1994comsol}.
 Though this software's source code is not available for
 scrutinous review, our implementation is generic and may be carried out
-using other software (e.g. \texttt{OpenFOAM}~\cite{jasak2007openfoam},
+using other software (e.g.\ \texttt{OpenFOAM}~\cite{jasak2007openfoam},
 \texttt{SU2}~\cite{palacios2013stanford}).  Unless otherwise stated,
 implementation specific information is applicable to \comsol.
 
@@ -229,7 +229,7 @@ is zero.  The right hand side (
 has a zero-slip condition.  The two materials 1, the particle, and 2, the
 medium in domains $D_1$ and $D_2$ are assigned a volume force $\mathbf{F}=\mi \omega \rho
 \mathbf{\dot{u}}$,
-where $\rho$ is the density of the material, (e.g. $\rho_1 =
+where $\rho$ is the density of the material, (e.g.\ $\rho_1 =
 \SI{1.06}{\gram\per\centi\meter\cubed}$ for polystyrene and $\rho_2 =
 \SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally. an initial pressure point
 constraint of $p_0=0$ is assigned to the point in the bottom right of the
@@ -500,7 +500,7 @@ $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is swept.}
 
 It is of note that our Navier-Stokes approach (which solves for
 $\dot{\mathbf{u}}$) does not converge in the limit of a perfectly elastic
-material, e.g. $G=G'$ or $\eta=\eta''$; these systems are typically
+material, e.g.\ $G=G'$ or $\eta=\eta''$; these systems are typically
 solved for $\mathbf{u}$.  It is perhaps possible to couple these two
 domains, but we have not attempted to do so.
 
@@ -786,7 +786,7 @@ Dybwad~\cite{dybwad1985sensitive} in 1985.  Dybwad used a coupled
 oscillator approach similar to what we have done, but neglected the damping term
 $\xil$.  It is of note that our Navier-Stokes approach (which solves for
 $\dot{\mathbf{u}}$) does not converge in the limit of a perfectly elastic
-material, e.g. $G=G'$ or $\eta=\eta''$; these systems are typically
+material, e.g.\ $G=G'$ or $\eta=\eta''$; these systems are typically
 solved for $\mathbf{u}$.  It is perhaps possible to couple these two
 domains, but we have not attempted to do so.  In our model we assume
 polystyrene $\left|G\right|=\SI{2}{\giga\pascal}$ at a loss tangent

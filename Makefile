@@ -9,8 +9,6 @@ single:
 
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
-	# Duplicate words.
-	# find . -name "*.tex" -exec egrep --color=always -H "(\b[a-zA-Z]+) \1\b" '{}' \;
 
 # svg figures which should be latex'd
 #%.pdf_tex: $(shell find figures -type f -name "*.svg")
