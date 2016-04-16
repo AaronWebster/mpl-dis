@@ -22,7 +22,7 @@ where $\mathbf{\dot{u}}$ is the flow velocity field, $\rho$ is the fluid
 density, $\eta = \eta^\prime + \mi\eta^{\prime\prime}$ is the complex
 dynamic viscosity, $\mathbf{I}$ is the identity matrix, and $\mathbf{F}$ is
 the body force per unit volume.  The computational domain is set up as
-shown in \Figure{fig:compgeometry}.  
+shown in \Figure{fig:compgeometry}.
 \begin{figure}[h]
  \centering
  \import{qcm/figures/}{geometry.pdf_tex}
@@ -42,7 +42,7 @@ The left hand (%
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
-is a sliding wall given a tangential velocity of 
+is a sliding wall given a tangential velocity of
 \begin{equation}
 \mathbf{\dot{u}} =
 \begin{pmatrix}
@@ -83,7 +83,7 @@ where $\rho$ is the density of the material, (e.g.\ $\rho_1 =
 \SI{1.06}{\gram\per\centi\meter\cubed}$ for polystyrene and $\rho_2 =
 \SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally. an initial pressure point
 constraint of $p_0=0$ is assigned to the point in the bottom right of the
-domain.  
+domain.
 
 The sphere (or, more appropriately, cylinder, since the simulation is two-dimensional) is domain $D_1$ with diameter $d$ and radius $r$ and is
 located a distance $s>-r$, measured from the bottom of the sphere, from the
@@ -121,7 +121,7 @@ The mesh settings were calibrated in \comsol~for fluid dynamics with a
 maximum mesh size of \SI{1e-9}{\meter} along the oscillating boundary.  All
 other meshes were generated automatically.  As for the size of the
 computational domain, we find that a height (parallel to the oscillating
-boundary) of $h=2d$ and width (tangential to the oscillating boundary)  
+boundary) of $h=2d$ and width (tangential to the oscillating boundary)
 $w=2d$, minimum of \SI{500}{\nano\meter}, produces consistent results with a
 minimum of error and computational resources.
 
@@ -145,7 +145,7 @@ component}, (\texttt{spf.T\_stressy}).  As in \Equation{eqn:comsolextract},
 note again that the stress speed ratio $\left<\sigma/\dot{u}\right>$
 is dimensionally equivalent to specific acoustic impedance, also called
 ``shock impedance'', sound pressure over tangential velocity; the
-stress-speed ratio is the impedance of the film. 
+stress-speed ratio is the impedance of the film.
 
 \subsection{Verification Examples}
 The validity of the numerical simulation was checked against two results
@@ -264,7 +264,7 @@ simulation is applicable for a wide range of materials.
  \begin{tikzpicture}[baseline]
   \pgfplotstableread{qcm/figures/data/gksimulation.dat}{\datatablea}
   \pgfplotstableread{qcm/figures/data/gktheory.dat}{\datatableb}
-  \begin{axis}[ 
+  \begin{axis}[
     xlabel = real viscosity $\eta'$,
     x unit = \si{\pascal\second},
     scaled y ticks=base 10:-3,
@@ -294,7 +294,7 @@ simulation is applicable for a wide range of materials.
  \begin{tikzpicture}[baseline]
   \pgfplotstableread{qcm/figures/data/gksimulation2.dat}{\datatablea}
   \pgfplotstableread{qcm/figures/data/gktheory2.dat}{\datatableb}
-  \begin{axis}[ 
+  \begin{axis}[
     xlabel = imaginary viscosity $\eta''$,
     x unit = \si{\pascal\second},
     scaled y ticks=base 10:-3,
@@ -356,11 +356,11 @@ we have not attempted to do so.
 \caption{%
 Simulation of the CF-QCM behavior.
 Finite element simulation for a \SI{10}{\micro\meter} polystyrene
-sphere (cylinder in 2D) as a function of contact surface density 
+sphere (cylinder in 2D) as a function of contact surface density
 $A_\mathrm{c}$.  Negative values of $A_\mathrm{c}$ indicate positive
 separation from the surface.  Discussion in the text. (a-c): Density plot
 of the pressure $P$ and velocity $U$ distributions. Units are normalized.
-Note that in all situations with finite contact radius, 
+Note that in all situations with finite contact radius,
 stress is annularly distributed around the edge of the contact as per the
 Mindlin model~\cite{kumacheva1998interfacial}.
 (main plot): Shifts in $\df$ and $\dg$.
@@ -384,7 +384,7 @@ $|G_\mathrm{L}|=\SI{1.3}{\giga\pascal}$, and loss tangent $\tan \delta =
 \SI{1.0}{\milli\pascal\second}.  The shifts in $\df$ and $\dg$ are plotted
 as a function of a dimensionless contact surface density $A_\mathrm{c}$,
 defined as the contact area of the sample per unit area on the oscillating
-boundary. 
+boundary.
 
 The behavior of the simulation closely matches
 experimental observations.  As the cylinder approaches and makes (weak)
@@ -394,15 +394,15 @@ cylinder becomes more strongly coupled to the boundary. The amount of energy
 dissipated into the particle increases until $\dg$ reaches a maximum and
 $\df$ experiences a zero crossing.  The limiting case sees a rigid
 attachment and the common \textit{negative} frequency shift proportional to
-mass adsorption takes hold.  
+mass adsorption takes hold.
 % say here and in the supplement that the velocity component has some phase
 % thing
 
 There are two aspects of the simulation that deserve additional
 consideration:%
 \begin{inparaenum}[(1)]
-\item positive shifts in $\df$ and $\dg$ begin 
-before physical contact with the oscillating boundary and 
+\item positive shifts in $\df$ and $\dg$ begin
+before physical contact with the oscillating boundary and
 \item for smaller particles $\dg>\df$ while for
 larger particles $\df>\dg$.
 \end{inparaenum}
@@ -464,7 +464,7 @@ thus the rigidity of its contact with the QCM.
 	% height=2.43cm for side pictures, 4cm for axis
 \includegraphics{qcm/figures/multisweep.pdf}
 \caption{Simulated response for different materials.  Finite element simulation of normalized $\df$ and $\dg$ for three
- categories of samples as a function of contact surface density, 
+ categories of samples as a function of contact surface density,
  $A_\mathrm{c}$.
 	Negative values of $A_\mathrm{c}$ indicate the sample has not made contact with the sensor
  surface.

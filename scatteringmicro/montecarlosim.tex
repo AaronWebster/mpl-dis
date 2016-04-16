@@ -3,11 +3,11 @@ polariton multiple scattering.
 It assumes the geometry shown in \Figure{fig:plasmongeo} consisting of
 \begin{itemize}
 \item An elliptical {\it illuminated region}, representing the incident evanescent
-field used to excite plasmons on the surface.  This ellipse has 
-typical radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.  
+field used to excite plasmons on the surface.  This ellipse has
+typical radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.
 \item A {\it tip} - a single movable scatterer.
 \item The {\it scan area}, a square area wherein the tip rasters, typically
-$128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.  
+$128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.
 \item {\it Scatterers}, fixed point scatterers (usually \num{20})
 distributed randomly in a square of $8.8281\times\SI{8.8281}{\micro\meter}$
 where the plasmon can visit, and
@@ -41,7 +41,7 @@ ends when
 \begin{itemize}
 \item The same scatterer is visited twice in a row, or
 \item The total accumulated path length exceeds a pre-defined limit based
-				on the SPP $1/\me$ propagation length.  
+				on the SPP $1/\me$ propagation length.
 \end{itemize}
 This process is repeated many times for each tip position in the scan area.
 Usually \numrange{250000}{1000000} trajectories will be used for each point
@@ -60,7 +60,7 @@ angle along the plasmon ring for the respective tip position in the scan
 area.  The weirdospace image for each angle $\phi$ along the ring is
 calculated by adding a final phase $\varphi_\mathrm{ff,n}$ equal to the
 propagation from the final scatterer to the far field along plasmon
-scattering angle $\theta_\mathrm{sp}$.  This is 
+scattering angle $\theta_\mathrm{sp}$.  This is
 \begin{align}
 \varphi_\mathrm{ff,n} = k_0 \sin
 \theta_\mathrm{sp}\left(x_n\cos\phi+y_n\sin\phi\right)
@@ -73,7 +73,7 @@ E_n=\me^{\mi(\varphi_\mathrm{l}+\varphi_\mathrm{ms}+\varphi_\mathrm{ff})}
 And the total far field intensity is the linear superposition of these
 waves
 \begin{align}
-E_\mathrm{total}(\phi) = 
+E_\mathrm{total}(\phi) =
 \left|\sum_{n=0}^{N} E_n\right|^2
 \end{align}
 
@@ -120,7 +120,7 @@ some way.  The first row is the sum of all the following data.
 The weirdospace images are colored in such a way as to show both phase and
 intensity information at the same time.  This is done by mapping the
 information onto a circular coordinate system as shown in \Figure{fig:hsv}, where the intensity is mapped to the magnitude of the radial
-component $r$ and phase to the angle $\theta$.  
+component $r$ and phase to the angle $\theta$.
 \begin{figure}[ht]
 \centering
 %\begin{center}
@@ -249,4 +249,4 @@ simulation.  They also reveal a limitation: as the scattering density is
 increased, a plasmon as simulated does not visit more scatterers, nor does
 its mean free path decrease.  Rather, the result of increasing the number
 of scatterers is only to suppress single scattering off the tip.  This may
-or may not be physical. 
+or may not be physical.

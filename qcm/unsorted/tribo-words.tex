@@ -34,7 +34,7 @@ and its interaction with the environment.  The bottom is the \textit{static
 branch}, representing the paracitic capitances of the quartz and its driver.
 In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
 compensated phase locked oscillator circuit, $C_0$ is nulled with
-additional circuitry.  This is absolutely crutial, as the parallel $C_0$ 
+additional circuitry.  This is absolutely crutial, as the parallel $C_0$
 pertdubes the resonance frequency of the circuit by about
 \SI{0.825}{\hertz\per\pico\farad}.  The SRS manual gives a higher value
 of \SI{2}{\hertz\per\pico\farad}.
@@ -56,7 +56,7 @@ differential equation for charge
 \begin{equation}
  L\ddot{q}+R\dot{q}+q/C = V(t)
 \end{equation}
-The natural frequency is 
+The natural frequency is
 \begin{equation}
  f_0 = \frac{1}{2 \pi L C}
 \end{equation}
@@ -81,7 +81,7 @@ write bvd.raw all
 \end{minted}
 
 Liquid sensing under a rigid coating is modeled with a modified Butterworth
-van Dyke circuit as follows 
+van Dyke circuit as follows
 
 \begin{center}
  \begin{circuitikz}[scale=0.75]
@@ -117,7 +117,7 @@ the individual circuit elements are clear
 \begin{itemize}
  \item As $R_s$ goes up, $f$ is unchanged, but the linewidth broadens.
  \item As $C_s$ goes up, $f$ \textit{decreases} and vice versa.
- \item As $L_s$ goes up, $f$ \textit{decreases} and vice versa. 
+ \item As $L_s$ goes up, $f$ \textit{decreases} and vice versa.
  \item As $C_0$ goes up, $f$ \textit{increases}.
 \end{itemize}
 
@@ -145,13 +145,13 @@ therefore exhibit little, if any, sensitivity to electric fields. \cite{walls199
 Quartz resonators’ inherent magnetic field sensitivity is
 probably smaller than \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla}. \cite{walls1995fundamental}
 \end{quote}
- 
+
 
 \subsection{Temperature}
 I did a quick qualitiative test to assertain the sign of the change in both
-$f$ and $R$ by placing the crystal next to either 
+$f$ and $R$ by placing the crystal next to either
 \begin{inparaenum}[\itshape a\upshape)]
- \item a hot source, consisting of a beaker filled with hot water and 
+ \item a hot source, consisting of a beaker filled with hot water and
  \item a cold source, consisting of a beaker filled with ice
 \end{inparaenum}
 
@@ -196,10 +196,10 @@ optimum mounting angles. With an applied load of 5 grammes force the force
 applied to the centre of the crystal 200 is times its mass.  We therefore
 expect similar behaviour to that due to an acceleration of 200 'G'.\cite{fletcher1979comparison}
 \begin{equation}
-\Delta f = 1.62 g^{1.72} 
+\Delta f = 1.62 g^{1.72}
 \end{equation}
 \end{quote}
- 
+
 
 
 
@@ -266,9 +266,9 @@ R$.
 
 \begin{tikzpicture}[every node/.style={draw,outer sep=0pt,thick}]
 \tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
-\tikzstyle{damper}=[thick,decoration={markings,  
+\tikzstyle{damper}=[thick,decoration={markings,
   mark connection node=dmp,
-  mark=at position 0.5 with 
+  mark=at position 0.5 with
   {
     \node (dmp) [thick,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
     \draw [thick] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$);

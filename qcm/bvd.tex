@@ -1,5 +1,5 @@
 \section{Driving Circuit}
-The QCM driving circuit employed in our experiments was an SRS 
+The QCM driving circuit employed in our experiments was an SRS
 \subsection{Butterworth van Dyke Equivalent Circuit}
 The typical circuit used to analyze QCM behavior is called the
 \textit{Butterworth van Dyke} (BvD) circuit.  It consists of a capacitor
@@ -40,7 +40,7 @@ and its interaction with the environment.  The bottom is the \textit{static
 branch}, representing the parasitic capacitances of the quartz and its driver.
 In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
 compensated phase locked oscillator circuit, $C_0$ is nulled with
-additional circuitry.  This is absolutely crucial, as the parallel $C_0$ 
+additional circuitry.  This is absolutely crucial, as the parallel $C_0$
 perturbs the resonance frequency of the circuit by about
 \SI{0.825}{\hertz\per\pico\farad}.  The SRS manual gives a higher value
 of \SI{2}{\hertz\per\pico\farad}.
@@ -62,7 +62,7 @@ differential equation for charge
 \begin{equation}
  L\ddot{q}+R\dot{q}+q/C = V(t)
 \end{equation}
-The natural frequency is 
+The natural frequency is
 \begin{equation}
  f_0 = \frac{1}{2 \pi L C}
 \end{equation}
@@ -87,7 +87,7 @@ write bvd.raw all
 \end{minted}
 
 Liquid sensing under a rigid coating is modeled with a modified Butterworth
-van Dyke circuit as follows 
+van Dyke circuit as follows
 
 \begin{center}
  \begin{tikzpicture}[scale=0.75]

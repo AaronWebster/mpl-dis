@@ -26,8 +26,8 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
-\usetikzlibrary{pgfplots.units} 
-\usetikzlibrary{calc} 
+\usetikzlibrary{pgfplots.units}
+\usetikzlibrary{calc}
 \usepgfplotslibrary{groupplots}
 \usepackage{siunitx}
 %\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
@@ -87,11 +87,11 @@
 
 \newcommand{\myplot}[7]{
 \begin{tikzpicture}[baseline]
-\begin{axis}[ 
+\begin{axis}[
  title={\textbf{#1}},
  axis y line*=left,
  ylabel={\textcolor{colora}{\uline{$\Delta\!f$}}},
- ylabel absolute, 
+ ylabel absolute,
  ylabel style={
   rotate=-90,
   at={(yticklabel* cs:1)},
@@ -111,7 +111,7 @@
 ]
 % loading
 %\node[anchor=near yticklabel opposite] at (yticklabel* cs:1) {dingus};
-\addplot [ 
+\addplot [
  color=colora,
  mark=halfcircle*,
  mark size=1.5pt,
@@ -146,7 +146,7 @@
  hide x axis,
  axis y line*=right,
  ylabel={\textcolor{colorb}{\uline{$\Delta \Gamma$}}},
- ylabel absolute, 
+ ylabel absolute,
  ylabel style={
   rotate=-90,
   at={(yticklabel* cs:1)},

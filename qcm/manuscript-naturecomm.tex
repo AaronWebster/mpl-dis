@@ -25,8 +25,8 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
-\usetikzlibrary{pgfplots.units} 
-\usetikzlibrary{calc} 
+\usetikzlibrary{pgfplots.units}
+\usetikzlibrary{calc}
 \usepackage{siunitx}
 \sisetup{ per-mode = reciprocal }
 %\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
@@ -138,7 +138,7 @@ properties of heterogeneous samples in a wide range of applications
 \textit{in situ} and in real time; tweezer and AFM experiments rely on
 highly trained experimentalists, are not widely applicable as analytical
 tools, and are often constrained to the analysis of well prepared,
-homogeneous samples.  
+homogeneous samples.
 
 Among direct mechanical transduction methods amenable for biosensing, the
 quartz crystal microbalance (QCM) has seen great utility as a simple, cost
@@ -181,7 +181,7 @@ $N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$, in the
 motion of the QCM's transverse shear mode.
 The spin up to \SI{90}{g} in
 loading configuration enhances the QCM frequency shift signal and allows
-extraction of mechanical properties of the sample, as well as particle 
+extraction of mechanical properties of the sample, as well as particle
 size. See text for details.
 }
 \label{fig:expsetup}
@@ -276,14 +276,14 @@ the CF-QCM under different load situations as the centripetal acceleration
 is directed in to (\textit{loading}, represented by circles with the top half
 colored) and out of (\textit{unloading}, represented by circles with the
 bottom half colored) the plane of the crystal.
-The situations are 
-(a) unloaded crystal in air, 
-(b) deionized water, 
+The situations are
+(a) unloaded crystal in air,
+(b) deionized water,
 (c) free \SI{1}{\micro\meter} diameter streptavidin coated polystyrene
 particles, $N_\mathrm{L}=\SI{1.58e11}{\particle\per\meter\squared}$,
 (d) \SI{2}{\micro\meter} diameter streptavidin coated paramagnetic
 particles, $N_\mathrm{L}=\SI{1.65e10}{\particle\per\meter\squared}$,
-attached with \SI{25}{mer} oligonucleotides, 
+attached with \SI{25}{mer} oligonucleotides,
 (e) lambda DNA only attached to the gold electrode, and
 (f) \SI{25}{\micro\meter} diameter streptavidin
 coated polystyrene particles,
@@ -292,7 +292,7 @@ $N_\mathrm{L}=\SI{3.25e7}{\particle\per\meter\squared}$, tethered to the sensor 
 (standard deviation) in
 the centrifuge both spinning up and spinning down in a single experimental
 run.
-} 
+}
 \label{fig:loadplot}
 \end{figure*}
 
@@ -340,7 +340,7 @@ quickly drifted away from the sensing area and a signal identical to water
 was observed.  \linelabel{line:loadingpshift}In the loading configuration, a large positive
 shift in $\df$ and $\dg$ was observed, consistent with
 previously observed responses for weakly coupled particles in this size
-range~\cite{johannsman2007contacts}.  
+range~\cite{johannsman2007contacts}.
 
 The initial shift under \SI{1}{g} was found to be $\df=
 \SI{2.2}{\hertz}$ and $\dg=\SI{7.5}{\hertz}$.  At the maximum acceleration of \SI{90}{g} the
@@ -391,7 +391,7 @@ particles modified with biotinylated \SI{25}{mer} oligos to complimentary
 strands conjugated to the QCM gold surface via thiol bonds (see
 Materials).  This is shown in \Figure{fig:loadplot}(d).  Note
 that, $\df$ and $\dg$ are both negative and decrease
-with centrifugal force in the loading orientation.  
+with centrifugal force in the loading orientation.
 \linelabel{line:whenspinning}When spinning with the oligo attached
 particles, we suspect we are not sensing the presence of the particle
 directly but rather the conformational state of the oligonucleotide layer.
@@ -407,8 +407,8 @@ alone~\cite{fawcett2004evidence}.
 %adsorption) like behavior.  For mass loading at this number density, the
 %predicted frequency shift is  $\SI{-0.49}{\hertz}$.  At \SI{95}{g}
 %$\df = \SI{-30}{\hertz}$, which approximately follows a linear
-%increase of inertial mass.  
-%We observe a \SI{5}{\percent} change in this product at \SI{90}{g}.  
+%increase of inertial mass.
+%We observe a \SI{5}{\percent} change in this product at \SI{90}{g}.
 
 Moving from particles to viscoelastic monolayers, in
 \Figure{fig:loadplot}(e), \SI{48}{kbp} lambda phage DNA in STE buffer were
@@ -501,11 +501,11 @@ $r_\mathrm{c}$ in terms of contact mechanics.
 \caption{%
 Simulation of the CF-QCM behavior.
 Finite element simulation for a \SI{10}{\micro\meter} polystyrene
-sphere (cylinder in 2D) as a function of contact surface density 
+sphere (cylinder in 2D) as a function of contact surface density
 $A_\mathrm{c}$.  Negative values of $A_\mathrm{c}$ indicate positive
 separation from the surface.  Discussion in the text. (a-c): Density plot
 of the pressure $P$ and velocity $U$ distributions. Units are normalized.
-Note that in all situations with finite contact radius, 
+Note that in all situations with finite contact radius,
 stress is annularly distributed around the edge of the contact as per the
 Mindlin model~\cite{kumacheva1998interfacial}.
 (main plot): Shifts in $\df$ and $\dg$.
@@ -524,7 +524,7 @@ $|G_\mathrm{L}|=\SI{1.3}{\giga\pascal}$, and loss tangent $\tan \delta =
 \SI{1.0}{\milli\pascal\second}.  \linelabel{line:dfdgshiftx}The shifts in $\df$ and $\dg$ are plotted
 as a function of a dimensionless contact surface density $A_\mathrm{c}$,
 defined as the contact area of the sample per unit area on the oscillating
-boundary. 
+boundary.
 
 \linelabel{line:closely}The behavior of the simulation closely matches
 experimental observations.  As the sphere approaches and makes (weak)
@@ -534,15 +534,15 @@ sphere becomes more strongly coupled to the boundary. The amount of energy
 dissipated into the particle increases until $\dg$ reaches a maximum and
 $\df$ experiences a zero crossing.  The limiting case sees a rigid
 attachment and the common \textit{negative} frequency shift proportional to
-mass adsorption takes hold.  
+mass adsorption takes hold.
 % say here and in the supplement that the velocity component has some phase
 % thing
 
 \linelabel{line:twoaspects}There are two aspects of the simulation that deserve additional
 consideration:
 \begin{inparaenum}[(1)]
-\item positive shifts in $\df$ and $\dg$ begin 
-before physical contact with the oscillating boundary and 
+\item positive shifts in $\df$ and $\dg$ begin
+before physical contact with the oscillating boundary and
 \item for smaller particles $\dg>\df$ while for
 larger particles $\df>\dg$.
 \end{inparaenum}
@@ -584,7 +584,7 @@ parallel spring $\kl$ and dashpot $\xil$ (Voigt
 model~\cite{sips1950mechanical}).  \linelabel{line:actualspring}Note that $\kl$ is not an actual spring; it
 is simply a coupling strength between two oscillators.  The same is true for
 $\xil$.  $\ml$ is an actual mass, though in this model it represents a
-Sauerbrey mass uncorrected for viscoelastic properties.  
+Sauerbrey mass uncorrected for viscoelastic properties.
 
 Using the small load approximation, the response of the system as a
 function of its coupling $\kl$ can be expressed
@@ -604,7 +604,7 @@ $N_\mathrm{L}$ is a surface density (number per unit area) for discrete
 loads.  \linelabel{line:klfinite}\Equation{eqn:mastereq} as a function of $\kl$ reproduces the
 response of the finite element simulation in \Figure{fig:lowersphere},
 which is a function of contact surface density $A_\mathrm{c}$ (or in
-un-normalized terms the contact radius $r_\mathrm{c}$).  A best-fit comparison to 
+un-normalized terms the contact radius $r_\mathrm{c}$).  A best-fit comparison to
 the finite element simulation is shown as points in conjunction with the simulation
 in \Figure{fig:lowersphere}.  See Supplementary Note 3.
 
@@ -616,7 +616,7 @@ $k_\mathrm{zc}=\omegaq^2 \ml$.
 \vspace{-\baselineskip}
 \vspace{-\parskip}
 \begin{align}
-\frac{\df}{f_\mathrm{F}}&= 
+\frac{\df}{f_\mathrm{F}}&=
 \frac{N_\mathrm{L} \kl}
 {\omegaq\pi \mathrm{Z}_\mathrm{q}}
 &\,&\left(\text{weak,}\quad \kl\ll \ml
@@ -673,7 +673,7 @@ preliminary data can be predictive within the general model we have set forth.
 \begin{figure}[ht]
 \centering
 \includegraphics{figure4.pdf}
-\caption{ Particle sizing.  Method for sizing micron-sized particles using the CF-QCM. 
+\caption{ Particle sizing.  Method for sizing micron-sized particles using the CF-QCM.
 $\df$ versus $\dg$ is plotted parametrically as a function of g-force, and
 the data is fit to a circle.  The point on the circle for which $\dg=0$ and
 $\df<0$ provides an estimate of mass adsorption, and thus particle size.
@@ -714,7 +714,7 @@ provides.
 \linelabel{line:alsobemen}It should also be mentioned that with knowledge of the way in which the
 g-force modifies $\kl$, the frequency zero crossing at
 $k_\mathrm{zc}=\omegaq^2\ml$ can be used to determine the mass $\ml$
-without knowledge of the number density $N_\mathrm{L}$. 
+without knowledge of the number density $N_\mathrm{L}$.
 \begin{table}[ht]
 \centering
 Particle Sizing\\
@@ -759,7 +759,7 @@ thus the rigidity of its contact with the QCM.
  \centering
 \includegraphics{figure5.pdf}
 \caption{Simulated response for different materials.  Finite element simulation of normalized $\df$ and $\dg$ for three
- categories of samples as a function of contact surface density, 
+ categories of samples as a function of contact surface density,
  $A_\mathrm{c}$.
  Negative values indicate the sample has not made contact with the sensor
  surface.
@@ -901,7 +901,7 @@ incubated \SI{15}{\minute} at room temperature under slow vortexing, then
 washed again and resuspended in \SI{100}{\micro\liter} STE buffer.  The
 oligo attached particle suspension was allowed to attach to the gold
 surface for \SI{15}{\minute} before spinning.
- 
+
 Lambda DNAs were prepared by combining \SI{50}{\micro\liter} of lambda DNA
 at \SI{500}{\micro\gram\per\milli\liter}, \SI{5.5}{\micro\liter} of 10x T4
 ligase, and \SI{0.5}{\micro\liter} of diluted \SI{10}{\micro\textsc{M}}

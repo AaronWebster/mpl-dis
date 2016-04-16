@@ -16,18 +16,18 @@ function of incident angle $\theta$ or $k_x$
  k_{z,i} &= k_0 \sqrt{\epsilon_i - \epsilon_{i-1} \sin \theta}\\
 &= \sqrt{k_0^2\epsilon_i - k_x^2}
 \end{align}
-For multilayer systems, these equations can be applied recursively. In 
-this work we use the much more computationally efficient 
+For multilayer systems, these equations can be applied recursively. In
+this work we use the much more computationally efficient
 Abeles matrix formalism~\cite{abeles1948propagation}.  Here, the $n$th system matrix for $s$ and $p$
 polarization, $C^s_n$ and $C^p_n$, are
 \begin{align}
 C^s_n = \left(\begin{array}{cc}
 \me^{-\mi k_{z,n} d_n} & r^s_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-r^s_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
+r^s_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n}
 \end{array}\right)\\
 C^p_n = \left(\begin{array}{cc}
 \me^{-\mi k_{z,n} d_n} & r^p_{n,n+1} \me^{-\mi k_{z,n} d_n} \\
-r^p_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n} 
+r^p_{n,n+1} \me^{\mi k_{z,n} d_n} & \me^{\mi k_{z,n} d_n}
 \end{array}\right)
 \end{align}
 where $n$ and $n+1$ are the layer indices for a single interface.  A
