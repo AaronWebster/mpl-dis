@@ -2,9 +2,9 @@ In the derivation of the plane wave solutions to Maxwell's equations,
 Equations~\ref{eqn:planewaves} and~\ref{eqn:planewavesh}, the
 frequency-dependent permittivity is a complex parameter
 \begin{align}
- \epsilon(\omega) &= \epsilon^\prime + \mi \frac{\sigma}{\omega}\\
-                   &= \epsilon^\prime + \mi\epsilon^{\prime\prime}.
-																			\label{eqn:complexpermittivity}
+  \epsilon(\omega) & = \epsilon^\prime + \mi \frac{\sigma}{\omega}   \\
+                   & = \epsilon^\prime + \mi\epsilon^{\prime\prime}.
+  \label{eqn:complexpermittivity}
 \end{align}
 %This allows the use of plane wave solutions which are essentially identical
 %to the solutions obtained for Maxwell's equations in the absence of
@@ -17,8 +17,8 @@ Equations~\ref{eqn:pdensity} and~\ref{eqn:dfield} and the phase delay
 $\delta$ between the scalar $D_0$ and
 $E_0$
 \begin{equation}
- \epsilon(\omega) = \frac{D_0}{E_0} \,|\epsilon| \,\me^{\mi \delta}.
-	\label{eqn:phasedelay}
+  \epsilon(\omega) = \frac{D_0}{E_0} \,|\epsilon| \,\me^{\mi \delta}.
+  \label{eqn:phasedelay}
 \end{equation}
 %\todo{can't divide vector by vector}
 Equations~\ref{eqn:complexpermittivity} and~\ref{eqn:phasedelay} are
@@ -32,8 +32,8 @@ Theoretically, the most general expression simply describes
 $\epsilon(\omega)$ as a superposition of Lorentzian resonances plus a DC
 term,
 \begin{equation}
-\epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}.
-\label{eqn:meepdispersion}
+  \epsilon(\omega)= \epsilon_\infty+\sum_n \frac{\sigma_n \omega_n^2} {\omega_n^2-\omega^2-{\mathrm{i}}\omega\Gamma_n}.
+  \label{eqn:meepdispersion}
 \end{equation}
 
 In \Equation{eqn:meepdispersion} $\epsilon_\infty$ is the low frequency
@@ -45,21 +45,21 @@ encountered when working with numerical simulations of electromagnetic
 fields~\cite{oskooi2010meep}.  In most other areas, the Lorentz-Drude model is
 used.  Formally, the Lorentz-Drude model is given by
 \begin{equation}
-\epsilon_\mathrm{LD}(\omega)=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega),
+  \epsilon_\mathrm{LD}(\omega)=\epsilon_\mathrm{D}(\omega)+\epsilon_\mathrm{L}(\omega),
 \end{equation}
 where $\epsilon_\mathrm{D}$ is contribution from the Drude model, representing
 free electron effects
 \begin{align}
-\epsilon_\mathrm{D}(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
-\mi\Gamma_0^\prime)},
-\label{eqn:drude}
+  \epsilon_\mathrm{D}(\omega)=1-\frac{\sqrt{f_0} \omega_p^{\prime 2}}{\omega(\omega -
+  \mi\Gamma_0^\prime)},
+  \label{eqn:drude}
 \end{align}
 and $\epsilon_L$ is the Lorentz contribution, representing the bound
 electron effects,
 \begin{align}
-\epsilon_L(\omega) =\sum_{j=0}^{k}\frac{f_j\omega_p^{\prime 2}}{\omega_j^{\prime
-2}-\omega^2+\mi\omega\Gamma_j^\prime}.
-\label{eqn:lorentzdrude}
+  \epsilon_L(\omega) =\sum_{j=0}^{k}\frac{f_j\omega_p^{\prime 2}}{\omega_j^{\prime
+  2}-\omega^2+\mi\omega\Gamma_j^\prime}.
+  \label{eqn:lorentzdrude}
 \end{align}
 In \Equation{eqn:lorentzdrude}, $\omega'_p$ is the plasma frequency of an
 electron gas.  The third and perhaps more
@@ -67,10 +67,10 @@ accurate~\cite{jahanshahi2014study} model is the
 Brendel-Bormann model, based instead on an infinite superposition
 of oscillators
 \begin{align}
-\epsilon_\text{BB}(\omega) = \frac{1}{\sqrt{2 \pi} \sigma_n} \intinfty
-\exp\left(-\frac{(x-\omega'_n)}{2 \sigma_n^2}\right)
-\frac{f_j \omega_p^2}{(x^2-\omega^2)+\mi \omega \Gamma'_n} \md x.
-\label{eqn:brendelbormann}
+  \epsilon_\text{BB}(\omega) = \frac{1}{\sqrt{2 \pi} \sigma_n} \intinfty
+  \exp\left(-\frac{(x-\omega'_n)}{2 \sigma_n^2}\right)
+  \frac{f_j \omega_p^2}{(x^2-\omega^2)+\mi \omega \Gamma'_n} \md x.
+  \label{eqn:brendelbormann}
 \end{align}
 Converting between \Equation{eqn:meepdispersion} and
 Equations~\ref{eqn:drude},~\ref{eqn:lorentzdrude},

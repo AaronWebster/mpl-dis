@@ -17,11 +17,11 @@ direction, it can be readily observed with the naked eye with a visible
 laser of only a few milliwatts (e.g.\ a \SI{5}{\milli\watt} HeNe at
 \SI{632.8}{\nano\meter}~\cite{schumann2009surface}).
 \begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
- %\import{existence/figures/}{conefig}
- \includegraphics{existence/figures/conefig}
- \caption{Coordinates of the conically scattered light.}
+  \centering
+  \import{includes/}{setpgfinc}
+  %\import{existence/figures/}{conefig}
+  \includegraphics{existence/figures/conefig}
+  \caption{Coordinates of the conically scattered light.}
 \label{fig:conefig}
 \end{figure}
 
@@ -36,20 +36,20 @@ prism, which is identified by the Fresnel \textit{reverse} transmission,
 $t^p_-$ (e.g.\  $t^p_- \equiv t^p_{210}$).  The intensity in the cone
 $I_\mathrm{cone}$ is proportional to the product $t^p_+$ and $t^p_-$~\cite{simon1976directional},
 \begin{equation}
-I_\mathrm{cone}
-= \frac{1}{I_0}\frac{\mathrm{d}I}{\mathrm{d}\Omega}
-= 4 {\left(\frac{\omega}{c}\right)}^4 |t^p_+|^2
-|t^p_-|^2\,W(\theta_i,\theta_s,\phi)\, |s(\Delta \mathbf{k})|^2
-\label{eqn:guhacone},
+  I_\mathrm{cone}
+  = \frac{1}{I_0}\frac{\mathrm{d}I}{\mathrm{d}\Omega}
+  = 4 {\left(\frac{\omega}{c}\right)}^4 |t^p_+|^2
+  |t^p_-|^2\,W(\theta_i,\theta_s,\phi)\, |s(\Delta \mathbf{k})|^2
+  \label{eqn:guhacone},
 \end{equation}
 where $I_0$ is the incident optical power and
 $\mathrm{d}I/\mathrm{d}\Omega$ is the scattered power per solid angle.
 $s(\Delta \mathbf{k})$ is the surface roughness spectrum given by the Fourier
 transform of the surface autocorrelation function,
 \begin{equation}
-|s(\Delta \mathbf{k})|^2 = \frac{\sigma^2}{4\pi} \left<S^2\right>
-\me^{-(\Delta k^2 \sigma^2)/4}.
-\label{eqn:surfaceroughness}
+  |s(\Delta \mathbf{k})|^2 = \frac{\sigma^2}{4\pi} \left<S^2\right>
+  \me^{-(\Delta k^2 \sigma^2)/4}.
+  \label{eqn:surfaceroughness}
 \end{equation}
 The final term, $W(\theta_i,\theta_s,\phi)$, is a dipole function describing
 the interference of two roughness-induced currents on the
@@ -60,15 +60,15 @@ For practical purposes, $W(\theta_i,\theta_s,\phi)$ and $s(\Delta
 within a small angular range~\cite{heitmann1977determination}.  The angular
 width of the cone is approximately
 \begin{equation}
-\theta_{1/2} = 2 k^{\prime\prime} \frac{c}{\omega \cos \theta},
+  \theta_{1/2} = 2 k^{\prime\prime} \frac{c}{\omega \cos \theta},
 \end{equation}
 on the order of \SI{0.2}{\degree} for LRSPPs and \SI{4}{\degree} for
 conventional SPs.  In this regard, $W(\theta_i,\theta_s,\phi)$ and
 $s(\Delta \mathbf{k})$ will be neglected
 except in a limited scope in \Chapter{ch:scatteringmicro}, such that
 \begin{equation}
-|E_\mathrm{cone}|^2 \propto	|t^p_+|^2 |t^p_-|^2.
-\label{eqn:conefield}
+  |E_\mathrm{cone}|^2 \propto |t^p_+|^2 |t^p_-|^2.
+  \label{eqn:conefield}
 \end{equation}
 
 Due to the \textit{double} plasmonic enhancement in
@@ -83,12 +83,12 @@ notch to facilitate this comparison.
 %the cone to be more sensitive than those in the notch, an aspect we will
 %visit in \Section{sec:bulkri}.
 \begin{figure}[ht]
-\centering
-\import{includes/}{setpgfinc}
-\import{existence/figures/}{cone_vs_notch}
-\caption{Comparison of the angular optical profile of the cone and notch.  The
-cone signal has been inverted and normalized to the same range as the notch for
-comparison.}
+  \centering
+  \import{includes/}{setpgfinc}
+  \import{existence/figures/}{cone_vs_notch}
+  \caption{Comparison of the angular optical profile of the cone and notch.  The
+    cone signal has been inverted and normalized to the same range as the notch for
+  comparison.}
 \label{fig:conevsnotch}
 \end{figure}
 
