@@ -30,13 +30,13 @@ shown in \Figure{fig:compgeometry}.
 \label{fig:compgeometry}
 \end{figure}
 
-It is important to note that, because the simulation is two-dimensional,
-what is actually simulated are infinite cylinders rather than spheres.  For
-Sauerbrey type viscoelastic films, the difference between two- and three-dimensional simulations is negligible.  However, for asperity contacts such
-as spheres, the results however qualitatively correct, did not always
-result in exact numerical agreement with
-experiment~\cite{Vittorias2010489}.  An extended simulation in three
-dimensions at some point is warranted.
+It is important to note that, because the simulation is two-dimensional, what
+is actually simulated are infinite cylinders rather than spheres.  For
+Sauerbrey-type viscoelastic films, the difference between two- and
+three-dimensional simulations is negligible.  However, for asperity contacts
+such as spheres the results, however qualitatively correct, did not always
+result in exact numerical agreement with experiment~\cite{Vittorias2010489}.
+An extended simulation in three dimensions is warranted.
 
 The left hand (%
 \tikz[baseline=-0.75ex]{
@@ -57,11 +57,11 @@ is a sliding wall given a tangential velocity of
 =
 \begin{pmatrix}
 	0\\
-	\mi\omega u_0	
+	\mi\omega u_0
 \end{pmatrix}
 \end{equation}
 where $\omega=2\pi f$ is the angular frequency of oscillation,
-$u_0=\SI{1e-2}{\nano\meter}$ the amplitude, $\dot{u}_x=\dot{u}_\parallel=0$
+$u_0=\SI{1e-2}{\nano\meter}$ is the amplitude, $\dot{u}_x=\dot{u}_\parallel=0$
 is the parallel velocity component, and
 $\dot{u}_y=\dot{u}{\perp}=\mi\omega u_0$ is the tangential velocity
 component.
@@ -69,19 +69,19 @@ The top and bottom
 boundaries
 (%
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
-} )%
+ \draw[dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
+})%
 are given a periodic flow condition such that their pressure difference
-is zero.  The right hand side (%
+is zero.  The right-hand side (%
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
+ \draw[dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
 }) %
 has a zero-slip condition.  The two materials 1, the particle, and 2, the
 medium in domains $D_1$ and $D_2$ are assigned a volume force $\mathbf{F}=\mi \omega \rho
 \mathbf{\dot{u}}$,
 where $\rho$ is the density of the material, (e.g.\ $\rho_1 =
 \SI{1.06}{\gram\per\centi\meter\cubed}$ for polystyrene and $\rho_2 =
-\SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally. an initial pressure point
+\SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally, an initial pressure point
 constraint of $p_0=0$ is assigned to the point in the bottom right of the
 domain.
 
@@ -114,7 +114,7 @@ and the loss tangent, the angle of the complex phasor relative to the real axis 
 Specific to the stationary solver in \comsol, in the
 \texttt{Study$\rightarrow$Stationary Solver$\rightarrow$Advanced} window,
 ``Allow complex-valued output from functions with real input'' was checked.
-Enabling complex-valued output, coupled with the complex valued input for
+Enabling complex-valued output, coupled with the complex-valued input for
 the body forces produced shear waves in the simulation.
 
 The mesh settings were calibrated in \comsol~for fluid dynamics with a
@@ -142,7 +142,7 @@ denotes a line average along the boundary.  In \comsol, and in the
 coordinates of \Figure{fig:compgeometry}, $\sigma$ is \texttt{Total stress,
 y component} (\texttt{v}) and $\dot{u}$ is \texttt{Velocity field, y
 component}, (\texttt{spf.T\_stressy}).  As in \Equation{eqn:comsolextract},
-note again that the stress speed ratio $\left<\sigma/\dot{u}\right>$
+note again that the stress-speed ratio $\left<\sigma/\dot{u}\right>$
 is dimensionally equivalent to specific acoustic impedance, also called
 ``shock impedance'', sound pressure over tangential velocity; the
 stress-speed ratio is the impedance of the film.
@@ -154,8 +154,8 @@ wave beyond the oscillating boundary and the complex frequency shifts in
 the presence of viscoelastic media.
 
 \subsubsection{Shear Evanescent Wave}
-The finite element simulation, when set up as described in
-\Section{sec:finiteelementdingus} predicts a shear evanescent wave out from
+The finite element simulation when set up as described in
+\Section{sec:finiteelementdingus}, predicts a shear evanescent wave out from
 the tangentially oscillating boundary.  The predictions from the finite
 element simulation closely match theory~\cite{steinem2007piezoelectric},
 shown in \Figure{fig:suppshearwave}.  The theoretical expression for the
@@ -408,7 +408,7 @@ larger particles $\df>\dg$.
 \end{inparaenum}
 
 The experiment shows the same behavior, as evidenced in
-\Table{tbl:particlesize}.  It is noted however that the procedure of
+\Table{tbl:particlesize}.  However, it should be noted that the procedure of
 truncation and its interpretation as finite contact radius in the framework
 of contact mechanics utilized on discrete objects are more accurate for
 larger particles (\SI{10}{\micro\meter}, as shown in
@@ -424,7 +424,7 @@ gravitational force determines the height at which the particle will be at
 equilibrium above the surface.  For the relevant material
 parameters~\cite{israelachvili2011intermolecular}~\cite{sharma1992factors}
 it is found that, even at \SI{90}{g}, the smaller \num{1} and
-\SI{2}{\micro\meter} particles never make contact with the surface, but
+\SI{2}{\micro\meter} particles never make contact with the surface but
 ``hover'' at separations of approximately
 \SIrange{0.3}{0.15}{\micro\meter}.  At nonzero separations it is posited
 that the sphere-surface coupling, being mediated by a viscous liquid, will

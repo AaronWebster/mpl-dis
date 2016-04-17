@@ -210,7 +210,7 @@ volume.  The computational domain is set up as shown in
 \label{fig:compgeometry}
 \end{figure}
 
-The left hand side (
+The left-hand side (
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
@@ -222,7 +222,7 @@ and $u_0=\SI{1e-2}{\nano\meter}$ is its amplitude.  The top and bottom
  \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
 }%
 ) are given a periodic flow condition such that their pressure difference
-is zero.  The right hand side (
+is zero.  The right-hand side (
 \tikz[baseline=-0.75ex]{
  \draw [dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
 }) %
@@ -264,7 +264,7 @@ is
 Specific to the stationary solver in \comsol, in the
 \texttt{Study$\rightarrow$Stationary Solver$\rightarrow$Advanced} window,
 ``Allow complex-valued output from functions with real input'' was checked.
-This, coupled with the complex valued input for the body forces, will
+This, coupled with the complex-valued input for the body forces, will
 produce shear waves in the simulation.
 
 The mesh settings were calibrated in \comsol~for fluid dynamics with a
@@ -277,7 +277,7 @@ minimum of error and computational resources.
 
 It is important to note that, because the simulation is two-dimensional,
 what is actually simulated are infinite cylinders rather than spheres.  For
-Sauerbrey type viscoelastic films, the influence of this is negligible.
+Sauerbrey-type viscoelastic films, the influence of this is negligible.
 However, for asperity contacts such as spheres, we find that the results,
 however qualitatively correct, do not always result in exact numerical
 agreement with experiment~\cite{Vittorias2010489}.  An extended simulation
@@ -308,7 +308,7 @@ denotes a line average along the boundary.  In \comsol, and in the
 coordinates of \Figure{fig:compgeometry}, $\sigma$ is
 \texttt{Total stress, y component} (\texttt{v}) and $\dot{u}$ is
 \texttt{Velocity field, y component}, (\texttt{spf.T\_stressy}).  Note that
-the stress speed ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to
+the stress-speed ratio $\left<\sigma/\dot{u}\right>$ is dimensionally equivalent to
 specific acoustic impedance, also called ``shock impedance'', sound
 pressure over velocity.  In other words, the stress-speed ratio is the
 impedance of the film.
