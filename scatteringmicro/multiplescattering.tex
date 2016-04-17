@@ -35,14 +35,12 @@ Restated, the individual components of the scattering model shown in
 \begin{figure}[ht]
 \centering
 \includegraphics[keepaspectratio]{scatteringmicro/figures/montecarlogeosimple.pdf}
-
 \caption{A simplified SPP scattering model.  An SPP is excited within the
-				illuminated region at its creation point and follows a scattering path
-				amongst fixed point scatterers (numbered).  The scattering path can
-				include one (single scattering) or more (multiple scattering)
-				scatterers.  The beam creating the illuminated region is incident from
-				the ${+}x$ direction.}
-
+	illuminated region at its creation point and follows a scattering path
+	amongst fixed point scatterers (numbered).  The scattering path can
+	include one (single scattering) or more (multiple scattering)
+	scatterers.  The beam creating the illuminated region is incident from
+	the ${+}x$ direction.}
 \label{fig:plasmongeosimple}
 \end{figure}
 
@@ -101,7 +99,7 @@ ${+}x$ direction to the first scatterer,
 In the example paths of \Figure{fig:plasmongeosimple}, the variable $x$ in
 \Equation{eqn:smicrofirstphase} would be the $x$
 coordinate of either scatterer $3$ or $5$.  Given an SPP is in phase with the
-exciting field, the choice of the origin and this first phase is arbitrary,
+exciting field, the choice of the origin and this first phase is arbitrary
 but is expressed as in \Equation{eqn:smicrofirstphase} for simplicity.
 
 The second phase contribution is $\varphi_\mathrm{ff}$: the phase accumulated
@@ -135,7 +133,7 @@ x+x)}^2+{(\rho^\prime\sin\theta^\prime\sin\phi^\prime+y)}^2+{(\rho^\prime\cos\th
 Again, $x$, $y$, and $z$ are the coordinates of the sole scatterer in an
 individual path of the single scattering process.  Note that the
 refractive index change from prism to air has been neglected.  To a good
-approximation, the hemispherical geometry imparts only a constant phase to the
+approximation, the hemispherical geometry imparts only a constant phase to
 each scattering path, and therefore has no effect on the speckle pattern.
 
 For a system with $M$ total scatterers and $N \leq M$ scatterers downstream of
@@ -216,9 +214,9 @@ k l^* \approx 1
 where $k=\omega/c$ as usual.  The transport mean path is defined as the
 characteristic distance over which the incident wave is scattered out of its
 incoming direction~\cite{berkovits1994correlations}.  This is the optical
-analog of electron transport in condensed matter physics.  There, one would
-use the Fermi wavenumber $k_F$ and take $l^*$ to be the mean free path.
-Materials for which $k_F l^* \gg 1$ are conductors, and materials for which
+analog of electron transport in condensed matter physics.  For electron transport, one would
+use the Fermi wavenumber $k_F$ and take $l^*$ to be the mean free path;
+materials for which $k_F l^* \gg 1$ are conductors, and materials for which
 $k_F l^* \ll 1$ are insulators.  The multiple scattering regime can also be
 defined in terms of the sample length $L$, such that if $l^* \ll L$ and $1/(k
 l^*) \ll 1$, the system can be thought to be the multiple scattering regime.
@@ -238,9 +236,10 @@ magnitude of the phasor sum for single scattering is therefore altered by an
 
 Determining the sensitivity of a speckle pattern to the addition of a single
 scatterer in the multiple scattering regime is much more complicated; the
-mathematics of which are beyond the scope of the present investigation.  Using
-a ladder-operator approach similar to that of \name{Feng}, \name{Lee},
-\name{Stone}, and \name{Douglas}~\cite{feng1986sensitivity},
+mathematics of such a determination are well beyond the scope of the present
+investigation.  Using a ladder-operator approach similar to that of
+\name{Feng}, \name{Lee}, \name{Stone}, and
+\name{Douglas}~\cite{feng1986sensitivity},
 \name{Berkovitz}~\cite{berkovits1991sensitivity} gives an ensemble averaged
 sensitivity of $1/N^3$ for multiple scattering in the two-dimensional slab
 geometry~\cite{nieuwenhuizen1993role}.

@@ -9,7 +9,7 @@ centrifuge is a standard swinging bucket type.}
 
 The CF-QCM experimental setup is shown in \Figure{fig:cfqcmexpsetup}.  It
 consists of a \SI{25}{\milli\meter} diameter \SI{5}{\mega\hertz} gold
-coated crystal in combination with an SRS QCM200 PLL based driver circuit
+coated crystal in combination with an SRS QCM200 PLL-based driver circuit
 and an external rubidium frequency standard.  The driver circuit and
 crystal are integrated into the arm of a commercial swinging bucket
 centrifuge.  The QCM is then connected in proximity to a remote driver
@@ -59,7 +59,7 @@ $\df$, which is used directly in all discussions of $\df$.  However, unlike
 a QCM-D device which gives a ``dissipation factor'', $D$, defined in
 terms of the bandwidth $\dg$ as $D=2\dg/f_\mathrm{F}$, the QCM200
 outputs the motional resistance $\Rm$ of the Butterworth van Dyke
-equivalent circuit.  $\Rm$ is, related to
+equivalent circuit.  $\Rm$ is related to
 the bandwidth $\Gamma$ and the QCM-D dissipation $D$ by
 \begin{align}
  \Rm&=\left(4 \pi \Lm\right) \Gamma\\
@@ -90,7 +90,7 @@ $\pm\SI{28}{ppm}$ for $\Rm$.  The noise was further analyzed for both the
 loading and unloading orientations of the crystal, as well as for different
 centrifuge spin speeds.  In either case, no discernible difference in the
 noise was observed.  At no point was the centrifuge or bucket assembly
-modified in an attempt to try and reduce system noise.
+modified in an attempt to reduce system noise.
 
 In comparison, a typical QCM-D such as those sold by
 Q-Sense\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
@@ -106,19 +106,20 @@ within \SI{1}{\percent} of the predicted value for water, uncertainties in
 the value of $\Lm$ used for the $\Rm$-$\dg$ conversion do not significantly
 affect the analysis for the range of $\Lm$ values quoted in the literature.
 
-It is clear that the SRS QCM200 PLL based driver and a QCM-D device are
+It is clear that the SRS QCM200 PLL-based driver and a QCM-D device are
 both measures of the same underlying physical phenomena taking place in a
 resonating quartz crystal~\cite{geelhood2002transient}.  It is important to
 note that the important aspect of the CF-QCM, the centrifugal force, is
 independent of the type of technique used to drive and monitor the quartz
 crystal.  There is no reason why the CF-QCM technique would not apply to
-all QCM based measurement techniques.
+all QCM-based measurement techniques.
 
 \section{Environmental Effects and Noise}
-In the next chapter is presented the response of the CF-QCM under different
-load situations.  Before doing so, it is prudent that all non-sample
-phenomena which could influence the sensorgram are taken into account.  Such
-phenomena have been tabulated in \Table{tbl:environmentaleffects}.
+
+The next chapter presents the response of the CF-QCM under different load
+situations.  Before discussing the various CF-QCM responses, it is prudent to
+account for all the non-sample phenomena which could influence the sensorgram.
+Such phenomena have been tabulated in \Table{tbl:environmentaleffects}.
 \begin{table}[ht]
 \centering
 \begin{tabular}{l>{\raggedright}p{10cm}l}
@@ -146,16 +147,15 @@ acceleration & \SI{9e-11}{\per g}, depending on orientation &\cite{norton1993tac
 \label{tbl:environmentaleffects}
 \end{table}
 
-From \Table{tbl:environmentaleffects} it is apparent that the dominant
-source of signal \textit{drift} will be due to the inherent temperature
-dependent viscosity of water.  This is a good thing, because temperature
-drift can be a rather slow process compared with other types of signals.
-To evidence this, a parametric plot of g-force versus temperature
-for a typical run, total time \SI{200}{\second}, is shown in
-\Figure{fig:qcmairtime} for both air and water.  In both cases
-the temperature increases as the centrifuge spins.  However,
-the temperature drifts are extremely small during the course of a run, less
-than \SI{0.1}{\celsius}.
+From \Table{tbl:environmentaleffects} it is apparent that the dominant source
+of signal \textit{drift} will be due to the inherent temperature-dependent
+viscosity of water.  This is a good thing, because temperature drift can be
+a rather slow process compared with other types of signals.  To evidence this,
+a parametric plot of g-force versus temperature for a typical run, total time
+\SI{200}{\second}, is shown in \Figure{fig:qcmairtime} for both air and water.
+In both cases the temperature increases as the centrifuge spins.  However, the
+temperature drifts are extremely small during the course of a run, less than
+\SI{0.1}{\celsius}.
 \begin{figure}[ht]
  \centering
  \import{includes/}{setpgfinc}

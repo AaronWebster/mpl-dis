@@ -30,7 +30,7 @@ according to the sampling of $x_n$.
 \label{fig:fftdrawing}
 \end{figure}
 Because of this, there is a symmetric set of relationships for the mapping
-$x_n \mapsto X_k$ (and vice versa) in the FFT.  For example, assume one
+$x_n \mapsto X_k$ (and vice versa) in the FFT\@.  For example, assume one
 obtains $N$ samples of $x$ with bounds $x_1$ and $x_N$.  The
 spacing $\delta x$ between $x_n$ and $x_{n+1}$ is just the range (denoted
 by a $\star$)
@@ -89,16 +89,16 @@ $X$ field with spacing $\delta X$ beginning with $X_1$,
 \end{align}
 
 The chirp-z transform can additionally be computed with the same efficiency
-as the FFT.  Consider the relationship
+as the FFT\@.  Consider the relationship
 \begin{equation}
-n k = \frac{-(k-n)^2}{2} + \frac{n^2}{2} + \frac{k^2}{2}.
+				n k = \frac{-{(k-n)}^2}{2} + \frac{n^2}{2} + \frac{k^2}{2}.
 \label{eqn:relationshipfargodingus}
 \end{equation}
 Using \Equation{eqn:relationshipfargodingus}, \Equation{eqn:dft} can be rewritten
 \begin{align}
 								X_k &= \sum_{n=1}^{N} x_n\, \me^{\mi 2\pi k n/N} \qquad k=1,\ldots,N\\
 								X_k &= \me^{\mi \pi k^2/N} \sum_{n=1}^{N} \left(x_n\, \me^{\mi \pi n^2/N}\right)\,
-								\me^{\mi \pi(k-n)^2/N}\qquad k=1,\ldots,N,
+								\me^{\mi \pi{(k-n)}^2/N}\qquad k=1,\ldots,N,
 \end{align}
 which is simply a convolution.  The convolution theorem
 states that the Fourier transform of the
