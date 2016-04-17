@@ -10,20 +10,12 @@ single:
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
 
-# svg figures which should be latex'd
-#%.pdf_tex: $(shell find figures -type f -name "*.svg")
-#	inkscape --export-pdf=$(@:.pdf_tex=.pdf) --export-latex $<
-
-# svg figures to be converted to PDF
-#%.svg:
-#	inkscape --export-pdf=$(@:.svg=.pdf) $<
-
 $(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex")
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
 	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
 
-# remove build files plus all the latex turds
+# Remove build files plus all the latex turds.
 clean:
 	latexmk -CA
 	mkdir -p external
