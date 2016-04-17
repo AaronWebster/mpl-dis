@@ -41,12 +41,12 @@
 \newcommand{\intinfty}{\int_{-\infty}^{\infty}}
 
 % consistent formatting of object labels
-\newcommand{\Figure}[1]{FIG. \ref{#1}}
-\newcommand{\Equation}[1]{Equation \ref{#1}}
-\newcommand{\Table}[1]{TBL. \ref{#1}}
-\newcommand{\Section}[1]{SEC. \ref{#1}}
-\newcommand{\Chapter}[1]{CH. \ref{#1}}
-\newcommand{\Appendix}[1]{APP. \ref{#1}}
+\newcommand{\Figure}[1]{Figure~\ref{#1}}
+\newcommand{\Equation}[1]{Equation~\ref{#1}}
+\newcommand{\Table}[1]{Table~\ref{#1}}
+\newcommand{\Section}[1]{Section~\ref{#1}}
+\newcommand{\Chapter}[1]{Chapter~\ref{#1}}
+\newcommand{\Appendix}[1]{Appendix~\ref{#1}}
 
 % missing mathematical operators
 \DeclareMathOperator{\sinc}{sinc}
@@ -92,7 +92,7 @@
  axis on top,
  normalise/.style 2 args={
   scaled x ticks=manual:{}{%
-   \pgfmathparse{ ( ##1 - (#1) ) }%
+   \pgfmathparse{(##1-(#1))}%
   }
  }
 }

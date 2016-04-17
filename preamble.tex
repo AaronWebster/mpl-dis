@@ -99,7 +99,7 @@ per-mode=reciprocal,
 % it renames \sqrt as \oldsqrt
 % This definition puts a little vertical guy at the end so it's more
 % obvious where the square root actually ends.
-\let\oldsqrt\sqrt
+\let\oldsqrt\sqrt{}
 % it defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
@@ -180,23 +180,6 @@ per-mode=reciprocal,
 
 \newcommand{\ersatzfigure}{\includegraphics[width=10cm,keepaspectratio]{includes/ersatz}}
 
-% hilight text... a "work in progress" type thing
-%\tikzstyle{todobox} = [draw=Blues9seq9, fill=Blues9seq1,
-%rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-%\tikzstyle{todotitle} =[fill=Blues9seq9, text=white]
-
-\newcommand{\todo}[1]{%
-\begin{center}
-%\begin{tikzpicture}
-%\node [todobox] (box){%
- \begin{minipage}{0.9\textwidth}
- #1
- \end{minipage}
-%};
-%\node[todotitle, right=10pt] at (box.north west) {Note};
-%\end{tikzpicture}
-\end{center}
-}
 \makeatletter
 \def\tensor#1{\protect\@ontopof{#1}{\leftrightarrow}{1.15}\mathord{\box2}}
 \def\overstar#1{\protect\@ontopof{#1}{\ast}{1.15}\mathord{\box2}}

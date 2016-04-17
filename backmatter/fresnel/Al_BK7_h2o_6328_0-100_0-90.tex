@@ -1,7 +1,7 @@
 \newpage
 \subsubsection{Al-BK7-$ \ce{H2O} $}
 \begin{figure}[h]
-\pgfplotsset{
+\pgfplotsset{%
  small,
  width=0.8\textwidth,
  height=0.8\textwidth,
@@ -12,8 +12,8 @@
  title = {$\lambda_0=\SI{632.8}{\nano\meter}$, $\epsilon_1=\text{BK7}$, $\epsilon_2=\text{Al}$, $\epsilon_3=\ce{H2O}$},
  minor tick num=3,
  colorbar,
- colorbar style = { ylabel=$|\tilde{r}_{123}|$ },
- legend style = { cells = {anchor=west} }
+ colorbar style = {ylabel=$|\tilde{r}{123}|$},
+ legend style = {cells={anchor=west}}
 }
 \centering
 \begin{tikzpicture}
@@ -32,7 +32,7 @@ ymin=0,
 ymax=100
 ]{fresnel/Al_BK7_h2o_6328_0-100_0-90.png};
 %\, $d=\SI{47.12761744}{\nano\meter}$,
-%\legend{
+%\legend{%
 %{\tiny $\lambda_0=\SI{632.8}{\nano\meter}$},
 %{\tiny $\epsilon_1=\text{BK7}$},
 %{\tiny $\epsilon_2=\text{Ag}$},

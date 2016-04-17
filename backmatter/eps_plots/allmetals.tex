@@ -4,9 +4,9 @@ n''$ for silver, aluminum, gold, copper, chromium, nickel, tungsten,
 titanium, beryllium, palladium, and platinum using either the Drude
 (\Equation{eqn:drude}),
 Lorentz-Drude (\Equation{eqn:lorentzdrude}), or Brendel-Bormann
-(\Equation{eqn:brendelbormann}  models in the range
+(\Equation{eqn:brendelbormann})  models in the range
 \SIrange{200}{2000}{\nano\meter}.  The material parameters and mathematical
-formalism detailed in \cite{rakic1998optical}.  These tables are generated
+formalism detailed in~\cite{rakic1998optical}.  These tables are generated
 programmatically.
 Three different models for the complex permittivity are tabulated.  The
 first two are the Drude and Lorentz-Drude (LD) models.
@@ -37,7 +37,7 @@ infinite superposition of oscillators
 \label{eqn:brendelbormann}
 \end{align}
 \newpage
-\pgfplotsset{
+\pgfplotsset{%
  minor tick num=3,
  small,
  every axis/.style={thick,width=\textwidth,height=0.35\textwidth,legend columns=3},
@@ -49,7 +49,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, -0.78487418047)
 (2.18181818182e-07, -1.12412357997)
 (2.36363636364e-07, -1.49286415804)
@@ -152,7 +152,7 @@ infinite superposition of oscillators
 (2e-06, -176.434349397)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.35905059416)
 (2.18181818182e-07, 0.550331143561)
 (2.36363636364e-07, -0.401215462349)
@@ -255,7 +255,7 @@ infinite superposition of oscillators
 (2e-06, -173.712640872)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -0.247217875147)
 (2.18181818182e-07, -0.741091026792)
 (2.36363636364e-07, -0.693905648861)
@@ -363,7 +363,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0138201424947)
 (2.18181818182e-07, 0.0179420992488)
 (2.36363636364e-07, 0.0228115184097)
@@ -466,7 +466,7 @@ infinite superposition of oscillators
 (2e-06, 13.738604205)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.404835204104)
 (2.18181818182e-07, 0.445563994275)
 (2.36363636364e-07, 0.656396239051)
@@ -569,7 +569,7 @@ infinite superposition of oscillators
 (2e-06, 15.9165722493)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.610290444635)
 (2.18181818182e-07, 1.40252802297)
 (2.36363636364e-07, 1.96471721824)
@@ -677,7 +677,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00779948046325)
 (2.18181818182e-07, 0.0084610137681)
 (2.36363636364e-07, 0.00933472178687)
@@ -780,7 +780,7 @@ infinite superposition of oscillators
 (2e-06, 0.51676444778)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.1783709516)
 (2.18181818182e-07, 0.793227987236)
 (2.36363636364e-07, 0.429004273941)
@@ -883,7 +883,7 @@ infinite superposition of oscillators
 (2e-06, 0.603183582037)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.453455228736)
 (2.18181818182e-07, 0.650074681284)
 (2.36363636364e-07, 0.833591477964)
@@ -991,7 +991,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 1.25294454176)
 (2.18181818182e-07, 1.49946334982)
 (2.36363636364e-07, 1.72797644375)
@@ -1094,7 +1094,7 @@ infinite superposition of oscillators
 (2e-06, 18.7990103405)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.242930053305)
 (2.18181818182e-07, 0.397188862312)
 (2.36363636364e-07, 1.08190584563)
@@ -1197,7 +1197,7 @@ infinite superposition of oscillators
 (2e-06, 18.6588569482)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.951671707696)
 (2.18181818182e-07, 1.52557406771)
 (2.36363636364e-07, 1.66660157266)
@@ -1314,7 +1314,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, -2.05370939621)
 (2.18181818182e-07, -2.63412684958)
 (2.36363636364e-07, -3.26500100129)
@@ -1417,7 +1417,7 @@ infinite superposition of oscillators
 (2e-06, -302.643126551)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -4.84561350949)
 (2.18181818182e-07, -5.95573185139)
 (2.36363636364e-07, -7.15856524757)
@@ -1520,7 +1520,7 @@ infinite superposition of oscillators
 (2e-06, -391.389269277)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -4.83284754023)
 (2.18181818182e-07, -5.92655486136)
 (2.36363636364e-07, -7.11387139167)
@@ -1628,7 +1628,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0231520386981)
 (2.18181818182e-07, 0.0300573146374)
 (2.36363636364e-07, 0.0382147778154)
@@ -1731,7 +1731,7 @@ infinite superposition of oscillators
 (2e-06, 23.0210426213)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.474063639008)
 (2.18181818182e-07, 0.627957273325)
 (2.36363636364e-07, 0.813900498701)
@@ -1834,7 +1834,7 @@ infinite superposition of oscillators
 (2e-06, 88.6757541862)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.508748362656)
 (2.18181818182e-07, 0.663033304698)
 (2.36363636364e-07, 0.841682585377)
@@ -1942,7 +1942,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00807760942817)
 (2.18181818182e-07, 0.0092596542616)
 (2.36363636364e-07, 0.0105743150928)
@@ -2045,7 +2045,7 @@ infinite superposition of oscillators
 (2e-06, 0.661174589859)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.10755101629)
 (2.18181818182e-07, 0.12847881497)
 (2.36363636364e-07, 0.151855298031)
@@ -2148,7 +2148,7 @@ infinite superposition of oscillators
 (2e-06, 2.22708055333)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.115550647905)
 (2.18181818182e-07, 0.135965243961)
 (2.36363636364e-07, 0.157510445654)
@@ -2256,7 +2256,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 2.02670897959)
 (2.18181818182e-07, 2.29530503018)
 (2.36363636364e-07, 2.55543061633)
@@ -2359,7 +2359,7 @@ infinite superposition of oscillators
 (2e-06, 24.6203281208)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 3.11678704136)
 (2.18181818182e-07, 3.4560783143)
 (2.36363636364e-07, 3.78988793478)
@@ -2462,7 +2462,7 @@ infinite superposition of oscillators
 (2e-06, 28.1548985815)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 3.1132617919)
 (2.18181818182e-07, 3.44819993879)
 (2.36363636364e-07, 3.77853964705)
@@ -2579,7 +2579,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, -0.612444230451)
 (2.18181818182e-07, -0.918915234983)
 (2.36363636364e-07, -1.25202623397)
@@ -2682,7 +2682,7 @@ infinite superposition of oscillators
 (2e-06, -159.086082864)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.137249454114)
 (2.18181818182e-07, -0.524999663898)
 (2.36363636364e-07, -1.02404097811)
@@ -2785,7 +2785,7 @@ infinite superposition of oscillators
 (2e-06, -158.075149584)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -2.60791298748)
 (2.18181818182e-07, -2.05123761556)
 (2.36363636364e-07, -1.74747424378)
@@ -2893,7 +2893,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0137855547875)
 (2.18181818182e-07, 0.017897150812)
 (2.36363636364e-07, 0.022754309366)
@@ -2996,7 +2996,7 @@ infinite superposition of oscillators
 (2e-06, 13.6865227607)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.49564119267)
 (2.18181818182e-07, 2.06275498531)
 (2.36363636364e-07, 2.82735261106)
@@ -3099,7 +3099,7 @@ infinite superposition of oscillators
 (2e-06, 19.5780105011)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 4.74384464474)
 (2.18181818182e-07, 5.25255421461)
 (2.36363636364e-07, 5.60183470209)
@@ -3207,7 +3207,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0088071111912)
 (2.18181818182e-07, 0.00933459728886)
 (2.36363636364e-07, 0.0101673791713)
@@ -3310,7 +3310,7 @@ infinite superposition of oscillators
 (2e-06, 0.542058724675)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.905310687456)
 (2.18181818182e-07, 0.895409655751)
 (2.36363636364e-07, 0.995752922549)
@@ -3413,7 +3413,7 @@ infinite superposition of oscillators
 (2e-06, 0.777103348597)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.18438199652)
 (2.18181818182e-07, 1.33933500691)
 (2.36363636364e-07, 1.43537337185)
@@ -3521,7 +3521,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 1.10681687343)
 (2.18181818182e-07, 1.35573033431)
 (2.36363636364e-07, 1.58248514026)
@@ -3624,7 +3624,7 @@ infinite superposition of oscillators
 (2e-06, 17.8538461137)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.16819346575)
 (2.18181818182e-07, 1.62896170336)
 (2.36363636364e-07, 2.00776734752)
@@ -3727,7 +3727,7 @@ infinite superposition of oscillators
 (2e-06, 17.8145468198)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.83219833386)
 (2.18181818182e-07, 2.7731050742)
 (2.36363636364e-07, 2.75962713438)
@@ -3844,7 +3844,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, -0.754857838768)
 (2.18181818182e-07, -1.08841656121)
 (2.36363636364e-07, -1.45097702177)
@@ -3947,7 +3947,7 @@ infinite superposition of oscillators
 (2e-06, -174.079872608)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -2.28414806835)
 (2.18181818182e-07, -2.05645654231)
 (2.36363636364e-07, -1.40822549503)
@@ -4050,7 +4050,7 @@ infinite superposition of oscillators
 (2e-06, -183.80066407)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -1.09705722702)
 (2.18181818182e-07, -1.13001411413)
 (2.36363636364e-07, -0.95188611831)
@@ -4158,7 +4158,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00849233017905)
 (2.18181818182e-07, 0.0110253052034)
 (2.36363636364e-07, 0.014017637923)
@@ -4261,7 +4261,7 @@ infinite superposition of oscillators
 (2e-06, 8.47268680715)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 3.70327050075)
 (2.18181818182e-07, 4.7597344356)
 (2.36363636364e-07, 5.40362084258)
@@ -4364,7 +4364,7 @@ infinite superposition of oscillators
 (2e-06, 20.4056990164)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 4.2308711043)
 (2.18181818182e-07, 4.68598963786)
 (2.36363636364e-07, 5.09210411323)
@@ -4472,7 +4472,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00488716970616)
 (2.18181818182e-07, 0.00528393521233)
 (2.36363636364e-07, 0.00581847949753)
@@ -4575,7 +4575,7 @@ infinite superposition of oscillators
 (2e-06, 0.320987700643)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.01658532343)
 (2.18181818182e-07, 1.25070580004)
 (2.36363636364e-07, 1.44497032575)
@@ -4678,7 +4678,7 @@ infinite superposition of oscillators
 (2e-06, 0.75141852189)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.27940078384)
 (2.18181818182e-07, 1.35836303548)
 (2.36363636364e-07, 1.45403298811)
@@ -4786,7 +4786,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 1.22872431668)
 (2.18181818182e-07, 1.47542839961)
 (2.36363636364e-07, 1.70353214027)
@@ -4889,7 +4889,7 @@ infinite superposition of oscillators
 (2e-06, 18.6645603062)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.5758857848)
 (2.18181818182e-07, 2.69099295449)
 (2.36363636364e-07, 2.6443013207)
@@ -4992,7 +4992,7 @@ infinite superposition of oscillators
 (2e-06, 19.2023589105)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.33834282889)
 (2.18181818182e-07, 2.43932951866)
 (2.36363636364e-07, 2.47632713866)
@@ -5109,7 +5109,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.494840412391)
 (2.18181818182e-07, 0.398824910147)
 (2.36363636364e-07, 0.294462613359)
@@ -5212,7 +5212,7 @@ infinite superposition of oscillators
 (2e-06, -49.2301354474)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -1.06008791576)
 (2.18181818182e-07, -2.08728691496)
 (2.36363636364e-07, -3.03312729992)
@@ -5315,7 +5315,7 @@ infinite superposition of oscillators
 (2e-06, -20.9375994327)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -3.05828291357)
 (2.18181818182e-07, -3.70667385247)
 (2.36363636364e-07, -4.37922965836)
@@ -5423,7 +5423,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00382992380858)
 (2.18181818182e-07, 0.00497222842675)
 (2.36363636364e-07, 0.00632167600027)
@@ -5526,7 +5526,7 @@ infinite superposition of oscillators
 (2e-06, 3.80825379498)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.28709502666)
 (2.18181818182e-07, 2.65052155439)
 (2.36363636364e-07, 3.172050902)
@@ -5629,7 +5629,7 @@ infinite superposition of oscillators
 (2e-06, 48.2597315596)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.93511846844)
 (2.18181818182e-07, 2.4265077183)
 (2.36363636364e-07, 2.98977526199)
@@ -5737,7 +5737,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.703454208112)
 (2.18181818182e-07, 0.631538127892)
 (2.36363636364e-07, 0.542675352955)
@@ -5840,7 +5840,7 @@ infinite superposition of oscillators
 (2e-06, 0.27117912072)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.85461784041)
 (2.18181818182e-07, 0.802009877012)
 (2.36363636364e-07, 0.823315186657)
@@ -5943,7 +5943,7 @@ infinite superposition of oscillators
 (2e-06, 3.97921719797)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.529529183096)
 (2.18181818182e-07, 0.601500209921)
 (2.36363636364e-07, 0.679434001933)
@@ -6051,7 +6051,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00384981007327)
 (2.18181818182e-07, 0.00556719583962)
 (2.36363636364e-07, 0.00823715310437)
@@ -6154,7 +6154,7 @@ infinite superposition of oscillators
 (2e-06, 9.93012321806)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.89233166697)
 (2.18181818182e-07, 2.33688115136)
 (2.36363636364e-07, 2.72432567675)
@@ -6257,7 +6257,7 @@ infinite superposition of oscillators
 (2e-06, 8.57575290471)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.58406039764)
 (2.18181818182e-07, 2.85253443625)
 (2.36363636364e-07, 3.11154631055)
@@ -6374,7 +6374,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.366919879819)
 (2.18181818182e-07, 0.246590921646)
 (2.36363636364e-07, 0.115801686173)
@@ -6477,7 +6477,7 @@ infinite superposition of oscillators
 (2e-06, -61.9344972713)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -1.7423226919)
 (2.18181818182e-07, -1.33943218694)
 (2.36363636364e-07, -0.988197444975)
@@ -6580,7 +6580,7 @@ infinite superposition of oscillators
 (2e-06, -51.4257345057)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -1.13506304201)
 (2.18181818182e-07, -1.61339600083)
 (2.36363636364e-07, -1.88644346466)
@@ -6688,7 +6688,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00490189032214)
 (2.18181818182e-07, 0.00636391431566)
 (2.36363636364e-07, 0.00809105704722)
@@ -6791,7 +6791,7 @@ infinite superposition of oscillators
 (2e-06, 4.87296936468)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 5.48316698957)
 (2.18181818182e-07, 6.02648980647)
 (2.36363636364e-07, 6.33993538287)
@@ -6894,7 +6894,7 @@ infinite superposition of oscillators
 (2e-06, 61.138789491)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 3.94363470032)
 (2.18181818182e-07, 4.49905940592)
 (2.36363636364e-07, 5.34188580327)
@@ -7002,7 +7002,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.605752631749)
 (2.18181818182e-07, 0.496620553455)
 (2.36363636364e-07, 0.340503809856)
@@ -7105,7 +7105,7 @@ infinite superposition of oscillators
 (2e-06, 0.309358529565)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.41615809961)
 (2.18181818182e-07, 1.55468852531)
 (2.36363636364e-07, 1.64746628034)
@@ -7208,7 +7208,7 @@ infinite superposition of oscillators
 (2e-06, 3.77261030682)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.2183328243)
 (2.18181818182e-07, 1.25821393855)
 (2.36363636364e-07, 1.37454531339)
@@ -7316,7 +7316,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00572207152846)
 (2.18181818182e-07, 0.00906117746474)
 (2.36363636364e-07, 0.0168022827923)
@@ -7419,7 +7419,7 @@ infinite superposition of oscillators
 (2e-06, 11.1382404329)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.73781900607)
 (2.18181818182e-07, 2.74098106439)
 (2.36363636364e-07, 2.72115511863)
@@ -7522,7 +7522,7 @@ infinite superposition of oscillators
 (2e-06, 11.459347541)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.28884159032)
 (2.18181818182e-07, 2.52843758713)
 (2.36363636364e-07, 2.74802412043)
@@ -7639,7 +7639,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0632769706569)
 (2.18181818182e-07, -0.114755238014)
 (2.36363636364e-07, -0.30826032763)
@@ -7742,7 +7742,7 @@ infinite superposition of oscillators
 (2e-06, -91.6943243325)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.05507401931)
 (2.18181818182e-07, 1.85361373256)
 (2.36363636364e-07, 2.11263249445)
@@ -7845,7 +7845,7 @@ infinite superposition of oscillators
 (2e-06, -53.7874899594)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -2.8458706636)
 (2.18181818182e-07, -1.71289723129)
 (2.36363636364e-07, -0.598094936076)
@@ -7953,7 +7953,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0096706317904)
 (2.18181818182e-07, 0.0125548559147)
 (2.36363636364e-07, 0.0159620434736)
@@ -8056,7 +8056,7 @@ infinite superposition of oscillators
 (2e-06, 9.56966628981)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 12.6422278445)
 (2.18181818182e-07, 12.4261631985)
 (2.36363636364e-07, 12.3739247824)
@@ -8159,7 +8159,7 @@ infinite superposition of oscillators
 (2e-06, 19.947393358)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 11.9972071613)
 (2.18181818182e-07, 13.200908114)
 (2.36363636364e-07, 14.0687937291)
@@ -8267,7 +8267,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.25227827705)
 (2.18181818182e-07, 0.0185032742565)
 (2.36363636364e-07, 0.0143699171419)
@@ -8370,7 +8370,7 @@ infinite superposition of oscillators
 (2e-06, 0.499007045792)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.62118787722)
 (2.18181818182e-07, 2.68488996839)
 (2.36363636364e-07, 2.70791519948)
@@ -8473,7 +8473,7 @@ infinite superposition of oscillators
 (2e-06, 1.33784965305)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.17764246414)
 (2.18181818182e-07, 2.40818151083)
 (2.36363636364e-07, 2.59647898226)
@@ -8581,7 +8581,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0271056604529)
 (2.18181818182e-07, 0.479786638355)
 (2.36363636364e-07, 0.785451236104)
@@ -8684,7 +8684,7 @@ infinite superposition of oscillators
 (2e-06, 13.5604817292)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 3.41044040217)
 (2.18181818182e-07, 3.27261987093)
 (2.36363636364e-07, 3.23115218866)
@@ -8787,7 +8787,7 @@ infinite superposition of oscillators
 (2e-06, 10.5429911935)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 3.89563791059)
 (2.18181818182e-07, 3.87614123075)
 (2.36363636364e-07, 3.83139610101)
@@ -8904,7 +8904,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.795370546512)
 (2.18181818182e-07, 0.75648213635)
 (2.36363636364e-07, 0.714215058474)
@@ -9007,7 +9007,7 @@ infinite superposition of oscillators
 (2e-06, -19.1145876558)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -1.08159208556)
 (2.18181818182e-07, -1.44171826843)
 (2.36363636364e-07, -1.82088207661)
@@ -9110,7 +9110,7 @@ infinite superposition of oscillators
 (2e-06, -5.8535347785)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -0.847496878826)
 (2.18181818182e-07, -1.22118385656)
 (2.36363636364e-07, -1.63991061742)
@@ -9218,7 +9218,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00270673459106)
 (2.18181818182e-07, 0.00351396081869)
 (2.36363636364e-07, 0.00446753061442)
@@ -9321,7 +9321,7 @@ infinite superposition of oscillators
 (2e-06, 2.66065560284)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.717563282282)
 (2.18181818182e-07, 0.925670770217)
 (2.36363636364e-07, 1.16954998857)
@@ -9424,7 +9424,7 @@ infinite superposition of oscillators
 (2e-06, 41.0635940258)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.268842660424)
 (2.18181818182e-07, 0.352903437773)
 (2.36363636364e-07, 0.454584963212)
@@ -9532,7 +9532,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.891836784022)
 (2.18181818182e-07, 0.869762161187)
 (2.36363636364e-07, 0.845116586447)
@@ -9635,7 +9635,7 @@ infinite superposition of oscillators
 (2e-06, 0.303551190446)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.328924523612)
 (2.18181818182e-07, 0.368502289531)
 (2.36363636364e-07, 0.414275232349)
@@ -9738,7 +9738,7 @@ infinite superposition of oscillators
 (2e-06, 4.2204955909)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.144255264924)
 (2.18181818182e-07, 0.158065645953)
 (2.36363636364e-07, 0.175840485401)
@@ -9846,7 +9846,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00214607697114)
 (2.18181818182e-07, 0.00285681032654)
 (2.36363636364e-07, 0.00373797088269)
@@ -9949,7 +9949,7 @@ infinite superposition of oscillators
 (2e-06, 6.19785946615)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.54258447276)
 (2.18181818182e-07, 1.77623883857)
 (2.36363636364e-07, 1.99624950582)
@@ -10052,7 +10052,7 @@ infinite superposition of oscillators
 (2e-06, 6.87984270334)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.31780610128)
 (2.18181818182e-07, 1.57871378343)
 (2.36363636364e-07, 1.82802105772)
@@ -10169,7 +10169,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.251131379491)
 (2.18181818182e-07, 0.108789851357)
 (2.36363636364e-07, -0.0459272446245)
@@ -10272,7 +10272,7 @@ infinite superposition of oscillators
 (2e-06, -73.651290894)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -6.08845577047)
 (2.18181818182e-07, -7.02959345159)
 (2.36363636364e-07, -7.54393219393)
@@ -10375,7 +10375,7 @@ infinite superposition of oscillators
 (2e-06, -50.8993892779)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -5.64912808287)
 (2.18181818182e-07, -6.07016971242)
 (2.36363636364e-07, -6.18842750784)
@@ -10483,7 +10483,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00422802312142)
 (2.18181818182e-07, 0.00548909067452)
 (2.36363636364e-07, 0.0069788499954)
@@ -10586,7 +10586,7 @@ infinite superposition of oscillators
 (2e-06, 4.21472305421)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 5.00951113135)
 (2.18181818182e-07, 6.843041516)
 (2.36363636364e-07, 9.21811276848)
@@ -10689,7 +10689,7 @@ infinite superposition of oscillators
 (2e-06, 38.9456773061)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 5.40716550663)
 (2.18181818182e-07, 7.04484300503)
 (2.36363636364e-07, 8.72402440718)
@@ -10797,7 +10797,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.501147856301)
 (2.18181818182e-07, 0.329937943572)
 (2.36363636364e-07, 0.0162358824354)
@@ -10900,7 +10900,7 @@ infinite superposition of oscillators
 (2e-06, 0.245454674906)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.947626154005)
 (2.18181818182e-07, 1.17913691095)
 (2.36363636364e-07, 1.47776799694)
@@ -11003,7 +11003,7 @@ infinite superposition of oscillators
 (2e-06, 2.56812165556)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.0418070887)
 (2.18181818182e-07, 1.27065320754)
 (2.36363636364e-07, 1.50126794164)
@@ -11111,7 +11111,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00596563226317)
 (2.18181818182e-07, 0.0117639492945)
 (2.36363636364e-07, 0.303943575365)
@@ -11214,7 +11214,7 @@ infinite superposition of oscillators
 (2e-06, 12.1417905509)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 3.73803453655)
 (2.18181818182e-07, 4.10364650192)
 (2.36363636364e-07, 4.41083448946)
@@ -11317,7 +11317,7 @@ infinite superposition of oscillators
 (2e-06, 10.7233052848)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 3.67001092449)
 (2.18181818182e-07, 3.92039010463)
 (2.36363636364e-07, 4.10907117009)
@@ -11434,7 +11434,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.188715648446)
 (2.18181818182e-07, 0.0345048789898)
 (2.36363636364e-07, -0.133115411857)
@@ -11537,7 +11537,7 @@ infinite superposition of oscillators
 (2e-06, -80.1150617102)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, -3.00555634722)
 (2.18181818182e-07, -2.9107103037)
 (2.36363636364e-07, -2.78733242106)
@@ -11640,7 +11640,7 @@ infinite superposition of oscillators
 (2e-06, -84.5231514902)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, -3.10392533429)
 (2.18181818182e-07, -2.85707922232)
 (2.36363636364e-07, -2.74856891561)
@@ -11748,7 +11748,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00104695197986)
 (2.18181818182e-07, 0.00135922798535)
 (2.36363636364e-07, 0.00172813822703)
@@ -11851,7 +11851,7 @@ infinite superposition of oscillators
 (2e-06, 1.04677939727)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 3.44515696201)
 (2.18181818182e-07, 4.15663052382)
 (2.36363636364e-07, 4.5300281151)
@@ -11954,7 +11954,7 @@ infinite superposition of oscillators
 (2e-06, 75.3255700097)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 3.824872901)
 (2.18181818182e-07, 4.35874141755)
 (2.36363636364e-07, 4.61075624872)
@@ -12062,7 +12062,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.434415815203)
 (2.18181818182e-07, 0.185790902883)
 (2.36363636364e-07, 0.0023682370023)
@@ -12165,7 +12165,7 @@ infinite superposition of oscillators
 (2e-06, 0.0584734633513)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.884976317216)
 (2.18181818182e-07, 1.04012425539)
 (2.36363636364e-07, 1.12506387688)
@@ -12268,7 +12268,7 @@ infinite superposition of oscillators
 (2e-06, 3.78773792428)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 0.954443652846)
 (2.18181818182e-07, 1.08503297257)
 (2.36363636364e-07, 1.14439304839)
@@ -12376,7 +12376,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.00170414340045)
 (2.18181818182e-07, 0.00517312371437)
 (2.36363636364e-07, 0.515986473474)
@@ -12479,7 +12479,7 @@ infinite superposition of oscillators
 (2e-06, 12.6584739093)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.7527220816)
 (2.18181818182e-07, 2.8257985669)
 (2.36363636364e-07, 2.84713931803)
@@ -12582,7 +12582,7 @@ infinite superposition of oscillators
 (2e-06, 14.0620133746)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.83368594616)
 (2.18181818182e-07, 2.84055479577)
 (2.36363636364e-07, 2.84893115565)
@@ -12699,7 +12699,7 @@ infinite superposition of oscillators
 \begin{tabular}{l}
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.20322356523)
 (2.18181818182e-07, 0.0518002041146)
 (2.36363636364e-07, -0.11277953485)
@@ -12802,7 +12802,7 @@ infinite superposition of oscillators
 (2e-06, -77.3855140637)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 0.252315423849)
 (2.18181818182e-07, -0.0948185408319)
 (2.36363636364e-07, -0.565123571118)
@@ -12905,7 +12905,7 @@ infinite superposition of oscillators
 (2e-06, -16.5398868881)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.05046378396)
 (2.18181818182e-07, 0.594482942693)
 (2.36363636364e-07, -0.100504672608)
@@ -13013,7 +13013,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=permittivity $\epsilon''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0102822970058)
 (2.18181818182e-07, 0.0133487955581)
 (2.36363636364e-07, 0.0169712355186)
@@ -13116,7 +13116,7 @@ infinite superposition of oscillators
 (2e-06, 10.1155493735)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 4.84279765753)
 (2.18181818182e-07, 4.86354834929)
 (2.36363636364e-07, 5.01240232436)
@@ -13219,7 +13219,7 @@ infinite superposition of oscillators
 (2e-06, 70.6444179018)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 5.4875856574)
 (2.18181818182e-07, 5.04046509054)
 (2.36363636364e-07, 4.94200743216)
@@ -13327,7 +13327,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n'$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.450947383673)
 (2.18181818182e-07, 0.229447968912)
 (2.36363636364e-07, 0.0251970279077)
@@ -13430,7 +13430,7 @@ infinite superposition of oscillators
 (2e-06, 0.573730509123)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 1.59713518388)
 (2.18181818182e-07, 1.54428850933)
 (2.36363636364e-07, 1.4965018538)
@@ -13533,7 +13533,7 @@ infinite superposition of oscillators
 (2e-06, 5.29220801164)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 1.82176942122)
 (2.18181818182e-07, 1.68372863565)
 (2.36363636364e-07, 1.55604058851)
@@ -13641,7 +13641,7 @@ infinite superposition of oscillators
 \\
 \begin{tikzpicture}[baseline,trim axis left]
 \begin{axis}[xlabel=wavelength (\si{\micro\meter}),ylabel=refractive index $n''$]
-\addplot[color=colora] coordinates {
+\addplot[color=colora] coordinates {%
 (2e-07, 0.0161231270038)
 (2.18181818182e-07, 0.0411379708636)
 (2.36363636364e-07, 0.476265524818)
@@ -13744,7 +13744,7 @@ infinite superposition of oscillators
 (2e-06, 12.4671312467)
 };
 \addlegendentry{D}
-\addplot[color=colorb] coordinates {
+\addplot[color=colorb] coordinates {%
 (2e-07, 2.14407339974)
 (2.18181818182e-07, 2.2269465826)
 (2.36363636364e-07, 2.36839243773)
@@ -13847,7 +13847,7 @@ infinite superposition of oscillators
 (2e-06, 9.43899915526)
 };
 \addlegendentry{LD}
-\addplot[color=colorc] coordinates {
+\addplot[color=colorc] coordinates {%
 (2e-07, 2.12996715473)
 (2.18181818182e-07, 2.11681797791)
 (2.36363636364e-07, 2.24578137213)

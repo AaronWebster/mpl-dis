@@ -1,6 +1,4 @@
-\section{Introduction}
-
-\section{Finite Element Modeling} \label{sec:finiteelementdingus}
+\section{Finite Element Modeling}\label{sec:finiteelementdingus}
 A finite element simulation was carried out using the software
 \texttt{COMSOL Multiphysics 4.3 (4.3.0.233)} (Comsol Inc., Burlington, MA).
 Though the source code of COMSOL is not available for scrutinous review,
@@ -14,8 +12,8 @@ Stokes equations, neglecting turbulence, using finite element analysis in
 two dimensions
 \begin{align}
  \rho\left(\mathbf{\dot{u}}\cdot \nabla\right)\mathbf{\dot{u}}
- &=\nabla \cdot \left( -\rho \mathbf{I} + \eta \left(\nabla \mathbf{\dot{u}} +
- \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}\\
+				&=\nabla \cdot {\left( -\rho \mathbf{I} + \eta \left(\nabla \mathbf{\dot{u}} +
+				{\left( \nabla \mathbf{\dot{u}}\right)}^\mathrm{T}\right)\right)} + \mathbf{F}\\
  \rho \nabla \cdot \mathbf{\dot{u}} &= 0
 \end{align}
 where $\mathbf{\dot{u}}$ is the flow velocity field, $\rho$ is the fluid
@@ -40,7 +38,7 @@ An extended simulation in three dimensions is warranted.
 
 The left hand (%
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
+ \draw[dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
 is a sliding wall given a tangential velocity of
 \begin{equation}
@@ -167,8 +165,7 @@ where $x$ is the spatial extension from the tangentially oscillating
 boundary in the coordinates of \Figure{fig:compgeometry}.  The $1/\me$
 penetration depth $\delta$ is
 \begin{equation}
- \delta =
- -\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)^{-1}.
+ \delta = -{\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)}^{-1}.
 \label{eqn:suppshearwavedelta}
 \end{equation}
 In \Equation{eqn:suppshearwavedelta}, $\Im$ represents a function returning
@@ -227,7 +224,7 @@ for crystals with one side in contact with a viscoelastic material,
 \end{align}
 
 In terms of the complex dynamic viscosity and shear modulus,
-Equations~\ref{eqn:impeqfirst} and \ref{eqn:impeq} can be expressed as
+Equations~\ref{eqn:impeqfirst} and~\ref{eqn:impeq} can be expressed as
 \begin{align}
 \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}&=\frac{\mi}{\pi Z_{\mathrm{q}}}
 \frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\rho\omega\left(\eta'-\mi\eta''\right)}\\
@@ -237,8 +234,8 @@ Equations~\ref{eqn:impeqfirst} and \ref{eqn:impeq} can be expressed as
 The simulation geometry was set as described in \Figure{fig:compgeometry}
 but without $D_1$ (no cylinder).  Extracted values of $\df$ and $\dg$ are
 presented in \Figure{fig:viscosweep} as a function of the viscosity $\eta$
-of medium 2.  In \Figure{fig:viscosweep}(a) $\eta'$ is swept for a
-Newtonian fluid, $\eta''=0$.  In \Figure{fig:viscosweep}(b) a non-Newtonian
+of medium 2.  In \Figure{fig:viscosweep}\,(a) $\eta'$ is swept for a
+Newtonian fluid, $\eta''=0$.  In \Figure{fig:viscosweep}\,(b) a non-Newtonian
 sample is modeled; $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is
 swept.  The excellent agreement with theory demonstrates that the
 simulation is applicable for a wide range of materials.
@@ -458,7 +455,7 @@ is identified with a finite separation distance from the
 simulated QCM surface.  In all cases the coverage ratio was
 \SI{50}{\percent}, and furthermore it is assumed that centrifugal force will act to
 ``push'' the sample into the QCM surface, increasing $A_\mathrm{c}$ and
-thus the rigidity of its contact with the QCM.
+thus the rigidity of its contact with the QCM\@.
 \begin{figure}[ht]
  \centering
 	% height=2.43cm for side pictures, 4cm for axis
@@ -475,7 +472,7 @@ thus the rigidity of its contact with the QCM.
 \end{figure}
 
 As can be seen, the simulated response of the CF-QCM is markedly different
-in each case. Cells, shown in \Figure{fig:multisweep}(a), are assigned a
+in each case. Cells, shown in \Figure{fig:multisweep}\,(a), are assigned a
 shear modulus of
 $G_\mathrm{L}=\SI{10+50i}{\kilo\pascal}$~\cite{li2008thickness}~\cite{mahaffy2004quantitative} and density
 $\rho_\mathrm{L}$ equal to the surrounding liquid medium.  The high loss
@@ -497,7 +494,7 @@ $A_\mathrm{c}$ is modulated by an applied force (e.g.\ viscoelastic
 compliance), linear fitting to
 the CF-QCM response will recover $G_\mathrm{L}$ or $\rho_\mathrm{L}$.
 
-Next, \Figure{fig:multisweep}(b) shows the simulated response of agarose
+Next, \Figure{fig:multisweep}\,(b) shows the simulated response of agarose
 microparticles with a complex shear modulus of
 $G_\mathrm{L}=\SI{78+78i}{\kilo\pascal}$~\cite{yao1999situ}~\cite{dimitriadis2002determination}.
 Again the density was assumed to be the same as the surrounding medium.
@@ -507,7 +504,7 @@ equally large elastic term, $G'_\mathrm{L}$, precludes the equally linear
 decrease in $\df$ seen for cells.  Instead, $\df$ increases slightly before
 contact and decreases slightly.
 
-At the end of the spectrum, \Figure{fig:multisweep}(c) are lysozyme
+At the end of the spectrum, \Figure{fig:multisweep}\,(c) are lysozyme
 microcrystals.  These microcrystals are ``hard'', having been assigned a
 complex shear modulus of
 $G_\mathrm{L}=\SI{0.659+0.235i}{\giga\pascal}$~\cite{zamiri2009modeling}~\cite{guo2008investigation}.

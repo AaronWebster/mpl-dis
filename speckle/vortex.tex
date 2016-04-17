@@ -7,10 +7,10 @@ These in turn can be transformed into six ``morphological parameters'': its
 coordinates, rotation, skewness, amplitude, anisotropy, and a derived
 charge, signifying whether the vortex phase is clockwise or anti-clockwise
 \begingroup
-\newcommand{\rx}{\re(\nabla \mathbf{E})_x}
-\newcommand{\ry}{\re(\nabla \mathbf{E})_y}
-\newcommand{\ix}{\im(\nabla \mathbf{E})_x}
-\newcommand{\iy}{\im(\nabla \mathbf{E})_y}
+\newcommand{\rx}{\re(\nabla\mathbf{E})_x}
+\newcommand{\ry}{\re(\nabla\mathbf{E})_y}
+\newcommand{\ix}{\im(\nabla\mathbf{E})_x}
+\newcommand{\iy}{\im(\nabla\mathbf{E})_y}
 \begin{align}
 \rho   &= \arctan\!\left(\frac{\ry}{\rx}\right) \quad & \text{(rotation)}\\
 \sigma &= -\arctan\!\left(\frac{\ix}{\iy}\right)-\rho \quad & \text{(skewness)}\\
@@ -31,7 +31,6 @@ In terms of these parameters, the field is then
 \mathbf{E}(x,y) = a \Bigl( x \cos\rho + y \sin \rho
 + \mi \alpha \bigr(y \cos(\rho + \sigma) + x \sin(\rho+\sigma)\bigr)\Bigr)
 \end{equation}
-
-note that \rho must be \pm \pi, \sigma \pm \pi/2
+Note that $\rho$ must be $\pm\pi$, $\sigma \pm \pi/2$.
 
 % FIGURE H

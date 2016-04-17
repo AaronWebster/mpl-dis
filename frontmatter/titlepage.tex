@@ -24,10 +24,10 @@ Aaron Webster\\
 aus Oregon, USA
 }
 \end{center}
-%\tikzexternaldisable
-%\tikz[overlay,remember picture] {
-% \node at ($(current page.west)+(1,0)$) [rotate=90]
-% {\large\textcolor{gray}{\input{commithash} \pdfdate}};
-%}
-%\tikzexternalenable
+\tikzexternaldisable{}
+\tikz[overlay,remember picture] {
+ \node at ($(current page.west)+(1,0)$) [rotate=90]
+ {\large\textcolor{gray}{\input{commithash} \pdfdate}};
+}
+\tikzexternalenable{}
 \end{titlepage}

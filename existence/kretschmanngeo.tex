@@ -2,10 +2,10 @@
     scale=0.65,
     >=latex,
     media/.style={font={}},
-    wave/.style={
+    wave/.style={%
         decorate,decoration={snake,post length=1.0mm,amplitude=1mm,
         segment length=2.0mm},thick},
-    interface/.style={
+    interface/.style={%
         % The border decoration is a path replacing decorator.
         % For the interface style we want to draw the original path.
         % The postaction option is therefore used to ensure that the
@@ -80,31 +80,31 @@
     \def\lensrotate{\thetasp}
     \draw[shift={\lensshift}, rotate={\lensrotate}]({-\lenswidth/2},{-\lensheight/2})--({-\lenswidth/2},{\lensheight/2});
     \draw[shift={\lensshift}, rotate={\lensrotate}]({\lenswidth/2},{-\lensheight/2})--({\lenswidth/2},{\lensheight/2});
- 
-    \draw[shift={\lensshift}, rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {
+
+    \draw[shift={\lensshift}, rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {%
     ({\lenswidth/2},{-\lensheight/2})
     (0,{-\lensheight/2-\lensbow})
     ({-\lenswidth/2},{-\lensheight/2})
     } node[shift={(-0.25,0)}] {$f_1$};
 
-    \draw[shift={\lensshift},rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {
+    \draw[shift={\lensshift},rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {%
     ({-\lenswidth/2},{\lensheight/2})
     (0,{\lensheight/2+\lensbow})
     ({\lenswidth/2},{\lensheight/2}) };
- 
+
     % second lens
     \def\lensshift{({5*sin(\thetasp)},{5*cos(\thetasp)})}
     \def\lensrotate{-\thetasp}
     \draw[shift={\lensshift}, rotate={\lensrotate}]({-\lenswidth/2},{-\lensheight/2})--({-\lenswidth/2},{\lensheight/2});
     \draw[shift={\lensshift}, rotate={\lensrotate}]({\lenswidth/2},{-\lensheight/2})--({\lenswidth/2},{\lensheight/2});
- 
-    \draw[shift={\lensshift}, rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {
+
+    \draw[shift={\lensshift}, rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {%
     ({-\lenswidth/2},{-\lensheight/2})
     (0,{-\lensheight/2-\lensbow})
     ({\lenswidth/2},{-\lensheight/2})
     } node[shift={(0.25,0)}] {$f_2$};
 
-    \draw[shift={\lensshift},rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {
+    \draw[shift={\lensshift},rotate={\lensrotate}] plot [smooth, tension=1.5] coordinates {%
     ({-\lenswidth/2},{\lensheight/2})
     (0,{\lensheight/2+\lensbow})
     ({\lenswidth/2},{\lensheight/2}) };

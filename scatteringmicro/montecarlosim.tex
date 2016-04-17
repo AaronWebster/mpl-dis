@@ -2,16 +2,16 @@ A parallel Monte Carlo simulation was written to model surface plasmon
 polariton multiple scattering.
 It assumes the geometry shown in \Figure{fig:plasmongeo} consisting of
 \begin{itemize}
-\item An elliptical {\it illuminated region}, representing the incident evanescent
+\item An elliptical \textit{illuminated region}, representing the incident evanescent
 field used to excite plasmons on the surface.  This ellipse has
 typical radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.
-\item A {\it tip} - a single movable scatterer.
-\item The {\it scan area}, a square area wherein the tip rasters, typically
+\item A \textit{tip}, a single movable scatterer.
+\item The \textit{scan area}, a square area wherein the tip rasters, typically
 $128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.
-\item {\it Scatterers}, fixed point scatterers (usually \num{20})
+\item \textit{Scatterers}, fixed point scatterers (usually \num{20})
 distributed randomly in a square of $8.8281\times\SI{8.8281}{\micro\meter}$
 where the plasmon can visit, and
-\item A {\it trajectory} or {\it path} meaning the ordered sequence of scatterers a
+\item A \textit{trajectory} or \textit{path} meaning the ordered sequence of scatterers a
 plasmon visits before exiting the system.  The trajectory has a typical maximum
 path length of \SI{18}{\micro\meter}.
 \end{itemize}
@@ -48,12 +48,12 @@ Usually \numrange{250000}{1000000} trajectories will be used for each point
 of the $128\times128$ grid.  During this process the path length, and
 therefore the total phase from multiple scattering at $K$ sites
 \begin{align}
-\varphi_\mathrm{ms,n}=\sum_{k=0}^{K-1} \sqrt{(x_{k+1}-x_k)^2+(y_{k+1}-y_k)^2}
+				\varphi_\mathrm{ms,n}=\sum_{k=0}^{K-1}\sqrt{{(x_{k+1}-x_k)}^2+{(y_{k+1}-y_k)}^2}
 \end{align}
 is, along with the final scatterer, saved.
 
 The ultimate output from the Monte Carlo simulation consists of {\it
-topology maps}, colloquially dubbed {\it weirdospace}, having the same pixel
+topology maps}, colloquially dubbed \textit{weirdospace}, having the same pixel
 dimensions as the scan area.  Each weirdospace image represents, for each
 pixel, the far field phase and intensity of a particular point at a certain
 angle along the plasmon ring for the respective tip position in the scan
@@ -213,7 +213,7 @@ integral
 \begin{align}
 \int_0^1 \int_0^1 \int_0^1 \int_0^1 \sqrt{(x_1-y_1)+(x_2-y_2)}\; dx_1 dx_2 dy_1 dy_2
 \end{align}
-This is the {\it square line picking} problem.  Analytic evaluation of the
+This is the \textit{square line picking} problem.  Analytic evaluation of the
 above integral is complicated, but yields for its unit dimensions an
 average distance of
 \begin{align}
