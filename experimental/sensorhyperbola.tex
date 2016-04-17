@@ -64,33 +64,33 @@ To find the offset, the above minimum is solved to find $\xi(y=0) = 4 d
 \sec\thetasp$, and subtracted from \Equation{eqn:conic02}.  The remaining
 equation is then solved for $d$,
 \begin{align}
-				d =& \Biggl(-4 \sqrt{2} {\Bigl(\delta^2 \sin ^2\thetasp \cos
+d =& \Biggl(-4 \sqrt{2} \Bigl(\delta^2 \sin ^2\thetasp \cos
 ^4\thetasp+\delta^2 \sin ^2\thetasp \cos \thetasp \cos ^4\thetasp-4 y^2 \nonumber \\
    & \sin ^2\thetasp \cos ^5\thetasp-6 y^2 \sin ^2\thetasp
      \cos ^4\thetasp-16 y^2 \sin ^2\thetasp \cos \thetasp \nonumber \\
   & \cos ^4\thetasp+4 y^2 \sin ^2\thetasp \cos \thetasp
     \cos ^4\thetasp-8 y^2 \sin ^2\thetasp \cos \thetasp \cos
-				^4\thetasp\Bigr)}^{1/2} \nonumber \\
+    ^4\thetasp\Bigr)^{1/2} \nonumber \\
 &-2 \delta\sin \thetasp-4 \delta \sin 3 \thetasp+\delta  \sin \thetasp-4 \delta \sin \thetasp\Biggr) \nonumber \\
-				&\cdot{\Bigl(4 \left(2 \cos \thetasp+3 \cos \thetasp-3 \cos \thetasp+\cos 5
-				\thetasp-2 \cos \thetasp-1\right)\Bigr)}^{-1}.
+&\cdot\Bigl(4 \left(2 \cos \thetasp+3 \cos \thetasp-3 \cos \thetasp+\cos 5
+\thetasp-2 \cos \thetasp-1\right)\Bigr)^{-1}.
 \end{align}
 where $\delta$ is the distance the cone extends at the coordinate $y$.
 By following the aforementioned procedure, given the dimensions of the pixels on the imaging sensor, $d$
 can be determined.  Once $d$ is known, the absolute coordinates $(x,y,z)$ of the
 sensor are given by
 \begin{equation}
-	\begin{pmatrix}
-					x\\
-					y\\
-					z
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-					x^\prime \cos\thetasp + d \sin\thetasp\\
-					y^\prime \\
-					d \cos\thetasp - x^\prime \sin\thetasp,\\
-	\end{pmatrix}
+  \begin{pmatrix}
+          x\\
+          y\\
+          z
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+          x^\prime \cos\thetasp + d \sin\thetasp\\
+          y^\prime \\
+          d \cos\thetasp - x^\prime \sin\thetasp,\\
+  \end{pmatrix}
 \label{eqn:sensorcoordinates}
 \end{equation}
 where $x^\prime$ and $y^\prime$ are the local coordinates of the sensor

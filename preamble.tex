@@ -95,7 +95,7 @@ per-mode=reciprocal,
 % New definition of square root.  Renames \sqrt as \oldsqrt This definition
 % puts a little vertical guy at the end so it's more obvious where the square
 % root actually ends.
-\let\oldsqrt\sqrt{}
+\let\oldsqrt\sqrt
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
 \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
@@ -180,7 +180,7 @@ per-mode=reciprocal,
 \def\roarrow#1{\protect\@ontopof{#1}{\rightarrow}{1.15}\mathord{\box2}}
 
 \def\@ontopof#1#2#3{%
-\mathchoice{
+{\mathchoice
 {\@@ontopof{#1}{#2}{#3}\displaystyle\scriptstyle}%
 {\@@ontopof{#1}{#2}{#3}\textstyle\scriptstyle}%
 {\@@ontopof{#1}{#2}{#3}\scriptstyle\scriptscriptstyle}%
