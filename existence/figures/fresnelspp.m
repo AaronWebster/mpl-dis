@@ -1,7 +1,9 @@
 %% away we go
 clear all;
 close all;
-%addpath('~/mpl-dis/includes');
+addpath('~/mpl-dis/includes');
+addpath('~/mpl-dis/code');
+
 N=500;
 theta = linspace(50,85,500);
 lambda = linspace(300e-9,1200e-9,500);
