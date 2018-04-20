@@ -1,42 +1,41 @@
-\Equation{eqn:sprcondition} can be solved analytically to find the SPP
+\Equation{eqn:sprcondition} can be solved analytically to find the \gls{spp}
 dispersion relation $k_x(\omega)$.
 First, in terms of its vector components, the following holds in general
 for electromagnetic waves with $k_y=0$,
 \begin{align}
-  \mathbf{k}^2=\epsilon_i {\left(\frac{\omega}{c}\right)}^2=k_x^2 + k_{z,i}^2 \\
-  \epsilon_i k_0^2=k_x^2 + k_{z,i}^2,
-  \label{eqn:dispersion1}
+\mathbf{k}^2=\epsilon_i {\left(\frac{\omega}{c}\right)}^2=k_x^2 + k_{z,i}^2\\
+\epsilon_i k_0^2=k_x^2 + k_{z,i}^2,
+\label{eqn:dispersion1}
 \end{align}
 where $i$ is the medium index.
 Substitution of \Equation{eqn:sprcondition} with the relation
 $k_{x,1}=k_{x,2}$ into \Equation{eqn:dispersion1} allows
 $k_x$ and $k_{z,i}$ to be rewritten as
 \begin{align}
-  k_x     & = k_0\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}}
-  = \frac{\omega}{c}\sqrt{\frac{\epsilon_1
-  \epsilon_2}{\epsilon_1+\epsilon_2}} \label{eqn:kayexx}\\
-  k_{z,i} & = k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
-  = \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}.
-  \label{eqn:dandangus}
+k_x &= k_0\sqrt{\frac{\epsilon_1 \epsilon_2}{\epsilon_1+\epsilon_2}}
+= \frac{\omega}{c}\sqrt{\frac{\epsilon_1
+\epsilon_2}{\epsilon_1+\epsilon_2}} \label{eqn:kayexx}\\
+k_{z,i} &= k_0\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}
+= \frac{\omega}{c}\frac{\epsilon_i}{\sqrt{\epsilon_1+\epsilon_2}}.
+\label{eqn:dandangus}
 \end{align}
 where $\epsilon_i$ is always assumed to be a function of $\omega$,
 $\epsilon_i\equiv\epsilon_i(\omega)$.  The dispersion relation,
 \Equation{eqn:dispersion1}, plotted in \Figure{fig:dispersionrelation}, is
 useful because it describes the condition under which the momentum of the
-incident light is matched to an SPP at a particular frequency.  For a
+incident light is matched to an \gls{spp} at a particular frequency.  For a
 photon in a dielectric, the ``light line'' is defined as $\omega = c k
-/\sqrt{\epsilon_i}$ for $i=1,2$.  The SPP dispersion relation,
+/\sqrt{\epsilon_i}$ for $i=1,2$.  The \gls{spp} dispersion relation,
 \Equation{eqn:dispersion1}, always lies below the light line,
 asymptotically $\omega_p/\sqrt{1+\epsilon_i}$ as $k_x\to\infty$.
 However, if light is incident from a dielectric $\epsilon_1$ at an angle
 $\theta$, the slope of $\omega(k_x)$ is modified to $c k \sin
 \theta/\sqrt{\epsilon_1}$ and the momentum of light can be matched to
-excite SPPs.  The momentum matching property of light incident from a
+excite \glspl{spp}.  The momentum matching property of light incident from a
 dielectric at an angle was the principle exploited by Kretschmann
-\cite{kretschmann1968} to excite SPPs with prisms, known as the Kretschmann
-Attenuated Total Reflection (ATR) configuration.  There exist a multitude of
-different excitation strategies beyond ATR, however in this work only ATR
-will be considered.  The restriction to ATR is guided primarily by ease of
+\cite{kretschmann1968} to excite \glspl{spp} with prisms, known as the Kretschmann \gls{atr} configuration.  There exist a multitude of
+different excitation strategies beyond \gls{atr}, however in this work only \gls{atr}
+will be considered.  The restriction to \gls{atr} is guided primarily by ease of
 fabrication with facilities on hand (a sputtering machine and a metal
 target, see \Chapter{ch:experimental}).
 
@@ -45,18 +44,18 @@ depending on the relative value of $\epsilon_1$ and $\epsilon_2$.  It is
 first assumed that $\epsilon_1$ is a dielectric with
 $\epsilon_1\in\mathbb{R}$ and that $\epsilon_1 > 0$, an assumption true for
 most if not all glasses.  In this case, for $\Re(\epsilon_2)>0$, both $k_x$
-and $k_z$ are real and the mode is radiative: an SPP mode is supported
+and $k_z$ are real and the mode is radiative: an \gls{spp} mode is supported
 normal to the interface but it is not bound.  For
 $-\epsilon_1<\Re(\epsilon_2)<0$, $k_z$ is real and $k_x$ imaginary,
-resulting in a quasi-bound mode where the SPP is not confined to the
+resulting in a quasi-bound mode where the \gls{spp} is not confined to the
 interface and decays evanescently.  However, for
 $\Re(\epsilon_2)<-\epsilon_1$, $k_x$ is real and $k_z$ is imaginary,
-resulting in a bound mode.  In the bound mode, the SPP is localized at the
+resulting in a bound mode.  In the bound mode, the \gls{spp} is localized at the
 interface in $z$ while having a propagating solution in $x$ and is
-precisely the condition which must be matched to excite SPPs.
+precisely the condition which must be matched to excite \glspl{spp}.
 \begin{figure}[ht]
-  \centering
-  \import{existence/figures/}{dispersionfig}
-  \caption{Dispersion relation for photons and plasmons for a single interface consisting of a dielectric $\epsilon_1$, fused silica, and a metal $\epsilon_2$, gold using the Lorentz-Drude model, also in \Figure{fig:permittivityau}. Conditions under which SPPs are excited are at the intersection between the photon line in a dielectric and corresponding SPP line.}
+\centering
+\import{existence/figures/}{dispersionfig}
+\caption{Dispersion relation for photons and plasmons for a single interface consisting of a dielectric $\epsilon_1$, fused silica, and a metal $\epsilon_2$, gold using the Lorentz-Drude model, also in \Figure{fig:permittivityau}. Conditions under which \glspl{spp} are excited are at the intersection between the photon line in a dielectric and corresponding \gls{spp} line.}
 \label{fig:dispersionrelation}
 \end{figure}

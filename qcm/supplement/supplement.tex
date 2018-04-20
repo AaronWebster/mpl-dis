@@ -315,7 +315,7 @@ impedance of the film.
 
 \subsection{Verification Examples}
 Here we check the validity of the numerical simulation with examples for
-which the QCM's response is well known.
+which the \gls{qcm}['s] response is well known.
 
 \subsubsection{Evanescent Shear Wave}
 Setting up the model as described produces a shear wave which closely
@@ -325,7 +325,7 @@ of the evanescent shear wave in a liquid has been reported~\cite{steinem2007piez
  \frac{u(z)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} z\right)
 \end{equation}
 where $\eta=\eta'-\mi\eta''$ is the complex viscosity, $\rho$ is the density
-of the liquid, $\omega$ is the angular frequency of the QCM oscillation,
+of the liquid, $\omega$ is the angular frequency of the \gls{qcm} oscillation,
 and $z$ is the spatial extension.  The $1/\me$ penetration depth $\delta$ is
 \begin{equation}
  \delta =
@@ -506,16 +506,16 @@ domains, but we have not attempted to do so.
 
 \section{Mechanical Model}
 We have employed a mechanical model based on coupled oscillators shown in
-\Figure{fig:mechanicalmodel}.  Here the resonance of the QCM at
+\Figure{fig:mechanicalmodel}.  Here the resonance of the \gls{qcm} at
 $\omegaq^2=\kq/\mq$ is coupled to a mass $\ml$ through a spring $\kl$ and
 dashpot $\xil$.  The spring and dashpot are not \textit{actual} springs and
 dashpots, rather they are analogies for the coupling of two systems with
-different resonances in the small load approximation.  The QCM itself has a
+different resonances in the small load approximation.  The \gls{qcm} itself has a
 small damping term, but it is small enough that we neglect it.
 \begin{figure}[ht]
  \centering
  \import{figures/}{dybwadmodel.pdf_tex}
- \caption{Coupled oscillator mechanical model for QCM behavior.}
+ \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
 \label{fig:mechanicalmodel}
 \end{figure}
 
@@ -642,18 +642,18 @@ for a \SI{10}{\micro\meter} polystyrene particle.}
 \label{fig:supplowersphere}
 \end{figure}
 
-\section{Noise and Comparison to QCM-D}
+\section{Noise and Comparison to \gls{qcm}.D}
 \label{sec:suppqcmdcomp}
 Our experimental setup used a \SI{25}{\milli\meter} diameter
 \SI{5}{\mega\hertz} gold-coated crystal in combination with an SRS QCM200
 PLL-based driver circuit and an external rubidium frequency standard.
-Typical of most QCM circuits, the QCM200 provides an output proportional to
+Typical of most \gls{qcm} circuits, the QCM200 provides an output proportional to
 $\df$, which we use directly in all discussions of $\df$.  However, unlike
-a QCM-D device which gives a ``dissipation factor'', $D$, defined in
+a \QCM-Ddevice which gives a ``dissipation factor'', $D$, defined in
 terms of the bandwidth $\dg$ as $D=2\dg/f_\mathrm{F}$, the QCM200
 outputs the motional resistance $\Rm$ of the Butterworth van Dyke
 equivalent circuit.  $\Rm$ is related to
-the bandwidth $\Gamma$ and the QCM-D dissipation $D$ by
+the bandwidth $\Gamma$ and the \QCM-Ddissipation $D$ by
 \begin{align}
  \Rm&=\left(4 \pi \Lm\right) \Gamma\\
  &=\left(2 \pi \Lm f_\mathrm{F}\right) D
@@ -671,7 +671,7 @@ analysis.  At $\Lm=\SI{40}{\milli\henry}$, we find in water
 $\Rm=\SI{359}{\ohm}$, which is within \SI{1}{\percent} of the predicted
 value~\cite{kanazawa1985frequency} of \SI{357}{\ohm}.  In this sense,
 dissipation $D$ and motional resistance $\Rm$ are independent but
-equivalent measures of the QCM bandwidth.
+equivalent measures of the \gls{qcm} bandwidth.
 
 We have calculated the noise in $\df$ and $\Rm$ for the SRS QCM200 in our
 experiment and find it to be about \SI{0.4}{\hertz} (\SI{0.008}{ppm}) for
@@ -685,15 +685,15 @@ difference in the noise between any of these cases.  We did not at any
 point modify the centrifuge or bucket assembly in an attempt to try and
 reduce system noise.
 
-In comparison, a typical QCM-D such as those sold by
+In comparison, a typical \QCM-Dsuch as those sold by
 Q-Sense~\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
 Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
 about \SI{0.3}{\hertz} in $\df$ and \num{0.2e-6} in $D$ at
 \SI{5}{\mega\hertz}~\cite{su2005comparison}~\cite{peh2007understanding}.
 Converting from $\Rm$ to $D$ and vice-versa, we find the SRS QCM200 has an
-equivalent noise in $D$ of \num{0.005e-6} and the Q-Sense QCM-D an
+equivalent noise in $D$ of \num{0.005e-6} and the Q-Sense \QCM-Dan
 equivalent noise in motional resistance of \SI{0.25}{\ohm}.  In terms of
-$\dg$, the Q-Sense QCM-D has a noise of \SI{0.5}{\hertz} and the SRS QCM200
+$\dg$, the Q-Sense \QCM-Dhas a noise of \SI{0.5}{\hertz} and the SRS QCM200
 \SI{0.01}{\hertz}.  Even though we stated that our chosen value for $\Lm$
 gives $\Rm$ within \SI{1}{\percent} of the predicted value for water,
 uncertainties in the value of $\Lm$ used for the $\Rm$-$\dg$ conversion do
@@ -704,12 +704,12 @@ It is clear with this comparison that the SRS QCM200 PLL-based driver and a
 QCM-D device are both measures of the same underlying physical phenomena
 taking place in a resonating quartz crystal.~\cite{geelhood2002transient}
 Moreover, as exemplified by the discrete particle data in the main text,
-the QCM signal amplitudes increase further with the application of
+the \gls{qcm} signal amplitudes increase further with the application of
 centrifugal force for the device reported here.  It is important to note
 that the important aspect of the CF-QCM, the centrifugal force, is
 independent of the type of technique used to drive and monitor the quartz
 crystal.  We therefore see no reason why our technique would not apply to
-all QCM-based measurement techniques.
+all \gls{qcm}.based measurement techniques.
 
 \section{Parametric Representation}
 The different load situations depicted in the main manuscript are shown
@@ -781,7 +781,7 @@ parametrically in \Figure{fig:suppparametricplot}.
 
 
 \subsection{Asperity Contacts}
-The response of a QCM to micron-sized particles was first examined by
+The response of a \gls{qcm} to micron-sized particles was first examined by
 Dybwad~\cite{dybwad1985sensitive} in 1985.  Dybwad used a coupled
 oscillator approach similar to what we have done, but neglected the damping term
 $\xil$.  It is of note that our Navier-Stokes approach (which solves for
@@ -1049,7 +1049,7 @@ spring constants are $r_c=\SI{266.6}{\nano\meter}$ and $k_\parallel =
 % for increasing the contact area of 10, 25,
 % and \SI{50}{\micro\meter} gold microspheres
 %In the experiment, 10, 25, and \SI{50}{\micro\meter} diameter gold
-%spheres were deposited on the surface of the QCM in air and the frequency
+%spheres were deposited on the surface of the \gls{qcm} in air and the frequency
 %shift $\df$ was recorded.  From $\df$ and its zero crossing at $\kl = \ml
 %\omegaq^2$, the bonding force $k$ and the particle mass $\ml$ was obtained.
 
@@ -1213,16 +1213,16 @@ spring constants are $r_c=\SI{266.6}{\nano\meter}$ and $k_\parallel =
 
 \section{Mechanical Model}
 We employ a mechanical model based on coupled oscillators shown in
-\Figure{fig:mechanicalmodel}.  Here the resonance of the QCM at
+\Figure{fig:mechanicalmodel}.  Here the resonance of the \gls{qcm} at
 $\omegaq^2=\kq/\mq$ is coupled to a mass $\ml$ through a spring $\kl$ and
 dashpot $\xil$.  The spring and dashpot are not \textit{actual} springs and
 dashpots, rather they are analogies for the coupling of two systems with
-different resonances in the small load approximation.  The QCM itself has a
+different resonances in the small load approximation.  The \gls{qcm} itself has a
 small damping term, but it is small enough that we neglect it.
 \begin{figure}[ht]
  \centering
  \import{figures/}{dybwadmodel.pdf_tex}
- \caption{Coupled oscillator mechanical model for QCM behavior.}
+ \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
 \label{fig:mechanicalmodel}
 \end{figure}
 

@@ -1,5 +1,5 @@
 Surface plasmon resonance is remarkably sensitive to perturbations in the bulk
-refractive index of the medium in which SPPs propagate.  By monitoring
+refractive index of the medium in which \glspl{spp} propagate.  By monitoring
 properties of the notch in the specular direction, sensitivities of up to
 \SI{1e-8}{RIU} (refractive index units) have been reported in some
 applications~\cite{fan2008sensitive}, shot noise limited.  Bulk refractive
@@ -8,11 +8,11 @@ understood~\cite{piliarik2009surface}, so this section focuses on similar types
 of measurements in the cone.  Effects from speckle are not considered.
 
 In a prism-coupled setup, there are three main methods used to monitor changes
-in the SPR resonance condition.  All three of these interrogation methods are
+in the \gls{spr} resonance condition.  All three of these interrogation methods are
 equivalent in terms of their real-world resolution and detection
 limit~\cite{homola2006surface}.
 \begin{description}
-\item [{Angular}] The change in the angle of the SPR minimum as a function
+\item [{Angular}] The change in the angle of the \gls{spr} minimum as a function
 of refractive index is monitored.  In the angular modulation method,
 the prism may be scanned through a range of angles or the angular
 spectrum may be obtained simultaneously using a focused beam and
@@ -26,19 +26,19 @@ monitored as the experiment progresses.
 This section is restricted to analysis in the angular and intensity
 interrogation methods.  The experimental setup does not possess the means to
 carry out wavelength interrogation, though this is in many ways equivalent to
-sweeping the SPR angle.
+sweeping the \gls{spr} angle.
 
 \subsection{Angular Interrogation}
 To study the sensitivity in the angular interrogation method, the angular
 response of the system was simulated using the Fresnel equations with ($\Delta
 n = 0$) and without ($\Delta n \ne 0$) a refractive index perturbation of the
 sensing layer.  An example is shown in \Figure{fig:sensangularasp} for both
-conventional and long-range SPPs.  The choice of $\Delta n = 0.01$ is somewhat
+conventional and long-range \glspl{spp}.  The choice of $\Delta n = 0.01$ is somewhat
 arbitrary and was made to illustrate the change of the resonance line.
-Notwithstanding, the SPR resonance shifts in response to a refractive index
+Notwithstanding, the \gls{spr} resonance shifts in response to a refractive index
 perturbation.
 
-In the simulation, the minimum of the SPR resonance was determined using
+In the simulation, the minimum of the \gls{spr} resonance was determined using
 nonlinear minimization~\cite{brent1973algorithms} and optimizing the function
 as $\Delta n \to 0$.  In this way, the maximum theoretical sensitivity for
 angular sensitivity, $\Delta \theta/\Delta n$ is determined.  This theoretical
@@ -58,7 +58,7 @@ index perturbations in the cone and the notch.
 	$n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310 + \Delta n$.  The
 	thickness of the metal layer is \SI{45}{\nano\meter}. (bottom) Angular
 	sensitivity of the notch and the cone for the Kretschmann four-layer
-	(LRSPP) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1
+	(\gls{lrspp}) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1
 	= \num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and
 	$n_4=1.3310+\Delta n$.  The thickness of the metal layer is
 	\SI{16.97}{\nano\meter}.  }
@@ -68,7 +68,7 @@ In compliment to \Figure{fig:sensangularasp}, the maximum obtainable
 sensitivities for these configurations are tabulated in
 \Table{tbl:angularsens}.  The tabulated data supports the hypothesis that
 there is no readily apparent sensitivity benefit to the cone versus the notch
-in angular interrogation.  Though the angle of the SPR minima (notch) and
+in angular interrogation.  Though the angle of the \gls{spr} minima (notch) and
 maxima (cone) are at slightly different angles, approximately
 \SI{0.006}{\degree}, their responses track each other very well.
 
@@ -80,7 +80,7 @@ maxima (cone) are at slightly different angles, approximately
 {configuration} & {notch [$\mathrm{deg}/\mathrm{RIU}]$} & {cone [$\mathrm{deg}/\mathrm{RIU}$]} \\
 \midrule
 SP & 1.452312e+02 & 1.453671e+02 \\
-LRSPP& 3.943097e+01 & 3.938117e+01 \\
+\gls{lrspp}& 3.943097e+01 & 3.938117e+01 \\
 \bottomrule
 \end{tabular}
 \caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$, in
@@ -119,7 +119,7 @@ for comparison.
 The results of are summarized in
 \Table{tbl:intensitysens}.  In both cases it is observed $\Delta I/\Delta
 n$ is higher for the cone as compared with the notch, though the increase
-is only marginal.  In terms of SPR biosensors, the difference suggests an
+is only marginal.  In terms of \gls{spr} biosensors, the difference suggests an
 avenue for sensitivity enhancement, though whether implementing such a
 strategy is warranted in commercial systems remains to be seen.
 \begin{table}[ht]
@@ -130,7 +130,7 @@ strategy is warranted in commercial systems remains to be seen.
 {configuration} & {notch [1/RIU]} & {cone [1/RIU]} \\
 \midrule
 SP & 32.1657 & 42.3053 \\
-LRSPP & 203.5365 & 251.9765 \\
+\gls{lrspp} & 203.5365 & 251.9765 \\
 \bottomrule
 \end{tabular}
 \caption{Theoretical maximum intensity sensitivity, $\Delta I/\Delta n$,
@@ -184,6 +184,6 @@ have little effect on the structure of speckle in this setup.  In the next
 chapter it will be seen that the underlying scattering microstructure, not
 refractive index, is the most sensitive and determining factor concerning
 speckle.  In terms of speckle, decorrelation is expected to occur when the
-average SPP scattering path undergoes a phase shift of $2\pi$ --- difficult to
+average \gls{spp} scattering path undergoes a phase shift of $2\pi$ --- difficult to
 realize at this level.
 

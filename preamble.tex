@@ -1,4 +1,4 @@
-% Dissertation title.
+% title of the dissertation
 \def\distitle{Novel Methods in Optical and Mechanical Biosensors}
 % \def\distitle{Neue Methoden in optischer und mechanischer ...
 \usepackage{mathtools}
@@ -14,6 +14,8 @@
 \usepackage[german, USenglish]{babel}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
+%\usepackage[cmyk]{xcolor}
+%\usepackage{kpfonts}
 \usepackage{enumitem}
 \usepackage{datetime}
 \usepackage{fullpage}
@@ -22,12 +24,21 @@
 \usepackage{rotating}
 \usepackage{ifthen}
 \usepackage[parfill]{parskip}
+%\usepackage[inline]{showlabels}
 \usepackage{subcaption}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{relsize}
 \usepackage{tabularx}
 \usepackage{booktabs}
 %\usepackage[toc,page]{appendix}
+\usepackage[acronym,xindy]{glossaries}
+\newacronym{spr}{SPR}{surface plasmon resonance}
+\newacronym{spp}{SPP}{surface plasmon polariton}
+\newacronym{lrspp}{LRSPP}{long range surface plasmon polariton}
+\newacronym{spom}{SPOM}{scanning plasmon optical microscopy}
+\newacronym{atr}{ATR}{attenuated total reflection}
+\newacronym{qcm}{QCM}{quartz crystal microbalance}
+
 
 \usepackage{hyperref}
 \hypersetup{%
@@ -60,6 +71,7 @@
 % Custom colors.
 \import{colors/}{colors}
 
+% siunitx
 \usepackage{siunitx}
 \sisetup{%
 binary-units,
@@ -96,6 +108,7 @@ per-mode=reciprocal,
 % puts a little vertical guy at the end so it's more obvious where the square
 % root actually ends.
 \let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
 \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
@@ -137,6 +150,8 @@ per-mode=reciprocal,
 \DeclareMathOperator{\arcsinh}{arcsinh}
 \DeclareMathOperator{\arccosh}{arccosh}
 \DeclareMathOperator{\arctanh}{arctanh}
+%\DeclareMathOperator{\Re}{Re}
+%\DeclareMathOperator{\Im}{Im}
 
 % Use roman type for natural base e and sqrt(-1).
 \newcommand{\me}{{\mathrm{e}}}
@@ -171,6 +186,23 @@ per-mode=reciprocal,
 
 \newcommand{\ersatzfigure}{\includegraphics[width=10cm,keepaspectratio]{includes/ersatz}}
 
+% hilight text... a "work in progress" type thing
+%\tikzstyle{todobox} = [draw=Blues9seq9, fill=Blues9seq1,
+%rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+%\tikzstyle{todotitle} =[fill=Blues9seq9, text=white]
+
+\newcommand{\todo}[1]{%
+\begin{center}
+%\begin{tikzpicture}
+%\node [todobox] (box){%
+ \begin{minipage}{0.9\textwidth}
+ #1
+ \end{minipage}
+%};
+%\node[todotitle, right=10pt] at (box.north west) {Note};
+%\end{tikzpicture}
+\end{center}
+}
 \makeatletter
 \def\tensor#1{\protect\@ontopof{#1}{\leftrightarrow}{1.15}\mathord{\box2}}
 \def\overstar#1{\protect\@ontopof{#1}{\ast}{1.15}\mathord{\box2}}
@@ -214,3 +246,11 @@ height.1pt depth.1pt\hss}\box0}}%
 \egroup
 }
 \makeatother
+%\def\shrinkage{2.1mu}
+%\def\vecsign{\mathchar"017E}
+%\def\vecsign{\mathchar"3221}
+%\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+%\def\tensor#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+%\usepackage{stackengine}
+%\stackMath
+%\newcommand{\tensor}[1]{\stackrel{\leftrightarrow}{#1}}
