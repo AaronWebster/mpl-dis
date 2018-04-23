@@ -1,122 +1,122 @@
 \begin{tikzpicture}
 
-\begin{axis}[%
-width=3.5cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=-1.8828320802005,
-xmax=2261.2813283208,
-xlabel={$x$ [um]},
-y dir=reverse,
-ymin=-1.8828320802005,
-ymax=2261.2813283208,
-ylabel={$y$ [um]},
-name=plot3,
-title={\textbf{\SI{365}{\micro\meter}}},
-scaled ticks=base 10:-3,
-]
-\addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-1.png};
-\end{axis}
+  \begin{axis}[%
+      width=3.5cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=-1.8828320802005,
+      xmax=2261.2813283208,
+      xlabel={$x$ [um]},
+      y dir=reverse,
+      ymin=-1.8828320802005,
+      ymax=2261.2813283208,
+      ylabel={$y$ [um]},
+      name=plot3,
+      title={\textbf{\SI{365}{\micro\meter}}},
+      scaled ticks=base 10:-3,
+    ]
+    \addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-1.png};
+  \end{axis}
 
-\begin{axis}[%
-width=3.5cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=-1.8828320802005,
-xmax=2261.2813283208,
-xlabel={$x$ [um]},
-y dir=reverse,
-ymin=-1.8828320802005,
-ymax=2261.2813283208,
-ylabel={$y$ [um]},
-name=plot1,
-at=(plot3.above north west),
-anchor=below south west,
-title={\textbf{\SI{102}{\micro\meter}}},
-scaled ticks=base 10:-3,
-]
-\addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-2.png};
-\end{axis}
+  \begin{axis}[%
+      width=3.5cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=-1.8828320802005,
+      xmax=2261.2813283208,
+      xlabel={$x$ [um]},
+      y dir=reverse,
+      ymin=-1.8828320802005,
+      ymax=2261.2813283208,
+      ylabel={$y$ [um]},
+      name=plot1,
+      at=(plot3.above north west),
+      anchor=below south west,
+      title={\textbf{\SI{102}{\micro\meter}}},
+      scaled ticks=base 10:-3,
+    ]
+    \addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-2.png};
+  \end{axis}
 
-\begin{axis}[%
-width=9cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=0.5,
-xmax=1281.5,
-xlabel={$x$ [px]},
-y dir=reverse,
-ymin=0.5,
-ymax=52.5,
-ylabel={$y$ [px]},
-name=plot2,
-at=(plot1.right of south east),
-anchor=left of south west,
-title={\textbf{\SI{102}{\micro\meter}}}
-]
-\addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-3.png};
-\end{axis}
+  \begin{axis}[%
+      width=9cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=0.5,
+      xmax=1281.5,
+      xlabel={$x$ [px]},
+      y dir=reverse,
+      ymin=0.5,
+      ymax=52.5,
+      ylabel={$y$ [px]},
+      name=plot2,
+      at=(plot1.right of south east),
+      anchor=left of south west,
+      title={\textbf{\SI{102}{\micro\meter}}}
+    ]
+    \addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-3.png};
+  \end{axis}
 
-\begin{axis}[%
-width=9cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=0.5,
-xmax=1281.5,
-xlabel={$x$ [px]},
-y dir=reverse,
-ymin=0.5,
-ymax=52.5,
-ylabel={$y$ [px]},
-name=plot4,
-at=(plot2.below south west),
-anchor=above north west,
-title={\textbf{\SI{365}{\micro\meter}}}
-]
-\addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-4.png};
-\end{axis}
+  \begin{axis}[%
+      width=9cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=0.5,
+      xmax=1281.5,
+      xlabel={$x$ [px]},
+      y dir=reverse,
+      ymin=0.5,
+      ymax=52.5,
+      ylabel={$y$ [px]},
+      name=plot4,
+      at=(plot2.below south west),
+      anchor=above north west,
+      title={\textbf{\SI{365}{\micro\meter}}}
+    ]
+    \addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-4.png};
+  \end{axis}
 
-\begin{axis}[%
-width=9cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=0.5,
-xmax=1281.5,
-xlabel={$x$ [px]},
-y dir=reverse,
-ymin=0.5,
-ymax=52.5,
-ylabel={$y$ [px]},
-name=plot6,
-at=(plot4.below south west),
-anchor=above north west,
-title={\textbf{\SI{599}{\micro\meter}}}
-]
-\addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-5.png};
-\end{axis}
+  \begin{axis}[%
+      width=9cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=0.5,
+      xmax=1281.5,
+      xlabel={$x$ [px]},
+      y dir=reverse,
+      ymin=0.5,
+      ymax=52.5,
+      ylabel={$y$ [px]},
+      name=plot6,
+      at=(plot4.below south west),
+      anchor=above north west,
+      title={\textbf{\SI{599}{\micro\meter}}}
+    ]
+    \addplot [forget plot] graphics [xmin=0.5,xmax=1281.5,ymin=0.5,ymax=52.5] {test-5.png};
+  \end{axis}
 
-\begin{axis}[%
-width=3.5cm,
-height=3.5cm,
-axis on top,
-scale only axis,
-xmin=-1.8828320802005,
-xmax=2261.2813283208,
-xlabel={$x$ [um]},
-y dir=reverse,
-ymin=-1.8828320802005,
-ymax=2261.2813283208,
-ylabel={$y$ [um]},
-at=(plot6.left of south west),
-anchor=right of south east,
-scaled ticks=base 10:-3,
-title={\textbf{\SI{599}{\micro\meter}}}
-]
-\addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-6.png};
-\end{axis}
+  \begin{axis}[%
+      width=3.5cm,
+      height=3.5cm,
+      axis on top,
+      scale only axis,
+      xmin=-1.8828320802005,
+      xmax=2261.2813283208,
+      xlabel={$x$ [um]},
+      y dir=reverse,
+      ymin=-1.8828320802005,
+      ymax=2261.2813283208,
+      ylabel={$y$ [um]},
+      at=(plot6.left of south west),
+      anchor=right of south east,
+      scaled ticks=base 10:-3,
+      title={\textbf{\SI{599}{\micro\meter}}}
+    ]
+    \addplot [forget plot] graphics [xmin=-1.8828320802005,xmax=2261.2813283208,ymin=-1.8828320802005,ymax=2261.2813283208] {test-6.png};
+  \end{axis}
 \end{tikzpicture}%

@@ -12,16 +12,16 @@ in the \gls{spr} resonance condition.  All three of these interrogation methods 
 equivalent in terms of their real-world resolution and detection
 limit~\cite{homola2006surface}.
 \begin{description}
-\item [{Angular}] The change in the angle of the \gls{spr} minimum as a function
-of refractive index is monitored.  In the angular modulation method,
-the prism may be scanned through a range of angles or the angular
-spectrum may be obtained simultaneously using a focused beam and
-sensor array.
-\item [{Wavelength}] The prism is fixed in place and its reflectivity at
-a single angle is monitored as a function of wavelength.
-\item [{Intensity}] For a fixed wavelength and incident angle, the
-intensity of the signal at a certain angular or spatial point is
-monitored as the experiment progresses.
+  \item [{Angular}] The change in the angle of the \gls{spr} minimum as a function
+        of refractive index is monitored.  In the angular modulation method,
+        the prism may be scanned through a range of angles or the angular
+        spectrum may be obtained simultaneously using a focused beam and
+        sensor array.
+  \item [{Wavelength}] The prism is fixed in place and its reflectivity at
+        a single angle is monitored as a function of wavelength.
+  \item [{Intensity}] For a fixed wavelength and incident angle, the
+        intensity of the signal at a certain angular or spatial point is
+        monitored as the experiment progresses.
 \end{description}
 This section is restricted to analysis in the angular and intensity
 interrogation methods.  The experimental setup does not possess the means to
@@ -31,7 +31,7 @@ sweeping the \gls{spr} angle.
 \subsection{Angular Interrogation}
 To study the sensitivity in the angular interrogation method, the angular
 response of the system was simulated using the Fresnel equations with ($\Delta
-n = 0$) and without ($\Delta n \ne 0$) a refractive index perturbation of the
+  n = 0$) and without ($\Delta n \ne 0$) a refractive index perturbation of the
 sensing layer.  An example is shown in \Figure{fig:sensangularasp} for both
 conventional and long-range \glspl{spp}.  The choice of $\Delta n = 0.01$ is somewhat
 arbitrary and was made to illustrate the change of the resonance line.
@@ -48,21 +48,21 @@ present analysis concerned with optimization of sensitivity, rather it is most
 relevant to ascertain the difference between angular response to refractive
 index perturbations in the cone and the notch.
 \begin{figure}[ht]
-\centering
-\import{includes/}{setpgfinc}
-\import{bulkri/figures/}{sens_angular_asp}
-\import{bulkri/figures/}{sens_angular_ssp}
-\caption{(top) Angular sensitivity of the notch and the cone for the
-	Kretschmann three-layer (SP) system.
-	$\lambda_0=\SI{660}{\nano\meter}$, $n_1 = \num{1.5142}$,
-	$n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310 + \Delta n$.  The
-	thickness of the metal layer is \SI{45}{\nano\meter}. (bottom) Angular
-	sensitivity of the notch and the cone for the Kretschmann four-layer
-	(\gls{lrspp}) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1
-	= \num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and
-	$n_4=1.3310+\Delta n$.  The thickness of the metal layer is
-	\SI{16.97}{\nano\meter}.  }
-\label{fig:sensangularasp}
+  \centering
+  \import{includes/}{setpgfinc}
+  \import{bulkri/figures/}{sens_angular_asp}
+  \import{bulkri/figures/}{sens_angular_ssp}
+  \caption{(top) Angular sensitivity of the notch and the cone for the
+    Kretschmann three-layer (SP) system.
+    $\lambda_0=\SI{660}{\nano\meter}$, $n_1 = \num{1.5142}$,
+    $n_2=\num{0.2843 + 3.3825i}$, and $n_3=1.3310 + \Delta n$.  The
+    thickness of the metal layer is \SI{45}{\nano\meter}. (bottom) Angular
+    sensitivity of the notch and the cone for the Kretschmann four-layer
+    (\gls{lrspp}) system.  $\lambda_0=\SI{660}{\nano\meter}$, $n_1
+      = \num{1.5142}$, $n_2=1.3489$, $n_3=\num{0.2843 + 3.3825i}$, and
+    $n_4=1.3310+\Delta n$.  The thickness of the metal layer is
+    \SI{16.97}{\nano\meter}.  }
+  \label{fig:sensangularasp}
 \end{figure}
 In compliment to \Figure{fig:sensangularasp}, the maximum obtainable
 sensitivities for these configurations are tabulated in
@@ -73,20 +73,20 @@ maxima (cone) are at slightly different angles, approximately
 \SI{0.006}{\degree}, their responses track each other very well.
 
 \begin{table}[ht]
-\centering
-\sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
-\begin{tabular}{lSS}
-\toprule
-{configuration} & {notch [$\mathrm{deg}/\mathrm{RIU}]$} & {cone [$\mathrm{deg}/\mathrm{RIU}$]} \\
-\midrule
-SP & 1.452312e+02 & 1.453671e+02 \\
-\gls{lrspp}& 3.943097e+01 & 3.938117e+01 \\
-\bottomrule
-\end{tabular}
-\caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$, in
-	degrees per refractive index unit, for the configurations in
-	\Figure{fig:sensangularasp}.}
-\label{tbl:angularsens}
+  \centering
+  \sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
+  \begin{tabular}{lSS}
+    \toprule
+    {configuration} & {notch [$\mathrm{deg}/\mathrm{RIU}]$} & {cone [$\mathrm{deg}/\mathrm{RIU}$]} \\
+    \midrule
+    SP              & 1.452312e+02                          & 1.453671e+02                         \\
+    \gls{lrspp}     & 3.943097e+01                          & 3.938117e+01                         \\
+    \bottomrule
+  \end{tabular}
+  \caption{Theoretical maximum angular sensitivity, $\Delta \theta/\Delta n$, in
+    degrees per refractive index unit, for the configurations in
+    \Figure{fig:sensangularasp}.}
+  \label{tbl:angularsens}
 \end{table}
 
 \subsection{Intensity Interrogation}
@@ -105,11 +105,11 @@ The tabulated data was obtained using the same nonlinear minimization method
 as for angular case, but the calculation instead sought the angular location where the
 difference in Fresnel coefficients is maximized as $\Delta n \to 0$.
 Specifically, for an $N$ layer system with refractive indices $(n_1,n_2,
-\ldots,n_N)$,
+  \ldots,n_N)$,
 \begin{equation}
-\lim_{\Delta n \to 0}\frac{\left||r^p(n_N=n_N)|^2 - |r^p(n_N=n_N + \Delta
-				n)|^2\right|_\mathrm{max}}{\Delta n}.
-\label{eqn:fresnelsenspertrubation}
+  \lim_{\Delta n \to 0}\frac{\left||r^p(n_N=n_N)|^2 - |r^p(n_N=n_N + \Delta
+    n)|^2\right|_\mathrm{max}}{\Delta n}.
+  \label{eqn:fresnelsenspertrubation}
 \end{equation}
 For the cone, the same approach was used but instead of the Fresnel
 reflectivity, \Equation{eqn:conefield}, $|t^p_+|^2|t^p_-|^2$.  In
@@ -118,33 +118,33 @@ for comparison.
 
 The results of are summarized in
 \Table{tbl:intensitysens}.  In both cases it is observed $\Delta I/\Delta
-n$ is higher for the cone as compared with the notch, though the increase
+  n$ is higher for the cone as compared with the notch, though the increase
 is only marginal.  In terms of \gls{spr} biosensors, the difference suggests an
 avenue for sensitivity enhancement, though whether implementing such a
 strategy is warranted in commercial systems remains to be seen.
 \begin{table}[ht]
-\centering
-\sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
-\begin{tabular}{lSS}
-\toprule
-{configuration} & {notch [1/RIU]} & {cone [1/RIU]} \\
-\midrule
-SP & 32.1657 & 42.3053 \\
-\gls{lrspp} & 203.5365 & 251.9765 \\
-\bottomrule
-\end{tabular}
-\caption{Theoretical maximum intensity sensitivity, $\Delta I/\Delta n$,
-								for the configurations in \Figure{tbl:angularsens}. }
-\label{tbl:intensitysens}
+  \centering
+  \sisetup{round-mode=places,round-precision=3,fixed-exponent=0,scientific-notation=fixed}
+  \begin{tabular}{lSS}
+    \toprule
+    {configuration} & {notch [1/RIU]} & {cone [1/RIU]} \\
+    \midrule
+    SP              & 32.1657         & 42.3053        \\
+    \gls{lrspp}     & 203.5365        & 251.9765       \\
+    \bottomrule
+  \end{tabular}
+  \caption{Theoretical maximum intensity sensitivity, $\Delta I/\Delta n$,
+    for the configurations in \Figure{tbl:angularsens}. }
+  \label{tbl:intensitysens}
 \end{table}
 
 \section{Refractive Index Effect On Speckle}
 \begin{figure}[ht]
-\centering
-\includegraphics[keepaspectratio,width=15cm]{bulkri/figures/combineri.png}
-\caption{Combined cone images of a sample without (top, $\Delta n = 0$) and
-with (bottom, $\Delta n = 0.01$) a refractive index pertrubation. }
-\label{fig:speckleridrangos}
+  \centering
+  \includegraphics[keepaspectratio,width=15cm]{bulkri/figures/combineri.png}
+  \caption{Combined cone images of a sample without (top, $\Delta n = 0$) and
+    with (bottom, $\Delta n = 0.01$) a refractive index pertrubation. }
+  \label{fig:speckleridrangos}
 \end{figure}
 
 To gauge the effect of a refractive index pertrubation on cone speckle,
@@ -164,7 +164,7 @@ progressed.
 The primary results of this investigation are depicted in
 \Figure{fig:speckleridrangos}.  Here, two subsequent cone images without (top
 cone, $\Delta n = 0$, deionized water) and with (bottom cone, $\Delta n =
-0.01$, glucose) a refractive index pertrubation are shown as one --- the
+  0.01$, glucose) a refractive index pertrubation are shown as one --- the
 images have been added together.  The addition of the two images is
 straightforward as the position of the cone on the sensor shifts along with
 the pertrubation, as is expected.  As can be seen without numerical analysis,

@@ -1,52 +1,52 @@
 \newpage
 \subsubsection{Pd-LAH79-$ \ce{H2O} $}
 \begin{figure}[h]
-\pgfplotsset{
- small,
- width=0.8\textwidth,
- height=0.8\textwidth,
- enlargelimits=false,
- axis on top,
- legend pos = north east,
- empty legend,
- title = {$\lambda_0=\SI{632.8}{\nano\meter}$, $\epsilon_1=\text{LAH79}$, $\epsilon_2=\text{Pd}$, $\epsilon_3=\ce{H2O}$},
- minor tick num=3,
- colorbar,
- colorbar style = { ylabel=$|\tilde{r}_{123}|$ },
- legend style = { cells = {anchor=west} }
-}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-xlabel=angle (degrees),
-ylabel=metal thickness (\si{\nano\meter}),
-]
-\addplot[mark=none] coordinates {(0,0)};
-\addplot[mark=none] coordinates {(0,0)};
-\addplot[mark=none] coordinates {(0,0)};
-\addplot graphics
-[
-xmin=0,
-xmax=90,
-ymin=0,
-ymax=100
-]{fresnel/Pd_LAH79_h2o_6328_0-100_0-90.png};
-%\, $d=\SI{47.12761744}{\nano\meter}$,
-%\legend{
-%{\tiny $\lambda_0=\SI{632.8}{\nano\meter}$},
-%{\tiny $\epsilon_1=\text{BK7}$},
-%{\tiny $\epsilon_2=\text{Ag}$},
-%{\tiny $\epsilon_3=\text{Vacuum}$},
-%}
+  \pgfplotsset{
+    small,
+    width=0.8\textwidth,
+    height=0.8\textwidth,
+    enlargelimits=false,
+    axis on top,
+    legend pos = north east,
+    empty legend,
+    title = {$\lambda_0=\SI{632.8}{\nano\meter}$, $\epsilon_1=\text{LAH79}$, $\epsilon_2=\text{Pd}$, $\epsilon_3=\ce{H2O}$},
+    minor tick num=3,
+    colorbar,
+    colorbar style = { ylabel=$|\tilde{r}_{123}|$ },
+    legend style = { cells = {anchor=west} }
+  }
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xlabel=angle (degrees),
+        ylabel=metal thickness (\si{\nano\meter}),
+      ]
+      \addplot[mark=none] coordinates {(0,0)};
+      \addplot[mark=none] coordinates {(0,0)};
+      \addplot[mark=none] coordinates {(0,0)};
+      \addplot graphics
+        [
+          xmin=0,
+          xmax=90,
+          ymin=0,
+          ymax=100
+        ]{fresnel/Pd_LAH79_h2o_6328_0-100_0-90.png};
+      %\, $d=\SI{47.12761744}{\nano\meter}$,
+      %\legend{
+      %{\tiny $\lambda_0=\SI{632.8}{\nano\meter}$},
+      %{\tiny $\epsilon_1=\text{BK7}$},
+      %{\tiny $\epsilon_2=\text{Ag}$},
+      %{\tiny $\epsilon_3=\text{Vacuum}$},
+      %}
 
-\end{axis}
-\end{tikzpicture}
-\caption{Reflection coefficent $|\tilde{r}_{123}|$ for the three-layer fresnel
-system (Pd-LAH79-$ \ce{H2O} $)
-as a function of incident angle and thickness of the metal layer
-$\epsilon_2$.  Numeric values of the permittivity are found in
-\Table{tbl:metalairtable}
-}
-\label{fig:3layerfresnelPd}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Reflection coefficent $|\tilde{r}_{123}|$ for the three-layer fresnel
+    system (Pd-LAH79-$ \ce{H2O} $)
+    as a function of incident angle and thickness of the metal layer
+    $\epsilon_2$.  Numeric values of the permittivity are found in
+    \Table{tbl:metalairtable}
+  }
+  \label{fig:3layerfresnelPd}
 \end{figure}
 \clearpage

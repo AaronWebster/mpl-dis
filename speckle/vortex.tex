@@ -12,24 +12,24 @@ charge, signifying whether the vortex phase is clockwise or anti-clockwise
 \newcommand{\ix}{\im(\nabla\mathbf{E})_x}
 \newcommand{\iy}{\im(\nabla\mathbf{E})_y}
 \begin{align}
-\rho   &= \arctan\!\left(\frac{\ry}{\rx}\right) \quad & \text{(rotation)}\\
-\sigma &= -\arctan\!\left(\frac{\ix}{\iy}\right)-\rho \quad & \text{(skewness)}\\
-a      &= \frac{\rx}{\cos\rho} = \frac{\ry}{\sin\rho} \quad & \text{(amplitude)}\\
-\alpha &= \frac{-\ix}{\bigl(\alpha \sin\left(\rho+\sigma\right)\bigr)}
-        = \frac{-\iy}{\bigl(\alpha \cos\left(\rho+\sigma\right)\bigr)} \quad & \text{(anisotropy)} \\
-q      &= \sgn\!\left( \left|
-          \begin{pmatrix}
-          \rx & \ry \\
-          \ix & \iy
-          \end{pmatrix}
-          \right|\right) \quad & \text{(charge)}
+  \rho                                                                 & = \arctan\!\left(\frac{\ry}{\rx}\right) \quad                  & \text{(rotation)}  \\
+  \sigma                                                               & = -\arctan\!\left(\frac{\ix}{\iy}\right)-\rho \quad            & \text{(skewness)}  \\
+  a                                                                    & = \frac{\rx}{\cos\rho} = \frac{\ry}{\sin\rho} \quad            & \text{(amplitude)} \\
+  \alpha                                                               & = \frac{-\ix}{\bigl(\alpha \sin\left(\rho+\sigma\right)\bigr)}
+  = \frac{-\iy}{\bigl(\alpha \cos\left(\rho+\sigma\right)\bigr)} \quad & \text{(anisotropy)}                                                                 \\
+  q                                                                    & = \sgn\!\left( \left|
+  \begin{pmatrix}
+      \rx & \ry \\
+      \ix & \iy
+    \end{pmatrix}
+  \right|\right) \quad                                                 & \text{(charge)}
 \end{align}
 \endgroup
 
 In terms of these parameters, the field is then
 \begin{equation}
-\mathbf{E}(x,y) = a \Bigl( x \cos\rho + y \sin \rho
-+ \mi \alpha \bigr(y \cos(\rho + \sigma) + x \sin(\rho+\sigma)\bigr)\Bigr)
+  \mathbf{E}(x,y) = a \Bigl( x \cos\rho + y \sin \rho
+  + \mi \alpha \bigr(y \cos(\rho + \sigma) + x \sin(\rho+\sigma)\bigr)\Bigr)
 \end{equation}
 Note that $\rho$ must be $\pm\pi$, $\sigma \pm \pi/2$.
 

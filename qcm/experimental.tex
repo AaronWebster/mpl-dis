@@ -1,10 +1,10 @@
 \section{Setup}
 \begin{figure}[ht]
-\centering
-\import{qcm/figures/}{qcm_annotated_picture.pdf_tex}
-\caption{Annotated picture of the prototype CF-QCM from above.  The
-centrifuge is a standard swinging bucket type.}
-\label{fig:cfqcmexpsetup}
+  \centering
+  \import{qcm/figures/}{qcm_annotated_picture.pdf_tex}
+  \caption{Annotated picture of the prototype CF-QCM from above.  The
+    centrifuge is a standard swinging bucket type.}
+  \label{fig:cfqcmexpsetup}
 \end{figure}
 
 The CF-QCM experimental setup is shown in \Figure{fig:cfqcmexpsetup}.  It
@@ -27,7 +27,7 @@ and is isolated from the body of the centrifuge.
 
 When in operation, the crystal and cell are mounted in either the
 \textit{loading} configuration, where the centrifugal force is \textit{in
-to} the sensing side or, by mounting it upside down, in the
+  to} the sensing side or, by mounting it upside down, in the
 \textit{unloading} configuration, where the force is \textit{away from} the
 sensing side.
 
@@ -43,11 +43,11 @@ controlled.
 %We tried o-rings made of other stuff, but its just not as good as the PDMS.
 
 \begin{figure}[ht]
-\centering
-\includegraphics[width=10cm,keepaspectratio]{qcm/figures/qcm_holderdiss.jpg}
-\caption{Holder for the crystal, shown split into its two halves.  The
-crystal is inside the holder on the right.}
-\label{fig:cfqcmholder}
+  \centering
+  \includegraphics[width=10cm,keepaspectratio]{qcm/figures/qcm_holderdiss.jpg}
+  \caption{Holder for the crystal, shown split into its two halves.  The
+    crystal is inside the holder on the right.}
+  \label{fig:cfqcmholder}
 \end{figure}
 
 \section{Noise and Comparison to QCM-D}\label{sec:suppqcmdcomp}
@@ -59,8 +59,8 @@ outputs the motional resistance $\Rm$ of the Butterworth van Dyke
 equivalent circuit.  $\Rm$ is related to
 the bandwidth $\Gamma$ and the QCM-D dissipation $D$ by
 \begin{align}
- \Rm&=\left(4 \pi \Lm\right) \Gamma\\
- &=\left(2 \pi \Lm f_\mathrm{F}\right) D,
+  \Rm & =\left(4 \pi \Lm\right) \Gamma          \\
+      & =\left(2 \pi \Lm f_\mathrm{F}\right) D,
 \end{align}
 where $\Lm$ is the Butterworth van Dyke equivalent motional inductance.
 Because of the small load approximation, $\df/f_\mathrm{F} \ll 1$ and
@@ -91,7 +91,7 @@ modified in an attempt to reduce system noise.
 
 In comparison, a typical QCM-D such as those sold by
 Q-Sense\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
-Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
+  Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
 about \SI{0.3}{\hertz} in $\df$ and \num{0.2e-6} in $D$ at
 \SI{5}{\mega\hertz}~\cite{su2005comparison}~\cite{peh2007understanding}.
 Converting from $\Rm$ to $D$ and vice-versa, the SRS QCM200 has an
@@ -118,30 +118,30 @@ situations.  Before discussing the various CF-QCM responses, it is prudent to
 account for all the non-sample phenomena which could influence the sensorgram.
 Such phenomena have been tabulated in \Table{tbl:environmentaleffects}.
 \begin{table}[ht]
-\centering
-\begin{tabular}{l>{\raggedright}p{10cm}l}
-\toprule
-\textbf{phenomena} & \textbf{response} & \textbf{refs}\tabularnewline%
-\midrule
-temperature & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water
-&\cite{srsqcm200manual}\tabularnewline%
- & Third order polynomial with maximum around \SI{24}{\celsius} with
-$a_1=\num{2.3888}$, $a_2=\num{-1.8719e+02}$, $a_3=\num{4.8587e+03}$,
-$a_4=\num{-4.1814e+04}$. &\cite{reipa2006long}\tabularnewline%
-electric field & negligible  &\cite{walls1995fundamental}\tabularnewline%
-magnetic field & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla} &\cite{walls1995fundamental}\tabularnewline%
-pressure & \SI{-2970}{\hertz\centi\meter\squared\per\kilo\gram} for changes to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} &\cite{reipa2006long}\tabularnewline%
- & \SI{-1458}{\hertz\centi\meter\squared\per\kilo\gram} (\SI{10}{\mega\hertz} crystal) &\cite{heusler1988measurement}\tabularnewline%
-mechanical stress & $\Delta f = 1.62 g_f^{1.72}$ for two point symmetrical mounting in air &\cite{fletcher1979comparison}\tabularnewline%
-sedimentation potential &  & \tabularnewline%
-parasitic capacitance & \SI{2}{\hertz\per\pico\farad} &\cite{srsqcm200manual}\tabularnewline%
-& \SI{0.825}{\hertz\per\pico\farad} (BvD analysis) & [~] \tabularnewline%
-acceleration & \SI{9e-11}{\per g}, depending on orientation &\cite{norton1993tactical}\tabularnewline%
- & \SI{0.0218813}{\hertz\per g} in air &\cite{1536938}\tabularnewline%
-\bottomrule
-\end{tabular}
-\caption{Environmental effects on the \gls{qcm} resonance frequency.}
-\label{tbl:environmentaleffects}
+  \centering
+  \begin{tabular}{l>{\raggedright}p{10cm}l}
+    \toprule
+    \textbf{phenomena}       & \textbf{response}                                                                                                 & \textbf{refs}\tabularnewline                 %
+    \midrule
+    temperature              & \SI{8}{\hertz\per\celsius} and \SI{4}{\ohm\per\celsius} in water
+                             & \cite{srsqcm200manual}\tabularnewline                                                                                                                            %
+                             & Third order polynomial with maximum around \SI{24}{\celsius} with
+    $a_1=\num{2.3888}$, $a_2=\num{-1.8719e+02}$, $a_3=\num{4.8587e+03}$,
+    $a_4=\num{-4.1814e+04}$. & \cite{reipa2006long}\tabularnewline                                                                                                                              %
+    electric field           & negligible                                                                                                        & \cite{walls1995fundamental}\tabularnewline   %
+    magnetic field           & \SI{10}{\per\tesla} for fields smaller than \SI{10}{\tesla}                                                       & \cite{walls1995fundamental}\tabularnewline   %
+    pressure                 & \SI{-2970}{\hertz\centi\meter\squared\per\kilo\gram} for changes to \SI{+2.1}{\kilo\gram\per\centi\meter\squared} & \cite{reipa2006long}\tabularnewline          %
+                             & \SI{-1458}{\hertz\centi\meter\squared\per\kilo\gram} (\SI{10}{\mega\hertz} crystal)                               & \cite{heusler1988measurement}\tabularnewline %
+    mechanical stress        & $\Delta f = 1.62 g_f^{1.72}$ for two point symmetrical mounting in air                                            & \cite{fletcher1979comparison}\tabularnewline %
+    sedimentation potential  &                                                                                                                   & \tabularnewline                              %
+    parasitic capacitance    & \SI{2}{\hertz\per\pico\farad}                                                                                     & \cite{srsqcm200manual}\tabularnewline        %
+                             & \SI{0.825}{\hertz\per\pico\farad} (BvD analysis)                                                                  & [~] \tabularnewline                          %
+    acceleration             & \SI{9e-11}{\per g}, depending on orientation                                                                      & \cite{norton1993tactical}\tabularnewline     %
+                             & \SI{0.0218813}{\hertz\per g} in air                                                                               & \cite{1536938}\tabularnewline                %
+    \bottomrule
+  \end{tabular}
+  \caption{Environmental effects on the \gls{qcm} resonance frequency.}
+  \label{tbl:environmentaleffects}
 \end{table}
 
 From \Table{tbl:environmentaleffects} it is apparent that the dominant source
@@ -155,10 +155,10 @@ spins.  However, the temperature drifts are extremely small during the course
 of a run, less than \SI{0.1}{\celsius}.
 
 \begin{figure}[ht]
- \centering
- \import{includes/}{setpgfinc}
- \import{qcm/figures/}{showtempairwater}
- \caption{Parametric plot showing temperature drift during an experimental
-	run from 0 to \SI{90}{g} and back, taking \SI{200}{\second}.}
-\label{fig:qcmairtime}
+  \centering
+  \import{includes/}{setpgfinc}
+  \import{qcm/figures/}{showtempairwater}
+  \caption{Parametric plot showing temperature drift during an experimental
+    run from 0 to \SI{90}{g} and back, taking \SI{200}{\second}.}
+  \label{fig:qcmairtime}
 \end{figure}

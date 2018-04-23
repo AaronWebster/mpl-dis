@@ -148,7 +148,7 @@
 \begin{document}
 
 \title{Probing biomechanical properties with a centrifugal force quartz
- crystal microbalance\\ Supplementary Information}
+  crystal microbalance\\ Supplementary Information}
 \author{Aaron~Webster}
 \affiliation{Max Planck Institute for the Science of Light, Erlangen D-91058, Germany}
 \author{Frank~Vollmer}
@@ -175,7 +175,7 @@
 \section{Introduction}
 This document is supplementary information to
 \textit{Probing biomechanical properties with a centrifugal force quartz
-crystal microbalance}.  Herein we give details on numerical simulations and
+  crystal microbalance}.  Herein we give details on numerical simulations and
 further derivations which are referenced in the main text.  Unless
 specified otherwise, all section, figure, table, and equation references
 pertaining to the supplement are prefixed by an ``S'', while references to
@@ -194,44 +194,44 @@ The simulation is done by solving the steady state incompressible Navier
 Stokes equations, neglecting turbulence, using finite element analysis in
 two dimensions
 \begin{align}
- \rho\left(\mathbf{\dot{u}}\cdot \nabla\right)\mathbf{\dot{u}}
- &=\nabla \cdot \left( -\rho \mathbf{I} + \eta \left(\nabla \mathbf{\dot{u}} +
- \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}\\
- \rho \nabla \cdot \mathbf{\dot{u}} &= 0
+  \rho\left(\mathbf{\dot{u}}\cdot \nabla\right)\mathbf{\dot{u}}
+                                     & =\nabla \cdot \left( -\rho \mathbf{I} + \eta \left(\nabla \mathbf{\dot{u}} +
+    \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}                                     \\
+  \rho \nabla \cdot \mathbf{\dot{u}} & = 0
 \end{align}
 where $\mathbf{\dot{u}}$ is flow velocity field, $\rho$ is fluid density,
 $\eta$ is dynamic viscosity, and $\mathbf{F}$ is the body force per unit
 volume.  The computational domain is set up as shown in
 \Figure{fig:compgeometry}.
 \begin{figure}[h]
- \centering
- \import{figures/}{geometry.pdf_tex}
- \caption{Computational geometry for the simulation.}
-\label{fig:compgeometry}
+  \centering
+  \import{figures/}{geometry.pdf_tex}
+  \caption{Computational geometry for the simulation.}
+  \label{fig:compgeometry}
 \end{figure}
 
 The left-hand side (
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
+  \draw [dash pattern=on 3pt off 2pt on 1pt off 2pt, thick] (0,0) -- (0.5,0);
 }) %
 is a sliding wall and is given a tangential velocity of $\dot{u}_\perp = \mi
-\omega u_0$, where $\omega=2\pi f$ is the angular frequency of oscillation
+  \omega u_0$, where $\omega=2\pi f$ is the angular frequency of oscillation
 and $u_0=\SI{1e-2}{\nano\meter}$ is its amplitude.  The top and bottom
 (%
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
+  \draw [dash pattern=on 3pt off 1pt, thick] (0,0) -- (0.5,0);
 }%
 ) are given a periodic flow condition such that their pressure difference
 is zero.  The right-hand side (
 \tikz[baseline=-0.75ex]{
- \draw [dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
+  \draw [dash pattern=on 1pt off 1pt, thick] (0,0) -- (0.5,0);
 }) %
 has a zero-slip condition.  The two materials 1, the particle, and 2, the
 medium in domains $D_1$ and $D_2$ are assigned a volume force $\mathbf{F}=\mi \omega \rho
-\mathbf{\dot{u}}$,
+  \mathbf{\dot{u}}$,
 where $\rho$ is the density of the material, (e.g.\ $\rho_1 =
-\SI{1.06}{\gram\per\centi\meter\cubed}$ for polystyrene and $\rho_2 =
-\SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally. an initial pressure point
+  \SI{1.06}{\gram\per\centi\meter\cubed}$ for polystyrene and $\rho_2 =
+  \SI{1}{\gram\per\centi\meter\cubed}$ for water).  Finally. an initial pressure point
 constraint of $p_0=0$ is assigned to the point in the bottom right of the
 domain.
 
@@ -243,8 +243,8 @@ If $s\leq0$, the sphere is truncated at the boundary resulting in a finite
 contact radius $r_\mathrm{c}$.  It is useful to sample in either domain, so
 we either sweep $r_\mathrm{c}$ or $s$, converting between them with
 \begin{align}
- r_\mathrm{c}\left(s\right) &= \sqrt{2r-s}\sqrt{s}\\
- s\left(r_\mathrm{c}\right) &= \left(r-\sqrt{r^2-r_\mathrm{c}^2}\right)\sgn\left(r_\mathrm{c}\right)
+  r_\mathrm{c}\left(s\right) & = \sqrt{2r-s}\sqrt{s}                                                   \\
+  s\left(r_\mathrm{c}\right) & = \left(r-\sqrt{r^2-r_\mathrm{c}^2}\right)\sgn\left(r_\mathrm{c}\right)
 \end{align}
 The number density $N_\mathrm{L}$ was controlled by increasing or
 decreasing the height of the domain proportional to the size of the sphere.
@@ -253,12 +253,12 @@ The materials in the simulation are assigned a complex dynamic viscosity
 $\eta = \eta'-\mi\eta''$.  This is related to the complex bulk modulus
 $G=G'+\mi G''$ by
 \begin{align}
- \eta = \frac{G}{\mi \omega}
+  \eta = \frac{G}{\mi \omega}
 \end{align}
 and the loss tangent, the angle between the real and imaginary components
 is
 \begin{equation}
- \tan \delta = \frac{G''}{G'}
+  \tan \delta = \frac{G''}{G'}
 \end{equation}
 
 Specific to the stationary solver in \comsol, in the
@@ -299,8 +299,8 @@ Shifts in frequency, $\df$, and bandwidth (half-width at half maximum),
 $\dg$, are computed by evaluating the stress-speed ratio of the oscillating
 boundary according to the relationship
 \begin{equation}
- \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
-\label{eqn:comsolextract}
+  \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}=\frac{\mi}{\pi Z_{\mathrm{q}}}Z_\mathrm{L} =\frac{\mi}{\pi Z_{\mathrm{q}}}\left<\frac{\sigma}{\dot{u}}\right>
+  \label{eqn:comsolextract}
 \end{equation}
 where $\sigma$ is the (complex) stress, $\dot{u}$ is the (complex)
 velocity, $Z_\mathrm{L}$ is the load impedance, and $\left<\enspace\right>$
@@ -322,15 +322,15 @@ Setting up the model as described produces a shear wave which closely
 matches theory, as shown in \Figure{fig:suppshearwave}.  An analytic expression
 of the evanescent shear wave in a liquid has been reported~\cite{steinem2007piezoelectric} to be
 \begin{equation}
- \frac{u(z)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} z\right)
+  \frac{u(z)}{u_0} = \exp\left(-\sqrt{\frac{\mi \rho \omega}{\eta}} z\right)
 \end{equation}
 where $\eta=\eta'-\mi\eta''$ is the complex viscosity, $\rho$ is the density
 of the liquid, $\omega$ is the angular frequency of the \gls{qcm} oscillation,
 and $z$ is the spatial extension.  The $1/\me$ penetration depth $\delta$ is
 \begin{equation}
- \delta =
- -\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)^{-1}
-\label{eqn:suppshearwavedelta}
+  \delta =
+  -\left(\Im\left(\sqrt{\frac{\rho\omega}{\mi\eta}}\right)\right)^{-1}
+  \label{eqn:suppshearwavedelta}
 \end{equation}
 
 With $\rho=\SI{1}{\gram\per\centi\meter\cubed}$ and
@@ -340,43 +340,43 @@ $\delta\approx\SI{252}{\nano\meter}$.  This is in good agreement with the
 simulation data, shown in \Figure{fig:suppshearwave}.
 
 \begin{figure}[h]
- \centering
-\pgfplotsset{
- minor tick num=3,
- footnotesize,
- every
- axis/.style={
+  \centering
+  \pgfplotsset{
+  minor tick num=3,
+  footnotesize,
+  every
+  axis/.style={
   xmin=0,xmax=1e-6,ymin=-0.1,ymax=1.1,
   width=0.71\textwidth,height=0.45\textwidth,
   xticklabel style={/pgf/number format/fixed,
-                     /pgf/number format/precision=1},
- },
- xlabel = $z$ distance,
- ylabel = $\|\mathbf{\dot{u}}\|$,
- x unit = \si{\micro\meter},
- y unit = a.u.,
- max space between ticks=1000pt,
-}
-\begin{tikzpicture}[baseline]
-\begin{axis}
- \addplot [color=colora, mark=o, each nth point={5}, only marks ] file {data/evanescentwave_water_comsol.dat};
- \addlegendentry{simulation}
- \addplot [color=colora,] file {data/evanescentwave_water_theory.dat};
- \addlegendentry{theory}
-\end{axis}
-\end{tikzpicture}
-\caption{QCM shear wave decay at \SI{5}{\mega\hertz}, comparison between
-simulation and theory.}
-\label{fig:suppshearwave}
+      /pgf/number format/precision=1},
+  },
+  xlabel = $z$ distance,
+  ylabel = $\|\mathbf{\dot{u}}\|$,
+  x unit = \si{\micro\meter},
+  y unit = a.u.,
+  max space between ticks=1000pt,
+  }
+  \begin{tikzpicture}[baseline]
+    \begin{axis}
+      \addplot [color=colora, mark=o, each nth point={5}, only marks ] file {data/evanescentwave_water_comsol.dat};
+      \addlegendentry{simulation}
+      \addplot [color=colora,] file {data/evanescentwave_water_theory.dat};
+      \addlegendentry{theory}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{QCM shear wave decay at \SI{5}{\mega\hertz}, comparison between
+    simulation and theory.}
+  \label{fig:suppshearwave}
 \end{figure}
 
 \subsubsection{Semi-Infinite Viscoelastic Medium}
 A semi-infinite medium will produce a complex response described
 by~\cite{kanazawa1985frequency}~\cite{martin1991characterization}
 \begin{align}
- \frac{\df+\mi\dg}{f_\mathrm{F}}&=\frac{\mi}{\pi Z_\mathrm{q}}\sqrt{\rho G}\\
-                                &= \frac{1}{\pi Z_\mathrm{q}}\frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\omega \rho \eta}
-\label{eqn:impeq}
+  \frac{\df+\mi\dg}{f_\mathrm{F}} & =\frac{\mi}{\pi Z_\mathrm{q}}\sqrt{\rho G}                                              \\
+                                  & = \frac{1}{\pi Z_\mathrm{q}}\frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\omega \rho \eta}
+  \label{eqn:impeq}
 \end{align}
 
 %\Equation{eqn:comsolextract} is equivalent to
@@ -387,10 +387,10 @@ applies for crystals with one side in contact with the viscoelastic
 material.  This is related to the dynamic viscosity and shear
 modulus by
 \begin{align}
-\frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}}&=\frac{\mi}{\pi Z_{\mathrm{q}}}
-\frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\rho\omega\left(\eta'-\mi\eta''\right)}\\
-&=\frac{\mi}{\pi Z_{\mathrm{q}}}\sqrt{\rho\left(G'+\mi G''\right)}
-\label{eqn:viscoshear}
+  \frac{\df+\mi\Delta\Gamma}{f_{\mathrm{F}}} & =\frac{\mi}{\pi Z_{\mathrm{q}}}
+  \frac{\left(-1+\mi\right)}{\sqrt{2}}\sqrt{\rho\omega\left(\eta'-\mi\eta''\right)}                              \\
+                                             & =\frac{\mi}{\pi Z_{\mathrm{q}}}\sqrt{\rho\left(G'+\mi G''\right)}
+  \label{eqn:viscoshear}
 \end{align}
 The simulation geometry was set as described in \Figure{fig:compgeometry}
 but without $D_1$ (no sphere).  Extracted values of $\df$ and $\dg$ are
@@ -401,101 +401,101 @@ non-Newtonian sample; $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is
 swept.  The excellent agreement with theory demonstrates that our
 simulation is applicable for a wide range of materials.
 \begin{figure}[h]
-\centering
- \pgfplotsset{
-  minor tick num=3,
-  footnotesize,
-  legend style={font=\footnotesize},
-  every axis/.style={
-   height=0.50\textwidth,
-   width=0.50\textwidth,
-   thick,
-   %ymin = -0.0003,
-   %ymax =  0.0003,
-   %xmin = -0.0001,
-   %xmax = 0.0038,
-  },
-  max space between ticks=50pt,
- }
- \begin{tabular}{cc}
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/gksimulation.dat}{\datatablea}
-  \pgfplotstableread{data/gktheory.dat}{\datatableb}
-  \begin{axis}[
-    xlabel = real viscosity $\eta'$,
-    x unit = \si{\pascal\second},
-    scaled y ticks=base 10:-3,
-    ylabel = {$\df$, $\dg$},
-    y unit = \si{hertz},
-    ylabel absolute,
-    restrict x to domain={-0.01:0.6e-2},
-    ylabel style={
-      %at={(yticklabel* cs:0.25)},
-      %xshift=36pt,
-      anchor=center,
-     },
-   ]
-   %\addplot table [ y expr=\thisrowno{1} ] {\datatablea};
-   \addplot [color=colora, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
-   \addplot [color=colorb, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    legend style={font=\footnotesize},
+    every axis/.style={
+        height=0.50\textwidth,
+        width=0.50\textwidth,
+        thick,
+        %ymin = -0.0003,
+        %ymax =  0.0003,
+        %xmin = -0.0001,
+        %xmax = 0.0038,
+      },
+    max space between ticks=50pt,
+  }
+  \begin{tabular}{cc}
+    \begin{tikzpicture}[baseline]
+      \pgfplotstableread{data/gksimulation.dat}{\datatablea}
+      \pgfplotstableread{data/gktheory.dat}{\datatableb}
+      \begin{axis}[
+          xlabel = real viscosity $\eta'$,
+          x unit = \si{\pascal\second},
+          scaled y ticks=base 10:-3,
+          ylabel = {$\df$, $\dg$},
+          y unit = \si{hertz},
+          ylabel absolute,
+          restrict x to domain={-0.01:0.6e-2},
+          ylabel style={
+              %at={(yticklabel* cs:0.25)},
+              %xshift=36pt,
+              anchor=center,
+            },
+        ]
+        %\addplot table [ y expr=\thisrowno{1} ] {\datatablea};
+        \addplot [color=colora, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
+        \addplot [color=colorb, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
 
-   \addplot [color=colora, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
-   \addplot [color=colorb, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
+        \addplot [color=colora, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
+        \addplot [color=colorb, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
 
-   \draw [color=gray,dashed,semithick] (axis cs:-0.0001,0) -- (axis cs:6e-2,0);
-   \node[anchor=north west] at (yticklabel* cs:1) {(a)};
+        \draw [color=gray,dashed,semithick] (axis cs:-0.0001,0) -- (axis cs:6e-2,0);
+        \node[anchor=north west] at (yticklabel* cs:1) {(a)};
 
-  \end{axis}
- \end{tikzpicture}
- &
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/gksimulation2.dat}{\datatablea}
-  \pgfplotstableread{data/gktheory2.dat}{\datatableb}
-  \begin{axis}[
-    xlabel = imaginary viscosity $\eta''$,
-    x unit = \si{\pascal\second},
-    scaled y ticks=base 10:-3,
-    ylabel = ,
-    y unit = ,
-    ylabel absolute,
-    %restrict x to domain={0:0.6e-2},
-    legend to name=named,
-    legend columns=-1,
-%    legend entries={%
-%     $\df$ theory,
-%     $\dg$ theory,
-%     $\df$ simulation,
-%     $\dg$ simulation,
-%    },
-    ylabel style={
-      %at={(yticklabel* cs:0.25)},
-      %xshift=36pt,
-      anchor=center,
-     },
-   ]
-   \addplot [color=colora, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
-   \addlegendentry{$\df$ theory~~}
-   \addplot [color=colorb, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
-   \addlegendentry{$\dg$ theory~~}
+      \end{axis}
+    \end{tikzpicture}
+     &
+    \begin{tikzpicture}[baseline]
+      \pgfplotstableread{data/gksimulation2.dat}{\datatablea}
+      \pgfplotstableread{data/gktheory2.dat}{\datatableb}
+      \begin{axis}[
+          xlabel = imaginary viscosity $\eta''$,
+          x unit = \si{\pascal\second},
+          scaled y ticks=base 10:-3,
+          ylabel = ,
+          y unit = ,
+          ylabel absolute,
+          %restrict x to domain={0:0.6e-2},
+          legend to name=named,
+          legend columns=-1,
+          %    legend entries={%
+          %     $\df$ theory,
+          %     $\dg$ theory,
+          %     $\df$ simulation,
+          %     $\dg$ simulation,
+          %    },
+          ylabel style={
+              %at={(yticklabel* cs:0.25)},
+              %xshift=36pt,
+              anchor=center,
+            },
+        ]
+        \addplot [color=colora, mark=,] table [ y expr=\thisrowno{1} ] {\datatableb};
+        \addlegendentry{$\df$ theory~~}
+        \addplot [color=colorb, mark=, densely dashed] table [ y expr=\thisrowno{2} ] {\datatableb};
+        \addlegendentry{$\dg$ theory~~}
 
-   \addplot [color=colora, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
-   \addlegendentry{$\df$ simulation~~}
-   \addplot [color=colorb, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
-   \addlegendentry{$\dg$ simulation~~}
+        \addplot [color=colora, mark=o, only marks] table [ y expr=\thisrowno{1} ] {\datatablea};
+        \addlegendentry{$\df$ simulation~~}
+        \addplot [color=colorb, mark=o, only marks] table [ y expr=\thisrowno{2} ] {\datatablea};
+        \addlegendentry{$\dg$ simulation~~}
 
-   \draw [color=gray,dashed,semithick] (axis cs:-0.001,0) -- (axis cs:6e-2,0);
-   \node[anchor=north west] at (yticklabel* cs:1) {(b)};
+        \draw [color=gray,dashed,semithick] (axis cs:-0.001,0) -- (axis cs:6e-2,0);
+        \node[anchor=north west] at (yticklabel* cs:1) {(b)};
 
-  \end{axis}
- \end{tikzpicture}
- \\[1.5cm]
- \multicolumn{2}{c}{ \ref{named} }
-\end{tabular}
-\caption{Comparison of $\df$ and $\dg$ versus viscosity $\eta$ for both the
- finite element simulation and \Equation{eqn:impeq}.  (a) $\eta''=0$ and
- $\eta'$ is swept (a Newtonian liquid).  (b)
-$\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is swept.}
-\label{fig:viscosweep}
+      \end{axis}
+    \end{tikzpicture}
+    \\[1.5cm]
+    \multicolumn{2}{c}{ \ref{named} }
+  \end{tabular}
+  \caption{Comparison of $\df$ and $\dg$ versus viscosity $\eta$ for both the
+    finite element simulation and \Equation{eqn:impeq}.  (a) $\eta''=0$ and
+    $\eta'$ is swept (a Newtonian liquid).  (b)
+    $\eta'=\SI{1}{\milli\pascal\second}$ and $\eta''$ is swept.}
+  \label{fig:viscosweep}
 \end{figure}
 
 It is of note that our Navier-Stokes approach (which solves for
@@ -513,10 +513,10 @@ dashpots, rather they are analogies for the coupling of two systems with
 different resonances in the small load approximation.  The \gls{qcm} itself has a
 small damping term, but it is small enough that we neglect it.
 \begin{figure}[ht]
- \centering
- \import{figures/}{dybwadmodel.pdf_tex}
- \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
-\label{fig:mechanicalmodel}
+  \centering
+  \import{figures/}{dybwadmodel.pdf_tex}
+  \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
+  \label{fig:mechanicalmodel}
 \end{figure}
 
 The derivation of this equation is described in detail in
@@ -526,13 +526,13 @@ $\omega_\mathrm{L}^2=\kl/\ml$; the former being more appropriate to our
 analysis.  Using the small load approximation, the response of the system
 as a function of its coupling $\kl$ is
 \begin{equation}
-\frac{\Delta\!f + \mi \Delta \Gamma}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
-\mathrm{Z}_\mathrm{q}}
-\frac{\ml \omega_\mathrm{q} \left( \kl + \mi
-\omega_\mathrm{q} \xil\right) }
-{\ml \omega_\mathrm{q}^2 - \left(\kl + \mi
-\omega_\mathrm{q} \xil\right)}
-\label{eqn:suppmastereq}
+  \frac{\Delta\!f + \mi \Delta \Gamma}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
+    \mathrm{Z}_\mathrm{q}}
+  \frac{\ml \omega_\mathrm{q} \left( \kl + \mi
+    \omega_\mathrm{q} \xil\right) }
+  {\ml \omega_\mathrm{q}^2 - \left(\kl + \mi
+    \omega_\mathrm{q} \xil\right)}
+  \label{eqn:suppmastereq}
 \end{equation}
 where $\mathrm{Z}_\mathrm{q}$ is the acoustic impedance of AT cut quartz,
 $f_\mathrm{F}$ is the fundamental frequency of the resonator, and
@@ -549,97 +549,97 @@ $k_\mathrm{zc}=\ml\omegaq^2$.
 Fitting is simplified with a parametric plot of $\dg$ versus $\df$. For hard
 spheres this will form a circle with radius $r_\mathrm{L}$,
 \begin{align}
-\frac{r_\mathrm{L}}{f_\mathrm{F}} &=
-\frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
-\frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}
-\sqrt{1+\left(\frac{\xi_\mathrm{L}}{m_\mathrm{L}\omega_\mathrm{q}}\right)^2}\\
-&\approx \frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
-\frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}, \quad \mathrm{for}\; \xi_\mathrm{L} \ll 1
-\label{eqn:suppradius}
+  \frac{r_\mathrm{L}}{f_\mathrm{F}} & =
+  \frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
+  \frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}
+  \sqrt{1+\left(\frac{\xi_\mathrm{L}}{m_\mathrm{L}\omega_\mathrm{q}}\right)^2}               \\
+                                    & \approx \frac{N_\mathrm{L}}{\pi \mathrm{Z}_\mathrm{q}}
+  \frac{\left(m_\mathrm{L}\omega_\mathrm{q}\right)^2}{2 \xi_\mathrm{L}}, \quad \mathrm{for}\; \xi_\mathrm{L} \ll 1
+  \label{eqn:suppradius}
 \end{align}
 
 \begin{figure}[h]
- \centering
-\pgfplotsset{
- minor tick num=3,
- footnotesize,
- custom/.style={thick},
- every axis/.style={  height=0.45\textwidth,width=0.71\textwidth, },
-}
-\begin{tikzpicture}[ baseline ]
- \pgfplotstableread{../figures/data/lowersphere10umnew.dat}{\datatablea}
- \pgfplotstableread{../figures/data/lowersphere10umnewfit.dat}{\datatableb}
- \begin{axis}[%
-   %7.5000e-07
-   xmin=-576.2676,xmax=1.9237e+03,
-   xticklabels={,,0,500,1000,1500},
-   ymax=1,ymin=-0.6,
-   axis x line*=top,
-   axis y line*=right,
-   ytick=\empty,
-   yticklabels={,,},
-   max space between ticks=40pt,
-   x unit=\si{\newton\per\meter},
-   xlabel=coupling $k_\mathrm{L}$,
-  ]
-  \draw [color=gray,dashed,semithick] (axis cs:0,1) -- (axis cs:0,-0.6);
- \end{axis}
- \begin{axis}[
- %height=0.45\textwidth,width=0.71\textwidth,
- %enlargelimits=false,
- xmin=-0.12,xmax=0.40,
- ymax=1,ymin=-0.6,
- %ymin=-3.25e5,ymax=8.5e5,
- xlabel=contact surface density $A_\mathrm{c}$,
- axis x line*=bottom,
- x unit=-,
- ylabel={$\Delta\!f/N_\mathrm{L}$, $\Delta\Gamma/N_\mathrm{L}$},
- y unit = \si{\hertz\meter\squared},
- %restrict x to domain = {-1e-6:2e-6},
- max space between ticks=50pt,
- %scaled x ticks = {real:1e-6},
- %xticklabel style={/pgf/number format/fixed},
- %every x tick scale label/.style={color=white},
- legend pos = north east,
- %ylabel style={yshift=-10pt},
- thick,
- legend style={font=\footnotesize},
- ]
- % \newcommand\YA{5e5}
- % \newcommand\YB{-3e5}
-  %\addplot [smooth,color=colora] table [ y expr=\thisrowno{1} ] {\datatablea};
-  %\addlegendentry{$\Delta\!f/N_\mathrm{L}$, \SI{1}{\micro\meter}}
-  %\addplot [smooth,color=colorb,
-  % dash pattern={on 3pt off 0.5pt on 1pt off 0.5pt},
-  %] table [ y expr=\thisrowno{2} ] {\datatablea};
-  %\addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, \SI{1}{\micro\meter}}
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    custom/.style={thick},
+    every axis/.style={  height=0.45\textwidth,width=0.71\textwidth, },
+  }
+  \begin{tikzpicture}[ baseline ]
+    \pgfplotstableread{../figures/data/lowersphere10umnew.dat}{\datatablea}
+    \pgfplotstableread{../figures/data/lowersphere10umnewfit.dat}{\datatableb}
+    \begin{axis}[%
+        %7.5000e-07
+        xmin=-576.2676,xmax=1.9237e+03,
+        xticklabels={,,0,500,1000,1500},
+        ymax=1,ymin=-0.6,
+        axis x line*=top,
+        axis y line*=right,
+        ytick=\empty,
+        yticklabels={,,},
+        max space between ticks=40pt,
+        x unit=\si{\newton\per\meter},
+        xlabel=coupling $k_\mathrm{L}$,
+      ]
+      \draw [color=gray,dashed,semithick] (axis cs:0,1) -- (axis cs:0,-0.6);
+    \end{axis}
+    \begin{axis}[
+        %height=0.45\textwidth,width=0.71\textwidth,
+        %enlargelimits=false,
+        xmin=-0.12,xmax=0.40,
+        ymax=1,ymin=-0.6,
+        %ymin=-3.25e5,ymax=8.5e5,
+        xlabel=contact surface density $A_\mathrm{c}$,
+        axis x line*=bottom,
+        x unit=-,
+        ylabel={$\Delta\!f/N_\mathrm{L}$, $\Delta\Gamma/N_\mathrm{L}$},
+        y unit = \si{\hertz\meter\squared},
+        %restrict x to domain = {-1e-6:2e-6},
+        max space between ticks=50pt,
+        %scaled x ticks = {real:1e-6},
+        %xticklabel style={/pgf/number format/fixed},
+        %every x tick scale label/.style={color=white},
+        legend pos = north east,
+        %ylabel style={yshift=-10pt},
+        thick,
+        legend style={font=\footnotesize},
+      ]
+      % \newcommand\YA{5e5}
+      % \newcommand\YB{-3e5}
+      %\addplot [smooth,color=colora] table [ y expr=\thisrowno{1} ] {\datatablea};
+      %\addlegendentry{$\Delta\!f/N_\mathrm{L}$, \SI{1}{\micro\meter}}
+      %\addplot [smooth,color=colorb,
+      % dash pattern={on 3pt off 0.5pt on 1pt off 0.5pt},
+      %] table [ y expr=\thisrowno{2} ] {\datatablea};
+      %\addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, \SI{1}{\micro\meter}}
 
-  \addplot [custom,smooth,color=colora] table [ y expr=\thisrowno{1} ] {\datatablea};
-  \label{p1}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=colorb, dash pattern={on 3pt off 0.5pt}, ] table [ y expr=\thisrowno{2} ] {\datatablea};
-  \label{p2}
-  \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=colora,only marks,mark=o,mark size=1pt] table [ y expr=\thisrowno{1} ] {\datatableb};
-  \label{p3}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
-  \addplot [custom,smooth,color=colorb,only marks,mark=square,mark size=1pt] table [ y expr=\thisrowno{2} ] {\datatableb};
-  \label{p4}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
+      \addplot [custom,smooth,color=colora] table [ y expr=\thisrowno{1} ] {\datatablea};
+      \label{p1}
+      \addlegendentry{$\Delta\!f/N_\mathrm{L}$, sim}
+      \addplot [custom,smooth,color=colorb, dash pattern={on 3pt off 0.5pt}, ] table [ y expr=\thisrowno{2} ] {\datatablea};
+      \label{p2}
+      \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, sim}
+      \addplot [custom,smooth,color=colora,only marks,mark=o,mark size=1pt] table [ y expr=\thisrowno{1} ] {\datatableb};
+      \label{p3}
+      \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
+      \addplot [custom,smooth,color=colorb,only marks,mark=square,mark size=1pt] table [ y expr=\thisrowno{2} ] {\datatableb};
+      \label{p4}
+      \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
 
-  %\node [draw,fill=white,anchor=south west] at (rel axis cs: 0.01,{0.01*1.25}) {\shortstack[l]{
-  %  \raisebox{-1.5pt}{\ref{p1}} \tiny $\Delta\!f/N_\mathrm{L}$, sim\\
-  %  \raisebox{-1.5pt}{\ref{p2}} \tiny $\Delta\Gamma/N_\mathrm{L}$, sim }};
-%
-%    \node [draw,fill=white,anchor=south east] at (rel axis cs: 0.99,{0.01*1.25}) {\shortstack[l]{
-%    \raisebox{-1.5pt}{\ref{p3}} \tiny $\Delta\!f/N_\mathrm{L}$, theory\\
-%    \raisebox{-1.5pt}{\ref{p4}} \tiny $\Delta\Gamma/N_\mathrm{L}$, theory}};
+      %\node [draw,fill=white,anchor=south west] at (rel axis cs: 0.01,{0.01*1.25}) {\shortstack[l]{
+      %  \raisebox{-1.5pt}{\ref{p1}} \tiny $\Delta\!f/N_\mathrm{L}$, sim\\
+      %  \raisebox{-1.5pt}{\ref{p2}} \tiny $\Delta\Gamma/N_\mathrm{L}$, sim }};
+      %
+      %    \node [draw,fill=white,anchor=south east] at (rel axis cs: 0.99,{0.01*1.25}) {\shortstack[l]{
+      %    \raisebox{-1.5pt}{\ref{p3}} \tiny $\Delta\!f/N_\mathrm{L}$, theory\\
+      %    \raisebox{-1.5pt}{\ref{p4}} \tiny $\Delta\Gamma/N_\mathrm{L}$, theory}};
 
- \end{axis}
-\end{tikzpicture}
-\caption{Comparison between mechanical model and finite element simulation
-for a \SI{10}{\micro\meter} polystyrene particle.}
-\label{fig:supplowersphere}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Comparison between mechanical model and finite element simulation
+    for a \SI{10}{\micro\meter} polystyrene particle.}
+  \label{fig:supplowersphere}
 \end{figure}
 
 \section{Noise and Comparison to \gls{qcm}.D}
@@ -655,8 +655,8 @@ outputs the motional resistance $\Rm$ of the Butterworth van Dyke
 equivalent circuit.  $\Rm$ is related to
 the bandwidth $\Gamma$ and the \QCM-Ddissipation $D$ by
 \begin{align}
- \Rm&=\left(4 \pi \Lm\right) \Gamma\\
- &=\left(2 \pi \Lm f_\mathrm{F}\right) D
+  \Rm & =\left(4 \pi \Lm\right) \Gamma         \\
+      & =\left(2 \pi \Lm f_\mathrm{F}\right) D
 \end{align}
 where $\Lm$ is the Butterworth van Dyke equivalent motional inductance.
 Because of the small load approximation, $\df/f_\mathrm{F} \ll 1$ and
@@ -687,7 +687,7 @@ reduce system noise.
 
 In comparison, a typical \QCM-Dsuch as those sold by
 Q-Sense~\footnote{BiolinScientific / Q-Sense, Hängpilsgatan 7, SE-426 77
-Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
+  Västra Frölunda, Sweden,  \url{http://www.q-sense.com/}} will have noise of
 about \SI{0.3}{\hertz} in $\df$ and \num{0.2e-6} in $D$ at
 \SI{5}{\mega\hertz}~\cite{su2005comparison}~\cite{peh2007understanding}.
 Converting from $\Rm$ to $D$ and vice-versa, we find the SRS QCM200 has an
@@ -716,67 +716,67 @@ The different load situations depicted in the main manuscript are shown
 parametrically in \Figure{fig:suppparametricplot}.
 
 \newcommand{\myplot}[7]{
-\nextgroupplot[title={\textbf{#1}}]
-\addplot [
- color=colorc,
- mark=halfcircle*,
- mark size=1.5pt,
-] table [x index=1, y index=5] {data/#2-both.txt};
-% unloading
-\addplot [
- color=colorc,
- mark=halfcircle*,
- mark size=1.5pt,
- mark options={rotate=180},
-] table [x index=1, y index=5] {data/#3-both.txt};
-\addplot [
- color=colorc,
- mark=halfcircle*,
- mark size=1.5pt,
-] table [x index=1, y index=5] {data/#2-both.txt};
-% unloading
-\addplot [
- color=colorc,
- mark=halfcircle*,
- mark size=1.5pt,
- mark options={rotate=180},
-] table [x index=1, y index=5] {data/#3-both.txt};
-\node[anchor=north west] at (yticklabel* cs:1) {(#6)};
+  \nextgroupplot[title={\textbf{#1}}]
+  \addplot [
+    color=colorc,
+    mark=halfcircle*,
+    mark size=1.5pt,
+  ] table [x index=1, y index=5] {data/#2-both.txt};
+  % unloading
+  \addplot [
+    color=colorc,
+    mark=halfcircle*,
+    mark size=1.5pt,
+    mark options={rotate=180},
+  ] table [x index=1, y index=5] {data/#3-both.txt};
+  \addplot [
+    color=colorc,
+    mark=halfcircle*,
+    mark size=1.5pt,
+  ] table [x index=1, y index=5] {data/#2-both.txt};
+  % unloading
+  \addplot [
+    color=colorc,
+    mark=halfcircle*,
+    mark size=1.5pt,
+    mark options={rotate=180},
+  ] table [x index=1, y index=5] {data/#3-both.txt};
+  \node[anchor=north west] at (yticklabel* cs:1) {(#6)};
 }
 
 
 \begin{figure*}
- \centering
-\pgfplotsset{
- minor tick num=3,
- footnotesize,
- legend style={font=\footnotesize},
-}
-\begin{tikzpicture}
- \begin{groupplot}[
-   ylabel=$\Delta\Gamma$,
-   xlabel=$\Delta\!f$,
-    group style={
-        group name=loadplot,
-        group size=3 by 3,
-        horizontal sep=1.5cm,
-        vertical sep=1.5cm,
-        %xlabels at=edge bottom,
-        %ylabels at=edge left,
-    },
-    height=163.2pt,width=163.2pt,
-   ]
-\myplot{Air} {QCM00431b} {QCM00434} {-9} {5} {a} {100}
-\myplot{Water} {QCM00450} {QCM00170} {-9} {5} {b} {90}
-\myplot{Free Particles} {QCM00306c} {QCM00306a} {-30} {45} {c} {100}
-\myplot{Attached Particles} {QCM00328b} {QCM00321b} {-35} {9} {d} {100}
-\myplot{Lambda DNA} {QCM00461} {QCM00458} {-21} {8} {e} {75}
-\myplot{Tethered Particles} {QCM00510a} {QCM00511c} {-65} {25} {f} {70}
-  \end{groupplot}
- \end{tikzpicture}
- \caption{Parametric representations of the load situations from the
- manuscript.}
-\label{fig:suppparametricplot}
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    legend style={font=\footnotesize},
+  }
+  \begin{tikzpicture}
+    \begin{groupplot}[
+        ylabel=$\Delta\Gamma$,
+        xlabel=$\Delta\!f$,
+        group style={
+            group name=loadplot,
+            group size=3 by 3,
+            horizontal sep=1.5cm,
+            vertical sep=1.5cm,
+            %xlabels at=edge bottom,
+            %ylabels at=edge left,
+          },
+        height=163.2pt,width=163.2pt,
+      ]
+      \myplot{Air} {QCM00431b} {QCM00434} {-9} {5} {a} {100}
+      \myplot{Water} {QCM00450} {QCM00170} {-9} {5} {b} {90}
+      \myplot{Free Particles} {QCM00306c} {QCM00306a} {-30} {45} {c} {100}
+      \myplot{Attached Particles} {QCM00328b} {QCM00321b} {-35} {9} {d} {100}
+      \myplot{Lambda DNA} {QCM00461} {QCM00458} {-21} {8} {e} {75}
+      \myplot{Tethered Particles} {QCM00510a} {QCM00511c} {-65} {25} {f} {70}
+    \end{groupplot}
+  \end{tikzpicture}
+  \caption{Parametric representations of the load situations from the
+    manuscript.}
+  \label{fig:suppparametricplot}
 \end{figure*}
 
 
@@ -803,71 +803,71 @@ calculated for a different diameter polystyrene microsphere in water
 particles as a function of the distance $s$ between the
 potentially truncated particle and the oscillating boundary.
 \begin{figure}[h]
-\centering
- \pgfplotsset{
-  minor tick num=3,
-  footnotesize,
-  legend style={font=\footnotesize},
-  every axis/.style={
-   height=0.30\textwidth,
-   width=0.75\textwidth,
-  },
-  cycle list name=cbDark27qual,
-  max space between ticks=25pt,
- }
- \begin{tabular}{c}
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/out-0189.tsv}{\datatable}
-  \begin{axis}[
-    xlabel = $s$,
-    x unit = \si{\meter},
-    ylabel = $\df$,
-    y unit = \si{hertz},
-    ]
-    \addplot table [ y expr=\thisrowno{1} ] {\datatable};
-    \addplot table [ y expr=\thisrowno{2} ] {\datatable};
-    \draw [dashed, semithick] (axis cs:0,-1.8e4) -- (axis cs:0,0.4e4);
-    \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{2}{\micro\meter} particles};
-    \legend{$\df$,$\dg$}
-  \end{axis}
- \end{tikzpicture}
- \\
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/out-1000.tsv}{\datatable}
-  \begin{axis}[
-    xlabel = $s$,
-    x unit = \si{\meter},
-    ylabel = $\df$,
-    y unit = \si{hertz},
-    ]
-    \addplot table [ y expr=\thisrowno{1} ] {\datatable};
-    \addplot table [ y expr=\thisrowno{2} ] {\datatable};
-    \draw [dashed, semithick] (axis cs:0,-1.25e5) -- (axis cs:0,0.9e5);
-    \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{10}{\micro\meter} particles};
-    \legend{$\df$,$\dg$}
-  \end{axis}
- \end{tikzpicture}
- \\
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/out-25um.tsv}{\datatable}
-  \begin{axis}[
-    xlabel = $s$,
-    x unit = \si{\meter},
-    ylabel = $\df$,
-    y unit = \si{hertz},
-    ]
-    \addplot table [ y expr=\thisrowno{1} ] {\datatable};
-    \addplot table [ y expr=\thisrowno{2} ] {\datatable};
-    \draw [dashed, semithick] (axis cs:0,-3e5) -- (axis cs:0,5e5);
-    \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{25}{\micro\meter} particles};
-    \legend{$\df$,$\dg$}
-  \end{axis}
- \end{tikzpicture}
-\end{tabular}
-\caption{Changes in frequency $\df$ and bandwidth $\dg$ for 2, 10, and
- \SI{25}{\micro\meter} diameter particles as a function of separation $s$
-between the (potentially truncated) particle and the oscillating boundary.}
-\label{fig:contactradius}
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    legend style={font=\footnotesize},
+    every axis/.style={
+        height=0.30\textwidth,
+        width=0.75\textwidth,
+      },
+    cycle list name=cbDark27qual,
+    max space between ticks=25pt,
+  }
+  \begin{tabular}{c}
+    \begin{tikzpicture}[baseline]
+      \pgfplotstableread{data/out-0189.tsv}{\datatable}
+      \begin{axis}[
+          xlabel = $s$,
+          x unit = \si{\meter},
+          ylabel = $\df$,
+          y unit = \si{hertz},
+        ]
+        \addplot table [ y expr=\thisrowno{1} ] {\datatable};
+        \addplot table [ y expr=\thisrowno{2} ] {\datatable};
+        \draw [dashed, semithick] (axis cs:0,-1.8e4) -- (axis cs:0,0.4e4);
+        \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{2}{\micro\meter} particles};
+        \legend{$\df$,$\dg$}
+      \end{axis}
+    \end{tikzpicture}
+    \\
+    \begin{tikzpicture}[baseline]
+      \pgfplotstableread{data/out-1000.tsv}{\datatable}
+      \begin{axis}[
+          xlabel = $s$,
+          x unit = \si{\meter},
+          ylabel = $\df$,
+          y unit = \si{hertz},
+        ]
+        \addplot table [ y expr=\thisrowno{1} ] {\datatable};
+        \addplot table [ y expr=\thisrowno{2} ] {\datatable};
+        \draw [dashed, semithick] (axis cs:0,-1.25e5) -- (axis cs:0,0.9e5);
+        \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{10}{\micro\meter} particles};
+        \legend{$\df$,$\dg$}
+      \end{axis}
+    \end{tikzpicture}
+    \\
+    \begin{tikzpicture}[baseline]
+      \pgfplotstableread{data/out-25um.tsv}{\datatable}
+      \begin{axis}[
+          xlabel = $s$,
+          x unit = \si{\meter},
+          ylabel = $\df$,
+          y unit = \si{hertz},
+        ]
+        \addplot table [ y expr=\thisrowno{1} ] {\datatable};
+        \addplot table [ y expr=\thisrowno{2} ] {\datatable};
+        \draw [dashed, semithick] (axis cs:0,-3e5) -- (axis cs:0,5e5);
+        \node [anchor=west] at (rel axis cs:0.01,0.9) {\SI{25}{\micro\meter} particles};
+        \legend{$\df$,$\dg$}
+      \end{axis}
+    \end{tikzpicture}
+  \end{tabular}
+  \caption{Changes in frequency $\df$ and bandwidth $\dg$ for 2, 10, and
+    \SI{25}{\micro\meter} diameter particles as a function of separation $s$
+    between the (potentially truncated) particle and the oscillating boundary.}
+  \label{fig:contactradius}
 \end{figure}
 
 
@@ -878,30 +878,30 @@ moduli $E_{1,2}$, Poisson's ratio $\nu_{1,2}$, particle radius $r$, and
 appled force~\cite{nalwa1999handbook}
 $F_\perp$
 \begin{equation}
- r_c = \left(\frac{3}{4} F_\perp  r
- \left(\frac{1-\nu_1^2}{E_1}+\frac{1-\nu_2^2}{E_2}\right)\right)^{1/3}
-\label{eqn:contactradius}
+  r_c = \left(\frac{3}{4} F_\perp  r
+  \left(\frac{1-\nu_1^2}{E_1}+\frac{1-\nu_2^2}{E_2}\right)\right)^{1/3}
+  \label{eqn:contactradius}
 \end{equation}
 The laterial Hertzian spring constant $k_\parallel$ is a function of the
 material's shear moduli $G_{1,2}$
 \begin{equation}
- k_\parallel=8 G_r r_c
+  k_\parallel=8 G_r r_c
 \end{equation}
 where $G$ is the reduced shear modulus
 \begin{equation}
- G_r=\left(\frac{2-\nu_1}{G_1}+\frac{2-\nu_2}{G_2}\right)^{-1}
+  G_r=\left(\frac{2-\nu_1}{G_1}+\frac{2-\nu_2}{G_2}\right)^{-1}
 \end{equation}
 
 The force on the particle $F_\perp$ will result from a combination of
 gravitational and Van der Waals forces.  The gravitational component $F_g$ is
 straightforward
 \begin{equation}
- F_g = \frac{4}{3}\pi r^3 g \rho
+  F_g = \frac{4}{3}\pi r^3 g \rho
 \end{equation}
 The Van der Waals force between a sphere and a plate with seperation $d$ is
 approximately
 \begin{equation}
- F_\mathrm{VdW} = \frac{A_H r}{6 d}
+  F_\mathrm{VdW} = \frac{A_H r}{6 d}
 \end{equation}
 where $A_H$ is the effective Hamaker constant for the three material system
 (estimated here to be approximately \SI{10e-20}{\joule}).
@@ -960,87 +960,87 @@ sphere on the electrode surface.  Assuming a seperation of
 \SI{0.17}{\nano\meter} the Van der Waals attraction is
 \SI{7.2e6}{\pico\newton} and the corresponding contact radius and lateral
 spring constants are $r_c=\SI{266.6}{\nano\meter}$ and $k_\parallel =
-\SI{2415}{\newton\meter}$, respectively.  Assuming a loss tangent of
+  \SI{2415}{\newton\meter}$, respectively.  Assuming a loss tangent of
 0.157~\cite{}, the corresponding viscosity is $\nu =
-\SI{10-100i}{\pascal\second}$.  The results of this
+  \SI{10-100i}{\pascal\second}$.  The results of this
 
 \subsubsection{Shear Modulus and Viscosity}
 \begin{figure}[h]
-\centering
- \pgfplotsset{
-  minor tick num=3,
-  footnotesize,
-  legend style={font=\footnotesize},
-  every axis/.style={
-   height=0.4\textwidth,
-   width=0.4\textwidth,
-  },
-  cycle list name=cbDark27qual,
-  max space between ticks=25pt,
- }
- \begin{tabular}{cc}
- \begin{tikzpicture}[baseline]
-  \tikzset{ every pin/.style={pin distance=0.0cm} }
-  \pgfplotstableread{data/out_modulusa2.tsv}{\datatablea}
-  \pgfplotstableread{data/out_modulusa3.tsv}{\datatableb}
-  \pgfplotstableread{data/out_modulusa4.tsv}{\datatablec}
-  \pgfplotstableread{data/out_modulusa5.tsv}{\datatabled}
-  \begin{axis}[
-    xlabel = $r_c$,
-    x unit = \si{\meter},
-    ylabel = $\df$,
-    y unit = \si{hertz},
-    restrict x to domain =0:0.2e6,
-    ]
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    legend style={font=\footnotesize},
+    every axis/.style={
+        height=0.4\textwidth,
+        width=0.4\textwidth,
+      },
+    cycle list name=cbDark27qual,
+    max space between ticks=25pt,
+  }
+  \begin{tabular}{cc}
+    \begin{tikzpicture}[baseline]
+      \tikzset{ every pin/.style={pin distance=0.0cm} }
+      \pgfplotstableread{data/out_modulusa2.tsv}{\datatablea}
+      \pgfplotstableread{data/out_modulusa3.tsv}{\datatableb}
+      \pgfplotstableread{data/out_modulusa4.tsv}{\datatablec}
+      \pgfplotstableread{data/out_modulusa5.tsv}{\datatabled}
+      \begin{axis}[
+          xlabel = $r_c$,
+          x unit = \si{\meter},
+          ylabel = $\df$,
+          y unit = \si{hertz},
+          restrict x to domain =0:0.2e6,
+        ]
 
-    \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablea};
-    \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatablea};
-    \node[coordinate,pin=above:{25}] at (axis cs:4e4,9.07e5) {};
+        \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablea};
+        \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatablea};
+        \node[coordinate,pin=above:{25}] at (axis cs:4e4,9.07e5) {};
 
-    \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatableb};
-    \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatableb};
-    \node[coordinate,pin=above:{50}] at (axis cs:5.5001e+04,1.0064e+06) {};
+        \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatableb};
+        \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatableb};
+        \node[coordinate,pin=above:{50}] at (axis cs:5.5001e+04,1.0064e+06) {};
 
-    \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablec};
-    \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatablec};
-    \node[coordinate,pin=above:{75}] at (axis cs:6.7500e+04,1.1882e+06) {};
+        \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablec};
+        \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatablec};
+        \node[coordinate,pin=above:{75}] at (axis cs:6.7500e+04,1.1882e+06) {};
 
-    \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatabled};
-    \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatabled};
-    \node[coordinate,pin=above:{100}] at (axis cs:80000,1.4695e+06) {};
+        \addplot [color=Dark27qual1,mark=x ] table [ y expr=\thisrowno{1} ] {\datatabled};
+        \addplot [color=Dark27qual2,mark=x ] table [ y expr=\thisrowno{2} ] {\datatabled};
+        \node[coordinate,pin=above:{100}] at (axis cs:80000,1.4695e+06) {};
 
-  \end{axis}
- \end{tikzpicture}
-&
-\begin{tikzpicture}[baseline]
-  \tikzset{ every pin/.style={pin distance=0.0cm} }
-  \pgfplotstableread{data/out_modulusb2.tsv}{\datatablea}
-  \pgfplotstableread{data/out_modulusb3.tsv}{\datatableb}
-  \pgfplotstableread{data/out_modulusb4.tsv}{\datatablec}
-  \pgfplotstableread{data/out_modulusb5.tsv}{\datatabled}
-  \begin{axis}[
-    xlabel = $\df$,
-    x unit = \si{\hertz},
-    ylabel = $\dg$,
-    y unit = \si{hertz},
-    ]
-    \node[coordinate,pin=above:{25}] at (axis cs:4e4,9.07e5) {};
-    \node[coordinate,pin=above:{50}] at (axis cs:5.5001e+04,1.0064e+06) {};
-    \node[coordinate,pin=above:{75}] at (axis cs:6.7500e+04,1.1882e+06) {};
-    \node[coordinate,pin=above:{100}] at (axis cs:80000,1.4695e+06) {};
+      \end{axis}
+    \end{tikzpicture}
+     &
+    \begin{tikzpicture}[baseline]
+      \tikzset{ every pin/.style={pin distance=0.0cm} }
+      \pgfplotstableread{data/out_modulusb2.tsv}{\datatablea}
+      \pgfplotstableread{data/out_modulusb3.tsv}{\datatableb}
+      \pgfplotstableread{data/out_modulusb4.tsv}{\datatablec}
+      \pgfplotstableread{data/out_modulusb5.tsv}{\datatabled}
+      \begin{axis}[
+          xlabel = $\df$,
+          x unit = \si{\hertz},
+          ylabel = $\dg$,
+          y unit = \si{hertz},
+        ]
+        \node[coordinate,pin=above:{25}] at (axis cs:4e4,9.07e5) {};
+        \node[coordinate,pin=above:{50}] at (axis cs:5.5001e+04,1.0064e+06) {};
+        \node[coordinate,pin=above:{75}] at (axis cs:6.7500e+04,1.1882e+06) {};
+        \node[coordinate,pin=above:{100}] at (axis cs:80000,1.4695e+06) {};
 
-    \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablea};
+        \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablea};
 
-    \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatableb};
+        \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatableb};
 
-    \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablec};
+        \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatablec};
 
-    \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatabled};
+        \addplot [color=Dark27qual3,mark=x ] table [ y expr=\thisrowno{1} ] {\datatabled};
 
-  \end{axis}
- \end{tikzpicture}
-\end{tabular}
-\caption{Sweeping shear modulus.  Units are in \si{\giga\pascal}.}
+      \end{axis}
+    \end{tikzpicture}
+  \end{tabular}
+  \caption{Sweeping shear modulus.  Units are in \si{\giga\pascal}.}
 \end{figure}
 
 
@@ -1175,40 +1175,40 @@ spring constants are $r_c=\SI{266.6}{\nano\meter}$ and $k_\parallel =
 %\end{figure}
 
 \begin{figure}[h]
-\centering
- \pgfplotsset{
-  minor tick num=3,
-  footnotesize,
-  legend style={font=\footnotesize},
-  every axis/.style={
-   height=0.30\textwidth,
-   width=0.75\textwidth,
-  },
-  cycle list name=cbDark27qual,
-  max space between ticks=25pt,
- }
- \begin{tikzpicture}[baseline]
-  \pgfplotstableread{data/out-0189.tsv}{\datatablea}
-  \pgfplotstableread{data/out-0189-rigid.tsv}{\datatableb}
-  %\pgfplotstableread{data/out-1000.tsv}{\datatableb}
-  %\pgfplotstableread{data/out-25um.tsv}{\datatablec}
-  \begin{axis}[
-    xlabel = $s$,
-    x unit = \si{\meter},
-    ylabel = $\df$,
-    y unit = \si{hertz},
-    ymin=-2e4,ymax=0.6e4,
-    ]
-    \addplot table [ y expr=\thisrowno{1} ] {\datatablea};
-    \addplot table [ y expr=\thisrowno{2} ] {\datatablea};
-    \addplot table [ y expr=\thisrowno{1} ] {\datatableb};
-    \addplot table [ y expr=\thisrowno{2} ] {\datatableb};
+  \centering
+  \pgfplotsset{
+    minor tick num=3,
+    footnotesize,
+    legend style={font=\footnotesize},
+    every axis/.style={
+        height=0.30\textwidth,
+        width=0.75\textwidth,
+      },
+    cycle list name=cbDark27qual,
+    max space between ticks=25pt,
+  }
+  \begin{tikzpicture}[baseline]
+    \pgfplotstableread{data/out-0189.tsv}{\datatablea}
+    \pgfplotstableread{data/out-0189-rigid.tsv}{\datatableb}
+    %\pgfplotstableread{data/out-1000.tsv}{\datatableb}
+    %\pgfplotstableread{data/out-25um.tsv}{\datatablec}
+    \begin{axis}[
+        xlabel = $s$,
+        x unit = \si{\meter},
+        ylabel = $\df$,
+        y unit = \si{hertz},
+        ymin=-2e4,ymax=0.6e4,
+      ]
+      \addplot table [ y expr=\thisrowno{1} ] {\datatablea};
+      \addplot table [ y expr=\thisrowno{2} ] {\datatablea};
+      \addplot table [ y expr=\thisrowno{1} ] {\datatableb};
+      \addplot table [ y expr=\thisrowno{2} ] {\datatableb};
 
-    \draw [dashed, semithick] (axis cs:0,-2.8e4) -- (axis cs:0,0.5e4);
-    \legend{$\df$ free,$\dg$ free,$\df$ attached, $\dg$ attached}
-  \end{axis}
- \end{tikzpicture}
- \caption{Rigidly attaching a \SI{1.89}{\micro\meter} PS bead.}
+      \draw [dashed, semithick] (axis cs:0,-2.8e4) -- (axis cs:0,0.5e4);
+      \legend{$\df$ free,$\dg$ free,$\df$ attached, $\dg$ attached}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Rigidly attaching a \SI{1.89}{\micro\meter} PS bead.}
 \end{figure}
 
 \section{Mechanical Model}
@@ -1220,10 +1220,10 @@ dashpots, rather they are analogies for the coupling of two systems with
 different resonances in the small load approximation.  The \gls{qcm} itself has a
 small damping term, but it is small enough that we neglect it.
 \begin{figure}[ht]
- \centering
- \import{figures/}{dybwadmodel.pdf_tex}
- \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
-\label{fig:mechanicalmodel}
+  \centering
+  \import{figures/}{dybwadmodel.pdf_tex}
+  \caption{Coupled oscillator mechanical model for \gls{qcm} behavior.}
+  \label{fig:mechanicalmodel}
 \end{figure}
 
 The derivation of this equation is described in detail in
@@ -1233,13 +1233,13 @@ former being more approprate to our analysis.
 Using the small load approximation, the response
 of the system as a function of its coupling $\kl$ is then
 \begin{equation}
-\frac{\Delta\!f + \mi \Delta \Gamma}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
-\mathrm{Z}_\mathrm{q}}
-\frac{\ml \omega_\mathrm{q} \left( \kl + \mi
-\omega_\mathrm{q} \xil\right) }
-{\ml \omega_\mathrm{q}^2 - \left(\kl + \mi
-\omega_\mathrm{q} \xil\right)}
-\label{eqn:mastereq}
+  \frac{\Delta\!f + \mi \Delta \Gamma}{f_\mathrm{F}} = \frac{N_\mathrm{L}}{\pi
+    \mathrm{Z}_\mathrm{q}}
+  \frac{\ml \omega_\mathrm{q} \left( \kl + \mi
+    \omega_\mathrm{q} \xil\right) }
+  {\ml \omega_\mathrm{q}^2 - \left(\kl + \mi
+    \omega_\mathrm{q} \xil\right)}
+  \label{eqn:mastereq}
 \end{equation}
 where $\mathrm{Z}_\mathrm{q}$ is the acoustic impedance of AT cut quartz,
 $f_\mathrm{F}$ is the fundamental frequency of the resonator, and

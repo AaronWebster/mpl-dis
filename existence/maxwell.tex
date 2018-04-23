@@ -3,13 +3,13 @@ can be derived from Maxwell's equations.  Beginning here, the differential form 
 Maxwell's equations~\cite{maier2007plasmonics}~\cite{benson2009elements}
 including external sources are
 \begin{align}
-\nabla \cdot \mathbf{D} &= \rho & \text{Gauss's law} \label{eqn:gausslaw}\\
-\nabla \cdot \mathbf{B} &= 0 & \text{Gauss's law for magnetism} \label{eqn:gausslawmagnetism}\\
-\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}} {\partial t}
-& \text{Faraday's law of induction} \label{eqn:faradayslaw} \\
-\nabla \times \mathbf{H} &= \frac{\partial \mathbf{D}} {\partial
-t} + \mathbf{J}  & \text{Ampere's law with Maxwell's correction},
-\label{eqn:ampereslaw}
+  \nabla \cdot \mathbf{D}  & = \rho                                                    & \text{Gauss's law} \label{eqn:gausslaw}                        \\
+  \nabla \cdot \mathbf{B}  & = 0                                                       & \text{Gauss's law for magnetism} \label{eqn:gausslawmagnetism} \\
+  \nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}} {\partial t}
+                           & \text{Faraday's law of induction} \label{eqn:faradayslaw}                                                                  \\
+  \nabla \times \mathbf{H} & = \frac{\partial \mathbf{D}} {\partial
+  t} + \mathbf{J}          & \text{Ampere's law with Maxwell's correction},
+  \label{eqn:ampereslaw}
 \end{align}
 where $\mathbf{E}$ is the electric field, $\mathbf{B}$ is the magnetic
 field, $\mathbf{D}$ is the electric displacement field with an external
@@ -19,61 +19,61 @@ with current density $\mathbf{J}$.
 In formulating Maxwell's equations it is assumed all electromagnetic
 propagation takes place in a {\it simple dielectric}, that is
 \begin{enumerate}
-\item The polarization density $\mathbf{P}$ is linear with the electric
-field $\mathbf{E}$,
-\begin{align}
-\mathbf{P}=\epsilon_0\chi_e\mathbf{E}.
-\label{eqn:pdensity}
-\end{align}
-with $\chi_e$ defined as the electric susceptibility.  From
-\Equation{eqn:pdensity} and the definition
-of $\mathbf{D}$,
-\begin{align}
-\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P},
-\label{eqn:dfield}
-\end{align}
-with $\epsilon_0$ is the permittivity of free space, one can simplify the
-$\mathbf{D}$-field as
-\begin{align}
-\mathbf{D}&=\epsilon_0\mathbf{E}+\mathbf{P}\\
-%&=\epsilon_0 \mathbf{E}+\epsilon_0 \chi_e \mathbf{E}\\
-&=\epsilon_0(1+\chi_e)\mathbf{E}\\
-&=\epsilon\mathbf{E}.
-\label{eqn:permittivitydangle}
-\end{align}
-In \Equation{eqn:permittivitydangle}, $\epsilon$ is defined as the
-permittivity of the dielectric.  The convention is taken
-that variables with a subscript $0$ can always be assumed to be
-{\it in vacuo}, while material-dependent counterparts have
-no subscript.
-\item The magnetization $\mathbf{M}$, related to the
-auxiliary magnetic field by
-\begin{align}
-\mathbf{M}=\mu_0\chi_m\mathbf{H},
-\label{eqn:auxfield}
-\end{align}
-where $\chi_m$ is the volume magnetic susceptibility.
-\Equation{eqn:auxfield} allows the
-magnetic field to be rewritten as
-\begin{align}
-\mathbf{B}&=\mu_0\left(\mathbf{H}+\mathbf{M}\right)\\
-&=\mu_0\left(1+\chi_m\right)\mathbf{H}\\
-&=\mu \mathbf{H},
-\end{align}
-where $\mu_0$ is the vacuum permeability of free space.  In practice, most
-dielectrics have nearly zero magnetic response, so $\mathbf{M}=0$ and
-$\mu_0=\mu$ is a valid assumption.  Nevertheless, for the sake of generality it is treated as a
-material-dependent parameter.
-\item The material is homogeneous and isotropic.
-\item Charge is conserved.  $\mathbf{J} = \sigma \mathbf{E}$ (Ohm's law), where
- $\sigma$ is the conductivity and
-\begin{equation}
- \frac{\partial \rho}{\partial t}
-\end{equation}
-% \begin{align}
-%  \frac{\partial \rho}{\partial t}
-%   &= -\nabla \cdot \mathbf{J}\\
-%   &= -\sigma \left(\nabla \cdot \mathbf{E} \right) \\
-%   &= -\frac{\sigma}{\epsilon} \rho.
-% \end{align}
+  \item The polarization density $\mathbf{P}$ is linear with the electric
+        field $\mathbf{E}$,
+        \begin{align}
+          \mathbf{P}=\epsilon_0\chi_e\mathbf{E}.
+          \label{eqn:pdensity}
+        \end{align}
+        with $\chi_e$ defined as the electric susceptibility.  From
+        \Equation{eqn:pdensity} and the definition
+        of $\mathbf{D}$,
+        \begin{align}
+          \mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P},
+          \label{eqn:dfield}
+        \end{align}
+        with $\epsilon_0$ is the permittivity of free space, one can simplify the
+        $\mathbf{D}$-field as
+        \begin{align}
+          \mathbf{D} & =\epsilon_0\mathbf{E}+\mathbf{P} \\
+          %&=\epsilon_0 \mathbf{E}+\epsilon_0 \chi_e \mathbf{E}\\
+                     & =\epsilon_0(1+\chi_e)\mathbf{E}  \\
+                     & =\epsilon\mathbf{E}.
+          \label{eqn:permittivitydangle}
+        \end{align}
+        In \Equation{eqn:permittivitydangle}, $\epsilon$ is defined as the
+        permittivity of the dielectric.  The convention is taken
+        that variables with a subscript $0$ can always be assumed to be
+          {\it in vacuo}, while material-dependent counterparts have
+        no subscript.
+  \item The magnetization $\mathbf{M}$, related to the
+        auxiliary magnetic field by
+        \begin{align}
+          \mathbf{M}=\mu_0\chi_m\mathbf{H},
+          \label{eqn:auxfield}
+        \end{align}
+        where $\chi_m$ is the volume magnetic susceptibility.
+        \Equation{eqn:auxfield} allows the
+        magnetic field to be rewritten as
+        \begin{align}
+          \mathbf{B} & =\mu_0\left(\mathbf{H}+\mathbf{M}\right) \\
+                     & =\mu_0\left(1+\chi_m\right)\mathbf{H}    \\
+                     & =\mu \mathbf{H},
+        \end{align}
+        where $\mu_0$ is the vacuum permeability of free space.  In practice, most
+        dielectrics have nearly zero magnetic response, so $\mathbf{M}=0$ and
+        $\mu_0=\mu$ is a valid assumption.  Nevertheless, for the sake of generality it is treated as a
+        material-dependent parameter.
+  \item The material is homogeneous and isotropic.
+  \item Charge is conserved.  $\mathbf{J} = \sigma \mathbf{E}$ (Ohm's law), where
+        $\sigma$ is the conductivity and
+        \begin{equation}
+          \frac{\partial \rho}{\partial t}
+        \end{equation}
+        % \begin{align}
+        %  \frac{\partial \rho}{\partial t}
+        %   &= -\nabla \cdot \mathbf{J}\\
+        %   &= -\sigma \left(\nabla \cdot \mathbf{E} \right) \\
+        %   &= -\frac{\sigma}{\epsilon} \rho.
+        % \end{align}
 \end{enumerate}

@@ -37,13 +37,13 @@ a nonlinear least squares routine~\cite{more1977LevAlgImpThe_2} to
 fit the Fresnel intensity reflection coefficient for a single-layer
 film $R$~\cite{steck2006classical}
 \begin{equation}
-				R = \frac{n_1^2{(n_i-n_s)}^2 \cos^2\delta + {(n_i n_s - n_1^2)}^2\sin^2\delta}
-				{n_1^2{(n_i+n_s)}^2 \cos^2\delta + {(n_i n_s + n_1^2)}^2\sin^2\delta}
-          \label{eqn:fitfresnel}
+  R = \frac{n_1^2{(n_i-n_s)}^2 \cos^2\delta + {(n_i n_s - n_1^2)}^2\sin^2\delta}
+  {n_1^2{(n_i+n_s)}^2 \cos^2\delta + {(n_i n_s + n_1^2)}^2\sin^2\delta}
+  \label{eqn:fitfresnel}
 \end{equation}
 where
 \begin{equation}
- \delta = \frac{2\pi}{\lambda_0} n_i d_i \cos \theta
+  \delta = \frac{2\pi}{\lambda_0} n_i d_i \cos \theta
 \end{equation}
 and the Cytop layer has a refractive index $n_i$ and thickness $d_i$, the
 substrate a refractive index $n_s$, and the system in the presence of
@@ -54,13 +54,13 @@ a linear least squares fitting algorithm.  An example of the raw spectrometer
 data and its best fit is shown in \Figure{fig:fresnelfit}.
 
 \begin{figure}
- \centering
- \import{includes/}{setpgfinc}
- \import{experimental/figures/}{fresnelfit}
- \caption{Reflectivity of a thin Cytop layer on BK7 at
- $\theta=\SI{45}{\degree}$.  Shown is the experimental data and the
-	best-fit with \Equation{eqn:fitfresnel}.  Calculated layer thickness was \SI{1150}{\nano\meter}.}
-\label{fig:fresnelfit}
+  \centering
+  \import{includes/}{setpgfinc}
+  \import{experimental/figures/}{fresnelfit}
+  \caption{Reflectivity of a thin Cytop layer on BK7 at
+    $\theta=\SI{45}{\degree}$.  Shown is the experimental data and the
+    best-fit with \Equation{eqn:fitfresnel}.  Calculated layer thickness was \SI{1150}{\nano\meter}.}
+  \label{fig:fresnelfit}
 \end{figure}
 
 The surface roughness of the Cytop films was not measured, but the experiments

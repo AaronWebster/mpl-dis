@@ -9,11 +9,11 @@ Recall that for a finite number of sampling points, the discrete
 Fourier transform (DFT) maps a set of discrete complex input data
 $x = \left\{x_1\dots x_n : x_n\in\mathbb{Z}\right\}$ onto a set of
 discrete complex output data $X =
-\left\{X_1\dots X_k : X_k\in\mathbb{Z}\right\}$.  This is defined by the
+  \left\{X_1\dots X_k : X_k\in\mathbb{Z}\right\}$.  This is defined by the
 formula
 \begin{equation}
-X_k = \sum_{n=1}^{N} x_n\, \me^{\mi 2\pi k n/N}, \qquad k=1,\ldots,N.
-\label{eqn:dft}
+  X_k = \sum_{n=1}^{N} x_n\, \me^{\mi 2\pi k n/N}, \qquad k=1,\ldots,N.
+  \label{eqn:dft}
 \end{equation}
 
 Direct computation of a DFT is of $O(N^2)$ complexity for $N$ sampling
@@ -24,10 +24,10 @@ computational efficiency is that the sampling of $X_k$ is fixed
 according to the sampling of $x_n$.
 
 \begin{figure}[ht]
-\centering
-\includegraphics[keepaspectratio]{appendix/figures/fftdrawing.pdf}
-\caption{Coordinates in the fast Fourier transform.}
-\label{fig:fftdrawing}
+  \centering
+  \includegraphics[keepaspectratio]{appendix/figures/fftdrawing.pdf}
+  \caption{Coordinates in the fast Fourier transform.}
+  \label{fig:fftdrawing}
 \end{figure}
 Because of this, there is a symmetric set of relationships for the mapping
 $x_n \mapsto X_k$ (and vice versa) in the FFT\@.  For example, assume one
@@ -36,42 +36,42 @@ spacing $\delta x$ between $x_n$ and $x_{n+1}$ is just the range (denoted
 by a $\star$)
 $x_\star = x_N-x_1$ divided by the number of samples, $N$,
 \begin{equation}
-\delta x = \frac{x_\star}{N}.
+  \delta x = \frac{x_\star}{N}.
 \end{equation}
 The resultant transform in terms of $X$ has units inverse to that of $x$
 \begin{equation}
-\delta X = \frac{1}{x_\star}
+  \delta X = \frac{1}{x_\star}
 \end{equation}
 and
 \begin{equation}
-X_\star=\frac{1}{\delta x}=\frac{N}{x_\star}.
+  X_\star=\frac{1}{\delta x}=\frac{N}{x_\star}.
 \end{equation}
 Restated, these relationships are
 \begin{align}
-\delta x &= \frac{x_\star}{N}\qquad x_\star
-=\frac{1}{\delta X} \\
-\delta X &= \frac{1}{x_\star}\qquad X_\star = \frac{1}{\delta x}.
-\label{eqn:fftrelationships}
+  \delta x & = \frac{x_\star}{N}\qquad x_\star
+  =\frac{1}{\delta X}                                                \\
+  \delta X & = \frac{1}{x_\star}\qquad X_\star = \frac{1}{\delta x}.
+  \label{eqn:fftrelationships}
 \end{align}
 
 \subsubsection{The Chirp-Z Transform}
 As hinted at, there is a much more interesting way of doing things.
 Consider a more general type of DFT of the form
 \begin{equation}
-X_k = \sum_{n=1}^{N} x_n\, z_k^n, \qquad k=1,\ldots,M
-\label{eqn:czt}
+  X_k = \sum_{n=1}^{N} x_n\, z_k^n, \qquad k=1,\ldots,M
+  \label{eqn:czt}
 \end{equation}
 for $N$ elements of input $X_n$ and $M$ elements of output $x_k$ as a
 function of the (sampled) complex variable  $z_k$.  This is called the
 chirp-z transform~\cite{rabiner1969chirp}~\cite{rabiner1969chirp2}.
 If
 \begin{equation}
-z_k = \me^{\mi 2\pi k/N}, \qquad k=1,\ldots,N,
+  z_k = \me^{\mi 2\pi k/N}, \qquad k=1,\ldots,N,
 \end{equation}
 \Equation{eqn:dft} is recovered.  Note that the size of $x_n$ and $X_k$
 are not the same.  The variable $z_k$ is now generalized to a contour in the complex plane
 \begin{equation}
-z_k = A W^k, \qquad k=1,\ldots,N
+  z_k = A W^k, \qquad k=1,\ldots,N
 \end{equation}
 where $A$ and $W$ are complex numbers.  Specifically, $A$ defines the
 starting point and $W$ the complex ratio between adjacent points on the
@@ -84,28 +84,28 @@ For example, suppose one samples $x$ with $N$ samples
 of spacing $\delta x$.  If one wishes to obtain $M$ samples in the output
 $X$ field with spacing $\delta X$ beginning with $X_1$,
 \begin{align}
-								W&=\exp(\mi 2 \pi \delta x \delta X)\\
-								A&=\exp(\mi 2 \pi X_1 \delta x).
+  W & =\exp(\mi 2 \pi \delta x \delta X) \\
+  A & =\exp(\mi 2 \pi X_1 \delta x).
 \end{align}
 
 The chirp-z transform can additionally be computed with the same efficiency
 as the FFT\@.  Consider the relationship
 \begin{equation}
-				n k = \frac{-{(k-n)}^2}{2} + \frac{n^2}{2} + \frac{k^2}{2}.
-\label{eqn:relationshipfargodingus}
+  n k = \frac{-{(k-n)}^2}{2} + \frac{n^2}{2} + \frac{k^2}{2}.
+  \label{eqn:relationshipfargodingus}
 \end{equation}
 Using \Equation{eqn:relationshipfargodingus}, \Equation{eqn:dft} can be rewritten
 \begin{align}
-								X_k &= \sum_{n=1}^{N} x_n\, \me^{\mi 2\pi k n/N} \qquad k=1,\ldots,N\\
-								X_k &= \me^{\mi \pi k^2/N} \sum_{n=1}^{N} \left(x_n\, \me^{\mi \pi n^2/N}\right)\,
-								\me^{\mi \pi{(k-n)}^2/N}\qquad k=1,\ldots,N,
+  X_k & = \sum_{n=1}^{N} x_n\, \me^{\mi 2\pi k n/N} \qquad k=1,\ldots,N               \\
+  X_k & = \me^{\mi \pi k^2/N} \sum_{n=1}^{N} \left(x_n\, \me^{\mi \pi n^2/N}\right)\,
+  \me^{\mi \pi{(k-n)}^2/N}\qquad k=1,\ldots,N,
 \end{align}
 which is simply a convolution.  The convolution theorem
 states that the Fourier transform of the
 convolution of two functions $f$ and $g$ is simply the product of the
 Fourier transforms of $f$ and $g$, namely
 \begin{equation}
-\ff{\left(f \star g\right)} = \ff{x}\ff{g}.
+  \ff{\left(f \star g\right)} = \ff{x}\ff{g}.
 \end{equation}
 Through the convolution theorem, the chirp-z transform can be expressed as
 a pair of FFTs, and thus be efficiently computed.

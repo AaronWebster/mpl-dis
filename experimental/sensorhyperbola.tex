@@ -8,10 +8,10 @@ angle in which the sensor is tilted, the focal spot-sensor distance can be extra
 \textit{a posteriori} from measuring the shape of the light falling on the
 sensor.
 \begin{figure}[ht]
-\centering
-\includegraphics[keepaspectratio,scale=1.25]{figures/hyperbolageoa.pdf}
-\caption{Geometry for determining the sensor distance $d$.}
-\label{fig:propgeo}
+  \centering
+  \includegraphics[keepaspectratio,scale=1.25]{figures/hyperbolageoa.pdf}
+  \caption{Geometry for determining the sensor distance $d$.}
+  \label{fig:propgeo}
 \end{figure}
 
 Consider the experimental geometry shown in \Figure{fig:experimentalsetup}.
@@ -36,44 +36,44 @@ $\overline{OB}$ with length $d$.
 The coordinates of the sensor are represented as $(\xi,y)$, with the
 following relationships
 \begin{align}
-x &= \xi \cos \thetasp \label{eqn:conic01a} \\
-r &= \left(d \sec \thetasp + \xi \sin \thetasp\right) \tan\thetasp \label{eqn:conic01b}
+  x & = \xi \cos \thetasp \label{eqn:conic01a}                                             \\
+  r & = \left(d \sec \thetasp + \xi \sin \thetasp\right) \tan\thetasp \label{eqn:conic01b}
 \end{align}
 and
 \begin{equation}
-x^2+y^2=r^2.
-\label{eqn:conic01c}
+  x^2+y^2=r^2.
+  \label{eqn:conic01c}
 \end{equation}
 Note $d \sec\thetasp$ is the length of $\overline{OA}$.
 \Equation{eqn:conic01b} and \Equation{eqn:conic01c} can be combined to obtain
 \begin{equation}
-\xi^2 \left(\cos ^2\thetasp-\sin ^2\thetasp \tan
-^2\thetasp\right)+2 \xi d \tan ^3\thetasp+y^2=d^2 \tan
-^2\thetasp \sec ^2\thetasp,
+  \xi^2 \left(\cos ^2\thetasp-\sin ^2\thetasp \tan
+  ^2\thetasp\right)+2 \xi d \tan ^3\thetasp+y^2=d^2 \tan
+  ^2\thetasp \sec ^2\thetasp,
 \end{equation}
 which, after a bit of algebra, can be solved for $\xi$, taking
 the positive root
 \begin{equation}
-\xi(y) = \frac{4 \sqrt{2} \sqrt{-2 y^2 \cos 2 \thetasp  \cos ^6\thetasp +d^2
-\cos ^6\thetasp -d^2 \cos 2 \thetasp  \cos^6\thetasp}-2 d \sin 2 \thetasp
-+d \sin 4 \thetasp }{2 \left(2 \cos 2 \thetasp +\cos 4 \thetasp +1\right)}
-\label{eqn:conic02}
+  \xi(y) = \frac{4 \sqrt{2} \sqrt{-2 y^2 \cos 2 \thetasp  \cos ^6\thetasp +d^2
+      \cos ^6\thetasp -d^2 \cos 2 \thetasp  \cos^6\thetasp}-2 d \sin 2 \thetasp
+    +d \sin 4 \thetasp }{2 \left(2 \cos 2 \thetasp +\cos 4 \thetasp +1\right)}
+  \label{eqn:conic02}
 \end{equation}
 
 To find the offset, the above minimum is solved to find $\xi(y=0) = 4 d
-\sec\thetasp$, and subtracted from \Equation{eqn:conic02}.  The remaining
+  \sec\thetasp$, and subtracted from \Equation{eqn:conic02}.  The remaining
 equation is then solved for $d$,
 \begin{align}
-d =& \Biggl(-4 \sqrt{2} \Bigl(\delta^2 \sin ^2\thetasp \cos
-^4\thetasp+\delta^2 \sin ^2\thetasp \cos \thetasp \cos ^4\thetasp-4 y^2 \nonumber \\
-   & \sin ^2\thetasp \cos ^5\thetasp-6 y^2 \sin ^2\thetasp
-     \cos ^4\thetasp-16 y^2 \sin ^2\thetasp \cos \thetasp \nonumber \\
-  & \cos ^4\thetasp+4 y^2 \sin ^2\thetasp \cos \thetasp
+  d = & \Biggl(-4 \sqrt{2} \Bigl(\delta^2 \sin ^2\thetasp \cos
+    ^4\thetasp+\delta^2 \sin ^2\thetasp \cos \thetasp \cos ^4\thetasp-4 y^2 \nonumber                                 \\
+      & \sin ^2\thetasp \cos ^5\thetasp-6 y^2 \sin ^2\thetasp
+    \cos ^4\thetasp-16 y^2 \sin ^2\thetasp \cos \thetasp \nonumber                                                    \\
+      & \cos ^4\thetasp+4 y^2 \sin ^2\thetasp \cos \thetasp
     \cos ^4\thetasp-8 y^2 \sin ^2\thetasp \cos \thetasp \cos
-    ^4\thetasp\Bigr)^{1/2} \nonumber \\
-&-2 \delta\sin \thetasp-4 \delta \sin 3 \thetasp+\delta  \sin \thetasp-4 \delta \sin \thetasp\Biggr) \nonumber \\
-&\cdot\Bigl(4 \left(2 \cos \thetasp+3 \cos \thetasp-3 \cos \thetasp+\cos 5
-\thetasp-2 \cos \thetasp-1\right)\Bigr)^{-1}.
+    ^4\thetasp\Bigr)^{1/2} \nonumber                                                                                  \\
+      & -2 \delta\sin \thetasp-4 \delta \sin 3 \thetasp+\delta  \sin \thetasp-4 \delta \sin \thetasp\Biggr) \nonumber \\
+      & \cdot\Bigl(4 \left(2 \cos \thetasp+3 \cos \thetasp-3 \cos \thetasp+\cos 5
+  \thetasp-2 \cos \thetasp-1\right)\Bigr)^{-1}.
 \end{align}
 where $\delta$ is the distance the cone extends at the coordinate $y$.
 By following the aforementioned procedure, given the dimensions of the pixels on the imaging sensor, $d$
@@ -81,17 +81,17 @@ can be determined.  Once $d$ is known, the absolute coordinates $(x,y,z)$ of the
 sensor are given by
 \begin{equation}
   \begin{pmatrix}
-          x\\
-          y\\
-          z
+    x \\
+    y \\
+    z
   \end{pmatrix}
   =
   \begin{pmatrix}
-          x^\prime \cos\thetasp + d \sin\thetasp\\
-          y^\prime \\
-          d \cos\thetasp - x^\prime \sin\thetasp,\\
+    x^\prime \cos\thetasp + d \sin\thetasp  \\
+    y^\prime                                \\
+    d \cos\thetasp - x^\prime \sin\thetasp, \\
   \end{pmatrix}
-\label{eqn:sensorcoordinates}
+  \label{eqn:sensorcoordinates}
 \end{equation}
 where $x^\prime$ and $y^\prime$ are the local coordinates of the sensor
 with $(0,0)$ as its origin.

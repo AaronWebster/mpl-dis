@@ -1,45 +1,45 @@
 \pgfplotsset{%
- minor tick num=3,
- footnotesize,
- custom/.style={thick},
+  minor tick num=3,
+  footnotesize,
+  custom/.style={thick},
 }
 \begin{tikzpicture}[ baseline ]
- \pgfplotstableread{qcm/figures/data/lowersphere10um.dat}{\datatablea}
- \pgfplotstableread{qcm/figures/data/lowersphere1um.dat}{\datatableb}
- \begin{axis}[
- height=200pt,width=400pt,
- %enlargelimits=false,
- xmin=-0.12,xmax=0.40,
- ymax = 1.1,ymin=-0.6,
- %ymin=-3.25e5,ymax=8.5e5,
- xlabel=contact surface density $A_\mathrm{c}$,
- %axis x line*=bottom,
- x unit=-,
- ylabel={$\Delta\!f/N_\mathrm{L}$, $\Delta\Gamma/N_\mathrm{L}$},
- y unit = \si{\hertz\meter\squared},
- %restrict x to domain = {-1e-6:2e-6},
- max space between ticks=35pt,
- %scaled x ticks = {real:1e-6},
- %xticklabel style={/pgf/number format/fixed},
- %every x tick scale label/.style={color=white},
- %legend pos = south west,
- ylabel style={yshift=-10pt},
- thick,
- %legend style={font=\tiny},
- ]%dash pattern={on 3pt off 0.5pt},
-  \draw [color=gray,dashed,semithick] (axis cs:0,1.75) -- (axis cs:0,-0.6);
-  \addplot [custom,smooth,color=Set14qual2] table [ y expr=\thisrowno{1} ] {\datatablea};
-  \label{p1}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=Set14qual1, dashed] table [ y expr=\thisrowno{2} ] {\datatablea};
-  \label{p2}
-  \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, sim}
-  \addplot [custom,smooth,color=Set14qual2, dotted] table [ y expr=\thisrowno{1} ] {\datatableb};
-  \label{p3}
-  \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
-  \addplot [custom,smooth,color=Set14qual1, dashdotted] table [ y expr=\thisrowno{2} ] {\datatableb};
-  \label{p4}
-  \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, theory}
+  \pgfplotstableread{qcm/figures/data/lowersphere10um.dat}{\datatablea}
+  \pgfplotstableread{qcm/figures/data/lowersphere1um.dat}{\datatableb}
+  \begin{axis}[
+      height=200pt,width=400pt,
+      %enlargelimits=false,
+      xmin=-0.12,xmax=0.40,
+      ymax = 1.1,ymin=-0.6,
+      %ymin=-3.25e5,ymax=8.5e5,
+      xlabel=contact surface density $A_\mathrm{c}$,
+      %axis x line*=bottom,
+      x unit=-,
+      ylabel={$\Delta\!f/N_\mathrm{L}$, $\Delta\Gamma/N_\mathrm{L}$},
+      y unit = \si{\hertz\meter\squared},
+      %restrict x to domain = {-1e-6:2e-6},
+      max space between ticks=35pt,
+      %scaled x ticks = {real:1e-6},
+      %xticklabel style={/pgf/number format/fixed},
+      %every x tick scale label/.style={color=white},
+      %legend pos = south west,
+      ylabel style={yshift=-10pt},
+      thick,
+      %legend style={font=\tiny},
+    ]%dash pattern={on 3pt off 0.5pt},
+    \draw [color=gray,dashed,semithick] (axis cs:0,1.75) -- (axis cs:0,-0.6);
+    \addplot [custom,smooth,color=Set14qual2] table [ y expr=\thisrowno{1} ] {\datatablea};
+    \label{p1}
+    \addlegendentry{$\Delta\!f/N_\mathrm{L}$, sim}
+    \addplot [custom,smooth,color=Set14qual1, dashed] table [ y expr=\thisrowno{2} ] {\datatablea};
+    \label{p2}
+    \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, sim}
+    \addplot [custom,smooth,color=Set14qual2, dotted] table [ y expr=\thisrowno{1} ] {\datatableb};
+    \label{p3}
+    \addlegendentry{$\Delta\!f/N_\mathrm{L}$, theory}
+    \addplot [custom,smooth,color=Set14qual1, dashdotted] table [ y expr=\thisrowno{2} ] {\datatableb};
+    \label{p4}
+    \addlegendentry{$\Delta\Gamma/N_\mathrm{L}$, theory}
 
- \end{axis}
+  \end{axis}
 \end{tikzpicture}

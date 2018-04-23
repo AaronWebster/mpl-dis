@@ -9,13 +9,13 @@ $(x^\prime,y^\prime,z^\prime)$.  The detector field has two phase
 contributions: the first from the local \gls{spp} field, $\ksp x$, and the second
 from propagation into the far field, Together,
 \begin{equation}
-\mathbf{E}(x^\prime,y^\prime,z^\prime) = \exp\!{\left( \mi\ksp x + \mi k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+ {(z-z^\prime)}^2 } \right)}
+  \mathbf{E}(x^\prime,y^\prime,z^\prime) = \exp\!{\left( \mi\ksp x + \mi k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+ {(z-z^\prime)}^2 } \right)}
 \end{equation}
 or, in spherical coordinates,
 \begin{equation}
-\mathbf{E}(\rho,\theta,\phi) = \exp\!{\left( \mi\ksp x + %
-\mi k_0\sqrt{{(\rho\sin\theta\cos\phi x+x)}^2+{(\rho\sin\theta\sin\phi+y)}^2+{(\rho\cos\theta+z)}^2 } \right)}
-\label{eqn:dingusthusly}
+  \mathbf{E}(\rho,\theta,\phi) = \exp\!{\left( \mi\ksp x + %
+  \mi k_0\sqrt{{(\rho\sin\theta\cos\phi x+x)}^2+{(\rho\sin\theta\sin\phi+y)}^2+{(\rho\cos\theta+z)}^2 } \right)}
+  \label{eqn:dingusthusly}
 \end{equation}
 If we assume the detector is in the far field, $\rho\gg\lambda_0$, we can
 make a couple of approximations.  First, we neglect the additional optical
@@ -23,13 +23,13 @@ path length accumulated propagating through the prism.  Second, if we
 consider the path length \textit{difference} between the origin and the far field,
 $\rho$, we can simplify \Equation{eqn:dingusthusly} thusly
 \begin{align}
-				\mathbf{E}(\rho,\theta,\phi) &= \exp\!{\left( \mi\ksp x + %
-				\mi k_0{\left(\rho-\sqrt{{(\rho\sin\theta\cos\phi x+x)}^2+{(\rho\sin\theta\sin\phi+y)}^2+{(\rho\cos\theta+z)}^2
-				}\right)} \right)}\\
-				\mathbf{E}(\rho\gg\lambda,\theta,\phi) &= \exp\!{\big( \mi \ksp x
-				+ \mi k_0 \sin\theta {\left(x\cos\phi+y\sin\phi\right)}
-				+ \varphi\big)}
-	\label{eqn:primarystripes}
+  \mathbf{E}(\rho,\theta,\phi)           & = \exp\!{\left( \mi\ksp x + %
+  \mi k_0{\left(\rho-\sqrt{{(\rho\sin\theta\cos\phi x+x)}^2+{(\rho\sin\theta\sin\phi+y)}^2+{(\rho\cos\theta+z)}^2
+  }\right)} \right)}                                                   \\
+  \mathbf{E}(\rho\gg\lambda,\theta,\phi) & = \exp\!{\big( \mi \ksp x
+  + \mi k_0 \sin\theta {\left(x\cos\phi+y\sin\phi\right)}
+  + \varphi\big)}
+  \label{eqn:primarystripes}
 \end{align}
 where we have included the variable $\varphi$ to represent the complex phase term
 from non-tip-scattering events (a coherent background).
@@ -44,7 +44,7 @@ dependence graphically for a simulated set of stripes.  Note that in
 could lead to higher order features in weirdospace, which we will discuss
 in turn.
 \begin{figure}
-\centering
-\caption{Primary stripes around the ring.}
-\label{fig:primarystripes}
+  \centering
+  \caption{Primary stripes around the ring.}
+  \label{fig:primarystripes}
 \end{figure}

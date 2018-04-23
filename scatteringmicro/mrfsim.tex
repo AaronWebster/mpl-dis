@@ -5,15 +5,15 @@ $\mathbf{p}_n=\tensor{\alpha} \mathbf{E}_\mathrm{exc}(\mathbf{r}_n)$
 from the exciting field $\mathbf{E}_0$. The field $\mathbf{p}_k$ seen by
 each scatterer depends on the field from all other scatterers
 \begin{align}
-\mathbf{p}_k =& \tensor{\alpha}_k \mathbf{E}_0(\mathbf{r}_k)
-+\omega^2 \mu_0 \tensor{\alpha}_k \tensor{\mathbf{G}}_s(\mathbf{r}_k,\mathbf{r}_k)\mathbf{p}_k\\
-+& \omega^2\mu_0 \sum_{\substack{n=1\\n \ne k}}^N
-\tensor{\alpha}_k
-\tensor{\mathbf{G}}(\mathbf{r}_k,\mathbf{r}_n)\mathbf{p}_n\qquad k=1,\ldots,N
+  \mathbf{p}_k = & \tensor{\alpha}_k \mathbf{E}_0(\mathbf{r}_k)
+  +\omega^2 \mu_0 \tensor{\alpha}_k \tensor{\mathbf{G}}_s(\mathbf{r}_k,\mathbf{r}_k)\mathbf{p}_k \\
+  +              & \omega^2\mu_0 \sum_{\substack{n=1                                             \\n \ne k}}^N
+  \tensor{\alpha}_k
+  \tensor{\mathbf{G}}(\mathbf{r}_k,\mathbf{r}_n)\mathbf{p}_n\qquad k=1,\ldots,N
 \end{align}
 and the total field $\mathbf{E}(\mathbf{r})$ is evaluated as the sum of each individual dipole field
 \begin{equation}
-\mathbf{E}(\mathbf{r}) = \mathbf{E}_0(\mathbf{r}) + \omega^2 \mu_0
-\sum_{n=1}^{N} \tensor{\mathbf{G}}(\mathbf{r},\mathbf{r}_n) \mathbf{p}_n
+  \mathbf{E}(\mathbf{r}) = \mathbf{E}_0(\mathbf{r}) + \omega^2 \mu_0
+  \sum_{n=1}^{N} \tensor{\mathbf{G}}(\mathbf{r},\mathbf{r}_n) \mathbf{p}_n
 \end{equation}
 

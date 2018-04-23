@@ -1,8 +1,8 @@
 \begin{figure}[ht]
-\centering
-\import{existence/figures/}{multilayerinterfacegeo}
-\caption{Geometry and coordinate system for the multilayer system. }
-\label{fig:multilayergeo}
+  \centering
+  \import{existence/figures/}{multilayerinterfacegeo}
+  \caption{Geometry and coordinate system for the multilayer system. }
+  \label{fig:multilayergeo}
 \end{figure}
 
 The single metal-dielectric interface is the principle under which most
@@ -18,39 +18,39 @@ see ehancements of $10$-$60$, with propagation lengths up to
 
 For layers $D_1$ and $D_3$, the equations are the same as for the single-layer system
 \begin{align}
-\left.\begin{aligned}
-\mathbf{H}_1(x,z,t) &=
-\begin{pmatrix}
-0\\
-H_{y,1}\\
-0
-\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}\\
-\mathbf{E}_1(x,z,t) &=
-\begin{pmatrix}
-E_{x,1}\\
-0\\
-E_{z,1}\\
-\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
-\end{aligned}
-\right\}& \quad D_1\label{eqn:lrsppplanewavedielectric}\\
-\left.\begin{aligned}
-\mathbf{H}_3(x,z,t) &=
-\begin{pmatrix}
-0\\
-H_{y,3}\\
-0
-\end{pmatrix}
-\me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}\\
-\mathbf{E}_3(x,z,t) &=
-\begin{pmatrix}
-E_{x,3}\\
-0\\
-E_{z,3}\\
-\end{pmatrix}
-\me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
-\end{aligned}
-\right\}&\quad D_3.
-\label{eqn:lrsppplanewavemetal}
+  \left.\begin{aligned}
+    \mathbf{H}_1(x,z,t) & =
+    \begin{pmatrix}
+      0       \\
+      H_{y,1} \\
+      0
+    \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)} \\
+    \mathbf{E}_1(x,z,t) & =
+    \begin{pmatrix}
+      E_{x,1} \\
+      0       \\
+      E_{z,1} \\
+    \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
+  \end{aligned}
+  \right\} & \quad D_1\label{eqn:lrsppplanewavedielectric} \\
+  \left.\begin{aligned}
+    \mathbf{H}_3(x,z,t) & =
+    \begin{pmatrix}
+      0       \\
+      H_{y,3} \\
+      0
+    \end{pmatrix}
+    \me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)} \\
+    \mathbf{E}_3(x,z,t) & =
+    \begin{pmatrix}
+      E_{x,3} \\
+      0       \\
+      E_{z,3} \\
+    \end{pmatrix}
+    \me^{\mi(k_{x,3}x+k_{z,3}z-\omega t)}
+  \end{aligned}
+  \right\} & \quad D_3.
+  \label{eqn:lrsppplanewavemetal}
 \end{align}
 
 If the half-thickness of $D_2$, $a$, is sufficiently small, $D_2$ will act
@@ -58,43 +58,43 @@ as a waveguide for \glspl{spp}.  In $D_2$ there are two interfaces, the
 $D_2$-$D_1$ interface at $+a$ and the $D_2$-$D_3$ interface at $-a$,
 leading to
 \begin{align}
-\mathbf{H}_2(x,z,t) &=
-\begin{pmatrix}
-0\\
-H^+_{y,2}\\
-0
-\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
-+
-\begin{pmatrix}
-0\\
-H^-_{y,2}\\
-0
-\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)} \label{eqn:multihhx} \\
-\mathbf{E}_2(x,z,t) &=
-\begin{pmatrix}
-\mi E^+_{x,2}\\
-0\\
-E^+_{z,2}\\
-\end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
-+
-\begin{pmatrix}
-\mi E^-_{x,2}\\
-0\\
-E^-_{z,2}\\
-\end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)}.
-\label{eqn:multieex}
+  \mathbf{H}_2(x,z,t) & =
+  \begin{pmatrix}
+    0         \\
+    H^+_{y,2} \\
+    0
+  \end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+  +
+  \begin{pmatrix}
+    0         \\
+    H^-_{y,2} \\
+    0
+  \end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)} \label{eqn:multihhx} \\
+  \mathbf{E}_2(x,z,t) & =
+  \begin{pmatrix}
+    \mi E^+_{x,2} \\
+    0             \\
+    E^+_{z,2}     \\
+  \end{pmatrix} \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+  +
+  \begin{pmatrix}
+    \mi E^-_{x,2} \\
+    0             \\
+    E^-_{z,2}     \\
+  \end{pmatrix} \me^{\mi(k_{x,2}x-k_{z,2}z-\omega t)}.
+  \label{eqn:multieex}
 \end{align}
 
 Taking Equations~\ref{eqn:multihhx} and~\ref{eqn:multieex} and applying
 continuity of $H_y$ and $E_x$ at the boundaries, the dispersion relation is
 expressed as
 \begin{equation}
-\me^{-4 \mi k_{x,1} a} =
-\frac{k_{x,1}/\epsilon_1 + k_{x,2}/\epsilon_2}
-     {k_{x,1}/\epsilon_1 - k_{x,2}/\epsilon_2}
-\frac{k_{x,1}/\epsilon_1 + k_{x,3}/\epsilon_3}
-     {k_{x,1}/\epsilon_1 - k_{x,3}/\epsilon_3}.
-\label{eqn:lrsppdispersion}
+  \me^{-4 \mi k_{x,1} a} =
+  \frac{k_{x,1}/\epsilon_1 + k_{x,2}/\epsilon_2}
+  {k_{x,1}/\epsilon_1 - k_{x,2}/\epsilon_2}
+  \frac{k_{x,1}/\epsilon_1 + k_{x,3}/\epsilon_3}
+  {k_{x,1}/\epsilon_1 - k_{x,3}/\epsilon_3}.
+  \label{eqn:lrsppdispersion}
 \end{equation}
 
 \Equation{eqn:lrsppdispersion} is transcendental, but it can still be
@@ -105,15 +105,15 @@ is plotted in \Figure{fig:lrsppdispersionrelation}, with the negative
 values representing regions where \gls{spp} modes are supported.
 
 \begin{figure}[ht]
- \centering
-\import{existence/figures/}{lrsppdispersionfig}
-\caption{Dispersion relation for the multilayer interface system, shown as the difference
-				between the right-hand side (\textsc{rhs}) and left-hand side (\textsc{lhs}) of
-\Equation{eqn:lrsppdispersion}.  \gls{spp} excitation occurs in the red areas.
-This specific system is also used in the experiment.  Plot is for a three-layer interface system with $\epsilon_1=1.331$, $\epsilon_2$ Au using the
-frequency-dependent Lorentz-Drude model, $\epsilon_3=1.332$, and the
-thickness of $D_2$ is \SI{15}{\nano\meter}.  }
-\label{fig:lrsppdispersionrelation}
+  \centering
+  \import{existence/figures/}{lrsppdispersionfig}
+  \caption{Dispersion relation for the multilayer interface system, shown as the difference
+    between the right-hand side (\textsc{rhs}) and left-hand side (\textsc{lhs}) of
+    \Equation{eqn:lrsppdispersion}.  \gls{spp} excitation occurs in the red areas.
+    This specific system is also used in the experiment.  Plot is for a three-layer interface system with $\epsilon_1=1.331$, $\epsilon_2$ Au using the
+    frequency-dependent Lorentz-Drude model, $\epsilon_3=1.332$, and the
+    thickness of $D_2$ is \SI{15}{\nano\meter}.  }
+  \label{fig:lrsppdispersionrelation}
 \end{figure}
 
 \subsection{Photonic Crystal Structures}

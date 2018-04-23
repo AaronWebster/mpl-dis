@@ -5,50 +5,50 @@
 \usepackage{amsmath}
 \begin{document}
 \begin{pspicture}(-4.41405,-4.41405)(4.41405,4.41405)
-% tip
-\psdot[dotstyle=triangle,linecolor=orange](0.2,-0.3)
-% scan area
-\psframe[linestyle=dashed,linecolor=green,dash=0.1](-1.35,-1.35)(1.35,1.35)
-\psclip{\psframe[linestyle=none](-4.41405,-4.41405)(4.41405,4.41405)}
-% illuminated area
-\psellipse[linestyle=dashed,linecolor=red,dash=0.1 0.05](0,0)(5,3)
-\endpsclip
-\psaxes[labels=none,axesstyle=frame,tickstyle=inner,ticksize=0
-4pt,Ox=-5,Oy=-5]{-}(-4.41405,-4.41405)(4.41405,4.41405)
-\psset{dotstyle=Basterisk,linecolor=blue}
-% random scatterers
-\psdot[](1.08675765054645,-1.15339223391766)
-\psdot[](-1.65945473768577,3.30126294690662)
-\psdot[](3.08452901035693, 3.75801196082581)
-\psdot[](-0.298028242005936, -0.947682947635213)
-\psdot[](-1.13254778504099,-2.86291168735803)
-\psdot[](-2.42224615064296,3.94409083629355)
-\psdot[](2.84552547917312, -3.06371460124055)
-\psdot[](-3.65079702863291,-0.125947393237618)
-\psdot[](0.816143940611938,2.47247755178442)
-\psdot[](3.66121582314356, -1.29098349555369)
-\psdot[](2.41348287067284, 2.00794065198278)
-\psdot[](3.73678615525102, 3.90756858304069)
-\psdot[](1.64323248166686, 3.07351951851559)
-\psdot[](1.79314213547156, -1.92551152476177)
-\psdot[](-3.77510373532563,-2.39690980082588)
-% line discribing a path
-\psset{linestyle=dotted,dotsep=2pt,linecolor=gray}
-\psline[](0.2,-0.3)(-0.298028242005936, -0.947682947635213)
-\psline[](-0.298028242005936, -0.947682947635213)(-1.13254778504099,-2.86291168735803)
-\psline[](-1.13254778504099,-2.86291168735803)(-3.65079702863291,-0.125947393237618)
-\psline[](-3.65079702863291,-0.125947393237618)(3.73678615525102, 3.90756858304069)
-% bunch of labels in a parbox
-\rput[l](-4,-3.85){\parbox{5cm}{
- \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  illuminated region} \ncline[linestyle=dashed,linecolor=red,dash=0.1 0.05]{A}{B} \\
- \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  scan area} \ncline[linestyle=dashed,linecolor=green,dash=0.1]{A}{B} \\
-}}
-\rput[l](0,-3.85){\parbox{5cm}{
- \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=Basterisk,linecolor=blue]{A}} \hskip 0.5cm \Rnode{B}{  scatterers} \\
- \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=triangle,linecolor=orange]{A}} \hskip 0.5cm \Rnode{B}{  tip} \\
-}}
-\rput[l](2.5,-3.85){\parbox{5cm}{
- \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  path} \ncline[linestyle=dotted,dotsep=2pt,linecolor=gray]{A}{B} \\
-}}
+  % tip
+  \psdot[dotstyle=triangle,linecolor=orange](0.2,-0.3)
+  % scan area
+  \psframe[linestyle=dashed,linecolor=green,dash=0.1](-1.35,-1.35)(1.35,1.35)
+  \psclip{\psframe[linestyle=none](-4.41405,-4.41405)(4.41405,4.41405)}
+  % illuminated area
+  \psellipse[linestyle=dashed,linecolor=red,dash=0.1 0.05](0,0)(5,3)
+  \endpsclip
+  \psaxes[labels=none,axesstyle=frame,tickstyle=inner,ticksize=0
+    4pt,Ox=-5,Oy=-5]{-}(-4.41405,-4.41405)(4.41405,4.41405)
+  \psset{dotstyle=Basterisk,linecolor=blue}
+  % random scatterers
+  \psdot[](1.08675765054645,-1.15339223391766)
+  \psdot[](-1.65945473768577,3.30126294690662)
+  \psdot[](3.08452901035693, 3.75801196082581)
+  \psdot[](-0.298028242005936, -0.947682947635213)
+  \psdot[](-1.13254778504099,-2.86291168735803)
+  \psdot[](-2.42224615064296,3.94409083629355)
+  \psdot[](2.84552547917312, -3.06371460124055)
+  \psdot[](-3.65079702863291,-0.125947393237618)
+  \psdot[](0.816143940611938,2.47247755178442)
+  \psdot[](3.66121582314356, -1.29098349555369)
+  \psdot[](2.41348287067284, 2.00794065198278)
+  \psdot[](3.73678615525102, 3.90756858304069)
+  \psdot[](1.64323248166686, 3.07351951851559)
+  \psdot[](1.79314213547156, -1.92551152476177)
+  \psdot[](-3.77510373532563,-2.39690980082588)
+  % line discribing a path
+  \psset{linestyle=dotted,dotsep=2pt,linecolor=gray}
+  \psline[](0.2,-0.3)(-0.298028242005936, -0.947682947635213)
+  \psline[](-0.298028242005936, -0.947682947635213)(-1.13254778504099,-2.86291168735803)
+  \psline[](-1.13254778504099,-2.86291168735803)(-3.65079702863291,-0.125947393237618)
+  \psline[](-3.65079702863291,-0.125947393237618)(3.73678615525102, 3.90756858304069)
+  % bunch of labels in a parbox
+  \rput[l](-4,-3.85){\parbox{5cm}{
+      \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  illuminated region} \ncline[linestyle=dashed,linecolor=red,dash=0.1 0.05]{A}{B} \\
+      \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  scan area} \ncline[linestyle=dashed,linecolor=green,dash=0.1]{A}{B} \\
+    }}
+  \rput[l](0,-3.85){\parbox{5cm}{
+      \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=Basterisk,linecolor=blue]{A}} \hskip 0.5cm \Rnode{B}{  scatterers} \\
+      \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=triangle,linecolor=orange]{A}} \hskip 0.5cm \Rnode{B}{  tip} \\
+    }}
+  \rput[l](2.5,-3.85){\parbox{5cm}{
+      \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  path} \ncline[linestyle=dotted,dotsep=2pt,linecolor=gray]{A}{B} \\
+    }}
 \end{pspicture}
 \end{document}
