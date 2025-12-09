@@ -1,386 +1,416 @@
+/*
+ * scatter_modern.c
+ * A robust, optimized simulation of plasmon scattering events.
+ *
+ * Compile with:
+ * gcc -O3 -std=c11 -Wall -Wextra scatter_modern.c -o scatter -lgsl -lgslcblas -lm
+ */
+
+#define _POSIX_C_SOURCE 200809L // For mkdir, getopt, snprintf
+
 #include <stdio.h>
-#include <stddef.h>
 #include <stdlib.h>
-#include <math.h>
-#include <malloc.h>
 #include <string.h>
-#include <unistd.h> /* parse command line arguments */
-#include <getopt.h> /* command line arguments */
-#include <sys/stat.h>
-#include <ctype.h>
+#include <math.h>
+#include <complex.h>
 #include <time.h>
-#include <float.h>
-#include <gsl/gsl_rng.h> /* random number generator using mt19937 */
 #include <errno.h>
-#include <search.h>
-#include <hdf5.h> /* hdf5 output */
-#include <complex.h> /* complex math */
-#include <search.h>
-#include <signal.h>
+#include <getopt.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
-/* all distances are in microns */
-#define SCANAREA 2.27 /* size of the square scan area */
-#define ELLIPSE_A 5.0 /* size of the illuminated area as an ellipse */
-#define ELLIPSE_B 3.0
-#define LAMBDA 0.600 /* wavelength of light */ 
-#define PATHLEN 18.00 /* max path length */
-#define ENTIREAREA 8.8281 /* the boundary of the region for which scatterers will be generated */
-#define EPS (1e-12)
+#include <gsl/gsl_rng.h>
 
-/* return a random double */
-__inline double random_double_range(gsl_rng *r,double min, double max) {
-  /* use the gsl (mersene twister) random number generator */
-  return (max-min)*(gsl_rng_uniform(r))+min;
-  /* use the standard unix rand() */
-  //return ( (max-min)*(((double)rand())/(double)RAND_MAX) + min );
-}
+// --- Constants ---
+#define SCAN_AREA       2.27
+#define ELLIPSE_A       5.0
+#define ELLIPSE_B       3.0
+#define LAMBDA          0.600
+#define PATH_LEN        18.00
+#define ENTIRE_AREA     8.8281
+#define EPS             1e-12
+#define DEFAULT_CPOINTS 1000
+#define DEFAULT_NSCAT   20
+#define DEFAULT_SEED    2532
+#define MAX_EVENTS      1000
 
-__inline int random_int(gsl_rng *r,int max){
-  /* use the gsl (mersene twister) random number generator */
-  return gsl_rng_uniform_int(r,max+1);
-  /* use the standard unix rand() */
-  //return (int)((rand()/(RAND_MAX+1.0))*(max+1));
-}
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
-/* a scatterer */
+// --- Data Structures ---
+
 typedef struct {
-  double x,y; /* scatterer position */
-} scatterer_t;
+    double x;
+    double y;
+} Scatterer;
 
-/* plasmon structure for a single scattering event */
-typedef struct { 
-  double cosp,sinp; /* sums of the cos and sine of the phase */
-  double phase; /* total phase */
-  double pathlen; /* its total path length */
-  int nscat; /* total number of scatterers it visits */
-  int flags; /* flag to detect if we've been here before */
-  double v; /* have we considered this plasmon before? */
+typedef struct {
+    double phase;
+    int nscat;
+} Plasmon;
 
-} plasmon_t;
+typedef struct {
+    // Configuration
+    int verbose;
+    unsigned long random_seed;
+    char output_dir[1024];
+    int n_scat;
+    int single_scattering;   // Flag for SS
+    int multiple_scattering; // Flag for MS
+    
+    // Internal State
+    int events;
+    int c_points;
+    Scatterer *scatterers;
+    int *candidates;
+    int n_candidates;
+    
+    // Look-Up Tables (Optimization)
+    double *cos_lut;
+    double *sin_lut;
+    
+    // Results
+    double complex *ws_buf;
+    int *scatt_hist;
+} SimContext;
 
+// --- Helper Functions ---
 
-double field_diff(complex double *a, complex double *b, int *event_bins, int CPOINTS){
-  int i;
-  double diff = 0;
-  for(i=0;i<CPOINTS;++i){
-    if(event_bins[i]>0){
-      diff+=
-	cabs(cabs(a[i])/(double)event_bins[i]-cabs(b[i])/(double)event_bins[i]);
-    }
-    else{
-      diff+=100;
-    }
-  }
-  return diff;
+static inline double random_double_range(gsl_rng *r, double min, double max) {
+    return (max - min) * gsl_rng_uniform(r) + min;
 }
 
-int compare_doubles(const void *a, const void *b){ 
-  const double *da = (const double *) a; 
-  const double *db = (const double *) b; 
-  return (*da > *db) - (*da < *db);
+static inline int random_int(gsl_rng *r, int max) {
+    return gsl_rng_uniform_int(r, max + 1);
 }
 
-/* print usage */
-void usage(void){
-  printf("\nUsage:\t ./scatter [OPTIONS ...]\n");
-  printf("OPTIONS:\n");
-  printf("  --random-seed   set random seed\n");
-  printf("  --output-dir    output to directory\n");
-  printf("  --nscat         number of scatterers\n\n");
+// Optimized magnitude squared calculation to avoid sqrt() calls
+static inline double complex_mag_sq(double complex z) {
+    double r = creal(z);
+    double i = cimag(z);
+    return r*r + i*i;
 }
 
-int main( int argc, char *argv[]) {
+void print_usage(void) {
+    printf("\nUsage:\t ./scatter [OPTIONS ...]\n");
+    printf("OPTIONS:\n");
+    printf("  --random-seed <int>   Set random seed (default: %d)\n", DEFAULT_SEED);
+    printf("  --output-dir <path>   Output directory\n");
+    printf("  --nscat <int>         Number of scatterers (default: %d)\n", DEFAULT_NSCAT);
+    printf("  --SS                  Enable Single Scattering mode\n");
+    printf("  --MS                  Enable Multiple Scattering mode (default)\n");
+    printf("  --verbose             Enable verbose output\n");
+    printf("  --help                Show this message\n\n");
+}
 
-  int i,j,n,n_i,e,x_i,y_i,next_n,events = 0;
-  double dt_tmp = 0;
-  double x,y,ob_x,ob_y,f_t = 0;
-  double cosp_tmp, sinp_tmp, pathlen_tmp = 0;
-  complex double expp_tmp;
-  double tp_tmp=0;
-  int ncanidates = 0;
-  int removed, totalremoved = 0;
-  int SS = 1;
-  int MS = 1;
-  int CPOINTS = 1000; /* how many weirdospace images to make in a circle */
-  double tollerance = 1e-9;
-  int scatthist[1000] = {0};
+// --- Initialization & Cleanup ---
 
-  /* initialize default command line options */
-  int rseed = 2532;
-  //int rseed = 2531;
-  char OUTPUT_DIR[FILENAME_MAX] = {0};
-  int NSCAT = 20; /* number of scatterers */
-  int c;
-  static int verbose_flag;
-  for(;;){ 
-    static struct option long_options[] = { 
-      {"verbose",no_argument,&verbose_flag, 1},
-      {"brief", no_argument,&verbose_flag, 0},
-      {"random-seed", required_argument, 0, 'r'}, 
-      {"output-dir", required_argument, 0, 'd'}, 
-      {"nscat", required_argument, 0, 'n'},
-      {"SS", no_argument, 0, 'w'},
-      {"MS", no_argument, 0, 'x'},
-      {0,0,0,0}
-    };
-    /* getopt_long stores the option index here. */ 
-    int option_index = 0;
+int init_simulation(SimContext *ctx) {
+    if (!ctx) return -1;
+    
+    // Allocations
+    ctx->scatterers = malloc(ctx->n_scat * sizeof(Scatterer));
+    ctx->candidates = malloc(ctx->n_scat * sizeof(int));
+    ctx->ws_buf = calloc(ctx->c_points, sizeof(double complex)); // calloc zeroes memory
+    ctx->scatt_hist = calloc(1000, sizeof(int)); // Assuming max depth 1000
+    ctx->cos_lut = malloc(ctx->c_points * sizeof(double));
+    ctx->sin_lut = malloc(ctx->c_points * sizeof(double));
 
-    c = getopt_long (argc, argv, "", long_options, &option_index);
-
-    /* Detect the end of the options. */
-    if(c==-1){ break; }
-    switch(c){ 
-      case 'w':
-	SS=0;
-	break;
-      case 'x':
-	MS=0;
-	break;
-      case 0:
-	/* If this option set a flag, do nothing else now. */ 
-	if (long_options[option_index].flag != 0) 
-	  break; 
-	printf ("option %s", long_options[option_index].name); 
-	if (optarg) 
-	  printf (" with arg %s", optarg); 
-	printf ("\n");
-	break;
-
-      case 'r':
-	rseed=strtol(optarg,(char**)NULL,10);
-	if(errno==ERANGE){ 
-	  printf("Invalid options to --random-seed\n"); usage();
-	  abort();
-	}
-	break;
-      case 'd':
-	sprintf(OUTPUT_DIR,"%s",optarg);
-	break;
-      case 'n':
-	NSCAT=strtol(optarg,(char**)NULL,10);
-	if(errno==ERANGE){ 
-	  printf("Invalid options to --nscat\n"); usage(); 
-	  abort();
-	}
-	break;
-      case '?':
-	/* getopt_long already printed an error message. */
-	break;
-      default:
-	usage();
-	abort();
-    }
-  }
-
-  /* Print any remaining command line arguments (not options). */
-  if(optind<argc){ 
-    printf ("non-option ARGV-elements: "); 
-    while(optind < argc){ 
-      printf ("%s ", argv[optind++]); 
-      putchar ('\n'); 
-    }
-    usage(); 
-    abort();
-  }
-
-  if(strlen(OUTPUT_DIR)!=0){ mkdir(OUTPUT_DIR,0777); }
-
-  /* initialize the random number generator */
-  const gsl_rng_type *T;
-  gsl_rng *r;
-  gsl_rng_env_setup();
-  T = gsl_rng_default;
-  r = gsl_rng_alloc(T);
-
-  /* seed both rngs */
-  gsl_rng_set(r,rseed); 
-  srand(rseed);
-
-  complex double *ws_buf = malloc(CPOINTS*sizeof(complex double)); /* weirdospace */
-  complex double *ws_buf_next = malloc(CPOINTS*sizeof(complex double)); /* weirdospace */
-  int *event_bins = malloc(CPOINTS*sizeof(int)); 
-
-  if(ws_buf==NULL) { 
-    printf("could not allcate memory for ws_buf\n");
-    return -1; 
-  }
-  bzero(ws_buf,CPOINTS*sizeof(complex double));
-  bzero(ws_buf_next,CPOINTS*sizeof(complex double));
-  bzero(event_bins,CPOINTS*sizeof(int));
-
-  /* seed the scatterers */
-  scatterer_t *scatt = malloc(NSCAT*sizeof(scatterer_t));
-  if(scatt==NULL){ 
-    printf("could not allcate memory for scatt\n");
-    return -1; 
-  }
-
-  char filename[FILENAME_MAX];
-
-  i=0;while(i<NSCAT){
-    /* random distribution of scatterers */
-    scatt[i].x=random_double_range(r,-ENTIREAREA/2.0,ENTIREAREA/2.0);
-    scatt[i].y=random_double_range(r,-ENTIREAREA/2.0,ENTIREAREA/2.0);
-    i++;
-  } 
-
-  /* scatterer canidates */
-  int *scanidates = malloc(NSCAT*sizeof(int)); 
-  if(scanidates==NULL){ 
-    printf("could not allocate memory for scanidates\n");
-    return -1; 
-  }
-
-  /* initial scatterer canidates */
-  int *iscanidates = malloc(NSCAT*sizeof(int)); 
-  if(iscanidates==NULL){ 
-    printf("could not allocate memory for iscanidates\n");
-    return -1;
-  }
-  bzero(iscanidates,NSCAT*sizeof(int));
-
-  /* our plasmon */
-  plasmon_t *plasmon = malloc(sizeof(plasmon_t));
-  if(plasmon==NULL){ 
-    printf("could not allocate memory for plasmon\n");
-    return -1; 
-  }
-
-
-  /* get a list of all scatterers that are in the illuminated region.  Note
-   * that we are guaranteed at least one because of the tip scatterer */
-  double theta;
-  ncanidates=0;
-  for(i=0;i<NSCAT;i++){
-    theta=atan(scatt[i].y/scatt[i].x);
-    if(sqrt(scatt[i].x*scatt[i].x+scatt[i].y*scatt[i].y) < 
-	(ELLIPSE_A*ELLIPSE_B)/sqrt(ELLIPSE_B*ELLIPSE_B*cos(theta)*cos(theta)
-	  + ELLIPSE_A*ELLIPSE_A*sin(theta)*sin(theta))){
-      iscanidates[ncanidates]=i;
-      ncanidates++;
-    }
-  }
-  events=0;
-  double diff = 100;
-  int bingood = 1;
-  double c_t;
-  if(MS==0){
-    bzero(plasmon,sizeof(plasmon_t));
-    for(i=0;i<NSCAT;++i){
-      plasmon->phase=scatt[i].x;
-      plasmon->nscat++;
-      for(e=0;e<CPOINTS;++e){
-	double c_t = (double)e*(2.0*M_PI)/CPOINTS;
-	dt_tmp=(scatt[i].x*cos(c_t)+scatt[i].y*sin(c_t));
-	ws_buf[e]+=cexp(2.0i*M_PI/LAMBDA*(plasmon->phase+dt_tmp));
-	event_bins[e]++;
-      }
-
+    if (!ctx->scatterers || !ctx->candidates || !ctx->ws_buf || 
+        !ctx->scatt_hist || !ctx->cos_lut || !ctx->sin_lut) {
+        fprintf(stderr, "Error: Memory allocation failed.\n");
+        return -1;
     }
 
-  }
-  else{
-    while(events<1000){
-      int includestip = 0;
-      bzero(plasmon,sizeof(plasmon_t));
+    // Precompute Trigonometry Look-Up Tables (Huge Optimization)
+    for (int i = 0; i < ctx->c_points; ++i) {
+        double angle = (double)i * (2.0 * M_PI) / ctx->c_points;
+        ctx->cos_lut[i] = cos(angle);
+        ctx->sin_lut[i] = sin(angle);
+    }
 
-      /* first scatterer */
-      n=iscanidates[random_int(r,ncanidates-1)];
+    return 0;
+}
 
-      plasmon->phase+=scatt[n].x;
-      plasmon->nscat++;
+void cleanup_simulation(SimContext *ctx) {
+    if (!ctx) return;
+    free(ctx->scatterers);
+    free(ctx->candidates);
+    free(ctx->ws_buf);
+    free(ctx->scatt_hist);
+    free(ctx->cos_lut);
+    free(ctx->sin_lut);
+}
 
-      /* run around until we're out of path length or we choose the same
-       * scatterer twice */
-      while(plasmon->nscat<2){
-	next_n=random_int(r,NSCAT-1);
-	  plasmon->phase+=sqrt(
-	      (scatt[n].x-scatt[next_n].x)*(scatt[n].x-scatt[next_n].x)
-	      + (scatt[n].y-scatt[next_n].y)*(scatt[n].y-scatt[next_n].y));
+// --- Core Logic ---
 
-	  plasmon->nscat++;
-	  n=next_n;
-      }
-      scatthist[plasmon->nscat]++;
+void setup_scatterers(SimContext *ctx, gsl_rng *r) {
+    // 1. Generate Random Scatterers
+    for (int i = 0; i < ctx->n_scat; i++) {
+        ctx->scatterers[i].x = random_double_range(r, -ENTIRE_AREA/2.0, ENTIRE_AREA/2.0);
+        ctx->scatterers[i].y = random_double_range(r, -ENTIRE_AREA/2.0, ENTIRE_AREA/2.0);
+    }
 
-      for(i=0;i<CPOINTS;++i){
-	dt_tmp=(scatt[n].x*cos(i*2.0*M_PI/CPOINTS)+scatt[n].y*sin(i*2.0*M_PI/CPOINTS));
-	ws_buf[i]+=cexp(2.0i*M_PI/LAMBDA*(plasmon->phase+dt_tmp));
-      }
+    // 2. Identify Candidates inside the Ellipse
+    ctx->n_candidates = 0;
+    double ellipse_factor_b = ELLIPSE_B * ELLIPSE_B;
+    double ellipse_factor_a = ELLIPSE_A * ELLIPSE_A;
+    double ab_prod = ELLIPSE_A * ELLIPSE_B;
 
-      /* go to the far field */
-      //i = random_int(r,CPOINTS-1);
-      //dt_tmp=(scatt[n].x*cos(c_t)+scatt[n].y*sin(c_t));
-      //ws_buf[i]+=cexp(2.0i*M_PI/LAMBDA*(plasmon->phase+dt_tmp));
-      //event_bins[i]++;
-      //for(i=0,j=0;i<CPOINTS;++i){
-      //	if(event_bins[i]>1000){ j++; }
-      //     }
-      //    if(j==CPOINTS){ bingood=0; }
-      events++;
+    for (int i = 0; i < ctx->n_scat; i++) {
+        double x = ctx->scatterers[i].x;
+        double y = ctx->scatterers[i].y;
+        double r_dist = sqrt(x*x + y*y);
 
-      //diff = field_diff(ws_buf, ws_buf_next, event_bins, CPOINTS);
-      //memcpy(ws_buf_next, ws_buf, CPOINTS*sizeof(complex double));
+        if (r_dist < EPS) continue; // Avoid division by zero
+
+        double theta = atan2(y, x); // Use atan2 for correct quadrant
+        double cos_t = cos(theta);
+        double sin_t = sin(theta);
+        
+        double limit = ab_prod / sqrt(ellipse_factor_b * cos_t * cos_t + 
+                                      ellipse_factor_a * sin_t * sin_t);
+
+        if (r_dist < limit) {
+            ctx->candidates[ctx->n_candidates++] = i;
+        }
+    }
+
+    if (ctx->verbose) {
+        printf("Setup complete. Found %d candidates out of %d scatterers.\n", 
+               ctx->n_candidates, ctx->n_scat);
+    }
+}
+
+void run_simulation(SimContext *ctx, gsl_rng *r) {
+    double k_factor = 2.0 * M_PI / LAMBDA; // Precompute wavenumber
+
+    // --- Single Scattering Mode ---
+    if (ctx->single_scattering) {
+        Plasmon p = {0};
+        for (int i = 0; i < ctx->n_scat; ++i) {
+            p.phase = ctx->scatterers[i].x;
+            
+            double complex term_phase = 0; 
+            // Loop optimized using LUTs
+            for (int e = 0; e < ctx->c_points; ++e) {
+                double dt_tmp = ctx->scatterers[i].x * ctx->cos_lut[e] + 
+                                ctx->scatterers[i].y * ctx->sin_lut[e];
+                
+                // Euler's formula: exp(i * x)
+                ctx->ws_buf[e] += cexp(I * k_factor * (p.phase + dt_tmp));
+            }
+        }
     } 
-  }
+    
+    // --- Multiple Scattering Mode ---
+    // Note: Logic preserved from original (while nscat < 2)
+    else if (ctx->multiple_scattering) {
+        if (ctx->n_candidates == 0) {
+            fprintf(stderr, "Warning: No candidates found in illumination region.\n");
+            return;
+        }
 
-  /* done with a single point */
+        while (ctx->events < MAX_EVENTS) {
+            Plasmon p = {0};
 
-  FILE *out;
-  /* paramter file just in case we forgot what we ran this program with */
-  memset(&filename,0,FILENAME_MAX*sizeof(char));
-  if(strlen(OUTPUT_DIR)!=0){
-    sprintf(filename,"%s/parameters",OUTPUT_DIR);
-  }
-  else{ sprintf(filename,"parameters"); }
-  out=fopen(filename,"w");
-  fprintf(out,"[SCANAREA]\t%lf\n",(double)SCANAREA);
-  fprintf(out,"[ELLIPSE_A]\t%lf\n",(double)ELLIPSE_A);
-  fprintf(out,"[ELLIPSE_B]\t%lf\n",(double)ELLIPSE_B);
-  fprintf(out,"[LAMBDA]\t%lf\n",(double)LAMBDA);
-  fprintf(out,"[PATHLEN]\t%lf\n",(double)PATHLEN);
-  fprintf(out,"[ENTIREAREA]\t%lf\n",(double)ENTIREAREA);
-  fprintf(out,"[NSCAT]\t%d\n",NSCAT);
-  fprintf(out,"[EVENTS]\t%d\n",events);
-  fprintf(out,"[REMOVED]\t\n");
-  fprintf(out,"\n");
+            // Pick first scatterer from candidates
+            int n = ctx->candidates[random_int(r, ctx->n_candidates - 1)];
+            
+            p.phase += ctx->scatterers[n].x;
+            p.nscat++;
 
-  fprintf(out,"[SCATTERERS]\n");
-  for(i=1;i<NSCAT;i++){
-    fprintf(out,"%g\t%g\n",scatt[i].x,scatt[i].y); 
-  }
-  fprintf(out,"[STATS]\n");
-  fclose(out);
+            // Walk path
+            while (p.nscat < 2) {
+                int next_n = random_int(r, ctx->n_scat - 1);
+                
+                double dx = ctx->scatterers[n].x - ctx->scatterers[next_n].x;
+                double dy = ctx->scatterers[n].y - ctx->scatterers[next_n].y;
+                double dist = sqrt(dx*dx + dy*dy);
 
-  /* output all the HDF files */
-  memset(&filename,0,FILENAME_MAX*sizeof(char));
-  if(strlen(OUTPUT_DIR)!=0){
-    sprintf(filename,"%s/scatthist.dat",OUTPUT_DIR);
-  }
-  else{ sprintf(filename,"scatthist.dat"); }
-  out=fopen(filename,"w");
-  for(i=0;i<100;++i){
-    fprintf(out,"%d\n",scatthist[i]);
-  }
+                p.phase += dist;
+                p.nscat++;
+                n = next_n;
+            }
 
-  fclose(out);
+            if (p.nscat < 1000) {
+                ctx->scatt_hist[p.nscat]++;
+            }
 
+            // Accumulate fields
+            for (int i = 0; i < ctx->c_points; ++i) {
+                double dt_tmp = ctx->scatterers[n].x * ctx->cos_lut[i] + 
+                                ctx->scatterers[n].y * ctx->sin_lut[i];
+                
+                ctx->ws_buf[i] += cexp(I * k_factor * (p.phase + dt_tmp));
+            }
 
-  /* output all the HDF files */
-  memset(&filename,0,FILENAME_MAX*sizeof(char));
-  if(strlen(OUTPUT_DIR)!=0){
-    sprintf(filename,"%s/out.dat",OUTPUT_DIR);
-  }
-  else{ sprintf(filename,"out.dat"); }
-  out=fopen(filename,"w");
+            ctx->events++;
+        }
+    }
+}
 
-  for(i=0;i<CPOINTS;++i){
-    fprintf(out,"%g\n",cabs(ws_buf[i])*cabs(ws_buf[i]));
-  }
-  fclose(out);
+// --- Output ---
 
-  gsl_rng_free(r);
+void save_results(SimContext *ctx) {
+    char filepath[1024];
+    FILE *fp;
 
-  return 0;
+    // 1. Parameters File
+    if (strlen(ctx->output_dir) > 0) {
+        snprintf(filepath, sizeof(filepath), "%s/parameters.txt", ctx->output_dir);
+    } else {
+        snprintf(filepath, sizeof(filepath), "parameters.txt");
+    }
+
+    fp = fopen(filepath, "w");
+    if (fp) {
+        fprintf(fp, "[SCANAREA]\t%lf\n", SCAN_AREA);
+        fprintf(fp, "[ELLIPSE_A]\t%lf\n", ELLIPSE_A);
+        fprintf(fp, "[ELLIPSE_B]\t%lf\n", ELLIPSE_B);
+        fprintf(fp, "[LAMBDA]\t%lf\n", LAMBDA);
+        fprintf(fp, "[PATHLEN]\t%lf\n", PATH_LEN);
+        fprintf(fp, "[ENTIREAREA]\t%lf\n", ENTIRE_AREA);
+        fprintf(fp, "[NSCAT]\t%d\n", ctx->n_scat);
+        fprintf(fp, "[EVENTS]\t%d\n", ctx->events);
+        fprintf(fp, "\n[SCATTERERS]\n");
+        for (int i = 0; i < ctx->n_scat; i++) {
+            fprintf(fp, "%g\t%g\n", ctx->scatterers[i].x, ctx->scatterers[i].y);
+        }
+        fclose(fp);
+    } else {
+        perror("Failed to write parameters");
+    }
+
+    // 2. Scattering Histogram
+    if (strlen(ctx->output_dir) > 0) {
+        snprintf(filepath, sizeof(filepath), "%s/scatthist.dat", ctx->output_dir);
+    } else {
+        snprintf(filepath, sizeof(filepath), "scatthist.dat");
+    }
+
+    fp = fopen(filepath, "w");
+    if (fp) {
+        for (int i = 0; i < 100; ++i) {
+            fprintf(fp, "%d\n", ctx->scatt_hist[i]);
+        }
+        fclose(fp);
+    }
+
+    // 3. Output Data (Intensity)
+    if (strlen(ctx->output_dir) > 0) {
+        snprintf(filepath, sizeof(filepath), "%s/out.dat", ctx->output_dir);
+    } else {
+        snprintf(filepath, sizeof(filepath), "out.dat");
+    }
+
+    fp = fopen(filepath, "w");
+    if (fp) {
+        for (int i = 0; i < ctx->c_points; ++i) {
+            // Optimization: Use custom norm squared
+            fprintf(fp, "%g\n", complex_mag_sq(ctx->ws_buf[i]));
+        }
+        fclose(fp);
+    }
+}
+
+// --- Main ---
+
+int main(int argc, char *argv[]) {
+    // Default Configuration
+    SimContext ctx;
+    memset(&ctx, 0, sizeof(SimContext));
+    ctx.verbose = 0;
+    ctx.random_seed = DEFAULT_SEED;
+    ctx.n_scat = DEFAULT_NSCAT;
+    ctx.single_scattering = 0;
+    ctx.multiple_scattering = 1; // Default to MS
+    ctx.c_points = DEFAULT_CPOINTS;
+    ctx.output_dir[0] = '\0';
+
+    // Argument Parsing
+    static struct option long_options[] = {
+        {"verbose",     no_argument,       0, 'v'},
+        {"help",        no_argument,       0, 'h'},
+        {"random-seed", required_argument, 0, 'r'},
+        {"output-dir",  required_argument, 0, 'd'},
+        {"nscat",       required_argument, 0, 'n'},
+        {"SS",          no_argument,       0, 'S'},
+        {"MS",          no_argument,       0, 'M'},
+        {0, 0, 0, 0}
+    };
+
+    int c, option_index = 0;
+    while ((c = getopt_long(argc, argv, "vhr:d:n:SM", long_options, &option_index)) != -1) {
+        switch (c) {
+            case 'v': ctx.verbose = 1; break;
+            case 'h': print_usage(); return 0;
+            case 'S': ctx.single_scattering = 1; ctx.multiple_scattering = 0; break;
+            case 'M': ctx.multiple_scattering = 1; ctx.single_scattering = 0; break;
+            case 'r':
+                ctx.random_seed = strtoul(optarg, NULL, 10);
+                if (errno == ERANGE) {
+                    fprintf(stderr, "Invalid random seed.\n");
+                    return 1;
+                }
+                break;
+            case 'd':
+                snprintf(ctx.output_dir, sizeof(ctx.output_dir), "%s", optarg);
+                break;
+            case 'n':
+                ctx.n_scat = strtol(optarg, NULL, 10);
+                if (errno == ERANGE) {
+                    fprintf(stderr, "Invalid number of scatterers.\n");
+                    return 1;
+                }
+                break;
+            case '?':
+                // getopt_long prints error
+                return 1;
+            default:
+                abort();
+        }
+    }
+
+    // Directory Creation
+    if (strlen(ctx.output_dir) > 0) {
+        struct stat st = {0};
+        if (stat(ctx.output_dir, &st) == -1) {
+            if (mkdir(ctx.output_dir, 0755) == -1 && errno != EEXIST) {
+                perror("Could not create output directory");
+                return 1;
+            }
+        }
+    }
+
+    // Initialize RNG
+    gsl_rng_env_setup();
+    const gsl_rng_type *T = gsl_rng_default;
+    gsl_rng *r = gsl_rng_alloc(T);
+    if (!r) {
+        fprintf(stderr, "Failed to allocate RNG.\n");
+        return 1;
+    }
+    gsl_rng_set(r, ctx.random_seed);
+
+    // Run Simulation
+    if (init_simulation(&ctx) != 0) {
+        gsl_rng_free(r);
+        return 1;
+    }
+
+    setup_scatterers(&ctx, r);
+    run_simulation(&ctx, r);
+    save_results(&ctx);
+
+    if (ctx.verbose) {
+        printf("Simulation complete. Results saved.\n");
+    }
+
+    // Cleanup
+    cleanup_simulation(&ctx);
+    gsl_rng_free(r);
+
+    return 0;
 }
