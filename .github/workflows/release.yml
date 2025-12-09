@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
     permissions:
       contents: write
     
@@ -15,16 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Cache LaTeX packages
-        uses: actions/cache@v4
-        with:
-          path: /usr/share/texlive
-          key: ${{ runner.os }}-texlive-full
-      
-      - name: Install LaTeX dependencies
+      - name: Install git for tagging
         run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full latexmk
+          apt-get update -qq
+          apt-get install -y git
+          git config --global --add safe.directory /github/workspace
       
       - name: Build PDF
         run: make
