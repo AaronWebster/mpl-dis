@@ -1,8 +1,9 @@
 name: Build and Upload Release PDF
 
 on:
-  release:
-    types: [created, published]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-and-upload:
