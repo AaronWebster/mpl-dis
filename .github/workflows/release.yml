@@ -1,0 +1,31 @@
+name: Build and Upload Release PDF
+
+on:
+  release:
+    types: [created, published]
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install LaTeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk
+      
+      - name: Build PDF
+        run: make
+      
+      - name: Upload PDF to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./mpl-dis.pdf
+          asset_name: mpl-dis.pdf
+          asset_content_type: application/pdf
