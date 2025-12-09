@@ -239,14 +239,15 @@ and probability distribution for a disk of radius $R$ is
   P_\mathrm{d}(l)=\frac{4l}{\pi R^2} \arccos\left(\frac{l}{2R}\right) - \frac{2
     l^2}{\pi R^3} \sqrt{1-\frac{l^2}{4 R^2}}
 \end{align}
-It is assumed that the superposition of the two probabilities should
-produce the statistical results found \Figure{fig:linepickingpdf}, but as yet
-I have not found a way to do so.
+While it is expected that a superposition of these two probability distributions corresponds to the statistical results shown in \Figure{fig:linepickingpdf}, a precise analytical derivation combining these geometries remains to be established.
 
 These line picking problems are useful because they characterize how many
 scatterers on average a plasmon will visit until exiting in the Monte Carlo
-simulation.  They also reveal a limitation: as the scattering density is
-increased, a plasmon as simulated does not visit more scatterers, nor does
-its mean free path decrease.  Rather, the result of increasing the number
-of scatterers is only to suppress single scattering off the tip.  This may
-or may not be physical.
+simulation.  However, they also highlight a significant unphysical limitation of the
+current model: the selection of the next scatterer is uniform across all available
+scatterers, independent of their spatial proximity. Consequently, as the scattering density
+is increased, the simulated plasmon does not visit more scatterers per unit length,
+nor does its mean free path decrease as expected in physical systems (where $\ell \propto 1/\rho$).
+Instead, increasing the number of scatterers only serves to suppress the relative probability
+of single scattering off the tip by diluting the selection pool. This behavior represents
+a simplified ``hopping'' model that fails to capture density-dependent transport phenomena.

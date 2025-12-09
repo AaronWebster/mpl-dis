@@ -222,16 +222,31 @@ void run_simulation(SimContext *ctx, gsl_rng *r) {
             p.nscat++;
 
             // Walk path
-            while (p.nscat < 2) {
+            while (p.phase < PATH_LEN) {
                 int next_n = random_int(r, ctx->n_scat - 1);
+                
+                // Termination condition 1: Same scatterer visited twice in a row
+                if (next_n == n) {
+                    break;
+                }
                 
                 double dx = ctx->scatterers[n].x - ctx->scatterers[next_n].x;
                 double dy = ctx->scatterers[n].y - ctx->scatterers[next_n].y;
                 double dist = sqrt(dx*dx + dy*dy);
 
+                // Termination condition 2: Path length limit
+                if (p.phase + dist > PATH_LEN) {
+                    break;
+                }
+
                 p.phase += dist;
                 p.nscat++;
                 n = next_n;
+
+                // Safety break for histogram buffer
+                if (p.nscat >= 999) { 
+                    break; 
+                }
             }
 
             if (p.nscat < 1000) {
