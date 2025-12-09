@@ -34,6 +34,12 @@ This document identifies errors in logic, reasoning, and implementation found in
 **Issue:** LaTeX code `\multirow{3}{*}{}` in Python file - invalid syntax
 **Status:** ✅ FIXED - Converted to comment with TODO marker for future implementation
 
+**Lines:** 16-18
+**Severity:** High - Undefined variable
+**Issue:** Variable `metal` used but never defined, causing NameError
+**Status:** ✅ FIXED - Removed calls to LDBB with undefined variable, added TODO comments explaining the incomplete implementation
+**Note:** This script appears to be a work-in-progress that was never completed. The pattern from plotall.py suggests it should loop over the metals list.
+
 
 ## C Code Issues
 

@@ -13,9 +13,14 @@ models = ['LD', 'D', 'BB']
 
 N=100
 lambda0 = linspace(200e-9,2000e-9,N)
-data_LD = LDBB(metal,"LD",lambda0)
-data_D = LDBB(metal,"D",lambda0)
-data_BB = LDBB(metal,"BB",lambda0)
+
+# TODO: This script is incomplete - needs implementation
+# Based on plotall.py pattern, this should loop over metals:
+# for metal in metals:
+#     data_LD = LDBB(metal,"LD",lambda0)
+#     data_D = LDBB(metal,"D",lambda0)
+#     data_BB = LDBB(metal,"BB",lambda0)
+#     ... process data ...
 
 print("\\begin{tabularx}{\\textwidth}{lllllll}")
 for l in linspace(200e-9,2000e-9,N):
