@@ -12,14 +12,15 @@ models = ['LD', 'D', 'BB']
 #locations = [ 'rt', 'rb', 'rt', 'rb' ]
 
 N=100
-lambda0 = 
+lambda0 = linspace(200e-9,2000e-9,N)
 data_LD = LDBB(metal,"LD",lambda0)
 data_D = LDBB(metal,"D",lambda0)
 data_BB = LDBB(metal,"BB",lambda0)
 
-print "\\begin{tabularx}{\\textwidth}{lllllll}"
-for l in linspace(200e-9,2000e-9,N)
-	\multirow{3}{*}{}
+print("\\begin{tabularx}{\\textwidth}{lllllll}")
+for l in linspace(200e-9,2000e-9,N):
+	pass  # TODO: Complete implementation
+	# \multirow{3}{*}{}
 
 # print data pretty like
 #def prettyprint(one,two,val):
