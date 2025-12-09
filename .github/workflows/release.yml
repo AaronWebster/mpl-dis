@@ -2,8 +2,8 @@ name: Build and Upload Release PDF
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - master
 
 jobs:
   build-and-upload:
@@ -31,6 +31,13 @@ jobs:
       
       - name: Set artifact tag
         run: echo "tag=v$(date +'%Y.%m.%d').${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Create and push tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "$tag"
+          git push origin "$tag"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
