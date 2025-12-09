@@ -14,18 +14,20 @@ models = ['LD', 'D', 'BB']
 N=100
 lambda0 = linspace(200e-9,2000e-9,N)
 
-# TODO: This script is incomplete - needs implementation
+# TODO: This script is incomplete and does not produce valid output
 # Based on plotall.py pattern, this should loop over metals:
 # for metal in metals:
 #     data_LD = LDBB(metal,"LD",lambda0)
 #     data_D = LDBB(metal,"D",lambda0)
 #     data_BB = LDBB(metal,"BB",lambda0)
-#     ... process data ...
+#     ... process data and generate table rows ...
 
+# Incomplete LaTeX table generation (needs proper implementation and closing tag)
 print("\\begin{tabularx}{\\textwidth}{lllllll}")
 for l in linspace(200e-9,2000e-9,N):
-	pass  # TODO: Complete implementation
-	# \multirow{3}{*}{}
+	pass  # TODO: Complete implementation - generate table rows
+	# Original incomplete code had: \multirow{3}{*}{}
+print("\\end{tabularx}")  # Close table
 
 # print data pretty like
 #def prettyprint(one,two,val):
