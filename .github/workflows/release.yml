@@ -28,8 +28,11 @@ jobs:
       - name: Build PDF
         run: make
       
-      - name: Upload PDF to Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release upload ${{ github.event.release.tag_name }} ./mpl-dis.pdf --clobber
+      - name: Set artifact tag
+        run: echo "tag=v$(date +'%Y.%m.%d').${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.tag }}
+          path: ./mpl-dis.pdf
