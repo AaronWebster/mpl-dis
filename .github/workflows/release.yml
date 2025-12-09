@@ -21,7 +21,7 @@ jobs:
         run: |
           apt-get update -qq
           apt-get install -y git
-          git config --global --add safe.directory /github/workspace
+          git config --global --add safe.directory /__w/mpl-dis/mpl-dis
       
       - name: Build PDF
         run: make
