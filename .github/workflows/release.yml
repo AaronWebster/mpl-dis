@@ -8,23 +8,14 @@ on:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
     permissions:
       contents: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Cache LaTeX packages
-        uses: actions/cache@v4
-        with:
-          path: /usr/share/texlive
-          key: ${{ runner.os }}-texlive-full
-      
-      - name: Install LaTeX dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full latexmk
       
       - name: Build PDF
         run: make
