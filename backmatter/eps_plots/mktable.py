@@ -12,14 +12,22 @@ models = ['LD', 'D', 'BB']
 #locations = [ 'rt', 'rb', 'rt', 'rb' ]
 
 N=100
-lambda0 = 
-data_LD = LDBB(metal,"LD",lambda0)
-data_D = LDBB(metal,"D",lambda0)
-data_BB = LDBB(metal,"BB",lambda0)
+lambda0 = linspace(200e-9,2000e-9,N)
 
-print "\\begin{tabularx}{\\textwidth}{lllllll}"
-for l in linspace(200e-9,2000e-9,N)
-	\multirow{3}{*}{}
+# TODO: This script is incomplete and does not produce valid output
+# Based on plotall.py pattern, this should loop over metals:
+# for metal in metals:
+#     data_LD = LDBB(metal,"LD",lambda0)
+#     data_D = LDBB(metal,"D",lambda0)
+#     data_BB = LDBB(metal,"BB",lambda0)
+#     ... process data and generate table rows ...
+
+# Incomplete LaTeX table generation (needs proper implementation and closing tag)
+print("\\begin{tabularx}{\\textwidth}{lllllll}")
+for l in linspace(200e-9,2000e-9,N):
+	pass  # TODO: Complete implementation - generate table rows
+	# Original incomplete code had: \multirow{3}{*}{}
+print("\\end{tabularx}")  # Close table
 
 # print data pretty like
 #def prettyprint(one,two,val):
@@ -33,7 +41,7 @@ for l in linspace(200e-9,2000e-9,N)
 #		if val == "nr":
 #			print "(%s, %s)" % (one[i], real(q[i]))
 #		if val == "ni":
-##			print "(%s, %s)" % (one[i], imag(q[i]))
+#			print "(%s, %s)" % (one[i], imag(q[i]))
 
 
 #for metal in metals:
