@@ -39,7 +39,7 @@ for l in linspace(200e-9,2000e-9,N):
 #		if val == "nr":
 #			print "(%s, %s)" % (one[i], real(q[i]))
 #		if val == "ni":
-##			print "(%s, %s)" % (one[i], imag(q[i]))
+#			print "(%s, %s)" % (one[i], imag(q[i]))
 
 
 #for metal in metals:
