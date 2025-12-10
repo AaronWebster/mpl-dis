@@ -31,6 +31,23 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 %\usepackage[toc,page]{appendix}
+
+% PSTricks packages for wlgr appendix
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{pst-plot}
+\usepackage{multido}
+\usepackage{pst-node}
+
+% Compatibility for old subfigure package used in wlgr appendix
+% Define missing elements without loading conflicting subfigure package
+\newskip\subfigbottomskip
+\subfigbottomskip=0pt
+\newcounter{subfigure}[figure]
+% Wrapper that typesets content in a group - allows PSTricks content
+% Note: wlgr only uses \subfigure{content}, not \subfigure[caption]{content}
+\newcommand{\subfigure}[1]{\begingroup #1\endgroup}
+
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
 \newacronym{spp}{SPP}{surface plasmon polariton}
