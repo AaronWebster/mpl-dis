@@ -1,0 +1,25 @@
+\babel@toc {USenglish}{}\relax 
+\babel@toc {german}{}\relax 
+\babel@toc {USenglish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Complex permittivity for select metals at $\lambda =\SI {660}{\nano \meter }$ calculated using the Lorentz-Drude model. Model parameters are from Refs.~\cite {ung2007interference} and \cite {rakic1998optical}.}}{18}{table.caption.10}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Standard deviation of the spin speed at nominal angular speeds for the hard disk spin coater.}}{33}{table.caption.22}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Theoretical maximum angular sensitivity, $\Delta \theta /\Delta n$, in degrees per refractive index unit, for the configurations in Figure~\ref {fig:sensangularasp}.}}{57}{table.caption.41}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Theoretical maximum intensity sensitivity, $\Delta I/\Delta n$, for the configurations in Figure~\ref {tbl:angularsens}. }}{58}{table.caption.42}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Environmental effects on the \gls {qcm} resonance frequency.}}{88}{table.caption.61}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Normalized frequency and bandwidth shifts (in \si {\hertz \meter \squared }) at \num {1} and \SI {90}{g} for various particle sizes in water. The quoted diameter $\bar {d}$ is the sample mean. $p$: polystyrene particles, $m$: magnetite-coated polystyrene.}}{92}{table.caption.66}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\babel@toc {german}{}\relax 
+\babel@toc {USenglish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Explanation of variables used in the {\tt parameters} file.}}{120}{table.caption.79}%

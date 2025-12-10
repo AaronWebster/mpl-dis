@@ -32,7 +32,11 @@
 \usepackage{booktabs}
 %\usepackage[toc,page]{appendix}
 
-% PSTricks packages for wlgr appendix
+% PSTricks packages for wlgr appendix - with auto-pst-pdf for pdflatex support
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[crop=off]{auto-pst-pdf}
+\fi
 \usepackage{pstricks}
 \usepackage{pstricks-add}
 \usepackage{pst-plot}
