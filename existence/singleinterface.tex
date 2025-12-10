@@ -1,11 +1,11 @@
 \begin{figure}[ht]
-  \centering
-  \import{existence/figures/}{singlelayerinterfacegeo}
-  \caption{Geometry and coordinate system for a single interface which can
-    support \glspl{spp}.  Domain $D_1$ has permittivity $\epsilon_1$, typically a
-    dielectric, and domain $D_2$ a permittivity $\epsilon_2$, typically a
-    conductive metal.}
-  \label{fig:singleinterfacegeo}
+	\centering
+	\import{existence/figures/}{singlelayerinterfacegeo}
+	\caption{Geometry and coordinate system for a single interface which can
+		support \glspl{spp}.  Domain $D_1$ has permittivity $\epsilon_1$, typically a
+		dielectric, and domain $D_2$ a permittivity $\epsilon_2$, typically a
+		conductive metal.}
+	\label{fig:singleinterfacegeo}
 \end{figure}
 
 From the plane wave ansatz to Maxwell's equations, the
@@ -17,71 +17,71 @@ Consider the geometry in \Figure{fig:singleinterfacegeo}.  If
 a TM wave is incident at an angle on the $D_1$-$D_2$ interface,
 $\mathbf{k}=(k_x,0,k_z)$,
 $\mathbf{r}\cdot\mathbf{k}=k_x x + k_z z$ and $\mathbf{E}_0 = (E_x, 0,
-  E_z)$. The electric field is then
+	E_z)$. The electric field is then
 \begin{align}
-  \mathbf{E} ( \mathbf{r}, t ) & = \mathbf{E}_0\, \me^{\mi (\mathbf{k}
-    \cdot \mathbf{r} - \omega t )}                                     \\
-  \mathbf{E}(x,z,t)            & =\begin{pmatrix}
-    E_x \\ 0\\ E_z
-  \end{pmatrix}
-  \, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
-  \label{eqn:planewavexz}
+	\mathbf{E} ( \mathbf{r}, t ) & = \mathbf{E}_0\, \me^{\mi (\mathbf{k}
+	\cdot \mathbf{r} - \omega t )}                                       \\
+	\mathbf{E}(x,z,t)            & =\begin{pmatrix}
+		                                E_x \\ 0\\ E_z
+	                                \end{pmatrix}
+	\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
+	\label{eqn:planewavexz}
 \end{align}
 Similarly, for the magnetic field,
 \begin{align}
-  \mathbf{H} ( \mathbf{r}, t ) & = \mathbf{H}_0\, \me^{\mi (\mathbf{k}
-    \cdot \mathbf{r} - \omega t )}                                     \\
-  \mathbf{H}(x,z,t)            & =\begin{pmatrix}
-    0 \\ H_y\\ 0
-  \end{pmatrix}
-  \, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
+	\mathbf{H} ( \mathbf{r}, t ) & = \mathbf{H}_0\, \me^{\mi (\mathbf{k}
+	\cdot \mathbf{r} - \omega t )}                                       \\
+	\mathbf{H}(x,z,t)            & =\begin{pmatrix}
+		                                0 \\ H_y\\ 0
+	                                \end{pmatrix}
+	\, \me^{\mi(k_{x,i}x+k_{z,i}z-\omega t)}.
 \end{align}
 At the interface between $D_1$ and $D_2$ there are two values for the permittivity,
 $\epsilon_1$ and $\epsilon_2$.  Consequently there are two sets of plane
 wave solutions,
 \begin{align}
-  \left.\begin{aligned}
-    \mathbf{H}_1(x,z,t) & =
-    \begin{pmatrix}
-      0       \\
-      H_{y,1} \\
-      0
-    \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)} \\
-    \mathbf{E}_1(x,z,t) & =
-    \begin{pmatrix}
-      E_{x,1} \\
-      0       \\
-      E_{z,1} \\
-    \end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
-  \end{aligned}
-  \right\} & \quad D_1\label{eqn:planewavedielectric} \\
-  \left.\begin{aligned}
-    \mathbf{H}_2(x,z,t) & =
-    \begin{pmatrix}
-      0       \\
-      H_{y,2} \\
-      0
-    \end{pmatrix}
-    \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)} \\
-    \mathbf{E}_2(x,z,t) & =
-    \begin{pmatrix}
-      E_{x,2} \\
-      0       \\
-      E_{z,2} \\
-    \end{pmatrix}
-    \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
-  \end{aligned}
-  \right\} & \quad D_2,
-  \label{eqn:planewavemetal}
+	\left.\begin{aligned}
+		      \mathbf{H}_1(x,z,t) & =
+		      \begin{pmatrix}
+			0       \\
+			H_{y,1} \\
+			0
+		\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)} \\
+		      \mathbf{E}_1(x,z,t) & =
+		      \begin{pmatrix}
+			E_{x,1} \\
+			0       \\
+			E_{z,1} \\
+		\end{pmatrix} \me^{\mi(k_{x,1}x+k_{z,1}z-\omega t)}
+	      \end{aligned}
+	\right\} & \quad D_1\label{eqn:planewavedielectric} \\
+	\left.\begin{aligned}
+		      \mathbf{H}_2(x,z,t) & =
+		      \begin{pmatrix}
+			0       \\
+			H_{y,2} \\
+			0
+		\end{pmatrix}
+		      \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)} \\
+		      \mathbf{E}_2(x,z,t) & =
+		      \begin{pmatrix}
+			E_{x,2} \\
+			0       \\
+			E_{z,2} \\
+		\end{pmatrix}
+		      \me^{\mi(k_{x,2}x+k_{z,2}z-\omega t)}
+	      \end{aligned}
+	\right\} & \quad D_2,
+	\label{eqn:planewavemetal}
 \end{align}
 where the subscript designates which material the wave equation refers to,
 e.g.\ $\mathbf{E}_1$ is the electric field in $D_1$, $\mathbf{H}_2$
 the magnetic field in $D_2$, etc. Continuity at the boundary
 requires
 \begin{align}
-  E_{x,2}            & =E_{x,1}             \\
-  H_{y,2}            & =H_{y,1}             \\
-  \epsilon_2 E_{z,2} & =\epsilon_1 E_{z,1}.
+	E_{x,2}            & =E_{x,1}             \\
+	H_{y,2}            & =H_{y,1}             \\
+	\epsilon_2 E_{z,2} & =\epsilon_1 E_{z,1}.
 \end{align}
 Applying Ampere's law (\Equation{eqn:ampereslaw}) to the field on
 each boundary and relating the vector components gives
@@ -108,20 +108,20 @@ each boundary and relating the vector components gives
 %\end{align}
 %The vector components of \Equation{eqn:vectordisp} are therefore related,
 \begin{align}
-  -\mi k_{z,i} H_{y,i} & = -\mi \omega \epsilon_i E_{x,i} \\
-  k_{z,1} H_{y,1}      & = \omega \epsilon_1 E_{x,1}      \\
-  k_{z,2} H_{y,2}      & = \omega \epsilon_2 E_{x,2}.
-  \label{eqn:spderivsteptwo}
+	-\mi k_{z,i} H_{y,i} & = -\mi \omega \epsilon_i E_{x,i} \\
+	k_{z,1} H_{y,1}      & = \omega \epsilon_1 E_{x,1}      \\
+	k_{z,2} H_{y,2}      & = \omega \epsilon_2 E_{x,2}.
+	\label{eqn:spderivsteptwo}
 \end{align}
 %\todo{not the components, either e or h, since Ez is perpendicular to the interface}
 Since $E_{x,i}$ and $H_{y,i}$ are continuous,
 by substitution of $E_{x,i}$, \Equation{eqn:spderivsteptwo} becomes
 \begin{align}
-  \frac{k_{z,1}}{\epsilon_1}H_{y,1} & =\frac{k_{z,2}}{\epsilon_2}H_{y,2} \\
-  %\Aboxed{
-  \frac{k_{z,1}}{\epsilon_1}        & =\frac{k_{z,2}}{\epsilon_2}.
-  %}
-  \label{eqn:sprcondition}
+	\frac{k_{z,1}}{\epsilon_1}H_{y,1} & =\frac{k_{z,2}}{\epsilon_2}H_{y,2} \\
+	%\Aboxed{
+	\frac{k_{z,1}}{\epsilon_1}        & =\frac{k_{z,2}}{\epsilon_2}.
+	%}
+	\label{eqn:sprcondition}
 \end{align}
 
 \Equation{eqn:sprcondition} is the surface plasmon resonance condition for

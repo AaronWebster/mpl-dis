@@ -1,0 +1,5 @@
+# latexindent configuration for consistent two-space indentation
+# Applies to all LaTeX sources in this repository
+indentPreamble: 1
+defaultIndent: '  '
+tabReplacement: '  '

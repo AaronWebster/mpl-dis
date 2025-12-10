@@ -1,14 +1,14 @@
 \subsection{Type \Rmnum{1} Events: Single Scattering Involving the Tip}
 The most dominant features of weirdospace are known as {\it primary
-    stripes}.  Primary stripes are thought to arise from single scattering off
+		stripes}.  Primary stripes are thought to arise from single scattering off
 the tip.  Consider the phase accumulation for this event type.  It consists
 of only two terms: the local phase $\varphi_\mathrm{l,tip}$ sampled by the tip
 position $(x_\mathrm{tip},y_\mathrm{tip})$, and the phase to the far field
 $\varphi_\mathrm{ff,tip}$.  The intensity in weirdospace for primary stripes is
 \begin{align}
-  E_\mathrm{\Rmnum{1}}=
-  A_\mathrm{\Rmnum{1}}\;
-  e^{i(\varphi_\mathrm{l,tip}+\varphi_\mathrm{ff,tip})}
+	E_\mathrm{\Rmnum{1}}=
+	A_\mathrm{\Rmnum{1}}\;
+	e^{i(\varphi_\mathrm{l,tip}+\varphi_\mathrm{ff,tip})}
 \end{align}
 where an argument $a e^{i \Phi}$, representing is a fixed background phase required to
 produce any structure at all is always assumed to be present.  As outlined in Bert's thesis, there is
@@ -26,10 +26,10 @@ conversely are suppressed in all where it is not.
 Single scattering not involving the tip can be thought of as the
 superposition of all single scattering events from all scatterers.
 \begin{align}
-  E_\mathrm{\Rmnum{2}}=
-  \sum_{n=0}^{N}
-  A_{\mathrm{\Rmnum{2}},n}\;
-  e^{i(\varphi_{\mathrm{l},n}+\varphi_{\mathrm{ff},n})}
+	E_\mathrm{\Rmnum{2}}=
+	\sum_{n=0}^{N}
+	A_{\mathrm{\Rmnum{2}},n}\;
+	e^{i(\varphi_{\mathrm{l},n}+\varphi_{\mathrm{ff},n})}
 \end{align}
 In the far field the superposition of many waves with phase terms
 $\varphi_{\mathrm{l},n}$ and $\varphi_{\mathrm{ff},n}$, themselves
@@ -44,7 +44,7 @@ and uniformly distributed. By the Central Limit Theorem, for large $N$,
 the real and imaginary components of the field approach independent Gaussian
 distributions with zero mean. This can be expressed as:
 \begin{align}
-  E_\mathrm{\Rmnum{2}} = X + iY
+	E_\mathrm{\Rmnum{2}} = X + iY
 \end{align}
 where $X$ and $Y$ are independent Gaussian random variables with zero mean
 and equal variance $\sigma^2$.
@@ -52,7 +52,7 @@ and equal variance $\sigma^2$.
 The resulting intensity $I = |E_\mathrm{\Rmnum{2}}|^2 = X^2 + Y^2$
 therefore follows an Exponential distribution:
 \begin{align}
-  P(I) = \frac{1}{\langle I \rangle} e^{-I/\langle I \rangle}
+	P(I) = \frac{1}{\langle I \rangle} e^{-I/\langle I \rangle}
 \end{align}
 where $\langle I \rangle = 2\sigma^2$ is the mean intensity. This result
 is formally known as Rayleigh statistics for the amplitude, and the
@@ -72,7 +72,7 @@ is the local tip phase.  This manifests itself in weirdospace as a fixed
 background at the plasmon frequency (the ``horizontal bars'') as a wave of
 the form
 \begin{align}
-  E_\mathrm{\Rmnum{3}a}= A_\mathrm{\Rmnum{3}a}\;e^{i(k_\mathrm{sp}x)}
+	E_\mathrm{\Rmnum{3}a}= A_\mathrm{\Rmnum{3}a}\;e^{i(k_\mathrm{sp}x)}
 \end{align}
 This can easily be seen in the \SI{180}{\degree} scattering direction for
 all permutations which include multiple scattering involving the tip.
@@ -83,7 +83,7 @@ Again, here I haven't reached the result analytically, but numerical
 estimates confirm that, say for an infinite sum of cosines and a random
 variable $p_n$
 \begin{align}
-  \lim_{N\to\infty}\sum_{n=0}^{N}\frac{\cos(r+p_n)}{N}=\cos(r+\vartheta)
+	\lim_{N\to\infty}\sum_{n=0}^{N}\frac{\cos(r+p_n)}{N}=\cos(r+\vartheta)
 \end{align}
 where $\vartheta$ is a fixed phase.
 
@@ -94,9 +94,9 @@ the phase to the far field is all which is preserved.  This manifests
 itself as a set of stripes of fixed wavelength, making a complete rotation
 every rotation around the ring.
 \begin{align}
-  E_\mathrm{\Rmnum{3}b}=
-  A_\mathrm{\Rmnum{3}b}\;
-  e^{i k_\mathrm{sp}\left(x_n\cos\phi+y_n\sin\phi\right)}
+	E_\mathrm{\Rmnum{3}b}=
+	A_\mathrm{\Rmnum{3}b}\;
+	e^{i k_\mathrm{sp}\left(x_n\cos\phi+y_n\sin\phi\right)}
 \end{align}
 At \num{0} and $\pi\;\si{\rad}$ these are indistinguishable from the previous
 case, and orthogonal at $\pi/2$ and $3\pi/4 \;\si{\rad}$.
@@ -124,8 +124,8 @@ would be a wave identical to that of single scattering off the tip, but
 excited by an evanescent field traveling in the opposite direction,
 $\varphi_{\mathrm{l}}\to-\varphi_{\mathrm{l}}$.
 \begin{align}
-  E_\mathrm{\chi}=A_\chi\;e^{i (-\varphi_{\mathrm{l}}+\varphi_{\mathrm{ff}})}
-  \label{eqn:cbs}
+	E_\mathrm{\chi}=A_\chi\;e^{i (-\varphi_{\mathrm{l}}+\varphi_{\mathrm{ff}})}
+	\label{eqn:cbs}
 \end{align}
 In Bert's thesis, the idea that secondary stripes were connected to CBS was
 rejected based on analysis of the experimental data showing secondary
@@ -137,21 +137,21 @@ secondary stripes along with the best fit orientation of such
 stripes to an experimental weirdospace image for a particular angle along
 the ring.
 \begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/nuback-expected.eps}
-    \caption{expected}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/bestfit.eps}
-    \caption{best fit from experiment}
-  \end{subfigure}
-  \caption{Two figures from Bert's thesis.  To the left, the expected
-    orientation of secondary stripes and to the right, the best fit from the
-    experimentally measured orientation.}
-  \label{fig:bertsdata1}
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/nuback-expected.eps}
+		\caption{expected}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/bestfit.eps}
+		\caption{best fit from experiment}
+	\end{subfigure}
+	\caption{Two figures from Bert's thesis.  To the left, the expected
+		orientation of secondary stripes and to the right, the best fit from the
+		experimentally measured orientation.}
+	\label{fig:bertsdata1}
 \end{figure}
 If you look carefully, you'll notice something strange about the figure:
 the secondary stripes almost perfectly ``line up''.  While the phase
@@ -160,7 +160,7 @@ cross-terms away from the backscattering cone, the phenomenon is
 fundamentally coherent rather than incoherent. The correct description
 requires coherent superposition:
 \begin{align}
-  I_\mathrm{total} = \left|A_\mathrm{\Rmnum{1}} E_\mathrm{\Rmnum{1}} + A_\chi E_\chi \right|^2
+	I_\mathrm{total} = \left|A_\mathrm{\Rmnum{1}} E_\mathrm{\Rmnum{1}} + A_\chi E_\chi \right|^2
 \end{align}
 where the amplitudes $A_\mathrm{\Rmnum{1}}$ and $A_\chi$ are determined by
 the respective scattering strengths, rather than an incoherent sum of
@@ -190,58 +190,58 @@ There are many more examples of secondary stripes and their relation to
 experiment in the Appendix.
 
 \begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    % primary stripes
-    \includegraphics[width=3cm]{events/primaryonly.eps}
-    \caption{$e^{i \alpha}$}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    % secondary stripes
-    \includegraphics[width=3cm]{events/secondaryonly.eps}
-    \caption{$e^{i \beta}$}
-  \end{subfigure}
-  % sum of squares
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/sumsq.eps}
-    \caption{$\left|e^{i \alpha}\right|^2 + \left|e^{i \beta}\right|^2$}
-  \end{subfigure}
-  % square of sum
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/primaryplussecondary1.eps}
-    \caption{$\left|e^{i \alpha} + e^{i \beta}\right|^2$}
-  \end{subfigure}
-  \caption{Adding phases from primary and secondary stripes results in a
-    characteristic interference pattern not consistent with the addition of
-    intensities.}
-  \label{fig:sumsq}
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		% primary stripes
+		\includegraphics[width=3cm]{events/primaryonly.eps}
+		\caption{$e^{i \alpha}$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		% secondary stripes
+		\includegraphics[width=3cm]{events/secondaryonly.eps}
+		\caption{$e^{i \beta}$}
+	\end{subfigure}
+	% sum of squares
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/sumsq.eps}
+		\caption{$\left|e^{i \alpha}\right|^2 + \left|e^{i \beta}\right|^2$}
+	\end{subfigure}
+	% square of sum
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/primaryplussecondary1.eps}
+		\caption{$\left|e^{i \alpha} + e^{i \beta}\right|^2$}
+	\end{subfigure}
+	\caption{Adding phases from primary and secondary stripes results in a
+		characteristic interference pattern not consistent with the addition of
+		intensities.}
+	\label{fig:sumsq}
 \end{figure}
 
 \begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/primaryplussecondary1.eps}
-    \caption{$\left|0.29\cdot E_\mathrm{\Rmnum{1}} + 0.08\cdot E_\chi \right|^2$}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/primaryplussecondary2.eps}
-    \caption{$\left|2.44\cdot E_\mathrm{\Rmnum{1}} + 0.23\cdot E_\chi \right|^2$}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=3cm]{events/cbsstripedata.eps}
-    \caption{experiment}
-  \end{subfigure}
-  \caption{By adjusting the relative amplitudes of the waves predicted for
-    primary and secondary stripes, good agreement can be reached with the
-    experimental data.}
-  \label{fig:increaseintensity}
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/primaryplussecondary1.eps}
+		\caption{$\left|0.29\cdot E_\mathrm{\Rmnum{1}} + 0.08\cdot E_\chi \right|^2$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/primaryplussecondary2.eps}
+		\caption{$\left|2.44\cdot E_\mathrm{\Rmnum{1}} + 0.23\cdot E_\chi \right|^2$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=3cm]{events/cbsstripedata.eps}
+		\caption{experiment}
+	\end{subfigure}
+	\caption{By adjusting the relative amplitudes of the waves predicted for
+		primary and secondary stripes, good agreement can be reached with the
+		experimental data.}
+	\label{fig:increaseintensity}
 \end{figure}
 We've actually seen this before in the Monte Carlo simulations, but didn't
 know what to make of it without an explanation of the weirdospace features

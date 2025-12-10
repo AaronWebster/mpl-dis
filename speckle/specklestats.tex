@@ -2,7 +2,7 @@ Consider an \gls{spp} excited by a focused beam in a prism-coupled setup.  Witho
 loss of generality, the center of the focused beam is defined as the origin
 of a three-dimensional Cartesian coordinate system $(x,y,z)$.  If the beam is
 incident in the $x$-$z$ plane, the \gls{spp} has an initial phase of $\exp(\mi \ksp
-  x)$.  In the present analysis, the out of plane components of the Gaussian
+	x)$.  In the present analysis, the out of plane components of the Gaussian
 beam are neglected.
 
 As mentioned in \Section{sec:coneexist}, surface roughness or other
@@ -11,14 +11,14 @@ scattering on the surface changes the direction, but not the magnitude, of the
 in-plane $k$-vector.  Upon re-radiation as a photon, the phase to a point
 $(x^\prime,y^\prime,z^\prime)$ in the far field is
 \begin{equation}
-  \exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
+	\exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
 \end{equation}
 In the present coordinate system, $z=0$ is the plane of scattering and the
 contribution to the field by a single scattering event is
 \begin{equation}
-  \mathbf{E}\big(x^\prime,y^\prime,z^\prime\big)=\exp\!\big( \mi \ksp x \big)
-  \exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
-  \label{eqn:sppsinglescattering}
+	\mathbf{E}\big(x^\prime,y^\prime,z^\prime\big)=\exp\!\big( \mi \ksp x \big)
+	\exp\!\left(\mi k_0 \sqrt{{(x-x^\prime)}^2 + {(y-y^\prime)}^2 + {(z-z^\prime)}^2}\right).
+	\label{eqn:sppsinglescattering}
 \end{equation}
 \Equation{eqn:sppsinglescattering} assumes single scattering: an
 \gls{spp} is scattered only once during its propagation.
@@ -32,8 +32,8 @@ re-radiated as a photon are randomly distributed following the treatment of
 field at each detector position $\mathbf{E}(\mathbf{r})$ is due to the
 coherent linear superposition of $N$ random phasors
 \begin{equation}
-  \mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \varphi_n},
-  \label{eqn:phasorsum}
+	\mathbf{E}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} a_n \me^{\mi \varphi_n},
+	\label{eqn:phasorsum}
 \end{equation}
 where $a_n$ and $\varphi_n$ is the amplitude and phase of the $n$th phasor
 and $\varphi$ is randomly distributed on the interval $(-\pi,\pi)$.  For
@@ -46,31 +46,31 @@ distribution function (PDF) $p_\mathbf{E}(\mathbf{E})$ of $\mathbf{E}(\mathbf{r}
 corresponding probability distribution function $p_I(I)$ of the intensity
 $I(\mathbf{r})=|\mathbf{E}(\mathbf{r})|^2$ is an exponential
 \begin{equation}
-  p_I(I) = \frac{1}{2\sigma_I^2}\exp\left(-\frac{I}{2\sigma_I^2}\right).
-  \label{eqn:propexp}
+	p_I(I) = \frac{1}{2\sigma_I^2}\exp\left(-\frac{I}{2\sigma_I^2}\right).
+	\label{eqn:propexp}
 \end{equation}
 
 Given that the $q$th moment of $p_I(I)$ is
 \begin{align}
-  \overline{I^q} & ={(2\sigma_I^2)}^q q!,
+	\overline{I^q} & ={(2\sigma_I^2)}^q q!,
 \end{align}
 the mean is $\bar{I} = 2\sigma_I^2$ and the standard deviation of the intensity distribution is
 \begin{align}
-  \sigma_{\text{intensity}} &= \sqrt{\overline{I^2} - \bar{I}^2} \\
-  &= \sqrt{2(2\sigma_I^2)^2 - (2\sigma_I^2)^2} \\
-  &= 2\sigma_I^2 = \bar{I}.
+	\sigma_{\text{intensity}} & = \sqrt{\overline{I^2} - \bar{I}^2}         \\
+	                          & = \sqrt{2(2\sigma_I^2)^2 - (2\sigma_I^2)^2} \\
+	                          & = 2\sigma_I^2 = \bar{I}.
 \end{align}
 Thus, the standard deviation equals the mean.  \Equation{eqn:propexp} can then be rewritten as
 \begin{equation}
-  p_I(I) = \frac{1}{\bar{I}}\exp\left(-\frac{I}{\bar{I}}\right).
-  \label{eqn:exppdf}
+	p_I(I) = \frac{1}{\bar{I}}\exp\left(-\frac{I}{\bar{I}}\right).
+	\label{eqn:exppdf}
 \end{equation}
 
 As a convenient measure, the \textit{contrast} of speckle, $C$, is defined as
 the ratio of the standard deviation to the mean of the intensity
 \begin{equation}
-  C=\frac{\sigma_{\text{intensity}}}{\bar{I}}\quad\text{(speckle contrast)}.
-  \label{eqn:specklecontrast}
+	C=\frac{\sigma_{\text{intensity}}}{\bar{I}}\quad\text{(speckle contrast)}.
+	\label{eqn:specklecontrast}
 \end{equation}
 The exponential PDF and unity contrast are often mentioned as the reason
 for the discincitive ``speckled'' appearance of speckle~\cite{goodman2007speckle}.

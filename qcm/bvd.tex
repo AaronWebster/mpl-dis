@@ -6,26 +6,26 @@ The typical circuit used to analyze \gls{qcm} behavior is called the
 $C_s$, an inductor $L_s$, and a resistor $R_s$ in series with a parallel
 capacitance $C_0$.
 \begin{center}
-  \begin{tikzpicture}[scale=0.75]
-    \draw (1,0) node[anchor=east] {}
-    to[short, o-*] (2,0)
-    to[short] (2,1)
-    to[R, l^=$R_s$] (4,1)
-    to[C, l^=$C_s$] (6,1)
-    to[L, l^=$L_s$] (8,1)
-    to[short] (8,-1)
-    to[short] (6,-1)
-    to[C, l^=$C_0$] (4,-1)
-    to[short] (2,-1)
-    to[short] (2,0);
-    \draw (9,0) node[anchor=west] {}
-    to[short, o-*] (8,0);
-  \end{tikzpicture}
+	\begin{tikzpicture}[scale=0.75]
+		\draw (1,0) node[anchor=east] {}
+		to[short, o-*] (2,0)
+		to[short] (2,1)
+		to[R, l^=$R_s$] (4,1)
+		to[C, l^=$C_s$] (6,1)
+		to[L, l^=$L_s$] (8,1)
+		to[short] (8,-1)
+		to[short] (6,-1)
+		to[C, l^=$C_0$] (4,-1)
+		to[short] (2,-1)
+		to[short] (2,0);
+		\draw (9,0) node[anchor=west] {}
+		to[short, o-*] (8,0);
+	\end{tikzpicture}
 \end{center}
 
 The top branch is the \textit{motional branch}, and relates to the crystal
 and its interaction with the environment.  The bottom is the \textit{static
-  branch}, representing the parasitic capacitances of the quartz and its driver.
+	branch}, representing the parasitic capacitances of the quartz and its driver.
 In the SRS QCM200\cite{srsqcmmanual}, and probably any other similar
 compensated phase locked oscillator circuit, $C_0$ is nulled with
 additional circuitry.  This is absolutely crucial, as the parallel $C_0$
@@ -37,26 +37,26 @@ Typical values for the \SI{1}{in} \SI{5}{\mega\hertz} AT cut quartz
 crystal used in with the QCM200\cite{srsqcmmanual} are
 
 \begin{table}[h]
-  \begin{tabular}{ll}
-    $R_s$ & \SI{400}{\ohm} (water), \SI{10}{\ohm} (air)                               \\
-    $C_s$ & \SI{33}{\femto\farad} (SRS manual)                                        \\
-    $L_s$ & \SI{30}{\milli\henry} (SRS manual), \SI{40}{\milli\henry} (my prediction) \\
-    $C_0$ & \SI{20}{\pico\farad} (SRS manual)
-  \end{tabular}
+	\begin{tabular}{ll}
+		$R_s$ & \SI{400}{\ohm} (water), \SI{10}{\ohm} (air)                               \\
+		$C_s$ & \SI{33}{\femto\farad} (SRS manual)                                        \\
+		$L_s$ & \SI{30}{\milli\henry} (SRS manual), \SI{40}{\milli\henry} (my prediction) \\
+		$C_0$ & \SI{20}{\pico\farad} (SRS manual)
+	\end{tabular}
 \end{table}
 
 The circuit may be also be solved using the following second order linear
 differential equation for charge
 \begin{equation}
-  L\ddot{q}+R\dot{q}+q/C = V(t)
+	L\ddot{q}+R\dot{q}+q/C = V(t)
 \end{equation}
 The natural frequency is
 \begin{equation}
-  f_0 = \frac{1}{2 \pi L C}
+	f_0 = \frac{1}{2 \pi L C}
 \end{equation}
 Where $C$ in the above equation takes into account both $C_0$ and $C_s$
 \begin{equation}
-  C = \frac{C_s C_0}{C_s + C_0}
+	C = \frac{C_s C_0}{C_s + C_0}
 \end{equation}
 
 This, as well as more complicated equivalent circuit models can also be
@@ -78,30 +78,30 @@ Liquid sensing under a rigid coating is modeled with a modified Butterworth
 van Dyke circuit as follows
 
 \begin{center}
-  \begin{tikzpicture}[scale=0.75]
-    \draw (1,0) node[anchor=east] {}
-    to[short, o-*] (2,0)
-    to[short] (2,1)
-    to[R, l^=$R_\text{s}$] (4,1)
-    to[C, l^=$C_\text{s}$] (6,1)
-    to[L, l^=$L_\text{s}$] (8,1)
-    to[L, l^=$L_\text{c}$] (10,1)
-    to[L, l^=$L_\text{l}$] (12,1)
-    to[R, l^=$R_\text{l}$] (14,1)
-    to[short] (14,0);
-    \draw (14,0) node[anchor=west] {}
-    to[short] (14,-1)
-    to[C, l^=$C_0$] (8,-1)
-    to[short] (2,-1);
-    \draw (14,0) node[anchor=west] {}
-    to[short] (14,-3)
-    to[C, l^=$C_\text{l}$] (6,-3)
-    to[short] (2,-3)
-    to[short] (2,0);
+	\begin{tikzpicture}[scale=0.75]
+		\draw (1,0) node[anchor=east] {}
+		to[short, o-*] (2,0)
+		to[short] (2,1)
+		to[R, l^=$R_\text{s}$] (4,1)
+		to[C, l^=$C_\text{s}$] (6,1)
+		to[L, l^=$L_\text{s}$] (8,1)
+		to[L, l^=$L_\text{c}$] (10,1)
+		to[L, l^=$L_\text{l}$] (12,1)
+		to[R, l^=$R_\text{l}$] (14,1)
+		to[short] (14,0);
+		\draw (14,0) node[anchor=west] {}
+		to[short] (14,-1)
+		to[C, l^=$C_0$] (8,-1)
+		to[short] (2,-1);
+		\draw (14,0) node[anchor=west] {}
+		to[short] (14,-3)
+		to[C, l^=$C_\text{l}$] (6,-3)
+		to[short] (2,-3)
+		to[short] (2,0);
 
-    %\draw (9,0) node[anchor=west] {}
-    % to[short, o-*] (14,0);
-  \end{tikzpicture}
+		%\draw (9,0) node[anchor=west] {}
+		% to[short, o-*] (14,0);
+	\end{tikzpicture}
 \end{center}
 
 

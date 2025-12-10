@@ -1,0 +1,25 @@
+## ChkTeX configuration for mpl-dis
+## Disable noisy warnings that are not actionable for this document set.
+CmdLine
+{
+  -n2   # prefer non-breaking spaces (allow regular spaces before refs)
+  -n10  # solo brace warnings (not reliable with subfigure constructs)
+  -n1   # trailing spaces after control sequences (common in macro definitions)
+  -n8   # dash length heuristics in custom math macros
+  -n11  # ellipsis handling in math macros
+  -n36  # long lines
+  -n24  # label placement spacing
+  -n27  # include/input expansion issues in generated figure grids
+  -n3   # brace placement in math; handled by tooling
+  -n6   # italic correction suggestions
+  -n9   # bracket/parenthesis matching in lists
+  -n12  # interword spacing suggestions
+  -n13  # intersentence spacing suggestions
+  -n15  # unmatched braces in PSTricks constructs
+  -n17  # unmatched brace heuristics (false positives on math)
+  -n26  # space before punctuation
+  -n32  # opening quote style heuristic
+  -n37  # space before parenthesis
+  -n38  # punctuation before quote
+  -n35  # suggestive math operator substitutions (deg, max)
+}
