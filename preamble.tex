@@ -44,8 +44,8 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Simple wrapper that just typesets content
-\newcommand{\subfigure}[1]{#1}
+% Wrapper that typesets content in a group - allows PSTricks content
+\newcommand{\subfigure}[1]{\begingroup #1\endgroup}
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
