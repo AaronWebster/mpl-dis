@@ -55,46 +55,28 @@ possibility is due to choosing the same scatterer twice.
 
 The second exit criteria comes when our path length has been exhausted.
 Since the scatterers are randomly distributed throughout the area, it is
-useful to know the mean free path for such a system.  Consider a unit
-square.  The average distance between any two points is given by the box
-integral
-\begin{align}
-  \int_0^1 \int_0^1 \int_0^1 \int_0^1 \sqrt{(x_1-y_1)+(x_2-y_2)}\; dx_1 dx_2 dy_1 dy_2
-\end{align}
-This is the {\it square line picking} problem.  Analytic evaluation of the
-above integral is complicated, but yields for its unit dimensions an
-average distance of
-\begin{align}
-  \overline{r} = \frac{\sqrt{2}+2+5\log\left(1+\sqrt{2}\right)}{15}
-\end{align}
-and the probability distribution
-\begin{align}
-  P_\mathrm{s}(l) = \left\{
-  \begin{array}{l l}
-    2l\left(l^2 -4l + \pi\right) & \quad  0\leq l \leq 1        \\
-    2l\left[4\sqrt{l^2-1}-\left(l^2+2-\pi\right)-4\arctan\left({\sqrt{l^2-1}}\right)\right]
-                                 & \quad 0 \leq l \leq \sqrt{2} \\
-  \end{array}
-  \right.
-\end{align}
-If we instead suppose a unit disk instead of a unit square, the mean
-distance can be found to be
-\begin{align}
-  \overline{r}= \frac{128}{45 \pi}
-\end{align}
-and probability distribution for a disk of radius $R$ is
-\begin{align}
-  P_\mathrm{d}(l)=\frac{4l}{\pi R^2} \arccos\left(\frac{l}{2R}\right) - \frac{2
-    l^2}{\pi R^3} \sqrt{1-\frac{l^2}{4 R^2}}
-\end{align}
-It is assumed that the superposition of the two probabilities should
-produce the statistical results found in \ref{fig:scatterhist}, but as yet
-I have not found a way to do so.
+useful to know the mean free path for such a system. The proper physical
+model for path length distributions in a scattering medium is given by the
+Beer-Lambert Law, which describes the exponential attenuation of intensity
+as light propagates through a medium with scatterers.
 
-These line picking problems are useful because they characterize how many
-scatterers on average a plasmon will visit until exiting in the Monte Carlo
-simulation.  They also reveal a limitation: as the scattering density is
-increased, a plasmon as simulated does not visit more scatterers, nor does
-its mean free path decrease.  Rather, the result of increasing the number
-of scatterers is only to suppress single scattering off the tip.  This may
-or may not be physical.
+For a plasmon propagating through a medium with scatterer density $\rho$
+and scattering cross-section $\sigma$, the probability that the plasmon
+travels a distance $l$ before scattering follows an exponential distribution:
+\begin{align}
+  P(l) = \frac{1}{\Lambda} e^{-l/\Lambda}
+\end{align}
+where $\Lambda = \frac{1}{\rho \sigma}$ is the mean free path, which
+depends on both the scatterer density $\rho$ and the scattering
+cross-section $\sigma$. This exponential decay naturally emerges from
+considering that the probability of scattering in an infinitesimal distance
+$dl$ is proportional to $\rho \sigma \, dl$, leading to the differential
+equation $dP/dl = -P/\Lambda$ whose solution is the exponential form above.
+
+The simulation must physically enforce this exponential decay model rather
+than relying on geometric fixed limits. This ensures that as the scattering
+density is increased, the plasmon visits more scatterers and the mean free
+path decreases appropriately, consistent with physical scattering theory.
+The hard path length cutoff used in the current implementation should be
+understood as an artificial boundary condition rather than a fundamental
+physical constraint.
