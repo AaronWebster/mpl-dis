@@ -44,10 +44,21 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Ultra-simple transparent wrapper that just passes through content
+% Simple transparent wrapper using \def instead of \newcommand
 % This prevents TeX capacity overflow with PSTricks nested in \multido loops
-% The simplest possible implementation to avoid any macro expansion issues
-\long\def\subfigure#1{#1}
+% Handles optional caption argument but ignores it to avoid grouping issues
+\makeatletter
+\long\def\subfigure{\futurelet\next\subfigure@check}
+\long\def\subfigure@check{%
+  \ifx\next[%
+    \expandafter\subfigure@opt
+  \else
+    \expandafter\subfigure@noopt
+  \fi
+}
+\long\def\subfigure@opt[#1]#2{#2}
+\long\def\subfigure@noopt#1{#1}
+\makeatother
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
