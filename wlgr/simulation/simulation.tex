@@ -1,0 +1,194 @@
+A parallel Monte Carlo simulation was written to model plasmon scattering.
+It assumes the geometry shown in Figure \ref{fig:plasmongeo} consisting of
+\begin{itemize}
+  \item An elliptical {\it illuminated region}, representing the incident evanescent
+        field used to excite plasmons on the surface.  This ellipse has
+        radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.
+  \item A {\it tip} - a single movable scatterer representing the STM tip.
+  \item The {\it scan area}, a square area wherein the tip rasters, typically
+        $128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.
+  \item {\it Scatterers}, fixed point scatterers (usually \num{20})
+        distributed randomly in a square of $8.8281\times\SI{8.8281}{\micro\meter}$
+        where the plasmon can visit, and
+  \item A {\it trajectory} or {\it path} meaning the ordered sequence of scatterers a
+        plasmon visits before exiting the system.  The trajectory has a typical maximum
+        path length of \SI{18}{\micro\meter}.
+\end{itemize}
+\begin{figure}
+  \centering
+  \begin{pspicture}(-4.41405,-4.41405)(4.41405,4.41405)
+    % tip
+    \psdot[dotstyle=triangle,linecolor=orange](0.2,-0.3)
+    % scan area
+    \psframe[linestyle=dashed,linecolor=green,dash=0.1](-1.35,-1.35)(1.35,1.35)
+    \psclip{\psframe[linestyle=none](-4.41405,-4.41405)(4.41405,4.41405)}
+    % illuminated area
+    \psellipse[linestyle=dashed,linecolor=red,dash=0.1 0.05](0,0)(5,3)
+    \endpsclip
+    \psaxes[labels=none,axesstyle=frame,tickstyle=inner,ticksize=0
+      4pt,Ox=-5,Oy=-5]{-}(-4.41405,-4.41405)(4.41405,4.41405)
+    \psset{dotstyle=Basterisk,linecolor=blue}
+    % random scatterers
+    \psdot[](1.08675765054645,-1.15339223391766)
+    \psdot[](-1.65945473768577,3.30126294690662)
+    \psdot[](3.08452901035693, 3.75801196082581)
+    \psdot[](-0.298028242005936, -0.947682947635213)
+    \psdot[](-1.13254778504099,-2.86291168735803)
+    \psdot[](-2.42224615064296,3.94409083629355)
+    \psdot[](2.84552547917312, -3.06371460124055)
+    \psdot[](-3.65079702863291,-0.125947393237618)
+    \psdot[](0.816143940611938,2.47247755178442)
+    \psdot[](3.66121582314356, -1.29098349555369)
+    \psdot[](2.41348287067284, 2.00794065198278)
+    \psdot[](3.73678615525102, 3.90756858304069)
+    \psdot[](1.64323248166686, 3.07351951851559)
+    \psdot[](1.79314213547156, -1.92551152476177)
+    \psdot[](-3.77510373532563,-2.39690980082588)
+    % line discribing a path
+    \psset{linestyle=dotted,dotsep=2pt,linecolor=gray}
+    \psline[](0.2,-0.3)(-0.298028242005936, -0.947682947635213)
+    \psline[](-0.298028242005936, -0.947682947635213)(-1.13254778504099,-2.86291168735803)
+    \psline[](-1.13254778504099,-2.86291168735803)(-3.65079702863291,-0.125947393237618)
+    \psline[](-3.65079702863291,-0.125947393237618)(3.73678615525102, 3.90756858304069)
+    % bunch of labels in a parbox
+    \rput[l](-4,-3.85){\parbox{5cm}{
+        \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  illuminated region} \ncline[linestyle=dashed,linecolor=red,dash=0.1 0.05]{A}{B} \\
+        \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  scan area} \ncline[linestyle=dashed,linecolor=green,dash=0.1]{A}{B} \\
+      }}
+    \rput[l](0,-3.85){\parbox{5cm}{
+        \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=Basterisk,linecolor=blue]{A}} \hskip 0.5cm \Rnode{B}{  scatterers} \\
+        \rput[c](0.25cm,0.7ex){\dotnode[dotstyle=triangle,linecolor=orange]{A}} \hskip 0.5cm \Rnode{B}{  tip} \\
+      }}
+    \rput[l](2.5,-3.85){\parbox{5cm}{
+        \Rnode{A}{} \hskip 0.5cm \Rnode{B}{  path} \ncline[linestyle=dotted,dotsep=2pt,linecolor=gray]{A}{B} \\
+      }}
+  \end{pspicture}
+  \psset{linecolor=black}
+  \caption{Definition of terms: geometry for the Monte Carlo scattering
+    simulation}
+  \label{fig:plasmongeo}
+\end{figure}
+
+The plasmon is assumed to be a time independent monochromatic plane wave
+of the form $E(\mathbf{r})=e^{ik_\mathrm{sp}\mathbf{r}}$, where
+$k_\mathrm{sp}$ is the plasmon wavevector and $\mathbf{r}$ is some
+spatial variable.  The plasmon trajectories are modeled as follows:
+First, a random scatterer with index $n$ and coordinates $(x_n,y_n)$ is
+chosen within the illuminated region as the first scatterer a plasmon
+visits.  Since the illuminated region always encloses the scan area, we are
+guaranteed at least one scatterer (the tip) to choose from.  The plasmon
+initializes with local phase $\varphi_\mathrm{l,n}=k_\mathrm{sp}x_n$
+representing the local phase advance from the (arbitrary) point where the
+plasmon is excited by the (linear in either $x$ or $y$) evanescent field to
+the first scatterer.  Next, scatterers are randomly and sequentially chosen
+from among all possible scatterers including the tip and the total path
+length accumulated as the plasmon visits each scatterer.  The trajectory
+ends when
+\begin{itemize}
+  \item The same scatterer is visited twice in a row, or
+  \item The total accumulated path length exceeds a pre-defined limit
+        (\SI{18}{\micro\meter}).
+\end{itemize}
+This process is repeated many times for each tip position in the scan area.
+Usually \numrange{250000}{1000000} trajectories will be used for each point
+of the $128\times128$ grid.  During this process the path length, and
+therefore the total phase from multiple scattering at $K$ sites
+\begin{align}
+  \varphi_\mathrm{ms,n}=\sum_{k=0}^{K-1} \sqrt{(x_{k+1}-x_k)^2+(y_{k+1}-y_k)^2}
+\end{align}
+is, along with the final scatterer, saved.
+
+The ultimate output from the Monte Carlo simulation consists of {\it
+    topology maps}, colloquially dubbed {\it weirdospace}, having the same pixel
+dimensions as the scan area.  Each weirdospace image represents, for each
+pixel, the far field phase and intensity of a particular point at a certain
+angle along the plasmon ring for the respective tip position in the scan
+area.  The weirdospace image for each angle $\phi$ along the ring is
+calculated by adding a final phase $\varphi_\mathrm{ff,n}$ equal to the
+propagation from the final scatterer to the far field along plasmon
+scattering angle $\theta_\mathrm{sp}\approx \SI{44}{\degree}$.  This is
+\begin{align}
+  \varphi_\mathrm{ff,n} = k_0 \sin
+  \theta_\mathrm{sp}\left(x_n\cos\phi+y_n\sin\phi\right)
+\end{align}
+Where $k_\mathrm{sp}=k_0\sin \theta_\mathrm{sp}$.  Each path therefore
+represents a wave of the form
+\begin{align}
+  E_n=e^{i(\varphi_\mathrm{l}+\varphi_\mathrm{ms}+\varphi_\mathrm{ff})}
+\end{align}
+And the total far field intensity is the linear superposition of these
+waves
+\begin{align}
+  E_\mathrm{total}(\phi) =
+  \left|\sum_{n=0}^{N} E_n\right|^2
+\end{align}
+
+In total, the program writes the following data
+\begin{itemize}
+  \item Weirdospace images in a 64 bit floating point HDF5 files.  The images
+        are names {\tt XXXXX-scatter.h5}, where {\tt XXXXX} represents the angle
+        in degrees of that particular frame along the ring.  Both the phase and
+        intensity are stored in each file.
+  \item {\tt ring.dat}, a tab separated values file containing the angle,
+        mean intensity, and variance of intensity for each weirdospace image.  This
+        file is no longer created by the main program, but computed from the output
+        by a supporting script {\tt mkring.sh}.
+  \item {\tt parameters}, a file containing program variables, scatterer
+        locations, and statistics.  The parameters are as shown in Table
+        \ref{tbl:parameters}.
+        \begin{table}
+          \label{tbl:parameters}
+          \begin{center}
+            \begin{tabular}{ll}
+              \toprule
+              parameter          & description                                     \\
+              \midrule
+              {\tt SX}, {\tt SY} & integer size of scan area                       \\
+              {\tt ELLIPSE\_A}   & first radius of elliptical illuminated area     \\
+              {\tt ELLIPSE\_B}   & second radius of elliptical illuminated area    \\
+              {\tt LAMBDA}       & wavelength of incident light, in microns        \\
+              {\tt PATHLEN}      & maximum path length for a plasmon               \\
+              {\tt ENTIREAREA}   & square boundary for random scatterer generation \\
+              {\tt SCANAREA}     & dimensions of the scan area in microns          \\
+              {\tt EVENTS}       & events per point in the scan area               \\
+              {\tt NSCAT}        & number of randomly distributed scatterers       \\
+              \bottomrule
+            \end{tabular}
+          \end{center}
+          \caption{Explanation of variables used in the {\tt parameters} file.}
+        \end{table}
+        At the end there is a section called {\tt STATS}.  The first column of this
+        section represents the number of scatterers visited, the second the
+        percentage of all trajectories including exactly this many scatterers, and
+        the third column the percentage of those trajectories included the tip in
+        some way.  The first row is the sum of all the following data.
+\end{itemize}
+
+The weirdospace images are colored in such a way as to show both phase and
+intensity information at the same time.  This is done by mapping the
+information onto a circular coordinate system as shown in Figure
+\ref{fig:hsv}, where the intensity is mapped to the magnitude of the radial
+component $r$ and phase to the angle $\theta$.
+\begin{figure}
+  \begin{center}
+    \psset{unit=1cm}
+    % made this picture with the gimp... has HSV effect built right in
+    \begin{overpic}[width=5.0cm,height=5.0cm]{simulation/hsvradial.eps}
+      \begin{pspicture}(-2.5,-2.5)(2.5,2.5)
+        \pnode(0,0){C} % center
+        \pnode(! 90 sin 2.5 mul 90 cos 2.5 mul){A} % edge 1
+        \pnode(! 55 sin 2.5 mul 55 cos 2.5 mul){B} % edge 2
+        \psset{linecolor=white}
+        \ncline{->}{C}{B}\taput{{\white$r$}} % line to edge 2
+        \ncline{->}{C}{A} % line to edge 1
+        \pstMarkAngle[]{A}{C}{B}{{\white$\theta$}} % mark the angle
+      \end{pspicture}
+    \end{overpic}
+  \end{center}
+  \caption{Weirdospace images are colored by using the above model based on a
+    circular coordinate system.  Intensity is mapped to the radial component
+    $r$ and phase the angle $\theta$.}
+  \label{fig:hsv}
+\end{figure}
+This coding scheme is identical to that which can be produced in HSV color
+space with the saturation always being set to unity.

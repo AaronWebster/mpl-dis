@@ -1,0 +1,38 @@
+\begin{figure}
+  \centering
+  \readdata{\dataa}{radialac/wonky1b.ac}
+  \readdata{\datab}{radialac/wonky2b.ac}
+  \readdata{\datac}{radialac/wonky3b.ac}
+  \readdata{\datad}{radialac/wonky4b.ac}
+  \readdata{\datae}{radialac/wonky5b.ac}
+  \readdata{\dataf}{radialac/wonky6b.ac}
+  \psset{yAxisLabel=,xAxisLabel=px}
+  \begin{psgraph}[Dx=10,Dy=0.2](0,0)(40,1){12.0cm}{5cm}
+    \listplot[linecolor=red]{\dataa}
+    \listplot[linecolor=orange]{\datab}
+    \listplot[linecolor=yellow]{\datac}
+    \listplot[linecolor=green]{\datad}
+    \listplot[linecolor=blue]{\datae}
+    \listplot[linecolor=purple]{\dataf}
+  \end{psgraph}
+  \psset{unit=2.5cm}
+  \psset{yAxisLabel=,xAxisLabel=px}
+  \begin{pspicture}(0,0)(6,1.5)
+    \rput[bl](0,0){\includegraphics[width=2.5cm]{radialac/1b.eps}}
+    \psframe[dimen=outer,linecolor=red](0,0)(1,1)
+    \rput[bl](1,0){\includegraphics[width=2.5cm]{radialac/2b.eps}}
+    \psframe[dimen=outer,linecolor=orange](1,0)(2,1)
+    \rput[bl](2,0){\includegraphics[width=2.5cm]{radialac/3b.eps}}
+    \psframe[dimen=outer,linecolor=yellow](2,0)(3,1)
+    \rput[bl](3,0){\includegraphics[width=2.5cm]{radialac/4b.eps}}
+    \psframe[dimen=outer,linecolor=green](3,0)(4,1)
+    \rput[bl](4,0){\includegraphics[width=2.5cm]{radialac/5b.eps}}
+    \psframe[dimen=outer,linecolor=blue](4,0)(5,1)
+    \rput[bl](5,0){\includegraphics[width=2.5cm]{radialac/6b.eps}}
+    \psframe[dimen=outer,linecolor=purple](5,0)(6,1)
+  \end{pspicture}
+  \caption{Radially averaged autocorrelations taken in some of the
+    dark areas around the ring for the experimental weirdospace images.  Units
+    are in pixels.}
+  \label{fig:radialac}
+\end{figure}
