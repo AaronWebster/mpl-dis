@@ -5,7 +5,7 @@ TARGET=mpl-dis
 all: $(TARGET).pdf
 
 single:
-	pdflatex -shell-escape $(TARGET).tex
+	pdflatex -interaction=nonstopmode -halt-on-error -shell-escape $(TARGET).tex
 
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
