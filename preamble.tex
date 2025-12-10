@@ -44,18 +44,14 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Wrapper that typesets content directly - allows PSTricks content
+% Transparent wrapper that passes through content without grouping
+% This prevents TeX capacity overflow with PSTricks nested in \multido loops
 % Supports both \subfigure{content} and \subfigure[caption]{content}
-% Using simple braces to avoid group nesting issues with PSTricks
 \makeatletter
 \newcommand{\subfigure}[2][]{%
-  \if\relax\detokenize{#1}\relax
-    % No caption provided
-    {#2}%
-  \else
-    % Caption provided - ignore it for now, just typeset content
-    {#2}%
-  \fi
+  % Simply output the content without any braces or grouping
+  % This allows PSTricks commands to work properly inside \multido loops
+  #2%
 }
 \makeatother
 
