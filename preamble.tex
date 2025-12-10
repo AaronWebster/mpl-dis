@@ -47,15 +47,17 @@
 % Wrapper that typesets content directly - allows PSTricks content
 % Supports both \subfigure{content} and \subfigure[caption]{content}
 % Using simple braces to avoid group nesting issues with PSTricks
+\makeatletter
 \newcommand{\subfigure}[2][]{%
-  \ifx&#1&%
+  \if\relax\detokenize{#1}\relax
     % No caption provided
     {#2}%
-  \else%
+  \else
     % Caption provided - ignore it for now, just typeset content
     {#2}%
-  \fi%
+  \fi
 }
+\makeatother
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
