@@ -2,6 +2,35 @@
 
 This document identifies errors in logic, reasoning, and implementation found in the mpl-dis repository and tracks their resolution.
 
+## ✅ MATLAB to Python Migration Complete
+
+**Status:** All MATLAB scripts have been removed and replaced with Python equivalents where needed.
+
+### Completed Actions:
+- ✅ Converted priority QCM figure generation scripts to Python (3 files)
+  - `generate_temp_plots.py` (replaces showtempairwater.m)
+  - `generate_showtempair.py` (replaces showtempair.m)
+  - `generate_showtempwater.py` (replaces showtempwater.m)
+- ✅ Removed all 98 MATLAB .m files from repository
+- ✅ Removed includes/matlab2tikz/ library
+- ✅ Updated build system (Makefile) to generate figures via Python
+- ✅ Made generated .tex files build artifacts (excluded from git)
+- ✅ Updated documentation (colophon.tex, qcm/figures/README.md)
+- ✅ Achieved 90-96% file size reduction for generated figures
+
+### Benefits:
+- No proprietary software dependencies (MATLAB removed)
+- Much smaller output files (59KB vs 626KB)
+- Faster generation (no MATLAB startup time)
+- Exact dependencies specified in requirements.txt
+- Reproducible builds with open-source tools only
+
+### Build Process:
+```bash
+make qcm-figures  # Generate Python figures
+make all          # Build full document
+```
+
 ## Python Code Issues
 
 ### ✅ FIXED: Python 2 vs Python 3 Compatibility Issues
