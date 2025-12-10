@@ -77,9 +77,38 @@ the first scatterer of a multiple scattering process (e.g.\ scatterers
 1, 13, 8, 4, and 7).
 
 \subsection{Phase Accumulation and Extension to the Far Field}
+
+\subsubsection{SPP Green's Function Formalism}
 The local in-plane scattering process in the simplified model of
 \Figure{fig:plasmongeosimple} will now be extended to describe light in the
-cone.  Assume that each scatterer has a location given
+cone.  To rigorously formalize the propagation of \glspl{spp}, we first introduce
+the Green's function for a point source on a metal-dielectric interface.
+
+For a two-dimensional system, the field at position $\mathbf{r}$ due to a source
+at $\mathbf{r'}$ is given by the Hankel function of the first kind:
+\begin{equation}
+  G(\mathbf{r}, \mathbf{r'}) = \frac{\mi}{4} H_0^{(1)}(k_{sp} |\mathbf{r} - \mathbf{r'}|),
+  \label{eqn:greenfunction}
+\end{equation}
+where $H_0^{(1)}$ is the zeroth-order Hankel function of the first kind, and
+$k_{sp}$ is the \gls{spp} wavevector.  This Green's function describes the
+cylindrical wave propagation characteristic of surface waves on a two-dimensional
+interface.
+
+In the far-field limit ($k_{sp}|\mathbf{r} - \mathbf{r'}| \gg 1$), the Hankel
+function has the asymptotic form:
+\begin{equation}
+  G(\mathbf{r}, \mathbf{r'}) \approx \sqrt{\frac{1}{2\pi k_{sp} |\mathbf{r} - \mathbf{r'}|}} 
+  \me^{\mi (k_{sp} |\mathbf{r} - \mathbf{r'}| - \pi/4)}.
+  \label{eqn:greenfunctionasymptotic}
+\end{equation}
+This asymptotic form explicitly shows the cylindrical decay of the \gls{spp} amplitude
+with distance ($\propto r^{-1/2}$) and includes the characteristic $\pi/4$ phase
+shift.  The decay behavior, previously absorbed into the arbitrary weighting
+factor $\mathbf{E}_n$ in the simplified treatment below, is now explicitly
+accounted for in the Green's function formalism.
+
+Assume that each scatterer has a location given
 by the Cartesian coordinates $(x,y,z=0)$, where the central point of the
 prism's hypotenuse on the far surface of the film is the origin
 $(0,0,0)$.  The central point of the focus of the incident Gaussian
@@ -136,6 +165,30 @@ refractive index change from prism to air has been neglected.  To a good
 approximation, the hemispherical geometry imparts only a constant phase to
 each scattering path, and therefore has no effect on the speckle pattern.
 
+\subsubsection{T-Matrix for Individual Scatterers}
+To move beyond the simplified point-scatterer approximation, we now assign a
+scattering potential to each defect.  In the Rayleigh regime, where the
+scatterer size $a$ is much smaller than the \gls{spp} wavelength ($a \ll \lambda_{sp}$),
+each scatterer can be modeled using a T-matrix formalism.
+
+The scattering potential for a collection of point-like scatterers located at
+positions $\mathbf{r}_j$ is approximated by a sum of Dirac delta functions:
+\begin{equation}
+  V(\mathbf{r}) = \sum_{j} \alpha \delta(\mathbf{r} - \mathbf{r}_j),
+  \label{eqn:scatteringpotential}
+\end{equation}
+where $\alpha$ is the scattering strength, related to the polarizability of each
+defect.  This potential represents the local perturbation to the \gls{spp}
+propagation caused by surface roughness, material inhomogeneities, or
+intentionally introduced scattering centers.
+
+The scattering amplitude for a single scattering event is determined by the
+T-matrix element, which for point-like scatterers in the Born approximation is
+directly proportional to $\alpha$.  This formalism provides a rigorous foundation
+for understanding how individual defects modify the in-plane momentum of
+\glspl{spp}, as described qualitatively in the simplified model of
+\Figure{fig:plasmongeosimple}.
+
 For a system with $M$ total scatterers and $N \leq M$ scatterers downstream of
 a creation point within the illuminated region, a single scattering process
 will produce $N$ unique phasors over $N$ paths.  The $n$th path has a
@@ -176,9 +229,43 @@ multiple scattering is
   \label{eqn:multiplescatteringphase}
 \end{equation}
 The length of $S_n$ and its ordered sequence is assumed to be produced by a stochastic
-process and will vary from path to path.  The field on the detector
-for multiple scattering is then given by the superposition of all paths from
-creation to detector
+process and will vary from path to path.  
+
+\subsubsection{Multiple Scattering and the Dyson Equation}
+The path summation in the multiple scattering formulation can be rigorously
+derived from the Lippmann-Schwinger equation, which describes scattering in the
+presence of a potential.  The total electric field $E(\mathbf{r})$ satisfies the
+integral equation:
+\begin{equation}
+  E(\mathbf{r}) = E_{\mathrm{inc}}(\mathbf{r}) + \int d\mathbf{r'} 
+  G_0(\mathbf{r}, \mathbf{r'}) V(\mathbf{r'}) E(\mathbf{r'}),
+  \label{eqn:lippmannschwinger}
+\end{equation}
+where $E_{\mathrm{inc}}(\mathbf{r})$ is the incident field, $G_0(\mathbf{r}, \mathbf{r'})$
+is the Green's function given in \Equation{eqn:greenfunction}, and $V(\mathbf{r'})$
+is the scattering potential defined in \Equation{eqn:scatteringpotential}.
+
+Iterating \Equation{eqn:lippmannschwinger} generates the Born series, which
+corresponds exactly to the path summation described in the simplified model:
+\begin{align}
+  E(\mathbf{r}) &= E_{\mathrm{inc}}(\mathbf{r}) \label{eqn:bornseries} \\
+  &\quad + \sum_j G_0(\mathbf{r}, \mathbf{r}_j) \alpha E_{\mathrm{inc}}(\mathbf{r}_j) 
+  \tag{\ref{eqn:bornseries}a} \label{eqn:bornfirst}\\
+  &\quad + \sum_{j} \sum_{k \neq j} G_0(\mathbf{r}, \mathbf{r}_j) \alpha 
+  G_0(\mathbf{r}_j, \mathbf{r}_k) \alpha E_{\mathrm{inc}}(\mathbf{r}_k) 
+  \tag{\ref{eqn:bornseries}b} \label{eqn:bornsecond}\\
+  &\quad + \cdots \nonumber
+\end{align}
+The first term (\ref{eqn:bornseries}) represents the incident field with no
+scattering.  The second term (\ref{eqn:bornfirst}) describes single scattering,
+where the field propagates from the source to scatterer $j$ and then to the
+observation point.  The third term (\ref{eqn:bornsecond}) represents double
+scattering via an intermediate scatterer $k$.  Higher-order terms continue this
+pattern, building up all possible scattering paths.
+
+This Born series provides the mathematical justification for the path integral
+formulation.  The field on the detector for multiple scattering is then given 
+by the superposition of all paths from creation to detector
 \begin{equation}
   \mathbf{E}(x^\prime,y^\prime,z^\prime) =
   \lim_{N\to\infty}
@@ -189,14 +276,51 @@ creation to detector
 \end{equation}
 
 \Equation{eqn:smicromsphase} is akin to the path integral formulation of
-quantum mechanics.  By letting $N\to\infty$, all possible sequences of $S_n$
-(again, produced by a yet unspecified stochastic process) will be explored by
-the multiple scattering paths weighted by $\mathbf{E}_n$.  In the present set
-of experiments with a \SI{50}{\milli\watt} diode laser, the limit in
+quantum mechanics.  The ordered scattering sequence $S_n$ corresponds to the
+choice of scatterer indices $\{j, k, \ldots\}$ in the Born series expansion
+(\ref{eqn:bornseries}), with the constraint that consecutive scatterers in the
+sequence are distinct ($j \neq k$ in the double scattering term, etc.).  By
+letting $N\to\infty$, all possible sequences of $S_n$ will be explored by the
+multiple scattering paths weighted by $\mathbf{E}_n$.  In the present set of
+experiments with a \SI{50}{\milli\watt} diode laser, the limit in
 \Equation{eqn:smicromsphase} is for all practical purposes fulfilled.
 Furthermore it will be assumed that the number of scatterers $M$ is sufficient
 to produce speckle with statistics given by the random phasor sum model
 (\Equation{eqn:phasorsum}).
+
+\subsubsection{Path Length Probability Distribution}
+The stochastic process governing the scattering sequence $S_n$ can be
+characterized by the probability distribution of path lengths within the
+scattering medium.  For sufficiently long paths ($L \gg l^*$, where $l^*$ is
+the transport mean free path), the photon transport is well-described by a
+diffusion approximation.
+
+The probability $P(L)$ that an \gls{spp} travels a total path length $L$ before
+exiting the system (either by absorption or re-radiation) is governed by the
+diffusion equation.  For a semi-infinite two-dimensional geometry, this
+distribution follows a Lévy-type form:
+\begin{equation}
+  P(L) \sim L^{-3/2} \exp\left(-\frac{L}{L_{\mathrm{abs}}}\right),
+  \label{eqn:pathlengthpdf}
+\end{equation}
+where $L_{\mathrm{abs}}$ is the characteristic absorption length, related to the
+imaginary part of the \gls{spp} wavevector.  The $L^{-3/2}$ power law arises
+from the two-dimensional diffusion process and reflects the probability of
+returning to the boundary after traveling a distance $L$ inside the medium.
+
+This probability density allows the discrete sum over paths in
+\Equation{eqn:smicromsphase} to be replaced with a continuous integral over path
+lengths:
+\begin{equation}
+  \mathbf{E}(x^\prime,y^\prime,z^\prime) \propto 
+  \int_0^\infty dL \, P(L) \, \mathbf{E}(L) \, \exp\!\big({\mi\varphi(L)}\big),
+  \label{eqn:pathintegral}
+\end{equation}
+where $\mathbf{E}(L)$ and $\varphi(L)$ represent the amplitude and phase
+accumulated along paths of length $L$.  This formulation connects the discrete
+scatterer model to the continuous description of \gls{spp} intensity diffusion
+within the film, providing a complete statistical framework for understanding the
+multiple scattering process.
 
 %\Equation{eqn:smicromsphase} also captures single scattering if $k=1$.
 
