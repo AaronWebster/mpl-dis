@@ -13,7 +13,10 @@ spell:
 $(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex")
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
-	latexmk -f -pdf -use-make $(TARGET).tex || (test -f $(TARGET).pdf && echo "PDF generated despite warnings" && exit 0)
+	latexmk -f -pdf -use-make $(TARGET).tex || \
+		(test -f $(TARGET).pdf && \
+		echo "PDF generated successfully despite warnings" && \
+		exit 0)
 
 # Remove build files plus all the latex turds.
 clean:
