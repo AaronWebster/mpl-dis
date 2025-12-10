@@ -34,7 +34,7 @@ def kx_photon_glass_tilted(omega):
 wp = (9.01*constants.e/constants.hbar)
 #(sqrt(1.0+e1))
 
-omega = linspace(2*pi*constants.c/2000e-9,2*pi*constants.c/300e-9,1000)
+omega = linspace(2*pi*constants.c/2000e-9,2*pi*constants.c/300e-9,500)
 f1 = [ kx_sp_metal_glass(x) for x in omega ]
 f2 = [ kx_sp_metal_vacuum(x) for x in omega ]
 f3 = [ kx_photon_vacuum(x) for x in omega ]
