@@ -45,6 +45,7 @@
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
 % Wrapper that typesets content in a group - allows PSTricks content
+% Note: wlgr only uses \subfigure{content}, not \subfigure[caption]{content}
 \newcommand{\subfigure}[1]{\begingroup #1\endgroup}
 
 \usepackage[acronym,xindy]{glossaries}
