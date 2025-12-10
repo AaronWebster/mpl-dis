@@ -26,7 +26,7 @@ jobs:
       - name: Build PDF
         run: make
       
-      - name: Set artifact tag
+      - name: Set tag name
         run: echo "tag=v$(date +'%Y.%m.%d').${{ github.run_number }}" >> $GITHUB_ENV
 
       - name: Create and push tag
@@ -36,8 +36,12 @@ jobs:
           git tag "$tag"
           git push origin "$tag"
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+      - name: Create GitHub Release with PDF
+        uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.tag }}
           name: ${{ env.tag }}
-          path: ./mpl-dis.pdf
+          body: ""              # no description, PDF-only release
+          files: ./mpl-dis.pdf  # attach only the PDF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
