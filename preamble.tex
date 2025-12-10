@@ -44,9 +44,10 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Wrapper that typesets content in a group - allows PSTricks content
+% Wrapper that typesets content directly - allows PSTricks content
 % Note: wlgr only uses \subfigure{content}, not \subfigure[caption]{content}
-\newcommand{\subfigure}[1]{\begingroup #1\endgroup}
+% Using bgroup/egroup instead of begingroup/endgroup to avoid nesting issues
+\newcommand{\subfigure}[1]{{#1}}
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
