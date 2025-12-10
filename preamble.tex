@@ -47,6 +47,7 @@
 % Simple transparent wrapper using \def instead of \newcommand
 % This prevents TeX capacity overflow with PSTricks nested in \multido loops
 % Handles optional caption argument but ignores it to avoid grouping issues
+% Note: @ symbols in macro names require \makeatletter...\makeatother wrapper
 \makeatletter
 \long\def\subfigure{\futurelet\next\subfigure@check}
 \long\def\subfigure@check{%
