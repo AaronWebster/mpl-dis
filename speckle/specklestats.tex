@@ -52,11 +52,15 @@ $I(\mathbf{r})=|\mathbf{E}(\mathbf{r})|^2$ is an exponential
 
 Given that the $q$th moment of $p_I(I)$ is
 \begin{align}
-  \bar{I}^q & ={(2\sigma_I^2)}^q q! \\
-            & =\bar{I}^q q!,
+  \overline{I^q} & ={(2\sigma_I^2)}^q q!,
 \end{align}
-the standard deviation is equal to the mean,
-$\sigma_I=\bar{I}$.  \Equation{eqn:propexp} can then be rewritten as
+the mean is $\bar{I} = 2\sigma_I^2$ and the standard deviation of the intensity distribution is
+\begin{align}
+  \sigma_{\text{intensity}} &= \sqrt{\overline{I^2} - \bar{I}^2} \\
+  &= \sqrt{2(2\sigma_I^2)^2 - (2\sigma_I^2)^2} \\
+  &= 2\sigma_I^2 = \bar{I}.
+\end{align}
+Thus, the standard deviation equals the mean.  \Equation{eqn:propexp} can then be rewritten as
 \begin{equation}
   p_I(I) = \frac{1}{\bar{I}}\exp\left(-\frac{I}{\bar{I}}\right).
   \label{eqn:exppdf}
@@ -65,7 +69,7 @@ $\sigma_I=\bar{I}$.  \Equation{eqn:propexp} can then be rewritten as
 As a convienent measure, the \textit{contrast} of speckle, $C$, is defined as
 the ratio of the standard deviation to the mean of the intensity
 \begin{equation}
-  C=\frac{\sigma_I}{\bar{I}}\quad\text{(speckle contrast)}.
+  C=\frac{\sigma_{\text{intensity}}}{\bar{I}}\quad\text{(speckle contrast)}.
   \label{eqn:specklecontrast}
 \end{equation}
 The exponential PDF and unity contrast are often mentioned as the reason
