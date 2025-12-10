@@ -6,17 +6,17 @@
       \setcounter{subfigure}{0}
       \subfigure{
         \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{../common/permute\ix}
+          \input{wlgr/common/permute\ix}
         \end{pspicture}
-        \includegraphics[width=12.0cm]{../primarystripes/\ix.eps}
+        \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}
         \rput[cl](0.05,0.5){\ix}
       }
     }
     \subfigure{ % last one with labels
       \begin{pspicture}(-0.25,0)(-0.05,1)
-        \input{../common/permute14}
+        \input{wlgr/common/permute14}
       \end{pspicture}
-      \includegraphics[width=12.0cm]{../primarystripes/14.eps}
+      \includegraphics[width=12.0cm]{wlgr/primarystripes/14.eps}
       \rput[cl](0.05,0.5){14}
       \psset{unit=1.5cm}
       \rput[ct](-0.55,-0.3){$\frac{7\pi}{4}$}
@@ -43,18 +43,18 @@
       \setcounter{subfigure}{0}
       \subfigure{
         \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{../common/permute\ix}
+          \input{wlgr/common/permute\ix}
         \end{pspicture}
         % this file name sucks because of the dot, but too lazy to change
-        \includegraphics[width=12.0cm]{../primarystripes/\ix.-intensity.eps}
+        \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}
         \rput[cl](0.05,0.5){\ix}
       }
     }
     \subfigure{
       \begin{pspicture}(-0.25,0)(-0.05,1)
-        \input{../common/permute14}
+        \input{wlgr/common/permute14}
       \end{pspicture}
-      \includegraphics[width=12.0cm]{../primarystripes/14.-intensity.eps}
+      \includegraphics[width=12.0cm]{wlgr/primarystripes/14.-intensity.eps}
       \rput[cl](0.05,0.5){14}
       \psset{unit=1.5cm}
       \rput[ct](-0.55,-0.3){$\frac{7\pi}{4}$}
@@ -84,22 +84,22 @@
       \subfigure{
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{../common/permute\ix}
+          \input{wlgr/common/permute\ix}
         \end{pspicture}
         \begin{psgraph}[Dx=0.1,labels=none](0,0)(1,0.08){14cm}{1.5cm}
           \psset{fillstyle=solid,fillcolor=red}
-          \input{../stats/ringpdf\ix}
+          \input{wlgr/stats/ringpdf\ix}
         \end{psgraph}
       }
     }
     \subfigure{
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
-        \input{../common/permute14}
+        \input{wlgr/common/permute14}
       \end{pspicture}
       \begin{psgraph}[Dx=0.1](0,0)(1,0.08){14cm}{1.5cm}
         \psset{fillstyle=solid,fillcolor=red}
-        \input{../stats/ringpdf14}
+        \input{wlgr/stats/ringpdf14}
       \end{psgraph}
     }
   \end{center}
@@ -119,25 +119,25 @@
       \subfigure{
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{../common/permute\ix}
+          \input{wlgr/common/permute\ix}
         \end{pspicture}
         \begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}
           \psset{fillstyle=solid,fillcolor=red}
-          \input{../stats/nhist\ix}
+          \input{wlgr/stats/nhist\ix}
           \psset{fillstyle=solid,fillcolor=blue}
-          \input{../stats/snhist\ix}
+          \input{wlgr/stats/snhist\ix}
         \end{psgraph}
       }
     }
     \subfigure{
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
-        \input{../common/permute14}
+        \input{wlgr/common/permute14}
       \end{pspicture}
       \begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}
         \psset{fillstyle=solid,fillcolor=red}
-        \input{../stats/nhist14}
-        \input{../stats/snhist14}
+        \input{wlgr/stats/nhist14}
+        \input{wlgr/stats/snhist14}
         \multido{\ry=1.5+1,\ix=1+1}{19}{%
           \rput[t](\ry,-0.15){\ix}
         }
@@ -163,10 +163,10 @@
       \subfigure{
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{../common/permute\ix}
+          \input{wlgr/common/permute\ix}
         \end{pspicture}
-        \readdata{\dataa}{../contrast/ring\ix.dat}
-        \readdata{\datab}{../contrast/cring\ix.dat}
+        \readdata{\dataa}{wlgr/contrast/ring\ix.dat}
+        \readdata{\datab}{wlgr/contrast/cring\ix.dat}
         \begin{psgraph}[Dx=20,Dy=10.2,Oy=0,labels=none](0,0)(360,1.2){14.0cm}{1.5cm}
           \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
           \listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}
@@ -176,10 +176,10 @@
     \subfigure{
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
-        \input{../common/permute14}
+        \input{wlgr/common/permute14}
       \end{pspicture}
-      \readdata{\dataa}{../contrast/ring14.dat}
-      \readdata{\datab}{../contrast/cring14.dat}
+      \readdata{\dataa}{wlgr/contrast/ring14.dat}
+      \readdata{\datab}{wlgr/contrast/cring14.dat}
       \pstScalePoints(1,1){180 div}{}
       \begin{psgraph}[dx=0.25,Dy=10.2,Oy=0,labels=x,trigLabels,trigLabelBase=4](0,0)(2,1.2){14.0cm}{1.5cm}
         \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
@@ -198,8 +198,8 @@
 % vortex guys
 \begin{figure}
   \begin{center}
-    \readdata{\dataa}{../vortex/zoom_intensity.dat}
-    \readdata{\datab}{../vortex/zoom_contrast.dat}
+    \readdata{\dataa}{wlgr/vortex/zoom_intensity.dat}
+    \readdata{\datab}{wlgr/vortex/zoom_contrast.dat}
     \psset{xunit=0.10cm,yunit=1cm}
 
     \begin{pspicture}(-10,-10)(10,10)
@@ -219,7 +219,7 @@
       }
 
       \rput{90}(0,0){
-        \includegraphics[width=21.1cm]{../vortex/sbs.eps}
+        \includegraphics[width=21.1cm]{wlgr/vortex/sbs.eps}
       }
 
       \rput[l]{90}(-45,8.5){\parbox{5cm}{
@@ -246,8 +246,8 @@
 \begin{figure}
   \begin{center}
     \psset{xunit=1.6711cm,yunit=4cm}
-    \readdata{\dataa}{../primarystripes/cone5.txt}
-    \readdata{\datab}{../primarystripes/acone5.dat}
+    \readdata{\dataa}{wlgr/primarystripes/cone5.txt}
+    \readdata{\datab}{wlgr/primarystripes/acone5.dat}
     \begin{pspicture}(0,0)(6.2832,1.5)
       \psaxes[trigLabelBase=2,dx=\psPiH,trigLabels,Dy=0.2]{-}(0,0)(6.2832,1.5)
       \listplot[linecolor=red,plotstyle=dots,dotstyle=o]{\dataa}
