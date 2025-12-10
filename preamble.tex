@@ -44,17 +44,21 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Transparent wrapper that passes through content without grouping
+% Simple transparent wrapper using \def instead of \newcommand
 % This prevents TeX capacity overflow with PSTricks nested in \multido loops
-% Accepts both \subfigure{content} and \subfigure[caption]{content} syntax
-% but ignores captions to maintain simplicity and prevent group nesting
+% Handles optional caption argument but ignores it to avoid grouping issues
+% Note: @ symbols in macro names require \makeatletter...\makeatother wrapper
 \makeatletter
-\newcommand{\subfigure}[2][]{%
-  % Simply output the content without any braces or grouping
-  % Captions (optional #1 parameter) are accepted but not processed
-  % This allows PSTricks commands to work properly inside \multido loops
-  #2%
+\long\def\subfigure{\futurelet\next\subfigure@check}
+\long\def\subfigure@check{%
+  \ifx\next[%
+    \expandafter\subfigure@opt
+  \else
+    \expandafter\subfigure@noopt
+  \fi
 }
+\long\def\subfigure@opt[#1]#2{#2}
+\long\def\subfigure@noopt#1{#1}
 \makeatother
 
 \usepackage[acronym,xindy]{glossaries}
