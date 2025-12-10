@@ -1,15 +1,24 @@
 \begin{figure}
 	\begin{center}
-		\psset{xAxisLabel=,yAxisLabel=}
-		\begin{psgraph}(0,0)(1.5,1.5){10cm}{4cm}
-			\psplot[linecolor=red]{0}{1}{x dup mul 4 x mul sub PI add 2 x mul mul}
-			\psplot[linecolor=red]{1}{1.4142}{4 x dup mul 1 sub sqrt mul x dup mul 2
-				add PI sub sub 4 x dup mul 1 sub sqrt ATAN mul sub 2 x mul mul}
-			\psplot[linecolor=blue]{0}{1}{4 x mul PI 0.5 dup mul mul div x 2 0.5 mul
-				div ACOS mul 2 x dup mul mul PI 0.125 mul div 1 x dup mul sub 4 0.5 dup mul
-				mul div sqrt mul sub}
-			\psxTick(1.4142){\sqrt{2}} % max distance for a square
-		\end{psgraph}
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=10cm,
+				height=4cm,
+				xmin=0, xmax=1.5,
+				ymin=0, ymax=1.5,
+				xlabel={},
+				ylabel={},
+				axis lines=left,
+				xtick={0,0.5,1.0,1.4142,1.5},
+				xticklabels={0,0.5,1.0,$\sqrt{2}$,1.5},
+				]
+				% Square distribution (red) - two parts
+				\addplot[red, domain=0:1, samples=100] {x^2*(4*x - pi - 2*x)};
+				\addplot[red, domain=1:1.4142, samples=100] {4*sqrt(x^2-1)*(x^2 - 2 - pi + 4*rad(atan(sqrt(x^2-1)))*x)*2*x};
+				% Disk distribution (blue)
+				\addplot[blue, domain=0:1, samples=100] {4*x/(pi*0.5^2)*rad(acos(x/(2*0.5)))*2*x^2/(pi*0.125) - sqrt(1-x^2)*4/(0.5^2)};
+			\end{axis}
+		\end{tikzpicture}
 	\end{center}
 	\caption{Probability distribution function for the square and disk line
 		picking problems.}

@@ -42,21 +42,27 @@ Bert also gives the expected wavelength of the primary stripes as
 This agrees very well with experimental data as was shown in Bert's thesis
 (Figure \ref{fig:bertconeangle}).
 \begin{figure}
-	\label{fig:bertconeangle}
 	\begin{center}
-		\psset{xunit=1.6711cm,yunit=4cm}
-		\readdata{\dataa}{primarystripes/cone5.txt}
-		\readdata{\datab}{primarystripes/acone5.dat}
-		\begin{pspicture}(0,0)(6.2832,1.5)
-			\psaxes[trigLabelBase=2,dx=\psPiH,trigLabels,Dy=0.2]{-}(0,0)(6.2832,1.5)
-			\listplot[linecolor=red,plotstyle=dots,dotstyle=o]{\dataa}
-			\psclip{\psframe[linestyle=none](0,0)(6,1.4)}
-			\listplot[linecolor=blue]{\datab}
-			\endpsclip
-		\end{pspicture}
+		\begin{tikzpicture}[x=1.6711cm, y=4cm]
+			\begin{axis}[
+				width=10.5cm,
+				height=6cm,
+				xmin=0, xmax=6.2832,
+				ymin=0, ymax=1.5,
+				xtick={0,0.7854,1.5708,2.3562,3.1416,3.9270,4.7124,5.4978,6.2832},
+				xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}{2}$,$\frac{7\pi}{4}$,$2\pi$},
+				ytick={0,0.2,...,1.4},
+				axis lines=left,
+				clip=true,
+				]
+				\addplot[red, only marks, mark=o] table {primarystripes/cone5.txt};
+				\addplot[blue, solid] table {primarystripes/acone5.dat};
+			\end{axis}
+		\end{tikzpicture}
 	\end{center}
 	\caption{Primary stripe angle as a function position around the ring:
 		experiment and theory.}
+	\label{fig:bertconeangle}
 \end{figure}
 
 If we analytically evaluate Equation \ref{eqn:primarystripes} to produce
@@ -65,30 +71,38 @@ simulation with only single scattering events included, an almost perfect
 agreement is achieved.
 
 \begin{figure}
-	\label{fig:basescatt}
 	\begin{center}
 		\begin{overpic}[width=416pt]{primarystripes/gbr.eps}
-			\psset{unit=52pt}
-			\begin{pspicture}(0,0)(1,8)
-				\psaxes[trigLabelBase=8,dx=1,trigLabels,Dx=1,ticksize=0,linewidth=0pt](0.5,0)(0,0)(8,0)[$\phi$,0][$ $,0]
-			\end{pspicture}
+			\begin{tikzpicture}[x=52pt, y=52pt]
+				% X-axis with trig labels
+				\draw (0.5,0) -- (8.5,0);
+				\foreach \x/\label in {0.5/$0$, 1.5/$\frac{\pi}{4}$, 2.5/$\frac{\pi}{2}$, 3.5/$\frac{3\pi}{4}$, 4.5/$\pi$, 5.5/$\frac{5\pi}{4}$, 6.5/$\frac{3\pi}{2}$, 7.5/$\frac{7\pi}{4}$, 8.5/$2\pi$} {
+					\node[below] at (\x,0) {\label};
+				}
+				\node[below] at (4.5,-0.5) {$\phi$};
+			\end{tikzpicture}
 		\end{overpic}
 	\end{center}
+	\label{fig:basescatt}
 \end{figure}
 
 \begin{figure}
-	\label{fig:singlescatcompare}
 	\begin{center}
 		\begin{overpic}[width=416pt]{primarystripes/singlescatsbs1.eps}
-			\psset{unit=52pt}
-			\begin{pspicture}(0,0)(1,8)
-				\psaxes[trigLabelBase=8,dx=1,trigLabels,Dx=1,ticksize=0,linewidth=0pt](0.5,0)(0,0)(8,0)[$\phi$,0][$ $,0]
-			\end{pspicture}
+			\begin{tikzpicture}[x=52pt, y=52pt]
+				% X-axis with trig labels
+				\draw (0.5,0) -- (8.5,0);
+				\foreach \x/\label in {0.5/$0$, 1.5/$\frac{\pi}{4}$, 2.5/$\frac{\pi}{2}$, 3.5/$\frac{3\pi}{4}$, 4.5/$\pi$, 5.5/$\frac{5\pi}{4}$, 6.5/$\frac{3\pi}{2}$, 7.5/$\frac{7\pi}{4}$, 8.5/$2\pi$} {
+					\node[below] at (\x,0) {\label};
+				}
+				\node[below] at (4.5,-0.5) {$\phi$};
+			\end{tikzpicture}
 		\end{overpic}
 	\end{center}
 	\caption{Comparison of analytic evaluation of Equation
 		\ref{eqn:primarystripes} (bottom) against a Monte Carlo simulation with
 		only single scattering off the tip included.}
+	\label{fig:singlescatcompare}
 \end{figure}
 
 \subsection{Evidence of Origin}
