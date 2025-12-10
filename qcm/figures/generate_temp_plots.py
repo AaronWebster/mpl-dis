@@ -92,6 +92,8 @@ def write_tikz_subplot(f, x, y, color_rgb, legend_label, xlabel, ylabel,
     f.write("    ]\n")
     
     # Write plot data
+    # Note: In the .tex file, mycolor1=blue and mycolor2=red (for clarity in LaTeX)
+    # This differs from MATLAB where mycolor(1,:)=red and mycolor(2,:)=blue
     f.write(f"    \\addplot [color=mycolor{1 if legend_label == 'Air' else 2},solid,forget plot]\n")
     f.write("    table[row sep=crcr]{%\n")
     
@@ -151,6 +153,7 @@ def generate_showtempairwater():
         f.write("%\n")
         f.write("%\n")
         f.write("% defining custom colors\n")
+        f.write("% Note: mycolor1=blue, mycolor2=red (differs from MATLAB's 1-based indexing)\n")
         f.write(f"\\definecolor{{mycolor1}}{{rgb}}{{{color_blue[0]:.5f},{color_blue[1]:.5f},{color_blue[2]:.5f}}}%\n")
         f.write(f"\\definecolor{{mycolor2}}{{rgb}}{{{color_red[0]:.5f},{color_red[1]:.5f},{color_red[2]:.5f}}}%\n")
         f.write("%\n")
