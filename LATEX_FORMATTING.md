@@ -18,23 +18,68 @@ latexindent is a Perl script that formats LaTeX source code with consistent inde
 
 ## Usage
 
-### Linting
+### Local Usage (requires tools installed)
+
+#### Linting
 To check all LaTeX files for issues:
 ```bash
 make lint
 ```
 
-### Formatting
+#### Formatting
 To automatically format all LaTeX source files:
 ```bash
 make format
 ```
 
-### Combined
-To format and then lint all files:
+#### Check Formatting (dry-run)
+To check if files need formatting without modifying them:
 ```bash
-make lint-format
+make check-format
 ```
+
+#### Combined Check
+To check formatting and lint all files:
+```bash
+make check
+```
+
+### Docker Usage (recommended for offline/reproducible builds)
+
+All targets can be run using Docker with the same environment as the release workflow. This ensures consistent results across different machines.
+
+#### Pull Docker Image
+First, pull the Docker image (only needed once):
+```bash
+make docker-pull
+```
+
+#### Build PDF
+```bash
+make docker-build
+```
+
+#### Lint
+```bash
+make docker-lint
+```
+
+#### Format
+```bash
+make docker-format
+```
+
+#### Check Formatting
+```bash
+make docker-check-format
+```
+
+#### Comprehensive Check
+```bash
+make docker-check
+```
+
+The Docker targets use the `texlive/texlive:latest` image, which is the same image used in the GitHub Actions release workflow.
 
 ## Installation
 
