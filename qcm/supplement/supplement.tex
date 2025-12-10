@@ -45,8 +45,8 @@
 
 \usepackage{hyperref}
 \hypersetup{
- colorlinks=false,
- hidelinks=true,
+  colorlinks=false,
+  hidelinks=true,
 }
 
 % New definition of square root:
@@ -57,10 +57,10 @@
 % it defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
-\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
-\advance\dimen0-0.2\ht0
-\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.4pt\box2}}
+  \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.4pt\box2}}
 
 \newcommand{\Figure}[1]{FIG.~\ref{#1}}
 \newcommand{\Equation}[1]{EQN.~\ref{#1}}
@@ -91,19 +91,19 @@
 % shortcut for a column vector
 \newcount\colveccount
 \newcommand*\colvec[1]{
-        \global\colveccount#1
-        \begin{pmatrix}
-        \colvecnext
-}
-\def\colvecnext#1{
-        #1
-        \global\advance\colveccount-1
-        \ifnum\colveccount>0
-                \\
-                \expandafter\colvecnext
-        \else
-                \end{pmatrix}
-        \fi
+  \global\colveccount#1
+  \begin{pmatrix}
+    \colvecnext
+    }
+    \def\colvecnext#1{
+    #1
+    \global\advance\colveccount-1
+    \ifnum\colveccount>0
+    \\
+    \expandafter\colvecnext
+    \else
+  \end{pmatrix}
+  \fi
 }
 
 \newcommand{\df}{\Delta\!f}
@@ -142,7 +142,7 @@
 
 
 \newcommand{\todo}[1]{%
- \textcolor{tangoorange}{#1}
+  \textcolor{tangoorange}{#1}
 }
 
 \begin{document}
@@ -196,7 +196,7 @@ two dimensions
 \begin{align}
   \rho\left(\mathbf{\dot{u}}\cdot \nabla\right)\mathbf{\dot{u}}
                                      & =\nabla \cdot \left( -\rho \mathbf{I} + \eta \left(\nabla \mathbf{\dot{u}} +
-    \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}                                     \\
+  \left( \nabla \mathbf{\dot{u}}\right)^\mathrm{T}\right)\right) + \mathbf{F}                                       \\
   \rho \nabla \cdot \mathbf{\dot{u}} & = 0
 \end{align}
 where $\mathbf{\dot{u}}$ is flow velocity field, $\rho$ is fluid density,

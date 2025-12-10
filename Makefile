@@ -10,6 +10,25 @@ single:
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
 
+# Lint LaTeX source files using chktex
+.PHONY: lint
+lint:
+	@echo "Linting LaTeX files with chktex..."
+	@find . -name "*.tex" -type f ! -path "./external/*" ! -path "./.git/*" -exec chktex {} \;
+	@echo "Linting complete."
+
+# Format LaTeX source files using latexindent
+.PHONY: format
+format:
+	@echo "Formatting LaTeX files with latexindent..."
+	@find . -name "*.tex" -type f ! -path "./external/*" ! -path "./.git/*" -exec latexindent -l .latexindent.yaml -w -s {} \;
+	@find . -name "*.bak*" -type f -delete
+	@echo "Formatting complete."
+
+# Lint and format all LaTeX source files
+.PHONY: lint-format
+lint-format: format lint
+
 $(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex") qcm-figures
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex

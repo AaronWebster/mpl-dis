@@ -2,17 +2,17 @@ A parallel Monte Carlo simulation was written to model plasmon scattering.
 It assumes the geometry shown in Figure \ref{fig:plasmongeo} consisting of
 \begin{itemize}
   \item An elliptical {\it illuminated region}, representing the incident evanescent
-        field used to excite plasmons on the surface.  This ellipse has
-        radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.
+    field used to excite plasmons on the surface.  This ellipse has
+    radii $r_a=\SI{5}{\micro\meter}$ and $r_b=\SI{3}{\micro\meter}$.
   \item A {\it tip} - a single movable scatterer representing the STM tip.
   \item The {\it scan area}, a square area wherein the tip rasters, typically
-        $128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.
+    $128\times128$ points in a maximal area of $2.27\times\SI{2.27}{\micro\meter}$.
   \item {\it Scatterers}, fixed point scatterers (usually \num{20})
-        distributed randomly in a square of $8.8281\times\SI{8.8281}{\micro\meter}$
-        where the plasmon can visit, and
+    distributed randomly in a square of $8.8281\times\SI{8.8281}{\micro\meter}$
+    where the plasmon can visit, and
   \item A {\it trajectory} or {\it path} meaning the ordered sequence of scatterers a
-        plasmon visits before exiting the system.  The trajectory has a typical maximum
-        path length of \SI{18}{\micro\meter}.
+    plasmon visits before exiting the system.  The trajectory has a typical maximum
+    path length of \SI{18}{\micro\meter}.
 \end{itemize}
 \begin{figure}
   \centering
@@ -87,7 +87,7 @@ ends when
 \begin{itemize}
   \item The same scatterer is visited twice in a row, or
   \item The total accumulated path length exceeds a pre-defined limit
-        (\SI{18}{\micro\meter}).
+    (\SI{18}{\micro\meter}).
 \end{itemize}
 This process is repeated many times for each tip position in the scan area.
 Usually \numrange{250000}{1000000} trajectories will be used for each point
@@ -126,42 +126,42 @@ waves
 In total, the program writes the following data
 \begin{itemize}
   \item Weirdospace images in a 64 bit floating point HDF5 files.  The images
-        are names {\tt XXXXX-scatter.h5}, where {\tt XXXXX} represents the angle
-        in degrees of that particular frame along the ring.  Both the phase and
-        intensity are stored in each file.
+    are names {\tt XXXXX-scatter.h5}, where {\tt XXXXX} represents the angle
+    in degrees of that particular frame along the ring.  Both the phase and
+    intensity are stored in each file.
   \item {\tt ring.dat}, a tab separated values file containing the angle,
-        mean intensity, and variance of intensity for each weirdospace image.  This
-        file is no longer created by the main program, but computed from the output
-        by a supporting script {\tt mkring.sh}.
+    mean intensity, and variance of intensity for each weirdospace image.  This
+    file is no longer created by the main program, but computed from the output
+    by a supporting script {\tt mkring.sh}.
   \item {\tt parameters}, a file containing program variables, scatterer
-        locations, and statistics.  The parameters are as shown in Table
-        \ref{tbl:parameters}.
-        \begin{table}
-          \label{tbl:parameters}
-          \begin{center}
-            \begin{tabular}{ll}
-              \toprule
-              parameter          & description                                     \\
-              \midrule
-              {\tt SX}, {\tt SY} & integer size of scan area                       \\
-              {\tt ELLIPSE\_A}   & first radius of elliptical illuminated area     \\
-              {\tt ELLIPSE\_B}   & second radius of elliptical illuminated area    \\
-              {\tt LAMBDA}       & wavelength of incident light, in microns        \\
-              {\tt PATHLEN}      & maximum path length for a plasmon               \\
-              {\tt ENTIREAREA}   & square boundary for random scatterer generation \\
-              {\tt SCANAREA}     & dimensions of the scan area in microns          \\
-              {\tt EVENTS}       & events per point in the scan area               \\
-              {\tt NSCAT}        & number of randomly distributed scatterers       \\
-              \bottomrule
-            \end{tabular}
-          \end{center}
-          \caption{Explanation of variables used in the {\tt parameters} file.}
-        \end{table}
-        At the end there is a section called {\tt STATS}.  The first column of this
-        section represents the number of scatterers visited, the second the
-        percentage of all trajectories including exactly this many scatterers, and
-        the third column the percentage of those trajectories included the tip in
-        some way.  The first row is the sum of all the following data.
+    locations, and statistics.  The parameters are as shown in Table
+    \ref{tbl:parameters}.
+    \begin{table}
+      \label{tbl:parameters}
+      \begin{center}
+        \begin{tabular}{ll}
+          \toprule
+          parameter          & description                                     \\
+          \midrule
+          {\tt SX}, {\tt SY} & integer size of scan area                       \\
+          {\tt ELLIPSE\_A}   & first radius of elliptical illuminated area     \\
+          {\tt ELLIPSE\_B}   & second radius of elliptical illuminated area    \\
+          {\tt LAMBDA}       & wavelength of incident light, in microns        \\
+          {\tt PATHLEN}      & maximum path length for a plasmon               \\
+          {\tt ENTIREAREA}   & square boundary for random scatterer generation \\
+          {\tt SCANAREA}     & dimensions of the scan area in microns          \\
+          {\tt EVENTS}       & events per point in the scan area               \\
+          {\tt NSCAT}        & number of randomly distributed scatterers       \\
+          \bottomrule
+        \end{tabular}
+      \end{center}
+      \caption{Explanation of variables used in the {\tt parameters} file.}
+    \end{table}
+    At the end there is a section called {\tt STATS}.  The first column of this
+    section represents the number of scatterers visited, the second the
+    percentage of all trajectories including exactly this many scatterers, and
+    the third column the percentage of those trajectories included the tip in
+    some way.  The first row is the sum of all the following data.
 \end{itemize}
 
 The weirdospace images are colored in such a way as to show both phase and

@@ -1,0 +1,86 @@
+# latexindent configuration for modern LaTeX formatting
+# This configuration enforces consistent, readable formatting
+
+# Basic indentation settings - use 2 spaces
+defaultIndent: "  "
+indentPreamble: 1
+
+# Ensure specific indentation rules use spaces
+indentRules:
+  item: "  "
+  environments: "  "
+  commands: "  "
+
+# Align environments consistently
+lookForAlignDelims:
+  tabular: 1
+  align: 1
+  align*: 1
+  equation: 1
+  cases: 1
+
+# Environment handling
+environments:
+  BeginStartsOnOwnLine: 0
+  BodyStartsOnOwnLine: 1
+  EndStartsOnOwnLine: 1
+  EndFinishesWithLineBreak: 1
+
+# Commands that should have arguments on their own line
+commands:
+  BeginStartsOnOwnLine: 0
+  BodyStartsOnOwnLine: 0
+  EndStartsOnOwnLine: 0
+  EndFinishesWithLineBreak: 0
+
+# Item handling in lists
+items:
+  BeginStartsOnOwnLine: 0
+  BodyStartsOnOwnLine: 0
+  EndStartsOnOwnLine: 0
+  EndFinishesWithLineBreak: 0
+
+# Special command handling
+specialBeginEnd:
+  displayMath:
+    begin: '\\\['
+    end: '\\\]'
+  inlineMath:
+    begin: '(?<!\$)\$(?!\$)'
+    end: '(?<!\$)\$(?!\$)'
+
+# Alignment settings
+alignContentAfterDoubleBackSlash: 0
+spacesBeforeDoubleBackSlash: 1
+
+# Preserve blank lines to maintain logical structure
+preserveBlankLines: 1
+maxNumberOfBackSpaces: 0
+
+# Line break settings - don't modify too aggressively
+modifyLineBreaks:
+  preserveBlankLines: 1
+  condenseMultipleBlankLinesInto: 1
+  
+# Remove trailing whitespace
+removeTrailingWhitespace: 1
+
+# File extension to back up
+fileExtensionPreference:
+  .tex: 1
+  .sty: 2
+  .cls: 3
+
+# Backup settings - create backups
+onlyOneBackUp: 1
+maxNumberOfBackUps: 1
+cycleThroughBackUps: 0
+
+# Log file settings
+logFilePreferences:
+  showEveryYamlRead: 0
+  showAmalgamatedSettings: 0
+  endLogFileWith: ""
+  showGitHubInfoFooter: 0
+
+# Don't modify files in place by default - require explicit -w flag

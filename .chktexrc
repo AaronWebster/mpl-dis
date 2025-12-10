@@ -1,0 +1,43 @@
+# ChkTeX configuration for modern LaTeX best practices
+# This file configures chktex to enforce modern LaTeX coding standards
+
+# Enable all warnings by default
+# Then selectively disable ones that are too strict for academic writing
+
+# Disable warning 1 (command terminated with space) as it's often intentional
+# in macro definitions and can be overly pedantic
+CmdSpaceWarning { }
+
+# Disable warning 8 (wrong length of dash) for mathematical expressions
+# where minus signs are used intentionally
+QuoteStyle { }
+
+# Keep warning 11 (use \ldots for ellipsis) enabled as it's good practice
+# but allow \cdots in math mode which is correct usage
+
+# Disable warning 13 (interword spacing) - too pedantic for normal writing
+InterWord { }
+
+# Enable warning for non-breaking spaces before references
+# This is important for professional typesetting
+WipeArg {
+    \label:{1}
+    \ref:{1}
+    \eqref:{1}
+    \cite:{1}
+    \index:{1}
+    \glossary:{1}
+    \gls:{1}
+    \glspl:{1}
+}
+
+# Silent warnings that are too strict or not applicable
+Silent {
+    # Warning 1: Command terminated with space (often intentional in macros)
+    # Warning 8: Wrong length of dash (minus signs in math)
+}
+
+# Set tab size for consistent formatting
+TabSize = 4
+
+# Enable all other standard warnings for good LaTeX practice
