@@ -39,27 +39,7 @@
 \usepackage{multido}
 \usepackage{pst-node}
 
-% Compatibility for old subfigure package used in wlgr appendix
-% Define missing elements without loading conflicting subfigure package
-% Note: subfigure counter is already defined by subcaption package
-\newskip\subfigbottomskip
-\subfigbottomskip=0pt
-% Simple transparent wrapper using \def instead of \newcommand
-% This prevents TeX capacity overflow with PSTricks nested in \multido loops
-% Handles optional caption argument but ignores it to avoid grouping issues
-% Note: @ symbols in macro names require \makeatletter...\makeatother wrapper
-\makeatletter
-\long\def\subfigure{\futurelet\next\subfigure@check}
-\long\def\subfigure@check{%
-  \ifx\next[%
-    \expandafter\subfigure@opt
-  \else
-    \expandafter\subfigure@noopt
-  \fi
-}
-\long\def\subfigure@opt[#1]#2{#2}
-\long\def\subfigure@noopt#1{#1}
-\makeatother
+% Note: subfigure counter and environment are provided by subcaption package (line 28)
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
@@ -95,8 +75,8 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{plotmarks}
 
-% Externalize tikz.
-\tikzexternalize[prefix=external/]
+% Externalize tikz - disabled due to compilation issues in CI/CD environment
+% \tikzexternalize[prefix=external/]
 
 % Custom colors.
 \import{colors/}{colors}

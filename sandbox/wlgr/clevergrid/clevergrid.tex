@@ -20,10 +20,26 @@ They are
 \end{enumerate}
 \begin{figure}
   \centering
-  \subfigure[single scattering including tip]{\includegraphics[width=5cm]{simulation/singlescatt.eps}}
-  \subfigure[single scattering not including tip]{\includegraphics[width=5cm]{simulation/singlescattnotpip.eps}}\\
-  \subfigure[multiple scattering including tip]{\includegraphics[width=5cm]{simulation/multiplescatt.eps}}
-  \subfigure[multiple scattering not including tip]{\includegraphics[width=5cm]{simulation/multiplescattnotip.eps}}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=5cm]{simulation/singlescatt.eps}
+    \caption{single scattering including tip}
+  \end{subfigure}}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=5cm]{simulation/singlescattnotpip.eps}
+    \caption{single scattering not including tip}
+  \end{subfigure}}\\
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=5cm]{simulation/multiplescatt.eps}
+    \caption{multiple scattering including tip}
+  \end{subfigure}}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=5cm]{simulation/multiplescattnotip.eps}
+    \caption{multiple scattering not including tip}
+  \end{subfigure}}
   \caption{Types of scattering events we include or exclude from the simulation.}
   \label{fig:scattypes}
 \end{figure}
@@ -57,7 +73,6 @@ scattering event which has been excluded.
       \rput[c](3,2.25){{multiple scattering involving the tip}}
       \rput[c](3,0.75){{multiple scattering not involving the tip}}
     \end{pspicture}
-  }
   \caption{The figures to follow have an accompanying sequence of four
     vertical squares.  These squares represent which events have been excluded
     from the simulation.  Squares in {\gray gray} represent excluded events.}

@@ -117,7 +117,6 @@ from the group as a whole in the same way as Type \Rmnum{2} events.
 Complex Exponentials and the Error of your Ways
 \\{\normalsize or}\\
 How I Learned to Stop Worrying and Love the Bomb
-}
 Since coherent backscattering (CBS) is a general multiple scattering
 phenomenon, it was though that it would be seen in the experimental
 weirdospace data - manifest as so called {\it secondary stripes}.  This
@@ -139,12 +138,16 @@ stripes to an experimental weirdospace image for a particular angle along
 the ring.
 \begin{figure}
   \centering
-  \subfigure[expected]{
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \includegraphics[width=3cm]{events/nuback-expected.eps}
-  }
-  \subfigure[best fit from experiment]{
+    \caption{expected}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \includegraphics[width=3cm]{events/bestfit.eps}
-  }
+    \caption{best fit from experiment}
+  \end{subfigure}
   \caption{Two figures from Bert's thesis.  To the left, the expected
     orientation of secondary stripes and to the right, the best fit from the
     experimentally measured orientation.}
@@ -188,20 +191,30 @@ experiment in the Appendix.
 
 \begin{figure}
   \centering
-  \subfigure[$e^{i \alpha}$]{ % primary stripes
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    % primary stripes
     \includegraphics[width=3cm]{events/primaryonly.eps}
-  }
-  \subfigure[$e^{i \beta}$]{ % secondary stripes
+    \caption{$e^{i \alpha}$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    % secondary stripes
     \includegraphics[width=3cm]{events/secondaryonly.eps}
-  }
+    \caption{$e^{i \beta}$}
+  \end{subfigure}
   % sum of squares
-  \subfigure[$\left|e^{i \alpha}\right|^2 + \left|e^{i \beta}\right|^2$]{
-  \includegraphics[width=3cm]{events/sumsq.eps}
-  }
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=3cm]{events/sumsq.eps}
+    \caption{$\left|e^{i \alpha}\right|^2 + \left|e^{i \beta}\right|^2$}
+  \end{subfigure}
   % square of sum
-  \subfigure[$\left|e^{i \alpha} + e^{i \beta}\right|^2$]{
-  \includegraphics[width=3cm]{events/primaryplussecondary1.eps}
-  }
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=3cm]{events/primaryplussecondary1.eps}
+    \caption{$\left|e^{i \alpha} + e^{i \beta}\right|^2$}
+  \end{subfigure}
   \caption{Adding phases from primary and secondary stripes results in a
     characteristic interference pattern not consistent with the addition of
     intensities.}
@@ -210,15 +223,21 @@ experiment in the Appendix.
 
 \begin{figure}
   \centering
-  \subfigure[$\left|0.29\cdot E_\mathrm{\Rmnum{1}} + 0.08\cdot E_\chi \right|^2$]{
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \includegraphics[width=3cm]{events/primaryplussecondary1.eps}
-  }
-  \subfigure[$\left|2.44\cdot E_\mathrm{\Rmnum{1}} + 0.23\cdot E_\chi \right|^2$]{
+    \caption{$\left|0.29\cdot E_\mathrm{\Rmnum{1}} + 0.08\cdot E_\chi \right|^2$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \includegraphics[width=3cm]{events/primaryplussecondary2.eps}
-  }
-  \subfigure[experiment]{
+    \caption{$\left|2.44\cdot E_\mathrm{\Rmnum{1}} + 0.23\cdot E_\chi \right|^2$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \includegraphics[width=3cm]{events/cbsstripedata.eps}
-  }
+    \caption{experiment}
+  \end{subfigure}
   \caption{By adjusting the relative amplitudes of the waves predicted for
     primary and secondary stripes, good agreement can be reached with the
     experimental data.}
