@@ -1,43 +1,31 @@
 # ChkTeX configuration for modern LaTeX best practices
 # This file configures chktex to enforce modern LaTeX coding standards
 
-# Enable all warnings by default
-# Then selectively disable ones that are too strict for academic writing
+# Suppress specific warnings that are too strict or not applicable
+# for academic dissertation writing:
 
-# Disable warning 1 (command terminated with space) as it's often intentional
-# in macro definitions and can be overly pedantic
-CmdSpaceWarning { }
+# Warning 1: Command terminated with space
+# Often intentional in macro definitions
+# -n1
 
-# Disable warning 8 (wrong length of dash) for mathematical expressions
-# where minus signs are used intentionally
-QuoteStyle { }
+# Warning 8: Wrong length of dash
+# Minus signs in math expressions are correct
+# -n8
 
-# Keep warning 11 (use \ldots for ellipsis) enabled as it's good practice
-# but allow \cdots in math mode which is correct usage
+# Warning 13: Interword spacing  
+# Too pedantic for normal academic writing
+# -n13
 
-# Disable warning 13 (interword spacing) - too pedantic for normal writing
-InterWord { }
+# Warning 46: Use \vspace instead of \\[...]
+# This is sometimes needed for specific formatting
+# -n46
 
-# Enable warning for non-breaking spaces before references
-# This is important for professional typesetting
-WipeArg {
-    \label:{1}
-    \ref:{1}
-    \eqref:{1}
-    \cite:{1}
-    \index:{1}
-    \glossary:{1}
-    \gls:{1}
-    \glspl:{1}
-}
+# To suppress a warning, uncomment the corresponding -n flag above
+# and pass it via command line: chktex -n1 -n8 file.tex
 
-# Silent warnings that are too strict or not applicable
-Silent {
-    # Warning 1: Command terminated with space (often intentional in macros)
-    # Warning 8: Wrong length of dash (minus signs in math)
-}
+# Or suppress inline in .tex files with:
+# % chktex-file 1 8 13
 
-# Set tab size for consistent formatting
 TabSize = 4
 
-# Enable all other standard warnings for good LaTeX practice
+
