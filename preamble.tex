@@ -44,6 +44,12 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 
+% Roman numeral command for WLGR content
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
 \newacronym{spp}{SPP}{surface plasmon polariton}

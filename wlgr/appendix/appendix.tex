@@ -2,15 +2,13 @@
   \begin{center}
     \psset{unit=1.5cm} % 12cm width / 8 figures = 1.5cm
     \addtolength{\subfigbottomskip}{-1.5cm}
-    \multido{\ix=0+1}{13}{ % first 13
-      \setcounter{subfigure}{0}
-      
-        \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{wlgr/common/permute\ix}
-        \end{pspicture}
-        \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}
-        \rput[cl](0.05,0.5){\ix}
-      
+    \multido{\ix=0+1}{13}{% first 13
+      \setcounter{subfigure}{0}%
+      \begin{pspicture}(-0.25,0)(-0.05,1)%
+        \input{wlgr/common/permute\ix}%
+      \end{pspicture}%
+      \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}%
+      \rput[cl](0.05,0.5){\ix}%
     }
      % last one with labels
       \begin{pspicture}(-0.25,0)(-0.05,1)
@@ -39,16 +37,14 @@
   \begin{center}
     \psset{unit=1.5cm}
     \addtolength{\subfigbottomskip}{-1.5cm}
-    \multido{\ix=0+1}{13}{
-      \setcounter{subfigure}{0}
-      
-        \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{wlgr/common/permute\ix}
-        \end{pspicture}
-        % this file name sucks because of the dot, but too lazy to change
-        \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}
-        \rput[cl](0.05,0.5){\ix}
-      
+    \multido{\ix=0+1}{13}{%
+      \setcounter{subfigure}{0}%
+      \begin{pspicture}(-0.25,0)(-0.05,1)%
+        \input{wlgr/common/permute\ix}%
+      \end{pspicture}%
+      % this file name sucks because of the dot, but too lazy to change
+      \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}%
+      \rput[cl](0.05,0.5){\ix}%
     }
     
       \begin{pspicture}(-0.25,0)(-0.05,1)
@@ -80,17 +76,15 @@
     \addtolength{\subfigbottomskip}{-1cm}
     \psset{yAxisLabel=,xAxisLabel=,yAxis=false}
     \multido{\ix=0+1}{13}{%
-      \setcounter{subfigure}{0}
-      
-        \psset{unit=40.75pt}
-        \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{wlgr/common/permute\ix}
-        \end{pspicture}
-        \begin{psgraph}[Dx=0.1,labels=none](0,0)(1,0.08){14cm}{1.5cm}
-          \psset{fillstyle=solid,fillcolor=red}
-          \input{wlgr/stats/ringpdf\ix}
-        \end{psgraph}
-      
+      \setcounter{subfigure}{0}%
+      \psset{unit=40.75pt}%
+      \begin{pspicture}(-0.25,0)(-0.05,1)%
+        \input{wlgr/common/permute\ix}%
+      \end{pspicture}%
+      \begin{psgraph}[Dx=0.1,labels=none](0,0)(1,0.08){14cm}{1.5cm}%
+        \psset{fillstyle=solid,fillcolor=red}%
+        \input{wlgr/stats/ringpdf\ix}%
+      \end{psgraph}%
     }
     
       \psset{unit=40.75pt}
@@ -115,19 +109,17 @@
     \addtolength{\subfigbottomskip}{-1cm}
     \psset{yAxisLabel=,xAxisLabel=,yAxis=false}
     \multido{\ix=0+1}{13}{%
-      \setcounter{subfigure}{0}
-      
-        \psset{unit=40.75pt}
-        \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{wlgr/common/permute\ix}
-        \end{pspicture}
-        \begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}
-          \psset{fillstyle=solid,fillcolor=red}
-          \input{wlgr/stats/nhist\ix}
-          \psset{fillstyle=solid,fillcolor=blue}
-          \input{wlgr/stats/snhist\ix}
-        \end{psgraph}
-      
+      \setcounter{subfigure}{0}%
+      \psset{unit=40.75pt}%
+      \begin{pspicture}(-0.25,0)(-0.05,1)%
+        \input{wlgr/common/permute\ix}%
+      \end{pspicture}%
+      \begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}%
+        \psset{fillstyle=solid,fillcolor=red}%
+        \input{wlgr/stats/nhist\ix}%
+        \psset{fillstyle=solid,fillcolor=blue}%
+        \input{wlgr/stats/snhist\ix}%
+      \end{psgraph}%
     }
     
       \psset{unit=40.75pt}
@@ -160,18 +152,16 @@
     %angle (degrees),llx=-.5cm,lly=-1.5cm,ury=0.5cm,
     %xAxisLabelPos={c,-0.2},yAxisLabelPos={-22,c}}
     \multido{\ix=0+1}{13}{%
-      
-        \psset{unit=40.75pt}
-        \begin{pspicture}(-0.25,0)(-0.05,1)
-          \input{wlgr/common/permute\ix}
-        \end{pspicture}
-        \readdata{\dataa}{wlgr/contrast/ring\ix.dat}
-        \readdata{\datab}{wlgr/contrast/cring\ix.dat}
-        \begin{psgraph}[Dx=20,Dy=10.2,Oy=0,labels=none](0,0)(360,1.2){14.0cm}{1.5cm}
-          \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
-          \listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}
-        \end{psgraph}
-      
+      \psset{unit=40.75pt}%
+      \begin{pspicture}(-0.25,0)(-0.05,1)%
+        \input{wlgr/common/permute\ix}%
+      \end{pspicture}%
+      \readdata{\dataa}{wlgr/contrast/ring\ix.dat}%
+      \readdata{\datab}{wlgr/contrast/cring\ix.dat}%
+      \begin{psgraph}[Dx=20,Dy=10.2,Oy=0,labels=none](0,0)(360,1.2){14.0cm}{1.5cm}%
+        \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}%
+        \listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}%
+      \end{psgraph}%
     }
     
       \psset{unit=40.75pt}
