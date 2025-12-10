@@ -1,31 +1,30 @@
 \begin{figure}
 	\begin{center}
-		\psset{unit=1.5cm} % 12cm width / 8 figures = 1.5cm
 		\addtolength{\subfigbottomskip}{-1.5cm}
-		\multido{\ix=0+1}{13}{% first 13
-			\setcounter{subfigure}{0}%
-			\begin{pspicture}(-0.25,0)(-0.05,1)%
-				\input{wlgr/common/permute\ix}%
-			\end{pspicture}%
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}%
-			\rput[cl](0.05,0.5){\ix}%
+		% First 13 permutations
+		\foreach \ix in {0,...,12} {
+			\setcounter{subfigure}{0}
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\input{wlgr/common/permute\ix}
+			\end{tikzpicture}\hfill%
+			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}\hfill%
+			\raisebox{0.5cm}{\ix}\par
 		}
-		% last one with labels
-		\begin{pspicture}(-0.25,0)(-0.05,1)
+		% Last one with labels
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
-		\end{pspicture}
-		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.eps}
-		\rput[cl](0.05,0.5){14}
-		\psset{unit=1.5cm}
-		\rput[ct](-0.55,-0.3){$\frac{7\pi}{4}$}
-		\rput[ct](-1.55,-0.3){$\frac{6\pi}{4}$}
-		\rput[ct](-2.55,-0.3){$\frac{5\pi}{4}$}
-		\rput[ct](-3.55,-0.3){$\pi$}
-		\rput[ct](-4.55,-0.3){$\frac{3\pi}{4}$}
-		\rput[ct](-5.55,-0.3){$\frac{\pi}{2}$}
-		\rput[ct](-6.55,-0.3){$\frac{\pi}{4}$}
-		\rput[ct](-7.55,-0.3){$0$}
-
+		\end{tikzpicture}\hfill%
+		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.eps}\hfill%
+		\raisebox{0.5cm}{14}\par
+		\vspace{0.5cm}
+		$\frac{7\pi}{4}$\hfill
+		$\frac{6\pi}{4}$\hfill
+		$\frac{5\pi}{4}$\hfill
+		$\pi$\hfill
+		$\frac{3\pi}{4}$\hfill
+		$\frac{\pi}{2}$\hfill
+		$\frac{\pi}{4}$\hfill
+		$0$
 	\end{center}
 	\caption{Permutations of the Monte Carlo simulation around the ring:
 		intensity and phase.  Intensity values have been normalized for each frame
@@ -35,32 +34,32 @@
 
 \begin{figure}
 	\begin{center}
-		\psset{unit=1.5cm}
 		\addtolength{\subfigbottomskip}{-1.5cm}
-		\multido{\ix=0+1}{13}{%
-			\setcounter{subfigure}{0}%
-			\begin{pspicture}(-0.25,0)(-0.05,1)%
-				\input{wlgr/common/permute\ix}%
-			\end{pspicture}%
+		% First 13 permutations
+		\foreach \ix in {0,...,12} {
+			\setcounter{subfigure}{0}
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\input{wlgr/common/permute\ix}
+			\end{tikzpicture}\hfill%
 			% this file name sucks because of the dot, but too lazy to change
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}%
-			\rput[cl](0.05,0.5){\ix}%
+			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}\hfill%
+			\raisebox{0.5cm}{\ix}\par
 		}
 
-		\begin{pspicture}(-0.25,0)(-0.05,1)
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
-		\end{pspicture}
-		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.-intensity.eps}
-		\rput[cl](0.05,0.5){14}
-		\psset{unit=1.5cm}
-		\rput[ct](-0.55,-0.3){$\frac{7\pi}{4}$}
-		\rput[ct](-1.55,-0.3){$\frac{6\pi}{4}$}
-		\rput[ct](-2.55,-0.3){$\frac{5\pi}{4}$}
-		\rput[ct](-3.55,-0.3){$\pi$}
-		\rput[ct](-4.55,-0.3){$\frac{3\pi}{4}$}
-		\rput[ct](-5.55,-0.3){$\frac{\pi}{2}$}
-		\rput[ct](-6.55,-0.3){$\frac{\pi}{4}$}
-		\rput[ct](-7.55,-0.3){$0$}
+		\end{tikzpicture}\hfill%
+		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.-intensity.eps}\hfill%
+		\raisebox{0.5cm}{14}\par
+		\vspace{0.5cm}
+		$\frac{7\pi}{4}$\hfill
+		$\frac{6\pi}{4}$\hfill
+		$\frac{5\pi}{4}$\hfill
+		$\pi$\hfill
+		$\frac{3\pi}{4}$\hfill
+		$\frac{\pi}{2}$\hfill
+		$\frac{\pi}{4}$\hfill
+		$0$
 
 	\end{center}
 	\caption{Permutations of the Monte Carlo simulation around the ring:
@@ -74,27 +73,37 @@
 \begin{figure}
 	\begin{center}
 		\addtolength{\subfigbottomskip}{-1cm}
-		\psset{yAxisLabel=,xAxisLabel=,yAxis=false}
-		\multido{\ix=0+1}{13}{%
-			\setcounter{subfigure}{0}%
-			\psset{unit=40.75pt}%
-			\begin{pspicture}(-0.25,0)(-0.05,1)%
-				\input{wlgr/common/permute\ix}%
-			\end{pspicture}%
-			\begin{psgraph}[Dx=0.1,labels=none](0,0)(1,0.08){14cm}{1.5cm}%
-				\psset{fillstyle=solid,fillcolor=red}%
-				\input{wlgr/stats/ringpdf\ix}%
-			\end{psgraph}%
+		% First 13 permutations
+		\foreach \ix in {0,...,12} {
+			\setcounter{subfigure}{0}
+			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+				\input{wlgr/common/permute\ix}
+			\end{tikzpicture}
+			\begin{tikzpicture}[x=14cm, y=1.5cm]
+				% Draw axis frame
+				\draw (0,0) rectangle (1,0.08);
+				% Set red fill for histogram bars
+				\begin{scope}[red]
+					\input{wlgr/stats/ringpdf\ix}
+				\end{scope}
+			\end{tikzpicture}
 		}
 
-		\psset{unit=40.75pt}
-		\begin{pspicture}(-0.25,0)(-0.05,1)
+		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
-		\end{pspicture}
-		\begin{psgraph}[Dx=0.1](0,0)(1,0.08){14cm}{1.5cm}
-			\psset{fillstyle=solid,fillcolor=red}
-			\input{wlgr/stats/ringpdf14}
-		\end{psgraph}
+		\end{tikzpicture}
+		\begin{tikzpicture}[x=14cm, y=1.5cm]
+			% Draw axis frame with labels
+			\draw (0,0) rectangle (1,0.08);
+			% X-axis labels
+			\foreach \x in {0,0.1,...,1.0} {
+				\draw (\x,0) -- (\x,-0.01);
+			}
+			% Set red fill for histogram bars
+			\begin{scope}[red]
+				\input{wlgr/stats/ringpdf14}
+			\end{scope}
+		\end{tikzpicture}
 
 	\end{center}
 	\caption{Probability distribution function, plotted here as a histogram, of
@@ -107,33 +116,43 @@
 \begin{figure}
 	\begin{center}
 		\addtolength{\subfigbottomskip}{-1cm}
-		\psset{yAxisLabel=,xAxisLabel=,yAxis=false}
-		\multido{\ix=0+1}{13}{%
-			\setcounter{subfigure}{0}%
-			\psset{unit=40.75pt}%
-			\begin{pspicture}(-0.25,0)(-0.05,1)%
-				\input{wlgr/common/permute\ix}%
-			\end{pspicture}%
-			\begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}%
-				\psset{fillstyle=solid,fillcolor=red}%
-				\input{wlgr/stats/nhist\ix}%
-				\psset{fillstyle=solid,fillcolor=blue}%
-				\input{wlgr/stats/snhist\ix}%
-			\end{psgraph}%
+		% First 13 permutations
+		\foreach \ix in {0,...,12} {
+			\setcounter{subfigure}{0}
+			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+				\input{wlgr/common/permute\ix}
+			\end{tikzpicture}
+			\begin{tikzpicture}[x=14cm/18, y=1.5cm/0.6]
+				% Draw axis frame
+				\draw (1,0) rectangle (19,0.6);
+				% Red histogram bars
+				\begin{scope}[red]
+					\input{wlgr/stats/nhist\ix}
+				\end{scope}
+				% Blue histogram bars
+				\begin{scope}[blue]
+					\input{wlgr/stats/snhist\ix}
+				\end{scope}
+			\end{tikzpicture}
 		}
 
-		\psset{unit=40.75pt}
-		\begin{pspicture}(-0.25,0)(-0.05,1)
+		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
-		\end{pspicture}
-		\begin{psgraph}[Dx=1,labels=none](1,0)(19,0.6){14cm}{1.5cm}
-			\psset{fillstyle=solid,fillcolor=red}
-			\input{wlgr/stats/nhist14}
+		\end{tikzpicture}
+		\begin{tikzpicture}[x=14cm/18, y=1.5cm/0.6]
+			% Draw axis frame
+			\draw (1,0) rectangle (19,0.6);
+			% Red histogram bars
+			\begin{scope}[red]
+				\input{wlgr/stats/nhist14}
+			\end{scope}
+			% Blue histogram bars (no fill style needed as already in snhist14)
 			\input{wlgr/stats/snhist14}
-			\multido{\ry=1.5+1,\ix=1+1}{19}{%
-				\rput[t](\ry,-0.15){\ix}
+			% X-axis labels
+			\foreach \ix in {1,...,19} {
+				\node at (\ix+0.5,-0.15) {\ix};
 			}
-		\end{psgraph}
+		\end{tikzpicture}
 
 	\end{center}
 	\caption{Histogram showing the normalized distribution of scattering
@@ -145,36 +164,48 @@
 
 \begin{figure}
 	\begin{center}
-		\psset{xunit=0.10cm,yunit=1cm}
-		\psset{yAxisLabel=,xAxisLabel=,yAxis=false}
 		\addtolength{\subfigbottomskip}{-1cm}
-		%\psset{yAxisLabel=intensity (a.u),xAxisLabel=ring
-		%angle (degrees),llx=-.5cm,lly=-1.5cm,ury=0.5cm,
-		%xAxisLabelPos={c,-0.2},yAxisLabelPos={-22,c}}
-		\multido{\ix=0+1}{13}{%
-			\psset{unit=40.75pt}%
-			\begin{pspicture}(-0.25,0)(-0.05,1)%
-				\input{wlgr/common/permute\ix}%
-			\end{pspicture}%
-			\readdata{\dataa}{wlgr/contrast/ring\ix.dat}%
-			\readdata{\datab}{wlgr/contrast/cring\ix.dat}%
-			\begin{psgraph}[Dx=20,Dy=10.2,Oy=0,labels=none](0,0)(360,1.2){14.0cm}{1.5cm}%
-				\listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}%
-				\listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}%
-			\end{psgraph}%
+		% First 13 permutations
+		\foreach \ix in {0,...,12} {
+			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+				\input{wlgr/common/permute\ix}
+			\end{tikzpicture}
+			\begin{tikzpicture}
+				\begin{axis}[
+					width=14cm,
+					height=1.5cm,
+					xmin=0, xmax=360,
+					ymin=0, ymax=1.2,
+					xtick={0,20,...,360},
+					xticklabels={},
+					ytick=\empty,
+					axis lines=left,
+					]
+					\addplot[red, mark=+, only marks] table {wlgr/contrast/ring\ix.dat};
+					\addplot[blue, mark=+, only marks] table {wlgr/contrast/cring\ix.dat};
+				\end{axis}
+			\end{tikzpicture}
 		}
 
-		\psset{unit=40.75pt}
-		\begin{pspicture}(-0.25,0)(-0.05,1)
+		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
-		\end{pspicture}
-		\readdata{\dataa}{wlgr/contrast/ring14.dat}
-		\readdata{\datab}{wlgr/contrast/cring14.dat}
-		\pstScalePoints(1,1){180 div}{}
-		\begin{psgraph}[dx=0.25,Dy=10.2,Oy=0,labels=x,trigLabels,trigLabelBase=4](0,0)(2,1.2){14.0cm}{1.5cm}
-			\listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
-			\listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}
-		\end{psgraph}
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=14cm,
+				height=1.5cm,
+				xmin=0, xmax=360,
+				ymin=0, ymax=1.2,
+				xtick={0,45,90,135,180,225,270,315,360},
+				xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{6\pi}{4}$,$\frac{7\pi}{4}$,$2\pi$},
+				ytick=\empty,
+				axis lines=left,
+				x label style={at={(axis description cs:0.5,-0.1)}, anchor=north},
+				]
+				\addplot[red, mark=+, only marks] table {wlgr/contrast/ring14.dat};
+				\addplot[blue, mark=+, only marks] table {wlgr/contrast/cring14.dat};
+			\end{axis}
+		\end{tikzpicture}
 
 	\end{center}
 	\caption{Normalized intensity (red) and normalized contrast (blue) of
@@ -188,41 +219,47 @@
 % vortex guys
 \begin{figure}
 	\begin{center}
-		\readdata{\dataa}{wlgr/vortex/zoom_intensity.dat}
-		\readdata{\datab}{wlgr/vortex/zoom_contrast.dat}
-		\psset{xunit=0.10cm,yunit=1cm}
-
-		\begin{pspicture}(-10,-10)(10,10)
-			\rput{90}(33,0){
-				\psset{xAxisLabel=,yAxisLabel=,llx=-.5cm,lly=-1cm,ury=0.5cm, xAxisLabelPos={c,-1},yAxisLabelPos={-7,c}}
-				\begin{psgraph}[Dx=20,Dy=0.1,Oy=0.8](300,0.8)(400,1.20){20.0cm}{5cm}
-					\listplot[linecolor=red,showpoints=true,dotstyle=+]{\datab}
-					\psplot[linestyle=dashed,linecolor=green]{300}{400}{1}
-				\end{psgraph}
-			}
-			\rput{90}(-30,0){
-				\psset{xAxisLabel=,yAxisLabel=,llx=-.5cm, xAxisLabelPos={c,-1},yAxisLabelPos={-7,c}}
-				\begin{psgraph}[Dx=20,Dy=5,Oy=5](300,5)(400,50){20.0cm}{5cm}
-					\listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
-					\psplot[linestyle=dashed,linecolor=green]{300}{400}{12}
-				\end{psgraph}
-			}
-
-			\rput{90}(0,0){
-				\includegraphics[width=21.1cm]{wlgr/vortex/sbs.eps}
-			}
-
-			\rput[l]{90}(-45,8.5){\parbox{5cm}{
-					\Rnode{A}{} \hskip 0.5cm \Rnode{B}{  Intensity} \ncline[linecolor=red]{A}{B} \\
-				}}
-
-			\rput[l]{90}(10,8.5){\parbox{5cm}{
-					\Rnode{A}{} \hskip 0.5cm \Rnode{B}{  Contrast} \ncline[linecolor=red]{A}{B} \\
-				}}
-
-			\rput[c]{90}(65,0){ring angle (a.u)}
-
-		\end{pspicture}
+		\begin{tikzpicture}[rotate=90]
+			% Top plot (contrast)
+			\begin{scope}[shift={(33,0)}]
+				\begin{axis}[
+					width=20cm,
+					height=5cm,
+					xmin=300, xmax=400,
+					ymin=0.8, ymax=1.2,
+					xtick={300,320,...,400},
+					ytick={0.8,0.9,1.0,1.1,1.2},
+					axis lines=left,
+					]
+					\addplot[red, mark=+, only marks] table {wlgr/vortex/zoom_contrast.dat};
+					\addplot[green, dashed, domain=300:400] {1};
+				\end{axis}
+			\end{scope}
+			
+			% Bottom plot (intensity)
+			\begin{scope}[shift={(-30,0)}]
+				\begin{axis}[
+					width=20cm,
+					height=5cm,
+					xmin=300, xmax=400,
+					ymin=5, ymax=50,
+					xtick={300,320,...,400},
+					ytick={5,10,...,50},
+					axis lines=left,
+					]
+					\addplot[red, mark=+, only marks] table {wlgr/vortex/zoom_intensity.dat};
+					\addplot[green, dashed, domain=300:400] {12};
+				\end{axis}
+			\end{scope}
+			
+			% Image in middle
+			\node[rotate=-90] at (0,0) {\includegraphics[width=21.1cm]{wlgr/vortex/sbs.eps}};
+			
+			% Legend labels
+			\node[anchor=west] at (-45,8.5) {\textcolor{red}{\rule{0.5cm}{0.5pt}}~~Intensity};
+			\node[anchor=west] at (10,8.5) {\textcolor{red}{\rule{0.5cm}{0.5pt}}~~Contrast};
+			\node at (65,0) {ring angle (a.u)};
+		\end{tikzpicture}
 	\end{center}
 	\caption{Intensity and contrast in a ``vortex'' area.  Contrast is defined
 		here as the ratio of the range (average of the top \SI{1}{\percent} minus
@@ -235,16 +272,22 @@
 
 \begin{figure}
 	\begin{center}
-		\psset{xunit=1.6711cm,yunit=4cm}
-		\readdata{\dataa}{wlgr/primarystripes/cone5.txt}
-		\readdata{\datab}{wlgr/primarystripes/acone5.dat}
-		\begin{pspicture}(0,0)(6.2832,1.5)
-			\psaxes[trigLabelBase=2,dx=\psPiH,trigLabels,Dy=0.2]{-}(0,0)(6.2832,1.5)
-			\listplot[linecolor=red,plotstyle=dots,dotstyle=o]{\dataa}
-			\psclip{\psframe[linestyle=none](0,0)(6,1.4)}
-			\listplot[linecolor=blue]{\datab}
-			\endpsclip
-		\end{pspicture}
+		\begin{tikzpicture}[x=1.6711cm, y=4cm]
+			\begin{axis}[
+				width=10.5cm,
+				height=6cm,
+				xmin=0, xmax=6.2832,
+				ymin=0, ymax=1.5,
+				xtick={0,0.7854,1.5708,2.3562,3.1416,3.9270,4.7124,5.4978,6.2832},
+				xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}{2}$,$\frac{7\pi}{4}$,$2\pi$},
+				ytick={0,0.2,...,1.4},
+				axis lines=left,
+				clip=true,
+				]
+				\addplot[red, only marks, mark=o] table {wlgr/primarystripes/cone5.txt};
+				\addplot[blue, solid] table {wlgr/primarystripes/acone5.dat};
+			\end{axis}
+		\end{tikzpicture}
 	\end{center}
 	\caption{Primary stripe angle as a function position around the ring:
 		experiment and theory.  This data was taken from Bert's thesis.}

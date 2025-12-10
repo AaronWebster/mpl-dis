@@ -16,54 +16,65 @@ It assumes the geometry shown in Figure \ref{fig:plasmongeo} consisting of
 \end{itemize}
 \begin{figure}
 	\centering
-	\begin{pspicture}(-4.41405,-4.41405)(4.41405,4.41405)
-		% tip
-		\psdot[dotstyle=triangle,linecolor=orange](0.2,-0.3)
-		% scan area
-		\psframe[linestyle=dashed,linecolor=green,dash=0.1](-1.35,-1.35)(1.35,1.35)
-		\psclip{\psframe[linestyle=none](-4.41405,-4.41405)(4.41405,4.41405)}
-		% illuminated area
-		\psellipse[linestyle=dashed,linecolor=red,dash=0.1 0.05](0,0)(5,3)
-		\endpsclip
-		\psaxes[labels=none,axesstyle=frame,tickstyle=inner,ticksize=0
-			4pt,Ox=-5,Oy=-5]{-}(-4.41405,-4.41405)(4.41405,4.41405)
-		\psset{dotstyle=Basterisk,linecolor=blue}
-		% random scatterers
-		\psdot[](1.08675765054645,-1.15339223391766)
-		\psdot[](-1.65945473768577,3.30126294690662)
-		\psdot[](3.08452901035693, 3.75801196082581)
-		\psdot[](-0.298028242005936, -0.947682947635213)
-		\psdot[](-1.13254778504099,-2.86291168735803)
-		\psdot[](-2.42224615064296,3.94409083629355)
-		\psdot[](2.84552547917312, -3.06371460124055)
-		\psdot[](-3.65079702863291,-0.125947393237618)
-		\psdot[](0.816143940611938,2.47247755178442)
-		\psdot[](3.66121582314356, -1.29098349555369)
-		\psdot[](2.41348287067284, 2.00794065198278)
-		\psdot[](3.73678615525102, 3.90756858304069)
-		\psdot[](1.64323248166686, 3.07351951851559)
-		\psdot[](1.79314213547156, -1.92551152476177)
-		\psdot[](-3.77510373532563,-2.39690980082588)
-		% line discribing a path
-		\psset{linestyle=dotted,dotsep=2pt,linecolor=gray}
-		\psline[](0.2,-0.3)(-0.298028242005936, -0.947682947635213)
-		\psline[](-0.298028242005936, -0.947682947635213)(-1.13254778504099,-2.86291168735803)
-		\psline[](-1.13254778504099,-2.86291168735803)(-3.65079702863291,-0.125947393237618)
-		\psline[](-3.65079702863291,-0.125947393237618)(3.73678615525102, 3.90756858304069)
-		% bunch of labels in a parbox
-		\rput[l](-4,-3.85){\parbox{5cm}{
-				\Rnode{A}{} \hskip 0.5cm \Rnode{B}{  illuminated region} \ncline[linestyle=dashed,linecolor=red,dash=0.1 0.05]{A}{B} \\
-				\Rnode{A}{} \hskip 0.5cm \Rnode{B}{  scan area} \ncline[linestyle=dashed,linecolor=green,dash=0.1]{A}{B} \\
-			}}
-		\rput[l](0,-3.85){\parbox{5cm}{
-				\rput[c](0.25cm,0.7ex){\dotnode[dotstyle=Basterisk,linecolor=blue]{A}} \hskip 0.5cm \Rnode{B}{  scatterers} \\
-				\rput[c](0.25cm,0.7ex){\dotnode[dotstyle=triangle,linecolor=orange]{A}} \hskip 0.5cm \Rnode{B}{  tip} \\
-			}}
-		\rput[l](2.5,-3.85){\parbox{5cm}{
-				\Rnode{A}{} \hskip 0.5cm \Rnode{B}{  path} \ncline[linestyle=dotted,dotsep=2pt,linecolor=gray]{A}{B} \\
-			}}
-	\end{pspicture}
-	\psset{linecolor=black}
+	\begin{tikzpicture}[scale=1, x=1cm, y=1cm]
+		% Draw axes as frame
+		\draw (-4.41405,-4.41405) rectangle (4.41405,4.41405);
+		
+		% Illuminated area (ellipse)
+		\draw[dashed, red, dash pattern=on 0.1cm off 0.05cm] (0,0) ellipse (5cm and 3cm);
+		
+		% Scan area (dashed green square)
+		\draw[dashed, green, dash pattern=on 0.1cm] (-1.35,-1.35) rectangle (1.35,1.35);
+		
+		% Tip (orange triangle)
+		\fill[orange] (0.2,-0.3) ++(0,0.1) -- ++(0.1,-0.15) -- ++(-0.2,0) -- cycle;
+		
+		% Random scatterers (blue asterisks - approximated as stars)
+		\foreach \x/\y in {
+			1.08675765054645/-1.15339223391766,
+			-1.65945473768577/3.30126294690662,
+			3.08452901035693/3.75801196082581,
+			-0.298028242005936/-0.947682947635213,
+			-1.13254778504099/-2.86291168735803,
+			-2.42224615064296/3.94409083629355,
+			2.84552547917312/-3.06371460124055,
+			-3.65079702863291/-0.125947393237618,
+			0.816143940611938/2.47247755178442,
+			3.66121582314356/-1.29098349555369,
+			2.41348287067284/2.00794065198278,
+			3.73678615525102/3.90756858304069,
+			1.64323248166686/3.07351951851559,
+			1.79314213547156/-1.92551152476177,
+			-3.77510373532563/-2.39690980082588
+		} {
+			\node[blue, scale=1.5] at (\x,\y) {$*$};
+		}
+		
+		% Path (dotted gray lines)
+		\draw[dotted, gray, line width=0.5pt] (0.2,-0.3) -- (-0.298028242005936,-0.947682947635213);
+		\draw[dotted, gray, line width=0.5pt] (-0.298028242005936,-0.947682947635213) -- (-1.13254778504099,-2.86291168735803);
+		\draw[dotted, gray, line width=0.5pt] (-1.13254778504099,-2.86291168735803) -- (-3.65079702863291,-0.125947393237618);
+		\draw[dotted, gray, line width=0.5pt] (-3.65079702863291,-0.125947393237618) -- (3.73678615525102,3.90756858304069);
+		
+		% Legend
+		\node[anchor=west] at (-4,-3.85) {
+			\begin{tabular}{@{}l@{}}
+				\textcolor{red}{\rule{0.5cm}{0.5pt}}~~illuminated region \\
+				\textcolor{green}{\rule{0.5cm}{0.5pt}}~~scan area
+			\end{tabular}
+		};
+		\node[anchor=west] at (0,-3.85) {
+			\begin{tabular}{@{}l@{}}
+				\textcolor{blue}{$*$}~~scatterers \\
+				\textcolor{orange}{$\triangle$}~~tip
+			\end{tabular}
+		};
+		\node[anchor=west] at (2.5,-3.85) {
+			\begin{tabular}{@{}l@{}}
+				\textcolor{gray}{\dots}~~path
+			\end{tabular}
+		};
+	\end{tikzpicture}
 	\caption{Definition of terms: geometry for the Monte Carlo scattering
 		simulation}
 	\label{fig:plasmongeo}
@@ -171,18 +182,15 @@ information onto a circular coordinate system as shown in Figure
 component $r$ and phase to the angle $\theta$.
 \begin{figure}
 	\begin{center}
-		\psset{unit=1cm}
 		% made this picture with the gimp... has HSV effect built right in
 		\begin{overpic}[width=5.0cm,height=5.0cm]{simulation/hsvradial.eps}
-			\begin{pspicture}(-2.5,-2.5)(2.5,2.5)
-				\pnode(0,0){C} % center
-				\pnode(! 90 sin 2.5 mul 90 cos 2.5 mul){A} % edge 1
-				\pnode(! 55 sin 2.5 mul 55 cos 2.5 mul){B} % edge 2
-				\psset{linecolor=white}
-				\ncline{->}{C}{B}\taput{{\white$r$}} % line to edge 2
-				\ncline{->}{C}{A} % line to edge 1
-				\pstMarkAngle[]{A}{C}{B}{{\white$\theta$}} % mark the angle
-			\end{pspicture}
+			\begin{tikzpicture}[x=1cm, y=1cm]
+				% Draw arrows with labels
+				\draw[->, white, line width=1pt] (0,0) -- (55:2.5) node[midway, above right, white] {$r$};
+				\draw[->, white, line width=1pt] (0,0) -- (90:2.5);
+				% Draw angle arc
+				\draw[white, line width=0.5pt] (90:0.7) arc (90:55:0.7) node[midway, above left, white] {$\theta$};
+			\end{tikzpicture}
 		\end{overpic}
 	\end{center}
 	\caption{Weirdospace images are colored by using the above model based on a
