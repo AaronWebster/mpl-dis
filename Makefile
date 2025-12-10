@@ -13,7 +13,7 @@ spell:
 $(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex")
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make $(TARGET).tex
+	latexmk -f -pdf -use-make $(TARGET).tex
 
 # Remove build files plus all the latex turds.
 clean:
