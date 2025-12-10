@@ -34,3 +34,8 @@ mpl-dis.pdf
 *.bak0
 __pycache__/
 *.pyc
+
+# Generated figure files (Python preprocessing output)
+qcm/figures/showtempair.tex
+qcm/figures/showtempwater.tex
+qcm/figures/showtempairwater.tex

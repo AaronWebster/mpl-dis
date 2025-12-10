@@ -10,10 +10,19 @@ single:
 spell:
 	hunspell -l -t -i utf-8 $(TARGET).tex
 
-$(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex")
+$(TARGET).pdf: $(TARGET).tex $(shell find . -type f -name "*.tex") qcm-figures
 	mkdir -p external
 	git rev-parse HEAD > commithash.tex
 	latexmk -f -pdf -use-make $(TARGET).tex
+
+# Generate QCM figures from Python scripts
+.PHONY: qcm-figures
+qcm-figures:
+	@echo "Generating QCM figures from Python scripts..."
+	cd qcm/figures && python3 generate_temp_plots.py
+	cd qcm/figures && python3 generate_showtempair.py
+	cd qcm/figures && python3 generate_showtempwater.py
+	@echo "QCM figures generated successfully."
 
 # Remove build files plus all the latex turds.
 clean:
