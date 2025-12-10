@@ -26,7 +26,6 @@
 \usepackage[parfill]{parskip}
 %\usepackage[inline]{showlabels}
 \usepackage{subcaption}
-\usepackage{subfigure}  % For legacy wlgr content that uses \subfigure
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{relsize}
 \usepackage{tabularx}
@@ -39,6 +38,14 @@
 \usepackage{pst-plot}
 \usepackage{multido}
 \usepackage{pst-node}
+
+% Compatibility for old subfigure package used in wlgr appendix
+% Define missing elements without loading conflicting subfigure package
+\newskip\subfigbottomskip
+\subfigbottomskip=0pt
+\newcounter{subfigure}[figure]
+% Simple wrapper that just typesets content
+\newcommand{\subfigure}[1]{#1}
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
