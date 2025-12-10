@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-upload:
@@ -32,9 +35,11 @@ jobs:
         run: make
       
       - name: Set tag name
+        if: github.event_name == 'push'
         run: echo "tag=v$(date +'%Y.%m.%d').${{ github.run_number }}" >> $GITHUB_ENV
 
       - name: Create and push tag
+        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,6 +47,7 @@ jobs:
           git push origin "$tag"
 
       - name: Create GitHub Release with PDF
+        if: github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.tag }}
