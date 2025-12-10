@@ -41,9 +41,9 @@
 
 % Compatibility for old subfigure package used in wlgr appendix
 % Define missing elements without loading conflicting subfigure package
+% Note: subfigure counter is already defined by subcaption package
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
-\newcounter{subfigure}[figure]
 % Simple transparent wrapper using \def instead of \newcommand
 % This prevents TeX capacity overflow with PSTricks nested in \multido loops
 % Handles optional caption argument but ignores it to avoid grouping issues
