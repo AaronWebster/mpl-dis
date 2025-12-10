@@ -1,16 +1,48 @@
 % With Greatly Limited Resources (WLGR)
-% This section includes additional work on surface plasmon random scattering
+% Part II: Surface Plasmon Random Scattering
+% This section reproduces the full WLGR document content
 
-This section presents additional work titled ``With Greatly Limited Resources, Part II: Surface Plasmon Random Scattering'' which explores numerical simulations, statistical properties, and various aspects of surface plasmon scattering phenomena.
+\section*{Overview}
+In the following document I will give a brief account of some of the things
+we looked at last winter.  It is in no way comprehensive, and focuses
+mainly on certain aspects of weirdospace I believe we have a good
+explanation for.
 
-The complete writeup is available as a supplementary document in the \texttt{sandbox/wlgr/} directory. Key topics covered include:
+Section \ref{sec:wlgrsimulation} deals with the numerical simulation, and to
+that accord two programs were written: a Monte Carlo simulation and an
+analytic counterpart.  Both programs were written to some degree by Bert,
+so there is certainly overlap in the results, but there were some errors
+and limitations I hope to have addressed.  This section should also serve
+to succinctly document the programs and the rationale behind their
+function.
 
-\begin{itemize}
-  \item Numerical simulation using Monte Carlo and analytic approaches
-  \item Statistical properties of plasmon scattering
-  \item Scattering permutations and microstructure
-  \item Explanation of features in experimental observations
-  \item Comparisons between experiment, simulation, and theory
-\end{itemize}
+The way plasmon scattering is implemented in the Monte Carlo simulation
+leads to some interesting statistical distributions of scatterers and their
+paths.  Section \ref{sec:wlgrstats} deals with this topic and some possible
+connections with other scattering theories.
 
-For the full details and comprehensive analysis, readers are referred to \texttt{sandbox/wlgr/writeup.tex} and the associated PDF documents \texttt{wlgr-plasmon-webster.pdf}.
+Following, Section \ref{sec:wlgrexplain} attempts to give an explanation of
+the features found in both simulation and experiment.  It also makes what I
+feel is a strong case for the observation of coherent backscattering.
+
+The remaining sections are miscellany that didn't fit in anywhere else.
+They are presented mostly as results without a lot of commentary.
+Finally, the Appendix includes the larger figures and comparisons from
+previous sections.
+
+\section{Simulation}
+\label{sec:wlgrsimulation}
+\input{wlgr/simulation/simulation}
+\section{Statistical Properties}
+\label{sec:wlgrstats}
+\input{wlgr/stats/stats}
+\section{Scattering Permutations}
+\label{sec:wlgrpermute}
+\input{wlgr/clevergrid/clevergrid}
+\section{Explanation of Features in Weirdospace}
+\label{sec:wlgrexplain}
+\input{wlgr/events/events}
+\section{Comparisons Between Experiment, Simulation, and Theory}
+\input{wlgr/compare/compare}
+\input{wlgr/appendix/appendix}
+\input{wlgr/radialac/radialac}

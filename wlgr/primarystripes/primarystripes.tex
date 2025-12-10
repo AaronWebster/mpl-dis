@@ -1,0 +1,104 @@
+The most dominant feature of weirdospace is known as {\it primary stripes}.
+Primary stripes are thought to arise from single scattering off the tip
+(events of type \Rmnum{1}).  Consider the phase accumulation in the case of
+single scattering off the tip.  It consists of only two terms, the local
+phase $\varphi_\mathrm{l}$ sampled by the tip position
+$(x_\mathrm{tip},y_\mathrm{tip})$, and the phase to the far field
+$\varphi_\mathrm{ff}$.
+The intensity in weirdospace for primary stripes given by Bert is
+\begin{align}
+  I(\phi,x_\mathrm{tip},y_\mathrm{tip})=
+  \left|
+  a e^{i \Phi} + b e^{i \varphi_\mathrm{l}+\varphi_\mathrm{ff}}
+  \right|^2
+\end{align}
+where the argument $a e^{i \Phi}$ is the overall phase and intensity of the
+``background'' signal.  From this he derives the expression
+\begin{align}
+  \label{eqn:primarystripes}
+  I(\phi,x_\mathrm{tip},y_\mathrm{tip}) \propto 1 + \cos\left(k_\mathrm{sp}x_\mathrm{tip} + k_0
+  \sin\theta_\mathrm{sp}\left(x_\mathrm{tip}\cos\phi+y_\mathrm{tip}\sin\phi\right)
+  + \varphi_a\right)
+\end{align}
+which is a little off because
+\begin{align}
+  \left|
+  a e^{i\alpha}+be^{i\beta}
+  \right|^2 = a^2 + b^2 + 2ab\cos(\alpha - \beta)
+\end{align}
+says that the argument in the second exponential should have a minus sign,
+but I suppose if you just set $a=b=1$, then the arbitrary phase term
+$\varphi_a$ could make up for any of that.
+
+Bert also gives the expected wavelength of the primary stripes as
+\begin{align}
+  \lambda_\mathrm{I}=
+  \frac{2 \pi}{\sqrt{\left(k_\mathrm{sp} + k_0
+      \sin{\theta_\mathrm{sp}}
+      \cos{\phi}\right)^2 + \left(k_0 \sin{\theta_\mathrm{sp}} \sin
+      \phi\right)^2}}
+\end{align}
+
+This agrees very well with experimental data as was shown in Bert's thesis
+(Figure \ref{fig:bertconeangle}).
+\begin{figure}
+  \label{fig:bertconeangle}
+  \begin{center}
+    \psset{xunit=1.6711cm,yunit=4cm}
+    \readdata{\dataa}{primarystripes/cone5.txt}
+    \readdata{\datab}{primarystripes/acone5.dat}
+    \begin{pspicture}(0,0)(6.2832,1.5)
+      \psaxes[trigLabelBase=2,dx=\psPiH,trigLabels,Dy=0.2]{-}(0,0)(6.2832,1.5)
+      \listplot[linecolor=red,plotstyle=dots,dotstyle=o]{\dataa}
+      \psclip{\psframe[linestyle=none](0,0)(6,1.4)}
+      \listplot[linecolor=blue]{\datab}
+      \endpsclip
+    \end{pspicture}
+  \end{center}
+  \caption{Primary stripe angle as a function position around the ring:
+    experiment and theory.}
+\end{figure}
+
+If we analytically evaluate Equation \ref{eqn:primarystripes} to produce
+weirdospace images to compare to those produced through the Monte Carlo
+simulation with only single scattering events included, an almost perfect
+agreement is achieved.
+
+\begin{figure}
+  \label{fig:basescatt}
+  \begin{center}
+    \begin{overpic}[width=416pt]{primarystripes/gbr.eps}
+      \psset{unit=52pt}
+      \begin{pspicture}(0,0)(1,8)
+        \psaxes[trigLabelBase=8,dx=1,trigLabels,Dx=1,ticksize=0,linewidth=0pt](0.5,0)(0,0)(8,0)[$\phi$,0][$ $,0]
+      \end{pspicture}
+    \end{overpic}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \label{fig:singlescatcompare}
+  \begin{center}
+    \begin{overpic}[width=416pt]{primarystripes/singlescatsbs1.eps}
+      \psset{unit=52pt}
+      \begin{pspicture}(0,0)(1,8)
+        \psaxes[trigLabelBase=8,dx=1,trigLabels,Dx=1,ticksize=0,linewidth=0pt](0.5,0)(0,0)(8,0)[$\phi$,0][$ $,0]
+      \end{pspicture}
+    \end{overpic}
+  \end{center}
+  \caption{Comparison of analytic evaluation of Equation
+    \ref{eqn:primarystripes} (bottom) against a Monte Carlo simulation with
+    only single scattering off the tip included.}
+\end{figure}
+
+\subsection{Evidence of Origin}
+Analysis of the clever grid also provides good evidence for the origin of
+primary stripes due to single scattering, but in a more obvious way.  For
+every simulation where single scattering off the tip is included, primary
+stripes appear.  The inverse is also true: for all simulations where single
+scattering has been removed, primary stripes disappear.
+
+In the limit of many ($N$) scatterers, the contribution from single
+scattering is reduced to $1/N$.  In this situation the primary stripes are
+suppressed.
+
