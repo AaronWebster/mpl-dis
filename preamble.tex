@@ -44,9 +44,20 @@
 \newskip\subfigbottomskip
 \subfigbottomskip=0pt
 \newcounter{subfigure}[figure]
-% Wrapper that typesets content in a group - allows PSTricks content
-% Note: wlgr only uses \subfigure{content}, not \subfigure[caption]{content}
-\newcommand{\subfigure}[1]{\begingroup #1\endgroup}
+% Wrapper that typesets content directly - allows PSTricks content
+% Supports both \subfigure{content} and \subfigure[caption]{content}
+% Using simple braces to avoid group nesting issues with PSTricks
+\makeatletter
+\newcommand{\subfigure}[2][]{%
+  \if\relax\detokenize{#1}\relax
+    % No caption provided
+    {#2}%
+  \else
+    % Caption provided - ignore it for now, just typeset content
+    {#2}%
+  \fi
+}
+\makeatother
 
 \usepackage[acronym,xindy]{glossaries}
 \newacronym{spr}{SPR}{surface plasmon resonance}
