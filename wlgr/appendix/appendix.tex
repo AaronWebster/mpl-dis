@@ -4,15 +4,15 @@
     \addtolength{\subfigbottomskip}{-1.5cm}
     \multido{\ix=0+1}{13}{ % first 13
       \setcounter{subfigure}{0}
-      \subfigure{
+      
         \begin{pspicture}(-0.25,0)(-0.05,1)
           \input{wlgr/common/permute\ix}
         \end{pspicture}
         \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}
         \rput[cl](0.05,0.5){\ix}
-      }
+      
     }
-    \subfigure{ % last one with labels
+     % last one with labels
       \begin{pspicture}(-0.25,0)(-0.05,1)
         \input{wlgr/common/permute14}
       \end{pspicture}
@@ -27,7 +27,7 @@
       \rput[ct](-5.55,-0.3){$\frac{\pi}{2}$}
       \rput[ct](-6.55,-0.3){$\frac{\pi}{4}$}
       \rput[ct](-7.55,-0.3){$0$}
-    }
+    
   \end{center}
   \caption{Permutations of the Monte Carlo simulation around the ring:
     intensity and phase.  Intensity values have been normalized for each frame
@@ -41,16 +41,16 @@
     \addtolength{\subfigbottomskip}{-1.5cm}
     \multido{\ix=0+1}{13}{
       \setcounter{subfigure}{0}
-      \subfigure{
+      
         \begin{pspicture}(-0.25,0)(-0.05,1)
           \input{wlgr/common/permute\ix}
         \end{pspicture}
         % this file name sucks because of the dot, but too lazy to change
         \includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}
         \rput[cl](0.05,0.5){\ix}
-      }
+      
     }
-    \subfigure{
+    
       \begin{pspicture}(-0.25,0)(-0.05,1)
         \input{wlgr/common/permute14}
       \end{pspicture}
@@ -65,7 +65,7 @@
       \rput[ct](-5.55,-0.3){$\frac{\pi}{2}$}
       \rput[ct](-6.55,-0.3){$\frac{\pi}{4}$}
       \rput[ct](-7.55,-0.3){$0$}
-    }
+    
   \end{center}
   \caption{Permutations of the Monte Carlo simulation around the ring:
     intensity only.  Intensity values have been normalized for each frame
@@ -81,7 +81,7 @@
     \psset{yAxisLabel=,xAxisLabel=,yAxis=false}
     \multido{\ix=0+1}{13}{%
       \setcounter{subfigure}{0}
-      \subfigure{
+      
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
           \input{wlgr/common/permute\ix}
@@ -90,9 +90,9 @@
           \psset{fillstyle=solid,fillcolor=red}
           \input{wlgr/stats/ringpdf\ix}
         \end{psgraph}
-      }
+      
     }
-    \subfigure{
+    
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
         \input{wlgr/common/permute14}
@@ -101,7 +101,7 @@
         \psset{fillstyle=solid,fillcolor=red}
         \input{wlgr/stats/ringpdf14}
       \end{psgraph}
-    }
+    
   \end{center}
   \caption{Probability distribution function, plotted here as a histogram, of
     the normalized binned averaged intensities of weirdospace images around the
@@ -116,7 +116,7 @@
     \psset{yAxisLabel=,xAxisLabel=,yAxis=false}
     \multido{\ix=0+1}{13}{%
       \setcounter{subfigure}{0}
-      \subfigure{
+      
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
           \input{wlgr/common/permute\ix}
@@ -127,9 +127,9 @@
           \psset{fillstyle=solid,fillcolor=blue}
           \input{wlgr/stats/snhist\ix}
         \end{psgraph}
-      }
+      
     }
-    \subfigure{
+    
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
         \input{wlgr/common/permute14}
@@ -142,7 +142,7 @@
           \rput[t](\ry,-0.15){\ix}
         }
       \end{psgraph}
-    }
+    
   \end{center}
   \caption{Histogram showing the normalized distribution of scattering
     paths having visited a certain number of scattering sites.  All
@@ -160,7 +160,7 @@
     %angle (degrees),llx=-.5cm,lly=-1.5cm,ury=0.5cm,
     %xAxisLabelPos={c,-0.2},yAxisLabelPos={-22,c}}
     \multido{\ix=0+1}{13}{%
-      \subfigure{
+      
         \psset{unit=40.75pt}
         \begin{pspicture}(-0.25,0)(-0.05,1)
           \input{wlgr/common/permute\ix}
@@ -171,9 +171,9 @@
           \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
           \listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}
         \end{psgraph}
-      }
+      
     }
-    \subfigure{
+    
       \psset{unit=40.75pt}
       \begin{pspicture}(-0.25,0)(-0.05,1)
         \input{wlgr/common/permute14}
@@ -185,7 +185,7 @@
         \listplot[linecolor=red,showpoints=true,dotstyle=+]{\dataa}
         \listplot[linecolor=blue,showpoints=true,dotstyle=+]{\datab}
       \end{psgraph}
-    }
+    
   \end{center}
   \caption{Normalized intensity (red) and normalized contrast (blue) of
     weirdospace images around the ring.  Contrast here is defined as the
