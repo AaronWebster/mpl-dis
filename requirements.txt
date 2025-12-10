@@ -1,0 +1,9 @@
+# Python dependencies for figure generation
+# Replaces MATLAB+matlab2tikz workflow
+
+numpy>=1.20.0
+palettable>=3.3.0
+
+# Optional: for future enhancements
+# matplotlib>=3.5.0
+# scipy>=1.7.0
