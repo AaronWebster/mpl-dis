@@ -35,13 +35,13 @@ def get_colorbrewer_set1():
     return np.array(Set1_9.colors) / 255.0
 
 
-def downsample_uniform(x, y, target_points=500):
+def downsample_uniform(x, y, target_points=250):
     """
     Uniformly downsample data to reduce number of points.
     
     Args:
         x, y: Input data arrays
-        target_points: Target number of points (default: 500)
+        target_points: Target number of points (default: 250)
     
     Returns:
         Downsampled (x, y) tuple
@@ -151,11 +151,11 @@ def generate_showtempair():
     time_ang = ang_data[:, 0] - ang_data[0, 0]
     val_ang = ang_data[:, 1]
     
-    # Downsample to reduce file size (from ~5000 to ~500 points per plot)
-    time_freq_ds, val_freq_ds = downsample_uniform(time_freq, val_freq, target_points=500)
-    time_res_ds, val_res_ds = downsample_uniform(time_res, val_res, target_points=500)
-    time_temp_ds, val_temp_ds = downsample_uniform(time_temp, val_temp, target_points=500)
-    time_ang_ds, val_ang_ds = downsample_uniform(time_ang, val_ang, target_points=500)
+    # Downsample to reduce file size (from ~5000 to ~250 points per plot)
+    time_freq_ds, val_freq_ds = downsample_uniform(time_freq, val_freq, target_points=250)
+    time_res_ds, val_res_ds = downsample_uniform(time_res, val_res, target_points=250)
+    time_temp_ds, val_temp_ds = downsample_uniform(time_temp, val_temp, target_points=250)
+    time_ang_ds, val_ang_ds = downsample_uniform(time_ang, val_ang, target_points=250)
     
     print(f"Frequency: {len(time_freq):4d} -> {len(time_freq_ds):3d} points")
     print(f"Resistance: {len(time_res):4d} -> {len(time_res_ds):3d} points")

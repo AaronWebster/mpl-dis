@@ -27,7 +27,7 @@ def prettyprint(one,two,val):
 
 
 for metal in metals:
-	lambda0 = linspace(200e-9,2000e-9,100);
+	lambda0 = linspace(200e-9,2000e-9,50);
 	data_LD = LDBB(metal,"LD",lambda0)
 	data_D = LDBB(metal,"D",lambda0)
 	data_BB = LDBB(metal,"BB",lambda0)

@@ -42,8 +42,8 @@ for metal in metals:
 	(r(0,1,theta)+r(1,2,theta)*exp(2J*kz(1,theta)*d))/ \
 	(1+r(0,1,theta)*r(1,2,theta)*exp(2J*kz(1,theta)*d))
 
-	theta = linspace(0,pi/2,1000)
-	dat = [ abs(r123(theta,d)) for d in linspace(0,100e-9,1000) ]
+	theta = linspace(0,pi/2,500)
+	dat = [ abs(r123(theta,d)) for d in linspace(0,100e-9,500) ]
 
 	x0 = array([ pi/4, 50.0e-9 ])
 	b = array([[0.0,pi/2],[0.0,100.0e-9]])
