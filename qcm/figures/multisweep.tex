@@ -107,59 +107,59 @@ legend pos = south west,
 },
 }
 \begin{tabular}{ll}
-  \begin{tikzpicture}[baseline, trim axis left]
-    \pgfplotstableread{data/multisweep-cells.dat}{\datatable}
-    \begin{axis}[
-        x unit = {},
-        xlabel = {},
-        ymax=1,
-        ymin=-1,
-      ]
-      \addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
-      \addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
-      \addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
-      \node[anchor=north west] at (yticklabel* cs:1) {(a)};
-      \legend{$\Delta\!f$,$\Delta\Gamma$}
-    \end{axis}
-  \end{tikzpicture}
-   &
-  \hspace{-0.25cm}
-  \includegraphics[height=55pt,keepaspectratio]{images/cells.pdf}
-  \\
-  \begin{tikzpicture}[baseline,trim axis left]
-    \pgfplotstableread{data/multisweep-agarose.dat}{\datatable}
-    \begin{axis}[
-        x unit = {},
-        xlabel = {},
-        ymax=1,
-        ymin=-1,
-      ]
-      \addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
-      \addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
-      \addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
-      \node[anchor=north west] at (yticklabel* cs:1) {(b)};
-      \legend{$\Delta\!f$,$\Delta\Gamma$}
-    \end{axis}
-  \end{tikzpicture}
-   &
-  \hspace{-0.25cm}
-  \includegraphics[height=55pt,keepaspectratio]{images/agarose.pdf}
-  \\
-  \begin{tikzpicture}[baseline,trim axis left]
-    \pgfplotstableread{data/multisweep-lysozyme.dat}{\datatable}
-    \begin{axis}[
-        ymin=-1.1,
-        ymax=1,
-      ]
-      \addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
-      \addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
-      \addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
-      \node[anchor=north west] at (yticklabel* cs:1) {(c)};
-      \legend{$\Delta\!f$,$\Delta\Gamma$}
-    \end{axis}
-  \end{tikzpicture}
-   &
-  \hspace{-0.25cm}
-  \includegraphics[height=55pt,keepaspectratio]{images/lysozyme.pdf}
+	\begin{tikzpicture}[baseline, trim axis left]
+		\pgfplotstableread{data/multisweep-cells.dat}{\datatable}
+		\begin{axis}[
+				x unit = {},
+				xlabel = {},
+				ymax=1,
+				ymin=-1,
+			]
+			\addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
+			\addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
+			\addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
+			\node[anchor=north west] at (yticklabel* cs:1) {(a)};
+			\legend{$\Delta\!f$,$\Delta\Gamma$}
+		\end{axis}
+	\end{tikzpicture}
+	 &
+	\hspace{-0.25cm}
+	\includegraphics[height=55pt,keepaspectratio]{images/cells.pdf}
+	\\
+	\begin{tikzpicture}[baseline,trim axis left]
+		\pgfplotstableread{data/multisweep-agarose.dat}{\datatable}
+		\begin{axis}[
+				x unit = {},
+				xlabel = {},
+				ymax=1,
+				ymin=-1,
+			]
+			\addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
+			\addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
+			\addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
+			\node[anchor=north west] at (yticklabel* cs:1) {(b)};
+			\legend{$\Delta\!f$,$\Delta\Gamma$}
+		\end{axis}
+	\end{tikzpicture}
+	 &
+	\hspace{-0.25cm}
+	\includegraphics[height=55pt,keepaspectratio]{images/agarose.pdf}
+	\\
+	\begin{tikzpicture}[baseline,trim axis left]
+		\pgfplotstableread{data/multisweep-lysozyme.dat}{\datatable}
+		\begin{axis}[
+				ymin=-1.1,
+				ymax=1,
+			]
+			\addplot [smooth,mark=, color=colora,] table [ y expr=\thisrowno{1} ] {\datatable};
+			\addplot [smooth,mark=, color=colorb,densely dashdotted] table [ y expr=\thisrowno{2} ] {\datatable};
+			\addplot [color=gray,dashed,semithick] coordinates {(0,-1) (0,1)};
+			\node[anchor=north west] at (yticklabel* cs:1) {(c)};
+			\legend{$\Delta\!f$,$\Delta\Gamma$}
+		\end{axis}
+	\end{tikzpicture}
+	 &
+	\hspace{-0.25cm}
+	\includegraphics[height=55pt,keepaspectratio]{images/lysozyme.pdf}
 \end{tabular}
 \end{document}

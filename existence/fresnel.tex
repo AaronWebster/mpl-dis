@@ -16,30 +16,30 @@ excited on a metal-dielectric interface if an optical field is incident at
 an angle $ck/\sqrt{\epsilon} \to ck\sin\theta/\sqrt{\epsilon}$.
 Furthermore, the following conditions must also be true:
 \begin{enumerate}
-  \item \glspl{spp} are excited with evanescent waves.  The
-        incident light must be at an angle greater than the critical angle, i.e.\
-        $\theta>\arcsin\left(n_1/n_2\right)$.
-  \item The metal layer must
-        \begin{enumerate}
-          \item be thin enough to be at least partially optically transparent at the excitation wavelength
-          \item have small enough damping, set by its permittivity, such that \glspl{spp} can propagate
-        \end{enumerate}
+	\item \glspl{spp} are excited with evanescent waves.  The
+	      incident light must be at an angle greater than the critical angle, i.e.\
+	      $\theta>\arcsin\left(n_1/n_2\right)$.
+	\item The metal layer must
+	      \begin{enumerate}
+		      \item be thin enough to be at least partially optically transparent at the excitation wavelength
+		      \item have small enough damping, set by its permittivity, such that \glspl{spp} can propagate
+	      \end{enumerate}
 \end{enumerate}
 
 \begin{figure}[ht]
-  \centering
-  \begin{subfigure}[b]{0.4\textwidth}
-    \centering
-    \import{existence/figures/}{singlelayerinterfacegeo-kretschmann}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.4\textwidth}
-    \import{existence/figures/}{multilayerinterfacegeo-kretschmann}
-    \caption{}
-  \end{subfigure}
-  \caption{Prism coupled excitation of \glspl{spp} in the Kretschmann configuration,
-    (a), a three-layer interface system, and (b), a four-layer interface system. }
-  \label{fig:prismcoupledsetups}
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\import{existence/figures/}{singlelayerinterfacegeo-kretschmann}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\import{existence/figures/}{multilayerinterfacegeo-kretschmann}
+		\caption{}
+	\end{subfigure}
+	\caption{Prism coupled excitation of \glspl{spp} in the Kretschmann configuration,
+		(a), a three-layer interface system, and (b), a four-layer interface system. }
+	\label{fig:prismcoupledsetups}
 \end{figure}
 
 The above conditions are satisfied when using the Kretschmann \gls{atr}
@@ -69,30 +69,30 @@ energy, and the imaginary part, $\epsilon_2^{\prime\prime}$, is a measure of
 its dissipation, a metal is desired for $D_2$ with a large negative real
 part and a small imaginary part.
 \begin{table}[ht]
-  \centering
-  \sisetup{round-mode=places,round-precision=3}
-  \begin{tabular}{lSS}
-    \toprule
-    metal & {$\epsilon^\prime$} & {$\epsilon^{\prime\prime}$} \\
-    \midrule
-    Ag    & -16.0648691498177   & 1.18528458742412            \\
-    Al    & -55.0747552231730   & 22.2259823038134            \\
-    Au    & -11.3606990407702   & 1.92302171486855            \\
-    Cu    & -14.1858191543517   & 2.33420338076507            \\
-    Cr    & -6.04524862130375   & 31.2186141440352            \\
-    Ni    & -10.1637074922586   & 15.8784172933422            \\
-    W     & +5.66969276029247   & 21.5082218271489            \\
-    Ti    & -5.85926367167276   & 13.6799220553247            \\
-    Be    & +1.61777122030528   & 22.0352487178570            \\
-    Pd    & -15.1527887328324   & 16.2452542701191            \\
-    Pt    & -12.7783923033094   & 20.6732739687699            \\
-    \bottomrule
-  \end{tabular}
-  \caption{Complex permittivity for select metals at
-    $\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude
-    model.  Model parameters are from Refs.~\cite{ung2007interference} and
-    \cite{rakic1998optical}.}
-  \label{tbl:epsmetal600}
+	\centering
+	\sisetup{round-mode=places,round-precision=3}
+	\begin{tabular}{lSS}
+		\toprule
+		metal & {$\epsilon^\prime$} & {$\epsilon^{\prime\prime}$} \\
+		\midrule
+		Ag    & -16.0648691498177   & 1.18528458742412            \\
+		Al    & -55.0747552231730   & 22.2259823038134            \\
+		Au    & -11.3606990407702   & 1.92302171486855            \\
+		Cu    & -14.1858191543517   & 2.33420338076507            \\
+		Cr    & -6.04524862130375   & 31.2186141440352            \\
+		Ni    & -10.1637074922586   & 15.8784172933422            \\
+		W     & +5.66969276029247   & 21.5082218271489            \\
+		Ti    & -5.85926367167276   & 13.6799220553247            \\
+		Be    & +1.61777122030528   & 22.0352487178570            \\
+		Pd    & -15.1527887328324   & 16.2452542701191            \\
+		Pt    & -12.7783923033094   & 20.6732739687699            \\
+		\bottomrule
+	\end{tabular}
+	\caption{Complex permittivity for select metals at
+		$\lambda=\SI{660}{\nano\meter}$ calculated using the Lorentz-Drude
+		model.  Model parameters are from Refs.~\cite{ung2007interference} and
+		\cite{rakic1998optical}.}
+	\label{tbl:epsmetal600}
 \end{table}
 
 \Table{tbl:epsmetal600} shows the complex permittivity for several metals
@@ -137,14 +137,14 @@ corresponding to regions to the right of the critical angle for total
 internal reflection with a minimum in $|r_p|^2$.
 
 \begin{figure}[ht]
-  \centering
-  \import{existence/figures/}{fresneltogether}
-  \caption{Fresnel reflection coefficient for $p$ polarization, $|r^p|^2$, a
-    function of angle and excitation wavelength for conventional (right) and
-    long-range (left) \gls{spp} structures in a Kretschmann \gls{atr} configuration.
-    Coupling of light into \glspl{spp} is possible in regions of low reflectivity to the right of the
-    critical angle for total internal reflection (dashed line).}
-  \label{fig:fresnelangle}
+	\centering
+	\import{existence/figures/}{fresneltogether}
+	\caption{Fresnel reflection coefficient for $p$ polarization, $|r^p|^2$, a
+		function of angle and excitation wavelength for conventional (right) and
+		long-range (left) \gls{spp} structures in a Kretschmann \gls{atr} configuration.
+		Coupling of light into \glspl{spp} is possible in regions of low reflectivity to the right of the
+		critical angle for total internal reflection (dashed line).}
+	\label{fig:fresnelangle}
 \end{figure}
 
 \subsection{Near and Far Fields}\label{sec:fresnelnearfar}
@@ -158,14 +158,14 @@ taking into account effects from \glspl{spp}.
 Evaluation of the near and far fields is carried out by taking advantage of
 the shift theorem using the standard Fourier transform recipe,
 \begin{equation}
-  \mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
-  \,\me^{\mi \mathbf{k} \cdot \mathbf{r}}
-  \,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime} \md \mathbf{k},
+	\mathbf{E}(\mathbf{r}) = \intinfty \tilde{\mathbf{E}}(\mathbf{k})
+	\,\me^{\mi \mathbf{k} \cdot \mathbf{r}}
+	\,\me^{\mi \mathbf{k} \cdot \mathbf{z}^\prime} \md \mathbf{k},
 \end{equation}
 where $\tilde{\mathbf{E}}(\mathbf{k})$ is the $k$-space electric field at
 the surface ($z^\prime=0$) given by Fresnel equations, taking into account
 the distribution of the exciting field, and $\exp(\mi \mathbf{k} \cdot
-  \mathbf{z}^\prime)$ is the free-space transfer function along the
+	\mathbf{z}^\prime)$ is the free-space transfer function along the
 propagation direction $\mathbf{z}^\prime$ which includes the evanescent
 wave due to the domain of integration.  The mathematical details of the
 computation are further elaborated in \Section{sec:interferencetheory} and
@@ -211,23 +211,23 @@ broad ones.
 %\Chapter
 
 \begin{figure}[ht]
-  \centering
-  \import{existence/figures/}{dis-specular-spp.tex}
-  \caption{Near and far field intensities for excitation of conventional \glspl{spp}
-    in a three-layer system. $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-      \num{1.5142}$, $n_2=\complexnum{0.2843 + 3.3825i}$, and $n_3=1.3310$.  The thickness of the metal layer is
-    \SI{45}{\nano\meter}.}
-  \label{fig:fresnelnearfieldspp}
+	\centering
+	\import{existence/figures/}{dis-specular-spp.tex}
+	\caption{Near and far field intensities for excitation of conventional \glspl{spp}
+		in a three-layer system. $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+			\num{1.5142}$, $n_2=\complexnum{0.2843 + 3.3825i}$, and $n_3=1.3310$.  The thickness of the metal layer is
+		\SI{45}{\nano\meter}.}
+	\label{fig:fresnelnearfieldspp}
 \end{figure}
 
 \begin{figure}[ht]
-  \centering
-  \import{existence/figures/}{dis-specular-lrspp.tex}
-  \caption{Near and far field intensities for excitation long-range \glspl{spp} in a
-    symmetric layer system $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
-      \num{1.5142}$, $n_2=1.3489$, $n_3=\complexnum{0.2843 + 3.3825i}$, and
-    $n_4=1.3310$.  The thickness of the metal layer is
-    \SI{16.97}{\nano\meter}.}
-  \label{fig:fresnelnearfieldlrspp}
+	\centering
+	\import{existence/figures/}{dis-specular-lrspp.tex}
+	\caption{Near and far field intensities for excitation long-range \glspl{spp} in a
+		symmetric layer system $\lambda_0=\SI{660}{\nano\meter}$, $n_1 =
+			\num{1.5142}$, $n_2=1.3489$, $n_3=\complexnum{0.2843 + 3.3825i}$, and
+		$n_4=1.3310$.  The thickness of the metal layer is
+		\SI{16.97}{\nano\meter}.}
+	\label{fig:fresnelnearfieldlrspp}
 \end{figure}
 

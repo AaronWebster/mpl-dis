@@ -1,12 +1,12 @@
 %\todo{Make sure that all $k$-space functions have tildes.  Or not, but be consistent with other chapters.}
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \includegraphics[keepaspectratio,width=15.5cm]{interference/figures/coneintro.jpg}
-  \caption{Section of the cone exhibiting one-sided interference fringes.
-    System parameters: $\lambda_0 = \SI{632.8}{\nano\meter}$,
-    $n_1=1.9961$ (LAH79), $n_2 = \complexnum{-14.48+1.09i}$ (silver), $n_3=1.0$
-    (air), and $d_2=\SI{48}{\nano\meter}$.}\label{fig:coneintrofig}
+	\centering
+	\import{includes/}{setpgfinc}
+	\includegraphics[keepaspectratio,width=15.5cm]{interference/figures/coneintro.jpg}
+	\caption{Section of the cone exhibiting one-sided interference fringes.
+		System parameters: $\lambda_0 = \SI{632.8}{\nano\meter}$,
+		$n_1=1.9961$ (LAH79), $n_2 = \complexnum{-14.48+1.09i}$ (silver), $n_3=1.0$
+		(air), and $d_2=\SI{48}{\nano\meter}$.}\label{fig:coneintrofig}
 \end{figure}
 When \glspl{spp} are excited in a prism-coupled setup using a focused beam, it is
 possible to observe a fringed spatial interference in either the
@@ -30,18 +30,18 @@ exciting either normal or long-range \glspl{spp} on a metal film.  On the film,
 the Gaussian beam may be represented in $k$-space as $\tilde{g}(k_x)$,
 where
 \begin{align}
-  \tilde{g}(k_x) & = \frac{w_0}{\sqrt{2}} \exp\left(-\frac{1}{4}w_0^2\left(k_x - \ksp\right)^2\right) \\
-                 & = \intinfty g(x)\, \me^{\mi k_x x} \md x
+	\tilde{g}(k_x) & = \frac{w_0}{\sqrt{2}} \exp\left(-\frac{1}{4}w_0^2\left(k_x - \ksp\right)^2\right) \\
+	               & = \intinfty g(x)\, \me^{\mi k_x x} \md x
 \end{align}
 and
 \begin{equation}
-  g(x) = \exp\left(-\frac{x^2}{w_0^2} + \mi \ksp x\right),
+	g(x) = \exp\left(-\frac{x^2}{w_0^2} + \mi \ksp x\right),
 \end{equation}
 where $w_0$ denotes the Gaussian beam waist parameter at the focus.  In the
 specular direction, the field $\tilde{E}_\mathrm{notch}(k_x)$ is given by its
 Fresnel reflectivity $\tilde{r}^p(k_x)$ multiplied by $\tilde{g}(k_x)$,
 \begin{equation}
-  \tilde{E}_\mathrm{notch}(k_x)=\tilde{g}(k_x)\,\tilde{r}^p(k_x).
+	\tilde{E}_\mathrm{notch}(k_x)=\tilde{g}(k_x)\,\tilde{r}^p(k_x).
 \end{equation}
 
 Consider the spatial evolution of the light as it propagates
@@ -50,17 +50,17 @@ The complete field in both $x$ and $z$ can be obtained by computing
 the Fourier transform of $\tilde{E}_\mathrm{notch}(k_x)$ multiplied
 by a free space transfer function $\me^{\mi k_{z} z}$
 \begin{align}
-  E_\mathrm{notch}(x,z) & = \intinfty \tilde{E}_\mathrm{notch}\, \me^{\mi k_{z,1} z}\, \me^{\mi k_x x} \md k_x                                 \\
-                        & = \intinfty \tilde{g}(k_x)\, \tilde{r}^p(k_x)\, \me^{\mi \sqrt{k_0^2 \epsilon_1 - k_x^2}z}\, \me^{\mi k_x x} \md k_x
-  \label{eqn:fourier123}
+	E_\mathrm{notch}(x,z) & = \intinfty \tilde{E}_\mathrm{notch}\, \me^{\mi k_{z,1} z}\, \me^{\mi k_x x} \md k_x                                 \\
+	                      & = \intinfty \tilde{g}(k_x)\, \tilde{r}^p(k_x)\, \me^{\mi \sqrt{k_0^2 \epsilon_1 - k_x^2}z}\, \me^{\mi k_x x} \md k_x
+	\label{eqn:fourier123}
 \end{align}
 Likewise, the conically scattered field may be found using the same
 treatment yielding
 \begin{align}
-  E_\text{cone}(x,z) = \intinfty \tilde{g}(k_x)\,
-  \tilde{t}^p_+(k_x)\, \tilde{t}^p_-(k_x)\,\me^{\mi k_z z}\, \me^{\mi k_x x}
-  \md k_x.
-  \label{eqn:fourier321}
+	E_\text{cone}(x,z) = \intinfty \tilde{g}(k_x)\,
+	\tilde{t}^p_+(k_x)\, \tilde{t}^p_-(k_x)\,\me^{\mi k_z z}\, \me^{\mi k_x x}
+	\md k_x.
+	\label{eqn:fourier321}
 \end{align}
 Though the integral seems to have no analytic solution, its evaluation is
 nonetheless straightforward on a computer.  The same Fourier transform
@@ -69,14 +69,14 @@ recipe may be used to find fields in three dimensions, as was done in
 
 \section{Experiment}\label{sec:intexperimental}
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \includegraphics[keepaspectratio,width=14cm]{interference/figures/opticalsetup.pdf}
-  \caption{Experimental setup.  Light from a laser passes through beamsplitter
-    BS passing p-polarized light and expanded by two lenses, $f_1$ and $f_2$.
-    Mirrors $m_1$ and $m_2$ steer the expanded beam to lens $f_3$, focusing the
-    light onto the hypotenuse of a hemispherical prism.  Lens $f_4$ re-images the reflected field to a beam profiler where it is recorded.}
-  \label{fig:opticalsetup}
+	\centering
+	\import{includes/}{setpgfinc}
+	\includegraphics[keepaspectratio,width=14cm]{interference/figures/opticalsetup.pdf}
+	\caption{Experimental setup.  Light from a laser passes through beamsplitter
+		BS passing p-polarized light and expanded by two lenses, $f_1$ and $f_2$.
+		Mirrors $m_1$ and $m_2$ steer the expanded beam to lens $f_3$, focusing the
+		light onto the hypotenuse of a hemispherical prism.  Lens $f_4$ re-images the reflected field to a beam profiler where it is recorded.}
+	\label{fig:opticalsetup}
 \end{figure}
 Experimental verification of the predictions of Equations~\ref{eqn:fourier123}
 and~\ref{eqn:fourier321} was performed with the setup shown in
@@ -112,14 +112,14 @@ is mounted on a micrometer stage.  As the stage is translated, different focal
 planes can be imaged.
 
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \includegraphics[width=16cm,keepaspectratio]{interference/figures/fig2-crop.pdf}
-  \caption{Theoretical and experimental values of
-    $|E_\text{notch}(x,z)|^2$ and $|E_\text{cone}(x,z)|^2$ obtained for three
-    characteristic propagation distances.  Theoretical values are solid lines,
-    while experimental values are shown with points.  Distances are
-    approximate.  Inset is the experimentally obtained optical intensity.}\label{fig:fresnelprop}
+	\centering
+	\import{includes/}{setpgfinc}
+	\includegraphics[width=16cm,keepaspectratio]{interference/figures/fig2-crop.pdf}
+	\caption{Theoretical and experimental values of
+		$|E_\text{notch}(x,z)|^2$ and $|E_\text{cone}(x,z)|^2$ obtained for three
+		characteristic propagation distances.  Theoretical values are solid lines,
+		while experimental values are shown with points.  Distances are
+		approximate.  Inset is the experimentally obtained optical intensity.}\label{fig:fresnelprop}
 \end{figure}
 Verification of the optical fields were obtained using a beam profiler for an
 optimally focused lens $f_3$ while the focal plane of lens $f_4$ was moved
@@ -145,8 +145,8 @@ The far field is often defined as $z\gg 2 D^2/\lambda$, where $D$ is the
 spatial width of the source.  For silver at \SI{632.8}{\nano\meter}, the
 Lorentz-Drude model permittivity is $\epsilon = \complexnum{-14.48+1.09i}$ and the
 $1/\me$ \gls{spp} propagation distance normal to the interface $D = 1/(2 k_x)
-  \approx \SI{17}{\micro\meter}$ and the resulting far field limit is $2
-  D^2/\lambda \approx \SI{10}{\milli\meter}$.  This seems to be consistent with
+	\approx \SI{17}{\micro\meter}$ and the resulting far field limit is $2
+	D^2/\lambda \approx \SI{10}{\milli\meter}$.  This seems to be consistent with
 both the simulated and experimental results, as it is approximately the
 distance in \Figure{fig:fresnelprop} for which the interference fringes
 disappear.
@@ -172,83 +172,83 @@ difference in the value chosen for the permittivity of silver:
 calculation of \Figure{fig:fresnelprop}.
 
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaReflected.jpg}
-  \hspace{1cm}
-  \includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaTransmitted.jpg}
-  \caption{Predictions of the optical field made by
-    \name{Baida}~\cite{baida1999theoretical}.  On the left is the field on
-    the metal-glass (1--2) interface.  On the right, the field on the
-    metal-vacuum (2--3) interface.  Compare with the near fields for the
-    notch and cone in \Figure{fig:fresnelprop}.}\label{fig:baidacompare}
+	\centering
+	\import{includes/}{setpgfinc}
+	\includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaReflected.jpg}
+	\hspace{1cm}
+	\includegraphics[keepaspectratio,width=6cm]{interference/figures/BaidaTransmitted.jpg}
+	\caption{Predictions of the optical field made by
+		\name{Baida}~\cite{baida1999theoretical}.  On the left is the field on
+		the metal-glass (1--2) interface.  On the right, the field on the
+		metal-vacuum (2--3) interface.  Compare with the near fields for the
+		notch and cone in \Figure{fig:fresnelprop}.}\label{fig:baidacompare}
 \end{figure}
 
 \begin{figure}[ht]
-  \centering
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-11.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-10.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-9.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-8.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-7.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-5.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-3.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-2.jpg}\caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-1.jpg}\caption{}
-  \end{subfigure}
-  \caption{Images of the optical field in the specular direction as the focal
-    plane of $f_4$ is moved from (a), best focus, to (i), the far field.  All
-    images have been normalized relative to themselves.}\label{fig:123up}
+	\centering
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-11.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-10.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-9.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-8.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-7.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-5.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-3.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-2.jpg}\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/123-1.jpg}\caption{}
+	\end{subfigure}
+	\caption{Images of the optical field in the specular direction as the focal
+		plane of $f_4$ is moved from (a), best focus, to (i), the far field.  All
+		images have been normalized relative to themselves.}\label{fig:123up}
 \end{figure}
 
 \begin{figure}[ht]
-  \centering
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-1.jpg}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-2.jpg}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-3.jpg}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-7.jpg}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-8.jpg}
-    \caption{}
-  \end{subfigure}
-  \begin{subfigure}[b]{4cm}
-    \includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-9.jpg}
-    \caption{}
-  \end{subfigure}
-  \caption{Images of the optical field for the section of the conically
-    scattered light as the focal plane of $f_4$ is moved from (a), best focus,
-    to (f), the far field.  All images have been normalized relative to
-    themselves.}
-  \label{fig:321up}
+	\centering
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-1.jpg}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-2.jpg}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-3.jpg}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-7.jpg}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-8.jpg}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\includegraphics[width=4cm,keepaspectratio]{interference/figures/move/321-9.jpg}
+		\caption{}
+	\end{subfigure}
+	\caption{Images of the optical field for the section of the conically
+		scattered light as the focal plane of $f_4$ is moved from (a), best focus,
+		to (f), the far field.  All images have been normalized relative to
+		themselves.}
+	\label{fig:321up}
 \end{figure}
 
 As a final comparison, \Figure{fig:dawsoncompare} shows a near-field
@@ -260,17 +260,17 @@ dielectric function for silver (determining the propagation length), the
 results match \name{Baida} and \Figure{fig:fresnelprop}.
 % see \Section{sec:sppphysicalchar})
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \includegraphics[keepaspectratio,width=6cm]{interference/figures/DawsonTransmitted.jpg}
-  \caption{Photon scanning tunneling microscope image of the metal-vacuum (2--3)
-    interface from \name{Dawson}~\cite{dawson2001surface}.  No scale was
-    given except that the $1/\me$ propagation length was
-    \SI{13.8}{\micro\meter}.  Compare with
-    the near field cone image in \Figure{fig:fresnelprop}.  The model of
-    \name{Dawson} assumes a \SI{2.65}{\nano\meter} layer of \ce{Ag2S} on
-    top of the silver layer, hence the reduced \gls{spp} propagation length.}
-  \label{fig:dawsoncompare}
+	\centering
+	\import{includes/}{setpgfinc}
+	\includegraphics[keepaspectratio,width=6cm]{interference/figures/DawsonTransmitted.jpg}
+	\caption{Photon scanning tunneling microscope image of the metal-vacuum (2--3)
+		interface from \name{Dawson}~\cite{dawson2001surface}.  No scale was
+		given except that the $1/\me$ propagation length was
+		\SI{13.8}{\micro\meter}.  Compare with
+		the near field cone image in \Figure{fig:fresnelprop}.  The model of
+		\name{Dawson} assumes a \SI{2.65}{\nano\meter} layer of \ce{Ag2S} on
+		top of the silver layer, hence the reduced \gls{spp} propagation length.}
+	\label{fig:dawsoncompare}
 \end{figure}
 
 
@@ -286,13 +286,13 @@ true that the field in the specular direction contains both components, and
 that $\tilde{r}_{12}$ and $\tilde{r}_{23}$ are indeed antiphase at
 $k_\text{sp}$, the fringes do not require a specular component to be observed.
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \import{interference/figures/}{r123m12}
-  \caption{Comparison of the propagated $\tilde{r}_{123}(k_x)$ versus
-    $(\tilde{r}_{123}(k_x)-\tilde{r}_{12})$.  Note that interference fringes occur in
-    both cases.  }
-  \label{fig:r123m12}
+	\centering
+	\import{includes/}{setpgfinc}
+	\import{interference/figures/}{r123m12}
+	\caption{Comparison of the propagated $\tilde{r}_{123}(k_x)$ versus
+		$(\tilde{r}_{123}(k_x)-\tilde{r}_{12})$.  Note that interference fringes occur in
+		both cases.  }
+	\label{fig:r123m12}
 \end{figure}
 
 In \Figure{fig:r123m12}, the contribution of the 1--2 interface has been
@@ -313,25 +313,25 @@ The asymmetry of the interference results from the causality of the system.
 Assume a complex function $\chi(\omega) = \chi'(\omega) + \mi \chi''(\omega)$
 whose real and imaginary parts are related by Kramers-Kronig relations
 \begin{align}
-  \chi(\omega)=\mi \hf{\chi(\omega)}
+	\chi(\omega)=\mi \hf{\chi(\omega)}
 \end{align}
 with
 \begin{align}
-  \chi'(\omega)  & = \hf{\chi''(\omega)} \\
-  \chi''(\omega) & = -\hf{\chi'(\omega)}
+	\chi'(\omega)  & = \hf{\chi''(\omega)} \\
+	\chi''(\omega) & = -\hf{\chi'(\omega)}
 \end{align}
 where $\hf{\chi(\omega)}$ is the Hilbert transform of $\chi(\omega)$.
 The Fourier transform of $\chi(\omega)$ is
 \begin{align}
-  \chi(\omega)      & = \chi'(\omega) + \mi \chi''(\omega)                   \\
-  \ff{\chi(\omega)} & = \ff{\chi'(\omega) + \mi \chi''(\omega)}              \\
-                    & = \ff{\chi'(\omega)} + \ff{\mi \chi''(\omega)}         \\
-                    & = \ff{\chi'(\omega)} + \ff{\mi \hf{\chi'(\omega)}}     \\
-                    & = \ff{\chi'(\omega)} + \sgn(\omega) \ff{\chi'(\omega)} \\
+	\chi(\omega)      & = \chi'(\omega) + \mi \chi''(\omega)                   \\
+	\ff{\chi(\omega)} & = \ff{\chi'(\omega) + \mi \chi''(\omega)}              \\
+	                  & = \ff{\chi'(\omega)} + \ff{\mi \chi''(\omega)}         \\
+	                  & = \ff{\chi'(\omega)} + \ff{\mi \hf{\chi'(\omega)}}     \\
+	                  & = \ff{\chi'(\omega)} + \sgn(\omega) \ff{\chi'(\omega)} \\
 \end{align}
 Or succinctly,
 \begin{align}
-  \ff{\hf{\chi(\omega)}} = (-\mi \sgn(\omega)) \ff{\chi(\omega)}
+	\ff{\hf{\chi(\omega)}} = (-\mi \sgn(\omega)) \ff{\chi(\omega)}
 \end{align}
 In other words, the Fourier transform of any function which satisfies
 Kramers-Kronig relations is asymmetric (``one-sided'') as a necessary

@@ -9,27 +9,27 @@
 %
 \begin{tikzpicture}
 
-  \begin{axis}[%
-      width=9cm,
-      height=6cm,
-      scale only axis,
-      xmin=2500,
-      xmax=6500,
-      xlabel={spin speed [RPM]},
-      ymin=9e-07,
-      ymax=1.6e-06,
-      ylabel={layer thickness [m]},
-      legend style={draw=black,fill=white,legend cell align=left}
-    ]
-    \addplot [color=mycolor1,solid]
-    plot [error bars/.cd, y dir = both, y explicit]
-    table[row sep=crcr, y error plus index=2, y error minus index=3]{%
-        3000	1.54e-06	2.42999999999995e-09	2.42999999999995e-09\\
-        4000	1.18e-06	6.00000000000045e-10	6.00000000000045e-10\\
-        5000	1.05e-06	5.54000000000046e-10	5.54000000000046e-10\\
-        6000	9.81e-07	8.34999999999967e-10	8.34999999999967e-10\\
-      };
-    \addlegendentry{cytop layer thickness};
+	\begin{axis}[%
+			width=9cm,
+			height=6cm,
+			scale only axis,
+			xmin=2500,
+			xmax=6500,
+			xlabel={spin speed [RPM]},
+			ymin=9e-07,
+			ymax=1.6e-06,
+			ylabel={layer thickness [m]},
+			legend style={draw=black,fill=white,legend cell align=left}
+		]
+		\addplot [color=mycolor1,solid]
+		plot [error bars/.cd, y dir = both, y explicit]
+		table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+				3000	1.54e-06	2.42999999999995e-09	2.42999999999995e-09\\
+				4000	1.18e-06	6.00000000000045e-10	6.00000000000045e-10\\
+				5000	1.05e-06	5.54000000000046e-10	5.54000000000046e-10\\
+				6000	9.81e-07	8.34999999999967e-10	8.34999999999967e-10\\
+			};
+		\addlegendentry{cytop layer thickness};
 
-  \end{axis}
+	\end{axis}
 \end{tikzpicture}%

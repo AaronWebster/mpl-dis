@@ -86,94 +86,94 @@
 %\myplot{Air}{QCM00431b}{QCM00431b}{QCM00431b}{QCM00431b}
 
 \newcommand{\myplot}[7]{
-  \begin{tikzpicture}[baseline]
-    \begin{axis}[
-        title={\textbf{#1}},
-        axis y line*=left,
-        ylabel={\textcolor{colora}{\uline{$\Delta\!f$}}},
-        ylabel absolute,
-        ylabel style={
-            rotate=-90,
-            at={(yticklabel* cs:1)},
-            xshift=34pt,
-            anchor=north east,
-            fill=white,color=white,
-          },
-        legend columns=-1,
-        legend entries={
-            $\Delta\!f$ loading,
-            $\Delta\!f$ unloading,
-            $\Delta \Gamma$ loading,
-            $\Delta \Gamma$ unloading},
-        legend to name=named,
-        xmin=-5,xmax=#7,
-        ymin=#4,ymax=#5,
-      ]
-      % loading
-      %\node[anchor=near yticklabel opposite] at (yticklabel* cs:1) {dingus};
-      \addplot [
-        color=colora,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        error bars/.cd, y dir=both, y explicit,
-      ] table [x index=0, y index=1, y error index=2] {data/#2-ang-freq-ebar.txt};
-      % unloading
-      \addplot [
-        color=colora,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        mark options={rotate=180},
-        error bars/.cd, y dir=both, y explicit,
-      ] table [x index=0, y index=1, y error index=2] {data/#3-ang-freq-ebar.txt};
-      \node[anchor=south west] at (xticklabel* cs:0)
-      {\includegraphics[height=38.25pt,keepaspectratio]{images/loadplot-#6.pdf}};
-      \addplot [
-        color=colorb,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        error bars/.cd, y dir=both, y explicit,
-      ] coordinates {(1000,1000)};
-      % unloading
-      \addplot [
-        color=colorb,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        mark options={rotate=180},
-      ] coordinates {(1000,1000)};
-      \node[anchor=north west] at (yticklabel* cs:1) {(#6)};
-    \end{axis}
-    \begin{axis}[
-        hide x axis,
-        axis y line*=right,
-        ylabel={\textcolor{colorb}{\uline{$\Delta \Gamma$}}},
-        ylabel absolute,
-        ylabel style={
-            rotate=-90,
-            at={(yticklabel* cs:1)},
-            xshift=36pt,
-            anchor=north west,
-            fill=white,color=white,
-          },
-        xmin=-5,xmax=#7,
-        ymin=#4,ymax=#5,
-      ]
-      % loading
-      \addplot [
-        color=colorb,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        error bars/.cd, y dir=both, y explicit,
-      ] table [x index=0, y index=1, y error index=2] {data/#2-ang-res-ebar.txt};
-      % unloading
-      \addplot [
-        color=colorb,
-        mark=halfcircle*,
-        mark size=1.5pt,
-        mark options={rotate=180},
-        error bars/.cd, y dir=both, y explicit,
-      ] table [x index=0, y index=1, y error index=2] {data/#3-ang-res-ebar.txt};
-    \end{axis}
-  \end{tikzpicture}
+	\begin{tikzpicture}[baseline]
+		\begin{axis}[
+				title={\textbf{#1}},
+				axis y line*=left,
+				ylabel={\textcolor{colora}{\uline{$\Delta\!f$}}},
+				ylabel absolute,
+				ylabel style={
+						rotate=-90,
+						at={(yticklabel* cs:1)},
+						xshift=34pt,
+						anchor=north east,
+						fill=white,color=white,
+					},
+				legend columns=-1,
+				legend entries={
+						$\Delta\!f$ loading,
+						$\Delta\!f$ unloading,
+						$\Delta \Gamma$ loading,
+						$\Delta \Gamma$ unloading},
+				legend to name=named,
+				xmin=-5,xmax=#7,
+				ymin=#4,ymax=#5,
+			]
+			% loading
+			%\node[anchor=near yticklabel opposite] at (yticklabel* cs:1) {dingus};
+			\addplot [
+				color=colora,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				error bars/.cd, y dir=both, y explicit,
+			] table [x index=0, y index=1, y error index=2] {data/#2-ang-freq-ebar.txt};
+			% unloading
+			\addplot [
+				color=colora,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				mark options={rotate=180},
+				error bars/.cd, y dir=both, y explicit,
+			] table [x index=0, y index=1, y error index=2] {data/#3-ang-freq-ebar.txt};
+			\node[anchor=south west] at (xticklabel* cs:0)
+			{\includegraphics[height=38.25pt,keepaspectratio]{images/loadplot-#6.pdf}};
+			\addplot [
+				color=colorb,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				error bars/.cd, y dir=both, y explicit,
+			] coordinates {(1000,1000)};
+			% unloading
+			\addplot [
+				color=colorb,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				mark options={rotate=180},
+			] coordinates {(1000,1000)};
+			\node[anchor=north west] at (yticklabel* cs:1) {(#6)};
+		\end{axis}
+		\begin{axis}[
+				hide x axis,
+				axis y line*=right,
+				ylabel={\textcolor{colorb}{\uline{$\Delta \Gamma$}}},
+				ylabel absolute,
+				ylabel style={
+						rotate=-90,
+						at={(yticklabel* cs:1)},
+						xshift=36pt,
+						anchor=north west,
+						fill=white,color=white,
+					},
+				xmin=-5,xmax=#7,
+				ymin=#4,ymax=#5,
+			]
+			% loading
+			\addplot [
+				color=colorb,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				error bars/.cd, y dir=both, y explicit,
+			] table [x index=0, y index=1, y error index=2] {data/#2-ang-res-ebar.txt};
+			% unloading
+			\addplot [
+				color=colorb,
+				mark=halfcircle*,
+				mark size=1.5pt,
+				mark options={rotate=180},
+				error bars/.cd, y dir=both, y explicit,
+			] table [x index=0, y index=1, y error index=2] {data/#3-ang-res-ebar.txt};
+		\end{axis}
+	\end{tikzpicture}
 }
 
 \pgfplotsset{
@@ -190,21 +190,21 @@ legend style={font=\footnotesize},
 }
 
 \begin{figure*}
-  \begin{tabular}{lll}
-    \myplot{Air} {QCM00431b} {QCM00434} {-9} {5} {a} {100}
-     &
-    \myplot{Water} {QCM00450} {QCM00170} {-9} {5} {b} {90}
-     &
-    \myplot{Free Particles} {QCM00306c} {QCM00306a} {-30} {45} {c} {100}
-    \\
-    \myplot{Attached Particles} {QCM00328b} {QCM00321b} {-35} {9} {d} {100}
-     &
-    \myplot{Lambda DNA} {QCM00461} {QCM00458} {-21} {8} {e} {75}
-     &
-    \myplot{Tethered Particles} {QCM00510a} {QCM00511c} {-65} {25} {f} {70}
-    \\
-    \multicolumn{3}{c}{\ref{named}}
-  \end{tabular}
+	\begin{tabular}{lll}
+		\myplot{Air} {QCM00431b} {QCM00434} {-9} {5} {a} {100}
+		 &
+		\myplot{Water} {QCM00450} {QCM00170} {-9} {5} {b} {90}
+		 &
+		\myplot{Free Particles} {QCM00306c} {QCM00306a} {-30} {45} {c} {100}
+		\\
+		\myplot{Attached Particles} {QCM00328b} {QCM00321b} {-35} {9} {d} {100}
+		 &
+		\myplot{Lambda DNA} {QCM00461} {QCM00458} {-21} {8} {e} {75}
+		 &
+		\myplot{Tethered Particles} {QCM00510a} {QCM00511c} {-65} {25} {f} {70}
+		\\
+		\multicolumn{3}{c}{\ref{named}}
+	\end{tabular}
 \end{figure*}
 
 \end{document}

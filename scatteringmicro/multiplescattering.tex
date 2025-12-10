@@ -22,31 +22,31 @@ for the observed speckle in the cone.
 Restated, the individual components of the scattering model shown in
 \Figure{fig:plasmongeosimple} are:
 \begin{itemize}
-  \item An elliptical \textit{illuminated region}, representing the incident
-        evanescent field used to excite \glspl{spp}.
-  \item \textit{Scatterers}, fixed point defects, assumed to be randomly
-        distributed, which modify the in-plane momentum of an \gls{spp} and
-        optionally cause its re-radiation as a photon out of plane into the cone.
-  \item A \textit{scattering path}, the ordered sequence of
-        scatterers an \gls{spp} visits before exiting the system.
-  \item An \gls{spp} \textit{creation point}, where an \gls{spp} comes into existence and
-        begins accumulating phase.
+	\item An elliptical \textit{illuminated region}, representing the incident
+	      evanescent field used to excite \glspl{spp}.
+	\item \textit{Scatterers}, fixed point defects, assumed to be randomly
+	      distributed, which modify the in-plane momentum of an \gls{spp} and
+	      optionally cause its re-radiation as a photon out of plane into the cone.
+	\item A \textit{scattering path}, the ordered sequence of
+	      scatterers an \gls{spp} visits before exiting the system.
+	\item An \gls{spp} \textit{creation point}, where an \gls{spp} comes into existence and
+	      begins accumulating phase.
 \end{itemize}
 \begin{figure}[ht]
-  \centering
-  \includegraphics[keepaspectratio]{scatteringmicro/figures/montecarlogeosimple.pdf}
-  \caption{A simplified \gls{spp} scattering model.  An \gls{spp} is excited within the
-    illuminated region at its creation point and follows a scattering path
-    amongst fixed point scatterers (numbered).  The scattering path can
-    include one (single scattering) or more (multiple scattering)
-    scatterers.  The beam creating the illuminated region is incident from
-    the ${+}x$ direction.}
-  \label{fig:plasmongeosimple}
+	\centering
+	\includegraphics[keepaspectratio]{scatteringmicro/figures/montecarlogeosimple.pdf}
+	\caption{A simplified \gls{spp} scattering model.  An \gls{spp} is excited within the
+		illuminated region at its creation point and follows a scattering path
+		amongst fixed point scatterers (numbered).  The scattering path can
+		include one (single scattering) or more (multiple scattering)
+		scatterers.  The beam creating the illuminated region is incident from
+		the ${+}x$ direction.}
+	\label{fig:plasmongeosimple}
 \end{figure}
 
 Physically there are two possible in-plane scattering processes, both of which
 are depicted in \Figure{fig:plasmongeosimple}.  The first is \textit{single
-  scattering}, whereby only one scatterer is visited in each path from source to
+	scattering}, whereby only one scatterer is visited in each path from source to
 observation.  An example single scattering path is given in
 \Figure{fig:plasmongeosimple} by the path $\{C_\mathrm{ss},3\}$, where an \gls{spp}
 is created at $C_\mathrm{ss}$, propagates to scatterer $3$, then is
@@ -61,9 +61,9 @@ $\{C_\mathrm{ms},5,6,9,10,12,14,10,14,13\}$.  This path serves to illustrate
 several important assumptions which are made regarding the behavior of a multiple scattering
 path:
 \begin{itemize}
-  \item The scatterers are randomly distributed (true for single scattering as well).
-  \item The same scatterer has the possibility of being visited an arbitrary number of times, e.g.\ $\{10,12,14,10,14\}$.
-  \item Closed loop and time reversed paths are possible, e.g.\ $\{10,12,14\}$.  In these cases the accumulated phase is the same regardless of direction, e.g.\ $\{10,12,14\} \equiv \{14,12,10\}$.  Such paths are said to have \textit{time reversal symmetry}.
+	\item The scatterers are randomly distributed (true for single scattering as well).
+	\item The same scatterer has the possibility of being visited an arbitrary number of times, e.g.\ $\{10,12,14,10,14\}$.
+	\item Closed loop and time reversed paths are possible, e.g.\ $\{10,12,14\}$.  In these cases the accumulated phase is the same regardless of direction, e.g.\ $\{10,12,14\} \equiv \{14,12,10\}$.  Such paths are said to have \textit{time reversal symmetry}.
 \end{itemize}
 
 Note the first scatterer visited in both example paths for single and multiple
@@ -87,8 +87,8 @@ the Green's function for a point source on a metal-dielectric interface.
 For a two-dimensional system, the field at position $\mathbf{r}$ due to a source
 at $\mathbf{r'}$ is given by the Hankel function of the first kind:
 \begin{equation}
-  G(\mathbf{r}, \mathbf{r'}) = \frac{\mi}{4} H_0^{(1)}(k_{sp} |\mathbf{r} - \mathbf{r'}|),
-  \label{eqn:greenfunction}
+	G(\mathbf{r}, \mathbf{r'}) = \frac{\mi}{4} H_0^{(1)}(k_{sp} |\mathbf{r} - \mathbf{r'}|),
+	\label{eqn:greenfunction}
 \end{equation}
 where $H_0^{(1)}$ is the zeroth-order Hankel function of the first kind, and
 $k_{sp}$ is the \gls{spp} wavevector.  This Green's function describes the
@@ -98,9 +98,9 @@ interface.
 In the far-field limit ($k_{sp}|\mathbf{r} - \mathbf{r'}| \gg 1$), the Hankel
 function has the asymptotic form:
 \begin{equation}
-  G(\mathbf{r}, \mathbf{r'}) \approx \sqrt{\frac{1}{2\pi k_{sp} |\mathbf{r} - \mathbf{r'}|}} 
-  \me^{\mi (k_{sp} |\mathbf{r} - \mathbf{r'}| - \pi/4)}.
-  \label{eqn:greenfunctionasymptotic}
+	G(\mathbf{r}, \mathbf{r'}) \approx \sqrt{\frac{1}{2\pi k_{sp} |\mathbf{r} - \mathbf{r'}|}}
+	\me^{\mi (k_{sp} |\mathbf{r} - \mathbf{r'}| - \pi/4)}.
+	\label{eqn:greenfunctionasymptotic}
 \end{equation}
 This asymptotic form explicitly shows the cylindrical decay of the \gls{spp} amplitude
 with distance ($\propto r^{-1/2}$) and includes the characteristic $\pi/4$ phase
@@ -122,8 +122,8 @@ depending on the scattering order. The first, $\varphi_\mathrm{loc}$, comes
 from the phase of the local \gls{spp} field propagating on the surface in the
 ${+}x$ direction to the first scatterer,
 \begin{equation}
-  \varphi_\mathrm{loc} = \ksp x.
-  \label{eqn:smicrofirstphase}
+	\varphi_\mathrm{loc} = \ksp x.
+	\label{eqn:smicrofirstphase}
 \end{equation}
 In the example paths of \Figure{fig:plasmongeosimple}, the variable $x$ in
 \Equation{eqn:smicrofirstphase} would be the $x$
@@ -134,9 +134,9 @@ but is expressed as in \Equation{eqn:smicrofirstphase} for simplicity.
 The second phase contribution is $\varphi_\mathrm{ff}$: the phase accumulated
 from the final out of plane scatterer to the detector in the far field,
 \begin{equation}
-  \varphi_\mathrm{ff} =
-  k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+{(z-z^\prime)}^2},
-  \label{eqn:smicrosecondphase}
+	\varphi_\mathrm{ff} =
+	k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+{(z-z^\prime)}^2},
+	\label{eqn:smicrosecondphase}
 \end{equation}
 where $x$, $y$, and $z$ in \Equation{eqn:smicrosecondphase} would assume the coordinates of the final scatterer
 ($3$ or $13$ in the example paths of \Figure{fig:plasmongeosimple}).
@@ -144,20 +144,20 @@ where $x$, $y$, and $z$ in \Equation{eqn:smicrosecondphase} would assume the coo
 Following Equations~\ref{eqn:smicrofirstphase} and~\ref{eqn:smicrosecondphase},
 the field on the detector for the $n$th path in the case of single scattering is given by
 \begin{align}
-  \mathbf{E}_n(x^\prime,y^\prime,z^\prime) & =
-  \mathbf{E}_n\exp\bigl(\mi(\varphi_\mathrm{loc}+\varphi_\mathrm{ff})\bigr)        \\
-                                           & = \mathbf{E}_n\exp\!\left(\mi\ksp x + %
-  \mi k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+{(z-z^\prime)}^2}\right).
-  \label{eqn:smicrosinglescattering}
+	\mathbf{E}_n(x^\prime,y^\prime,z^\prime) & =
+	\mathbf{E}_n\exp\bigl(\mi(\varphi_\mathrm{loc}+\varphi_\mathrm{ff})\bigr)        \\
+	                                         & = \mathbf{E}_n\exp\!\left(\mi\ksp x + %
+	\mi k_0\sqrt{{(x-x^\prime)}^2+{(y-y^\prime)}^2+{(z-z^\prime)}^2}\right).
+	\label{eqn:smicrosinglescattering}
 \end{align}
 Or in spherical coordinates, with the detector at
 $(\rho^\prime,\theta^\prime,\phi^\prime)$,
 \begin{align}
-  \mathbf{E}_n(\rho^\prime,\theta^\prime,\phi^\prime) & = \mathbf{E}_n\exp\Bigl(\mi\ksp x                            \\
-                                                      & + \mi k_0\sqrt{{(\rho^\prime\sin\theta^\prime\cos\phi^\prime
-      x+x)}^2+{(\rho^\prime\sin\theta^\prime\sin\phi^\prime+y)}^2+{(\rho^\prime\cos\theta^\prime+z)}^2
-  } \Bigr).
-  \label{eqn:scattspherical}
+	\mathbf{E}_n(\rho^\prime,\theta^\prime,\phi^\prime) & = \mathbf{E}_n\exp\Bigl(\mi\ksp x                            \\
+	                                                    & + \mi k_0\sqrt{{(\rho^\prime\sin\theta^\prime\cos\phi^\prime
+			x+x)}^2+{(\rho^\prime\sin\theta^\prime\sin\phi^\prime+y)}^2+{(\rho^\prime\cos\theta^\prime+z)}^2
+	} \Bigr).
+	\label{eqn:scattspherical}
 \end{align}
 Again, $x$, $y$, and $z$ are the coordinates of the sole scatterer in an
 individual path of the single scattering process.  Note that the
@@ -174,8 +174,8 @@ each scatterer can be modeled using a T-matrix formalism.
 The scattering potential for a collection of point-like scatterers located at
 positions $\mathbf{r}_j$ is approximated by a sum of Dirac delta functions:
 \begin{equation}
-  V(\mathbf{r}) = \sum_{j} \alpha \delta(\mathbf{r} - \mathbf{r}_j),
-  \label{eqn:scatteringpotential}
+	V(\mathbf{r}) = \sum_{j} \alpha \delta(\mathbf{r} - \mathbf{r}_j),
+	\label{eqn:scatteringpotential}
 \end{equation}
 where $\alpha$ is the scattering strength, related to the polarizability of each
 defect.  This potential represents the local perturbation to the \gls{spp}
@@ -194,25 +194,25 @@ a creation point within the illuminated region, a single scattering process
 will produce $N$ unique phasors over $N$ paths.  The $n$th path has a
 phase $\varphi_n$ given by the sum of the local and far field phases,
 \begin{equation}
-  \varphi_n = \varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff}.
+	\varphi_n = \varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff}.
 \end{equation}
 
 Assuming each of the $N$ scatterers is visited with equal probability and \glspl{spp}
 re-radiating as photons are scattered isotropically into the cone, the field
 on the detector is given by the coherent superposition of the paths,
 \begin{align}
-  \mathbf{E}(x^\prime,y^\prime,z^\prime) & =
-  \sum_{n=0}^{N-1}
-  \mathbf{E}_n \me^{\mi{(\varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff})}} \\
-                                         & =
-  \sum_{n=0}^{N-1}
-  \mathbf{E}_n \me^{\mi{\varphi_\mathrm{n}}},
+	\mathbf{E}(x^\prime,y^\prime,z^\prime) & =
+	\sum_{n=0}^{N-1}
+	\mathbf{E}_n \me^{\mi{(\varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff})}} \\
+	                                       & =
+	\sum_{n=0}^{N-1}
+	\mathbf{E}_n \me^{\mi{\varphi_\mathrm{n}}},
 \end{align}
 where $\mathbf{E}_n$ is the fractional contribution of each scattering path to
 the total amplitude of the electric field $\mathbf{E}_0$ set by the incident
 beam, such that
 \begin{equation}
-  \sum_{n=0}^{N-1}\mathbf{E}_n = \mathbf{E}_0.
+	\sum_{n=0}^{N-1}\mathbf{E}_n = \mathbf{E}_0.
 \end{equation}
 
 For a multiple scattering process, a third phase term,
@@ -220,16 +220,16 @@ $\varphi_\mathrm{ms,n}$, must be included for each scattering path.
 $\varphi_\mathrm{ms,n}$ accounts for in-plane multiple scattering, where each
 of $N$ total paths visits $K$ scatterers amongst the $M$ total.  If the
 ordered scattering sequence for the $n$th path is given by $\{S_{n,0} \ldots
-  S_{n,{K-1}}\}$, and the positions of the $k$th scatterer in the path sequence
+	S_{n,{K-1}}\}$, and the positions of the $k$th scatterer in the path sequence
 is $(x_{S_{n,k}},y_{S_{n,k}},z=0)$, the phase accumulated for the $n$th path from
 multiple scattering is
 \begin{equation}
-  \varphi_\mathrm{ms,n}=\sum_{k=0}^{K-2}
-  \ksp \sqrt{{(x_{S_{n,{k+1}}}-x_{S_{n,k}})}^2+{(y_{S_{n,{k+1}}}-y_{S_{n,k}})}^2}.
-  \label{eqn:multiplescatteringphase}
+	\varphi_\mathrm{ms,n}=\sum_{k=0}^{K-2}
+	\ksp \sqrt{{(x_{S_{n,{k+1}}}-x_{S_{n,k}})}^2+{(y_{S_{n,{k+1}}}-y_{S_{n,k}})}^2}.
+	\label{eqn:multiplescatteringphase}
 \end{equation}
 The length of $S_n$ and its ordered sequence is assumed to be produced by a stochastic
-process and will vary from path to path.  
+process and will vary from path to path.
 
 \subsubsection{Multiple Scattering and the Dyson Equation}
 The path summation in the multiple scattering formulation can be rigorously
@@ -237,9 +237,9 @@ derived from the Lippmann-Schwinger equation, which describes scattering in the
 presence of a potential.  The total electric field $E(\mathbf{r})$ satisfies the
 integral equation:
 \begin{equation}
-  E(\mathbf{r}) = E_{\mathrm{inc}}(\mathbf{r}) + \int d\mathbf{r'} 
-  G_0(\mathbf{r}, \mathbf{r'}) V(\mathbf{r'}) E(\mathbf{r'}),
-  \label{eqn:lippmannschwinger}
+	E(\mathbf{r}) = E_{\mathrm{inc}}(\mathbf{r}) + \int d\mathbf{r'}
+	G_0(\mathbf{r}, \mathbf{r'}) V(\mathbf{r'}) E(\mathbf{r'}),
+	\label{eqn:lippmannschwinger}
 \end{equation}
 where $E_{\mathrm{inc}}(\mathbf{r})$ is the incident field, $G_0(\mathbf{r}, \mathbf{r'})$
 is the Green's function given in \Equation{eqn:greenfunction}, and $V(\mathbf{r'})$
@@ -248,13 +248,13 @@ is the scattering potential defined in \Equation{eqn:scatteringpotential}.
 Iterating \Equation{eqn:lippmannschwinger} generates the Born series, which
 corresponds exactly to the path summation described in the simplified model:
 \begin{align}
-  E(\mathbf{r}) &= E_{\mathrm{inc}}(\mathbf{r}) \label{eqn:bornseries} \\
-  &\quad + \sum_j G_0(\mathbf{r}, \mathbf{r}_j) \alpha E_{\mathrm{inc}}(\mathbf{r}_j) 
-  \tag{\ref{eqn:bornseries}a} \label{eqn:bornfirst}\\
-  &\quad + \sum_{j} \sum_{k \neq j} G_0(\mathbf{r}, \mathbf{r}_j) \alpha 
-  G_0(\mathbf{r}_j, \mathbf{r}_k) \alpha E_{\mathrm{inc}}(\mathbf{r}_k) 
-  \tag{\ref{eqn:bornseries}b} \label{eqn:bornsecond}\\
-  &\quad + \cdots \nonumber
+	E(\mathbf{r}) & = E_{\mathrm{inc}}(\mathbf{r}) \label{eqn:bornseries}                              \\
+	              & \quad + \sum_j G_0(\mathbf{r}, \mathbf{r}_j) \alpha E_{\mathrm{inc}}(\mathbf{r}_j)
+	\tag{\ref{eqn:bornseries}a} \label{eqn:bornfirst}                                                  \\
+	              & \quad + \sum_{j} \sum_{k \neq j} G_0(\mathbf{r}, \mathbf{r}_j) \alpha
+	G_0(\mathbf{r}_j, \mathbf{r}_k) \alpha E_{\mathrm{inc}}(\mathbf{r}_k)
+	\tag{\ref{eqn:bornseries}b} \label{eqn:bornsecond}                                                 \\
+	              & \quad + \cdots \nonumber
 \end{align}
 The first term (\ref{eqn:bornseries}) represents the incident field with no
 scattering.  The second term (\ref{eqn:bornfirst}) describes single scattering,
@@ -264,15 +264,15 @@ scattering via an intermediate scatterer $k$.  Higher-order terms continue this
 pattern, building up all possible scattering paths.
 
 This Born series provides the mathematical justification for the path integral
-formulation.  The field on the detector for multiple scattering is then given 
+formulation.  The field on the detector for multiple scattering is then given
 by the superposition of all paths from creation to detector
 \begin{equation}
-  \mathbf{E}(x^\prime,y^\prime,z^\prime) =
-  \lim_{N\to\infty}
-  \sum_{n=0}^{N-1}
-  \mathbf{E}_n
-  \exp\!\big({\mi{(\varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff}+\varphi_\mathrm{n,ms})}}\big).
-  \label{eqn:smicromsphase}
+	\mathbf{E}(x^\prime,y^\prime,z^\prime) =
+	\lim_{N\to\infty}
+	\sum_{n=0}^{N-1}
+	\mathbf{E}_n
+	\exp\!\big({\mi{(\varphi_\mathrm{n,loc}+\varphi_\mathrm{n,ff}+\varphi_\mathrm{n,ms})}}\big).
+	\label{eqn:smicromsphase}
 \end{equation}
 
 \Equation{eqn:smicromsphase} is akin to the path integral formulation of
@@ -300,8 +300,8 @@ exiting the system (either by absorption or re-radiation) is governed by the
 diffusion equation.  For a semi-infinite two-dimensional geometry, this
 distribution follows a Lévy-type form:
 \begin{equation}
-  P(L) \sim L^{-3/2} \exp\left(-\frac{L}{L_{\mathrm{abs}}}\right),
-  \label{eqn:pathlengthpdf}
+	P(L) \sim L^{-3/2} \exp\left(-\frac{L}{L_{\mathrm{abs}}}\right),
+	\label{eqn:pathlengthpdf}
 \end{equation}
 where $L_{\mathrm{abs}}$ is the characteristic absorption length, related to the
 imaginary part of the \gls{spp} wavevector.  The $L^{-3/2}$ power law arises
@@ -312,9 +312,9 @@ This probability density allows the discrete sum over paths in
 \Equation{eqn:smicromsphase} to be replaced with a continuous integral over path
 lengths:
 \begin{equation}
-  \mathbf{E}(x^\prime,y^\prime,z^\prime) \propto 
-  \int_0^\infty dL \, P(L) \, \mathbf{E}(L) \, \exp\!\big({\mi\varphi(L)}\big),
-  \label{eqn:pathintegral}
+	\mathbf{E}(x^\prime,y^\prime,z^\prime) \propto
+	\int_0^\infty dL \, P(L) \, \mathbf{E}(L) \, \exp\!\big({\mi\varphi(L)}\big),
+	\label{eqn:pathintegral}
 \end{equation}
 where $\mathbf{E}(L)$ and $\varphi(L)$ represent the amplitude and phase
 accumulated along paths of length $L$.  This formulation connects the discrete
@@ -333,7 +333,7 @@ fulfillment of the Ioffe-Regel criterion~\cite{ioffe1960non}, when the
 transport mean free path $l^*$ is much larger than the spatial frequency of
 the optical wave, or
 \begin{equation}
-  k l^* \approx 1
+	k l^* \approx 1
 \end{equation}
 where $k=\omega/c$ as usual.  The transport mean path is defined as the
 characteristic distance over which the incident wave is scattered out of its
@@ -343,7 +343,7 @@ use the Fermi wavenumber $k_F$ and take $l^*$ to be the mean free path;
 materials for which $k_F l^* \gg 1$ are conductors, and materials for which
 $k_F l^* \ll 1$ are insulators.  The multiple scattering regime can also be
 defined in terms of the sample length $L$, such that if $l^* \ll L$ and $1/(k
-  l^*) \ll 1$, the system can be thought to be the multiple scattering regime.
+	l^*) \ll 1$, the system can be thought to be the multiple scattering regime.
 
 \subsection{Sensitivity and Scattering Paths}
 \label{sec:senspaths}

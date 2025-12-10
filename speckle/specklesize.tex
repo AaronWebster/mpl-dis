@@ -20,32 +20,32 @@ Following \name{Goodman}~\cite{goodman1975statistical} and
 terms of the area of the normalized autocovariance function of the speckle
 intensity pattern, $c_I(\Delta x, \Delta y)$.  The normalized autocovariance
 function is likewise defined in terms of the autocorrelation $\Gamma_I(\Delta
-  x, \Delta y)$ by
+	x, \Delta y)$ by
 \begin{equation}
-  c_I(\Delta x, \Delta y) = \frac{\Gamma_I(\Delta x, \Delta y) - \bar{I}^2}{\bar{I}^2},
-  \label{eqn:normxcov}
+	c_I(\Delta x, \Delta y) = \frac{\Gamma_I(\Delta x, \Delta y) - \bar{I}^2}{\bar{I}^2},
+	\label{eqn:normxcov}
 \end{equation}
 and the autocorrelation is defined as
 \begin{equation}
-  \Gamma_I(\Delta x, \Delta y) = \intinfty\intinfty I(x,y) \tilde{I}(x+\Delta x,y+\Delta y) \md x \md y.
+	\Gamma_I(\Delta x, \Delta y) = \intinfty\intinfty I(x,y) \tilde{I}(x+\Delta x,y+\Delta y) \md x \md y.
 \end{equation}
 For computation on real images, the integral is replaced by a sum.  Taking
 advantage of the Wiener–Khinchin theorem, the autocorrelation is simply the
 Fourier transform of the power spectral density, vis.
 \begin{equation}
-  \Gamma_I(\Delta x, \Delta y) = \ff{|I(x,y)|^2}(\Delta x, \Delta y)
+	\Gamma_I(\Delta x, \Delta y) = \ff{|I(x,y)|^2}(\Delta x, \Delta y)
 \end{equation}
 and thus  $c_I(\Delta x, \Delta y)$ can be efficiently calculated on a
 computer\footnote{For example in MATLAB this is implimented with
-  \texttt{xcov(I,'coeff')}}.
+	\texttt{xcov(I,'coeff')}}.
 
 The expected autocovariance for a given specklegram is, via the diffraction
 limit, the Fourier transform of geometry of the illuminated spot.  For a
 circular spot, $c_I$ is given as a function of angle $\Delta \theta$ by
 \begin{equation}
-  c_I{\left(\Delta \theta\right)} = 1 + {\left(\frac{2 J_1(u)}{u}\right)}^2;\quad
-  u=\frac{d\, \Delta\theta}{\lambda}.
-  \label{eqn:angularsize}
+	c_I{\left(\Delta \theta\right)} = 1 + {\left(\frac{2 J_1(u)}{u}\right)}^2;\quad
+	u=\frac{d\, \Delta\theta}{\lambda}.
+	\label{eqn:angularsize}
 \end{equation}
 Where $d$ is the diameter of the scattering spot and $\lambda$ is the
 scattering wavelength.  Likewise, the area of a speckle is the integral over
@@ -56,7 +56,7 @@ experiment in this regrard is found in \Chapter{ch:scatteringmicro}.
 To further investigate the nature of speckle in the cone, an experiment was
 conducted using long-range surface plasmons excited in the Kretschmann \gls{atr}
 geometry.  The incident Gaussian beam with wavelength $\lambda =
-  \SI{660}{\nano\meter}$ was focused on the hypotenuse of the prism using a
+	\SI{660}{\nano\meter}$ was focused on the hypotenuse of the prism using a
 microscope objective attached to a zoom lens housing, as
 Figures~\ref{fig:experimentalpicture} and~\ref{fig:experimentalsetup}.  To
 prepare the scattering surface, \SI{57}{\nano\meter} citrate-capped spherical
@@ -84,14 +84,14 @@ data for \Figure{fig:spotsize} was derived.  In the left column,
 corresponding specklegram.  It is difficult to distinguish the difference in
 speckle sizes between these images.
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \import{speckle/figures/spotsize/}{test}
-  %\includegraphics[keepaspectratio]{speckle/figures/spotsize/test.pdf}
-  \caption{Illuminated spot size (left) and corresponding specklegram (right)
-    for three different example spot sizes.  Notice that the angular size of the
-    speckles is not significantly different in the three cases.}
-  \label{fig:spotsizewspeckle}
+	\centering
+	\import{includes/}{setpgfinc}
+	\import{speckle/figures/spotsize/}{test}
+	%\includegraphics[keepaspectratio]{speckle/figures/spotsize/test.pdf}
+	\caption{Illuminated spot size (left) and corresponding specklegram (right)
+		for three different example spot sizes.  Notice that the angular size of the
+		speckles is not significantly different in the three cases.}
+	\label{fig:spotsizewspeckle}
 \end{figure}
 
 In \Figure{fig:spotsize} the angular size of speckles was computed for spot
@@ -102,13 +102,13 @@ speckle size which is independent of spot size within this range.  The
 intersection of the theoretical prediction from \Equation{eqn:angularsize} and
 the experimental data occurs at a spot size of \SI{250}{\micro\meter}.
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \import{speckle/figures/spotsize/}{spotsizefig}
-  %\includegraphics[keepaspectratio]{speckle/figures/spotsize/test.pdf}
-  \caption{Speckle size versus spot size for \SI{57}{\nano\meter} AuNPs adsorbed
-    onto a gold surface in a long-range surface plasmon (symmetric) structure.}
-  \label{fig:spotsize}
+	\centering
+	\import{includes/}{setpgfinc}
+	\import{speckle/figures/spotsize/}{spotsizefig}
+	%\includegraphics[keepaspectratio]{speckle/figures/spotsize/test.pdf}
+	\caption{Speckle size versus spot size for \SI{57}{\nano\meter} AuNPs adsorbed
+		onto a gold surface in a long-range surface plasmon (symmetric) structure.}
+	\label{fig:spotsize}
 \end{figure}
 
 This phenomena is \textit{not} present when exciting conventional surface
@@ -122,26 +122,26 @@ the camera position was recorded in this particular experiment, the behavior
 is clearly qualitatively described by \Equation{eqn:angularsize}; the size of
 the speckle is inversely proportional to the spot size.
 \begin{figure}[ht]
-  \centering
-  \begin{subfigure}[b]{5cm}
-    \includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_BK7_cone_lens00_ccd-10.jpg}
-    \caption{defocused}
-  \end{subfigure}
-  \begin{subfigure}[b]{5cm}
-    \includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_BK7_cone_lens10_ccd-5.jpg}
-    \caption{tightly focused}
-  \end{subfigure}
-  \begin{subfigure}[b]{5cm}
-    \includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_LaSFN9_cone_lens10_ccd-153.jpg}
-    \caption{tightly focused on a defect}
-  \end{subfigure}
-  \caption{Three sections of cone speckle taken for a conventional surface
-    plasmon setup (Air-Ag-BK7) taken using the setup of
-    \Figure{fig:opticalsetup}.  The layer structure is described in
-    \Section{sec:intexperimental}.  From left to right: defocused, tightly
-    focused, tightly focused on a defect.  The actual spot size was not measured
-    in this specific experiment.  }
-  \label{fig:threespecklesizes}
+	\centering
+	\begin{subfigure}[b]{5cm}
+		\includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_BK7_cone_lens00_ccd-10.jpg}
+		\caption{defocused}
+	\end{subfigure}
+	\begin{subfigure}[b]{5cm}
+		\includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_BK7_cone_lens10_ccd-5.jpg}
+		\caption{tightly focused}
+	\end{subfigure}
+	\begin{subfigure}[b]{5cm}
+		\includegraphics[keepaspectratio,width=5cm]{speckle/figures/Ag_LaSFN9_cone_lens10_ccd-153.jpg}
+		\caption{tightly focused on a defect}
+	\end{subfigure}
+	\caption{Three sections of cone speckle taken for a conventional surface
+		plasmon setup (Air-Ag-BK7) taken using the setup of
+		\Figure{fig:opticalsetup}.  The layer structure is described in
+		\Section{sec:intexperimental}.  From left to right: defocused, tightly
+		focused, tightly focused on a defect.  The actual spot size was not measured
+		in this specific experiment.  }
+	\label{fig:threespecklesizes}
 \end{figure}
 
 \Equation{eqn:angularsize} describes an inverse relationship between speckle

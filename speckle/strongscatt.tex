@@ -2,9 +2,9 @@ The next edge case is that of a strong single scatterer, shown in
 \Figure{fig:strongsinglefig}.  The intensity PDF is modified
 from a Rayleigh distribution to a Rician~\cite{goodman2007speckle}
 \begin{equation}
-  p_I(I) = \frac{1}{\bar{I}_n} \exp\left(-\frac{I}{\bar{I}_n} - r\right) 2 I_0
-  \sqrt{\frac{I}{\bar{I}_n} r},
-  \label{eqn:ricepdf}
+	p_I(I) = \frac{1}{\bar{I}_n} \exp\left(-\frac{I}{\bar{I}_n} - r\right) 2 I_0
+	\sqrt{\frac{I}{\bar{I}_n} r},
+	\label{eqn:ricepdf}
 \end{equation}
 where $r$ is the relative scattering strength of the dominant scatterer
 compared to the mean intensity, $r=I_0/\bar{I}_n$ where $I_0$ is the intensity
@@ -16,13 +16,13 @@ of a marginally strong single scatterer.  In experimentally acquiring images
 of speckle, dark frames have been used in an attempt to keep background noise
 to a minimum, though some is unavoidable.
 \begin{figure}[ht]
-  \centering
-  \import{includes/}{setpgfinc}
-  \import{speckle/figures/hitspot/}{exp_strongscatt_both}
-  \caption{Experimental verification of the speckle intensity PDF for a strong
-    scatterer (left) versues traditional Rayleigh speckle (right).  Surface images
-    are seen below their respective histograms.}
-  \label{fig:strongscattexperiment}
+	\centering
+	\import{includes/}{setpgfinc}
+	\import{speckle/figures/hitspot/}{exp_strongscatt_both}
+	\caption{Experimental verification of the speckle intensity PDF for a strong
+		scatterer (left) versues traditional Rayleigh speckle (right).  Surface images
+		are seen below their respective histograms.}
+	\label{fig:strongscattexperiment}
 \end{figure}
 
 In \Figure{fig:strongscattexperiment}, experimental speckle intensity PDFs

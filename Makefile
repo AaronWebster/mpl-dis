@@ -1,6 +1,10 @@
 TARGET=mpl-dis
+DOCKER_IMAGE=texlive/texlive:latest
+TEX_FILES=$(shell git ls-files '*.tex')
+LINT_TEX_FILES=$(shell git ls-files '*.tex' ':!:sandbox/**' ':!:wlgr/**' ':!:qcm/unsorted/**' ':!:backmatter/fresnel/allthreelayerfresnel.tex' ':!:**/colorpreview.tex')
+DOCKER_RUN=docker run --rm -v $(PWD):/work -w /work $(DOCKER_IMAGE)
 
-.PHONY: all
+.PHONY: all lint format check-format check docker-pull docker-lint docker-format docker-check docker-build help
 
 all: $(TARGET).pdf
 
@@ -40,3 +44,44 @@ clean:
 	rm -f $(TARGET).makefile
 	rm -f $(TARGET).auxlock
 	rm -f $(TARGET).pyg
+
+lint:
+	chktex -q $(LINT_TEX_FILES)
+
+format:
+	latexindent -w -s -g=/dev/null $(TEX_FILES)
+
+check-format:
+	latexindent -s -g=/dev/null $(TEX_FILES) >/dev/null
+
+check: lint check-format
+
+docker-pull:
+	docker pull $(DOCKER_IMAGE)
+
+docker-lint:
+	$(DOCKER_RUN) sh -c "chktex -q $(LINT_TEX_FILES)"
+
+docker-format:
+	$(DOCKER_RUN) sh -c "latexindent -w -s -g=/dev/null $(TEX_FILES)"
+
+docker-check:
+	$(DOCKER_RUN) sh -c "chktex -q $(LINT_TEX_FILES) && latexindent -s -g=/dev/null $(TEX_FILES) >/dev/null"
+
+docker-build:
+	$(DOCKER_RUN) sh -c "apt-get update -qq && apt-get install -y git python3-pip && pip3 install -r requirements.txt --break-system-packages && make all"
+
+help:
+	@echo "Available targets:"
+	@echo "  all            - Build $(TARGET).pdf"
+	@echo "  lint           - Run chktex on all tracked .tex files"
+	@echo "  format         - Run latexindent on all tracked .tex files (in-place)"
+	@echo "  check-format   - Dry-run latexindent to ensure clean formatting"
+	@echo "  check          - Run lint and formatting checks"
+	@echo "  qcm-figures    - Generate QCM figures"
+	@echo "  clean          - Remove build artifacts"
+	@echo "  docker-pull    - Pull $(DOCKER_IMAGE)"
+	@echo "  docker-lint    - Run chktex inside Docker"
+	@echo "  docker-format  - Run latexindent inside Docker"
+	@echo "  docker-check   - Run lint and format checks inside Docker"
+	@echo "  docker-build   - Build PDF inside Docker (matches release workflow)"
