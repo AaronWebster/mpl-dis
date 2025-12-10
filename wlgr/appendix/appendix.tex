@@ -6,26 +6,25 @@
 			\setcounter{subfigure}{0}
 			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}
-			\node[anchor=west] at (0.05,0.5) {\ix};
+			\end{tikzpicture}\hfill%
+			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}\hfill%
+			\raisebox{0.5cm}{\ix}\par
 		}
 		% Last one with labels
 		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
-		\end{tikzpicture}
-		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.eps}
-		\node[anchor=west] at (0.05,0.5) {14};
-		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
-			\node at (-0.55,-0.3) {$\frac{7\pi}{4}$};
-			\node at (-1.55,-0.3) {$\frac{6\pi}{4}$};
-			\node at (-2.55,-0.3) {$\frac{5\pi}{4}$};
-			\node at (-3.55,-0.3) {$\pi$};
-			\node at (-4.55,-0.3) {$\frac{3\pi}{4}$};
-			\node at (-5.55,-0.3) {$\frac{\pi}{2}$};
-			\node at (-6.55,-0.3) {$\frac{\pi}{4}$};
-			\node at (-7.55,-0.3) {$0$};
-		\end{tikzpicture}
+		\end{tikzpicture}\hfill%
+		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.eps}\hfill%
+		\raisebox{0.5cm}{14}\par
+		\vspace{0.5cm}
+		$\frac{7\pi}{4}$\hfill
+		$\frac{6\pi}{4}$\hfill
+		$\frac{5\pi}{4}$\hfill
+		$\pi$\hfill
+		$\frac{3\pi}{4}$\hfill
+		$\frac{\pi}{2}$\hfill
+		$\frac{\pi}{4}$\hfill
+		$0$
 	\end{center}
 	\caption{Permutations of the Monte Carlo simulation around the ring:
 		intensity and phase.  Intensity values have been normalized for each frame
@@ -41,27 +40,26 @@
 			\setcounter{subfigure}{0}
 			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}
+			\end{tikzpicture}\hfill%
 			% this file name sucks because of the dot, but too lazy to change
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}
-			\node[anchor=west] at (0.05,0.5) {\ix};
+			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}\hfill%
+			\raisebox{0.5cm}{\ix}\par
 		}
 
 		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
-		\end{tikzpicture}
-		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.-intensity.eps}
-		\node[anchor=west] at (0.05,0.5) {14};
-		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
-			\node at (-0.55,-0.3) {$\frac{7\pi}{4}$};
-			\node at (-1.55,-0.3) {$\frac{6\pi}{4}$};
-			\node at (-2.55,-0.3) {$\frac{5\pi}{4}$};
-			\node at (-3.55,-0.3) {$\pi$};
-			\node at (-4.55,-0.3) {$\frac{3\pi}{4}$};
-			\node at (-5.55,-0.3) {$\frac{\pi}{2}$};
-			\node at (-6.55,-0.3) {$\frac{\pi}{4}$};
-			\node at (-7.55,-0.3) {$0$};
-		\end{tikzpicture}
+		\end{tikzpicture}\hfill%
+		\includegraphics[width=12.0cm]{wlgr/primarystripes/14.-intensity.eps}\hfill%
+		\raisebox{0.5cm}{14}\par
+		\vspace{0.5cm}
+		$\frac{7\pi}{4}$\hfill
+		$\frac{6\pi}{4}$\hfill
+		$\frac{5\pi}{4}$\hfill
+		$\pi$\hfill
+		$\frac{3\pi}{4}$\hfill
+		$\frac{\pi}{2}$\hfill
+		$\frac{\pi}{4}$\hfill
+		$0$
 
 	\end{center}
 	\caption{Permutations of the Monte Carlo simulation around the ring:
