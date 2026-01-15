@@ -23,7 +23,8 @@
 			axis x line*=bottom,
 			axis y line*=left,
 			legend style={draw=black,fill=white,legend cell align=left},
-			clip marker paths=true
+			clip marker paths=true,
+			name=mainplot
 		]
 		\addplot [color=mycolor1,only marks,mark=o,mark options={solid}]
 		table[row sep=crcr]{%
@@ -1036,4 +1037,42 @@
 		\addlegendentry{fit};
 
 	\end{axis}
+	
+	% High-resolution vector inset showing layer geometry
+	\begin{scope}[shift={(mainplot.north east)},xshift=-2.8cm,yshift=-1.8cm]
+		\begin{axis}[%
+			width=3.5cm,
+			height=2.8cm,
+			hide axis,
+			xmin=0,
+			xmax=1,
+			ymin=0,
+			ymax=1.2
+		]
+			% Draw layer structure (reversed order - BK7 at bottom)
+			% BK7 substrate
+			\draw[fill=gray!30,draw=black,line width=0.4pt] (0.1,0.1) rectangle (0.9,0.35);
+			\node[anchor=west,font=\tiny] at (0.15,0.28) {BK7};
+			\node[anchor=west,font=\tiny] at (0.15,0.17) {$n_s\!=\!1.52$};
+			
+			% Cytop layer (thin)
+			\draw[fill=cyan!15,draw=black,line width=0.4pt] (0.1,0.35) rectangle (0.9,0.45);
+			\node[font=\tiny] at (0.5,0.4) {Cytop ($n_i\!=\!1.34$)};
+			
+			% Air above
+			\draw[fill=white,draw=black,line width=0.4pt] (0.1,0.45) rectangle (0.9,0.7);
+			\node[anchor=west,font=\tiny] at (0.15,0.6) {Air};
+			\node[anchor=west,font=\tiny] at (0.15,0.5) {$n_1\!=\!1.00$};
+			
+			% Draw incident light arrow at 45 degrees
+			\draw[->,thick,red,line width=0.6pt] (0.3,0.95) -- (0.5,0.75);
+			\node[red,font=\tiny] at (0.2,1.0) {$\theta\!=\!45^\circ$};
+			
+			% Draw reflected light arrow
+			\draw[->,thick,red,line width=0.6pt] (0.5,0.75) -- (0.7,0.95);
+			
+			% Add dashed normal line
+			\draw[dashed,gray,line width=0.3pt] (0.5,0.45) -- (0.5,1.05);
+		\end{axis}
+	\end{scope}
 \end{tikzpicture}%
