@@ -1039,6 +1039,8 @@
 	\end{axis}
 	
 	% High-resolution vector inset showing layer geometry
+	% Positioned in top-right corner: shift from mainplot.north east by (-2.8cm, -1.8cm)
+	% to leave margin from edges while keeping inset fully visible
 	\begin{scope}[shift={(mainplot.north east)},xshift=-2.8cm,yshift=-1.8cm]
 		\begin{axis}[%
 			width=3.5cm,
@@ -1049,7 +1051,10 @@
 			ymin=0,
 			ymax=1.2
 		]
-			% Draw layer structure (reversed order - BK7 at bottom)
+			% Draw layer structure (BK7 substrate / Cytop thin film / Air)
+			% Refractive indices from experimental/cytop.tex context:
+			% BK7: n_s = 1.52, Cytop: n_i = 1.34, Air: n_1 = 1.00
+			
 			% BK7 substrate
 			\draw[fill=gray!30,draw=black,line width=0.4pt] (0.1,0.1) rectangle (0.9,0.35);
 			\node[anchor=west,font=\tiny] at (0.15,0.28) {BK7};
