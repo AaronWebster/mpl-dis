@@ -1064,15 +1064,15 @@
 			\node[anchor=west,font=\tiny] at (0.15,0.6) {Air};
 			\node[anchor=west,font=\tiny] at (0.15,0.5) {$n_1\!=\!1.00$};
 			
-			% Draw incident light arrow at 45 degrees
-			\draw[->,thick,red,line width=0.6pt] (0.3,0.95) -- (0.5,0.75);
-			\node[red,font=\tiny] at (0.2,1.0) {$\theta\!=\!45^\circ$};
+			% Draw incident light arrow at 45 degrees (reflecting at Cytop/Air interface)
+			\draw[->,thick,red,line width=0.6pt] (0.3,0.9) -- (0.5,0.7) -- (0.5,0.45);
+			\node[red,font=\tiny] at (0.2,0.95) {$\theta\!=\!45^\circ$};
 			
 			% Draw reflected light arrow
-			\draw[->,thick,red,line width=0.6pt] (0.5,0.75) -- (0.7,0.95);
+			\draw[->,thick,red,line width=0.6pt] (0.5,0.45) -- (0.5,0.7) -- (0.7,0.9);
 			
-			% Add dashed normal line
-			\draw[dashed,gray,line width=0.3pt] (0.5,0.45) -- (0.5,1.05);
+			% Add dashed normal line at interface
+			\draw[dashed,gray,line width=0.3pt] (0.5,0.35) -- (0.5,1.0);
 		\end{axis}
 	\end{scope}
 \end{tikzpicture}%
