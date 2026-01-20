@@ -1037,46 +1037,46 @@
 		\addlegendentry{fit};
 
 	\end{axis}
-	
+
 	% High-resolution vector inset showing layer geometry
 	% Positioned in top-right corner: shift from mainplot.north east by (-2.8cm, -1.8cm)
 	% to leave margin from edges while keeping inset fully visible
 	\begin{scope}[shift={(mainplot.north east)},xshift=-2.8cm,yshift=-1.8cm]
 		\begin{axis}[%
-			width=3.5cm,
-			height=2.8cm,
-			hide axis,
-			xmin=0,
-			xmax=1,
-			ymin=0,
-			ymax=1.2
-		]
+				width=3.5cm,
+				height=2.8cm,
+				hide axis,
+				xmin=0,
+				xmax=1,
+				ymin=0,
+				ymax=1.2
+			]
 			% Draw layer structure (BK7 substrate / Cytop thin film / Air)
 			% Refractive indices from experimental/cytop.tex context:
 			% BK7: n_s = 1.52, Cytop: n_i = 1.34, Air: n_1 = 1.00
-			
+
 			% BK7 substrate
 			\draw[fill=gray!30,draw=black,line width=0.4pt] (0.1,0.1) rectangle (0.9,0.35);
 			\node[anchor=west,font=\tiny] at (0.15,0.28) {BK7};
 			\node[anchor=west,font=\tiny] at (0.15,0.17) {$n_s\!=\!1.52$};
-			
+
 			% Cytop layer (thin)
 			\draw[fill=cyan!15,draw=black,line width=0.4pt] (0.1,0.35) rectangle (0.9,0.45);
 			\node[font=\tiny] at (0.5,0.4) {Cytop ($n_i\!=\!1.34$)};
-			
+
 			% Air above
 			\draw[fill=white,draw=black,line width=0.4pt] (0.1,0.45) rectangle (0.9,0.7);
 			\node[anchor=west,font=\tiny] at (0.15,0.6) {Air};
 			\node[anchor=west,font=\tiny] at (0.15,0.5) {$n_1\!=\!1.00$};
-			
+
 			% Draw incident light arrow at 45 degrees (reflecting at Cytop/Air interface)
 			% For 45° angle from normal: Δx = Δy, from (0.15, 0.8) to (0.5, 0.45): Δx=0.35, Δy=0.35
 			\draw[->,thick,red,line width=0.6pt] (0.15,0.8) -- (0.5,0.45);
 			\node[red,font=\tiny] at (0.08,0.88) {$\theta\!=\!45^\circ$};
-			
+
 			% Draw reflected light arrow (symmetric)
 			\draw[->,thick,red,line width=0.6pt] (0.5,0.45) -- (0.85,0.8);
-			
+
 			% Add dashed normal line at interface
 			\draw[dashed,gray,line width=0.3pt] (0.5,0.35) -- (0.5,0.95);
 		\end{axis}

@@ -2,15 +2,15 @@
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-			width=12cm,
-			height=5cm,
-			xmin=0, xmax=40,
-			ymin=0, ymax=1,
-			xtick={0,10,...,40},
-			xlabel={px},
-			ylabel={},
-			axis lines=left,
-			legend pos=north east,
+				width=12cm,
+				height=5cm,
+				xmin=0, xmax=40,
+				ymin=0, ymax=1,
+				xtick={0,10,...,40},
+				xlabel={px},
+				ylabel={},
+				axis lines=left,
+				legend pos=north east,
 			]
 			\addplot[red] table {wlgr/radialac/wonky1b.ac};
 			\addplot[orange] table {wlgr/radialac/wonky2b.ac};
@@ -20,28 +20,28 @@
 			\addplot[purple] table {wlgr/radialac/wonky6b.ac};
 		\end{axis}
 	\end{tikzpicture}
-	
+
 	\begin{tikzpicture}[x=3.5cm, y=3.5cm]
 		% Image grid with colored frames
 		\node[anchor=south west, inner sep=0] at (0,0) {\includegraphics[width=3.5cm]{wlgr/radialac/1b.eps}};
 		\draw[red, line width=1.5pt] (0,0) rectangle (1,1);
-		
+
 		\node[anchor=south west, inner sep=0] at (1,0) {\includegraphics[width=3.5cm]{wlgr/radialac/2b.eps}};
 		\draw[orange, line width=1.5pt] (1,0) rectangle (2,1);
-		
+
 		\node[anchor=south west, inner sep=0] at (2,0) {\includegraphics[width=3.5cm]{wlgr/radialac/3b.eps}};
 		\draw[yellow, line width=1.5pt] (2,0) rectangle (3,1);
-		
+
 		\node[anchor=south west, inner sep=0] at (3,0) {\includegraphics[width=3.5cm]{wlgr/radialac/4b.eps}};
 		\draw[green, line width=1.5pt] (3,0) rectangle (4,1);
-		
+
 		\node[anchor=south west, inner sep=0] at (4,0) {\includegraphics[width=3.5cm]{wlgr/radialac/5b.eps}};
 		\draw[blue, line width=1.5pt] (4,0) rectangle (5,1);
-		
+
 		\node[anchor=south west, inner sep=0] at (5,0) {\includegraphics[width=3.5cm]{wlgr/radialac/6b.eps}};
 		\draw[purple, line width=1.5pt] (5,0) rectangle (6,1);
 	\end{tikzpicture}
-	
+
 	\caption{Radially averaged autocorrelations taken in some of the
 		dark areas around the ring for the experimental weirdospace images.  Units
 		are in pixels.}

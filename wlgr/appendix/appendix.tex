@@ -3,13 +3,13 @@
 		\addtolength{\subfigbottomskip}{-1.5cm}
 		% First 13 permutations
 		\foreach \ix in {0,...,12} {
-			\setcounter{subfigure}{0}
-			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
-				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}\hfill%
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}\hfill%
-			\raisebox{0.5cm}{\ix}\par
-		}
+				\setcounter{subfigure}{0}
+				\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+					\input{wlgr/common/permute\ix}
+				\end{tikzpicture}\hfill%
+				\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.eps}\hfill%
+				\raisebox{0.5cm}{\ix}\par
+			}
 		% Last one with labels
 		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
@@ -37,14 +37,14 @@
 		\addtolength{\subfigbottomskip}{-1.5cm}
 		% First 13 permutations
 		\foreach \ix in {0,...,12} {
-			\setcounter{subfigure}{0}
-			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
-				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}\hfill%
-			% this file name sucks because of the dot, but too lazy to change
-			\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}\hfill%
-			\raisebox{0.5cm}{\ix}\par
-		}
+				\setcounter{subfigure}{0}
+				\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+					\input{wlgr/common/permute\ix}
+				\end{tikzpicture}\hfill%
+				% this file name sucks because of the dot, but too lazy to change
+				\includegraphics[width=12.0cm]{wlgr/primarystripes/\ix.-intensity.eps}\hfill%
+				\raisebox{0.5cm}{\ix}\par
+			}
 
 		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
 			\input{wlgr/common/permute14}
@@ -75,19 +75,19 @@
 		\addtolength{\subfigbottomskip}{-1cm}
 		% First 13 permutations
 		\foreach \ix in {0,...,12} {
-			\setcounter{subfigure}{0}
-			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
-				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}
-			\begin{tikzpicture}[x=14cm, y=1.5cm]
-				% Draw axis frame
-				\draw (0,0) rectangle (1,0.08);
-				% Set red fill for histogram bars
-				\begin{scope}[red]
-					\input{wlgr/stats/ringpdf\ix}
-				\end{scope}
-			\end{tikzpicture}
-		}
+				\setcounter{subfigure}{0}
+				\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+					\input{wlgr/common/permute\ix}
+				\end{tikzpicture}
+				\begin{tikzpicture}[x=14cm, y=1.5cm]
+					% Draw axis frame
+					\draw (0,0) rectangle (1,0.08);
+					% Set red fill for histogram bars
+					\begin{scope}[red]
+						\input{wlgr/stats/ringpdf\ix}
+					\end{scope}
+				\end{tikzpicture}
+			}
 
 		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
@@ -97,8 +97,8 @@
 			\draw (0,0) rectangle (1,0.08);
 			% X-axis labels
 			\foreach \x in {0,0.1,...,1.0} {
-				\draw (\x,0) -- (\x,-0.01);
-			}
+					\draw (\x,0) -- (\x,-0.01);
+				}
 			% Set red fill for histogram bars
 			\begin{scope}[red]
 				\input{wlgr/stats/ringpdf14}
@@ -118,23 +118,23 @@
 		\addtolength{\subfigbottomskip}{-1cm}
 		% First 13 permutations
 		\foreach \ix in {0,...,12} {
-			\setcounter{subfigure}{0}
-			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
-				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}
-			\begin{tikzpicture}[x=14cm/18, y=1.5cm/0.6]
-				% Draw axis frame
-				\draw (1,0) rectangle (19,0.6);
-				% Red histogram bars
-				\begin{scope}[red]
-					\input{wlgr/stats/nhist\ix}
-				\end{scope}
-				% Blue histogram bars
-				\begin{scope}[blue]
-					\input{wlgr/stats/snhist\ix}
-				\end{scope}
-			\end{tikzpicture}
-		}
+				\setcounter{subfigure}{0}
+				\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+					\input{wlgr/common/permute\ix}
+				\end{tikzpicture}
+				\begin{tikzpicture}[x=14cm/18, y=1.5cm/0.6]
+					% Draw axis frame
+					\draw (1,0) rectangle (19,0.6);
+					% Red histogram bars
+					\begin{scope}[red]
+						\input{wlgr/stats/nhist\ix}
+					\end{scope}
+					% Blue histogram bars
+					\begin{scope}[blue]
+						\input{wlgr/stats/snhist\ix}
+					\end{scope}
+				\end{tikzpicture}
+			}
 
 		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
@@ -150,8 +150,8 @@
 			\input{wlgr/stats/snhist14}
 			% X-axis labels
 			\foreach \ix in {1,...,19} {
-				\node at (\ix+0.5,-0.15) {\ix};
-			}
+					\node at (\ix+0.5,-0.15) {\ix};
+				}
 		\end{tikzpicture}
 
 	\end{center}
@@ -167,40 +167,40 @@
 		\addtolength{\subfigbottomskip}{-1cm}
 		% First 13 permutations
 		\foreach \ix in {0,...,12} {
-			\begin{tikzpicture}[x=40.75pt, y=40.75pt]
-				\input{wlgr/common/permute\ix}
-			\end{tikzpicture}
-			\begin{tikzpicture}
-				\begin{axis}[
-					width=14cm,
-					height=1.5cm,
-					xmin=0, xmax=360,
-					ymin=0, ymax=1.2,
-					xtick={0,20,...,360},
-					xticklabels={},
-					ytick=\empty,
-					axis lines=left,
-					]
-					\addplot[red, mark=+, only marks] table {wlgr/contrast/ring\ix.dat};
-					\addplot[blue, mark=+, only marks] table {wlgr/contrast/cring\ix.dat};
-				\end{axis}
-			\end{tikzpicture}
-		}
+				\begin{tikzpicture}[x=40.75pt, y=40.75pt]
+					\input{wlgr/common/permute\ix}
+				\end{tikzpicture}
+				\begin{tikzpicture}
+					\begin{axis}[
+							width=14cm,
+							height=1.5cm,
+							xmin=0, xmax=360,
+							ymin=0, ymax=1.2,
+							xtick={0,20,...,360},
+							xticklabels={},
+							ytick=\empty,
+							axis lines=left,
+						]
+						\addplot[red, mark=+, only marks] table {wlgr/contrast/ring\ix.dat};
+						\addplot[blue, mark=+, only marks] table {wlgr/contrast/cring\ix.dat};
+					\end{axis}
+				\end{tikzpicture}
+			}
 
 		\begin{tikzpicture}[x=40.75pt, y=40.75pt]
 			\input{wlgr/common/permute14}
 		\end{tikzpicture}
 		\begin{tikzpicture}
 			\begin{axis}[
-				width=14cm,
-				height=1.5cm,
-				xmin=0, xmax=360,
-				ymin=0, ymax=1.2,
-				xtick={0,45,90,135,180,225,270,315,360},
-				xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{6\pi}{4}$,$\frac{7\pi}{4}$,$2\pi$},
-				ytick=\empty,
-				axis lines=left,
-				x label style={at={(axis description cs:0.5,-0.1)}, anchor=north},
+					width=14cm,
+					height=1.5cm,
+					xmin=0, xmax=360,
+					ymin=0, ymax=1.2,
+					xtick={0,45,90,135,180,225,270,315,360},
+					xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{6\pi}{4}$,$\frac{7\pi}{4}$,$2\pi$},
+					ytick=\empty,
+					axis lines=left,
+					x label style={at={(axis description cs:0.5,-0.1)}, anchor=north},
 				]
 				\addplot[red, mark=+, only marks] table {wlgr/contrast/ring14.dat};
 				\addplot[blue, mark=+, only marks] table {wlgr/contrast/cring14.dat};
@@ -223,38 +223,38 @@
 			% Top plot (contrast)
 			\begin{scope}[shift={(33,0)}]
 				\begin{axis}[
-					width=20cm,
-					height=5cm,
-					xmin=300, xmax=400,
-					ymin=0.8, ymax=1.2,
-					xtick={300,320,...,400},
-					ytick={0.8,0.9,1.0,1.1,1.2},
-					axis lines=left,
+						width=20cm,
+						height=5cm,
+						xmin=300, xmax=400,
+						ymin=0.8, ymax=1.2,
+						xtick={300,320,...,400},
+						ytick={0.8,0.9,1.0,1.1,1.2},
+						axis lines=left,
 					]
 					\addplot[red, mark=+, only marks] table {wlgr/vortex/zoom_contrast.dat};
 					\addplot[green, dashed, domain=300:400] {1};
 				\end{axis}
 			\end{scope}
-			
+
 			% Bottom plot (intensity)
 			\begin{scope}[shift={(-30,0)}]
 				\begin{axis}[
-					width=20cm,
-					height=5cm,
-					xmin=300, xmax=400,
-					ymin=5, ymax=50,
-					xtick={300,320,...,400},
-					ytick={5,10,...,50},
-					axis lines=left,
+						width=20cm,
+						height=5cm,
+						xmin=300, xmax=400,
+						ymin=5, ymax=50,
+						xtick={300,320,...,400},
+						ytick={5,10,...,50},
+						axis lines=left,
 					]
 					\addplot[red, mark=+, only marks] table {wlgr/vortex/zoom_intensity.dat};
 					\addplot[green, dashed, domain=300:400] {12};
 				\end{axis}
 			\end{scope}
-			
+
 			% Image in middle
 			\node[rotate=-90] at (0,0) {\includegraphics[width=21.1cm]{wlgr/vortex/sbs.eps}};
-			
+
 			% Legend labels
 			\node[anchor=west] at (-45,8.5) {\textcolor{red}{\rule{0.5cm}{0.5pt}}~~Intensity};
 			\node[anchor=west] at (10,8.5) {\textcolor{red}{\rule{0.5cm}{0.5pt}}~~Contrast};
@@ -274,15 +274,15 @@
 	\begin{center}
 		\begin{tikzpicture}[x=1.6711cm, y=4cm]
 			\begin{axis}[
-				width=10.5cm,
-				height=6cm,
-				xmin=0, xmax=6.2832,
-				ymin=0, ymax=1.5,
-				xtick={0,0.7854,1.5708,2.3562,3.1416,3.9270,4.7124,5.4978,6.2832},
-				xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}{2}$,$\frac{7\pi}{4}$,$2\pi$},
-				ytick={0,0.2,...,1.4},
-				axis lines=left,
-				clip=true,
+					width=10.5cm,
+					height=6cm,
+					xmin=0, xmax=6.2832,
+					ymin=0, ymax=1.5,
+					xtick={0,0.7854,1.5708,2.3562,3.1416,3.9270,4.7124,5.4978,6.2832},
+					xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}{2}$,$\frac{7\pi}{4}$,$2\pi$},
+					ytick={0,0.2,...,1.4},
+					axis lines=left,
+					clip=true,
 				]
 				\addplot[red, only marks, mark=o] table {wlgr/primarystripes/cone5.txt};
 				\addplot[blue, solid] table {wlgr/primarystripes/acone5.dat};
